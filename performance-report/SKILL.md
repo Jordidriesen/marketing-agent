@@ -3,13 +3,13 @@ name: performance-report
 metadata:
   version: 1.0.0
   history: >
-    Restructured from the stock Anthropic marketing plugin skill: moved
-    the five metric-definition tables, attribution modeling basics,
-    reporting templates, and optimization framework into references/,
-    made the Google Ads-specific handoff to report-writer/metric-detective/
-    quality-score-doctor explicit rather than duplicating PPC benchmarks
-    inline, and tightened the executive summary rules to match
-    report-writer's no-padding standard.
+    Built for the marketing plugin. Moved the five metric-definition
+    tables, attribution modeling basics, reporting templates, and
+    optimization framework into references/, made the Google Ads-specific
+    handoff to report-writer/metric-detective/quality-score-doctor
+    explicit rather than duplicating PPC benchmarks inline, and tightened
+    the executive summary rules to match report-writer's no-padding
+    standard.
 description: >
   Builds a marketing performance report — key metrics, trend analysis,
   wins and misses, and prioritized recommendations — from performance

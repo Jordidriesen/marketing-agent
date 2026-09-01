@@ -3,12 +3,12 @@ name: competitive-brief
 metadata:
   version: 1.0.0
   history: >
-    Restructured from the stock Anthropic marketing plugin skill: added the
-    [brand]-brand-kit check for the "Our Differentiators" framing, moved
-    research-source lists, positioning frameworks, and the battlecard
-    template into references/, made the battlecard an explicit optional
-    step rather than inline reference material, and sharpened the pointer
-    to competitor-analysis/competitive-landscape for SEO-grounded data.
+    Built for the marketing plugin. Added the [brand]-brand-kit check for
+    the "Our Differentiators" framing, moved research-source lists,
+    positioning frameworks, and the battlecard template into references/,
+    made the battlecard an explicit optional step rather than inline
+    reference material, and sharpened the pointer to
+    competitor-analysis/competitive-landscape for SEO-grounded data.
 description: >
   Researches named competitors via web search and produces a positioning
   and messaging comparison — strengths, weaknesses, content gaps,

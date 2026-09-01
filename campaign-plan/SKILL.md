@@ -3,11 +3,11 @@ name: campaign-plan
 metadata:
   version: 1.0.0
   history: >
-    Restructured from the stock Anthropic marketing plugin skill: added the
-    [brand]-brand-kit check, linked Key Messages to content-references'
-    framework-selection guidance instead of freestyling tone, moved the
-    channel/budget/metrics reference tables out of the main flow into
-    references/, and tightened Output to this library's no-padding standard.
+    Built for the marketing plugin. Added the [brand]-brand-kit check,
+    linked Key Messages to content-references' framework-selection
+    guidance instead of freestyling tone, moved the channel/budget/metrics
+    reference tables out of the main flow into references/, and tightened
+    Output to this library's no-padding standard.
 description: >
   Generates a full campaign brief — objectives, audience, key messages,
   channel strategy, content calendar, success metrics, budget, and risks —
