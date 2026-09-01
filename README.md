@@ -90,3 +90,11 @@ Or upload an individual skill's folder as a zip through the Claude.ai / Claude A
 ## License
 
 MIT — see [LICENSE](LICENSE). Swap this out if you'd rather use something else.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the `SKILL.md` convention this repo follows, and [CHANGELOG.md](CHANGELOG.md) for release history. A GitHub Action lints every skill's frontmatter on push — run it locally first with `python scripts/lint_skills.py`.
+
+---
+
+Built by [Jordi Driesen](https://jordidriesen.be) — fractional marketer and digital strategist.
