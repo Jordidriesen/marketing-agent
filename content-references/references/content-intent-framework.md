@@ -52,7 +52,7 @@ login page, a specific product page.
 **Content implication:** this is not usually a page you write persuasive
 copy for — it's a page that must exist, load fast, and be unmistakably the
 right destination. Relevant mainly for site structure, title tags, and
-branded page hygiene (Client A/Client B branded pages, Google Business Profile).
+branded page hygiene (branded pages for your clients, Google Business Profile).
 Persuasion-heavy treatment here can feel dishonest or slow the visitor down
 — they already decided.
 
@@ -81,8 +81,8 @@ subtype for content-strategy purposes, even though it's tracked separately
 in keyword tables for prioritization.
 
 **Content implication:** landing pages, pricing pages, product pages,
-comparison pages, local service pages. This includes Client B's Google Ads
-landing pages and Client A's product/solution pages. Hand off to `web-content-pipeline`.
+comparison pages, local service pages. This includes a client's Google
+Ads landing pages and product/solution pages. Hand off to `web-content-pipeline`.
 
 **Structural defaults:**
 - Single message, single CTA

@@ -127,25 +127,25 @@ framework are separate decisions, but they correlate:
 
 | Content Bucket | Frameworks that usually fit | Example |
 |---|---|---|
-| Informational | Minto (if the reader already wants the answer) or a light Sparkline open (if the post needs to first establish why the topic matters) | A Client A guide page that opens with "what is" the current pain before answering |
+| Informational | Minto (if the reader already wants the answer) or a light Sparkline open (if the post needs to first establish why the topic matters) | A client guide page that opens with "what is" the current pain before answering |
 | Navigational | Neither — wayfinding, not persuasion | N/A |
-| Transactional | StoryBrand or PAS, almost always | Client B Google Ads landing pages, Client A product/solution pages |
+| Transactional | StoryBrand or PAS, almost always | A client's Google Ads landing pages, product/solution pages |
 
 **Practical mapping for recurring work:**
-- Client A executive-facing content (board decks, strategic proposals,
+- A client's executive-facing content (board decks, strategic proposals,
   management presentations) → **Minto**
-- Client A product launches, category-defining keynote content → **Sparkline**
-- Client A/Client B landing pages, solution pages → **StoryBrand**
-- Client B Google Ads copy, Client A lead-gen email sequences → **PAS**
+- A client's product launches, category-defining keynote content → **Sparkline**
+- A client's landing pages, solution pages → **StoryBrand**
+- A client's Google Ads copy, lead-gen email sequences → **PAS**
 - Internal status updates, quick team Slack/email summaries → **BLUF**
-- Personal blog reviews (`personal-brand-reviews`) → none of these fit
-  cleanly; that skill's own verdict-led structure is closer to BLUF in
-  spirit (bottom line up front, no defended pyramid) but shouldn't be
-  forced into any of the five above
+- A voice-led personal/lifestyle review series → none of these fit
+  cleanly; a verdict-led structure is closer to BLUF in spirit (bottom
+  line up front, no defended pyramid) but shouldn't be forced into any
+  of the five above
 
 ## Combining frameworks
 
-These aren't always mutually exclusive within one document. A Client A
+These aren't always mutually exclusive within one document. A client
 customer story can open with a brief Sparkline-style gap (the "before"
 state) and then resolve into StoryBrand's plan/success structure — that's
 exactly what `customer-story-writer`'s existing arc already does, without

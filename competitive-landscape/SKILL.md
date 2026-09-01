@@ -1,7 +1,6 @@
 ---
 name: competitive-landscape
-description: >
-  Maps SEO market leaders across several competitors at once using OpenSEO for keyword, SERP, and domain data, and Firecrawl to crawl leaders' top pages for actual content themes and formats. Use for "who's winning this market," "competitive landscape," "market-level SEO view," or comparing several competitors rather than one. For a deep dive on a single named competitor, use competitor-analysis instead.
+description: "Maps SEO market leaders across several competitors at once using OpenSEO for keyword, SERP, and domain data, and Firecrawl to crawl leaders' top pages for actual content themes and formats. Use for \"who's winning this market,\" \"competitive landscape,\" \"market-level SEO view,\" or comparing several competitors rather than one. For a deep dive on a single named competitor, use competitor-analysis instead."
 ---
 
 # Competitive Landscape
@@ -77,3 +76,4 @@ Add: query set used, content formats that are working, keyword/theme gaps, autho
 - `competitor-analysis`: deep dive on one named competitor once the landscape narrows the field.
 - `seo-keyword-research` / `keyword-clustering`: build or organize the query set feeding this skill.
 - `content-research-orchestrator`: the full gated pipeline this skill plugs into as Stage 3.
+- `competitive-brief` (marketing plugin): for market-level messaging and positioning research via web search, complementing this skill's SEO-market view of the same field.

@@ -110,16 +110,15 @@ exists (or `.claude/product-marketing-context.md` in older setups), read
 it before asking questions. Use that context and only ask for what isn't
 already covered.
 
-**Identify the brand and load its brand kit.** Jordi writes for multiple
-brands (Client A, Client B, his own jordidriesen.be, and future
-clients), each with its own voice — there's no single default tone this
-skill can assume. Before drafting anything:
+**Identify the brand and load its brand kit.** Most people writing across
+multiple brands or clients need this, each with its own voice — there's no
+single default tone this skill can assume. Before drafting anything:
 
 1. Determine which brand/client this piece is for — from the brief, from
    context already in the conversation, or by asking if genuinely unclear.
-2. Check for a matching `[brand]-brand-kit` skill, e.g. `acme-brand-kit`
-   for Client A. Skills follow that naming convention specifically so this
-   lookup can be done by pattern, not a hardcoded list.
+2. Check for a matching `[brand]-brand-kit` skill for that brand. Skills
+   follow that naming convention specifically so this lookup can be done
+   by pattern, not a hardcoded list.
 3. **If found:** load it and apply its voice (and, once documented, visual
    identity) throughout Steps 4–6. Its rules override this skill's generic
    "Voice and Tone" section below — that section is a fallback, not a
@@ -127,8 +126,8 @@ skill can assume. Before drafting anything:
 4. **If not found:** flag that no brand kit exists for this brand yet, fall
    back to the generic Voice and Tone section, and note that a
    `[brand]-brand-kit` skill is worth building if this becomes recurring
-   work — see `acme-brand-kit`'s own "Brand Kit Pattern" section for the
-   shape to follow.
+   work — see the "Brand Kit Pattern" section of an existing `[brand]-brand-kit`
+   skill for the shape to follow, if you have one.
 
 | Field | Input |
 |---|---|
@@ -406,7 +405,7 @@ should be action-oriented throughout.
 - `copy-editing` — Step 5 applies this skill directly
 - `ai-content-cleaner` — Step 6 applies this reference directly; also directly invocable standalone
 - `seo-audit` — full technical SEO audit of an existing, already-published page
-- `acme-brand-kit` — loaded in Step 3 for any Client A content; first of the `[brand]-brand-kit` pattern, more to follow as needed
+- `[brand]-brand-kit` — a brand-specific skill following this naming pattern, loaded in Step 3 when one exists for the brand/client in question
 - **social-copywriting** — planned, not yet built; will cover social posts, which this skill explicitly excludes
 
 ## Reference Docs (content-references shared library)

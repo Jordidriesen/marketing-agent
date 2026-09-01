@@ -86,7 +86,7 @@ Already covered by your existing MCP stack - listed here for completeness within
 
 - **OpenSEO** - organic rankings, keyword demand, and SERP data settable per country/language (`locationCode`/`languageCode` on each call, project-scoped, see `content-research-orchestrator/references/openseo-tool-map.md`); the right tool for "how big is search demand for X in Germany vs. France."
 - **Ahrefs** - cross-check on backlink/domain-authority signals.
-- **LinkedIn Ad Library MCP** - live and historical B2B ad creative and targeting; generally a stronger signal for European B2B competitors than estimated ad spend, since LinkedIn is the dominant paid channel for the category Client A/Client B-type clients compete in.
+- **LinkedIn Ad Library MCP** - live and historical B2B ad creative and targeting; generally a stronger signal for European B2B competitors than estimated ad spend, since LinkedIn is the dominant paid channel for the category this kind of B2B client competes in.
 - **Google Ads MCP** - auction insights where the user's own account has overlap.
 - **Search Console MCP** - first-party ground truth for the user's own domain.
 

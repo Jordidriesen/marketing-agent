@@ -1,7 +1,6 @@
 ---
 name: competitor-analysis
-description: >
-  Analyzes one named competitor's organic footprint, ranking keywords, and actual page content using OpenSEO for rankings and domain data and Firecrawl to crawl their top pages, deep enough to decide what to learn from, avoid, counter-position against, or outrank. Use for "analyze this competitor," "competitor deep dive," or comparing the user's domain against one named rival. For identifying market leaders first, use competitive-landscape.
+description: "Analyzes one named competitor's organic footprint, ranking keywords, and actual page content using OpenSEO for rankings and domain data and Firecrawl to crawl their top pages, deep enough to decide what to learn from, avoid, counter-position against, or outrank. Use for \"analyze this competitor,\" \"competitor deep dive,\" or comparing the user's domain against one named rival. For identifying market leaders first, use competitive-landscape."
 ---
 
 # Competitor Analysis
@@ -75,3 +74,4 @@ Include sections for: top keyword themes, content/page types working for them (f
 
 - `competitive-landscape`: identify which competitors are worth this deep a dive — Stage 3 to this skill's Stage 4 in the full pipeline.
 - `content-research-orchestrator`: the full gated pipeline this skill plugs into as Stage 4, on the way to a content brief.
+- `competitive-brief` (marketing plugin): for messaging, positioning, and sales-battlecard research on this same competitor, gathered via web search rather than SEO tooling — this skill's organic-footprint and keyword findings are a useful input to that skill's positioning comparison.

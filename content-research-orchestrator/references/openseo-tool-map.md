@@ -29,7 +29,7 @@ any session:
    locationCode, languageCode}` per project.
 2. Match by domain: if the target domain (client site, or the primary
    domain the work is about) already has a project, use its `id`.
-3. **Ongoing client work** (Client A, Client B, any recurring
+3. **Ongoing client work** (a named client or brand, any recurring
    engagement): if no project exists yet, `create_project` with the
    client's name, root domain, and default market. One project per
    client, not per market — override `locationCode`/`languageCode` on

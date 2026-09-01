@@ -7,11 +7,11 @@ examples, legal references, and CTA tone per locale live in
 a separate one.
 
 **Locales in active use:** `de-DE`, `fr-BE`/`fr-FR`, `nl-BE`/`nl-NL`,
-`es-ES` are the working set (Client A's five-market site, Client B's
-Belgian bilingual content). The rest of this file's table
-covers additional markets for occasional or one-off work; nothing below
-needs trimming, it costs nothing to keep and Jordi's client roster has
-already expanded once.
+`es-ES` are a common working set for a multi-market European client
+roster (a five-market site, Belgian bilingual content, and similar).
+The rest of this file's table covers additional markets for occasional
+or one-off work; nothing below needs trimming, it costs nothing to keep
+and a client roster tends to expand over time.
 
 ## SEO Translation Principles
 

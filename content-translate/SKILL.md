@@ -120,8 +120,8 @@ Identify the primary and secondary keywords for Step 3.
 ## Step 2 — Identify the Brand
 
 Check whether the content belongs to a brand with its own
-`[brand]-brand-kit` skill (`acme-brand-kit` today; more to follow the
-same pattern per that skill's "Brand Kit Pattern" section). If found, load
+`[brand]-brand-kit` skill (see an existing one's "Brand Kit Pattern"
+section for the shape to follow, if you have one). If found, load
 it now:
 
 - Apply its voice pillars in the target language, not just the source.
@@ -255,7 +255,7 @@ issues.
 | Unsupported or ambiguous language code | Suggest the correct hreflang code, or ask for the region on `es`/`pt`/`zh` |
 | Source equals a target | Skip with "Source is already in [lang]" |
 | File not found | Report the error with a suggested path |
-| No brand kit exists for this client | Translate against the source voice, flag the gap, suggest building one on the `acme-brand-kit` pattern |
+| No brand kit exists for this client | Translate against the source voice, flag the gap, suggest building one following the `[brand]-brand-kit` pattern |
 | Binary or non-text file | Report the error, suggest the correct file |
 | Cultural profile not covered | Build one inline from the Custom-Locale Template in `cultural-adaptation.md`, and suggest adding it permanently if the market is likely to recur |
 
@@ -280,8 +280,8 @@ issues.
 
 ## Related Skills
 
-- **`acme-brand-kit`** (and future `[brand]-brand-kit` skills) — Step 2
-  loads these for voice and locked terminology
+- **`[brand]-brand-kit`** skills — Step 2 loads the relevant one for
+  voice and locked terminology, when one exists
 - **`web-content-pipeline`** — usually where the source-language content
   came from; this skill picks up after that one delivers
 - **`seo-keyword-research`** — Step 3 checks real search volume for

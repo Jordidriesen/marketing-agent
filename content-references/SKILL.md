@@ -3,7 +3,7 @@ name: content-references
 description: >
   Shared reference library for content-creation skills. Not triggered
   directly by user requests — loaded by other skills (web-content-pipeline,
-  customer-story-writer, rsa-writer, personal-brand-reviews, etc.)
+  customer-story-writer, rsa-writer, social-content-writer, etc.)
   as needed. If you've landed here from a direct request, route to one of
   those skills instead; this is infrastructure, not a workflow.
 ---

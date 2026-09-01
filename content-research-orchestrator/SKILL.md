@@ -374,7 +374,7 @@ For full list: `dataforseo:serp_locations` or `dataforseo:kw_data_google_ads_loc
 
 - **After Stage 5:** hand briefs to `web-content-pipeline` to draft full
   pages or posts.
-- **For Client A content:** combine with `acme-brand-kit`.
+- **For a specific brand/client:** combine with that brand's `[brand]-brand-kit` skill, if one exists (see `brand-review`'s Related Skills note for the naming pattern).
 - **For AI-readiness:** after writing, run `ai-content-cleaner` (BALANCED
   mode) or the humanizing pass built into `web-content-pipeline`'s own
   Step 6.

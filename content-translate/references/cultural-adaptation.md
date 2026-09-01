@@ -11,8 +11,9 @@ than as a separate second-pass skill.
 term for a given concept, "always translate X as Y") belong in that
 client's `[brand]-brand-kit` skill, not here. This file covers market-level
 knowledge that applies regardless of which brand is being translated; a
-brand kit's locked terminology always wins when the two conflict. See
-`acme-brand-kit`'s Locked Terminology section for a working example.
+brand kit's locked terminology always wins when the two conflict. See an
+existing `[brand]-brand-kit`'s Locked Terminology section for a working
+example, if you have one.
 
 ## DACH (Germany, Austria, German-speaking Switzerland)
 
