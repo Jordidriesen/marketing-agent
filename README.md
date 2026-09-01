@@ -1,6 +1,6 @@
 # Claude Skills — Marketing & SEO
 
-A library of [Claude Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) for agency-style marketing work: Google Ads auditing and strategy, SEO/content research, content writing and translation, plus a few personal-use extras.
+A library of [Claude Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) for agency-style marketing work: Google Ads auditing and strategy, SEO/content research, and content writing and translation.
 
 Each folder is a self-contained skill (`SKILL.md` + optional `references/` and `scripts/`). Drop any folder you want into your own `.claude/skills/` directory (Claude Code) or upload it in Claude.ai / the Claude API to make it available.
 
@@ -77,15 +77,6 @@ Or upload an individual skill's folder as a zip through the Claude.ai / Claude A
 |---|---|
 | `content-references` | Shared reference library (frameworks, schema rules) used by the content-creation skills above. |
 | `security-policy` | Shared security reference for skills that ingest untrusted content or use write-capable connectors. |
-
-### Personal / Lifestyle
-
-| Skill | What it does |
-|---|---|
-| `middle-eastern-fragrance-explorer` | Researches and compares Middle Eastern perfume houses, dupes, and clones. |
-| `personal-brand-reviews` | Writes review posts for a personal blog's coffee/fragrance/watch/EDC series. |
-| `supermarkt-prijsanalyse` | Compares weekly promos and prices across Belgian supermarkets (Dutch). |
-| `weekmenu-planner` | Builds a family weekly meal plan, Asian-leaning with Belgian classics (Dutch). |
 
 ## License
 
