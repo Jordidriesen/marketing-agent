@@ -9,7 +9,7 @@ Each folder is a self-contained skill (`SKILL.md` + optional `references/` and `
 ## Installation
 
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
+git clone https://github.com/Jordidriesen/marketing-agent.git
 cp -r <repo-name>/<skill-name> ~/.claude/skills/
 ```
 
