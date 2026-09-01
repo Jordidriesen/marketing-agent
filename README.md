@@ -6,6 +6,8 @@ Each folder is a self-contained skill (`SKILL.md` + optional `references/` and `
 
 > **Not included:** brand-specific `[brand]-brand-kit` skills (tone-of-voice, locked terminology, visual guidelines for specific clients) have been kept private, since they encode confidential client and personal brand detail. A couple of skills below reference an `acme-brand-kit` as a stand-in — build your own following the same `[brand]-brand-kit` naming pattern if you want that layer.
 
+> **Attribution:** `campaign-plan`, `competitive-brief`, `performance-report`, `brand-review`, `content-creation`, `newsletter-writer`, `press-release-writer`, and `social-content-writer` started from Anthropic's built-in "marketing" plugin and were substantially reworked — brand-kit integration, reference-doc restructuring, and cross-skill routing added/rewritten on top. Skills that were pulled in unmodified (`docx`, `pdf`, `pptx`, `xlsx`, `skill-creator`, `import-memory`) were left out, since republishing an unedited copy of Anthropic's own built-ins adds nothing here.
+
 ## Installation
 
 ```bash
@@ -59,16 +61,29 @@ Or upload an individual skill's folder as a zip through the Claude.ai / Claude A
 | `seo-audit` | Complete SEO audit for a webpage or website. |
 | `seo-keyword-research` | Keyword discovery step of the research pipeline, standalone. |
 
+### Campaign & Competitive Strategy
+
+| Skill | What it does |
+|---|---|
+| `campaign-plan` | Generates a full campaign brief — objectives, audience, key messages, channel strategy, content calendar, success metrics, budget — from a goal and timeline. |
+| `competitive-brief` | Researches named competitors via web search and produces a positioning/messaging comparison with content gaps, opportunities, and threats. |
+| `performance-report` | Builds a marketing performance report — key metrics, trend analysis, wins/misses, prioritized recommendations — from period data. |
+
 ### Content Writing & Editing
 
 | Skill | What it does |
 |---|---|
 | `ai-content-cleaner` | Detects and removes AI writing patterns/tells; humanizes copy across five languages. |
+| `brand-review` | Reviews a draft against brand voice and screens it for legal/compliance risk before it ships. |
 | `clean-user-facing-text` | Audits invisible Unicode and rewrites prose for finalized reader-facing text. |
+| `content-creation` | Entry-point router for a "write marketing content" request — classifies the content type(s) and dispatches to the specialist skill(s) below. |
 | `content-translate` | Translates web content into other languages with locale-correct formatting and brand terminology carried over. |
 | `copy-editing` | Edits and tightens existing marketing copy. |
 | `customer-story-writer` | Writes B2B customer stories and case studies using a persuasion framework. |
 | `email-sequence-hubspot-brevo` | Drafts multi-email sequences built specifically for HubSpot Workflows or Brevo Automation. |
+| `newsletter-writer` | Drafts a single one-off marketing email or newsletter — subject lines, preview text, body structure. |
+| `press-release-writer` | Drafts a press release — headline, dateline, lead, body, quotes, boilerplate — in AP-style formatting. |
+| `social-content-writer` | Drafts platform-specific social posts for Instagram, LinkedIn, Reddit, or X. |
 | `web-content-pipeline` | Sequential workflow for writing and humanizing any web page — blog posts, landing pages, product pages. |
 
 ### Shared / Infrastructure
