@@ -1,0 +1,9 @@
+{
+  "name": "marketing-agent",
+  "version": "1.4.0",
+  "description": "Plan campaigns, research competitor messaging and positioning, and report on marketing performance. Content drafting, brand review, email sequences, and SEO auditing are handled by dedicated account skills instead of duplicating them here.",
+  "author": {
+    "name": "Jordi Driesen"
+  },
+  "repository": "https://github.com/Jordidriesen/marketing-agent"
+}

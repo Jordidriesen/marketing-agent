@@ -20,7 +20,7 @@ except ImportError:
     sys.exit(2)
 
 ROOT = Path(__file__).resolve().parent.parent
-SKIP_DIRS = {".github", ".git", "scripts"}
+SKIP_DIRS = {".github", ".git", "scripts", "plugin"}
 MIN_DESCRIPTION_LEN = 20
 
 FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.S)
@@ -63,6 +63,12 @@ def main() -> int:
         if not folder.is_dir() or folder.name in SKIP_DIRS or folder.name.startswith("."):
             continue
         all_errors.extend(check_skill(folder))
+
+    plugin_skills_dir = ROOT / "plugin" / "skills"
+    if plugin_skills_dir.is_dir():
+        for folder in sorted(plugin_skills_dir.iterdir()):
+            if folder.is_dir():
+                all_errors.extend(check_skill(folder))
 
     if all_errors:
         print(f"Found {len(all_errors)} issue(s):\n")

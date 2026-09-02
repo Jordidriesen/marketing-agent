@@ -6,7 +6,7 @@ Each folder is a self-contained skill (`SKILL.md` + optional `references/` and `
 
 > **Not included:** brand-specific `[brand]-brand-kit` skills (tone-of-voice, locked terminology, visual guidelines for specific clients) have been kept private, since they encode confidential client and personal brand detail. A couple of skills below reference an `acme-brand-kit` as a stand-in — build your own following the same `[brand]-brand-kit` naming pattern if you want that layer.
 
-> **Attribution:** `campaign-plan`, `competitive-brief`, and `performance-report` were built specifically for the marketing plugin. `brand-review`, `content-creation`, `newsletter-writer`, `press-release-writer`, and `social-content-writer` started from Anthropic's built-in "marketing" plugin and were substantially reworked with brand-kit integration and cross-skill routing. Skills that were pulled in unmodified (`docx`, `pdf`, `pptx`, `xlsx`, `skill-creator`, `import-memory`) were left out, since republishing an unedited copy of Anthropic's own built-ins adds nothing here.
+> **Attribution:** `campaign-plan`, `competitive-brief`, and `performance-report` (in [`/plugin`](plugin)) were built specifically for the marketing plugin. `brand-review`, `content-creation`, `newsletter-writer`, `press-release-writer`, and `social-content-writer` started from Anthropic's built-in "marketing" plugin and were substantially reworked with brand-kit integration and cross-skill routing. Skills that were pulled in unmodified (`docx`, `pdf`, `pptx`, `xlsx`, `skill-creator`, `import-memory`) were left out, since republishing an unedited copy of Anthropic's own built-ins adds nothing here.
 
 ## Installation
 
@@ -61,13 +61,9 @@ Or upload an individual skill's folder as a zip through the Claude.ai / Claude A
 | `seo-audit` | Complete SEO audit for a webpage or website. |
 | `seo-keyword-research` | Keyword discovery step of the research pipeline, standalone. |
 
-### Campaign & Competitive Strategy
+### Marketing Plugin
 
-| Skill | What it does |
-|---|---|
-| `campaign-plan` | Generates a full campaign brief — objectives, audience, key messages, channel strategy, content calendar, success metrics, budget — from a goal and timeline. |
-| `competitive-brief` | Researches named competitors via web search and produces a positioning/messaging comparison with content gaps, opportunities, and threats. |
-| `performance-report` | Builds a marketing performance report — key metrics, trend analysis, wins/misses, prioritized recommendations — from period data. |
+`campaign-plan`, `competitive-brief`, and `performance-report` live in [`/plugin`](plugin) instead of flat here — they're packaged as an installable Claude Code / Cowork plugin (`.claude-plugin/plugin.json`, pre-configured `.mcp.json`, its own README) rather than standalone skills, since they compose with the account skills below rather than duplicating them. See [`plugin/README.md`](plugin/README.md) for installation and usage.
 
 ### Content Writing & Editing
 
