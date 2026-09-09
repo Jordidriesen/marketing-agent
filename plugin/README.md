@@ -1,6 +1,6 @@
 # Marketing Agent
 
-A marketing plugin built by [Jordi Driesen](https://github.com/Jordidriesen) for use with [Cowork](https://claude.com/product/cowork) and Claude Code — campaign planning, competitive messaging research, and performance reporting.
+A marketing plugin built by [Jordi Driesen](https://github.com/Jordidriesen) for use with [Cowork](https://claude.com/product/cowork) and Claude Code. It's a team of subagents, not a single skill: a director dispatches marketing requests to the right specialist (competitive intelligence, SEO/GEO, campaign strategy, content, social, email, paid media, reporting), sequencing multi-discipline campaigns in dependency order rather than running everything at once.
 
 **Scoped for this workspace.** Content drafting, brand review, email sequences, and SEO auditing are handled by dedicated account skills instead of duplicating them here:
 
@@ -25,7 +25,29 @@ Add this repository as a plugin source in Claude Code or Cowork, then install `m
 | `/competitive-brief` | Research competitor messaging and positioning and generate a comparison, content gap analysis, and sales battlecard |
 | `/performance-report` | Build a marketing performance report with key metrics, trends, and optimization recommendations |
 
+## Agents
+
+Talk to `marketing-director` for anything that spans more than one discipline; it decides which specialist(s) to run and in what order. For a single, clearly-scoped task, call the relevant specialist directly.
+
+Dispatch order for a full campaign: intelligence and research first, strategy second, execution third (these run in parallel against each other), reporting last.
+
+| Order | Agent | Role |
+|---|---|---|
+| — | [`marketing-director`](agents/marketing-director.md) | Entry point. Breaks a request down, delegates to the right specialist(s), assembles one result. |
+| 1 | [`competitive-intel-analyst`](agents/competitive-intel-analyst.md) | Positioning, competitor moves, market intelligence, ad teardown, PR outlet mapping. |
+| 1 | [`seo-geo-specialist`](agents/seo-geo-specialist.md) | Organic search and generative-engine (AI answer engine) visibility, treated as one discipline. |
+| 2 | [`campaign-strategist`](agents/campaign-strategist.md) | Turns a goal, plus the intelligence/research above, into a full campaign brief and channel plan. |
+| 3 | [`content-writer`](agents/content-writer.md) | Web and long-form content: pillar pages, clusters, landing pages, case studies, press releases. |
+| 3 | [`social-media-specialist`](agents/social-media-specialist.md) | Platform-native social posts. |
+| 3 | [`email-marketer`](agents/email-marketer.md) | Newsletters and lifecycle/automation sequences (HubSpot or Brevo). |
+| 3 | [`performance-marketer`](agents/performance-marketer.md) | Paid media, Google Ads end to end. |
+| 4 | [`performance-reporter`](agents/performance-reporter.md) | Cross-channel results reporting, once execution is live. |
+
+Not built yet: a creative/design specialist (Canva/Figma, creative best practice). No dedicated skill exists for this yet, so it's deliberately left out rather than half-built.
+
 ## Skills
+
+Each agent above delegates to these skills rather than duplicating their content; the skills can also be called directly.
 
 | Skill | Description |
 |---|---|

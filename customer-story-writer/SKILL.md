@@ -8,7 +8,7 @@ description: |
 
 You write B2B customer stories that put the customer in the hero role. The product is never the star — it's the tool the hero used to escape a bad situation. That reframe is the whole job.
 
-The framework below is based on two proven persuasion structures: BAB (Before-After-Bridge) as the spine, with PAS (Problem-Agitate-Solve) sharpening the "Before" so it feels like a real risk, not a mild inconvenience.
+The framework below opens with a Duarte Sparkline-style gap — the painful "what is" before the story moves toward "what could be" — and resolves into StoryBrand's guide/plan/success arc, with the customer as hero throughout. PAS (Problem-Agitate-Solve) sharpens the "what is" section specifically, so the gap feels like a real risk, not a mild inconvenience, before the story moves toward relief.
 
 ---
 
@@ -47,7 +47,7 @@ Before writing, scan the user's input for the following. Note what's present and
 **Nice to have:**
 - Secondary stakeholders who had to sign off (Finance, IT, HR)
 - Implementation anecdote or "aha moment"
-- What they're planning to do next
+- What they're planning to do next (if absent, the close still lands on a recap instead of a placeholder — see section 12)
 
 If you're missing required elements, ask for them before writing. If you're missing "strongly preferred" elements, flag them but proceed — mark placeholders with `[PLACEHOLDER: ...]` so the user knows what to fill in.
 
@@ -57,7 +57,7 @@ If you're missing required elements, ask for them before writing. If you're miss
 
 Build the story using this framework. Each section maps to a persuasion layer.
 
-### 1. Outcome-led headline
+### 1. Outcome-led headline — role: the win, stated upfront
 
 Lead with the win. If there's a number, it goes in the headline.
 
@@ -71,7 +71,7 @@ If there's no metric yet, write a directional headline and note the placeholder.
 
 ---
 
-### 2. Executive summary (inverted pyramid)
+### 2. Executive summary (inverted pyramid) — role: the whole story in miniature
 
 Write 3-5 tight sentences. Assume the reader is a busy VP skimming on a plane.
 
@@ -86,7 +86,7 @@ Template: *"[Customer] needed to [Job-to-be-Done]. [Old Way] was no longer an op
 
 ---
 
-### 3. Customer context
+### 3. Customer context — role: the relevance filter
 
 One focused paragraph. Describe the complexity of their environment in concrete terms — size, geography, regulatory exposure, team constraints. This is the relevance filter: a similar buyer should read this and think "that's us."
 
@@ -94,9 +94,9 @@ Avoid generic descriptors. "Large enterprise" is useless. "A 12-person security 
 
 ---
 
-### 4. Trigger and challenge (the status quo as villain)
+### 4. Trigger and challenge (the status quo as villain) — role: the gap Sparkline opens
 
-This is the Before in BAB. Don't make it a neutral backstory — make it feel like a risk that was building.
+This is the gap Sparkline opens — the painful "what is" before the story moves toward "what could be." Don't make it a neutral backstory — make it feel like a risk that was building.
 
 Cover:
 - What the "old way" actually looked like operationally (spreadsheets, manual processes, disconnected systems)
@@ -107,9 +107,11 @@ Cover:
 
 Avoid framing this as "they had challenges." The status quo is the villain. Name it.
 
+**Epiphany quote anchors here.** If source material includes a quote about the moment the old way felt untenable, place it in this section, close to where the trigger is described — not deferred to section 11. If no epiphany-type quote exists, insert the labelled placeholder here.
+
 ---
 
-### 5. Jobs-to-be-Done
+### 5. Jobs-to-be-Done — role: anchors the story to buyer intent
 
 One clear sentence using this structure:
 
@@ -119,7 +121,7 @@ This anchors the rest of the story to buyer intent, not feature lists.
 
 ---
 
-### 6. Decision and buying committee
+### 6. Decision and buying committee — role: how they justified it internally
 
 Cover:
 - Non-negotiable criteria (what they had to have)
@@ -130,9 +132,9 @@ Keep it short. This section reassures a reader who's thinking "how did they just
 
 ---
 
-### 7. Implementation: the bridge
+### 7. Implementation: the bridge — role: StoryBrand's plan, de-risking the change
 
-This is the Bridge in BAB — the path from problem to outcome. Keep it human and de-risk the change.
+This is StoryBrand's plan — the guide (Primion) hands the hero (the customer) a clear way forward. Keep it human and de-risk the change.
 
 Cover:
 - What Day 1 looked like
@@ -143,7 +145,7 @@ This section does psychological work. Buyers overestimate implementation pain. Y
 
 ---
 
-### 8. Capabilities by outcome (no feature-dumping)
+### 8. Capabilities by outcome (no feature-dumping) — role: proof, grouped by beneficiary
 
 Group capabilities by who benefits, not by product module. Three pillars:
 
@@ -155,7 +157,7 @@ Do not write "The robust and seamless platform enabled comprehensive workflows."
 
 ---
 
-### 9. Results
+### 9. Results — role: the evidence stack
 
 Stack the evidence in layers:
 1. The metric: "Reduced onboarding time by 60%"
@@ -164,19 +166,33 @@ Stack the evidence in layers:
 
 If you have multiple metrics, lead with the most tangible one (time, money, headcount) before moving to softer ones (satisfaction, confidence, visibility).
 
+**Transformation quote anchors here.** It's the third evidence layer above — place the transformation-type quote (how day-to-day work changed) directly in this section as the human proof point alongside the metric and context. If no transformation-type quote exists, insert the labelled placeholder here.
+
 ---
 
-### 10. Customer quotes
+### 10. Facts & figures (optional) — role: scope and scale, not outcomes
 
-Aim for three quote types. **Only write quotes when source material has been provided** — a call transcript, written customer response, or approved email. Do not draft representative or illustrative quotes.
+Use this when the customer's numbers describe deployment scope (doors, sites, employees covered, devices installed, sqm covered) rather than outcome metrics (time saved, cost reduced, incidents avoided). These are proof of complexity and scale, not proof of a result — don't present them as achievements.
 
-The three types to extract from real material:
+Format as a short bullet list, one fact per line, plain numbers with the unit attached. Keep it separate from Results (9): Results answers "did it work," Facts & figures answers "how big was this."
 
-- **The internal epiphany:** The moment the old way felt untenable
-- **The transformation:** How day-to-day work changed
-- **The partnership:** Trust, support, long-term relationship
+If the brief includes genuine outcome metrics, this section becomes optional — skip it, or keep it as a quick specs reference alongside the outcome-led Results section.
 
-If a quote type has no source material, insert a labelled placeholder and note what kind of conversation is most likely to surface it:
+---
+
+### 11. Quotes at a glance (optional) — role: a pull-quote reference block
+
+**Only write quotes when source material has been provided** — a call transcript, written customer response, or approved email. Do not draft representative or illustrative quotes.
+
+The three quote types, and where each one actually lives in the draft:
+
+- **The internal epiphany** (the moment the old way felt untenable) → anchored in section 4
+- **The transformation** (how day-to-day work changed) → anchored in section 9
+- **The partnership** (trust, support, long-term relationship) → anchored in section 12, the close
+
+This section is an optional reference block, not the only place quotes appear. Use it when the draft will feed into other formats that need quotes pulled together in one place (social captions, a sales one-pager, a pull-quote sidebar). If the story is being delivered as a single narrative piece, drop this section entirely — each quote already lives in its anchor section and repeating it here is redundant.
+
+If a quote type has no source material, insert the labelled placeholder in its anchor section (not just here):
 
 ```
 [QUOTE NEEDED — epiphany type. Best sourced from: discovery call transcript or CSM check-in.]
@@ -188,9 +204,16 @@ When you do have real quotes, you may lightly clean grammar or filler words if t
 
 ---
 
-### 11. What's next
+### 12. The close — role: forward motion or an earned recap, never a bare placeholder
 
-One short paragraph. What are they expanding to, building on, or planning? This signals the product is a platform and a foundation, not a one-time fix.
+Every story needs a real ending — this section always gets one, not a placeholder by default. There are two valid ways to close:
+
+- **Forward-looking (preferred when the brief has it):** one short paragraph on what the customer is expanding to, building on, or planning next. This signals the product is a platform and a foundation, not a one-time fix.
+- **Recap (a valid alternative when there's no next-steps information):** one short paragraph that looks back at what the story already proved — the scale delivered, the outcome achieved, the relationship built — landing on earned success instead of trailing off. This draws only on facts already established earlier in the draft, so it carries no fabrication risk.
+
+Use `[PLACEHOLDER: no expansion plan or closing detail was provided]` only if neither a genuine forward-looking line nor an honest recap can be written from the material you have. That should be rare — a recap only needs what the piece has already proven.
+
+**Partnership quote anchors here.** If source material includes a quote about trust, support, or the long-term relationship, place it in this closing section, reinforcing whichever closing style you used. If no partnership-type quote exists, insert the labelled placeholder here.
 
 ---
 
@@ -204,7 +227,18 @@ Apply these throughout the draft.
 
 **Lead with the After.** The win goes in the headline and the first paragraph. Don't make the reader earn it.
 
-**Write for scanners.** Subheadings should communicate the story on their own. Bad: "Results." Good: "From 40 hours of manual entry to 15 minutes of automation." A reader who only reads subheadings should understand the arc.
+**Write for scanners.** Every section gets its own specific, outcome-carrying subheading — short and catchy, headline-length, not paragraph-length. Never publish the generic framework name (Customer context, Results, Trigger and challenge, etc.) as the actual header; the numbered names in Phase 1 are structural roles, not headers to print. A reader who only reads subheadings should understand the arc. Generic label → actual header, by section:
+
+- Customer context → "A 26,000 m² Hub for 200 Branches"
+- Trigger and challenge → "No Legacy System, Just 14 Months to Launch"
+- Jobs-to-be-Done → "One Partner, Not Five Suppliers"
+- Decision and buying committee → "Integration, Speed and Proximity Won the Deal"
+- Implementation: the bridge → "Live Before the Doors Opened"
+- Capabilities by outcome → "What's Running Today"
+- Results → "From 40 Hours of Manual Entry to 15 Minutes" (outcome-led; this is where a real metric belongs)
+- Facts & figures → "The Deployment, By the Numbers" (scope-led; use this header here, not on Results, when there's no outcome metric)
+- The close, forward-looking → "What's Next for NORMA"
+- The close, recap → "The Deployment That Delivered"
 
 **Cross-functional appeal.** Every story needs one moment that speaks to the person holding the budget, not just the person using the product. If Finance or IT has no reason to care, the deal doesn't close.
 
@@ -227,6 +261,8 @@ Use BALANCED mode (not CLEAN) to preserve:
 
 After the clean pass, run the self-check:
 - [ ] Are all quotes sourced from real material provided by the user — no invented or illustrative quotes?
+- [ ] Do quotes sit in their anchor sections (epiphany in Trigger and challenge, transformation in Results, partnership in the close) rather than only clustered in Quotes at a glance?
+- [ ] Does the close end with real forward motion or an earned recap — not a bare `[PLACEHOLDER]` used as a default?
 - [ ] Are all metrics and problems sourced directly from the brief — nothing extrapolated or assumed?
 - [ ] Are all gaps marked with explicit `[PLACEHOLDER]` labels rather than filled with plausible-sounding content?
 - [ ] Is "solution" gone or used at most once?
@@ -242,8 +278,8 @@ After the clean pass, run the self-check:
 
 Deliver the story in this order:
 
-1. **Working headline** (with note if metric placeholder is needed)
-2. **Full draft** using the 11-section structure above, with clear section headers
+1. **Working headline** (with note if metric placeholder is needed) — short and catchy, not a full descriptive sentence
+2. **Full draft** using the 12-section structure above. Every section gets its own specific, outcome-carrying subheading, headline-length, never the generic framework name. Quotes sit in their anchor sections (epiphany in section 4, transformation in section 9, partnership in section 12); include Facts & figures (10) when the numbers are scope rather than outcome, and include Quotes at a glance (11) only if a standalone pull-quote block is useful for other formats. Section 12 always closes with forward motion or a recap, never a bare placeholder by default
 3. **Missing elements** — brief list of any `[PLACEHOLDER]` items and what would make each one stronger
 4. **AI content sweep summary** — brief list of patterns found and removed in the BALANCED clean pass
 
