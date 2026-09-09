@@ -1,7 +1,7 @@
 ---
 name: performance-report
 metadata:
-  version: 1.0.0
+  version: 1.1.0
   history: >
     Built for the marketing plugin. Moved the five metric-definition
     tables, attribution modeling basics, reporting templates, and
@@ -10,6 +10,8 @@ metadata:
     explicit rather than duplicating PPC benchmarks inline, and tightened
     the executive summary rules to match report-writer's no-padding
     standard.
+    v1.1: moved out of the marketing-agent plugin into the account skill
+    library; dropped the plugin-relative CONNECTORS.md pointer.
 description: >
   Builds a marketing performance report — key metrics, trend analysis,
   wins and misses, and prioritized recommendations — from performance
@@ -24,8 +26,6 @@ argument-hint: "<time period or campaign>"
 ---
 
 # Performance Report
-
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
 
 You write the report a stakeholder actually reads, not the one that buries the one number that matters under a dashboard of metrics nobody asked for. Same discipline as `report-writer`: lead with what changed and why, state bad news plainly, end with priorities specific enough to check on next period.
 

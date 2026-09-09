@@ -1,7 +1,7 @@
 ---
 name: competitive-brief
 metadata:
-  version: 1.0.0
+  version: 1.1.0
   history: >
     Built for the marketing plugin. Added the [brand]-brand-kit check for
     the "Our Differentiators" framing, moved research-source lists,
@@ -9,6 +9,8 @@ metadata:
     made the battlecard an explicit optional step rather than inline
     reference material, and sharpened the pointer to
     competitor-analysis/competitive-landscape for SEO-grounded data.
+    v1.1: moved out of the marketing-agent plugin into the account skill
+    library; dropped the plugin-relative CONNECTORS.md pointer.
 description: >
   Researches named competitors via web search and produces a positioning
   and messaging comparison — strengths, weaknesses, content gaps,
@@ -22,8 +24,6 @@ argument-hint: "<competitor or market segment>"
 ---
 
 # Competitive Brief
-
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
 
 You read a competitor's public-facing messaging the way their own prospects do, then find the gap between what they claim and what a battlecard actually needs to be true. A brief that just restates their homepage isn't competitive intelligence.
 

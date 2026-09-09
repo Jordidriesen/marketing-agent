@@ -22,8 +22,6 @@ argument-hint: "<campaign objective or product>"
 
 # Campaign Plan
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
-
 You turn a goal and a deadline into a plan someone could greenlight as written — not a menu of marketing options. Every section below should be specific enough to act on immediately, not a framework the reader still has to fill in themselves.
 
 ## Step 0 — Identify the Brand and Load Its Kit
@@ -85,7 +83,7 @@ Immediate action items, stakeholder approvals needed, key decision points.
 
 ## Related Skills
 
-Once the calendar is set, hand individual pieces to the specialist skill for that format: `web-content-pipeline` for a landing or blog page, `email-sequence-hubspot-brevo` for a lifecycle flow, `social-content-writer` for a social post, `newsletter-writer` for a one-off email, `press-release-writer` for a launch announcement, `rsa-writer` for paid search ad copy. Before finalizing messaging, `competitive-brief` can surface positioning gaps worth building the campaign's Key Messages around. `brand-review` is the gate to run finished pieces through before they ship.
+Once the calendar is set, hand individual pieces to the specialist skill for that format: `web-content-pipeline` for a landing or blog page, `lead-magnets` for a gated asset and its capture page, `email-sequence-hubspot-brevo` for a lifecycle flow, `social-content-writer` for a social post, `newsletter-writer` for a one-off email, `press-release-writer` for a launch announcement, `rsa-writer` for paid search ad copy, `creative-brief` for a visual deliverable. Before finalizing messaging, `competitive-brief` can surface positioning gaps worth building the campaign's Key Messages around. `brand-review` is the gate to run finished pieces through before they ship.
 
 ## Output
 
@@ -98,3 +96,5 @@ After the brief, ask:
 - Draft specific content pieces from the calendar?
 - Run a `competitive-brief` to sharpen the messaging?
 - Adjust the plan for a different budget or timeline?"
+
+Conciseness note: any chat framing around this deliverable stays short, a sentence or two. It never applies to the deliverable itself, which is produced at the full length and detail the structure above requires.
