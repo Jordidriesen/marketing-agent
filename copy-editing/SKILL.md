@@ -1,20 +1,38 @@
 ---
 name: copy-editing
-description: "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,' 'proofread,' 'polish this,' 'make this better,' 'copy sweep,' 'tighten this up,' 'this reads awkwardly,' 'clean up this text,' 'too wordy,' or 'sharpen the messaging.' Use this when the user already has copy and wants it improved rather than rewritten from scratch. For writing new copy, see copywriting."
+description: "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,' 'proofread,' 'polish this,' 'make this better,' 'copy sweep,' 'tighten this up,' 'this reads awkwardly,' 'clean up this text,' 'too wordy,' or 'sharpen the messaging.' Use this when the user already has copy and wants it improved rather than rewritten from scratch. For writing new copy from scratch, see web-content-pipeline (pages and posts), social-content-writer, newsletter-writer, or press-release-writer."
 metadata:
-  version: 1.1.0
+  version: 1.2.0
+  history: >
+    v1.2: stopped re-implementing persuasion principles and AI-tell word
+    lists inline — the Seven Sweeps process stays here (it's the
+    differentiator), but the "why" behind So What / Prove It / Heightened
+    Emotion / Zero Risk now points at content-references'
+    behavioral-psychology.md, and the lexical AI-tell cleanup defers to
+    ai-content-humanizing.md instead of a duplicated swap table. Replaced
+    the .agents/product-marketing-context.md lookup with the standard
+    [brand]-brand-kit Step 0. Fixed Related Skills to name skills that
+    exist.
 ---
 
 # Copy Editing
 
 You are an expert copy editor specializing in marketing and conversion copy. Your goal is to systematically improve existing copy through focused editing passes while preserving the core message.
 
+## Step 0 — Identify the brand and load context
+
+Same pattern as `web-content-pipeline`: determine which brand/client this copy is for and check for a matching `[brand]-brand-kit` skill. If found, load it — its voice rules and locked terminology govern the Voice and Tone sweep and every edit you propose. If none exists, ask for the voice target or work from the copy's own established register, and note a brand kit is worth building if this recurs.
+
+## What this skill owns, and what it defers
+
+This skill owns the **Seven Sweeps process** — the disciplined multi-pass edit with back-checking after each pass. It does not re-teach the underlying principles:
+
+- The persuasion logic behind the So What, Prove It, Heightened Emotion and Zero Risk sweeps lives in `content-references/references/behavioral-psychology.md` (Cialdini, loss aversion, fluency, Ehrenberg-Bass). Pull it in when a sweep needs the "why," rather than working from memory.
+- Lexical AI tells — buzzwords, filler intensifiers, copula avoidance, rule-of-three padding — are handled by `ai-content-humanizing.md` (via the `ai-content-cleaner` skill). Copy-editing's passes are **structural**; run the humanizing pass alongside or after for the word-level cleanup instead of duplicating a swap table here.
+
 ## Core Philosophy
 
-**Check for product marketing context first:**
-If `.agents/product-marketing-context.md` exists (or `.claude/product-marketing-context.md` in older setups), read it before editing. Use brand voice and customer language from that context to guide your edits.
-
-Good copy editing isn't about rewriting—it's about enhancing. Each pass focuses on one dimension, catching issues that get missed when you try to fix everything at once.
+Good copy editing isn't about rewriting — it's about enhancing. Each pass focuses on one dimension, catching issues that get missed when you try to fix everything at once.
 
 **Key principles:**
 - Don't change the core message; focus on enhancing it
@@ -32,52 +50,23 @@ Edit copy through seven sequential passes, each focusing on one dimension. After
 
 **Focus:** Can the reader understand what you're saying?
 
-**What to check:**
-- Confusing sentence structures
-- Unclear pronoun references
-- Jargon or insider language
-- Ambiguous statements
-- Missing context
+**Check for:** confusing sentence structures, unclear pronoun references, jargon or insider language, ambiguous statements, missing context. Common killers: sentences trying to say too much, abstract language instead of concrete, assuming reader knowledge they don't have, burying the point in qualifications.
 
-**Common clarity killers:**
-- Sentences trying to say too much
-- Abstract language instead of concrete
-- Assuming reader knowledge they don't have
-- Burying the point in qualifications
+**Process:** read through quickly and highlight unclear parts without correcting yet; then recommend specific edits; then verify edits maintain the original intent.
 
-**Process:**
-1. Read through quickly, highlighting unclear parts
-2. Don't correct yet—just note problem areas
-3. After marking issues, recommend specific edits
-4. Verify edits maintain the original intent
-
-**After this sweep:** Confirm the "Rule of One" (one main idea per section) and "You Rule" (copy speaks to the reader) are intact.
+**After this sweep:** confirm the "Rule of One" (one main idea per section) and "You Rule" (copy speaks to the reader) are intact.
 
 ---
 
 ### Sweep 2: Voice and Tone
 
-**Focus:** Is the copy consistent in how it sounds?
+**Focus:** Is the copy consistent in how it sounds — and does it match the loaded brand kit?
 
-**What to check:**
-- Shifts between formal and casual
-- Inconsistent brand personality
-- Mood changes that feel jarring
-- Word choices that don't match the brand
+**Check for:** shifts between formal and casual, inconsistent brand personality, jarring mood changes, word choices that don't match the brand. Common issues: starting casual then becoming corporate, mixing "we" and "the company," unintentional humor/serious swings, technical language appearing randomly.
 
-**Common voice issues:**
-- Starting casual, becoming corporate
-- Mixing "we" and "the company" references
-- Humor in some places, serious in others (unintentionally)
-- Technical language appearing randomly
+**Process:** read aloud to hear inconsistencies; mark where tone shifts unexpectedly; recommend edits that smooth transitions; ensure the personality (and any `[brand]-brand-kit` voice rules) holds throughout.
 
-**Process:**
-1. Read aloud to hear inconsistencies
-2. Mark where tone shifts unexpectedly
-3. Recommend edits that smooth transitions
-4. Ensure personality remains throughout
-
-**After this sweep:** Return to Clarity Sweep to ensure voice edits didn't introduce confusion.
+**After this sweep:** return to Clarity to ensure voice edits didn't introduce confusion.
 
 ---
 
@@ -85,32 +74,19 @@ Edit copy through seven sequential passes, each focusing on one dimension. After
 
 **Focus:** Does every claim answer "why should I care?"
 
-**What to check:**
-- Features without benefits
-- Claims without consequences
-- Statements that don't connect to reader's life
-- Missing "which means..." bridges
+**Check for:** features without benefits, claims without consequences, statements that don't connect to the reader's life, missing "which means..." bridges.
 
-**The So What test:**
-For every statement, ask "Okay, so what?" If the copy doesn't answer that question with a deeper benefit, it needs work.
+**The So What test:** for every statement, ask "Okay, so what?" If the copy doesn't answer with a deeper benefit, it needs work.
 
 ❌ "Our platform uses AI-powered analytics"
 *So what?*
-✅ "Our AI-powered analytics surface insights you'd miss manually—so you can make better decisions in half the time"
+✅ "Our AI-powered analytics surface insights you'd miss manually — so you can make better decisions in half the time"
 
-**Common So What failures:**
-- Feature lists without benefit connections
-- Impressive-sounding claims that don't land
-- Technical capabilities without outcomes
-- Company achievements that don't help the reader
+For the benefit-desire mapping (why a given benefit lands), see `content-references/references/behavioral-psychology.md`.
 
-**Process:**
-1. Read each claim and literally ask "so what?"
-2. Highlight claims missing the answer
-3. Add the benefit bridge or deeper meaning
-4. Ensure benefits connect to real reader desires
+**Process:** read each claim and literally ask "so what?"; highlight claims missing the answer; add the benefit bridge; ensure benefits connect to real reader desires.
 
-**After this sweep:** Return to Voice and Tone, then Clarity.
+**After this sweep:** return to Voice and Tone, then Clarity.
 
 ---
 
@@ -118,34 +94,17 @@ For every statement, ask "Okay, so what?" If the copy doesn't answer that questi
 
 **Focus:** Is every claim supported with evidence?
 
-**What to check:**
-- Unsubstantiated claims
-- Missing social proof
-- Assertions without backup
-- "Best" or "leading" without evidence
+**Check for:** unsubstantiated claims, missing social proof, assertions without backup, "best" or "leading" without evidence.
 
-**Types of proof to look for:**
-- Testimonials with names and specifics
-- Case study references
-- Statistics and data
-- Third-party validation
-- Guarantees and risk reversals
-- Customer logos
-- Review scores
+**Proof types:** testimonials with names and specifics, case study references, statistics and data, third-party validation, guarantees and risk reversals, customer logos, review scores.
 
-**Common proof gaps:**
-- "Trusted by thousands" (which thousands?)
-- "Industry-leading" (according to whom?)
-- "Customers love us" (show them saying it)
-- Results claims without specifics
+**Common gaps:** "Trusted by thousands" (which thousands?), "industry-leading" (according to whom?), "customers love us" (show them saying it), results claims without specifics.
 
-**Process:**
-1. Identify every claim that needs proof
-2. Check if proof exists nearby
-3. Flag unsupported assertions
-4. Recommend adding proof or softening claims
+The credibility mechanics behind why proof works — and which proof type fits which objection — are in `content-references/references/behavioral-psychology.md`. Unsubstantiated-claim risk overlaps with `brand-review`'s compliance screen; flag anything legally exposed for that skill.
 
-**After this sweep:** Return to So What, Voice and Tone, then Clarity.
+**Process:** identify every claim that needs proof; check if proof exists nearby; flag unsupported assertions; recommend adding proof or softening the claim.
+
+**After this sweep:** return to So What, Voice and Tone, then Clarity.
 
 ---
 
@@ -153,13 +112,7 @@ For every statement, ask "Okay, so what?" If the copy doesn't answer that questi
 
 **Focus:** Is the copy concrete enough to be compelling?
 
-**What to check:**
-- Vague language ("improve," "enhance," "optimize")
-- Generic statements that could apply to anyone
-- Round numbers that feel made up
-- Missing details that would make it real
-
-**Specificity upgrades:**
+**Check for:** vague language ("improve," "enhance," "optimize"), generic statements that could apply to anyone, round numbers that feel made up, missing details that would make it real.
 
 | Vague | Specific |
 |-------|----------|
@@ -169,19 +122,9 @@ For every statement, ask "Okay, so what?" If the copy doesn't answer that questi
 | Improve your workflow | Cut your reporting time in half |
 | Great support | Response within 2 hours |
 
-**Common specificity issues:**
-- Adjectives doing the work nouns should do
-- Benefits without quantification
-- Outcomes without timeframes
-- Claims without concrete examples
+**Process:** highlight vague words and phrases; ask "can this be more specific?"; add numbers, timeframes, or examples; remove content that can't be made specific — it's probably filler.
 
-**Process:**
-1. Highlight vague words and phrases
-2. Ask "Can this be more specific?"
-3. Add numbers, timeframes, or examples
-4. Remove content that can't be made specific (it's probably filler)
-
-**After this sweep:** Return to Prove It, So What, Voice and Tone, then Clarity.
+**After this sweep:** return to Prove It, So What, Voice and Tone, then Clarity.
 
 ---
 
@@ -189,34 +132,15 @@ For every statement, ask "Okay, so what?" If the copy doesn't answer that questi
 
 **Focus:** Does the copy make the reader feel something?
 
-**What to check:**
-- Flat, informational language
-- Missing emotional triggers
-- Pain points mentioned but not felt
-- Aspirations stated but not evoked
+**Check for:** flat informational language, missing emotional triggers, pain points mentioned but not felt, aspirations stated but not evoked.
 
-**Emotional dimensions to consider:**
-- Pain of the current state
-- Frustration with alternatives
-- Fear of missing out
-- Desire for transformation
-- Pride in making smart choices
-- Relief from solving the problem
+**Emotional dimensions:** pain of the current state, frustration with alternatives, fear of missing out, desire for transformation, pride in a smart choice, relief from solving the problem.
 
-**Techniques for heightening emotion:**
-- Paint the "before" state vividly
-- Use sensory language
-- Tell micro-stories
-- Reference shared experiences
-- Ask questions that prompt reflection
+**Techniques:** paint the "before" state vividly, use sensory language, tell micro-stories, reference shared experiences, ask questions that prompt reflection. The research on why these move people (and where emotion tips into manipulation) is in `content-references/references/behavioral-psychology.md`.
 
-**Process:**
-1. Read for emotional impact—does it move you?
-2. Identify flat sections that should resonate
-3. Add emotional texture while staying authentic
-4. Ensure emotion serves the message (not manipulation)
+**Process:** read for emotional impact — does it move you?; identify flat sections that should resonate; add emotional texture while staying authentic; ensure emotion serves the message.
 
-**After this sweep:** Return to Specificity, Prove It, So What, Voice and Tone, then Clarity.
+**After this sweep:** return to Specificity, Prove It, So What, Voice and Tone, then Clarity.
 
 ---
 
@@ -224,81 +148,32 @@ For every statement, ask "Okay, so what?" If the copy doesn't answer that questi
 
 **Focus:** Have we removed every barrier to action?
 
-**What to check:**
-- Friction near CTAs
-- Unanswered objections
-- Missing trust signals
-- Unclear next steps
-- Hidden costs or surprises
+**Check for:** friction near CTAs, unanswered objections, missing trust signals, unclear next steps, hidden costs or surprises.
 
-**Risk reducers to look for:**
-- Money-back guarantees
-- Free trials
-- "No credit card required"
-- "Cancel anytime"
-- Social proof near CTA
-- Clear expectations of what happens next
-- Privacy assurances
+**Risk reducers:** money-back guarantees, free trials, "no credit card required," "cancel anytime," social proof near the CTA, clear expectations of what happens next, privacy assurances. Reactance-reduction and the psychology of the ask are covered in `content-references/references/behavioral-psychology.md`.
 
-**Common risk issues:**
-- CTA asks for commitment without earning trust
-- Objections raised but not addressed
-- Fine print that creates doubt
-- Vague "Contact us" instead of clear next step
+**Process:** focus on sections near CTAs; list every reason someone might hesitate; check if the copy addresses each concern; add risk reversals or trust signals as needed.
 
-**Process:**
-1. Focus on sections near CTAs
-2. List every reason someone might hesitate
-3. Check if the copy addresses each concern
-4. Add risk reversals or trust signals as needed
-
-**After this sweep:** Return through all previous sweeps one final time: Heightened Emotion, Specificity, Prove It, So What, Voice and Tone, Clarity.
+**After this sweep:** return through all previous sweeps one final time.
 
 ---
 
-## Quick-Pass Editing Checks
+## Structural Quick-Pass Checks
 
-Use these for faster reviews when a full seven-sweep process isn't needed.
+Use these for faster reviews when a full seven-sweep process isn't needed. **Lexical cleanup — weak intensifiers, buzzwords, filler, "utilize → use" — is not here on purpose; run `ai-content-cleaner` for that.** These are the structural checks copy-editing owns:
 
-### Word-Level Checks
-
-**Cut these words:**
-- Very, really, extremely, incredibly (weak intensifiers)
-- Just, actually, basically (filler)
-- In order to (use "to")
-- That (often unnecessary)
-- Things, stuff (vague)
-
-**Replace these:**
-
-| Weak | Strong |
-|------|--------|
-| Utilize | Use |
-| Implement | Set up |
-| Leverage | Use |
-| Facilitate | Help |
-| Innovative | New |
-| Robust | Strong |
-| Seamless | Smooth |
-| Cutting-edge | New/Modern |
-
-**Watch for:**
-- Adverbs (usually unnecessary)
-- Passive voice (switch to active)
-- Nominalizations (verb → noun: "make a decision" → "decide")
-
-### Sentence-Level Checks
-
+### Sentence-Level
 - One idea per sentence
 - Vary sentence length (mix short and long)
 - Front-load important information
 - Max 3 conjunctions per sentence
-- No more than 25 words (usually)
+- No more than ~25 words, usually
+- Passive → active where it tightens
+- Nominalizations back to verbs ("make a decision" → "decide")
 
-### Paragraph-Level Checks
-
+### Paragraph-Level
 - One topic per paragraph
-- Short paragraphs (2-4 sentences for web)
+- Short paragraphs (2–4 sentences for web)
 - Strong opening sentences
 - Logical flow between paragraphs
 - White space for scannability
@@ -311,6 +186,7 @@ Use these for faster reviews when a full seven-sweep process isn't needed.
 - [ ] Understand the goal of this copy
 - [ ] Know the target audience
 - [ ] Identify the desired action
+- [ ] Loaded the `[brand]-brand-kit` if one exists
 - [ ] Read through once without editing
 
 ### Clarity (Sweep 1)
@@ -321,7 +197,7 @@ Use these for faster reviews when a full seven-sweep process isn't needed.
 
 ### Voice & Tone (Sweep 2)
 - [ ] Consistent formality level throughout
-- [ ] Brand personality maintained
+- [ ] Brand personality / brand-kit voice maintained
 - [ ] No jarring shifts in mood
 - [ ] Reads well aloud
 
@@ -336,6 +212,7 @@ Use these for faster reviews when a full seven-sweep process isn't needed.
 - [ ] Social proof is specific and attributed
 - [ ] Numbers and stats have sources
 - [ ] No unearned superlatives
+- [ ] Legally exposed claims flagged for `brand-review`
 
 ### Specificity (Sweep 5)
 - [ ] Vague words replaced with concrete ones
@@ -360,62 +237,40 @@ Use these for faster reviews when a full seven-sweep process isn't needed.
 - [ ] Consistent formatting
 - [ ] Links work (if applicable)
 - [ ] Core message preserved through all edits
+- [ ] `ai-content-cleaner` run for lexical AI tells
 
 ---
 
 ## Common Copy Problems & Fixes
 
-### Problem: Wall of Features
-**Symptom:** List of what the product does without why it matters
-**Fix:** Add "which means..." after each feature to bridge to benefits
-
-### Problem: Corporate Speak
-**Symptom:** "Leverage synergies to optimize outcomes"
-**Fix:** Ask "How would a human say this?" and use those words
-
-### Problem: Weak Opening
-**Symptom:** Starting with company history or vague statements
-**Fix:** Lead with the reader's problem or desired outcome
-
-### Problem: Buried CTA
-**Symptom:** The ask comes after too much buildup, or isn't clear
-**Fix:** Make the CTA obvious, early, and repeated
-
-### Problem: No Proof
-**Symptom:** "Customers love us" with no evidence
-**Fix:** Add specific testimonials, numbers, or case references
-
-### Problem: Generic Claims
-**Symptom:** "We help businesses grow"
-**Fix:** Specify who, how, and by how much
-
-### Problem: Mixed Audiences
-**Symptom:** Copy tries to speak to everyone, resonates with no one
-**Fix:** Pick one audience and write directly to them
-
-### Problem: Feature Overload
-**Symptom:** Listing every capability, overwhelming the reader
-**Fix:** Focus on 3-5 key benefits that matter most to the audience
+| Problem | Symptom | Fix |
+|---|---|---|
+| Wall of features | What the product does, no why | Add "which means..." after each feature |
+| Corporate speak | "Leverage synergies to optimize outcomes" | "How would a human say this?" — use those words |
+| Weak opening | Starts with company history or vague statements | Lead with the reader's problem or desired outcome |
+| Buried CTA | The ask comes after too much buildup, or isn't clear | Make the CTA obvious, early, and repeated |
+| No proof | "Customers love us" with no evidence | Add specific testimonials, numbers, or case references |
+| Generic claims | "We help businesses grow" | Specify who, how, and by how much |
+| Mixed audiences | Speaks to everyone, resonates with no one | Pick one audience and write directly to them |
+| Feature overload | Lists every capability, overwhelms the reader | Focus on 3–5 key benefits that matter most |
 
 ---
 
 ## Working with Copy Sweeps
 
-When editing collaboratively:
-
-1. **Run a sweep and present findings** - Show what you found, why it's an issue
-2. **Recommend specific edits** - Don't just identify problems; propose solutions
-3. **Request the updated copy** - Let the author make final decisions
-4. **Verify previous sweeps** - After each round of edits, re-check earlier sweeps
-5. **Repeat until clean** - Continue until a full sweep finds no new issues
-
-This iterative process ensures each edit doesn't create new problems while respecting the author's ownership of the copy.
+When editing collaboratively: run a sweep and present findings (what you found, why it's an issue); recommend specific edits, not just problems; request the updated copy so the author makes final decisions; re-check earlier sweeps after each round; repeat until a full sweep finds no new issues.
 
 ---
 
-## References
+## Related Skills
 
-- [Plain English Alternatives](references/plain-english-alternatives.md): Replace complex words with simpler alternatives
+| Task | Skill |
+|---|---|
+| Writing new page or post copy from scratch | `web-content-pipeline` |
+| Writing new social / email / press copy from scratch | `social-content-writer` / `newsletter-writer` / `press-release-writer` |
+| Removing lexical AI tells (buzzwords, filler, copula avoidance) | `ai-content-cleaner` |
+| The persuasion principles behind the sweeps | `content-references/references/behavioral-psychology.md` |
+| Brand voice + compliance gate before publishing | `brand-review` |
 
 ---
 
@@ -426,22 +281,6 @@ This iterative process ensures each edit doesn't create new problems while respe
 3. Are there specific concerns or known issues?
 4. What proof/evidence do you have available?
 
----
+## References
 
-## Related Skills
-
-- **copywriting**: For writing new copy from scratch (use this skill to edit after your first draft is complete)
-- **page-cro**: For broader page optimization beyond copy
-- **marketing-psychology**: For understanding why certain edits improve conversion
-- **ab-test-setup**: For testing copy variations
-
----
-
-## When to Use Each Skill
-
-| Task | Skill to Use |
-|------|--------------|
-| Writing new page copy from scratch | copywriting |
-| Reviewing and improving existing copy | copy-editing (this skill) |
-| Editing copy you just wrote | copy-editing (this skill) |
-| Structural or strategic page changes | page-cro |
+- [Plain English Alternatives](references/plain-english-alternatives.md): simpler words for complex ones — a quick lookup; the fuller lexical pass is `ai-content-cleaner`.

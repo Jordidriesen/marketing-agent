@@ -1,14 +1,23 @@
 ---
 name: customer-story-writer
 description: |
-  Write, structure, or draft B2B customer stories and case studies using a proven persuasion framework. Use when asked to write a case study, customer success story, customer reference, win story, or any narrative-led piece showing how a customer achieved results with a product. Also use when asked to "turn this brief into a case study," "write this up as a customer story," "we need a case study for [customer]," or "help me structure a win story." Use this skill even for partial briefs — if the user has some customer data and wants a story out of it, start here. After drafting, the final copy pass integrates the ai-content-cleaner (BALANCED mode) to strip AI tells while preserving intentional SEO/AEO structure.
+  Write, structure, or draft B2B customer stories and case studies using a proven persuasion framework. Use when asked to write a case study, customer success story, customer reference, win story, or any narrative-led piece showing how a customer achieved results with a product. Also use when asked to "turn this brief into a case study," "write this up as a customer story," "we need a case study for [customer]," or "help me structure a win story." Use this skill even for partial briefs — if the user has some customer data and wants a story out of it, start here. After drafting, the final copy pass runs content-references' ai-content-humanizing pass (BALANCED mode) to strip AI tells while preserving intentional SEO/AEO structure.
+metadata:
+  version: 1.1.0
+  history: >
+    v1.1: stopped re-explaining Sparkline / StoryBrand / PAS / Duarte
+    inline — the fixed 12-section structure and its framework-to-section
+    mapping stay, but the framework definitions now cite
+    content-references/references/communication-frameworks.md. The Phase 3
+    clean pass points at ai-content-humanizing.md (the ai-content-cleaner
+    skill is the same rules, directly invocable).
 ---
 
 # Customer Story Writer
 
 You write B2B customer stories that put the customer in the hero role. The product is never the star — it's the tool the hero used to escape a bad situation. That reframe is the whole job.
 
-The framework below opens with a Duarte Sparkline-style gap — the painful "what is" before the story moves toward "what could be" — and resolves into StoryBrand's guide/plan/success arc, with the customer as hero throughout. PAS (Problem-Agitate-Solve) sharpens the "what is" section specifically, so the gap feels like a real risk, not a mild inconvenience, before the story moves toward relief.
+The framework below is a **fixed structure**. It opens with a Duarte Sparkline-style gap — the painful "what is" before "what could be" — resolves into StoryBrand's guide/plan/success arc with the customer as hero throughout, and uses PAS (Problem-Agitate-Solve) to sharpen the "what is" so the gap reads as a real risk, not a mild inconvenience. Those frameworks are defined once in `content-references/references/communication-frameworks.md`; this skill does not re-explain them — it pins where each one maps in the 12 sections below.
 
 ---
 
@@ -55,7 +64,7 @@ If you're missing required elements, ask for them before writing. If you're miss
 
 ## Phase 1 — Story structure
 
-Build the story using this framework. Each section maps to a persuasion layer.
+Build the story using this framework. Each section maps to a persuasion layer; the layer names (Sparkline gap, StoryBrand plan, PAS agitation) refer to `communication-frameworks.md` — read it there if you need the mechanics.
 
 ### 1. Outcome-led headline — role: the win, stated upfront
 
@@ -94,9 +103,9 @@ Avoid generic descriptors. "Large enterprise" is useless. "A 12-person security 
 
 ---
 
-### 4. Trigger and challenge (the status quo as villain) — role: the gap Sparkline opens
+### 4. Trigger and challenge (the status quo as villain) — role: the Sparkline gap; PAS agitation
 
-This is the gap Sparkline opens — the painful "what is" before the story moves toward "what could be." Don't make it a neutral backstory — make it feel like a risk that was building.
+This is the gap Sparkline opens — the painful "what is" before the story moves toward "what could be." Don't make it a neutral backstory — make it feel like a risk that was building. PAS is the lens for this section specifically: problem, then agitation, then (later) solution.
 
 Cover:
 - What the "old way" actually looked like operationally (spreadsheets, manual processes, disconnected systems)
@@ -134,7 +143,7 @@ Keep it short. This section reassures a reader who's thinking "how did they just
 
 ### 7. Implementation: the bridge — role: StoryBrand's plan, de-risking the change
 
-This is StoryBrand's plan — the guide (Primion) hands the hero (the customer) a clear way forward. Keep it human and de-risk the change.
+This is StoryBrand's plan — the guide (the vendor) hands the hero (the customer) a clear way forward. Keep it human and de-risk the change.
 
 Cover:
 - What Day 1 looked like
@@ -246,15 +255,15 @@ Apply these throughout the draft.
 
 ## Phase 3 — AI content clean pass
 
-After drafting, run a BALANCED mode pass using the `ai-content-cleaner` skill.
+After drafting, run the humanizing pass from `content-references/references/ai-content-humanizing.md` in **BALANCED** mode. (The `ai-content-cleaner` skill is the directly-invocable form of the same rules — either route works.)
 
 Customer stories are especially prone to:
-- Tier 1: em dashes, collaborative scaffolding, copula avoidance ("serves as a testament to")
-- Tier 2: "robust," "seamless," "transformative," "leverage," "streamline," "cutting-edge"
-- Tier 3: significance inflation ("marking a pivotal moment in their journey"), promotional language, rule-of-three filler
-- Tier 4: "In today's fast-paced business environment," "Furthermore," "It is worth noting that"
+- em dashes, collaborative scaffolding, copula avoidance ("serves as a testament to")
+- "robust," "seamless," "transformative," "leverage," "streamline," "cutting-edge"
+- significance inflation ("marking a pivotal moment in their journey"), promotional language, rule-of-three filler
+- "In today's fast-paced business environment," "Furthermore," "It is worth noting that"
 
-Use BALANCED mode (not CLEAN) to preserve:
+Use BALANCED (not CLEAN) to preserve:
 - Intentional AEO structures like bolded inline headers (Pillar 1/2/3, decision criteria)
 - Deliberate FAQ or structured data patterns for SEO
 - Heading capitalisation choices that match brand standards

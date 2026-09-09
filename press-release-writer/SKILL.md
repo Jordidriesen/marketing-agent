@@ -1,6 +1,14 @@
 ---
 name: press-release-writer
 description: "Draft a press release — headline, dateline, lead paragraph, body, quotes, boilerplate, and media contact — following standard PR conventions and AP-style formatting. Use for \"write a press release,\" \"PR announcement,\" \"launch announcement,\" \"funding announcement,\" or \"partnership announcement.\" For finding outlets to pitch it to, see media-mapping."
+metadata:
+  version: 1.1.0
+  history: >
+    v1.1: wired into content-references — Step 3 cites
+    communication-frameworks.md for the inverted-pyramid / BLUF structure
+    instead of leaving it implicit, and a Step 5 humanizing pass
+    (ai-content-humanizing.md, CLEAN) was added; previously the skill only
+    ran copy-editing and never a humanizing pass.
 ---
 
 # Press Release Writer
@@ -26,6 +34,8 @@ Same pattern as `web-content-pipeline`: determine the brand/client, check for a 
 
 ## Step 3 — Write to Structure
 
+The press release is a fixed structure built on the **inverted pyramid** — most newsworthy fact first, detail in descending order of importance. That's BLUF / Minto applied to news; see `content-references/references/communication-frameworks.md` for the mechanics. Don't re-sequence it for narrative effect.
+
 - **Headline** — factual, newsworthy, under ~80 characters
 - **Subheadline** — optional, adds context
 - **Dateline** — city, state/region, date
@@ -39,6 +49,10 @@ Newsworthy, not promotional: state facts, avoid superlatives without evidence (m
 ## Step 4 — Copy Edit
 
 Run `copy-editing` (Seven Sweeps), focused on Clarity and Prove It — press releases lean on evidence, not persuasion technique. Skip the Heightened Emotion sweep; press releases stay factual.
+
+## Step 5 — Humanize
+
+Run the humanizing pass from `content-references/references/ai-content-humanizing.md` in **CLEAN** mode (a press release has no SEO structure worth protecting in BALANCED). This is the pass that strips the promotional-language and significance-inflation tells that a press release should not carry anyway — "marking a pivotal moment," "is poised to," rule-of-three filler. It loads the right language file itself if the release isn't in English.
 
 ## Output
 
@@ -54,4 +68,5 @@ Ask: "Would you like help identifying outlets to pitch this to?" (Hand off to `m
 - `[brand]-brand-kit` — loaded in Step 1
 - `media-mapping` — identifies outlets to pitch the release to
 - `copy-editing` — Step 4
+- `content-references` (`communication-frameworks.md`, `ai-content-humanizing.md`) — Steps 3 and 5
 - `content-creation` — the gateway skill; routes here when the content type is a press release

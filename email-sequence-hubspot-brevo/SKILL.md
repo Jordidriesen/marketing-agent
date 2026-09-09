@@ -1,6 +1,16 @@
 ---
 name: email-sequence-hubspot-brevo
 description: Design and draft multi-email sequences (onboarding, lead nurture, re-engagement, win-back, product launch) built specifically for HubSpot Workflows or Brevo Automation, including full copy, timing, branching logic, exit conditions, and a platform-specific build checklist in the tool's actual menu/step names. Opens by asking which platform to build for. Use whenever building an email sequence, drip campaign, nurture flow, or automation for HubSpot or Brevo, or when the user says "email sequence," "workflow," "automation," "drip campaign," or names either platform.
+metadata:
+  version: 1.1.0
+  history: >
+    v1.1: wired into content-references. The sequence arc (Step 1) and the
+    per-email body copy (Step 2) now cite communication-frameworks.md and
+    behavioral-psychology.md instead of leaving structure implicit, and a
+    per-email humanizing pass (ai-content-humanizing.md) was added. Brand
+    voice now checks for a [brand]-brand-kit skill. Platform build guides
+    and benchmark tables are unchanged — those are platform-specific and
+    stay here.
 ---
 
 # Email Sequence Builder — HubSpot & Brevo
@@ -36,13 +46,13 @@ Gather the following. If not provided, ask before proceeding:
 3. **Audience** — who receives it, what stage, any segmentation detail (role, industry, behaviour trigger, lifecycle stage).
 4. **Number of emails** (optional) — otherwise recommend a count from the templates below.
 5. **Timing/cadence** (optional) — e.g. "every 3 days," "weekly," "aggressive first week then taper."
-6. **Brand voice** — apply automatically if configured locally; otherwise ask, or default to clear, conversational, professional.
+6. **Brand voice** — check for a `[brand]-brand-kit` skill and load it if one exists (same pattern as `web-content-pipeline`); otherwise apply local config, ask, or default to clear, conversational, professional.
 7. **Additional context** (optional) — offers/discounts, CTAs or landing pages, existing content assets, features to highlight, competitor angles.
 
 ## Process
 
 ### 1. Sequence Strategy
-- **Narrative arc** — the story across all emails, emotional/logical progression start to finish.
+- **Narrative arc** — the story across all emails. Build it on a deliberate framework, not a vibe: a nurture arc is Sparkline stretched across emails (widen the "what is" / "what could be" gap, then close it), a launch sequence is escalating PAS, an onboarding series is a guided plan (StoryBrand). Definitions in `content-references/references/communication-frameworks.md`.
 - **Journey mapping** — map each email to a buyer/user journey stage (awareness, consideration, decision, activation, expansion).
 - **Escalation logic** — how urgency/value builds email to email.
 - **Success definition** — the specific action that means the sequence has done its job and the contact should exit.
@@ -54,7 +64,7 @@ For each email, produce:
 - **Subject line** — 2-3 options, varying curiosity/benefit/urgency/personalisation/question angles, under 50 characters where possible.
 - **Preview text** — 40-90 characters, complements rather than repeats the subject.
 - **Purpose** — one sentence on why this email exists.
-- **Body copy** — full draft, hook/body/CTA structure, short paragraphs, scannable, personalisation tokens where relevant.
+- **Body copy** — full draft, hook/body/CTA structure, short paragraphs, scannable, personalisation tokens where relevant. Structure each email to its role in the Step 1 arc; pull the persuasion principles (proof placement, reciprocity, reactance reduction, fluency) from `content-references/references/behavioral-psychology.md` rather than working from memory.
 - **Primary CTA** — button text and destination; one primary CTA, secondary only if the stage warrants it.
 - **Timing** — days after trigger or previous email; note any engagement-based adjustment.
 - **Segment/condition notes** — who gets it, who skips it, and why.
@@ -76,6 +86,10 @@ For each email, produce:
 | Unsubscribe rate | <0.5% | <0.5% | 1-2% | 1-3% |
 
 Adjust for industry/audience if context is available.
+
+### 5. Copy Pass
+
+Run each drafted email through the humanizing pass — `ai-content-cleaner`, or equivalently `content-references/references/ai-content-humanizing.md` — in CLEAN mode (sequence emails rarely carry SEO structure worth preserving). It loads the right language file itself if the sequence isn't in English.
 
 ## Sequence Type Templates
 
