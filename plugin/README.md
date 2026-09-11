@@ -14,15 +14,20 @@ A marketing plugin built by [Jordi Driesen](https://github.com/Jordidriesen) for
 | Lifecycle email sequences | `email-sequence-hubspot-brevo` (account skill) |
 | SEO research and auditing | `content-research-orchestrator` (keyword research, clustering, competitive landscape, competitor analysis, content gap mapping) plus the account's own technical `seo-audit` skill |
 | Creative direction and asset production | `creative-brief` → `frontend-design` (coded UI) / `canva-workflow` / `figma-weavy-workflow` (account skills) |
-| Translating finished content into a target market | `content-translate` (account skill) |
+| Translating finished content into a target market | `localization-specialist` (agent) → `content-translate` (account skill) |
 
 Each account skill opens with a Step 0 that identifies the brand and loads its `[brand]-brand-kit` skill automatically, when one exists, so output comes out in the right voice without being told each time.
 
 ## Installation
 
-Add this repository as a plugin source in Claude Code or Cowork, then install `marketing-agent` from it. (Exact steps depend on your Claude Code version — see the [plugin documentation](https://docs.claude.com) for the current marketplace/plugin-source syntax.)
+```
+claude plugin marketplace add Jordidriesen/marketing-agent
+/plugin install marketing-agent@marketing-agent
+```
 
-The plugin's agents call account skills such as `campaign-plan`, `competitive-brief`, `performance-report`, `content-creation`, `brand-review`, and `content-translate` by name. Those skills need to be available in the same environment for the agents to work as intended.
+`Jordidriesen/marketing-agent` is a marketplace ([`.claude-plugin/marketplace.json`](../.claude-plugin/marketplace.json) at the repo root) offering this one plugin, sourced from `/plugin` in the same repo. Update later with `claude plugin marketplace update marketing-agent` — no need to re-add.
+
+The plugin's agents call account skills such as `campaign-plan`, `competitive-brief`, `performance-report`, `content-creation`, `brand-review`, and `content-translate` by name. Those skills live flat in the repo root (see [the main README](../README.md#installation)) and need to be available in the same environment for the agents to work as intended.
 
 ## Agents
 

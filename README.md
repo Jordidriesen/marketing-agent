@@ -6,16 +6,27 @@ Each folder is a self-contained skill (`SKILL.md` + optional `references/` and `
 
 > **Not included:** brand-specific `[brand]-brand-kit` skills (tone-of-voice, locked terminology, visual guidelines for specific clients) have been kept private, since they encode confidential client and personal brand detail. A couple of skills below reference an `acme-brand-kit` as a stand-in — build your own following the same `[brand]-brand-kit` naming pattern if you want that layer.
 
-> **Attribution:** `campaign-plan`, `competitive-brief`, and `performance-report` (in [`/plugin`](plugin)) were built specifically for the marketing plugin. `brand-review`, `content-creation`, `newsletter-writer`, `press-release-writer`, and `social-content-writer` started from Anthropic's built-in "marketing" plugin and were substantially reworked with brand-kit integration and cross-skill routing. `european-market-intelligence` is a Europeanized merge of two ID8Labs skills (`market-research-analyst` + `competitive-intelligence`) — see its `SKILL.md` frontmatter — with independently written content throughout beyond the shared use of standard, unprotectable business frameworks (TAM/SAM/SOM, SWOT, Porter's Five Forces). `content-translate` is adapted from an unnamed third-party blog-translate/localize module — see its `metadata.history` for the specific changes made. Skills that were pulled in unmodified (`docx`, `pdf`, `pptx`, `xlsx`, `skill-creator`, `import-memory`) were left out, since republishing an unedited copy of Anthropic's own built-ins adds nothing here.
+> **Attribution:** `campaign-plan`, `competitive-brief`, and `performance-report` were built specifically for the marketing plugin (they shipped inside [`/plugin`](plugin) through v1.5.x; as of v1.6.0 the plugin delegates to them as ordinary account skills instead of bundling them). `brand-review`, `content-creation`, `newsletter-writer`, `press-release-writer`, and `social-content-writer` started from Anthropic's built-in "marketing" plugin and were substantially reworked with brand-kit integration and cross-skill routing. `european-market-intelligence` is a Europeanized merge of two ID8Labs skills (`market-research-analyst` + `competitive-intelligence`) — see its `SKILL.md` frontmatter — with independently written content throughout beyond the shared use of standard, unprotectable business frameworks (TAM/SAM/SOM, SWOT, Porter's Five Forces). `content-translate` is adapted from an unnamed third-party blog-translate/localize module — see its `metadata.history` for the specific changes made. `frontend-design` synthesises two public references — Anthropic's `frontend-design` skill (design philosophy, two-pass plan/critique method) and vercel-labs' `web-interface-guidelines` (interface rule set, MIT) — wired to the `[brand]-brand-kit` pattern; see its `metadata.history`. Skills that were pulled in unmodified (`docx`, `pdf`, `pptx`, `xlsx`, `skill-creator`, `import-memory`) were left out, since republishing an unedited copy of Anthropic's own built-ins adds nothing here.
 
 ## Installation
+
+### The plugin (agents)
+
+```
+claude plugin marketplace add Jordidriesen/marketing-agent
+/plugin install marketing-agent@marketing-agent
+```
+
+This installs the agent team in [`/plugin`](plugin) — `marketing-director` and its specialists. Update later with `claude plugin marketplace update marketing-agent`; no need to re-add. See [`plugin/README.md`](plugin/README.md) for what each agent does and which skills it expects to find installed.
+
+### Individual skills
 
 ```bash
 git clone https://github.com/Jordidriesen/marketing-agent.git
 cp -r <repo-name>/<skill-name> ~/.claude/skills/
 ```
 
-Or upload an individual skill's folder as a zip through the Claude.ai / Claude API skills interface.
+Or upload an individual skill's folder as a zip through the Claude.ai / Claude API skills interface. The plugin's agents call these skills by name — install the ones a given agent needs (or the whole repo) alongside it.
 
 ## Skills
 
@@ -61,9 +72,23 @@ Or upload an individual skill's folder as a zip through the Claude.ai / Claude A
 | `seo-audit` | Complete SEO audit for a webpage or website. |
 | `seo-keyword-research` | Keyword discovery step of the research pipeline, standalone. |
 
-### Marketing Plugin
+### Strategy & Reporting
 
-`campaign-plan`, `competitive-brief`, and `performance-report` live in [`/plugin`](plugin) instead of flat here — they're packaged as an installable Claude Code / Cowork plugin (`.claude-plugin/plugin.json`, pre-configured `.mcp.json`, its own README) rather than standalone skills, since they compose with the account skills below rather than duplicating them. See [`plugin/README.md`](plugin/README.md) for installation and usage.
+| Skill | What it does |
+|---|---|
+| `campaign-plan` | Generates a full campaign brief — objectives, audience, key messages, channels, calendar, budget, metrics — from a goal and a timeline. |
+| `competitive-brief` | Researches named competitors' messaging and positioning and produces a comparison, content-gap analysis, and optional battlecard. |
+| `performance-report` | Builds a cross-channel marketing performance report — key metrics, trends, wins/misses, prioritized recommendations. |
+
+### The Marketing Plugin
+
+[`/plugin`](plugin) packages `marketing-director` and ten specialist subagents into an installable Claude Code / Cowork plugin (`.claude-plugin/plugin.json`, pre-configured `.mcp.json`, its own README) that dispatches requests across the skills in this repo rather than duplicating them. Install via the [marketplace](#installation) or read [`plugin/README.md`](plugin/README.md) for what each agent does.
+
+### Design
+
+| Skill | What it does |
+|---|---|
+| `frontend-design` | Designs or reviews front-end UI — pages, components, design systems — in a specific brand's visual identity; loads `[brand]-brand-kit` for tokens. |
 
 ### Content Writing & Editing
 
