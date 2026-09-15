@@ -1,133 +1,191 @@
 ---
 name: brand-kit-template
-description: Starting-point template for building a new [brand]-brand-kit skill. Not usable as-is — every bracketed section needs a real brand's content before this becomes a working brand kit. Use when setting up voice/tone guidance for a new client or project, not when writing content itself.
+description: >
+  This is a TEMPLATE, not a usable skill. Copy this file to [client-slug]-brand-kit/SKILL.md,
+  replace every [PLACEHOLDER] with the real client's brand details, then remove this
+  notice. Once filled in, the resulting skill applies that client's tone of voice —
+  and visual/design guidelines once documented — to any content task: website pages,
+  landing pages, blog posts, email copy, social media, sales materials, case studies,
+  product descriptions, or any other customer-facing or external communication for
+  that client. It should trigger when the user says "write this for [Client]," "use
+  the [Client] voice," "review this against the [Client] brand," "does this sound
+  like [Client]," "apply [Client] tone/brand," or when working on any [Client]
+  content brief.
+metadata:
+  version: 1.0.0
 ---
 
-Version
-1.0.0
+# [Client Name] Brand Kit — TEMPLATE
 
-Status
-Template — not a usable brand kit. Copy this file into a new `[brand-slug]-brand-kit/SKILL.md`, fill in every bracketed section from that brand's actual voice guidelines, and delete this status line once real content replaces the placeholders.
+Delete this line and everything in this callout once the kit is filled in: this file
+defines the shape every `[client]-brand-kit` skill in this plugin follows. Copy it,
+rename the folder and the `name:` field to `[client-slug]-brand-kit`, replace every
+`[PLACEHOLDER]`, and delete any section that genuinely doesn't apply to this client
+rather than leaving it half-filled.
 
-Brand Kit Template
-You are writing on behalf of **[Brand Name]** — [one-sentence description of what the company/person does and who they serve]. Every word you produce must reflect the brand voice defined below.
+---
 
-This template mirrors the shape the first real brand kit in this library settled on: an identity summary, language standards, voice pillars with do/don't pairs, a customer-hero framework, audience and channel calibration, banned language, a quality checklist, and — once documented — visual identity. Follow the same shape so `web-content-pipeline`'s brand-lookup step can find and apply any `[brand]-brand-kit` skill by convention, without a hardcoded list.
+## Identity Summary
 
-Who [Brand Name] Is
-[One paragraph: the brand's role in the customer's story — trusted advisor, challenger, specialist, etc. — and the single sentence that captures it, e.g. "[Brand Name] is a ___ who says: '___.'"]
+One paragraph: what the client does, who they serve, what makes their position
+distinctive, and the single sentence that should anchor every tone decision below.
+Example shape (not real content): "[Client] is a [industry] company serving
+[audience] since [year] — [what makes them different from competitors in one
+clause]. Every word or visual decision should reflect [the one thing the client
+wants to be known for]."
 
-This is [not/also] a [vendor / technology-first / budget / premium / etc.] voice. It is a [the actual character] voice — [2-3 adjectives].
+If this is a first draft rather than a client-confirmed brand document, say so
+explicitly here (see `chape-braspenning-brand-kit/SKILL.md` for the wording this
+plugin uses when a brand kit hasn't been signed off yet) and list what still needs
+confirming in a closing "Open Items" section.
 
-Language Standards
-- [British/American English, or another language variant]
-- Use "[preferred term]", never "[term to avoid]" (repeat for every terminology pair the brand has decided on)
-- [Any naming conventions for products, employees, partners, etc.]
-- [Pronunciation note, if the brand name is often mispronounced]
-- [Em dash / punctuation rules, if any]
-- [Sentence length or reading-level guidance, if any]
+---
 
-Locked Terminology (Non-English Markets)
-Confirmed term choices for `content-translate` to apply directly, not re-derive. Add a table per market only once that market has actually confirmed its terms — don't invent decisions here. Until a market has a table, `content-translate` falls back to its own keyword-localization judgment and the general profiles in `content-translate/references/cultural-adaptation.md`.
+## Language Standards
 
-[Language, e.g. French (fr-FR, fr-BE)]:
+- Which English/Dutch/French/etc. variant and spelling convention applies
+  (British English, Belgian Dutch/Flemish, fr-BE vs fr-FR, etc.) — never assume;
+  state it explicitly.
+- House terms: "customer" vs "client", or any other word the client has a fixed
+  preference for.
+- Formatting conventions (e.g. no em dashes) if the client or this plugin's general
+  house style requires them.
 
-| Concept | Use | Not |
-|---|---|---|
-| [concept] | [confirmed term] | [term to avoid] |
+### Locked Terminology
 
-Confirmed by [source], [date].
+Only include this table if the client has fixed translations or naming for specific
+terms across locales — delete the section if not.
 
-The Voice Pillars
-Every piece of [Brand Name] content must pass all of these. Three to five pillars is typical — enough to be distinctive, few enough to actually check against.
+| Term | [Locale A] | [Locale B] |
+|------|------------|------------|
+| [Example] | [Locked translation] | [Locked translation] |
 
-1. [Pillar Name] — [The One-Line Character]
-[What this pillar means in practice, one or two sentences.]
+---
 
-Do:
-- "[Example sentence demonstrating this pillar]"
-- "[Second example]"
+## The [N] Pillars
 
-Don't:
-- "[Example of the opposite — what this brand explicitly avoids]"
-- "[Second example]"
+Most brand kits in this plugin use three to five voice pillars. Name them, give each
+one a one-line descriptor, then a short do/don't pair so the pillar is checkable,
+not just aspirational.
 
-Ask yourself: [The one question that tests whether a line honors this pillar.]
+### 1. [Pillar Name] — [One-line descriptor]
 
-2. [Pillar Name] — [The One-Line Character]
-[Repeat the same Do/Don't/Ask-yourself structure for each remaining pillar.]
+**Do:** [A real example sentence written in this pillar's voice]
+**Don't:** [The generic or off-brand version of the same sentence]
 
-The Customer Hero Framework
-The customer is always the hero. [Brand Name] is the guide.
+### 2. [Pillar Name] — [One-line descriptor]
+
+**Do:** [...]
+**Don't:** [...]
+
+Repeat for each remaining pillar.
+
+---
+
+## The Customer Hero Framework
+
+(Rename this section if a different protagonist framing fits the client better —
+e.g. a homeowner/professional split rather than an enterprise-buyer split.)
 
 | Role | Who |
-|---|---|
-| Hero | [The customer — name the actual roles/titles this brand writes for] |
+|------|-----|
+| Hero | The customer ([name the actual buyer personas/roles]) |
 | Challenge | [The problems they need to solve] |
-| Guide | [Brand Name] — [the expertise/solution it brings] |
+| Guide | [The client, positioned as advisor rather than hero] |
+| Plan | [What the client offers them] |
 | Success | [What the customer achieves] |
 
-[Brand Name] is NOT the hero. It never positions itself as the hero.
+If the client's default copy tends to centre the company rather than the customer,
+include a short before/after table like this one:
 
-Language Shift: We → You
-| Use this | Not this |
-|---|---|
-| You will achieve | We deliver |
-| Your success | Our solutions |
-| You can | Our platform enables |
+| Context | Before (company-focused) | Now (customer-focused) |
+|---------|---------------------------|--------------------------|
+| [Example] | [Old framing] | [New framing] |
 
-Audience Calibration
-Adjust emphasis based on who you're writing for — the voice stays consistent, the lead-in changes.
+---
 
-- **[Audience 1, e.g. Technical Buyer]:** Lead with [what matters most to them]. "[Example line]"
-- **[Audience 2, e.g. Economic Buyer]:** Lead with [what matters most to them]. "[Example line]"
-- **[Audience 3]:** Lead with [what matters most to them]. "[Example line]"
+## Audience Calibration
 
-Channel Tone Calibration
-The voice stays constant. The tone adjusts like a volume dial.
+How tone shifts by audience segment — e.g. technical buyer vs. budget holder vs.
+end user — without breaking the core pillars. One short paragraph or table per
+segment is usually enough.
 
-| Channel | Tone |
-|---|---|
-| Website | [tone] |
-| Email | [tone] |
-| Social media | [tone] |
-| Sales conversations | [tone] |
-| Crisis/technical updates | [tone] |
+---
 
-SEO and Digital Writing
-- Write for people first, search engines second.
-- Use real search terms the audience actually uses — never invented terminology.
-- Headlines should reflect customer outcomes, not just product names.
-- Preserve the brand's voice even in SEO-heavy content.
+## Channel Tone Calibration
 
-Banned Language
-Never use these patterns in [Brand Name] copy:
+How the pillars flex by channel (website vs. email vs. social vs. sales materials).
+Note anywhere a channel needs a genuinely different register, not just a shorter
+version of the same tone.
+
+---
+
+## SEO / Digital Writing Guidance
+
+If this client has house rules for on-page writing (heading structure, metadata
+tone, use of real search terms vs. invented terminology, active voice, etc.), list
+them here. Delete if this duplicates general guidance already covered elsewhere in
+the plugin and nothing client-specific applies.
+
+---
+
+## Crisis Communication
+
+Optional. Only include if the client has specific guidance for how tone should
+change under complaint-handling or crisis conditions.
+
+---
+
+## Banned Language
 
 | Category | Banned |
-|---|---|
-| Jargon | [list the brand's specific jargon to avoid] |
-| Hype | [list overclaiming/hype words this brand avoids] |
-| Overpromising | [list absolute claims this brand avoids] |
-| Off-voice | [anything that contradicts the pillars above] |
+|----------|--------|
+| [e.g. Dismissive] | [Phrases to avoid] |
+| [e.g. Timid] | [Phrases to avoid] |
+| [e.g. Off-brand vocabulary] | [Specific words the client has flagged] |
 
-Quality Checklist
-Before finalizing any [Brand Name] content, check every item:
+---
 
-- [ ] Passes every voice pillar above
-- [ ] Customer is the hero, not the brand
-- [ ] Correct language standard and locked terminology applied
-- [ ] No banned language from the list above
-- [ ] Sounds like [Brand Name], not generic AI copy
+## Quality Checklist
 
-Design & Visual Identity
-Not yet documented for this brand. When it is — colour palette, typography, imagery style, layout conventions, logo usage — add it here, in this same skill, so a single `[brand]-brand-kit` lookup gives both voice and visual identity together. Until then, `web-content-pipeline`'s own visual-principles guidance is the fallback for any visual-asset recommendation.
+- [ ] **[Pillar 1 name]**: [what "on-brand" looks like for this pillar]
+- [ ] **[Pillar 2 name]**: [...]
+- [ ] Locked terminology used correctly for the target locale
+- [ ] No banned language present
+- [ ] Customer positioned as the hero, not the company
 
-Related Skills
-- `web-content-pipeline` — identifies which brand a piece is for and loads the matching `[brand]-brand-kit` skill as part of its requirements step; apply this voice throughout every step once loaded.
-- `content-translate` — loads this skill's voice and Locked Terminology when translating this brand's content; the terminology table above overrides that skill's own keyword-localization defaults.
-- `customer-story-writer` — for case studies; align with the customer-hero framework above.
-- `ai-content-cleaner` (BALANCED mode) — run after any AI-drafted content for this brand to strip AI tells while preserving SEO/AEO structure.
-- `copy-editing` — for polishing existing copy against this brand's voice.
-- `rsa-writer` / `ad-copy-tester` — for this brand's Google Ads copy.
+**Quick voice test:** [one fast heuristic a writer can apply without re-reading the
+whole kit — e.g. "would [Client] actually say this out loud to a customer?"]
 
-Naming convention: save the real, filled-in version as `[brand-slug]-brand-kit/SKILL.md` (not `brand-kit-template`) so `web-content-pipeline`'s lookup step finds it by convention.
+---
+
+## Design & Visual Identity
+
+If visual guidelines exist (colour palette, typography, imagery style, layout
+conventions, logo usage, UI component patterns), document them here — either
+inline for a short spec, or in a `references/visual-identity.md` file for a full
+design-token-level spec (see `chape-braspenning-brand-kit/references/visual-identity.md`
+for the shape a full spec takes: design tokens, colour derivation reasoning,
+typography, layout/spacing, components).
+
+If visual identity isn't documented yet, say so plainly rather than leaving the
+section silently empty — future contributors need to know whether it's missing or
+intentionally out of scope.
+
+---
+
+## Related Skills
+
+List the other skills in this plugin that this brand kit should combine with, and
+how — e.g. which content-production skill identifies the brand and auto-loads this
+kit, which localization skill should carry Locked Terminology across locales, which
+skills this kit adds "you-first" language or customer-outcome framing on top of.
+
+---
+
+## Open Items for [Client]
+
+If any part of this kit is Claude's construction rather than a client-confirmed
+brand document (a first draft built from a brief, or values inferred rather than
+stated), list exactly what still needs sign-off here. Delete this section once
+everything is confirmed.
