@@ -1,7 +1,7 @@
 {
   "name": "marketing-agent",
-  "version": "1.6.0",
-  "description": "A marketing team of subagents (director, competitive intel, SEO/GEO, campaign strategy, content, social, email, creative, paid media, localization, reporting) that dispatches marketing requests to the right specialist and sequences multi-discipline campaigns. The plugin ships agents only; every specialist delegates to dedicated account skills for campaign planning, competitive research, content drafting, brand review, email sequences, SEO auditing, creative production, localization, and reporting instead of duplicating them here.",
+  "version": "1.7.0",
+  "description": "A marketing team of subagents (director, competitive intel, SEO/GEO, campaign strategy, content, social, email, creative, paid media, localization, reporting) that dispatches requests to the right specialist and sequences multi-discipline campaigns. Ships agents only — each specialist delegates to dedicated account skills (campaign planning, research, content, brand review, email, SEO, creative, localization, reporting) instead of duplicating them here.",
   "author": {
     "name": "Jordi Driesen"
   },

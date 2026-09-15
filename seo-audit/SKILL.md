@@ -1,8 +1,8 @@
 ---
 name: seo-audit
-description: When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions "SEO audit," "technical SEO," "why am I not ranking," "SEO issues," "on-page SEO," "meta tags review," "SEO health check," "my traffic dropped," "lost rankings," "not showing up in Google," "site isn't ranking," "Google update hit me," "page speed," "core web vitals," "crawl errors," or "indexing issues." Use this even if the user just says something vague like "my SEO is bad" or "help with SEO" — start with an audit.
+description: When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions "SEO audit," "technical SEO," "why am I not ranking," "SEO issues," "on-page SEO," "meta tags review," "SEO health check," "my traffic dropped," "lost rankings," "not showing up in Google," "site isn't ranking," "Google update hit me," "page speed," "core web vitals," "crawl errors," or "indexing issues." Use this even if the user just says something vague like "my SEO is bad" or "help with SEO" — start with an audit. For AI search optimization (AEO, GEO, LLMO), apply the structural rules in the content-references skill's seo-aeo-optimization.md reference — there is no separate ai-seo skill in this library.
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # SEO Audit
@@ -367,8 +367,8 @@ Same format as above
 
 ## References
 
-- [AI Writing Detection](references/ai-writing-detection.md): Common AI writing patterns to avoid (em dashes, overused phrases, filler words)
-- For AI search optimization (AEO, GEO, LLMO, AI Overviews), see the **ai-seo** skill
+- For AI writing pattern detection and cleanup, use the `ai-content-cleaner` skill.
+- For AI search optimization (AEO, GEO, LLMO, AI Overviews), apply the structural rules in the `content-references` skill's `seo-aeo-optimization.md` reference (the same one `web-content-pipeline` and `customer-story-writer` already use).
 
 ---
 
@@ -404,9 +404,6 @@ Same format as above
 
 ## Related Skills
 
-- **ai-seo**: For optimizing content for AI search engines (AEO, GEO, LLMO)
-- **programmatic-seo**: For building SEO pages at scale
-- **site-architecture**: For page hierarchy, navigation design, and URL structure
-- **schema-markup**: For implementing structured data
-- **page-cro**: For optimizing pages for conversion (not just ranking)
-- **analytics-tracking**: For measuring SEO performance
+- **content-references** (`seo-aeo-optimization.md`): structural rules for AI search optimization (AEO, GEO, LLMO) — apply directly; no dedicated ai-seo skill exists in this library.
+- **ai-content-cleaner**: AI writing pattern detection and cleanup.
+- **seo-keyword-research** / **keyword-clustering**: keyword discovery and page-level clustering — this skill covers technical/on-page auditing, not keyword discovery itself.
