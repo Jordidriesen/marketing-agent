@@ -1,22 +1,8 @@
-# Marketing Agent
+# Marketing Agent (plugin)
 
-A marketing plugin built by [Jordi Driesen](https://github.com/Jordidriesen) for use with [Cowork](https://claude.com/product/cowork) and Claude Code. It's a team of subagents, not a single skill: a director dispatches marketing requests to the right specialist (competitive intelligence, SEO/GEO, campaign strategy, content, social, email, creative, paid media, localization, reporting), sequencing multi-discipline campaigns in dependency order rather than running everything at once.
+A marketing team of subagents for Claude, built by [Jordi Driesen](https://github.com/Jordidriesen) for Cowork and Claude Code. A director dispatches each request to the right specialist and sequences multi-discipline campaigns in dependency order, rather than running everything at once.
 
-**Scoped for this workspace.** The plugin ships agents only. Every specialist delegates to dedicated account skills for the actual work — content drafting, brand review, email sequences, SEO auditing, campaign planning, competitive research, and reporting are all account skills, not duplicated here:
-
-| For this kind of work | Use |
-|---|---|
-| Planning a campaign (brief, calendar, channel plan, metrics) | `campaign-plan` (account skill) |
-| Competitor messaging / positioning research and battlecards | `competitive-brief` (account skill); `competitor-analysis` / `competitive-landscape` for SEO-grounded data |
-| Marketing performance reporting | `performance-report` (account skill); `report-writer` / `metric-detective` for the Google Ads slice |
-| Writing content (blog posts, social, email, press releases) | `content-creation` (account skill, gateway) routing to `web-content-pipeline`, `customer-story-writer`, `social-content-writer`, `newsletter-writer`, and `press-release-writer` |
-| Brand voice / compliance review | `brand-review` (account skill), which loads a `[brand]-brand-kit` skill automatically when one exists |
-| Lifecycle email sequences | `email-sequence-hubspot-brevo` (account skill) |
-| SEO research and auditing | `content-research-orchestrator` (keyword research, clustering, competitive landscape, competitor analysis, content gap mapping) plus the account's own technical `seo-audit` skill |
-| Creative direction and asset production | `creative-brief` → `frontend-design` (coded UI) / `canva-workflow` / `figma-weavy-workflow` (account skills) |
-| Translating finished content into a target market | `localization-specialist` (agent) → `content-translate` (account skill) |
-
-Each account skill opens with a Step 0 that identifies the brand and loads its `[brand]-brand-kit` skill automatically, when one exists, so output comes out in the right voice without being told each time.
+**One install, agents and skills together.** As of 2.0.0 the plugin ships its 52 skills in [`skills/`](skills) alongside the agents, so the two can't drift apart. Only client brand kits live outside it: each brand gets a private `[brand]-brand-kit` skill that every content, review and design skill loads automatically (see [`templates/brand-kit`](../templates/brand-kit)).
 
 ## Installation
 
@@ -25,83 +11,63 @@ claude plugin marketplace add Jordidriesen/marketing-agent
 /plugin install marketing-agent@marketing-agent
 ```
 
-`Jordidriesen/marketing-agent` is a marketplace ([`.claude-plugin/marketplace.json`](../.claude-plugin/marketplace.json) at the repo root) offering this one plugin, sourced from `/plugin` in the same repo. Update later with `claude plugin marketplace update marketing-agent` — no need to re-add.
-
-The plugin's agents call account skills such as `campaign-plan`, `competitive-brief`, `performance-report`, `content-creation`, `brand-review`, and `content-translate` by name. Those skills live flat in the repo root (see [the main README](../README.md#installation)) and need to be available in the same environment for the agents to work as intended.
+Update later with `claude plugin marketplace update marketing-agent`.
 
 ## Agents
 
-Talk to `marketing-director` for anything that spans more than one discipline; it decides which specialist(s) to run and in what order. For a single, clearly-scoped task, call the relevant specialist directly.
+Talk to `marketing-director` for anything that spans more than one discipline; it decides which specialist(s) to run and in what order. For a single, clearly scoped task, call the specialist directly.
 
-Dispatch order for a full campaign: intelligence and research first, strategy second, execution third (these run in parallel against each other), localization once source content is signed off, reporting last.
+| Order | Agent | Role | Main skills |
+|---|---|---|---|
+| · | [`marketing-director`](agents/marketing-director.md) | Entry point. Breaks a request down, delegates, assembles one result | (dispatch only) |
+| 1 | [`competitive-intel-analyst`](agents/competitive-intel-analyst.md) | Positioning, competitor moves, market intelligence, ad teardown, PR outlet mapping | `competitor-analysis`, `competitive-landscape`, `competitor-teardown`, `european-market-intelligence`, `media-mapping` |
+| 1 | [`seo-geo-specialist`](agents/seo-geo-specialist.md) | Organic search and AI answer-engine visibility as one discipline | `content-research-orchestrator` and its stage skills, `seo-audit` |
+| 2 | [`campaign-strategist`](agents/campaign-strategist.md) | Goal plus research into a campaign brief and channel plan | `campaign-plan` |
+| 3 | [`content-writer`](agents/content-writer.md) | Pages, articles, case studies, press releases | `web-content-pipeline`, `customer-story-writer`, `press-release-writer`, `copy-editing`, `ai-content-cleaner`, `brand-review` |
+| 3 | [`social-media-specialist`](agents/social-media-specialist.md) | Platform-native social posts | `social-content-writer`, `brand-review` |
+| 3 | [`email-marketer`](agents/email-marketer.md) | Newsletters and lifecycle sequences (HubSpot or Brevo) | `newsletter-writer`, `email-sequence-hubspot-brevo`, `brand-review` |
+| 3 | [`creative-specialist`](agents/creative-specialist.md) | Creative direction and assets on approved copy | `creative-brief`, `frontend-design`, `canva-workflow`, `figma-weavy-workflow` |
+| 3 | [`performance-marketer`](agents/performance-marketer.md) | Google Ads end to end | the Google Ads skills, `paid-ads-report-writer` |
+| 3.5 | [`localization-specialist`](agents/localization-specialist.md) | Target-language versions of signed-off content (NL, FR, DE, ES) | `content-translate`, `brand-review` |
+| 4 | [`performance-reporter`](agents/performance-reporter.md) | Cross-channel reporting once execution is live | `paid-ads-report-writer`, `metric-detective` |
 
-| Order | Agent | Role |
-|---|---|---|
-| — | [`marketing-director`](agents/marketing-director.md) | Entry point. Breaks a request down, delegates to the right specialist(s), assembles one result. |
-| 1 | [`competitive-intel-analyst`](agents/competitive-intel-analyst.md) | Positioning, competitor moves, market intelligence, ad teardown, PR outlet mapping. |
-| 1 | [`seo-geo-specialist`](agents/seo-geo-specialist.md) | Organic search and generative-engine (AI answer engine) visibility, treated as one discipline. |
-| 2 | [`campaign-strategist`](agents/campaign-strategist.md) | Turns a goal, plus the intelligence/research above, into a full campaign brief and channel plan. |
-| 3 | [`content-writer`](agents/content-writer.md) | Web and long-form content: pillar pages, clusters, landing pages, case studies, press releases. |
-| 3 | [`social-media-specialist`](agents/social-media-specialist.md) | Platform-native social posts. |
-| 3 | [`email-marketer`](agents/email-marketer.md) | Newsletters and lifecycle/automation sequences (HubSpot or Brevo). |
-| 3 | [`creative-specialist`](agents/creative-specialist.md) | Creative direction and design assets (Canva, Figma Weave), built on approved copy. |
-| 3 | [`performance-marketer`](agents/performance-marketer.md) | Paid media, Google Ads end to end. |
-| 3.5 | [`localization-specialist`](agents/localization-specialist.md) | Target-language versions of signed-off source content (NL, FR, DE, ES). |
-| 4 | [`performance-reporter`](agents/performance-reporter.md) | Cross-channel results reporting, once execution is live. |
+Dispatch order for a full campaign: intelligence and research first, strategy second, execution third (these run in parallel), localisation once source content is signed off, reporting last.
 
-## Example Workflows
+## Example workflows
 
-### Planning a Campaign
+### Planning a campaign
 
 Ask `marketing-director` (or `campaign-strategist` directly):
 
 ```
-Goal: Drive 500 signups for our new product launch
-Audience: Technical decision-makers at enterprise companies
-Timeline: 6 weeks
-Budget range: $20,000-$30,000
+Goal: 150 qualified leads for the new product line
+Audience: Facility managers at mid-sized companies in Belgium and Germany
+Timeline: 8 weeks
+Budget: EUR 20,000
 ```
 
-The strategist runs the `campaign-plan` account skill and produces a brief covering objectives, audience segmentation, key messages, channel strategy, a week-by-week content calendar, and KPIs. Individual pieces from the calendar are then handed to the relevant specialist — `content-writer`, `social-media-specialist`, `email-marketer`, `creative-specialist` — and, if the campaign targets more than one market, `localization-specialist` produces the translated versions once each piece is signed off.
+The director runs competitive and SEO research first, then the brief, then hands each calendar item to the right specialist; localisation follows once each piece is signed off.
 
-### Researching a Competitor's Messaging
+### Researching a competitor
 
-Ask `competitive-intel-analyst`:
+Ask `competitive-intel-analyst` with the competitor's name and domain. It uses `competitor-analysis` for organic footprint, content and positioning, `competitor-teardown` for paid ad angles, and `european-market-intelligence` for market-level questions.
 
-```
-Competitor: [name]
-```
+### Reporting on paid media
 
-It runs the `competitive-brief` account skill for positioning, messaging, and content-gap analysis via web search, and `competitor-analysis` / `competitive-landscape` when SEO-grounded organic data is needed.
-
-### Building a Performance Report
-
-Ask `performance-reporter`:
+Ask `performance-reporter` (or `performance-marketer` for a Google-Ads-only report):
 
 ```
-Report type: Overall marketing report
-Time period: Last quarter
+Client: [brand]
+Platforms: Google Ads, LinkedIn Ads
+Period: September 2026, compared with August
 ```
 
-It runs the `performance-report` account skill for the cross-channel structure, and leans on `report-writer` and `metric-detective` for the Google Ads-specific components.
+`paid-ads-report-writer` pulls live data where the connectors are connected, works from exports for the rest, normalises conversion definitions across platforms, and writes the executive summary plus a section per platform.
 
-## Configuration
+## Brand kits
 
-Configure your brand voice, style guide, and target personas in a `[brand]-brand-kit` account skill for automatic brand identification, or in a local settings file where a skill references one.
+Every content, review, design and localisation skill identifies the brand and loads its `[brand]-brand-kit` skill when one exists. A modular kit is a short router plus three modules: `context.md` (who the brand is, audiences, channels, data sources), `voice.md` (tone of voice and Voice Lock) and `design.md` (colour, type, layout tokens). Start from [`templates/brand-kit`](../templates/brand-kit).
 
-## MCP Integrations
+## Connectors
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](CONNECTORS.md).
-
-This plugin works with the following MCP servers:
-
-- **Slack** — Share drafts, reports, and briefs with your team
-- **Canva** — Create and edit design assets
-- **Figma** — Access design files and brand assets, run Figma Weave graphs
-- **HubSpot** — Pull campaign data, manage contacts, and track marketing automation
-- **Amplitude** — Pull product analytics and user behavior data for performance reporting
-- **Notion** — Access briefs, style guides, and campaign documents
-- **Ahrefs** — SEO keyword research, backlink analysis, and site audits
-- **Similarweb** — Competitive traffic analysis and market benchmarking
-- **Klaviyo** — Draft and review email marketing sequences and campaigns
-- **Supermetrics** — Pull marketing data from multiple platforms for analytics and reporting
+See [CONNECTORS.md](CONNECTORS.md) for which connector each discipline uses, what happens when one isn't connected, and the data-source rule for brands with and without an OpenSEO project.

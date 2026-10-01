@@ -2,6 +2,22 @@
 
 All notable changes to this skill library are documented here. Individual skills may also carry their own `metadata.version` in their `SKILL.md` frontmatter for finer-grained history.
 
+## [2.0.0]
+
+Breaking: skills moved and two were renamed or merged. Reinstall the plugin and remove the old standalone copies from your account (see the migration note at the end).
+
+- **One install.** All 52 public skills moved from the repo root into `plugin/skills/`, so the plugin now ships agents and skills together and they can no longer drift apart. `plugin.json` and `marketplace.json` share one description, version 2.0.0.
+- **Reconciled the account and repo versions.** Took the newer account versions of `ai-content-cleaner`, `conversion-tracking-auditor`, `quality-score-doctor`, `search-term-auditor`, `full-account-audit` (live Google Ads connector wiring) and `keyword-clustering` (SERP page-type consensus). Kept the repo versions of the content skills (anonymised, wired into `content-references`) and ported the account's Voice Lock precedence into `copy-editing`. Added six skills that existed only in the account: `canva-workflow`, `creative-brief`, `figma-weavy-workflow`, `google-ads-tool-map`, `lead-magnets`, `mcp-efficiency`. Replaced a leftover customer name in `customer-story-writer` with a placeholder.
+- **`report-writer` is now `paid-ads-report-writer`** (v2.0.0): covers every paid platform, search and social (Google Ads, Microsoft Ads, LinkedIn Ads, Meta, others via export), with live pulls where connected, a cross-platform normalisation step and a new `references/platform-metrics.md`. Ad group names always shown next to keywords and search terms.
+- **`clean-user-facing-text` merged into `ai-content-cleaner`** (v2.0.0): protected spans, the honesty rule, and a working invisible-Unicode pass via the new `scripts/unicode_audit.py` (the old skill referenced scripts that never existed). `ai-content-cleaner` is now the single owner of the humanising rules and language pattern files; the duplicate pattern files in `content-references` are gone and `ai-content-humanizing.md` is a pointer. Every skill that called the humanising pass now names `ai-content-cleaner` directly. Added a Belgian Dutch section to the NL patterns.
+- **Brand kits are modular.** `brand-review`, `copy-editing` and `ai-content-cleaner` load a kit's voice module (`references/voice.md`) and still support older kits with a separate tone-of-voice skill. `brand-kit-template` moved to `templates/brand-kit/` and is now a router plus `context.md`, `voice.md` and `design.md`.
+- **Connectors.** `.mcp.json` keeps only Canva, Figma, HubSpot and Notion; Slack, Amplitude, Ahrefs, Similarweb, Klaviyo and Supermetrics removed. `CONNECTORS.md` rewritten around the real stack, with a data-source rule for brands with and without an OpenSEO project. `email-marketer` uses Brevo instead of Klaviyo.
+- **Stale references fixed.** Removed the `dataforseo:` fallbacks (that connector is gone; `OpenSEO:search_serp_locations` replaces the location lookup). `content-gap-mapping`, `competitor-analysis` and `competitive-landscape` now use OpenSEO's backlink and local SERP tools instead of saying the data isn't available. `european-market-intelligence` uses OpenSEO backlinks instead of Ahrefs. OpenSEO project resolution now checks the brand kit first and asks before creating a client project.
+- **Agents.** `performance-reporter` and `performance-marketer` use `paid-ads-report-writer`; `seo-geo-specialist` follows the data-source rule; `creative-specialist` names this plugin's `frontend-design`.
+- `competitive-brief` and `performance-report` moved to `archive/`: no agent calls them since 1.7.0. Root and plugin READMEs rewritten.
+
+**Migration.** After installing 2.0.0, remove the standalone account copies of every skill that now ships in the plugin, plus `report-writer`, `clean-user-facing-text` and (once the modular personal kit is uploaded) `personal-brand-tone-of-voice`, so no skill name exists twice.
+
 ## [1.7.0]
 
 - Fixed `seo-audit`: its References and Related Skills sections pointed at six skills that don't exist in this library (`ai-seo`, `programmatic-seo`, `site-architecture`, `schema-markup`, `page-cro`, `analytics-tracking`) and one dead file link. Now points at what actually exists (`content-references`'s `seo-aeo-optimization.md`, `ai-content-cleaner`, `seo-keyword-research`/`keyword-clustering`); description updated to match and bumped to 1.2.0.
