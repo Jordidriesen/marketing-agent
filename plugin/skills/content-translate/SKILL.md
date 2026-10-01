@@ -11,8 +11,9 @@ description: >
   "vertalen naar het Nederlands," "traduire en français," "übersetzen ins
   Deutsche," "traducir al español," or wants a page localized for a
   specific European market. Composes with the relevant `[brand]-brand-kit`
-  skill for voice and locked terminology, and with `content-references`
-  for schema rules and the target-language humanizing pass.
+  skill for voice and locked terminology, with `content-references`
+  for schema rules, and with `ai-content-cleaner` for the target-language
+  humanising pass.
 metadata:
   version: 1.0.0
   history: >

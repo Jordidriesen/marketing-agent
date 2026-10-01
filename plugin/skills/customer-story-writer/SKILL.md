@@ -1,7 +1,7 @@
 ---
 name: customer-story-writer
 description: |
-  Write, structure, or draft B2B customer stories and case studies using a proven persuasion framework. Use when asked to write a case study, customer success story, customer reference, win story, or any narrative-led piece showing how a customer achieved results with a product. Also use when asked to "turn this brief into a case study," "write this up as a customer story," "we need a case study for [customer]," or "help me structure a win story." Use this skill even for partial briefs — if the user has some customer data and wants a story out of it, start here. After drafting, the final copy pass runs content-references' ai-content-humanizing pass (BALANCED mode) to strip AI tells while preserving intentional SEO/AEO structure.
+  Write, structure, or draft B2B customer stories and case studies using a proven persuasion framework. Use when asked to write a case study, customer success story, customer reference, win story, or any narrative-led piece showing how a customer achieved results with a product. Also use when asked to "turn this brief into a case study," "write this up as a customer story," "we need a case study for [customer]," or "help me structure a win story." Use this skill even for partial briefs — if the user has some customer data and wants a story out of it, start here. After drafting, the final copy pass runs ai-content-cleaner (BALANCED mode) to strip AI tells while preserving intentional SEO/AEO structure.
 metadata:
   version: 1.1.0
   history: >
