@@ -40,6 +40,10 @@ Full parameter reference: `content-research-orchestrator/references/openseo-tool
 
 Backlink data comes from OpenSEO's `get_backlinks_overview` / `get_backlinks_profile` (credits per call, so pull it for the shortlisted leaders only, not every domain in the sweep). Without that pull, authority comparisons fall back on `get_domain_overview`'s organic footprint and are marked directional. For local markets, use OpenSEO's `get_local_serp_results` for the local pack; `get_serp_results` alone is organic-only, so say so if that's all you pulled.
 
+**Local markets:** to rank the leaders on Maps rather than organic search, run `get_local_rank_grid` for the shortlisted businesses on one or two head terms (3x3 grid first, one search per point) and compare their profiles with `get_business_profile`. Pull `get_business_reviews` only for the top 3 to 5; it is billed per 10 reviews.
+
+**B2B software markets:** the G2 connector shows how buyers rate and categorise the leaders. Load its tools with a tool search and confirm the names before use; treat G2 as one signal next to organic data, not a ranking of who wins search.
+
 ## Workflow
 
 1. Resolve a `projectId` per `openseo-tool-map.md` before any other call.

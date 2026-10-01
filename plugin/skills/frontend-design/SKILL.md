@@ -60,7 +60,9 @@ pattern as `web-content-pipeline`).
   weights, use the real spacing scale and radius. Every colour and type decision downstream
   traces to a token there.
 - **Voice only so far:** say so. Build a minimal token system (Part 1), keep the direction
-  conservative, and note that a design module for the kit is worth doing.
+  conservative, and note that a design module for the kit is worth doing. When the type choice
+  is open, the Adobe for creativity connector can propose and check pairings (`font_recommend`,
+  `suggest_type_palettes`, `font_preview`); confirm the font's web licence before it ships.
 - **No kit at all:** build the token system from the subject, and flag that a
   `[brand]-brand-kit` should be created if this brand recurs.
 
@@ -79,7 +81,9 @@ Decide the mode: new build, redesign (preserve or overhaul, per `redesign-protoc
 review. If the read or the mode genuinely forks, ask one question; otherwise proceed.
 
 **Work with the existing stack.** A WordPress site gets theme settings, block patterns or the
-site's own MCP (for example NovaMira), not a React rebuild. A Claude artifact gets one
+site's own MCP (for example NovaMira), not a React rebuild. If the site is managed in WP Umbrella,
+read its installed plugins, theme and performance there first (`list_plugins`, `list_themes`,
+`get_performance`); that is read-only and needs no approval. A Claude artifact gets one
 self-contained HTML file. A framework project keeps its framework and styling system.
 
 ---

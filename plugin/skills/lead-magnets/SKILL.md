@@ -98,6 +98,8 @@ There is no dedicated form or popup optimisation skill in this plugin. Apply the
 
 **Landing page structure:** headline (the benefit — what they get and why it matters) → preview or mockup → what's inside (3–5 bullets of key takeaways) → social proof → form (minimal fields, clear CTA) → FAQ (is it free, what format). The page itself is written by `web-content-pipeline` as a landing page; hand it this structure and the copy points.
 
+**Form:** when the site has no form system of its own (or a quiz-style magnet needs one), the Tally.so connector can build the form. Specify the fields and the hidden fields for source tracking (UTM parameters) in the plan; creating or publishing the form waits for approval, per `security-policy`. Where the contact has to land in Brevo or HubSpot, use the form's native integration first; a Make or Zapier scenario is the fallback, and running or creating one also needs approval. Check consent wording and the double opt-in requirement for the brand's market before the form goes live.
+
 **Delivery method:**
 
 | Method | Pros | Cons |

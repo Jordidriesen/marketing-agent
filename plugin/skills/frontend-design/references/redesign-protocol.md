@@ -31,6 +31,12 @@ Read the site or codebase and document, briefly:
 - **Brand tokens in use:** colours, fonts, radii, logo treatment. Compare them with the brand
   kit's `design.md`. Where they differ, report the difference; don't silently pick one.
 - **Information architecture:** page tree, main navigation, key conversion paths.
+- **WordPress health baseline (WP Umbrella, when the site is in it):** installed plugins and
+  theme (`list_plugins`, `list_themes`), outstanding vulnerabilities (`get_vulnerabilities`),
+  performance (`get_performance`), PHP errors (`list_issues`) and broken links
+  (`list_broken_links`). Read-only. A redesign that adds a plugin to a site already carrying
+  outdated or vulnerable ones should say so. Any update or fix through WP Umbrella is a separate,
+  approved action, never part of the redesign itself.
 - **SEO baseline:** pages that rank or get traffic (Search Console or OpenSEO, per the brand
   kit's data sources), meta titles, structured data, social cards. SEO loss is the biggest
   redesign risk.
@@ -147,5 +153,7 @@ mobile), propose a full redesign with strict content and URL preservation, and g
 - Check the dependency file (or the WordPress plugin list) before adding any library or plugin.
 - For Tailwind projects, check the major version before touching the configuration.
 - On a live WordPress site, change a staging copy or drafts first and ask before publishing.
+- After a redesign goes live, compare WP Umbrella's `get_performance` and `list_broken_links` with
+  the baseline, and run OpenSEO `inspect_urls` on the key URLs to confirm they are still indexed.
 - Hand back the audit, the changes made in the order above, and anything left for the user to
   decide.

@@ -2,7 +2,7 @@
 name: seo-audit
 description: When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions "SEO audit," "technical SEO," "why am I not ranking," "SEO issues," "on-page SEO," "meta tags review," "SEO health check," "my traffic dropped," "lost rankings," "not showing up in Google," "site isn't ranking," "Google update hit me," "page speed," "core web vitals," "crawl errors," or "indexing issues." Use this even if the user just says something vague like "my SEO is bad" or "help with SEO" — start with an audit. For AI search optimization (AEO, GEO, LLMO), apply the structural rules in the content-references skill's seo-aeo-optimization.md reference — there is no separate ai-seo skill in this library.
 metadata:
-  version: 1.2.0
+  version: 1.3.0
 ---
 
 # SEO Audit
@@ -30,6 +30,8 @@ Before auditing, understand:
    - Full site audit or specific pages?
    - Technical + on-page, or one focus area?
    - Access to Search Console / analytics?
+
+Then check which live sources exist for this site before asking for exports: see **Live data from connectors** below. Resolve the search-data source with the data-source rule in `CONNECTORS.md` (brand kit, then OpenSEO project, then standalone Search Console, then ask).
 
 ---
 
@@ -331,6 +333,8 @@ Reporting "no schema found" based solely on `web_fetch` or `curl` leads to false
 - No Google Business Profile optimization
 - Missing location pages
 - No local content
+- Weak Maps visibility beyond the immediate area (check with OpenSEO `get_local_rank_grid`)
+- Unanswered or thin reviews compared with local competitors (OpenSEO `get_business_reviews`)
 
 ---
 
@@ -374,21 +378,34 @@ Same format as above
 
 ## Tools Referenced
 
-**Free Tools**
+### Live data from connectors
+
+Use these before asking for exports. Follow `mcp-efficiency` (resolve the project once, cap the call volume) and `security-policy` (nothing that changes the site without approval).
+
+| Need | Connector and tools | Notes |
+|---|---|---|
+| Crawl, on-page and technical issues | OpenSEO `run_site_audit`, then `get_audit_status`, `get_audit_issues`, `get_audit_pages` | Needs an OpenSEO project for the domain |
+| Is this page indexed, and why not | OpenSEO `inspect_urls` (up to 10 URLs per call), or the standalone Search Console connector | Reads Google's stored status; it is not a live crawl. No credits |
+| Queries, clicks, positions | OpenSEO `get_search_console_performance`, or the standalone Search Console connector | First-party data; never replace it with estimates |
+| Pages close to page one | OpenSEO `get_search_opportunities` (positions 4 to 20 joined with GA4 outcomes) | Needs Search Console and GA4 linked in the project. No credits |
+| Organic landings and tracking health | OpenSEO `get_google_analytics_organic_landing_pages`, `get_google_analytics_measurement_health` | Same project requirement |
+| Rankings over time | OpenSEO `get_rank_tracker` | Read only; creating or scheduling a tracker spends credits, so ask first |
+| Bing and Copilot visibility | Bing Webmaster Tools | Or the AI Performance CSV export |
+| WordPress site health | WP Umbrella, read-only: `get_performance`, `list_broken_links`, `get_uptime`, `list_issues` (PHP errors), `list_plugins`, `get_vulnerabilities` | Only for sites in WP Umbrella. Report findings; any update, optimisation or fix through WP Umbrella waits for approval |
+| Local businesses | OpenSEO `get_business_profile`, `get_business_reviews`, `get_local_rank_grid`, `get_local_serp_results` | All spend credits; the rank grid costs one search per grid point, so start with 3x3 |
+
+### Free tools
 - Google Search Console (essential)
 - Google PageSpeed Insights
 - Bing Webmaster Tools
-- Rich Results Test (**use this for schema validation — it renders JavaScript**)
-- Mobile-Friendly Test
+- Rich Results Test (**use this for schema validation, it renders JavaScript**)
 - Schema Validator
 
-> **Note on schema detection:** `web_fetch` strips `<script>` tags (including JSON-LD) and cannot detect JS-injected schema. Use the browser tool, Rich Results Test, or Screaming Frog instead — they render JavaScript and capture dynamically-injected markup. See the Schema Markup Detection Limitation section above.
+> **Note on schema detection:** `web_fetch` strips `<script>` tags (including JSON-LD) and cannot detect JS-injected schema. Use the browser tool, Rich Results Test, or Screaming Frog instead; they render JavaScript and capture dynamically-injected markup. See the Schema Markup Detection Limitation section above.
 
-**Paid Tools** (if available)
+### Paid tools (if the client has them)
 - Screaming Frog
-- Ahrefs / Semrush
 - Sitebulb
-- ContentKing
 
 ---
 

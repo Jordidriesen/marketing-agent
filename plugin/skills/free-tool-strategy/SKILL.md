@@ -124,6 +124,7 @@ When: Unique concept, core to brand, high strategic value, have dev capacity
 ### Use No-Code Tools
 Options: Outgrow, Involve.me, Typeform, Tally, Bubble, Webflow
 When: Speed to market, limited dev resources, testing concept
+In this stack: Tally.so is connected, so a calculator, quiz or grader built on forms can be drafted there directly (creating or publishing it needs approval). A Make or Zapier scenario can pass results to Brevo or HubSpot when the form's native integration isn't enough.
 
 ### Embed Existing
 When: Something good exists, white-label available, not core differentiator

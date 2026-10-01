@@ -39,6 +39,10 @@ Full parameter reference: `content-research-orchestrator/references/openseo-tool
 
 Backlink data comes from OpenSEO's `get_backlinks_overview` / `get_backlinks_profile` (credits per call). Pull it when the user asks why a domain outranks another on authority grounds; otherwise lean on `get_domain_overview`'s organic footprint and say authority claims are directional. For local competitors, OpenSEO's `get_local_serp_results` gives the local pack for a query and location, and `get_ranked_keywords` with `resultTypes: ["local_pack"]` shows which local-pack positions a domain holds; without those pulls, local-relevance claims are organic-SERP-only.
 
+**Local competitors** (a contractor, a golf club, any business that wins on Google Maps): compare Google Business Profiles with OpenSEO `get_business_profile` (categories, rating, review count, hours, photos) and `get_business_reviews` (rating, text, whether the owner replied; billed per 10 reviews, so start at the default 20). To see how far each business's Maps visibility reaches, run `get_local_rank_grid` for one or two head terms, starting with a 3x3 grid (9 searches); a 5x5 grid is 25. Take `cid` or `placeId` from `get_local_serp_results` rows so the right business is matched. `get_google_business_questions` only when Q&A evidence matters.
+
+**B2B software competitors:** the G2 connector adds buyer-side signals (reviews, category position) that organic data can't show. Load its tools with a tool search and read the names before the first call; don't guess them. If the competitor isn't listed on G2, say so and move on.
+
 ## Workflow
 
 1. Resolve a `projectId` per `openseo-tool-map.md` before any other call.

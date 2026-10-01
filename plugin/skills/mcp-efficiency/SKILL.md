@@ -1,6 +1,6 @@
 ---
 name: mcp-efficiency
-description: "Shared reference for calling any MCP connector (Google Ads, LinkedIn Ads, OpenSEO, Firecrawl, HubSpot, Brevo, and others) without pulling more into context than the task needs. Not triggered directly — loaded by other skills that make live connector calls."
+description: "Shared reference for calling any MCP connector in this stack (Google Ads, LinkedIn Ads, LinkedIn Ad Library, OpenSEO, Search Console, Bing Webmaster Tools, Firecrawl, Exa, HubSpot, Brevo, Typefully, WP Umbrella, Adobe for creativity, Canva, Figma, G2, vidIQ, Notion, Google Drive, Tally.so, Make, Zapier) cheaply and safely: filtering, batching, resolving the account once, and respecting credit, billing and write gates. Not triggered directly: loaded by other skills that make live connector calls."
 ---
 
 # MCP Efficiency — Shared Reference
@@ -22,7 +22,9 @@ and with *what* parameters; this says how to call *any* of them cheaply.
    (multiple keywords, multiple queries, multiple date ranges, a `requests`
    array), use that. One call for ten items beats ten calls for one item,
    both in tokens and in the number of round trips a person waiting on the
-   result has to sit through.
+   result has to sit through. The same goes for loading tools: when a
+   connector's tools are deferred, load every tool the task will need in
+   one tool search, not one search per tool.
 3. **Resolve identity once per task, not once per call.** Account IDs,
    project IDs, customer IDs: resolve at the start of a task and carry the
    resolved value through every subsequent call in that task. Re-resolving
@@ -62,14 +64,57 @@ and with *what* parameters; this says how to call *any* of them cheaply.
    for every connector call — the overhead of spinning up a subagent
    isn't worth it for a handful of calls a skill can just make directly.
 
+9. **Resolve the account with the connector's own identity call.** Rule 3
+   says resolve once; this is the call to use. Tool names below were checked
+   against the live connectors on 1 Oct 2026. For any connector not listed,
+   or whose tools aren't loaded yet, load its tools first and read the names;
+   never guess a method name.
+
+   | Connector | Resolve with | Then carry |
+   |---|---|---|
+   | Google Ads | `list_accounts` | customer ID |
+   | OpenSEO | `list_projects` (and `get_project_context` for the brand's saved context) | `projectId` |
+   | WP Umbrella | `list_projects` with `search` set to the domain | `projectId` (internal; don't show it in replies) |
+   | Typefully | `list_social_sets` | social set ID |
+   | Brevo | `accounts_get_account`, then `senders_get_senders` before any draft | account, sender |
+   | Figma | `whoami` | user and plan |
+   | Adobe for creativity | `adobe_mandatory_init`, once per conversation, before any other Adobe tool | session ID from its result |
+   | LinkedIn Ads, LinkedIn Ad Library, Search Console, Bing Webmaster Tools, G2, vidIQ, Tally.so, Canva, Notion, Google Drive | Load the tools, then use the connector's own list or "me" call | the resolved ID |
+
+10. **Respect cost and side effects before the call, not after.**
+    - **OpenSEO credits.** Research tools spend credits; first-party tools
+      (Search Console, GA4, `inspect_urls`, `get_search_opportunities`) and
+      housekeeping (`create_project`, `save_keywords`, `save_report`) don't.
+      Ask before any planned batch over 2,000 credits. Local tools scale fast:
+      `get_local_rank_grid` costs one SERP per grid point (3x3 is 9, 5x5 is
+      25), and `get_business_reviews` is billed per 10 reviews. Run
+      `estimate_rank_tracker_cost` before adding keywords to a scheduled
+      tracker; trackers stay on a manual schedule unless the user asks.
+    - **WP Umbrella.** Reading is free; acting is not. Updates, database
+      optimisation (cannot be undone), backups, hourly backup settings
+      (billed per site), security add-ons (may start billing) and
+      `generate_report` (emails the recipients) all need explicit approval,
+      site by site, per `security-policy`. Follow any process ID with
+      `wait_for_process` rather than polling other tools. Never say a backup
+      was taken before an update: WP Umbrella doesn't take one.
+    - **Adobe for creativity.** Image and PDF edits are fine once asked for.
+      Share links, collaborator invites, Adobe Stock licensing and Express
+      exports need approval. Canva stays the default for template-based
+      design work; reach for Adobe when the job is an image edit, a PDF task,
+      font sourcing, or the user asks for Adobe Express.
+    - **Brevo, Typefully, Tally.so, Make, Zapier, HubSpot.** Drafts only.
+      Sending, scheduling, publishing a form, or running an automation waits
+      for the user's go-ahead on that specific item.
+
 ## Why this exists
 
 Every skill in this library that talks to a live connector (Google Ads,
-LinkedIn Ads, OpenSEO, Firecrawl, HubSpot, Brevo) was written separately,
+LinkedIn Ads, OpenSEO, Firecrawl, HubSpot, Brevo, WP Umbrella, Adobe, and
+the rest of the stack in `CONNECTORS.md`) was written separately,
 and each one re-derives its own batching and filtering discipline in its
 own words if it derives it at all — `content-research-orchestrator` has
 strong discipline here, several of the Google Ads audit skills have none.
-Rather than repeating the same eight rules inside every skill that calls
+Rather than repeating the same ten rules inside every skill that calls
 a connector, they live here once and get pulled in by reference, the same
 reasoning that keeps `security-policy` a single shared hub instead of
 being copy-pasted into every research skill.

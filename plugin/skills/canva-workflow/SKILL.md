@@ -132,7 +132,7 @@ The 3–5 things to verify before shipping: logo clear space, colour accuracy, f
 
 ## Related Skills
 
-The brief comes from `creative-brief`. Copy in the asset comes from `content-writer` or `social-media-specialist` and, if written here, passes `brand-review`. For imagery Canva can't produce well — generated hero shots, composited scenes, design-system components — use `figma-weavy-workflow` and place the result as an image.
+The brief comes from `creative-brief`. Copy in the asset comes from `content-writer` or `social-media-specialist` and, if written here, passes `brand-review`. For imagery Canva can't produce well (generated hero shots, composited scenes, design-system components), use `figma-weavy-workflow` and place the result as an image. For a quick edit to a real photo before it goes into the design (cut out the background, crop to the format, correct the tone), use the Adobe for creativity connector (`image_remove_background`, `image_crop_and_resize`, `image_apply_auto_tone`), then import the result. Call `adobe_mandatory_init` once first, as that connector requires.
 
 ## Output
 

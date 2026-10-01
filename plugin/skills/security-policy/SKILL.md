@@ -5,7 +5,8 @@ description: >
   content or use write-capable MCP connectors — scraped web pages, SERP
   data, uploaded files, tool results from Firecrawl/OpenSEO/Exa, and
   MCP tools (Google Ads, LinkedIn Ads, Search Console, Brevo, HubSpot,
-  Typefully, WordPress, Canva, Figma, Notion, Google Drive, Tally.so). Not
+  Typefully, WordPress, WP Umbrella, Adobe for creativity, Canva, Figma,
+  Notion, Google Drive, Tally.so, Make, Zapier). Not
   triggered directly by user requests: loaded by other skills
   (content-research-orchestrator, european-market-intelligence,
   competitor-analysis, competitive-landscape, content-gap-mapping,

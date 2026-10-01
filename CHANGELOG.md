@@ -2,6 +2,24 @@
 
 All notable changes to this skill library are documented here. Individual skills may also carry their own `metadata.version` in their `SKILL.md` frontmatter for finer-grained history.
 
+## [2.1.0]
+
+New connectors wired in: WP Umbrella, Adobe for creativity, G2, Tally.so, vidIQ, Google Drive, Make and Zapier, plus OpenSEO's newer tools (local, rank tracking, near-miss pages, index status, saved keywords, reports).
+
+- **`mcp-efficiency`:** description lists the whole stack. New rule 9 (the identity call per connector, checked against the live tools) and rule 10 (OpenSEO credits, WP Umbrella billing and irreversible actions, Adobe routing, draft-only connectors). Rule 2 now covers loading deferred tools in one search.
+- **`CONNECTORS.md`:** rows for local search, G2, Adobe, vidIQ, Tally.so, WP Umbrella, Make and Zapier, Google Drive; a connection-status note (HubSpot's connection is unfinished).
+- **`security-policy`:** scope and the confirmation list cover the new write-capable connectors (WP Umbrella actions, Tally forms, Make and Zapier, Adobe sharing and Stock, OpenSEO scheduled trackers, Brevo and Typefully sending).
+- **`seo-audit` 1.3.0:** a live-data table (OpenSEO audit, `inspect_urls`, `get_search_opportunities`, rank tracker, local tools; WP Umbrella read-only health). Removed the paid-tool line for Ahrefs and Semrush.
+- **`seo-keyword-research`:** uses `get_search_opportunities` for existing sites and offers `save_keywords`; the stale "no Search Console, backlinks or local data" gap note is corrected.
+- **`content-gap-mapping`:** OpenSEO's own Search Console route, `get_search_opportunities` for Parity clusters, and `inspect_urls` so an unindexed page isn't called a content gap.
+- **`competitor-analysis`, `competitive-landscape`:** local competitors via Google Business Profile, reviews and the Maps rank grid, with cost guidance; G2 for B2B software.
+- **`performance-reporter`:** rank tracker, near-miss pages, Brevo or HubSpot results, WP Umbrella uptime and performance as context, optional `save_report`.
+- **Creative:** `creative-specialist`, `creative-brief` 1.2.0 and `canva-workflow` route image edits, PDF work and font sourcing to Adobe for creativity. Canva stays the default, Express only when asked, and no generative fill on real photos.
+- **`frontend-design`:** WP Umbrella baseline before a redesign and a post-launch check; Adobe font tools when the brand leaves type open.
+- **`lead-magnets`, `free-tool-strategy`:** Tally.so for forms; Make or Zapier as the fallback to Brevo or HubSpot; all approval-gated.
+- **`creative-specialist`:** the `tools` allowlist is removed so the agent inherits MCP tools; with it, Canva, Figma and Adobe calls were blocked inside the agent.
+- **`openseo-tool-map`:** a reference table of the OpenSEO tools used outside the research pipeline, with credit notes.
+
 ## [2.0.0]
 
 Breaking: skills moved and two were renamed or merged. Reinstall the plugin and remove the old standalone copies from your account (see the migration note at the end).

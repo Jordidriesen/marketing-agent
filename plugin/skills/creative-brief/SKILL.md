@@ -1,7 +1,7 @@
 ---
 name: creative-brief
 metadata:
-  version: 1.1.0
+  version: 1.2.0
   history: >
     Built for the marketing plugin's creative-specialist agent. Structures
     a brief plus a deliverables table with real format/dimension specs,
@@ -76,7 +76,7 @@ Fill real numbers. Common ones: LinkedIn feed image 1200×627, LinkedIn carousel
 Exact text that appears in each asset — headline, sub, CTA — taken verbatim from the approved `content-writer` or `social-media-specialist` piece, or written here and flagged for `brand-review`.
 
 ### 9. Production route
-For each deliverable, which tool and skill: `canva-workflow` for template-based and bulk assets, `figma-weavy-workflow` for generated or composited imagery and design-system components.
+For each deliverable, which tool and skill: `canva-workflow` for template-based and bulk assets, `figma-weavy-workflow` for generated or composited imagery and design-system components, the Adobe for creativity connector for edits to existing images (background removal with `image_remove_background`, crop and resize to each format with `image_crop_and_resize`, tone correction with `image_apply_auto_tone`), PDF work (for example `pdf_to_markdown` to read a client's brand guideline) and font sourcing (`font_search`, `font_recommend`) when the brand kit leaves type open. Canva stays the default for template work; Adobe Express is used only when the user asks for it. Edits to real photos stay edits: no generative fill or expand on a photo of the client's actual product, people or projects.
 
 ## Related Skills
 

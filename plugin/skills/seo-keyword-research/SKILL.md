@@ -31,12 +31,14 @@ If the target market/location/language is unclear and would materially change ke
 - `OpenSEO:get_ranked_keywords`: exact ranking keywords and URLs when a target domain or page anchors the research.
 - `OpenSEO:get_serp_results`: inspect live SERPs for top candidate terms when intent is ambiguous, up to 10 keywords per call.
 - `Firecrawl:firecrawl_scrape`: when the user gives a page or domain instead of explicit seed topics, scrape it and pull candidate seed topics from its headings and body content.
+- `OpenSEO:get_search_opportunities`: when the brand's own OpenSEO project has Search Console and GA4 connected, the pages already ranking in positions 4 to 20, scored by demand and business value. No credits. Often the best place to start for an existing site.
+- `OpenSEO:save_keywords` / `list_saved_keywords`: persist the shortlist to the project (no credits) so the next stage, or the next session, starts from it instead of researching again.
 
 Full parameter reference for every tool above: `content-research-orchestrator/references/openseo-tool-map.md`.
 
 ## Known gaps versus a full SEO platform
 
-This toolset has no first-party Search Console data (queries/impressions/clicks tied to the user's own site), no backlinks API, and no local pack or Google Business data. Where a step below would normally use one of those, it says so directly rather than approximating it silently.
+Keyword research itself runs from any OpenSEO project. First-party data (Search Console queries, GA4 outcomes, `get_search_opportunities`) only exists when the brand has its own OpenSEO project with those connections, or through the standalone Search Console connector; resolve which per the data-source rule in `CONNECTORS.md`. Backlinks (`get_backlinks_overview`) and local data (`get_local_serp_results`, Google Business tools) exist but spend credits and belong to the competitor and audit skills, not this one. Where a step needs data you don't have, say so rather than approximating it.
 
 ## Workflow
 
@@ -45,13 +47,14 @@ This toolset has no first-party Search Console data (queries/impressions/clicks 
 3. If no explicit seeds were given and a page or domain was supplied instead, run `Firecrawl:firecrawl_scrape` on it and extract candidate seed topics from its headings and main content.
 4. Call `research_keywords` with those seeds (1-5 per call) for exploratory discovery, long-tail, and semantic breadth in one pass.
 5. Hydrate the combined list with `get_keyword_metrics` (up to 700/call) — volume, KD, CPC, and intent all come back together.
-6. If a domain or page was supplied, call `get_ranked_keywords` to surface opportunities based on current rankings, near-misses, or competitor-owned terms.
-7. Remove irrelevant, duplicate, branded-only, and off-intent terms.
-8. Prioritize by practical opportunity, not volume alone: strong product/page fit, clear intent, reasonable difficulty, a useful volume/CPC signal, and a SERP the user can plausibly compete in.
-9. Use `get_serp_results` on high-potential or ambiguous keywords when live SERP composition would change the recommendation. Keep the check small, a handful of queries.
-10. Present a shortlist and a longer opportunity table.
+6. If the brand has its own project with Search Console and GA4 connected, call `get_search_opportunities` and fold its near-miss pages into the list: improving a page at position 8 usually beats starting a new one.
+7. If a domain or page was supplied, call `get_ranked_keywords` to surface opportunities based on current rankings, near-misses, or competitor-owned terms.
+8. Remove irrelevant, duplicate, branded-only, and off-intent terms.
+9. Prioritize by practical opportunity, not volume alone: strong product/page fit, clear intent, reasonable difficulty, a useful volume/CPC signal, and a SERP the user can plausibly compete in.
+10. Use `get_serp_results` on high-potential or ambiguous keywords when live SERP composition would change the recommendation. Keep the check small, a handful of queries.
+11. Present a shortlist and a longer opportunity table.
 
-There is no built-in save/tag step in this skill's own flow (OpenSEO's `save_keywords` exists for persisting a shortlist to a project if the user wants that). If the user wants to persist the results, export the table as a CSV, save to the OpenSEO project, or hand it to `content-research-orchestrator` as seed data for its Stage 2.
+Offer to save the shortlist with `save_keywords` (with the metrics copied from the research rows, so they don't need fetching again). Ask before adding or replacing tags, as the tool itself asks. Otherwise export the table as a CSV or hand it to `content-research-orchestrator` as seed data for its Stage 2.
 
 ## Output format
 
@@ -69,7 +72,7 @@ End with next actions: run `keyword-clustering` to map the results to pages, or 
 - Do not invent metrics. If OpenSEO does not return a value, write "unknown."
 - Prefer business-fit and intent-fit over chasing the largest volume term.
 - Batch keyword lists conservatively (groups of 100 or fewer) and prefer each tool's bulk parameters over looping single calls. Cost/credit notes per tool: `content-research-orchestrator/SKILL.md`'s Rate Limits and Credits section.
-- No first-party Search Console, backlinks, or local pack data is available here. Say so plainly if the user expects it, rather than approximating it silently.
+- First-party Search Console and GA4 data only exist through the brand's own project or the standalone connector. If neither is there, say so plainly rather than approximating it.
 
 ## Related skills
 
