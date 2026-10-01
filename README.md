@@ -116,7 +116,7 @@ See [`plugin/README.md`](plugin/README.md) for each agent's role and the order a
 | `creative-brief` | Art direction and an asset table with real formats and dimensions |
 | `canva-workflow` | Builds assets in Canva, or a manual checklist when Canva isn't connected |
 | `figma-weavy-workflow` | Figma Weave graphs for generated or composited imagery and video |
-| `frontend-design` | Front-end UI in a brand's visual identity, from the brand kit's design module |
+| `frontend-design` | Builds, redesigns or reviews front-end UI in a brand's visual identity: design read and settings, anti-generic rules, redesign protocol, interface checklist |
 
 ### Shared infrastructure
 
@@ -128,7 +128,7 @@ See [`plugin/README.md`](plugin/README.md) for each agent's role and the order a
 
 ## Attribution
 
-`brand-review`, `content-creation`, `newsletter-writer`, `press-release-writer` and `social-content-writer` started from Anthropic's marketing plugin and were substantially reworked. `lead-magnets` is adapted from a generic lead-magnet skill (see its `metadata.history`). `european-market-intelligence` is a Europeanised merge of two ID8Labs skills. `content-translate` is adapted from a third-party translate module. `frontend-design` synthesises Anthropic's `frontend-design` and vercel-labs' `web-interface-guidelines` (MIT). See each skill's `metadata.history` where present.
+`brand-review`, `content-creation`, `newsletter-writer`, `press-release-writer` and `social-content-writer` started from Anthropic's marketing plugin and were substantially reworked. `lead-magnets` is adapted from a generic lead-magnet skill (see its `metadata.history`). `european-market-intelligence` is a Europeanised merge of two ID8Labs skills. `content-translate` is adapted from a third-party translate module. `frontend-design` synthesises Anthropic's `frontend-design`, vercel-labs' `web-interface-guidelines` (MIT) and Leonxlnx's `taste-skill` and `redesign-skill` (MIT). See each skill's `metadata.history` where present.
 
 ## Licence
 

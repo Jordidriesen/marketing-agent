@@ -1,181 +1,199 @@
 ---
 name: frontend-design
 metadata:
-  version: 1.0.0
+  version: 2.0.0
   history: >
-    New skill. Synthesises two public references — Anthropic's
-    `frontend-design` skill (the anti-generic design philosophy and the
-    two-pass plan/critique method) and vercel-labs'
-    `web-interface-guidelines` (the concrete build/review rule set, MIT) —
-    and wires both to the account's `[brand]-brand-kit` pattern so UI work
-    starts from a real visual identity rather than a default. The full
-    rule list lives in references/interface-checklist.md.
+    v1.0: synthesised Anthropic's frontend-design skill (anti-generic
+    philosophy, two-pass plan and critique) and vercel-labs'
+    web-interface-guidelines (MIT), wired to the [brand]-brand-kit pattern.
+    v2.0: folded in Leonxlnx's taste-skill and redesign-skill (MIT) as
+    references/taste.md (design read, three settings, locks, AI tells,
+    pre-flight check) and references/redesign-protocol.md (mode detection,
+    audit, never-change-silently list, fix order), both rewired so the brand
+    kit outranks their defaults and so no figure or image is ever invented
+    for a live page. Refreshed references/interface-checklist.md against the
+    current upstream guidelines as a pinned copy instead of fetching rules at
+    review time. Loads modular brand kits' references/design.md.
 description: >
-  Design or review front-end UI — landing pages, marketing sites,
-  components, design systems, and standalone HTML artifacts — in a
-  specific brand's visual identity. Use for "design this page", "build the
-  front end for X", "make a landing page", "style this component", "review
-  my UI", "check this for accessibility", "turn this into a design
-  system", or any request to produce or audit what a visitor sees and
-  interacts with in a browser. Loads the matching `[brand]-brand-kit` for
-  tokens; composes with `creative-brief` (direction) and
-  `web-content-pipeline` (the copy that goes in). Not for raster/vector
-  asset production — that's `canva-workflow` / `figma-weavy-workflow` —
-  and not for charts, which are `dataviz`.
+  Design, redesign or review front-end UI in a specific brand's visual
+  identity: landing pages, marketing sites, WordPress pages and block themes,
+  components, design systems and standalone HTML artifacts. Use for "design
+  this page", "build the front end for X", "make a landing page", "redesign
+  this site", "modernise this page", "make this look less generic", "review
+  my UI", "audit the design", "check this for accessibility", "check my site
+  against best practices", or any request to produce, upgrade or audit what a
+  visitor sees in a browser. Loads the matching [brand]-brand-kit's design
+  module for tokens. Composes with creative-brief (direction) and
+  web-content-pipeline (copy). Not for raster or vector asset production
+  (canva-workflow, figma-weavy-workflow), not for charts (dataviz), and not
+  for dashboards or app UI beyond their marketing surfaces.
 ---
 
 # Frontend Design
 
-You design and build front-end interfaces that look like a specific brand made a
-deliberate choice — not like a template with the colours swapped. Two jobs:
+You design and build front-end interfaces that look like a specific brand made a deliberate
+choice, not like a template with the colours swapped. Three jobs:
 
-- **Build mode** — produce the page, component, or design system.
-- **Review mode** — audit existing UI code against the guidelines and report fixes.
+- **Build mode:** produce a new page, component or design system.
+- **Redesign mode:** upgrade an existing site or page without breaking what works.
+- **Review mode:** audit existing UI and report fixes, without rewriting.
 
-Both run on the same foundation: a real brand's tokens, an opinionated plan, and the
-interface rule set in `references/interface-checklist.md`.
+All three run on the same foundation: the brand's real tokens, a stated design read, and three
+references:
+
+| Reference | Use it for |
+|---|---|
+| `references/taste.md` | The design read, the three settings (variance, motion, density), the locks, the AI tells, the build pre-flight check |
+| `references/redesign-protocol.md` | Redesign mode: mode detection, audit, what never changes silently, fix order |
+| `references/interface-checklist.md` | The build and review rule set: accessibility, focus, forms, motion, performance, theming, copy |
 
 ---
 
-## Step 0 — Load the brand's visual identity
+## Step 0: Load the brand's visual identity
 
-Determine which brand or client this is for and load the matching `[brand]-brand-kit`
-skill (same pattern as `web-content-pipeline`).
+Determine which brand or client this is for and load its `[brand]-brand-kit` skill (same
+pattern as `web-content-pipeline`).
 
-- **Has a visual identity** (`references/visual-identity.md` or equivalent — palette,
-  type, spacing, radius, logo rules, imagery, banned/required list): pull the actual
-  tokens. Quote the hex, name the font family and weights, use the real spacing scale.
-  Every colour and type decision downstream traces to a token here.
-- **Voice-only so far**: say so. Build a minimal token system (below), keep the
-  direction conservative, and note that adding a visual layer to the brand kit is
-  worth doing.
-- **No kit at all**: build the token system from the subject, and flag that a
+- **Modular kit:** load `references/design.md` (and `references/context.md` for audience and
+  channels). Older kits keep visual identity in `references/visual-identity.md` or inline.
+- **Has a visual identity:** pull the actual tokens. Quote the hex, name the font family and
+  weights, use the real spacing scale and radius. Every colour and type decision downstream
+  traces to a token there.
+- **Voice only so far:** say so. Build a minimal token system (Part 1), keep the direction
+  conservative, and note that a design module for the kit is worth doing.
+- **No kit at all:** build the token system from the subject, and flag that a
   `[brand]-brand-kit` should be created if this brand recurs.
 
+**Precedence.** The brand kit outranks every default in this skill and its references. A brand
+whose identity is a cream background, a serif or a dark theme keeps it: the "generic" lists in
+`taste.md` describe defaults to avoid when nothing has been decided, not brands to correct.
+
 ---
 
-## Part 1 — Plan before building
+## Step 1: State the design read and the mode
+
+Following `taste.md` section 1, state in one line what this is, for whom, in which language, on
+which stack. Then set the three settings (section 2).
+
+Decide the mode: new build, redesign (preserve or overhaul, per `redesign-protocol.md`), or
+review. If the read or the mode genuinely forks, ask one question; otherwise proceed.
+
+**Work with the existing stack.** A WordPress site gets theme settings, block patterns or the
+site's own MCP (for example NovaMira), not a React rebuild. A Claude artifact gets one
+self-contained HTML file. A framework project keeps its framework and styling system.
+
+---
+
+## Part 1: Plan before building
 
 Do not open a file until the plan exists. Two passes.
 
-### Pass 1 — Draft a compact token system
+### Pass 1: Draft a compact token system
 
-- **Colour** — 4–6 named hex values with roles: `ground`, `surface`, `ink`, `muted`,
-  `border`, `accent`, plus semantic `good` / `warn` / `critical` kept separate from
-  the accent. Bias the neutrals slightly toward the accent hue so they read as chosen.
-  Take these from the brand kit where it has them.
-- **Type** — one or two families, clearly distinct if two. A display/character face
-  used with restraint, a body face, a utility/mono face only if data or code needs it.
-  Set a type scale (follow *The Elements of Typographic Style* proportions) with
-  intentional weights and letter-spacing. Body measure under ~80 characters; a touch
-  wider for serif body, with more line-height.
-- **Layout** — the concept in one sentence, plus a rough ASCII wireframe of the main
-  view. State alignment (left / centred / justified) as a decision.
-- **Motion** — what moves, when, and the reduced-motion fallback. Default to almost
-  none.
-- **The one risk** — pick a single place to be bold (a type treatment, a colour move,
-  one interaction). Everything around it stays quiet.
+- **Colour:** 4 to 6 named hex values with roles: `ground`, `surface`, `ink`, `muted`, `border`,
+  `accent`, plus semantic `good`, `warn`, `critical` kept separate from the accent. Take them from
+  the brand kit wherever it has them.
+- **Type:** one or two families, clearly distinct if two. A display face used with restraint, a
+  body face, a mono face only if data or code needs it. A set type scale with intentional weights
+  and letter-spacing. Body measure under about 80 characters.
+- **Layout:** the concept in one sentence, plus a rough ASCII wireframe of the main view. State
+  alignment as a decision.
+- **Motion:** what moves, when, why (the motivation rule in `taste.md`), and the reduced-motion
+  fallback.
+- **The one risk:** a single place to be bold. Everything around it stays quiet.
 
-### Pass 2 — Critique the plan against the brief
+### Pass 2: Critique the plan against the brief
 
-Before writing code, read each token back against the brief. Revise anything that
-reads as the generic default you'd produce for any similar page. Common AI-generic
-clusters to catch and change:
-
-- Warm cream (`#F4F1EA`) + serif display + terracotta (`#D97757`) accent
-- Near-black + a lone acid-green or vermilion pop
-- Broadsheet hairline rules, dense columns, zero border-radius everywhere
-- The SaaS card kit — identical rounded cards, uniform radius, soft grey shadow, on
-  everything
-- Template chrome — ALL-CAPS eyebrow labels, middle-dot meta strings, spaced em
-  dashes, "→" suffixes on every link, monospace labels used decoratively
-- Inter or Space Grotesk chosen as the "safe" face
-- Purple-to-blue gradient hero on white
-- Emoji as section markers; everything centred; numbered `01 / 02 / 03` markers on
-  content that isn't actually a sequence
-
-These are legitimate when the brief asks for them. They are not a default to reach for.
+Read each token and layout choice back against the brief and the brand. Revise anything that
+reads as the generic default you'd produce for any similar page: check it against `taste.md`
+sections 3 to 5 (defaults to reach past, the four locks, layout discipline).
 
 **Also confirm:**
-- **Hero-first** — the opening frame is the most characteristic thing in this brand's
-  world, in the right form (headline, image, demo, interactive moment), sized to what
-  it holds, not to `100vh`.
-- **Structure encodes information** — numbering, dividers, eyebrows, rules each mean
-  something true about the content, or they come out.
-- **One bold move** — if two things are fighting for attention, quiet one down.
+- **Hero first:** the opening frame is the most characteristic thing in this brand's world,
+  sized to what it holds, and it fits the first viewport.
+- **Structure encodes information:** numbering, dividers, eyebrows and rules each say something
+  true about the content, or they come out.
+- **One bold move:** if two things fight for attention, quiet one down.
 
-Only once the plan survives this pass do you write code, following it.
+Only once the plan survives this pass do you write code.
 
 ---
 
-## Part 2 — Build to the interface guidelines
+## Part 2: Build
 
-Full rule list: `references/interface-checklist.md` (build and review both use it).
-Pull in the categories relevant to what you're making — a static landing page doesn't
-need the virtualization or hydration rules; an app does.
+Build to the plan, pulling the relevant categories from `references/interface-checklist.md`. A
+static landing page doesn't need the virtualisation or hydration rules; an app does.
 
 The non-negotiables, applied without being asked:
 
-- **Semantic HTML first** — `<button>` for actions, `<a>` for navigation, real
-  `<label>`s, `<table>` for tabular data. ARIA only after semantics run out.
-- **Visible keyboard focus** — `:focus-visible` styling on every interactive element;
-  never `outline: none` without a replacement.
-- **Theme-aware** — define the full palette as tokens on `:root`; redefine only the
-  tokens for dark (`@media (prefers-color-scheme: dark)` and an explicit
-  `[data-theme]` override); set `color-scheme` and an explicit `background` on `body`.
-  No colour defined only inside a media/`[data-theme]` block.
-- **Motion** — honour `prefers-reduced-motion`; animate `transform` / `opacity` only;
-  never `transition: all`.
-- **Contrast** — 4.5:1 body text, 3:1 large text and meaningful UI; never carry
-  meaning by colour alone.
-- **Layout stability** — `width` / `height` on `<img>`; `text-wrap: balance` on
-  headings; `min-w-0` on flex children that hold text; wide content (tables, code)
-  scrolls in its own container, the page body never scrolls sideways.
-- **Locale** — `Intl.DateTimeFormat` / `Intl.NumberFormat` for dates and numbers,
-  never hardcoded; `translate="no"` on brand names and code tokens.
-- **Microcopy** — active voice, brand's sentence/title-case convention, specific
-  button labels ("Save API key", not "Continue"), errors that state the fix not just
-  the problem.
+- **Semantic HTML first:** `<button>` for actions, `<a>` for navigation, real `<label>`s,
+  `<table>` for tabular data. ARIA only after semantics run out.
+- **Visible keyboard focus** on every interactive element; never `outline: none` without a
+  replacement.
+- **Theme-aware tokens:** the full palette on `:root`; dark mode only when the brand or brief
+  calls for it, and then redefine tokens only (`prefers-color-scheme` plus a `[data-theme]`
+  override); explicit `background` on `body`.
+- **Motion:** honour `prefers-reduced-motion`; animate `transform` and `opacity` only; never
+  `transition: all`.
+- **Contrast:** 4.5:1 body text, 3:1 large text and meaningful UI, including every button and
+  form field; never carry meaning by colour alone.
+- **Layout stability:** `width` and `height` on `<img>`; `min-height: 100dvh` rather than
+  `100vh`; wide content scrolls in its own container, never the page body.
+- **Locale:** `Intl` formats for dates and numbers; `translate="no"` on brand names.
+- **Content:** copy comes from the approved piece. No invented figures, quotes, customers or
+  images that could pass as the client's real work (`taste.md` sections 6 and 7). No em dashes
+  in visible text.
 
-Manage CSS specificity deliberately — don't let a `.section` rule and a `.cta` rule
-quietly cancel each other's spacing. Take a screenshot mid-build, critique it once,
-adjust. Before shipping, remove one thing (the Chanel rule).
+Take a screenshot mid-build, critique it once, adjust. Run the pre-flight check in `taste.md`
+section 9 before handing over. Before shipping, remove one thing.
 
 ---
 
-## Part 3 — Review mode
+## Part 3: Redesign mode
 
-When handed existing UI code to audit, don't rewrite it — report. Fetch nothing the
-user didn't point you at. For each finding:
+Follow `references/redesign-protocol.md`: detect the mode, audit before touching, respect the
+never-change-silently list (URLs, navigation labels, form fields, logo, legal copy, FAQ and
+other structured content), then fix in priority order and stop when the brief is satisfied.
+Hand back the audit, the changes in order, and the decisions left for the user.
+
+On a live site, change a staging copy or drafts and ask before publishing.
+
+---
+
+## Part 4: Review mode
+
+When handed existing UI to audit, don't rewrite it: report. Review only what the user pointed
+you at. For each finding:
 
 ```
-path/to/file.tsx:42 — <div onClick> used for a nav action — use <a>/<Link> so
-Cmd-click and middle-click work
+path/to/file.tsx:42  <div onClick> used for a nav action; use <a> so Cmd-click and
+middle-click work
 ```
 
-Group by category (Accessibility, Focus, Forms, Motion, Performance, Content, …),
-most-severe first. Flag the anti-patterns listed at the end of
-`references/interface-checklist.md` explicitly. If the user gave no files, ask which
-files or globs to review rather than guessing.
+Group by category (Accessibility, Focus, Forms, Motion, Performance, Content, Design), most
+severe first. Flag the anti-patterns at the end of `interface-checklist.md` and the AI tells in
+`taste.md` section 8 explicitly. If the user gave no files or URL, ask which to review rather
+than guessing.
 
 ---
 
 ## Composition
 
-- **`[brand]-brand-kit`** — Step 0, supplies the tokens. This skill defines structure
-  and behaviour, not the brand.
-- **`creative-brief`** — upstream direction when a campaign needs design and there's
-  no art direction yet. Its deliverables table feeds this skill's build.
-- **`web-content-pipeline`** — writes the copy that goes into the layout; take the
-  approved text verbatim rather than writing headlines here.
-- **`canva-workflow` / `figma-weavy-workflow`** — raster and vector assets that sit
-  *in* the UI (social embeds, hero imagery, composited shots), not the coded interface
-  itself.
-- **`dataviz`** — any chart, plot, or dashboard visualization.
-- **`brand-review`** — voice and compliance gate for any copy baked into the design.
+- **`[brand]-brand-kit`:** Step 0, supplies the tokens. This skill defines structure and
+  behaviour, not the brand.
+- **`creative-brief`:** upstream direction when a campaign needs design and there's no art
+  direction yet. Its deliverables table feeds this skill's build.
+- **`web-content-pipeline`:** writes the copy that goes into the layout; take approved text
+  verbatim.
+- **`canva-workflow`, `figma-weavy-workflow`:** raster and vector assets that sit in the UI, not
+  the coded interface itself.
+- **`dataviz`:** any chart, plot or dashboard visualisation.
+- **`brand-review`:** the voice and compliance gate for any copy baked into the design.
+- **`seo-audit`:** before a redesign that touches templates, URLs or structured data.
 
 ## Output
 
-**Build mode:** the token system (as CSS custom properties or the project's format),
-then the page/component code, then a one-line note on the deliberate risk taken and
-what was cut. **Review mode:** the grouped findings list, nothing else.
+**Build mode:** the design read and settings in one line each, the token system (as CSS custom
+properties or the project's format), then the code, then a one-line note on the deliberate risk
+taken and what was cut. **Redesign mode:** the audit, the changes in fix order, open decisions.
+**Review mode:** the grouped findings list, nothing else.
