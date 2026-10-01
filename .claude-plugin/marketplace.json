@@ -1,7 +1,7 @@
 {
   "$schema": "https://code.claude.com/schemas/marketplace.json",
   "name": "marketing-agent",
-  "description": "Jordi Driesen's marketing plugin and skill library: a team of subagents for campaign strategy, competitive intelligence, SEO/GEO, content, social, email, creative, paid media, localization, and reporting, plus the account skills they delegate to.",
+  "description": "Jordi Driesen's marketing plugin: a team of subagents plus the skill library they run on, in one install.",
   "version": "1.0.0",
   "owner": {
     "name": "Jordi Driesen",
@@ -12,8 +12,8 @@
       "name": "marketing-agent",
       "displayName": "Marketing Agent",
       "source": "./plugin",
-      "description": "A marketing team of subagents (director, competitive intel, SEO/GEO, campaign strategy, content, social, email, creative, paid media, localization, reporting) that dispatches marketing requests to the right specialist and sequences multi-discipline campaigns. Ships agents only — every specialist delegates to dedicated account skills instead of duplicating them here.",
-      "version": "1.7.0",
+      "description": "A marketing team for Claude: a director plus ten specialist subagents (competitive intel, SEO/GEO, campaign strategy, content, social, email, creative, paid ads, localisation, reporting) and the skill library they run on. Client brand kits stay private and load via the [brand]-brand-kit naming pattern.",
+      "version": "2.0.0",
       "author": {
         "name": "Jordi Driesen"
       },

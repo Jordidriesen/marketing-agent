@@ -1,127 +1,143 @@
-# Claude Skills — Marketing & SEO
+# Marketing Agent: a Claude marketing team
 
-A library of [Claude Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) for agency-style marketing work: Google Ads auditing and strategy, SEO/content research, and content writing and translation.
+A marketing team for Claude in one install: a director, ten specialist subagents, and the 52 skills they run on. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, creative and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
 
-Each folder is a self-contained skill (`SKILL.md` + optional `references/` and `scripts/`). Drop any folder you want into your own `.claude/skills/` directory (Claude Code) or upload it in Claude.ai / the Claude API to make it available.
+You act as the operator: ask `marketing-director` for anything that spans disciplines, or call a specialist directly for a single task.
 
-> **Not included:** brand-specific `[brand]-brand-kit` skills (tone-of-voice, locked terminology, visual guidelines for specific clients) have been kept private, since they encode confidential client and personal brand detail. A couple of skills below reference an `acme-brand-kit` as a stand-in — build your own following the same `[brand]-brand-kit` naming pattern if you want that layer.
+## Repository layout
 
-> **Attribution:** `campaign-plan`, `competitive-brief`, and `performance-report` were built specifically for the marketing plugin (they shipped inside [`/plugin`](plugin) through v1.5.x; as of v1.6.0 the plugin delegates to them as ordinary account skills instead of bundling them). `brand-review`, `content-creation`, `newsletter-writer`, `press-release-writer`, and `social-content-writer` started from Anthropic's built-in "marketing" plugin and were substantially reworked with brand-kit integration and cross-skill routing. `european-market-intelligence` is a Europeanized merge of two ID8Labs skills (`market-research-analyst` + `competitive-intelligence`) — see its `SKILL.md` frontmatter — with independently written content throughout beyond the shared use of standard, unprotectable business frameworks (TAM/SAM/SOM, SWOT, Porter's Five Forces). `content-translate` is adapted from an unnamed third-party blog-translate/localize module — see its `metadata.history` for the specific changes made. `frontend-design` synthesises two public references — Anthropic's `frontend-design` skill (design philosophy, two-pass plan/critique method) and vercel-labs' `web-interface-guidelines` (interface rule set, MIT) — wired to the `[brand]-brand-kit` pattern; see its `metadata.history`. Skills that were pulled in unmodified (`docx`, `pdf`, `pptx`, `xlsx`, `skill-creator`, `import-memory`) were left out, since republishing an unedited copy of Anthropic's own built-ins adds nothing here.
+```
+plugin/                    the installable plugin
+  .claude-plugin/          plugin manifest
+  agents/                  marketing-director and ten specialists
+  skills/                  every skill the agents use (52)
+  .mcp.json                connectors with a public endpoint
+  CONNECTORS.md            which connector each discipline uses, and the data-source rule
+templates/brand-kit/       blank modular brand kit: router + context, voice, design
+archive/                   retired skills kept for reference, not installed
+scripts/lint_skills.py     frontmatter lint, run in CI
+```
+
+**Brand kits are not in this repo.** Each client gets a private `[brand]-brand-kit` skill (identity, voice, design) installed separately in your Claude account. Every content, review and design skill looks for one by that naming pattern and loads it automatically. Start from [`templates/brand-kit`](templates/brand-kit).
 
 ## Installation
-
-### The plugin (agents)
 
 ```
 claude plugin marketplace add Jordidriesen/marketing-agent
 /plugin install marketing-agent@marketing-agent
 ```
 
-This installs the agent team in [`/plugin`](plugin) — `marketing-director` and its specialists. Update later with `claude plugin marketplace update marketing-agent`; no need to re-add. See [`plugin/README.md`](plugin/README.md) for what each agent does and which skills it expects to find installed.
+This installs the agents and all skills together, so they can't drift apart. Update later with `claude plugin marketplace update marketing-agent`.
 
-### Individual skills
+To use a single skill without the plugin, copy its folder from `plugin/skills/` into `~/.claude/skills/` or upload it as a zip in Claude settings.
 
-```bash
-git clone https://github.com/Jordidriesen/marketing-agent.git
-cp -r <repo-name>/<skill-name> ~/.claude/skills/
-```
+Connect the tools you use in Claude's connector settings; see [`plugin/CONNECTORS.md`](plugin/CONNECTORS.md). Skills say plainly when a connector they need isn't there rather than estimating data.
 
-Or upload an individual skill's folder as a zip through the Claude.ai / Claude API skills interface. The plugin's agents call these skills by name — install the ones a given agent needs (or the whole repo) alongside it.
+## Agents
+
+See [`plugin/README.md`](plugin/README.md) for each agent's role and the order a full campaign runs in: intelligence and research, then strategy, then execution, then localisation, then reporting.
 
 ## Skills
 
-### Google Ads / PPC
+### Paid search and Google Ads
 
 | Skill | What it does |
 |---|---|
-| `ad-copy-tester` | Analyzes responsive search ad asset performance and says which headlines and descriptions to keep, cut, or replace. |
-| `ad-schedule-analyzer` | Builds a day and hour performance heatmap from Google Ads data and turns it into a dayparting plan. |
-| `auction-insights-monitor` | Reads auction insights to track competitor movement week over week, flagging new entrants and lost position. |
-| `bid-strategy-advisor` | Recommends the right bid strategy based on conversion volume and data quality, and flags setups likely to fail. |
-| `budget-optimizer` | Models what happens if budget shifts between campaigns, using real marginal performance rather than a generic forecast. |
-| `campaign-architect` | Designs campaign structures with budget splits, bidding strategies, and match-type plans. |
-| `competitor-teardown` | Breaks down competitor ads to find claimed angles, unclaimed angles, and what to test first. |
-| `conversion-tracking-auditor` | Audits conversion tracking for gaps, double counting, and misconfiguration that corrupts bidding. |
-| `device-performance-analyzer` | Breaks down performance by device and separates a real device problem from a landing page problem. |
-| `disapproval-diagnoser` | Explains why assets, ads, or keywords were disapproved and what to change to get them approved. |
-| `full-account-audit` | Complete structured account audit — structure, budgets, bidding, keywords, tracking, creative — ranked by money impact. |
-| `geo-performance-analyzer` | Finds regions worth bidding up and regions draining budget. |
-| `landing-page-matcher` | Checks message match between search query, ad copy, and landing page, and flags the leaks. |
-| `metric-detective` | Diagnoses why a metric changed, with ranked causes and how to verify each in the interface. |
-| `negative-keywords` | Classifies search terms into keep/block/review and formats negative lists with correct match types. |
-| `pmax-decoder` | Surfaces the Performance Max data Google buries — asset group performance, search categories, brand cannibalization. |
-| `quality-score-doctor` | Diagnoses Quality Score by component and ranks fixes by how much spend each leak is costing. |
-| `report-writer` | Turns raw performance data into the executive summary that goes at the top of a client report. |
-| `rsa-writer` | Writes responsive search ad headlines and descriptions that fit character limits and match intent. |
-| `sea-keyword-research` | First-pass paid-search keyword research grouped by intent, with trap keywords flagged and a list sized to budget. |
-| `search-term-auditor` | Audits search term reports for wasted spend and builds ready-to-paste negative keyword lists. |
+| `ad-copy-tester` | Keep, cut or replace RSA headlines and descriptions from asset performance |
+| `ad-schedule-analyzer` | Day-and-hour heatmap and a dayparting plan |
+| `auction-insights-monitor` | Competitor movement in auction insights, week over week |
+| `bid-strategy-advisor` | The right bid strategy for the conversion volume and data quality |
+| `budget-optimizer` | Models budget shifts between campaigns on real marginal performance |
+| `campaign-architect` | Campaign structure, budget splits, bidding and match types |
+| `competitor-teardown` | Angles competitors' ads claim, angles nobody claims, what to test |
+| `conversion-tracking-auditor` | Gaps, double counting and misconfigured conversion actions |
+| `device-performance-analyzer` | Device performance and bid adjustments |
+| `disapproval-diagnoser` | Why something was disapproved and what to change |
+| `full-account-audit` | Complete account audit ranked by money impact |
+| `geo-performance-analyzer` | Regions to bid up and regions draining budget |
+| `google-ads-tool-map` | Shared reference: Google Ads connector tools and parameters |
+| `landing-page-matcher` | Message match between query, ad and landing page |
+| `metric-detective` | Why a metric moved, with ranked causes and how to verify each |
+| `negative-keywords` | Keep, block or review, with correct negative match types |
+| `pmax-decoder` | Performance Max asset groups, search categories, brand cannibalisation |
+| `quality-score-doctor` | Quality Score by component, fixes ranked by spend at risk |
+| `rsa-writer` | RSA headlines and descriptions within character limits |
+| `sea-keyword-research` | Paid search keyword list by intent, sized to budget |
+| `search-term-auditor` | Wasted spend and ready-to-paste negative lists |
 
-### SEO & Content Research
-
-| Skill | What it does |
-|---|---|
-| `competitive-landscape` | Maps SEO market leaders across several competitors at once. |
-| `competitor-analysis` | Deep dive on one named competitor's organic footprint, rankings, and actual page content. |
-| `content-gap-mapping` | Maps content gaps, parity, and advantages between your site and named competitors. |
-| `content-research-orchestrator` | Gated five-stage pipeline: keyword research → clustering → competitive landscape → competitor analysis → content gap mapping. |
-| `european-market-intelligence` | Market sizing, competitor dossiers, pricing intelligence, and entry feasibility for European markets. |
-| `free-tool-strategy` | Plans and evaluates a free tool for lead generation, SEO value, or brand awareness. |
-| `keyword-clustering` | Clusters a keyword list by intent and SERP overlap and maps each cluster to a page. |
-| `keyword-research` | Turns seed topics or competitor domains into a prioritized keyword opportunity table. |
-| `media-mapping` | Identifies media outlets, trade publications, and newsletters relevant to a topic for PR purposes. |
-| `seo-audit` | Complete SEO audit for a webpage or website. |
-| `seo-keyword-research` | Keyword discovery step of the research pipeline, standalone. |
-
-### Strategy & Reporting
+### Paid media reporting
 
 | Skill | What it does |
 |---|---|
-| `campaign-plan` | Generates a full campaign brief — objectives, audience, key messages, channels, calendar, budget, metrics — from a goal and a timeline. |
-| `competitive-brief` | Researches named competitors' messaging and positioning and produces a comparison, content-gap analysis, and optional battlecard. |
-| `performance-report` | Builds a cross-channel marketing performance report — key metrics, trends, wins/misses, prioritized recommendations. |
+| `paid-ads-report-writer` | Client-ready reports for any paid platform, search and social: executive summary, per-platform sections, a normalised cross-platform view. Replaces `report-writer` |
 
-### The Marketing Plugin
-
-[`/plugin`](plugin) packages `marketing-director` and ten specialist subagents into an installable Claude Code / Cowork plugin (`.claude-plugin/plugin.json`, pre-configured `.mcp.json`, its own README) that dispatches requests across the skills in this repo rather than duplicating them. Install via the [marketplace](#installation) or read [`plugin/README.md`](plugin/README.md) for what each agent does.
-
-### Design
+### SEO, GEO and research
 
 | Skill | What it does |
 |---|---|
-| `frontend-design` | Designs or reviews front-end UI — pages, components, design systems — in a specific brand's visual identity; loads `[brand]-brand-kit` for tokens. |
+| `competitive-landscape` | SEO market leaders across several competitors |
+| `competitor-analysis` | Deep dive on one competitor's organic footprint and content |
+| `content-gap-mapping` | Gaps, parity and advantages against competitors per cluster |
+| `content-research-orchestrator` | Gated pipeline: keywords, clustering, landscape, competitor, gaps |
+| `european-market-intelligence` | Market sizing, competitor dossiers and entry feasibility for European markets |
+| `free-tool-strategy` | Plans a free tool for leads, links or awareness |
+| `keyword-clustering` | Clusters keywords by intent and SERP overlap and maps them to pages |
+| `media-mapping` | Media outlets, trade press and newsletters for PR |
+| `seo-audit` | Technical and on-page SEO audit |
+| `seo-keyword-research` | Prioritised organic keyword opportunities |
 
-### Content Writing & Editing
-
-| Skill | What it does |
-|---|---|
-| `ai-content-cleaner` | Detects and removes AI writing patterns/tells; humanizes copy across five languages. |
-| `brand-review` | Reviews a draft against brand voice and screens it for legal/compliance risk before it ships. |
-| `clean-user-facing-text` | Audits invisible Unicode and rewrites prose for finalized reader-facing text. |
-| `content-creation` | Entry-point router for a "write marketing content" request — classifies the content type(s) and dispatches to the specialist skill(s) below. |
-| `content-translate` | Translates web content into other languages with locale-correct formatting and brand terminology carried over. |
-| `copy-editing` | Edits and tightens existing marketing copy. |
-| `customer-story-writer` | Writes B2B customer stories and case studies using a persuasion framework. |
-| `email-sequence-hubspot-brevo` | Drafts multi-email sequences built specifically for HubSpot Workflows or Brevo Automation. |
-| `newsletter-writer` | Drafts a single one-off marketing email or newsletter — subject lines, preview text, body structure. |
-| `press-release-writer` | Drafts a press release — headline, dateline, lead, body, quotes, boilerplate — in AP-style formatting. |
-| `social-content-writer` | Drafts platform-specific social posts for Instagram, LinkedIn, Reddit, or X. |
-| `web-content-pipeline` | Sequential workflow for writing and humanizing any web page — blog posts, landing pages, product pages. |
-
-### Shared / Infrastructure
+### Strategy and planning
 
 | Skill | What it does |
 |---|---|
-| `content-references` | Shared reference library (frameworks, schema rules) used by the content-creation skills above. |
-| `security-policy` | Shared security reference for skills that ingest untrusted content or use write-capable connectors. |
+| `campaign-plan` | Full campaign brief from a goal and a timeline |
+| `lead-magnets` | Plans a lead magnet: format, gating, landing page, delivery, measurement |
 
-## License
+### Content writing and editing
 
-MIT — see [LICENSE](LICENSE). Swap this out if you'd rather use something else.
+| Skill | What it does |
+|---|---|
+| `ai-content-cleaner` | Final cleaning pass: AI-pattern removal in five languages (Belgian Dutch included), protected spans, invisible-Unicode script. Absorbs `clean-user-facing-text` |
+| `brand-review` | Brand voice and compliance check before anything ships |
+| `content-creation` | Router for content requests that span formats |
+| `content-translate` | Translation and localisation with locked brand terminology |
+| `copy-editing` | Seven Sweeps edit of existing copy, honouring a brand's Voice Lock |
+| `customer-story-writer` | B2B customer stories and case studies |
+| `email-sequence-hubspot-brevo` | Multi-email sequences for HubSpot Workflows or Brevo Automation |
+| `newsletter-writer` | One-off marketing emails and newsletters |
+| `press-release-writer` | Press releases in standard PR format |
+| `social-content-writer` | Platform-specific posts for LinkedIn, Instagram, X and Reddit |
+| `web-content-pipeline` | Any web page, from brief to humanised draft |
+
+### Creative and design
+
+| Skill | What it does |
+|---|---|
+| `creative-brief` | Art direction and an asset table with real formats and dimensions |
+| `canva-workflow` | Builds assets in Canva, or a manual checklist when Canva isn't connected |
+| `figma-weavy-workflow` | Figma Weave graphs for generated or composited imagery and video |
+| `frontend-design` | Builds, redesigns or reviews front-end UI in a brand's visual identity: design read and settings, anti-generic rules, redesign protocol, interface checklist |
+
+### Shared infrastructure
+
+| Skill | What it does |
+|---|---|
+| `content-references` | Shared frameworks and SEO/AEO rules for the content skills |
+| `mcp-efficiency` | How to call any connector without flooding the context |
+| `security-policy` | Untrusted content and write-capable connectors: what needs approval |
+
+## Attribution
+
+`brand-review`, `content-creation`, `newsletter-writer`, `press-release-writer` and `social-content-writer` started from Anthropic's marketing plugin and were substantially reworked. `lead-magnets` is adapted from a generic lead-magnet skill (see its `metadata.history`). `european-market-intelligence` is a Europeanised merge of two ID8Labs skills. `content-translate` is adapted from a third-party translate module. `frontend-design` synthesises Anthropic's `frontend-design`, vercel-labs' `web-interface-guidelines` (MIT) and Leonxlnx's `taste-skill` and `redesign-skill` (MIT). See each skill's `metadata.history` where present.
+
+## Licence
+
+MIT, see [LICENSE](LICENSE).
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the `SKILL.md` convention this repo follows, and [CHANGELOG.md](CHANGELOG.md) for release history. A GitHub Action lints every skill's frontmatter on push — run it locally first with `python scripts/lint_skills.py`.
+See [CONTRIBUTING.md](CONTRIBUTING.md) and [CHANGELOG.md](CHANGELOG.md). A GitHub Action lints every skill's frontmatter on push; run it locally first with `python scripts/lint_skills.py`.
 
 ---
 
-Built by [Jordi Driesen](https://jordidriesen.be) — fractional marketer and digital strategist.
+Built by [Jordi Driesen](https://jordidriesen.be), fractional marketer and digital strategist.

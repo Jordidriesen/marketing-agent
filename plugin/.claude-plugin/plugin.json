@@ -1,7 +1,7 @@
 {
   "name": "marketing-agent",
-  "version": "1.7.0",
-  "description": "A marketing team of subagents (director, competitive intel, SEO/GEO, campaign strategy, content, social, email, creative, paid media, localization, reporting) that dispatches requests to the right specialist and sequences multi-discipline campaigns. Ships agents only — each specialist delegates to dedicated account skills (campaign planning, research, content, brand review, email, SEO, creative, localization, reporting) instead of duplicating them here.",
+  "version": "2.0.0",
+  "description": "A marketing team for Claude: a director plus ten specialist subagents (competitive intel, SEO/GEO, campaign strategy, content, social, email, creative, paid ads, localisation, reporting) and the skill library they run on. Client brand kits stay private and load via the [brand]-brand-kit naming pattern.",
   "author": {
     "name": "Jordi Driesen"
   },

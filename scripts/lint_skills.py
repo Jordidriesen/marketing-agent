@@ -20,7 +20,7 @@ except ImportError:
     sys.exit(2)
 
 ROOT = Path(__file__).resolve().parent.parent
-SKIP_DIRS = {".github", ".git", "scripts", "plugin"}
+SKIP_DIRS = {".github", ".git", "scripts", "plugin", "archive", "templates"}
 MIN_DESCRIPTION_LEN = 20
 
 FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.S)

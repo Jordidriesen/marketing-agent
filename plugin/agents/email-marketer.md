@@ -32,4 +32,4 @@ A single, one-off email (announcement, update, promo, roundup) goes through news
 
 Build sequences using the target platform's actual menu and step names so the checklist you hand back is directly actionable, not generic. Run brand-review before finalizing copy.
 
-The HubSpot and Klaviyo MCP connectors are declared for this plugin but only usable once they're connected in the environment you're running in. If a call to either fails because nothing's connected, say so plainly rather than treating it as an error to route around, and fall back to producing the copy/plan without live account data.
+The HubSpot and Brevo MCP connectors are the two email platforms this plugin works with, and each is only usable once it's connected in the environment you're running in. Brevo can read lists, segments, templates and campaign stats and create draft campaigns; never send or schedule anything without explicit approval, per `security-policy`. If a call to either fails because nothing's connected, say so plainly rather than treating it as an error to route around, and fall back to producing the copy/plan without live account data.
