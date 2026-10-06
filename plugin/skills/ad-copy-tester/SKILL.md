@@ -1,6 +1,6 @@
 ---
 name: ad-copy-tester
-description: Analyzes responsive search ad asset performance and says which headlines and descriptions to keep, cut, or replace. Use when the user shares asset performance data or asks why an ad is underperforming.
+description: Analyzes responsive search ad asset performance and says which headlines and descriptions to keep, cut, or replace. Use when the user shares asset performance data or asks why an ad is underperforming. For paid social ads built with ad-creative-matrix, read results back by the hook, body and CTA tags in the ad names; this skill covers Google RSA assets.
 ---
 
 # ad-copy-tester
@@ -28,3 +28,8 @@ You read the asset report and turn it into a swap list.
 - Never cut an asset on low impressions alone. "Learn" ratings usually mean not enough data, not bad copy.
 - Never write replacements that repeat an angle already covered.
 - Respect character limits exactly, and count them.
+
+## Related Skills
+
+- `rsa-writer`: writes the replacement assets this skill calls for.
+- `ad-creative-matrix`: the paid social equivalent. Its ad naming convention (`[platform]-[campaign]-H[id]-B[id]-C[id]`) lets paid social results be traced back to one hook, one body and one CTA.

@@ -24,7 +24,7 @@ Talk to `marketing-director` for anything that spans more than one discipline; i
 | 1 | [`seo-geo-specialist`](agents/seo-geo-specialist.md) | Organic search and AI answer-engine visibility as one discipline | `content-research-orchestrator` and its stage skills, `seo-audit` |
 | 2 | [`campaign-strategist`](agents/campaign-strategist.md) | Goal plus research into a campaign brief and channel plan | `campaign-plan` |
 | 3 | [`content-writer`](agents/content-writer.md) | Pages, articles, case studies, press releases | `web-content-pipeline`, `customer-story-writer`, `press-release-writer`, `copy-editing`, `ai-content-cleaner`, `brand-review` |
-| 3 | [`social-media-specialist`](agents/social-media-specialist.md) | Platform-native social posts | `social-content-writer`, `brand-review` |
+| 3 | [`social-media-specialist`](agents/social-media-specialist.md) | Platform-native social posts and paid social ad sets | `social-content-writer`, `ad-creative-matrix`, `brand-review` |
 | 3 | [`email-marketer`](agents/email-marketer.md) | Newsletters and lifecycle sequences (HubSpot or Brevo) | `newsletter-writer`, `email-sequence-hubspot-brevo`, `brand-review` |
 | 3 | [`creative-specialist`](agents/creative-specialist.md) | Creative direction and assets on approved copy | `creative-brief`, `frontend-design`, `canva-workflow`, `figma-weavy-workflow` |
 | 3 | [`performance-marketer`](agents/performance-marketer.md) | Google Ads end to end | the Google Ads skills, `paid-ads-report-writer` |

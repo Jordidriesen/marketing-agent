@@ -1,13 +1,13 @@
 ---
 name: social-content-writer
-description: "Draft social media posts for Instagram, LinkedIn, Reddit, or X (Twitter) with a platform-selection gate up front, then platform-specific structure, hook, hashtag, and format guidance tuned to each platform's current algorithm behavior — including Reddit's community-first self-promotion norms, which are fundamentally different from the other three. Use for \"write a LinkedIn post,\" \"social post,\" \"Twitter/X post,\" \"Instagram caption,\" \"Reddit post,\" or \"social media content.\" Not for a full content calendar (see campaign-plan) and not for web pages (see web-content-pipeline) or lifecycle email flows (see email-sequence-hubspot-brevo)."
+description: "Draft social media posts for Instagram, LinkedIn, Reddit, or X (Twitter) with a platform-selection gate up front, then platform-specific structure, hook, hashtag, and format guidance tuned to each platform's current algorithm behavior — including Reddit's community-first self-promotion norms, which are fundamentally different from the other three. Use for \"write a LinkedIn post,\" \"social post,\" \"Twitter/X post,\" \"Instagram caption,\" \"Reddit post,\" or \"social media content.\" Not for paid ads or ad creative sets (see ad-creative-matrix), not for a full content calendar (see campaign-plan) and not for web pages (see web-content-pipeline) or lifecycle email flows (see email-sequence-hubspot-brevo)."
 ---
 
 # Social Content Writer
 
 Drafts ready-to-post social copy, one platform at a time or several at once, in the right brand voice — built around Instagram, LinkedIn, Reddit, and X, since each has its own algorithm behavior, format expectations, and (for Reddit especially) its own social contract around self-promotion.
 
-**Scope:** A single post or a short batch of posts for one topic/announcement. Not a content calendar (`campaign-plan` plans that) and not the underlying web content being promoted (`web-content-pipeline` / `customer-story-writer` write that).
+**Scope:** A single post or a short batch of posts for one topic/announcement. Not paid ads (`ad-creative-matrix` writes those). Not a content calendar (`campaign-plan` plans that) and not the underlying web content being promoted (`web-content-pipeline` / `customer-story-writer` write that).
 
 **Core rule when several platforms are requested:** re-architect per platform, don't reformat the same text four ways. Instagram's own 2026 algorithm update explicitly deprioritizes recycled cross-platform content, and a LinkedIn post pasted into Reddit reads as an ad and gets removed. Steps 1–4 (brand, requirements, angle, framework) are shared; Step 6 is not.
 
@@ -144,3 +144,4 @@ Ask: "Would you like this adapted for another platform, a variant to test, or sh
 - `web-content-pipeline` — for the web page a social post might link to
 - `customer-story-writer` — for a case study a social post might summarize
 - `content-creation` — the gateway skill; routes here when the content type is social
+- `ad-creative-matrix` — for paid social and video ads (hooks, bodies, CTAs, test plan). This skill is organic only

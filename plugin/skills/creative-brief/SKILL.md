@@ -80,7 +80,7 @@ For each deliverable, which tool and skill: `canva-workflow` for template-based 
 
 ## Related Skills
 
-Hand the finished brief to `canva-workflow` or `figma-weavy-workflow` for the build steps. If the creative needs new copy, that comes from `content-writer` or `social-media-specialist` first, and any copy written into a layout passes `brand-review`. For the campaign context this creative serves, see `campaign-plan`.
+Hand the finished brief to `canva-workflow` or `figma-weavy-workflow` for the build steps. If the creative needs new copy, that comes from `content-writer` or `social-media-specialist` first (for paid social and video ads, `ad-creative-matrix` supplies the winning hooks, bodies and CTAs to brief against), and any copy written into a layout passes `brand-review`. For the campaign context this creative serves, see `campaign-plan`.
 
 ## Output
 

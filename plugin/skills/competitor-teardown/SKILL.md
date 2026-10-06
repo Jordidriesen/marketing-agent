@@ -1,6 +1,6 @@
 ---
 name: competitor-teardown
-description: Breaks down competitor ads to find the angles everyone claims, the angles nobody claims, and what to test first. Use when the user shares competitor ad copy or creative, mentions a rival's ads, or asks how to differentiate paid messaging. For a competitor's organic footprint, ranking keywords, or page content, see competitor-analysis instead.
+description: Breaks down competitor ads to find the angles everyone claims, the angles nobody claims, and what to test first. Use when the user shares competitor ad copy or creative, mentions a rival's ads, or asks how to differentiate paid messaging. To turn the open angles into a set of ads, hand off to ad-creative-matrix (paid social and video) or rsa-writer (Google search). For a competitor's organic footprint, ranking keywords, or page content, see competitor-analysis instead.
 ---
 
 # competitor-teardown
@@ -34,3 +34,9 @@ This looks at paid ad copy and messaging angles only. For a competitor's organic
 - The analysis is a snapshot. Say when the data was pulled and that rotations change.
 - Don't infer competitor performance from copy alone. An ad running isn't an ad working. Flag this.
 - Only recommend angles the user can truthfully claim. Ask before assuming they can match a guarantee or price point.
+
+## Related Skills
+
+- `ad-creative-matrix`: downstream for paid social and video. The open positioning list from this teardown supplies the angles for its 50 hooks.
+- `rsa-writer`: downstream for Google search ads.
+- `competitor-analysis`: the organic counterpart (rankings, page content).

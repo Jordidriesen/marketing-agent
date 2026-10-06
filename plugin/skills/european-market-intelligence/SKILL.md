@@ -219,6 +219,6 @@ Same structure as a standard battlecard (quick facts, strengths honestly stated,
 ## Integration with Other Skills
 
 - **`competitive-landscape` / `competitor-analysis` / `seo-keyword-research` / `content-gap-mapping`** - the organic-search layer this skill hands off to in Workflow 4, and pulls from rather than duplicates.
-- **`rsa-writer` / `ad-copy-tester` / `campaign-architect` / `bid-strategy-advisor` / `budget-optimizer`** - once Workflow 4's Google Ads intelligence identifies a gap or opportunity, hand off here to build the response. No dedicated ad-creative skill currently covers LinkedIn; flag that gap to the user if a LinkedIn ad response is what's needed.
+- **`rsa-writer` / `ad-copy-tester` / `campaign-architect` / `bid-strategy-advisor` / `budget-optimizer`** - once Workflow 4's Google Ads intelligence identifies a gap or opportunity, hand off here to build the response. For a LinkedIn, Meta or video ad response use `ad-creative-matrix`.
 - **`media-mapping`** - feed a competitor's trade-press footprint here if the user wants a PR angle next.
 - **`[brand]-brand-kit`** - when a market-entry or competitive report is being written up as a client-facing deliverable, apply that client's `[brand]-brand-kit` skill, if one exists, to the final document's tone of voice.

@@ -1,6 +1,6 @@
 ---
 name: rsa-writer
-description: Writes Google Ads responsive search ad headlines and descriptions that fit character limits and match search intent. Use when the user asks for ad copy, RSA assets, headlines, or descriptions.
+description: Writes Google Ads responsive search ad headlines and descriptions that fit character limits and match search intent. Use when the user asks for ad copy, RSA assets, headlines, or descriptions. For paid social or video ads (LinkedIn, Meta, YouTube, TikTok) use ad-creative-matrix instead.
 ---
 
 # rsa-writer
@@ -37,3 +37,8 @@ You write RSA assets like a direct response copywriter who has seen a thousand s
 - No exclamation marks. No "best in class", "top rated", "world class" filler unless the user has proof they can legally claim.
 - Never invent specifics. No fake percentages, prices, or review counts. If the copy needs a number, ask for it.
 - Don't write 15 versions of the same headline. Cover different angles: price, speed, trust, outcome, objection.
+
+## Related Skills
+
+- `ad-creative-matrix`: the paid social and video equivalent (hooks, bodies and CTAs for LinkedIn, Meta, YouTube, TikTok). This skill is Google search only.
+- `ad-copy-tester`: reads asset performance once these assets are live.

@@ -21,6 +21,8 @@ Each content type has its own skill, tuned to that format's actual process (web 
 | A single/one-off marketing email or newsletter | `newsletter-writer` |
 | A multi-email lifecycle sequence (onboarding, nurture, win-back, etc.) | `email-sequence-hubspot-brevo` |
 | A press release | `press-release-writer` |
+| Paid social or video ads (LinkedIn, Meta, YouTube, TikTok): hooks, variations, test set | `ad-creative-matrix` |
+| Google search ads (RSA headlines and descriptions) | `rsa-writer` |
 | Several of the above from one brief (a launch, a campaign) | Run each relevant specialist in turn, passing the shared inputs from Step 2 to each |
 
 If the type is genuinely unclear from the request, ask directly rather than guessing: "What are we creating — a blog post, a landing page, a social post, an email, a press release, a case study, or a mix?"
