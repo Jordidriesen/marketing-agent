@@ -44,6 +44,7 @@ See [`plugin/README.md`](plugin/README.md) for each agent's role and the order a
 | Skill | What it does |
 |---|---|
 | `ad-copy-tester` | Keep, cut or replace RSA headlines and descriptions from asset performance |
+| `ad-creative-matrix` | 50 hooks, 5 bodies and 3 CTAs for paid social and video ads, screened, tagged and test-planned |
 | `ad-schedule-analyzer` | Day-and-hour heatmap and a dayparting plan |
 | `auction-insights-monitor` | Competitor movement in auction insights, week over week |
 | `bid-strategy-advisor` | The right bid strategy for the conversion volume and data quality |

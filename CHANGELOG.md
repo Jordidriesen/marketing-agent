@@ -5,6 +5,7 @@ All notable changes to this skill library are documented here. Individual skills
 ## [Unreleased]
 
 - **`ad-creative-matrix` 1.0.0 (new):** the 50-5-3 method (50 hooks, 5 bodies, 3 CTAs) for paid social and video ads, with a hook screening rubric, a compatibility check, tagged assembly and a test plan sized to budget. References: `angle-library.md`, `platform-limits.md`.
+- **Back pointers to `ad-creative-matrix`:** added to `rsa-writer`, `ad-copy-tester`, `competitor-teardown`, `social-content-writer`, `creative-brief`, `content-creation` (new routing rows for paid social and RSA), the `social-media-specialist` agent and `european-market-intelligence` (replaced a stale "no LinkedIn ad skill" line). `rsa-writer`, `ad-copy-tester` and `competitor-teardown` gained a Related Skills section.
 
 ## [2.1.0]
 
