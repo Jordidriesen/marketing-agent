@@ -4,7 +4,7 @@ This repo follows the [Claude Skills](https://docs.claude.com/en/docs/agents-and
 
 ## Adding or editing a skill
 
-1. **Folder name** = skill name, kebab-case (e.g. `negative-keywords`).
+1. **Folder name** = skill name, kebab-case (e.g. `search-term-auditor`).
 2. **`SKILL.md` frontmatter** is required:
    ```yaml
    ---
