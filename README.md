@@ -1,6 +1,6 @@
 # Marketing Agent: a Claude marketing team
 
-A marketing team for Claude in one install: a director, ten specialist subagents, and the 55 skills they run on. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, creative and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
+A marketing team for Claude in one install: a director, ten specialist subagents, and the 54 skills they run on. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, creative and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
 
 You act as the operator: ask `marketing-director` for anything that spans disciplines, or call a specialist directly for a single task.
 
@@ -10,7 +10,7 @@ You act as the operator: ask `marketing-director` for anything that spans discip
 plugin/                    the installable plugin
   .claude-plugin/          plugin manifest
   agents/                  marketing-director and ten specialists
-  skills/                  every skill the agents use (55)
+  skills/                  every skill the agents use (54)
   .mcp.json                connectors with a public endpoint
   CONNECTORS.md            which connector each discipline uses, and the data-source rule
 templates/brand-kit/       blank modular brand kit: router + context, voice, design
@@ -59,12 +59,11 @@ See [`plugin/README.md`](plugin/README.md) for each agent's role and the order a
 | `google-ads-tool-map` | Shared reference: Google Ads connector tools and parameters |
 | `landing-page-matcher` | Message match between query, ad and landing page |
 | `metric-detective` | Why a metric moved, with ranked causes and how to verify each |
-| `negative-keywords` | Keep, block or review, with correct negative match types |
 | `pmax-decoder` | Performance Max asset groups, search categories, brand cannibalisation |
 | `quality-score-doctor` | Quality Score by component, fixes ranked by spend at risk |
 | `rsa-writer` | RSA headlines and descriptions within character limits |
 | `sea-keyword-research` | Paid search keyword list by intent, sized to budget |
-| `search-term-auditor` | Wasted spend and ready-to-paste negative lists |
+| `search-term-auditor` | Wasted spend, keep/block/review classification and paste-ready negative lists with match types |
 
 ### Paid media reporting
 

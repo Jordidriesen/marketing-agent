@@ -6,7 +6,7 @@ labels: bug
 ---
 
 **Skill affected**
-e.g. `negative-keywords`
+e.g. `search-term-auditor`
 
 **What happened**
 Describe the incorrect behaviour.
