@@ -2,6 +2,10 @@
 
 All notable changes to this skill library are documented here. Individual skills may also carry their own `metadata.version` in their `SKILL.md` frontmatter for finer-grained history.
 
+## [Unreleased]
+
+- **`ad-creative-matrix` 1.0.0 (new):** the 50-5-3 method (50 hooks, 5 bodies, 3 CTAs) for paid social and video ads, with a hook screening rubric, a compatibility check, tagged assembly and a test plan sized to budget. References: `angle-library.md`, `platform-limits.md`.
+
 ## [2.1.0]
 
 New connectors wired in: WP Umbrella, Adobe for creativity, G2, Tally.so, vidIQ, Google Drive, Make and Zapier, plus OpenSEO's newer tools (local, rank tracking, near-miss pages, index status, saved keywords, reports).
