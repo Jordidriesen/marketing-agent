@@ -1,6 +1,6 @@
 # Marketing Agent: a Claude marketing team
 
-A marketing team for Claude in one install: a director, ten specialist subagents, and the 52 skills they run on. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, creative and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
+A marketing team for Claude in one install: a director, ten specialist subagents, and the 55 skills they run on. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, creative and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
 
 You act as the operator: ask `marketing-director` for anything that spans disciplines, or call a specialist directly for a single task.
 
@@ -10,7 +10,7 @@ You act as the operator: ask `marketing-director` for anything that spans discip
 plugin/                    the installable plugin
   .claude-plugin/          plugin manifest
   agents/                  marketing-director and ten specialists
-  skills/                  every skill the agents use (52)
+  skills/                  every skill the agents use (55)
   .mcp.json                connectors with a public endpoint
   CONNECTORS.md            which connector each discipline uses, and the data-source rule
 templates/brand-kit/       blank modular brand kit: router + context, voice, design
@@ -117,6 +117,8 @@ See [`plugin/README.md`](plugin/README.md) for each agent's role and the order a
 | `creative-brief` | Art direction and an asset table with real formats and dimensions |
 | `canva-workflow` | Builds assets in Canva, or a manual checklist when Canva isn't connected |
 | `figma-weavy-workflow` | Figma Weave graphs for generated or composited imagery and video |
+| `launch-video` | Short product teaser, continuous-take demo or logo sting: storyboard, Hyperframes build, poster frame, caption |
+| `logo-design` | Logos, wordmarks, app icons and favicons as clean SVG: brief, concepts, tests, checkpoint, then the full kit |
 | `frontend-design` | Builds, redesigns or reviews front-end UI in a brand's visual identity: design read and settings, anti-generic rules, redesign protocol, interface checklist |
 
 ### Shared infrastructure
@@ -129,7 +131,7 @@ See [`plugin/README.md`](plugin/README.md) for each agent's role and the order a
 
 ## Attribution
 
-`brand-review`, `content-creation`, `newsletter-writer`, `press-release-writer` and `social-content-writer` started from Anthropic's marketing plugin and were substantially reworked. `lead-magnets` is adapted from a generic lead-magnet skill (see its `metadata.history`). `european-market-intelligence` is a Europeanised merge of two ID8Labs skills. `content-translate` is adapted from a third-party translate module. `frontend-design` synthesises Anthropic's `frontend-design`, vercel-labs' `web-interface-guidelines` (MIT) and Leonxlnx's `taste-skill` and `redesign-skill` (MIT). See each skill's `metadata.history` where present.
+`brand-review`, `content-creation`, `newsletter-writer`, `press-release-writer` and `social-content-writer` started from Anthropic's marketing plugin and were substantially reworked. `lead-magnets` is adapted from a generic lead-magnet skill (see its `metadata.history`). `european-market-intelligence` is a Europeanised merge of two ID8Labs skills. `content-translate` is adapted from a third-party translate module. `logo-design` is adapted from kaankiziltug's `logo-design-skill` (MIT; its trademarked reference logo library is not included). `launch-video` adapts parts of latent-spaces' `brag` (MIT) and is inspired by feitangyuan's `onetake`, which is not bundled because it is licensed PolyForm Noncommercial. `ad-creative-matrix` writes up the 50-5-3 ad method in its own words. `frontend-design` synthesises Anthropic's `frontend-design`, vercel-labs' `web-interface-guidelines` (MIT) and Leonxlnx's `taste-skill` and `redesign-skill` (MIT). See each skill's `metadata.history` where present.
 
 ## Licence
 

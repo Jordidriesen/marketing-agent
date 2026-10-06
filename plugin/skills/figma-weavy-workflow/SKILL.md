@@ -17,7 +17,8 @@ description: >
   uploads brand assets, sets inputs, executes, polls, returns the output.
   Use for hero images, product shots, composited scenes, character/style
   consistency, batch variants, or short video. For template-based social,
-  docs and bulk text-variant assets, use canva-workflow.
+  docs and bulk text-variant assets, use canva-workflow. For a storyboarded product
+  teaser or demo video built from the product's own screens, use launch-video.
 argument-hint: "<the imagery or video to build in Figma Weave>"
 ---
 
