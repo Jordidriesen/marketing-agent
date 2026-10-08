@@ -1,6 +1,6 @@
 # Marketing Agent: a Claude marketing team
 
-A marketing team for Claude in one install: a director, eleven specialist subagents, and the 57 skills they run on. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, creative and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
+A marketing team for Claude in one install: a director, eleven specialist subagents, the 57 skills they run on, and 12 menu shortcuts (`0-` entries) that open an agent directly. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, creative and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
 
 You act as the operator: ask `marketing-director` for anything that spans disciplines, or call a specialist directly for a single task.
 
@@ -10,7 +10,7 @@ You act as the operator: ask `marketing-director` for anything that spans discip
 plugin/                    the installable plugin
   .claude-plugin/          plugin manifest
   agents/                  marketing-director and eleven specialists
-  skills/                  every skill the agents use (57)
+  skills/                  every skill the agents use (57), plus 12 `0-` agent shortcuts
   .mcp.json                connectors with a public endpoint
   CONNECTORS.md            which connector each discipline uses, and the data-source rule
 templates/brand-kit/       blank modular brand kit: router + context, voice, design

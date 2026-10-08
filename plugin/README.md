@@ -2,7 +2,7 @@
 
 A marketing team of subagents for Claude, built by [Jordi Driesen](https://github.com/Jordidriesen) for Cowork and Claude Code. A director dispatches each request to the right specialist and sequences multi-discipline campaigns in dependency order, rather than running everything at once.
 
-**One install, agents and skills together.** As of 2.0.0 the plugin ships its 57 skills in [`skills/`](skills) alongside the agents, so the two can't drift apart. Only client brand kits live outside it: each brand gets a private `[brand]-brand-kit` skill that every content, review and design skill loads automatically (see [`templates/brand-kit`](../templates/brand-kit)).
+**One install, agents and skills together.** As of 2.0.0 the plugin ships its 57 skills (plus 12 `0-` agent shortcuts, see below) in [`skills/`](skills) alongside the agents, so the two can't drift apart. Only client brand kits live outside it: each brand gets a private `[brand]-brand-kit` skill that every content, review and design skill loads automatically (see [`templates/brand-kit`](../templates/brand-kit)).
 
 ## Installation
 
@@ -68,6 +68,27 @@ Period: September 2026, compared with August
 ## Brand kits
 
 Every content, review, design and localisation skill identifies the brand and loads its `[brand]-brand-kit` skill when one exists. A modular kit is a short router plus three modules: `context.md` (who the brand is, audiences, channels, data sources), `voice.md` (tone of voice and Voice Lock) and `design.md` (colour, type, layout tokens). Start from [`templates/brand-kit`](../templates/brand-kit).
+
+## Agent shortcuts
+
+Open the `/` menu, choose Plugins, then Marketing Agent. The twelve `0-` entries sort above the skills and each runs your request through one agent. Type your request after the name.
+
+| Entry | Agent |
+|---|---|
+| `0-marketing` | marketing-director (multi-discipline or unsure who owns it) |
+| `0-paid-ads` | performance-marketer |
+| `0-seo` | seo-geo-specialist |
+| `0-content` | content-writer |
+| `0-social` | social-media-specialist |
+| `0-email` | email-marketer |
+| `0-creative` | creative-specialist |
+| `0-sales` | sales-enablement-specialist |
+| `0-intel` | competitive-intel-analyst |
+| `0-campaign` | campaign-strategist |
+| `0-localise` | localization-specialist |
+| `0-report` | performance-reporter |
+
+They are manual only (`disable-model-invocation: true`), so Claude never picks them by itself; the 57 skills still load automatically in a normal chat. The shortcuts depend on how the Claude Code and Desktop menus sort and fork, which has not been tested here. If an entry does not sort first or does not run, `@agent-marketing-agent:<name>` still calls the agent directly.
 
 ## Connectors
 

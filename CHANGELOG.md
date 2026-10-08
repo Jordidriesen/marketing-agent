@@ -4,6 +4,10 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [2.4.0]
+
+- **Agent shortcuts in the plugin menu (12 new `0-` entries).** The Claude Desktop `/` menu lists a plugin's skills alphabetically and does not list its agents, so each agent now has a manual shortcut skill that sorts above the rest: `0-marketing` (director), `0-paid-ads`, `0-seo`, `0-content`, `0-social`, `0-email`, `0-creative`, `0-sales`, `0-intel`, `0-campaign`, `0-localise` and `0-report`. Each takes your request as its argument and runs it through the matching agent (`context: fork` with `agent:`). They are `disable-model-invocation: true`, so they never trigger on their own, and the 57 skills stay visible and auto-loadable. `0-marketing` does not fork: it tells the main thread to hand the request to the director. **Unverified:** menu sort order, digit-leading skill names, forking onto a plugin-scoped agent name, and a forked director dispatching specialists. Test after updating and report back.
+
 ## [2.3.0]
 
 - **`frontend-design` 2.1.0:** three new references. `type-and-colour.md` (type scale, line-height, measure, wrapping, punctuation, colour ramps, semantic tokens, measured contrast), `motion.md` (frequency table, easing, durations, entrances and exits, reduced motion, hover on touch) and `layout-and-accessibility.md` (grouping, responsive structure, translation growth, surfaces and icons, WCAG 2.2 criteria and ARIA additions). `taste.md` gains asset dependence and brand fidelity reads, a brand-assets-first rule and critique dimensions. Adapted from jakubkrehel/skills, emilkowalski/skills and ConardLi/garden-skills (all MIT). The em dash punctuation advice in better-typography was deliberately dropped. `interface-checklist.md` stays an unmodified pinned copy. Stress testing (break-ui) was not added.
