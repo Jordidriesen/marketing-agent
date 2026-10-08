@@ -4,6 +4,8 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [2.3.0]
+
 - **`frontend-design` 2.1.0:** three new references. `type-and-colour.md` (type scale, line-height, measure, wrapping, punctuation, colour ramps, semantic tokens, measured contrast), `motion.md` (frequency table, easing, durations, entrances and exits, reduced motion, hover on touch) and `layout-and-accessibility.md` (grouping, responsive structure, translation growth, surfaces and icons, WCAG 2.2 criteria and ARIA additions). `taste.md` gains asset dependence and brand fidelity reads, a brand-assets-first rule and critique dimensions. Adapted from jakubkrehel/skills, emilkowalski/skills and ConardLi/garden-skills (all MIT). The em dash punctuation advice in better-typography was deliberately dropped. `interface-checklist.md` stays an unmodified pinned copy. Stress testing (break-ui) was not added.
 
 - **Brand-kit template: optional product files.** `references/products.md` (index) and `references/products/_product-template.md` (one file per product: what it is, who it is for, features, limitations, integrations, pricing model, proof with permission, competitors, open questions). Terminology stays at brand level in `voice.md`; product files never carry their own. Router table and `context.md` updated.
