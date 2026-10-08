@@ -72,6 +72,25 @@ Rules that go with them:
 - Anything above motion 3 honours `prefers-reduced-motion`; loops, parallax and pinned scroll
   collapse to static.
 
+**Two further reads, stated with the design read.** Adapted from ConardLi's
+[web-design-engineer](https://github.com/ConardLi/garden-skills) (MIT). They are decisions, not
+scores to decorate the plan:
+
+- **Asset dependence (1 to 10):** how much the page needs real material (photography, product
+  UI, customer logos) to work. High means do not start until the assets exist or are marked as
+  placeholders (section 6). A contractor's portfolio page sits near 9; a type-led editorial page
+  near 3.
+- **Brand fidelity (1 to 10):** how strictly the existing identity is preserved. With a loaded
+  brand kit this is 9 or 10 by default; the kit outranks everything. Lower values apply only to a
+  brand with no kit or one the client has asked to evolve.
+
+**Brand assets outrank brand tokens.** A brand is recognised by its logo first, then product
+imagery or real interface screenshots, and only then by colour and type. Hex codes alone are the
+cheapest part of an identity. Use the supplied logo file as is; if no real logo can be found, stop
+and ask rather than setting the brand name in a coloured box. Never substitute CSS silhouettes or
+hand-drawn SVG for real product imagery on branded work. Name the asset sources (kit, press kit,
+site) in the plan.
+
 ---
 
 ## 3. Defaults to reach past
@@ -196,3 +215,23 @@ Flag these when reviewing, and avoid them when building, unless the brief asks f
 - [ ] No invented figures, quotes, customers or dates on anything that could go live.
 - [ ] No em dashes in visible text.
 - [ ] The interface checklist's non-negotiables pass (`interface-checklist.md`).
+
+---
+
+## 10. Critique dimensions (review mode and self-check)
+
+Adapted from web-design-engineer's critique (MIT). Judge the design, not the person who made it.
+No numeric scores are needed; for each dimension say what holds and what to fix, most severe
+first, then give up to three quick wins.
+
+| Dimension | Question |
+|---|---|
+| Direction | Does every detail trace back to the stated design read and the brand, or has it drifted into a generic mix? |
+| Hierarchy | Does the eye go where intended? Does the squint test pass? Is the heading to body size ratio clear? |
+| Craft | Is spacing on a consistent scale, are colours limited to the token set, are type families two or fewer, is alignment exact? |
+| Function | Does each element earn its place? If it were removed, would the page get worse? If not, cut it. |
+| Originality | Is there at least one decision only this brand would make, or is it a template? |
+
+Type, colour, motion and layout checks sit in `type-and-colour.md`, `motion.md` and
+`layout-and-accessibility.md`.
+

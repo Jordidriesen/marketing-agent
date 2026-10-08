@@ -1,7 +1,7 @@
 ---
 name: frontend-design
 metadata:
-  version: 2.0.0
+  version: 2.1.0
   history: >
     v1.0: synthesised Anthropic's frontend-design skill (anti-generic
     philosophy, two-pass plan and critique) and vercel-labs'
@@ -14,6 +14,14 @@ metadata:
     for a live page. Refreshed references/interface-checklist.md against the
     current upstream guidelines as a pinned copy instead of fetching rules at
     review time. Loads modular brand kits' references/design.md.
+    v2.1: added references/type-and-colour.md (adapted from jakubkrehel's
+    better-typography and better-colors, MIT), references/motion.md (from
+    emil-design-eng and better-ui, MIT), references/layout-and-accessibility.md
+    (from better-layout, better-accessibility and better-ui, MIT). taste.md
+    gained asset dependence and brand fidelity reads, a brand-assets-first rule
+    and critique dimensions (from web-design-engineer, MIT). The em dash
+    punctuation advice in better-typography was dropped to keep the library's
+    no em dash rule.
 description: >
   Design, redesign or review front-end UI in a specific brand's visual
   identity: landing pages, marketing sites, WordPress pages and block themes,
@@ -38,7 +46,7 @@ choice, not like a template with the colours swapped. Three jobs:
 - **Redesign mode:** upgrade an existing site or page without breaking what works.
 - **Review mode:** audit existing UI and report fixes, without rewriting.
 
-All three run on the same foundation: the brand's real tokens, a stated design read, and three
+All three run on the same foundation: the brand's real tokens, a stated design read, and the
 references:
 
 | Reference | Use it for |
@@ -46,6 +54,9 @@ references:
 | `references/taste.md` | The design read, the three settings (variance, motion, density), the locks, the AI tells, the build pre-flight check |
 | `references/redesign-protocol.md` | Redesign mode: mode detection, audit, what never changes silently, fix order |
 | `references/interface-checklist.md` | The build and review rule set: accessibility, focus, forms, motion, performance, theming, copy |
+| `references/type-and-colour.md` | Type scale, line-height, measure, wrapping, punctuation; colour ramps, semantic tokens, contrast measurement, dark mode |
+| `references/motion.md` | Whether and how to animate: frequency, easing, durations, entrances and exits, reduced motion, hover on touch |
+| `references/layout-and-accessibility.md` | Grouping, alignment, responsive structure, translation growth, surfaces and icons, WCAG 2.2 criteria and ARIA additions |
 
 ---
 
@@ -99,11 +110,11 @@ Do not open a file until the plan exists. Two passes.
   the brand kit wherever it has them.
 - **Type:** one or two families, clearly distinct if two. A display face used with restraint, a
   body face, a mono face only if data or code needs it. A set type scale with intentional weights
-  and letter-spacing. Body measure under about 80 characters.
+  and letter-spacing (`type-and-colour.md`). Body measure 60 to 75 characters.
 - **Layout:** the concept in one sentence, plus a rough ASCII wireframe of the main view. State
   alignment as a decision.
-- **Motion:** what moves, when, why (the motivation rule in `taste.md`), and the reduced-motion
-  fallback.
+- **Motion:** what moves, when, why (the motivation rule in `taste.md`; values in `motion.md`),
+  and the reduced-motion fallback.
 - **The one risk:** a single place to be bold. Everything around it stays quiet.
 
 ### Pass 2: Critique the plan against the brief
@@ -125,7 +136,8 @@ Only once the plan survives this pass do you write code.
 
 ## Part 2: Build
 
-Build to the plan, pulling the relevant categories from `references/interface-checklist.md`. A
+Build to the plan, pulling the relevant categories from `references/interface-checklist.md`, and
+the type, colour, motion and layout rules from the other references as the page needs them. A
 static landing page doesn't need the virtualisation or hydration rules; an app does.
 
 The non-negotiables, applied without being asked:
@@ -174,8 +186,11 @@ path/to/file.tsx:42  <div onClick> used for a nav action; use <a> so Cmd-click a
 middle-click work
 ```
 
-Group by category (Accessibility, Focus, Forms, Motion, Performance, Content, Design), most
-severe first. Flag the anti-patterns at the end of `interface-checklist.md` and the AI tells in
+Group by category (Accessibility, Focus, Forms, Type, Colour, Layout, Motion, Performance,
+Content, Design), most severe first. Cite the WCAG 2.2 criterion for accessibility findings
+(`layout-and-accessibility.md`); anything without one is a recommendation, never `HIGH`. Say
+`Not verified` for any check you could not run, and do not approve what you did not inspect.
+Flag the anti-patterns at the end of `interface-checklist.md` and the AI tells in
 `taste.md` section 8 explicitly. If the user gave no files or URL, ask which to review rather
 than guessing.
 
