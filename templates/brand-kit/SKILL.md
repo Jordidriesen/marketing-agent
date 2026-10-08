@@ -17,6 +17,10 @@ folder, rename it and the `name:` field to `[client-slug]-brand-kit`, replace ev
 `[PLACEHOLDER]`, and delete any section that genuinely doesn't apply rather than leaving it
 half-filled.
 
+The product files are optional. Keep `references/products.md` and the `products/` folder only for a
+brand with more than one product. Terminology always stays at brand level in `voice.md`; product
+files never carry their own.
+
 Keep this file short. It decides which module a task needs; the substance lives in the modules.
 
 ## Which module, for which task
@@ -28,6 +32,7 @@ Keep this file short. It decides which module a task needs; the substance lives 
 | Visual or design work, front-end, Canva or Figma assets | `references/design.md` + `references/context.md` |
 | Copy baked into a designed asset | all three |
 | SEO, analytics, paid media reporting | `references/context.md` (Data sources, KPIs) |
+| Anything that names a specific product, compares products, or sells one (battlecards, outreach, product pages, ads) | `references/products.md`, then the one file in `references/products/` for that product, plus `references/voice.md` |
 | Translation or localisation | `references/voice.md` (Locked Terminology) + `references/context.md` (markets) |
 
 ## Non-negotiables

@@ -4,6 +4,8 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+- **Brand-kit template: optional product files.** `references/products.md` (index) and `references/products/_product-template.md` (one file per product: what it is, who it is for, features, limitations, integrations, pricing model, proof with permission, competitors, open questions). Terminology stays at brand level in `voice.md`; product files never carry their own. Router table and `context.md` updated.
+
 ## [2.2.0]
 
 - **`battlecard`, `cold-email-sequence` and `linkedin-outreach` 1.0.0 (new)** and the **`sales-enablement-specialist`** agent. Drafts only: nothing sends, schedules or scrapes. `cold-email-sequence` opens with a compliance gate and states that the legal position is unverified; `linkedin-outreach` assumes manual sending and flags LinkedIn's rules and character limits as unverified. `battlecard` source-tags every claim and compiles verified inputs without doing the competitor research. `marketing-director` routes to the new agent. Agent count is now eleven and the skill count 57.

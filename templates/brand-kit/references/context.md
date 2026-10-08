@@ -24,6 +24,7 @@ confirming in a closing "Open Items" section.
 ## Offer and proof
 
 - **What [Client] sells:** [products or services, in the client's own names]
+- **Product detail:** [if the brand has more than one product, point to `products.md` and keep only the one-line names here; otherwise delete this line]
 - **Why customers choose them:** [the two or three reasons, in the client's words where possible]
 - **Proof points:** [numbers, certifications, named customers, years in business: only what's
   confirmed and approved for public use]
