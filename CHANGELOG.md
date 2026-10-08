@@ -4,6 +4,8 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [2.2.0]
+
 - **`battlecard`, `cold-email-sequence` and `linkedin-outreach` 1.0.0 (new)** and the **`sales-enablement-specialist`** agent. Drafts only: nothing sends, schedules or scrapes. `cold-email-sequence` opens with a compliance gate and states that the legal position is unverified; `linkedin-outreach` assumes manual sending and flags LinkedIn's rules and character limits as unverified. `battlecard` source-tags every claim and compiles verified inputs without doing the competitor research. `marketing-director` routes to the new agent. Agent count is now eleven and the skill count 57.
 - **`negative-keywords` merged into `search-term-auditor` 2.0.0.** The two skills ended in the same paste-ready negative list. The auditor now also classifies terms as keep, block or review, sets match types and placement, supports a pre-launch exclusion mode and reads the account's existing negatives. `negative-keywords` moved to `archive/`; `performance-marketer` routing, README and CONTRIBUTING updated.
 - **`ad-creative-matrix` 1.0.0 (new):** the 50-5-3 method (50 hooks, 5 bodies, 3 CTAs) for paid social and video ads, with a hook screening rubric, a compatibility check, tagged assembly and a test plan sized to budget. References: `angle-library.md`, `platform-limits.md`.
