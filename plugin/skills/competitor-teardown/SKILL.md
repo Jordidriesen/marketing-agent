@@ -40,3 +40,4 @@ This looks at paid ad copy and messaging angles only. For a competitor's organic
 - `ad-creative-matrix`: downstream for paid social and video. The open positioning list from this teardown supplies the angles for its 50 hooks.
 - `rsa-writer`: downstream for Google search ads.
 - `competitor-analysis`: the organic counterpart (rankings, page content).
+- `battlecard`: the sales-facing card built from verified competitor facts.

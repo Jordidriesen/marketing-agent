@@ -1,6 +1,6 @@
 # Marketing Agent: a Claude marketing team
 
-A marketing team for Claude in one install: a director, ten specialist subagents, and the 54 skills they run on. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, creative and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
+A marketing team for Claude in one install: a director, eleven specialist subagents, and the 57 skills they run on. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, creative and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
 
 You act as the operator: ask `marketing-director` for anything that spans disciplines, or call a specialist directly for a single task.
 
@@ -9,8 +9,8 @@ You act as the operator: ask `marketing-director` for anything that spans discip
 ```
 plugin/                    the installable plugin
   .claude-plugin/          plugin manifest
-  agents/                  marketing-director and ten specialists
-  skills/                  every skill the agents use (54)
+  agents/                  marketing-director and eleven specialists
+  skills/                  every skill the agents use (57)
   .mcp.json                connectors with a public endpoint
   CONNECTORS.md            which connector each discipline uses, and the data-source rule
 templates/brand-kit/       blank modular brand kit: router + context, voice, design
@@ -92,6 +92,14 @@ See [`plugin/README.md`](plugin/README.md) for each agent's role and the order a
 |---|---|
 | `campaign-plan` | Full campaign brief from a goal and a timeline |
 | `lead-magnets` | Plans a lead magnet: format, gating, landing page, delivery, measurement |
+
+### Sales enablement and outreach
+
+| Skill | What it does |
+|---|---|
+| `battlecard` | One-page sales card on one competitor: where we win and lose, landmines, objection responses, source-tagged |
+| `cold-email-sequence` | Cold B2B email sequence drafted for a person to send, with a compliance gate, personalisation fields and a reply guide |
+| `linkedin-outreach` | LinkedIn connection notes, messages and follow-ups drafted for manual sending |
 
 ### Content writing and editing
 

@@ -7,7 +7,7 @@ description: >-
   public-sector opportunity analysis. Trigger for business-level market or competitor
   research naming a European country, the EU, or a market/vertical in Europe: size this
   market, TAM SAM SOM, competitive landscape, market entry strategy, competitor dossier,
-  pricing intelligence, battlecard -- even without the words market research. Built free-
+  pricing intelligence, battlecard research (the one-page sales card itself is the battlecard skill) -- even without the words market research. Built free-
   tool-first around Exa and Firecrawl plus Eurostat, national registries (Bizzy, Pappers,
   Northdata, KVK, Companies House), TED public procurement, OpenSEO, and
   LinkedIn Ad Library, with paid platforms like Dealroom noted only as optional upgrades
@@ -19,7 +19,7 @@ metadata:
   version: "1.0.0"
   author: "Jordi Driesen (Europeanized merge of ID8Labs market-research-analyst + competitive-intelligence)"
   tags: market-research, competitive-intelligence, europe, market-sizing, osint, gdpr
-  triggers: market research, market sizing, TAM SAM SOM, competitive landscape, competitor dossier, market entry, battlecard, pricing intelligence
+  triggers: market research, market sizing, TAM SAM SOM, competitive landscape, competitor dossier, market entry, battlecard research, pricing intelligence
 ---
 
 # European Market Intelligence
@@ -180,7 +180,7 @@ Your translation-memory language set (EN, DE, FR, NL, ES) is also the right defa
 ```
 
 ### Competitive Battlecard
-Same structure as a standard battlecard (quick facts, strengths honestly stated, weaknesses → our advantage, pricing comparison table normalized to EUR ex-VAT, differentiators, landmine questions, recent news) - with a **"Registry-verified facts"** line at the top (legal name, seat, legal form, source register) so sales teams aren't repeating marketing-page claims as verified fact.
+Same structure as a standard battlecard (quick facts, strengths honestly stated, weaknesses → our advantage, pricing comparison table normalized to EUR ex-VAT, differentiators, landmine questions, recent news) - with a **"Registry-verified facts"** line at the top (legal name, seat, legal form, source register) so sales teams aren't repeating marketing-page claims as verified fact. To turn this research into the one-page card a salesperson uses on a call, hand it to `battlecard`, which source-tags every claim and adds objection responses and a review date.
 
 ## Best Practices
 

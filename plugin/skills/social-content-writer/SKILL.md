@@ -144,4 +144,5 @@ Ask: "Would you like this adapted for another platform, a variant to test, or sh
 - `web-content-pipeline` — for the web page a social post might link to
 - `customer-story-writer` — for a case study a social post might summarize
 - `content-creation` — the gateway skill; routes here when the content type is social
+- `linkedin-outreach` — for one-to-one LinkedIn messages to prospects. This skill is for public posts
 - `ad-creative-matrix` — for paid social and video ads (hooks, bodies, CTAs, test plan). This skill is organic only
