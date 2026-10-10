@@ -1,7 +1,6 @@
 ---
 name: content-gap-mapping
-description: >
-  Maps content gaps, parity, and advantages between the user's own site and named competitors across a set of keyword clusters, using Search Console for the user's own first-party performance, OpenSEO ranking data for competitors, and Firecrawl to compare actual page content, not just position. Use for "content gap analysis," "content mapping," "where are we behind competitors," "content parity," "white space opportunities," or auditing a whole cluster set against the competitive field rather than briefing a single topic. Runs after keyword-clustering and competitive-landscape/competitor-analysis as Stage 5 of content-research-orchestrator, and feeds gap and parity clusters to web-content-pipeline for execution. Does not write content itself.
+description: "Maps content gaps, parity and advantages between our site and competitors across keyword clusters. Use for \"content gap analysis\", \"where are we behind\". Does not write content."
 ---
 
 # Content Gap Mapping

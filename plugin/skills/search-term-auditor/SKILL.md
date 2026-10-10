@@ -3,7 +3,7 @@ name: search-term-auditor
 metadata:
   version: '2.0.0'
   history: "v2.0.0: merged with the former negative-keywords skill (now in archive/). Added KEEP, NEGATIVE and REVIEW classification, match type and placement rules, the pre-launch exclusion mode and the root-cause pattern note. The audit workflow and live connector wiring are unchanged.\n"
-description: "Audits Google Ads search terms to find wasted spend, then classifies every term as keep, block or review and builds ready-to-paste negative keyword lists with correct match types and shared-list or campaign placement, pulling live from the Google Ads connector when connected. Use when the user shares a search term report, connects their Google Ads account, asks where budget is leaking, wants to clean up targeting, build exclusion lists or asks what to negate. Also for a pre-launch negative list built from what the business does not offer, with no data yet."
+description: "Audits Google Ads search terms for wasted spend and builds paste-ready negative keyword lists with match types and placement. Use for \"wasted spend\", \"negatives\", \"search term report\"."
 ---
 
 # search-term-auditor

@@ -3,7 +3,7 @@ name: logo-design
 metadata:
   version: '1.0.0'
   history: "v1.0.0: adapted from kaankiziltug/logo-design-skill (MIT, see LICENSE-logo-design-skill.txt). Kept the process, references and dependency-free scripts. Removed the 1,400-logo reference library (its logos are third-party trademarks outside the MIT grant) and every script and instruction that depended on it. Added the brand-kit step, handoff into the brand kit and the routing to this library's other design skills.\n"
-description: "Designs, critiques, redesigns and packages logos and brand marks as clean SVG, from discovery brief to production files: concepts across mark types, construction, tests (16 px, one-colour, reversed, shelf), a concept checkpoint, then the kit (lockups, favicon and app icons, presentation board, usage guide). Use for \"design a logo\", \"logo ideas\", \"wordmark\", \"monogram\", \"favicon or app icon\", \"critique this logo\", \"redesign our logo\", \"logo guidelines\" or \"brand mark\". Not for brand-wide visual systems or web UI (frontend-design), campaign art direction and asset specs (creative-brief), producing social or print assets in Canva or Figma (canva-workflow, figma-weavy-workflow) or animated launch videos (launch-video)."
+description: "Designs, critiques and packages logos and brand marks as SVG, from brief to favicon and usage guide. Use for \"design a logo\", \"wordmark\", \"favicon\", \"critique this logo\"."
 argument-hint: "<brand name, what it does, audience, and whether this is a new logo, a critique or a redesign>"
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: full-account-audit
-description: "Runs a complete structured audit of a Google Ads account covering structure, budgets, bidding, keywords, tracking, and creative, ranked by money impact, pulling live from the Google Ads connector when connected. Use for new account takeovers or a periodic full review."
+description: "Full Google Ads account audit (structure, budgets, bidding, keywords, tracking, creative) ranked by money impact. Use for account takeovers or periodic reviews."
 ---
 
 # full-account-audit

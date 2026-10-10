@@ -3,7 +3,7 @@ name: cold-email-sequence
 metadata:
   version: '1.0.0'
   history: "v1.0.0: new skill. Drafts cold B2B email sequences for human review and sending, with a compliance gate first, real personalisation fields only, subject variants, send gaps, stop rules and a reply-handling guide. Never sends.\n"
-description: "Drafts a cold B2B email sequence of 3 to 5 touches for human review and sending: compliance gate first, personalisation fields with fallbacks, subject line variants, send gaps, stop rules and a reply-handling guide. Use for \"cold email\", \"outbound sequence\", \"prospecting emails\", \"sales outreach email\" or \"follow-up to a prospect who has not replied\". Not for opted-in nurture, onboarding or win-back flows (email-sequence-hubspot-brevo), one-off newsletters (newsletter-writer) or LinkedIn messages (linkedin-outreach). Drafts only: it never sends and never scrapes."
+description: "Drafts cold B2B email sequences (3 to 5 touches) for a person to send: compliance gate first, personalisation, subject variants, gaps, stop rules, reply guide. Use for \"cold email\", \"outbound sequence\", \"prospecting emails\". Never sends."
 argument-hint: "<who you are emailing (role, segment, country), what you offer, one real reason to write to them, and the sender>"
 ---
 

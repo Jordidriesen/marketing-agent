@@ -1,6 +1,6 @@
 ---
 name: "ai-content-cleaner"
-description: "Final cleaning pass for reader-facing text: detects and removes AI writing patterns (DETECT, CLEAN or BALANCED mode, in EN, NL incl. Belgian Dutch, FR, DE and ES), protects code, URLs, figures and quotes, and strips invisible or deceptive Unicode with a bundled script. Honours a loaded brand kit's voice and Voice Lock over its own generic rules. Use when asked to humanize, de-AI, clean up, polish, finalise or review writing that may have AI tells or hidden characters: articles, pages, emails, reports, product copy, UI text, Markdown or HTML prose."
+description: "Final pass that removes AI writing tells and hidden Unicode from reader-facing text in EN, NL (Belgian), FR, DE, ES, honouring the brand kit's voice. Use for \"humanise\", \"de-AI\", \"clean up\", \"finalise this text\"."
 metadata:
   version: 2.0.0
   history: >

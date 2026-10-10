@@ -1,6 +1,6 @@
 ---
 name: disapproval-diagnoser
-description: Explains why Google Ads assets, ads, or keywords were disapproved and what to change to get them approved. Use when the user has disapprovals or limited-status assets.
+description: "Explains Google Ads disapprovals and limited-status assets and what to change. Use for disapproved ads, keywords or assets."
 ---
 
 # disapproval-diagnoser

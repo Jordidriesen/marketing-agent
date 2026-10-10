@@ -1,10 +1,13 @@
 ---
 name: customer-story-writer
-description: |
-  Write, structure, or draft B2B customer stories and case studies using a proven persuasion framework. Use when asked to write a case study, customer success story, customer reference, win story, or any narrative-led piece showing how a customer achieved results with a product. Also use when asked to "turn this brief into a case study," "write this up as a customer story," "we need a case study for [customer]," or "help me structure a win story." Use this skill even for partial briefs, if the user has some customer data and wants a story out of it, start here. After drafting, the final copy pass runs ai-content-cleaner (BALANCED mode) to strip AI tells while preserving intentional SEO/AEO structure.
+description: "Writes B2B customer stories and case studies from a brief or interview: challenge, solution, results. Uses only facts and quotes the user supplied, never invents. Use for \"case study\", \"customer story\", \"success story\", \"win story\"."
 metadata:
-  version: 1.1.0
+  version: 1.2.0
   history: >
+    v1.2: source fidelity now overrides the 12-section structure. Sections
+    with no supplied material shrink or become [MISSING] placeholders,
+    inferred context and consequences are banned even when labelled as
+    assumptions, and a source audit table is mandatory before delivery.
     v1.1: stopped re-explaining Sparkline / StoryBrand / PAS / Duarte
     inline, the fixed 12-section structure and its framework-to-section
     mapping stay, but the framework definitions now cite
@@ -34,7 +37,14 @@ The rules:
 - **Problems and pain points:** Only describe the customer's situation using what the user has told you. Do not assume typical industry pain points apply to this customer. If the "Before" state is vague, flag it and ask: do not fill in a plausible-sounding problem.
 - **Implementation details:** Do not invent timelines, onboarding steps, or "aha moments" not present in the source material.
 
+- **Context and consequences:** Do not add scene-setting, operational detail or knock-on effects the brief does not state, even when they are plausible. "Queues formed on the approach road", "dock teams were left waiting", "trucks reach their docks sooner" and "any new site can follow the same process" are all inventions if the brief did not say them. Labelling them as assumptions does not make them allowed: leave them out.
+- **Descriptions of the product:** Describe what the product did for this customer only in the words the brief supports. Do not add features, integrations or workflows.
+
 When material is missing, use explicit placeholders and surface them clearly in the output. A story with honest gaps is more useful than a polished draft built on invented facts.
+
+**Source fidelity overrides the structure.** The 12 sections below describe what a complete story can contain, not what every draft must fill. When the brief gives nothing for a section, that section is either omitted or reduced to one `[MISSING: what is needed, and where to get it]` line. Never write a sentence to make a section feel complete. A short, true story beats a long, padded one.
+
+**Every sentence must trace to the brief.** A sentence may only state what the user supplied, restate it in other words, or connect two supplied facts without adding a new one. Anything else is cut.
 
 ---
 
@@ -58,7 +68,7 @@ Before writing, scan the user's input for the following. Note what's present and
 - Implementation anecdote or "aha moment"
 - What they're planning to do next (if absent, the close still lands on a recap instead of a placeholder, see section 12)
 
-If you're missing required elements, ask for them before writing. If you're missing "strongly preferred" elements, flag them but proceed; mark placeholders with `[PLACEHOLDER: ...]` so the user knows what to fill in.
+If you're missing required elements, ask for them before writing. If you cannot ask (the user said so, or you are running as a subagent), write only what the brief supports and mark every gap with `[MISSING: ...]`. If you're missing "strongly preferred" elements, flag them but proceed; mark placeholders with `[PLACEHOLDER: ...]` so the user knows what to fill in.
 
 ---
 
@@ -249,7 +259,20 @@ Apply these throughout the draft.
 - The close, forward-looking → "What's Next for [Customer]"
 - The close, recap → "The Deployment That Delivered"
 
-**Cross-functional appeal.** Every story needs one moment that speaks to the person holding the budget, not just the person using the product. If Finance or IT has no reason to care, the deal doesn't close.
+**Cross-functional appeal, when the brief supports it.** Every story needs one moment that speaks to the person holding the budget, not just the person using the product. If Finance or IT has no reason to care, the deal doesn't close.
+
+---
+
+## Phase 2b: Source audit (mandatory)
+
+Before the clean pass, audit the draft line by line:
+
+1. List every factual statement in the draft: numbers, names, roles, places, events, problems, product capabilities, causes and effects.
+2. Match each one to the exact words in the brief it comes from.
+3. Delete or rewrite every statement with no match. Do not keep it as an "assumption"; remove it.
+4. Re-read the remaining draft for sentences that imply something new (a consequence, a feeling, a scale) and cut those too.
+
+Deliver the result as a compact table after the draft: `Statement | Source in brief`. Every row must have a source. If the table has a row with no source, the draft is not finished.
 
 ---
 
@@ -275,9 +298,9 @@ After the clean pass, run the self-check:
 - [ ] Are all metrics and problems sourced directly from the brief: nothing extrapolated or assumed?
 - [ ] Are all gaps marked with explicit `[PLACEHOLDER]` labels rather than filled with plausible-sounding content?
 - [ ] Is "solution" gone or used at most once?
-- [ ] Is the status quo painted as a real risk, not just a minor inconvenience?
-- [ ] Does a secondary stakeholder (Finance, IT, HR) have a reason to care?
-- [ ] Does the Bridge section make implementation feel achievable?
+- [ ] Is the status quo painted as a real risk, as far as the brief supports it and no further?
+- [ ] If the brief names a secondary stakeholder (Finance, IT, HR), do they get a reason to care? If it names none, is that left out or marked `[MISSING]` rather than invented?
+- [ ] Does the Bridge section use only supplied implementation detail, or is it omitted or marked `[MISSING]`?
 - [ ] Can a reader understand the full story just from the subheadings?
 - [ ] Does the copy pass the one-line test: *"This is a story about how [Customer] escaped [Old Way] by using [Specific Tool] to achieve [Outcome], for both [Persona A] and [Persona B]."*
 
@@ -289,8 +312,11 @@ Deliver the story in this order:
 
 1. **Working headline** (with note if metric placeholder is needed): short and catchy, not a full descriptive sentence
 2. **Full draft** using the 12-section structure above. Every section gets its own specific, outcome-carrying subheading, headline-length, never the generic framework name. Quotes sit in their anchor sections (epiphany in section 4, transformation in section 9, partnership in section 12); include Facts & figures (10) when the numbers are scope rather than outcome, and include Quotes at a glance (11) only if a standalone pull-quote block is useful for other formats. Section 12 always closes with forward motion or a recap, never a bare placeholder by default
-3. **Missing elements**: brief list of any `[PLACEHOLDER]` items and what would make each one stronger
-4. **AI content sweep summary**: brief list of patterns found and removed in the BALANCED clean pass
+3. **Source audit table**: `Statement | Source in brief`, every row sourced (Phase 2b)
+4. **Missing elements**: brief list of any `[MISSING]` and `[PLACEHOLDER]` items and what would make each one stronger
+5. **AI content sweep summary**: brief list of patterns found and removed in the BALANCED clean pass
+
+Never add an "assumptions I made" list that contains invented content. The only assumptions allowed are about format (length, tone, language), never about facts.
 
 If the user provided a complete brief, deliver the full draft in one pass. If significant elements are missing, ask for them first (Step 0 gates this).
 

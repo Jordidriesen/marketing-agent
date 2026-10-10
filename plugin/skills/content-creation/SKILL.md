@@ -1,6 +1,6 @@
 ---
 name: content-creation
-description: "Entry point for any \"write marketing content\" request when the content type isn't yet specified, or when a request spans more than one type, e.g. \"turn this launch into a blog post, a LinkedIn post, and a press release.\" Determines which content type(s) are needed and routes each to its specialist skill, collecting shared inputs once rather than asking the same questions per piece. Use for \"create content,\" \"write marketing content,\" \"draft something for the launch,\" or any content request that doesn't already name a specific format skill."
+description: "Router for content requests that name no format or span several: picks the format skills, collects shared inputs once. Use for \"create content for the launch\", \"turn this into a blog, post and press release\"."
 ---
 
 # Content Creation

@@ -1,7 +1,6 @@
 ---
 name: keyword-clustering
-description: >
-  Clusters a keyword list by intent and SERP overlap and maps each cluster to an existing or proposed page, using OpenSEO for ranking/SERP data and Firecrawl to check what existing pages already cover. Use for "cluster these keywords," "keyword mapping," "which page should target this," "content cannibalization," or grouping keywords into page-level clusters. Pair with seo-keyword-research for the initial list, or feed a finished cluster into content-research-orchestrator or web-content-pipeline to write against it.
+description: "Clusters keywords by intent and SERP overlap and maps each cluster to a page. Use for \"cluster these keywords\", \"keyword mapping\", \"cannibalisation\"."
 ---
 
 # Keyword Clustering

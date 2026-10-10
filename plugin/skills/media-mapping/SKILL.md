@@ -1,7 +1,6 @@
 ---
 name: media-mapping
-description: >
-  Identifies media outlets, magazines, trade publications, and newsletters relevant to a topic or vertical for PR purposes, using OpenSEO SERP data to surface recurring editorial domains and Firecrawl to check outlets' contact, contribution, and audience details. Use for "media opportunities," "PR outlets," "who covers this topic," "newsletter opportunities," "trade press for," or building a pitch list before outreach. Distinguishes niche vertical trade media from outlets dedicated only to the specific subject. Does not draft or send pitches; it maps the field.
+description: "Maps media outlets, trade press and newsletters for a topic for PR, with contribution and contact details. Use for \"PR outlets\", \"who covers this\", \"pitch list\". Does not write pitches."
 ---
 
 # Media Mapping for PR

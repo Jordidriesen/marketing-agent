@@ -1,9 +1,9 @@
 ---
 name: linkedin-outreach
 metadata:
-  version: '1.0.0'
-  history: "v1.0.0: new skill. Drafts LinkedIn connection notes, first messages, follow-ups, comment-first warm-ups and InMail for a person to send by hand, in the sender's voice. No automation, no scraping.\n"
-description: "Drafts LinkedIn outreach for a person to send by hand: connection request notes, first messages after a connection, follow-ups, comment-first warm-up lines and InMail, in the sender's own voice and matched to the prospect's role. Use for \"LinkedIn outreach\", \"connection request message\", \"LinkedIn DM to a prospect\", \"LinkedIn follow-up\", \"InMail\" or \"warm up this prospect on LinkedIn\". Not for LinkedIn feed posts (social-content-writer), LinkedIn ads (ad-creative-matrix) or cold email (cold-email-sequence). Drafts only: it never automates sending, scraping or profile visits."
+  version: '1.1.0'
+  history: "v1.1.0: no call or meeting request in the connection note or the first message after acceptance; the first ask comes only after the prospect has engaged. v1.0.0: new skill. Drafts LinkedIn connection notes, first messages, follow-ups, comment-first warm-ups and InMail for a person to send by hand, in the sender's voice. No automation, no scraping.\n"
+description: "Drafts LinkedIn connection notes, first messages, follow-ups and InMail for a person to send by hand, in the sender's voice. Use for \"LinkedIn outreach\", \"connection request\", \"LinkedIn DM\". Not feed posts or ads. No automation."
 argument-hint: "<who you are messaging (role, company), the sender, the goal, and any profile text or trigger you can paste>"
 ---
 
@@ -56,7 +56,7 @@ Pick one, and say why:
 | **Warm-up** | The prospect posts or comments publicly | A real, specific comment the sender would leave anyway. No pitch. |
 | **Connect, no note** | The relationship is warm or the note would add nothing | Nothing to write. Say so. |
 | **Connect with a note** | There is a real reason to connect | A short note: why them, one specific, no ask |
-| **First message** | After they accept | Thanks, one relevant observation, one easy question. No pitch. |
+| **First message** | After they accept | Thanks, one relevant observation, one easy question. No pitch, no call or meeting request. |
 | **Follow-up** | No reply after a respectful gap | A different angle or a useful resource. Never "just checking in". |
 | **InMail** | No connection and a strong reason to write | A short message with a clear reason and a small ask |
 
@@ -64,7 +64,7 @@ Pick one, and say why:
 
 Use `references/message-patterns.md`. For every message:
 
-- **One purpose and one question or ask at most.** The first messages carry no pitch.
+- **One purpose and one question or ask at most.** The connection note and the first message after acceptance carry no pitch and **no request for a call, meeting or demo**, not even a soft "if a 15-minute call suits you". The first ask for time comes only after the prospect has replied or engaged, or in a later follow-up.
 - **A reason this is for them**, drawn from the supplied material only. **If there is no real reason,
   say so and recommend a warm-up play instead of a forced note.**
 - **Plain language** in the sender's voice. No "I hope this message finds you well", no flattery, no

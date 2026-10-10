@@ -1,6 +1,6 @@
 ---
 name: google-ads-tool-map
-description: "Shared per-tool reference for the Google Ads MCP connector, tool names and key parameters already in live use across this account's Google Ads skills, plus the run_gaql fallback. Not triggered directly, loaded by whichever Google Ads skill is doing the work."
+description: "Reference of Google Ads connector tools and parameters, loaded by the Google Ads skills. Not for direct requests."
 ---
 
 # Google Ads Tool Reference

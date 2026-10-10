@@ -1,6 +1,6 @@
 ---
 name: competitor-teardown
-description: Breaks down competitor ads to find the angles everyone claims, the angles nobody claims, and what to test first. Use when the user shares competitor ad copy or creative, mentions a rival's ads, or asks how to differentiate paid messaging. To turn the open angles into a set of ads, hand off to ad-creative-matrix (paid social and video) or rsa-writer (Google search). For a competitor's organic footprint, ranking keywords, or page content, see competitor-analysis instead.
+description: "Breaks down competitor ads: angles everyone claims, open angles, what to test first. Use when competitor ad copy or creative is shared."
 ---
 
 # competitor-teardown

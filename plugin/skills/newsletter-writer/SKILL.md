@@ -1,6 +1,6 @@
 ---
 name: newsletter-writer
-description: "Draft a single, one-off marketing email or newsletter, announcement, update, promotion, or roundup, with subject line options, preview text, and a clear body structure, in the right brand voice. Use for \"write a newsletter,\" \"draft an email,\" \"announcement email,\" \"promo email,\" or \"email update.\" Not for a multi-email lifecycle sequence (see email-sequence-hubspot-brevo) and not for web page copy (see web-content-pipeline)."
+description: "Writes one marketing email or newsletter: announcement, update, promotion or roundup, with subject lines and preview text. Use for \"newsletter\", \"announcement email\", \"promo email\". Multi-email flows: email-sequence-hubspot-brevo."
 metadata:
   version: 1.1.0
   history: >

@@ -1,6 +1,6 @@
 ---
 name: seo-audit
-description: When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions "SEO audit," "technical SEO," "why am I not ranking," "SEO issues," "on-page SEO," "meta tags review," "SEO health check," "my traffic dropped," "lost rankings," "not showing up in Google," "site isn't ranking," "Google update hit me," "page speed," "core web vitals," "crawl errors," or "indexing issues." Use this even if the user just says something vague like "my SEO is bad" or "help with SEO", start with an audit. For AI search optimization (AEO, GEO, LLMO), apply the structural rules in the content-references skill's seo-aeo-optimization.md reference, there is no separate ai-seo skill in this library.
+description: "Audits a site's SEO: technical, on-page, indexing, Core Web Vitals, ranking drops. Use for \"SEO audit\", \"why am I not ranking\", \"traffic dropped\"."
 metadata:
   version: 1.3.0
 ---

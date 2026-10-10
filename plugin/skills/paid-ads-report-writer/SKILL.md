@@ -1,6 +1,6 @@
 ---
 name: paid-ads-report-writer
-description: "Writes client- or stakeholder-ready performance reports for paid media on any platform, paid search (Google Ads, Microsoft Ads) and paid social (LinkedIn Ads, Meta, and others): the executive summary, a section per platform, a cross-platform view with metrics normalised so platforms are compared fairly, and appendix tables. Pulls live from the Google Ads and LinkedIn Ads connectors when connected, works from exports otherwise. Use when the user needs to report paid results to a client, a boss or a team, for one platform or several. For diagnosing why one Google Ads metric moved, use metric-detective; for a full cross-channel marketing report including organic and email, this skill supplies the paid section."
+description: "Writes client-ready paid media reports across Google, Microsoft, LinkedIn and Meta: executive summary, per-platform sections, normalised cross-platform view. Use for \"ads report\", \"monthly paid report\"."
 metadata:
   version: 2.0.0
   history: >

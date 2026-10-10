@@ -1,7 +1,6 @@
 ---
 name: seo-keyword-research
-description: >
-  Turns seed topics, competitor domains, or pages into a prioritized keyword opportunity table using OpenSEO for metrics and SERP data, and Firecrawl to pull seed ideas from an existing page when no seeds are given. Use for organic/content keyword research: "keyword research," "SEO keyword research," "find keyword opportunities," "what keywords should I target," "keyword ideas for," or turning a topic/competitor into a ranked shortlist plus a longer table for content or SEO. This is the single-purpose discovery step and Stage 1 of the content-research-orchestrator pipeline. For the full gated pipeline that also runs clustering, competitive landscape, competitor analysis, and content gap mapping, see content-research-orchestrator. For clustering an existing keyword list into page-level groups, see keyword-clustering. For a Google Ads / PPC launch keyword list sized to a budget, see sea-keyword-research instead.
+description: "Organic keyword research from seeds, competitors or pages into a prioritised opportunity table with OpenSEO. Use for \"keyword research\", \"what keywords should we target\". Full pipeline: content-research-orchestrator. PPC: sea-keyword-research."
 ---
 
 # SEO Keyword Research

@@ -1,18 +1,6 @@
 ---
 name: european-market-intelligence
-description: >-
-  Combined market research and competitive intelligence for European (EU/EEA/UK) markets
-  -- market sizing (TAM/SAM/SOM), competitor dossiers, pricing intelligence, marketing/
-  messaging reverse-engineering, customer segmentation, market-entry feasibility, and
-  public-sector opportunity analysis. Trigger for business-level market or competitor
-  research naming a European country, the EU, or a market/vertical in Europe: size this
-  market, TAM SAM SOM, competitive landscape, market entry strategy, competitor dossier,
-  pricing intelligence, battlecard research (the one-page sales card itself is the battlecard skill) -- even without the words market research. Built free-
-  tool-first around Exa and Firecrawl plus Eurostat, national registries (Bizzy, Pappers,
-  Northdata, KVK, Companies House), TED public procurement, OpenSEO, and
-  LinkedIn Ad Library, with paid platforms like Dealroom noted only as optional upgrades
-  and a built-in GDPR/OSINT compliance check. For SEO-only competitor or keyword work use
-  competitor-analysis, competitive-landscape, or seo-keyword-research instead.
+description: "European market and competitor research: market sizing, competitor dossiers, pricing, segmentation, market entry, public tenders, from registries and free sources. Use for business-level research naming a European market. SEO-only: competitor-analysis."
 metadata:
   category: research
   complexity: complex

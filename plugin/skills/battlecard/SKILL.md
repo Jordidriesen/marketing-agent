@@ -3,7 +3,7 @@ name: battlecard
 metadata:
   version: '1.0.0'
   history: "v1.0.0: new skill. A one-page, sales-facing competitor card built from verified inputs, with every claim source-tagged, an honest where-they-win column, landmine questions, objection responses and a review date.\n"
-description: "Builds a one-page sales battlecard for one named competitor: how they position, where we win, where they win, landmine questions to ask a prospect, traps to expect, objection responses and proof points, with every claim tagged by source and confidence. Use for \"battlecard\", \"how do we beat X\", \"competitive cheat sheet for sales\", \"objection handling against a rival\" or \"sales comparison sheet\". Not for researching the competitor (competitor-analysis, competitive-landscape, european-market-intelligence), analysing their ads (competitor-teardown) or customer-facing comparison pages (web-content-pipeline)."
+description: "Builds a one-page sales battlecard on one competitor: where we win and lose, landmine questions, objection responses, proof, every claim source-tagged. Use for \"battlecard\", \"how do we beat X\", \"competitive cheat sheet\"."
 argument-hint: "<our product, the competitor, and any win/loss notes or sources you can share>"
 ---
 

@@ -3,7 +3,7 @@ name: abm-plan
 metadata:
   version: '1.0.0'
   history: "v1.0.0: new skill. Account-based marketing plan for a set of named accounts: tiers, selection criteria, buying committee by role, plays per tier across outreach, paid social, content and events, coordination with sales, and account-level measurement.\n"
-description: "Plans an account-based marketing (ABM) programme for a set of named target accounts: selection criteria and tiers (one-to-one, one-to-few, one-to-many), the buying committee by role, the plays per tier across outreach, LinkedIn and Meta audiences, content and events, the sequence over time, the handover to sales and account-level measurement. Use for \"ABM\", \"account-based marketing\", \"target account programme\", \"we want to win these 30 accounts\", \"named account plan\" or \"tier our target accounts\". Not for a single outreach sequence (cold-email-sequence, linkedin-outreach), researching one account (account-brief) or a broad campaign without named accounts (campaign-plan)."
+description: "Plans an account-based marketing programme for named accounts: tiers, buying committee, plays per tier across outreach, LinkedIn and Meta audiences, content and events, sales handover, account-level measurement. Use for \"ABM\", \"target account plan\"."
 argument-hint: "<the brand, the goal, the account list or how to build it, the period, the budget and who in sales works the accounts>"
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: mcp-efficiency
-description: "Shared reference for calling any MCP connector in this stack (Google Ads, LinkedIn Ads, LinkedIn Ad Library, OpenSEO, Search Console, Bing Webmaster Tools, Firecrawl, Exa, HubSpot, Brevo, Typefully, WP Umbrella, Adobe for creativity, Canva, Figma, G2, vidIQ, Notion, Google Drive, Tally.so, Make, Zapier) cheaply and safely: filtering, batching, resolving the account once, and respecting credit, billing and write gates. Not triggered directly: loaded by other skills that make live connector calls."
+description: "Rules for calling MCP connectors cheaply and safely, loaded by skills that make live calls. Not for direct requests."
 ---
 
 # MCP Efficiency: Shared Reference

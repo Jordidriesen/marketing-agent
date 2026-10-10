@@ -10,19 +10,7 @@ metadata:
     performance-report), added the brand-kit Step 0, moved the per-format
     creation detail and the benchmark tables into references/, and
     tightened Output to this library's no-padding standard.
-description: >
-  Plans and packages a lead magnet for email capture, format and topic
-  choice, gating strategy, landing page structure, delivery, distribution,
-  and a measurement plan. Use when someone wants a "lead magnet", "gated
-  content", "content upgrade", "downloadable", "ebook", "cheat sheet",
-  "checklist", "template download", "opt-in", "freebie", "PDF download",
-  "resource library", "content offer", "email capture content", "Notion
-  template", "spreadsheet template", or asks "what should we give away for
-  emails". This skill plans WHAT to create and how to capture and
-  distribute it. For an interactive tool as the magnet (calculator,
-  grader, quiz), use free-tool-strategy. For writing the asset and its
-  landing page, use content-creation / web-content-pipeline. For the
-  nurture sequence after capture, use email-sequence-hubspot-brevo.
+description: "Plans a lead magnet: format, topic, gating, landing page structure, delivery, distribution, measurement. Use for \"lead magnet\", \"gated content\", \"ebook or checklist for emails\", \"what to give away\". Interactive tools: free-tool-strategy."
 argument-hint: "<the audience or topic to build a lead magnet for>"
 ---
 

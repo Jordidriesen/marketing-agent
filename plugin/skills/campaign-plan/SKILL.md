@@ -8,15 +8,7 @@ metadata:
     guidance instead of freestyling tone, moved the channel/budget/metrics
     reference tables out of the main flow into references/, and tightened
     Output to this library's no-padding standard.
-description: >
-  Generates a full campaign brief, objectives, audience, key messages,
-  channel strategy, content calendar, success metrics, budget, and risks,
-  from a goal and a timeline. Use when planning a product launch, lead-gen
-  push, or awareness campaign, when a marketing goal needs to become a
-  structured executable plan, or when a week-by-week content calendar with
-  channel dependencies is needed. Not for producing the individual pieces
-  the plan calls for, hand those to the relevant content skill once the
-  calendar is set.
+description: "Turns a goal and timeline into a campaign brief: objectives, audience, messages, channels, content calendar, budget, metrics, risks. Use for \"campaign plan\", \"launch plan\", \"plan a lead-gen push\". Pieces themselves go to the writing skills."
 argument-hint: "<campaign objective or product>"
 ---
 

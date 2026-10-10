@@ -22,19 +22,7 @@ metadata:
     and critique dimensions (from web-design-engineer, MIT). The em dash
     punctuation advice in better-typography was dropped to keep the library's
     no em dash rule.
-description: >
-  Design, redesign or review front-end UI in a specific brand's visual
-  identity: landing pages, marketing sites, WordPress pages and block themes,
-  components, design systems and standalone HTML artifacts. Use for "design
-  this page", "build the front end for X", "make a landing page", "redesign
-  this site", "modernise this page", "make this look less generic", "review
-  my UI", "audit the design", "check this for accessibility", "check my site
-  against best practices", or any request to produce, upgrade or audit what a
-  visitor sees in a browser. Loads the matching [brand]-brand-kit's design
-  module for tokens. Composes with creative-brief (direction) and
-  web-content-pipeline (copy). Not for raster or vector asset production
-  (canva-workflow, figma-weavy-workflow), not for charts (dataviz), and not
-  for dashboards or app UI beyond their marketing surfaces.
+description: "Designs, builds or reviews web UI in the brand's visual identity: landing page layouts, sites, WordPress pages and themes, components, accessibility. Use for \"design this page\", \"review my UI\". Page copy: web-content-pipeline."
 ---
 
 # Frontend Design

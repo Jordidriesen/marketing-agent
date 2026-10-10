@@ -1,6 +1,6 @@
 ---
 name: metric-detective
-description: Diagnoses why a Google Ads metric changed, with ranked causes and exactly how to verify each in the interface. Use when the user reports a spike, drop, or any "why did this change" question.
+description: "Diagnoses why a Google Ads metric changed, with ranked causes and how to verify each. Use for any spike, drop or \"why did this change\"."
 ---
 
 # metric-detective

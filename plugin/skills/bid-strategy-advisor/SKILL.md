@@ -1,6 +1,6 @@
 ---
 name: bid-strategy-advisor
-description: Recommends the right Google Ads bid strategy based on conversion volume, data quality, and goals, and flags when a strategy is set up to fail. Use when the user is choosing or troubleshooting a bid strategy.
+description: "Recommends the right Google Ads bid strategy for the conversion volume and goals, and flags strategies set up to fail. Use when choosing or troubleshooting bidding."
 ---
 
 # bid-strategy-advisor

@@ -3,7 +3,7 @@ name: account-brief
 metadata:
   version: '1.0.0'
   history: "v1.0.0: new skill. One-page brief per target account before outreach: what the company does, trigger events with sources, likely buying committee by role, fit against the ICP, the angle and the first touch. Sourced facts only.\n"
-description: "Builds a one-page brief on one target account before outreach: what the company does, recent trigger events with their sources, the likely buying committee by role, fit against the brand's ICP and personas, the angle to lead with and the suggested first touch. Use for \"account brief\", \"research this prospect\", \"account research\", \"prep me for outreach to [company]\", \"why would [company] care\" or before a cold email or LinkedIn sequence to a named account. Not for competitor research (competitor-analysis, european-market-intelligence), market sizing, or writing the messages themselves (cold-email-sequence, linkedin-outreach)."
+description: "One-page brief on a target account before outreach: what it does, sourced and dated triggers, buying committee by role, ICP fit, angle, first touch. Use for \"account brief\", \"research this prospect\", \"prep outreach to [company]\"."
 argument-hint: "<company name and domain or registry number, the brand you sell for, and anything you already know about the account>"
 ---
 

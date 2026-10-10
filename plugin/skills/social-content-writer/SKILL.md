@@ -1,6 +1,6 @@
 ---
 name: social-content-writer
-description: "Draft social media posts for Instagram, LinkedIn, Reddit, or X (Twitter) with a platform-selection gate up front, then platform-specific structure, hook, hashtag, and format guidance tuned to each platform's current algorithm behavior, including Reddit's community-first self-promotion norms, which are fundamentally different from the other three. Use for \"write a LinkedIn post,\" \"social post,\" \"Twitter/X post,\" \"Instagram caption,\" \"Reddit post,\" or \"social media content.\" Not for paid ads or ad creative sets (see ad-creative-matrix), not for a full content calendar (see campaign-plan) and not for web pages (see web-content-pipeline) or lifecycle email flows (see email-sequence-hubspot-brevo)."
+description: "Writes organic social posts for LinkedIn, Instagram, X or Reddit, platform by platform: hook, structure, hashtags, CTA. Use for \"LinkedIn post\", \"company post\", \"social post\", \"Instagram caption\", \"tweet\". Not paid ads (ad-creative-matrix)."
 ---
 
 # Social Content Writer

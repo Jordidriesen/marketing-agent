@@ -2,16 +2,7 @@
 name: web-content-pipeline
 metadata:
   version: 1.1.0
-description: >
-  Sequential workflow for writing, editing, and humanizing web content,
-  informational blog posts, landing pages, product pages, solution pages,
-  homepages, pricing pages, feature pages, and about pages. Covers both
-  SEO/AEO-optimized informational content and conversion-focused page
-  copy in one pipeline, since both are "web content" and the only real
-  difference is which structural framework and page template apply. Use
-  when writing or rewriting any page a visitor reaches on the website.
-  Not for social media posts and not for print or downloadable content
-  like ebooks or whitepapers.
+description: "Writes or rewrites any website copy: landing pages, homepages, product, solution, feature, pricing and about pages, hero sections, benefit blocks, CTAs, and SEO or AEO blog posts. Use for any page a site visitor reads. Not social posts or ebooks."
 ---
 
 # Web Content Pipeline

@@ -1,6 +1,6 @@
 ---
 name: landing-page-matcher
-description: Checks message match between search query, ad copy, and landing page, and flags the mismatches leaking conversions. Use when click-to-conversion is weak or pages have drifted from the ads.
+description: "Checks message match between search query, ad and landing page, and flags mismatches leaking conversions. Use when click-to-conversion is weak."
 ---
 
 # landing-page-matcher

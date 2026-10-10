@@ -1,6 +1,6 @@
 ---
 name: geo-performance-analyzer
-description: Analyzes Google Ads performance by location to find regions worth bidding up and regions draining budget, pulling live from the Google Ads connector when connected. Use when the user shares geographic performance data, connects their Google Ads account, or asks where their spend is going.
+description: "Analyses Google Ads performance by location: regions to bid up and regions draining budget. Use for \"where is my spend going\" by geography."
 ---
 
 # geo-performance-analyzer

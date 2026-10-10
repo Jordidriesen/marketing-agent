@@ -1,6 +1,6 @@
 ---
 name: brand-review
-description: "Review content against brand voice and screen it for legal/compliance risk, unsubstantiated claims, missing disclaimers, comparative claims, testimonial issues, before it ships. Automatically identifies the brand and loads its `[brand]-brand-kit` skill, if one exists, so the review applies that brand's actual voice rules rather than generic guidelines. Use when checking a draft before it ships, auditing copy for voice consistency, or screening for compliance risk. For structural/persuasion editing of copy that already reads correctly for the brand, see copy-editing instead."
+description: "Reviews content against the brand kit's voice and screens it for legal and compliance risk (claims, comparisons, testimonials, disclaimers) before it ships. Use for \"brand check\", \"compliance review\", \"is this on brand\"."
 ---
 
 # Brand Review

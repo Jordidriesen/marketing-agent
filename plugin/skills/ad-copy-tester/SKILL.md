@@ -1,6 +1,6 @@
 ---
 name: ad-copy-tester
-description: Analyzes responsive search ad asset performance and says which headlines and descriptions to keep, cut, or replace. Use when the user shares asset performance data or asks why an ad is underperforming. For paid social ads built with ad-creative-matrix, read results back by the hook, body and CTA tags in the ad names; this skill covers Google RSA assets.
+description: "Reads Google RSA asset performance and says which headlines and descriptions to keep, cut or replace. Use when an ad underperforms or asset data is shared."
 ---
 
 # ad-copy-tester

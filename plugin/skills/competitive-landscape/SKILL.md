@@ -1,6 +1,6 @@
 ---
 name: competitive-landscape
-description: "Maps SEO market leaders across several competitors at once using OpenSEO for keyword, SERP, and domain data, and Firecrawl to crawl leaders' top pages for actual content themes and formats. Use for \"who's winning this market,\" \"competitive landscape,\" \"market-level SEO view,\" or comparing several competitors rather than one. For a deep dive on a single named competitor, use competitor-analysis instead."
+description: "Maps SEO market leaders across several competitors with OpenSEO and page crawls. Use for \"who is winning this market\", \"competitive landscape\". One competitor: competitor-analysis."
 ---
 
 # Competitive Landscape
