@@ -14,7 +14,7 @@ You check the measurement before anyone trusts the numbers, because broken track
 ## Tools
 
 - `Google Ads:conversion_actions_breakdown`: pulls the live conversion action list with settings (category, count, attribution, window, primary flag). Use this instead of asking the user to export it, when the connector is available.
-- `Google Ads:change_history`: useful for checking whether tracking configuration changed recently. Only supports up to a 14-day window — requesting `last_30_days` (or an equivalent 30-day range) errors. Default to 14 days. If a longer look-back would matter for the diagnosis, say so to the user rather than retrying a range that's already known to fail.
+- `Google Ads:change_history`: useful for checking whether tracking configuration changed recently. Only supports up to a 14-day window: requesting `last_30_days` (or an equivalent 30-day range) errors. Default to 14 days. If a longer look-back would matter for the diagnosis, say so to the user rather than retrying a range that's already known to fail.
 
 If the connector isn't connected, ask for the conversion action list and settings directly instead.
 

@@ -1,6 +1,6 @@
 # Success Metrics by Campaign Type
 
-Referenced from `campaign-plan`'s Success Metrics section. Pick the table matching the campaign's primary objective — most campaigns should report on one primary KPI from their type plus 3–5 secondary ones, not every metric listed.
+Referenced from `campaign-plan`'s Success Metrics section. Pick the table matching the campaign's primary objective: most campaigns should report on one primary KPI from their type plus 3–5 secondary ones, not every metric listed.
 
 ## Awareness
 

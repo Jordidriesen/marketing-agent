@@ -10,15 +10,15 @@ This repo follows the [Claude Skills](https://docs.claude.com/en/docs/agents-and
    ---
    name: your-skill-name
    description: >
-     One paragraph covering what the skill does AND when to trigger it —
+     One paragraph covering what the skill does AND when to trigger it:
      the phrases or request types that should invoke it. This is what
      Claude reads to decide whether the skill applies.
    ---
    ```
    Optional frontmatter: `metadata.version` (semver) and `metadata.history` (one line, only when renaming or making a breaking change).
-3. **Body** covers the actual instructions — inputs needed, step-by-step workflow, edge cases, and a "Related Skills" section at the end if it composes with others in this repo.
-4. **references/** — put anything long, reusable, or reference-only here (frameworks, term glossaries, market data) rather than in the main body, and link to it by relative path.
-5. **Never commit secrets.** No API keys, OAuth tokens, account IDs, or credentials in any skill file — see `security-policy/references/SECURITY.md` for the full policy these skills already follow.
+3. **Body** covers the actual instructions: inputs needed, step-by-step workflow, edge cases, and a "Related Skills" section at the end if it composes with others in this repo.
+4. **references/**: put anything long, reusable, or reference-only here (frameworks, term glossaries, market data) rather than in the main body, and link to it by relative path.
+5. **Never commit secrets.** No API keys, OAuth tokens, account IDs, or credentials in any skill file: see `security-policy/references/SECURITY.md` for the full policy these skills already follow.
 6. **No client-identifying detail.** If a skill needs an illustrative example, use a generic placeholder (`Client A`, `acme-brand-kit`) rather than a real client or company name.
 
 ## Before opening a PR

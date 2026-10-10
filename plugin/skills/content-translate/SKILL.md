@@ -5,7 +5,7 @@ description: >
   customer stories) into one or more target languages with locale-correct
   formatting, native-sounding tone, and brand-locked terminology carried
   over. Combines language translation and cultural adaptation into one
-  pass — formality, brand examples, legal references, and CTA tone are
+  pass, formality, brand examples, legal references, and CTA tone are
   applied during translation itself, not as a separate step. Use when the
   user says "translate this," "translate to German/French/Dutch/Spanish,"
   "vertalen naar het Nederlands," "traduire en français," "übersetzen ins
@@ -24,7 +24,7 @@ metadata:
     same pass rather than deferred to a separate localize skill, since the
     real workflow here is translating already-written English content, not
     writing five market versions from scratch. The original's hreflang/
-    sitemap generation (blog-multilingual Phase 5) isn't included yet —
+    sitemap generation (blog-multilingual Phase 5) isn't included yet,
     every market is already live with its own URL structure; build that
     piece later if a from-scratch multi-market launch actually needs it.
 ---
@@ -61,12 +61,12 @@ generating hreflang tags or sitemaps.
 ```
 
 Run Steps 2-7 once per target language. Parallelize across languages when
-translating into more than one at a time — there's no dependency between
+translating into more than one at a time: there's no dependency between
 target languages, only between steps within a single language.
 
 ---
 
-## Step 0 — Parse Source and Targets
+## Step 0: Parse Source and Targets
 
 1. Resolve the source: an uploaded file, pasted content, or an existing
    published page. If it's a file path, resolve it against the project
@@ -90,7 +90,7 @@ target languages, only between steps within a single language.
 
 ---
 
-## Step 1 — Extract the Translatable Surface
+## Step 1: Extract the Translatable Surface
 
 Extract:
 
@@ -118,7 +118,7 @@ Identify the primary and secondary keywords for Step 3.
 
 ---
 
-## Step 2 — Identify the Brand
+## Step 2: Identify the Brand
 
 Check whether the content belongs to a brand with its own
 `[brand]-brand-kit` skill (see an existing one's "Brand Kit Pattern"
@@ -128,7 +128,7 @@ it now:
 - Apply its voice pillars in the target language, not just the source.
 - Treat any **Locked Terminology** section in the brand kit as
   authoritative. It overrides Step 3's keyword-localization judgment call
-  and this skill's own defaults — don't re-derive a term the brand has
+  and this skill's own defaults: don't re-derive a term the brand has
   already confirmed.
 - If no brand kit exists yet, translate against the source content's
   existing voice and flag that a brand kit doesn't exist for this client,
@@ -136,7 +136,7 @@ it now:
 
 ---
 
-## Step 3 — Localize Keywords
+## Step 3: Localize Keywords
 
 Per `references/translation-rules.md`'s SEO Translation Principles:
 
@@ -153,7 +153,7 @@ Per `references/translation-rules.md`'s SEO Translation Principles:
 
 ---
 
-## Step 4 — Select the Cultural Profile
+## Step 4: Select the Cultural Profile
 
 Per `references/cultural-adaptation.md`'s Profile Selection Logic: exact
 locale match, then unambiguous language-only fallback, then regional
@@ -161,7 +161,7 @@ grouping (DACH, LATAM, Benelux), then the custom-locale template for
 anything not covered.
 
 Pick one formality register for the whole piece per the profile (e.g.
-DACH `Sie` vs `du`) and hold it — don't drift mid-document. Note which
+DACH `Sie` vs `du`) and hold it: don't drift mid-document. Note which
 brand examples, statistics sources, legal references, and CTA tone apply;
 these get applied during translation in Step 5, not as a follow-up pass.
 
@@ -171,7 +171,7 @@ default.
 
 ---
 
-## Step 5 — Translate
+## Step 5: Translate
 
 One integrated pass per target language, applying all three inputs
 together rather than translating first and adapting later:
@@ -190,11 +190,11 @@ profile and a literal translation conflict, the cultural profile wins.
 
 ---
 
-## Step 6 — Humanize in the Target Language
+## Step 6: Humanize in the Target Language
 
 Run the `ai-content-cleaner` skill on the translated text. It routes to
 the matching language pattern file (DE, FR, NL including Belgian Dutch, ES)
-automatically — translated copy carries its own AI tells, distinct from
+automatically: translated copy carries its own AI tells, distinct from
 the English source's, and this catches them in the target language rather
 than assuming a clean English draft stays clean after translation.
 
@@ -204,10 +204,10 @@ same content types); **CLEAN mode** otherwise.
 
 ---
 
-## Step 7 — QA Sweep
+## Step 7: QA Sweep
 
 Run `references/translation-rules.md`'s Quality Criteria Checklist
-directly — it already covers structural integrity, format correctness,
+directly: it already covers structural integrity, format correctness,
 machine-translation artifacts, and mixed-language sentences. Nothing new
 to check here; this step is "run that checklist," not a second list.
 
@@ -217,7 +217,7 @@ issues.
 
 ---
 
-## Step 8 — Delivery
+## Step 8: Delivery
 
 ```
 ## Translation complete: [Original title]
@@ -280,15 +280,15 @@ issues.
 
 ## Related Skills
 
-- **`[brand]-brand-kit`** skills — Step 2 loads the relevant one for
+- **`[brand]-brand-kit`** skills: Step 2 loads the relevant one for
   voice and locked terminology, when one exists
-- **`web-content-pipeline`** — usually where the source-language content
+- **`web-content-pipeline`**: usually where the source-language content
   came from; this skill picks up after that one delivers
-- **`seo-keyword-research`** — Step 3 checks real search volume for
+- **`seo-keyword-research`**: Step 3 checks real search volume for
   ambiguous keyword-localization calls
 - **`ai-content-cleaner`**: Step 6's
   target-language polish pass
-- **`content-references`** (`seo-aeo-optimization.md`) — the schema
+- **`content-references`** (`seo-aeo-optimization.md`): the schema
   baseline (Article/Person/Organization/BreadcrumbList) translated schema
   JSON-LD should match
 

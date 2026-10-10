@@ -10,7 +10,7 @@ Supporting reference for `performance-report`'s report-type selection and Recomm
 
 **Quarterly Business Review** (leadership): quarter vs. goals, YTD trajectory, channel ROI analysis, campaign summary, competitive/market observations, strategic recommendations, budget request, key experiments and learnings.
 
-**Dashboard design principles:** lead with metrics tied to business objectives, not vanity metrics. Show trends over time, not point-in-time snapshots. Include comparison context (prior period, target, benchmark) on every number. Use consistent status colors (green/yellow/red). Group by funnel stage or business question. One page — detail goes in an appendix. Match update cadence to decision cadence (real-time for paid, weekly for content).
+**Dashboard design principles:** lead with metrics tied to business objectives, not vanity metrics. Show trends over time, not point-in-time snapshots. Include comparison context (prior period, target, benchmark) on every number. Use consistent status colors (green/yellow/red). Group by funnel stage or business question. One page: detail goes in an appendix. Match update cadence to decision cadence (real-time for paid, weekly for content).
 
 ## Optimization framework
 
@@ -26,6 +26,6 @@ Supporting reference for `performance-report`'s report-type selection and Recomm
 | Conversion | Low conversion rate | Offer, CTA, form length, trust signals, layout |
 | Retention | High churn, low repeat engagement | Onboarding, email nurture, product experience, support |
 
-**Testing discipline:** one variable at a time, define the success metric before launching, calculate sample size before starting rather than ending early, run at least one full business cycle (typically one week for B2B), document every test regardless of outcome — a test confirming the status quo isn't a failure, it's confidence.
+**Testing discipline:** one variable at a time, define the success metric before launching, calculate sample size before starting rather than ending early, run at least one full business cycle (typically one week for B2B), document every test regardless of outcome, a test confirming the status quo isn't a failure, it's confidence.
 
-**Cadence:** daily — monitor paid budget pacing and disapprovals. Weekly — review channel performance, pause underperformers, scale winners. Bi-weekly — refresh ad creative. Monthly — full review, new opportunities, updated forecasts. Quarterly — strategic channel-mix and budget review.
+**Cadence:** daily, monitor paid budget pacing and disapprovals. Weekly: review channel performance, pause underperformers, scale winners. Bi-weekly: refresh ad creative. Monthly: full review, new opportunities, updated forecasts. Quarterly: strategic channel-mix and budget review.

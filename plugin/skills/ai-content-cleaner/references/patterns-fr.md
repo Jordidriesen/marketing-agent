@@ -5,7 +5,7 @@ Load this file when the input text is in French.
 
 ---
 
-## Tier 1 — Suppressions obligatoires (équivalents français)
+## Tier 1: Suppressions obligatoires (équivalents français)
 
 | Modèle | Exemples | Correction |
 |---|---|---|
@@ -16,7 +16,7 @@ Load this file when the input text is in French.
 
 ---
 
-## Tier 2 — Vocabulaire IA (Français)
+## Tier 2: Vocabulaire IA (Français)
 
 **Verbes:** exploiter (overused), optimiser, faciliter, favoriser, renforcer, souligner,
 dévoiler, naviguer (figuratif), fluidifier, améliorer, cultiver, mettre en lumière,
@@ -37,23 +37,23 @@ eu égard à, il convient de noter que, force est de constater que, il y a lieu 
 
 ---
 
-## Tier 3 — Structures révélatrices (Français)
+## Tier 3: Structures révélatrices (Français)
 
 | Modèle | Description |
 |---|---|
 | Inflation de l'importance | "marque un tournant décisif", "souligne le rôle vital de", "reflète des tendances plus larges", "témoigne de" |
-| Construction *permettre de* comme béquille | "Cette solution permet de faciliter les processus en permettant aux équipes de..." — reformuler directement |
+| Construction *permettre de* comme béquille | "Cette solution permet de faciliter les processus en permettant aux équipes de...": reformuler directement |
 | Nominalisation excessive | "la mise en œuvre de l'optimisation des processus" → reformuler en phrase active : "nous avons simplifié les processus" |
 | Langage promotionnel | "niché au cœur de", "communauté dynamique", "riche patrimoine culturel", "offre unique" |
 | Attribution vague | "Les experts affirment", "Les observateurs du secteur notent", "Certains critiques suggèrent" sans source nommée |
 | Boilerplate sur les défis | "Malgré les défis inhérents à...", "Malgré ces défis, X continue de prospérer" |
 | Parallélismes négatifs | "Ce n'est pas seulement X, c'est Y", "Non pas A, mais B" (excessif) |
 | La règle de trois | Triades forcées : "innovation, inspiration et perspicacité" |
-| Tournures impersonnelles excessives | Abus de "il est important de", "il est essentiel que", "il convient de" — écrire directement |
+| Tournures impersonnelles excessives | Abus de "il est important de", "il est essentiel que", "il convient de": écrire directement |
 
 ---
 
-## Tier 4 — Transitions et chevilles (Français)
+## Tier 4: Transitions et chevilles (Français)
 
 **Transitions à supprimer :**
 - "De plus", "Par ailleurs", "Néanmoins", "Cela étant dit", "Dans cette optique"

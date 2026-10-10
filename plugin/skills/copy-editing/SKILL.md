@@ -5,7 +5,7 @@ metadata:
   version: 1.2.0
   history: >
     v1.2: stopped re-implementing persuasion principles and AI-tell word
-    lists inline — the Seven Sweeps process stays here (it's the
+    lists inline, the Seven Sweeps process stays here (it's the
     differentiator), but the "why" behind So What / Prove It / Heightened
     Emotion / Zero Risk now points at content-references'
     behavioral-psychology.md, and the lexical AI-tell cleanup defers to
@@ -43,14 +43,14 @@ Before the first sweep, work out whether this copy belongs to a brand with a doc
 
 ## What this skill owns, and what it defers
 
-This skill owns the **Seven Sweeps process** — the disciplined multi-pass edit with back-checking after each pass. It does not re-teach the underlying principles:
+This skill owns the **Seven Sweeps process**: the disciplined multi-pass edit with back-checking after each pass. It does not re-teach the underlying principles:
 
 - The persuasion logic behind the So What, Prove It, Heightened Emotion and Zero Risk sweeps lives in `content-references/references/behavioral-psychology.md` (Cialdini, loss aversion, fluency, Ehrenberg-Bass). Pull it in when a sweep needs the "why," rather than working from memory.
 - Lexical AI tells (buzzwords, filler intensifiers, copula avoidance, rule-of-three padding) are handled by the `ai-content-cleaner` skill. Copy-editing's passes are **structural**; run the humanizing pass alongside or after for the word-level cleanup instead of duplicating a swap table here.
 
 ## Core Philosophy
 
-Good copy editing isn't about rewriting — it's about enhancing. Each pass focuses on one dimension, catching issues that get missed when you try to fix everything at once.
+Good copy editing isn't about rewriting: it's about enhancing. Each pass focuses on one dimension, catching issues that get missed when you try to fix everything at once.
 
 **Key principles:**
 - Don't change the core message; focus on enhancing it
@@ -78,7 +78,7 @@ Edit copy through seven sequential passes, each focusing on one dimension. After
 
 ### Sweep 2: Voice and Tone
 
-**Focus:** Is the copy consistent in how it sounds — and does it match the loaded brand kit?
+**Focus:** Is the copy consistent in how it sounds, and does it match the loaded brand kit?
 
 **Check for:** shifts between formal and casual, inconsistent brand personality, jarring mood changes, word choices that don't match the brand. Common issues: starting casual then becoming corporate, mixing "we" and "the company," unintentional humor/serious swings, technical language appearing randomly.
 
@@ -98,7 +98,7 @@ Edit copy through seven sequential passes, each focusing on one dimension. After
 
 ❌ "Our platform uses AI-powered analytics"
 *So what?*
-✅ "Our AI-powered analytics surface insights you'd miss manually — so you can make better decisions in half the time"
+✅ "Our AI-powered analytics surface insights you'd miss manually, so you can make better decisions in half the time"
 
 For the benefit-desire mapping (why a given benefit lands), see `content-references/references/behavioral-psychology.md`.
 
@@ -118,7 +118,7 @@ For the benefit-desire mapping (why a given benefit lands), see `content-referen
 
 **Common gaps:** "Trusted by thousands" (which thousands?), "industry-leading" (according to whom?), "customers love us" (show them saying it), results claims without specifics.
 
-The credibility mechanics behind why proof works — and which proof type fits which objection — are in `content-references/references/behavioral-psychology.md`. Unsubstantiated-claim risk overlaps with `brand-review`'s compliance screen; flag anything legally exposed for that skill.
+The credibility mechanics behind why proof works, and which proof type fits which objection, are in `content-references/references/behavioral-psychology.md`. Unsubstantiated-claim risk overlaps with `brand-review`'s compliance screen; flag anything legally exposed for that skill.
 
 **Process:** identify every claim that needs proof; check if proof exists nearby; flag unsupported assertions; recommend adding proof or softening the claim.
 
@@ -140,7 +140,7 @@ The credibility mechanics behind why proof works — and which proof type fits w
 | Improve your workflow | Cut your reporting time in half |
 | Great support | Response within 2 hours |
 
-**Process:** highlight vague words and phrases; ask "can this be more specific?"; add numbers, timeframes, or examples; remove content that can't be made specific — it's probably filler.
+**Process:** highlight vague words and phrases; ask "can this be more specific?"; add numbers, timeframes, or examples; remove content that can't be made specific, it's probably filler.
 
 **After this sweep:** return to Prove It, So What, Voice and Tone, then Clarity.
 
@@ -156,7 +156,7 @@ The credibility mechanics behind why proof works — and which proof type fits w
 
 **Techniques:** paint the "before" state vividly, use sensory language, tell micro-stories, reference shared experiences, ask questions that prompt reflection. The research on why these move people (and where emotion tips into manipulation) is in `content-references/references/behavioral-psychology.md`.
 
-**Process:** read for emotional impact — does it move you?; identify flat sections that should resonate; add emotional texture while staying authentic; ensure emotion serves the message.
+**Process:** read for emotional impact, does it move you?; identify flat sections that should resonate; add emotional texture while staying authentic; ensure emotion serves the message.
 
 **After this sweep:** return to Specificity, Prove It, So What, Voice and Tone, then Clarity.
 
@@ -264,7 +264,7 @@ Use these for faster reviews when a full seven-sweep process isn't needed. **Lex
 | Problem | Symptom | Fix |
 |---|---|---|
 | Wall of features | What the product does, no why | Add "which means..." after each feature |
-| Corporate speak | "Leverage synergies to optimize outcomes" | "How would a human say this?" — use those words |
+| Corporate speak | "Leverage synergies to optimize outcomes" | "How would a human say this?": use those words |
 | Weak opening | Starts with company history or vague statements | Lead with the reader's problem or desired outcome |
 | Buried CTA | The ask comes after too much buildup, or isn't clear | Make the CTA obvious, early, and repeated |
 | No proof | "Customers love us" with no evidence | Add specific testimonials, numbers, or case references |
@@ -303,4 +303,4 @@ When editing collaboratively: run a sweep and present findings (what you found, 
 
 ## References
 
-- [Plain English Alternatives](references/plain-english-alternatives.md): simpler words for complex ones — a quick lookup; the fuller lexical pass is `ai-content-cleaner`.
+- [Plain English Alternatives](references/plain-english-alternatives.md): simpler words for complex ones, a quick lookup; the fuller lexical pass is `ai-content-cleaner`.

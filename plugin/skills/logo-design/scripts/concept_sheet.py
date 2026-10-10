@@ -9,7 +9,7 @@ the SVG is always written.
 Usage:
   python3 scripts/concept_sheet.py a.svg b.svg c.svg --names "Next Block" "Ranked F" "Forward f" \\
       --notes "One block steps forward: the next move." "An F of ranked priority bars." "The i-dot steps ahead." \\
-      --title "Fabbit — logo concepts" --recommend 1 -o concepts.png
+      --title "Fabbit: logo concepts" --recommend 1 -o concepts.png
   python3 scripts/concept_sheet.py a.svg b.svg c.svg --lockups a-h.svg b-h.svg c-h.svg --greyscale -o round1.png
 
 Show the resulting PNG to the user (view it yourself first), then stop and ask how to proceed.
@@ -61,7 +61,7 @@ def main():
     ap.add_argument("--names", nargs="*", default=[])
     ap.add_argument("--notes", nargs="*", default=[], help="one-sentence idea per concept")
     ap.add_argument("--title", default="Logo concepts")
-    ap.add_argument("--subtitle", default="Concepts for review — pick a direction (or tell me what you like in each).")
+    ap.add_argument("--subtitle", default="Concepts for review, pick a direction (or tell me what you like in each).")
     ap.add_argument("--recommend", type=int, help="1-based index of the recommended concept")
     ap.add_argument("--greyscale", action="store_true", help="show everything in greyscale (first-round rule)")
     ap.add_argument("--width", type=int, default=1600)
@@ -137,9 +137,9 @@ def main():
     png_path = base + ".png"
     used = render_png.render(svg_path, png_path, W, int(round(H)))
     if used:
-        print(f"wrote {png_path} via {used} — view it, show it to the user, then stop and ask")
+        print(f"wrote {png_path} via {used}, view it, show it to the user, then stop and ask")
     else:
-        print("PNG skipped (no renderer; see render_png.py --which) — show the SVG instead")
+        print("PNG skipped (no renderer; see render_png.py --which), show the SVG instead")
 
 
 if __name__ == "__main__":

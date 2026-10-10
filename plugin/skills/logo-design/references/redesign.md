@@ -6,17 +6,17 @@ built over years. Read this when the user asks to modernise, refresh, update or 
 ## 1. First: should it change at all?
 
 Good reasons:
-- The business has changed (merger, new offering, new audience, new positioning — e.g. from discount to premium).
+- The business has changed (merger, new offering, new audience, new positioning, e.g. from discount to premium).
 - The mark fails functionally: illegible small, unusable on screens, can't be embroidered, breaks in one colour.
 - Many inconsistent versions are in circulation (the mark has been stretched, redrawn and recoloured by every vendor).
 - It resembles a competitor or carries a harmful association.
 - It looks dated in a way that contradicts the brand's promise (a tech firm looking decades old).
 
 Weak reasons: a new executive wants to leave a mark; boredom inside the company (the audience is rarely as bored as
-the staff); chasing a trend. Remember the public may care deeply about a familiar mark — radical redesigns of loved
+the staff); chasing a trend. Remember the public may care deeply about a familiar mark: radical redesigns of loved
 brands can trigger backlash and even be reversed.
 
-If the user is only *thinking* about change, that alone justifies exploring options — explore, then decide.
+If the user is only *thinking* about change, that alone justifies exploring options: explore, then decide.
 
 ## 2. Evolution vs. revolution
 
@@ -24,10 +24,10 @@ If the user is only *thinking* about change, that alone justifies exploring opti
 |---|---|---|
 | When | Equity is strong; problems are technical or stylistic | The business or its perception must change fundamentally |
 | What changes | Proportions, weight, curves, spacing, colour tuning, simplification, cleaner digital version | Concept, name treatment, possibly colour and symbol |
-| Risk | Low — recognition carries over | High — must rebuild recognition; plan launch & explanation |
+| Risk | Low: recognition carries over | High: must rebuild recognition; plan launch & explanation |
 
 Most successful updates are evolutionary: cleaner, sleeker versions of the same idea. Even radical changes often keep
-one anchor — usually the colour scheme (perhaps shifted in shade) or a signature shape.
+one anchor, usually the colour scheme (perhaps shifted in shade) or a signature shape.
 
 ## 3. Equity audit
 
@@ -36,7 +36,7 @@ typography, a mascot, a slogan, a sound. Ask:
 - What must survive? (Usually the strongest one or two.)
 - What is incidental and can go?
 - What causes problems (legibility, reproduction, negative associations)?
-Two ownership strategies exist — constancy for decades, or managed evolution that keeps core elements while updating
+Two ownership strategies exist: constancy for decades, or managed evolution that keeps core elements while updating
 details. Choose one explicitly.
 
 ## 4. Refresh techniques
@@ -49,19 +49,19 @@ details. Choose one explicitly.
   authoritative. (A common modern move: from stark capitals to friendlier rounded forms.)
 - **Colour**: keep the hue family, adjust saturation/value for screens and accessibility.
 - **Add a container** when the old mark gets lost in cluttered environments.
-- **Build the missing variants** (symbol-only, horizontal/stacked, favicon, reversed) — often the real problem.
+- **Build the missing variants** (symbol-only, horizontal/stacked, favicon, reversed), often the real problem.
 - **Keep heritage elements as accents** (a classic ampersand, an old monogram) next to modern type to express
   continuity and progress at once.
 
 ## 5. Mergers and new structures
 
 Options: choose one existing mark; combine elements of both (rarely elegant); create a new mark that signals a new
-entity; or a transitional endorsement ("X, a Y company"). Communicate tactfully — people identify with their old brand.
+entity; or a transitional endorsement ("X, a Y company"). Communicate tactfully: people identify with their old brand.
 Find elements that both sides can recognise as theirs.
 
 ## 6. Launch
 
-Explain the change: why, what stays, what it means. Show before/after side by side. Roll out consistently — mixing old
+Explain the change: why, what stays, what it means. Show before/after side by side. Roll out consistently: mixing old
 and new marks for long signals confusion. Update guidelines and asset libraries on day one, and audit usage after launch.
 
 ## 7. Deliverable for a redesign proposal

@@ -11,7 +11,7 @@ metadata:
     creation detail and the benchmark tables into references/, and
     tightened Output to this library's no-padding standard.
 description: >
-  Plans and packages a lead magnet for email capture — format and topic
+  Plans and packages a lead magnet for email capture, format and topic
   choice, gating strategy, landing page structure, delivery, distribution,
   and a measurement plan. Use when someone wants a "lead magnet", "gated
   content", "content upgrade", "downloadable", "ebook", "cheat sheet",
@@ -28,9 +28,9 @@ argument-hint: "<the audience or topic to build a lead magnet for>"
 
 # Lead Magnets
 
-You plan lead magnets that capture qualified emails and lead naturally to the product. This skill owns the plan — format, gating, landing page, distribution, measurement. The asset and its landing page get written by `content-creation` / `web-content-pipeline`; the nurture flow by `email-sequence-hubspot-brevo`.
+You plan lead magnets that capture qualified emails and lead naturally to the product. This skill owns the plan: format, gating, landing page, distribution, measurement. The asset and its landing page get written by `content-creation` / `web-content-pipeline`; the nurture flow by `email-sequence-hubspot-brevo`.
 
-## Step 0 — Load the brand and any product-marketing context
+## Step 0: Load the brand and any product-marketing context
 
 Load the matching `[brand]-brand-kit` skill. Its voice governs the landing page copy and any prose in the asset; its locked terminology carries through.
 
@@ -69,7 +69,7 @@ Then gather, asking only for what's missing:
 | Resource library | Ongoing value, return visits | High | Ongoing |
 | Interactive tool | Product experience, high intent | Varies | → `free-tool-strategy` |
 
-Per-format creation detail — structure, length, tools, common mistakes — is in [references/format-guide.md](references/format-guide.md).
+Per-format creation detail, structure, length, tools, common mistakes, is in [references/format-guide.md](references/format-guide.md).
 
 ## Matching format to buyer stage
 
@@ -88,7 +88,7 @@ Per-format creation detail — structure, length, tools, common mistakes — is 
 | Ungated with optional opt-in | Top-funnel education | Max reach, lower capture |
 | Content upgrade | A blog post plus a post-specific bonus | Contextual, high intent |
 
-**What to ask for:** email only converts best. Email plus name enables personalisation at slight cost. Email plus company or role improves qualification with more friction. Multi-field only for high-value offers (webinars, demos). Rule of thumb: every extra field costs 5–10% of conversion — ask for the minimum.
+**What to ask for:** email only converts best. Email plus name enables personalisation at slight cost. Email plus company or role improves qualification with more friction. Multi-field only for high-value offers (webinars, demos). Rule of thumb: every extra field costs 5–10% of conversion, ask for the minimum.
 
 **Framing the exchange:** make the value explicit ("Get the full 25-page guide, free"), show a preview (contents, first page, sample output), add proof ("Downloaded by 5,000+ marketers"), reduce risk ("No spam. Unsubscribe anytime.").
 
@@ -96,7 +96,7 @@ There is no dedicated form or popup optimisation skill in this plugin. Apply the
 
 ## Landing page and delivery
 
-**Landing page structure:** headline (the benefit — what they get and why it matters) → preview or mockup → what's inside (3–5 bullets of key takeaways) → social proof → form (minimal fields, clear CTA) → FAQ (is it free, what format). The page itself is written by `web-content-pipeline` as a landing page; hand it this structure and the copy points.
+**Landing page structure:** headline (the benefit, what they get and why it matters) → preview or mockup → what's inside (3–5 bullets of key takeaways) → social proof → form (minimal fields, clear CTA) → FAQ (is it free, what format). The page itself is written by `web-content-pipeline` as a landing page; hand it this structure and the copy points.
 
 **Form:** when the site has no form system of its own (or a quiz-style magnet needs one), the Tally.so connector can build the form. Specify the fields and the hidden fields for source tracking (UTM parameters) in the plan; creating or publishing the form waits for approval, per `security-policy`. Where the contact has to land in Brevo or HubSpot, use the form's native integration first; a Make or Zapier scenario is the fallback, and running or creating one also needs approval. Check consent wording and the double opt-in requirement for the brand's market before the form goes live.
 
@@ -113,11 +113,11 @@ There is no dedicated form or popup optimisation skill in this plugin. Apply the
 
 ## Distribution
 
-- **Blog CTAs and content upgrades** — inline and end-of-post CTAs; post-specific upgrades convert 2–5× better than a generic sidebar CTA.
-- **Exit-intent and scroll-depth prompts** — match the offer to the page.
-- **Social** — teasers and carousels from the key points; the magnet as the profile CTA. Drafted by `social-content-writer`.
-- **Paid** — lead ads for top-funnel magnets, search ads for high-intent ones (templates, tools), retargeting for blog visitors. Owned by `performance-marketer`; `sea-keyword-research` sizes the keyword list.
-- **Partner co-promotion** — cross-promotion with complementary brands, guest webinars, partner newsletters, resource-collection inclusion.
+- **Blog CTAs and content upgrades**: inline and end-of-post CTAs; post-specific upgrades convert 2–5× better than a generic sidebar CTA.
+- **Exit-intent and scroll-depth prompts**: match the offer to the page.
+- **Social**: teasers and carousels from the key points; the magnet as the profile CTA. Drafted by `social-content-writer`.
+- **Paid**: lead ads for top-funnel magnets, search ads for high-intent ones (templates, tools), retargeting for blog visitors. Owned by `performance-marketer`; `sea-keyword-research` sizes the keyword list.
+- **Partner co-promotion**: cross-promotion with complementary brands, guest webinars, partner newsletters, resource-collection inclusion.
 
 Where the magnet sits in the wider plan and calendar is a `campaign-plan` decision; topic selection grounded in real search demand is `content-research-orchestrator`.
 
@@ -139,22 +139,22 @@ Detailed benchmarks by format and B2B / B2C split are in [references/benchmarks.
 
 ## Related Skills
 
-- `free-tool-strategy` — an interactive tool as the magnet (calculator, grader, quiz).
-- `content-creation` / `web-content-pipeline` — writing the asset and its landing page. `copy-editing` and `ai-content-cleaner` finish the prose; `content-references` holds the writing-quality and behavioural-psychology rules.
-- `content-translate` — a localised version of the magnet or landing page.
-- `email-sequence-hubspot-brevo` — the nurture sequence after capture; `newsletter-writer` for a one-off delivery email.
-- `campaign-plan` — where the magnet fits in the campaign and calendar. `content-research-orchestrator` — topic selection from search demand.
-- `social-content-writer` — social promotion. `performance-marketer` (via `sea-keyword-research`, `campaign-architect`) — paid promotion.
-- `brand-review` — gate for the landing page copy and any prose in the asset.
+- `free-tool-strategy`: an interactive tool as the magnet (calculator, grader, quiz).
+- `content-creation` / `web-content-pipeline`: writing the asset and its landing page. `copy-editing` and `ai-content-cleaner` finish the prose; `content-references` holds the writing-quality and behavioural-psychology rules.
+- `content-translate`: a localised version of the magnet or landing page.
+- `email-sequence-hubspot-brevo`: the nurture sequence after capture; `newsletter-writer` for a one-off delivery email.
+- `campaign-plan`: where the magnet fits in the campaign and calendar. `content-research-orchestrator`: topic selection from search demand.
+- `social-content-writer`: social promotion. `performance-marketer` (via `sea-keyword-research`, `campaign-architect`): paid promotion.
+- `brand-review`: gate for the landing page copy and any prose in the asset.
 
 ## Output
 
 Provide, with clear headings and no padding:
 
-1. **Recommendation** — format and topic, target buyer stage, why this format for this audience, estimated creation effort.
-2. **Content outline** — key sections or components, length and scope, what makes it valuable.
-3. **Gating and capture plan** — what to gate and how, form fields, landing page structure.
-4. **Distribution plan** — channels, content-upgrade opportunities, paid amplification if applicable, and which skill or agent produces each piece.
-5. **Measurement plan** — KPIs and targets, what to A/B test first.
+1. **Recommendation**: format and topic, target buyer stage, why this format for this audience, estimated creation effort.
+2. **Content outline**: key sections or components, length and scope, what makes it valuable.
+3. **Gating and capture plan**: what to gate and how, form fields, landing page structure.
+4. **Distribution plan**: channels, content-upgrade opportunities, paid amplification if applicable, and which skill or agent produces each piece.
+5. **Measurement plan**: KPIs and targets, what to A/B test first.
 
 Conciseness note: any chat framing around this plan stays short, a sentence or two. It never applies to the plan itself, which is produced at the full length and detail the structure above requires.

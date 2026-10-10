@@ -8,15 +8,15 @@ description: "Runs a complete structured audit of a Google Ads account covering 
 You run the audit a senior PPC would charge four figures for, and you rank it by money instead of by tidiness.
 
 **Efficiency:** this skill can plausibly fire dozens of connector calls
-across six layers. Follow `mcp-efficiency` throughout — resolve the
+across six layers. Follow `mcp-efficiency` throughout, resolve the
 account once, filter and batch every call, don't restate raw pulls in
-the reply — and use `google-ads-tool-map` for the actual tool names and
+the reply, and use `google-ads-tool-map` for the actual tool names and
 parameters referenced below.
 
 ## Inputs you need
 - If the Google Ads connector is available, pull live per layer (see
   Tools below) rather than asking for exports first. Otherwise:
-  account-level exports — campaigns, ad groups, keywords, search terms,
+  account-level exports, campaigns, ad groups, keywords, search terms,
   ads, conversion actions.
 - Target CPA or ROAS, monthly budget, and what the business sells.
 
@@ -31,7 +31,7 @@ Full parameter reference: `google-ads-tool-map`. Per layer:
 | Budget & bidding | `list_campaigns` (budgets/status), `run_gaql` for anything campaign-performance-shaped not covered by a named tool |
 | Keywords & queries | `search_terms`, `wasted_spend_report`, `quality_score_report` |
 | Creative | `asset_performance`, `asset_group_performance` (PMax) |
-| Post-click | No connector data — needs the actual landing pages, checked directly |
+| Post-click | No connector data: needs the actual landing pages, checked directly |
 
 If the connector isn't connected, ask for the account-level exports
 listed in Inputs instead and proceed the same way, layer by layer.
@@ -41,11 +41,11 @@ listed in Inputs instead and proceed the same way, layer by layer.
 Work through six layers in order, because each depends on the one before
 it. Resolve the account once via `list_accounts` (if ambiguous) before
 the first call, then carry the resolved `customer_id` through every
-layer — don't re-resolve per layer.
+layer: don't re-resolve per layer.
 
 1. **Tracking.** Is measurement trustworthy? Pull
    `conversion_actions_breakdown` and `change_history` (14-day cap). If
-   not, stop — nothing below is reliable. Flag it as finding number one.
+   not, stop: nothing below is reliable. Flag it as finding number one.
 
    > **GATE:** present the Tracking finding and stop before pulling
    > anything for Structure. If tracking is broken enough that
@@ -53,7 +53,7 @@ layer — don't re-resolve per layer.
    > whether to continue the remaining layers anyway (useful for
    > cataloguing structural issues even under bad measurement) or fix
    > tracking first. If tracking is sound, this gate is a one-line
-   > confirmation, not a hard stop — continue automatically and note
+   > confirmation, not a hard stop: continue automatically and note
    > that tracking passed.
 
 2. **Structure.** Campaign and ad group organization, intent separation,
@@ -80,7 +80,7 @@ the rule broken.
 
 **Call volume:** this is a genuinely large pull across six layers. If
 the account has more than roughly 20 campaigns, treat the layer-by-layer
-pulls above as the batch — don't fan out to a separate call per campaign
+pulls above as the batch: don't fan out to a separate call per campaign
 within a layer where a tool accepts an account-wide or multi-campaign
 pull instead. For an account large enough that the full six-layer pull
 would be dozens of individual calls, consider delegating the raw

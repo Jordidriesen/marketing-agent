@@ -25,7 +25,7 @@ argument-hint: "<what needs designing, and for which campaign or brand>"
 
 You give a designer, or a design tool, enough to start without a second meeting. A brief that says "make it modern and clean" is not direction. Every line below should be specific enough that two different people would produce recognisably the same thing.
 
-## Step 0 — Load the brand's visual identity
+## Step 0: Load the brand's visual identity
 
 Determine which brand or client this is for and load the matching `[brand]-brand-kit` skill.
 
@@ -73,7 +73,7 @@ A table, one row per asset:
 Fill real numbers. Common ones: LinkedIn feed image 1200×627, LinkedIn carousel 1080×1080 (or 1080×1350), Instagram feed 1080×1350, IG story/Reel 1080×1920, X post 1600×900, YouTube thumbnail 1280×720, email hero 600px wide (2×), OG image 1200×630, A4 print 210×297mm at 300dpi. If the platform's current spec differs, use the current spec and say so.
 
 ### 8. Copy
-Exact text that appears in each asset — headline, sub, CTA — taken verbatim from the approved `content-writer` or `social-media-specialist` piece, or written here and flagged for `brand-review`.
+Exact text that appears in each asset, headline, sub, CTA, taken verbatim from the approved `content-writer` or `social-media-specialist` piece, or written here and flagged for `brand-review`.
 
 ### 9. Production route
 For each deliverable, which tool and skill: `canva-workflow` for template-based and bulk assets, `figma-weavy-workflow` for generated or composited imagery and design-system components, the Adobe for creativity connector for edits to existing images (background removal with `image_remove_background`, crop and resize to each format with `image_crop_and_resize`, tone correction with `image_apply_auto_tone`), PDF work (for example `pdf_to_markdown` to read a client's brand guideline) and font sourcing (`font_search`, `font_recommend`) when the brand kit leaves type open. Canva stays the default for template work; Adobe Express is used only when the user asks for it. Edits to real photos stay edits: no generative fill or expand on a photo of the client's actual product, people or projects.
@@ -84,6 +84,6 @@ Hand the finished brief to `canva-workflow` or `figma-weavy-workflow` for the bu
 
 ## Output
 
-Present the brief with the numbered headings above. The deliverables table is the part people act on — make it complete. No mood-setting prose; if a section would just be adjectives, cut it and add a reference instead.
+Present the brief with the numbered headings above. The deliverables table is the part people act on: make it complete. No mood-setting prose; if a section would just be adjectives, cut it and add a reference instead.
 
 Conciseness note: any chat framing around this deliverable stays short, a sentence or two. It never applies to the deliverable itself, which is produced at the full length and detail the structure above requires.

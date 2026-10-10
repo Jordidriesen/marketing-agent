@@ -14,9 +14,9 @@ Per-format creation detail: what it is, how to structure it, how long, which too
 
 ## Cheat sheet
 
-**What it is:** a dense one-page reference someone keeps open while working — commands, formulas, shortcuts, a decision tree, a glossary.
+**What it is:** a dense one-page reference someone keeps open while working, commands, formulas, shortcuts, a decision tree, a glossary.
 
-**Structure:** organised for lookup, not reading — columns, a table, or a labelled diagram. No narrative.
+**Structure:** organised for lookup, not reading, columns, a table, or a labelled diagram. No narrative.
 
 **Length:** 1 page, sometimes 2. **Tool:** designed PDF; landscape often works better.
 
@@ -24,7 +24,7 @@ Per-format creation detail: what it is, how to structure it, how long, which too
 
 ## Template (doc / spreadsheet / Notion)
 
-**What it is:** a reusable file the person fills in — a brief template, a calculator sheet, a content calendar, a Notion database.
+**What it is:** a reusable file the person fills in, a brief template, a calculator sheet, a content calendar, a Notion database.
 
 **Structure:** pre-filled with one worked example, then blank rows or sections; instructions in comments or a first "How to use" tab, not mixed into the working area; formulas locked where the user shouldn't edit.
 
@@ -34,7 +34,7 @@ Per-format creation detail: what it is, how to structure it, how long, which too
 
 ## Swipe file
 
-**What it is:** a curated collection of real examples — subject lines, ad headlines, landing pages, cold emails — with a short note on why each works.
+**What it is:** a curated collection of real examples, subject lines, ad headlines, landing pages, cold emails, with a short note on why each works.
 
 **Structure:** grouped by use case; each entry is the example verbatim plus 1–2 lines of analysis; a short "how to adapt this" at the end of each group.
 
@@ -60,7 +60,7 @@ Per-format creation detail: what it is, how to structure it, how long, which too
 
 **Structure:** one lesson per email, each with a single takeaway and one small action; a recap-and-next-lesson line; the final email transitions to the product or a call.
 
-**Build:** the sequence itself is `email-sequence-hubspot-brevo`'s job — hand it the lesson outline, the cadence, and the exit condition.
+**Build:** the sequence itself is `email-sequence-hubspot-brevo`'s job, hand it the lesson outline, the cadence, and the exit condition.
 
 **Mistakes:** lessons too long for an email; no action; the sales email arriving before value has landed.
 
@@ -78,13 +78,13 @@ Per-format creation detail: what it is, how to structure it, how long, which too
 
 **Structure:** 5–12 questions → a result type or score band → a specific recommendation per band → email gate before the full result → segment the contact by result for the nurture.
 
-**Build:** this is an interactive build — route to `free-tool-strategy` for the tool itself; this skill supplies the question logic, the result bands, and the segmentation plan.
+**Build:** this is an interactive build, route to `free-tool-strategy` for the tool itself; this skill supplies the question logic, the result bands, and the segmentation plan.
 
 **Mistakes:** results that are all flattering and interchangeable; too many questions; no reason to enter an email; not using the result downstream.
 
 ## Webinar
 
-**What it is:** a live or evergreen session — teaching, a demo, or a panel — with registration as the capture point.
+**What it is:** a live or evergreen session, teaching, a demo, or a panel, with registration as the capture point.
 
 **Structure:** a specific outcome-focused title → 20–30 minutes of teaching with no pitch → 5–10 minutes on how the product does this → live Q&A → a time-boxed offer. Register, remind (3 emails), attend, replay, follow up.
 

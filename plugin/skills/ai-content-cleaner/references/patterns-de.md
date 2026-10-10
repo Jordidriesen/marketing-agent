@@ -5,7 +5,7 @@ Load this file when the input text is in German.
 
 ---
 
-## Tier 1 — Harte Streichungen (deutsche Entsprechungen)
+## Tier 1: Harte Streichungen (deutsche Entsprechungen)
 
 | Muster | Beispiele | Korrektur |
 |---|---|---|
@@ -16,7 +16,7 @@ Load this file when the input text is in German.
 
 ---
 
-## Tier 2 — KI-Vokabular (Deutsch)
+## Tier 2: KI-Vokabular (Deutsch)
 
 **Verben:** nutzen/nutzen (overused), optimieren, ermöglichen (overused), fördern,
 stärken, unterstreichen, enthüllen, navigieren (figurativ), rationalisieren, verbessern,
@@ -38,13 +38,13 @@ im Zuge von, vor dem Hintergrund von, in Bezug auf, seitens (overused)
 
 ---
 
-## Tier 3 — Strukturelle Verräter (Deutsch)
+## Tier 3: Strukturelle Verräter (Deutsch)
 
 | Muster | Beschreibung |
 |---|---|
 | Nominalisierungs-Stacking | **Das ist das stärkste deutsche KI-Signal.** Häufung abstrakter Substantive: "die Implementierung der Optimierung der Arbeitsprozesse zur Effizienzsteigerung" → in aktive Sätze umschreiben |
 | Bedeutungsaufblähung | "markiert einen Wendepunkt", "unterstreicht die entscheidende Rolle", "spiegelt übergeordnete Trends wider", "steht als Zeugnis" |
-| Überflüssige Funktioniert-als-Konstruktionen | "fungiert als Grundlage für...", "dient als Wegweiser..." — durch direkte Behauptung ersetzen |
+| Überflüssige Funktioniert-als-Konstruktionen | "fungiert als Grundlage für...", "dient als Wegweiser...": durch direkte Behauptung ersetzen |
 | Werbliche Sprache | "eingebettet im Herzen von", "lebendige Gemeinschaft", "reiches kulturelles Erbe" |
 | Vage Quellenangaben | "Experten argumentieren", "Branchenbeobachter stellen fest" ohne benannte Quelle |
 | Herausforderungs-Boilerplate | "Trotz der typischen Herausforderungen in...", "Trotz dieser Herausforderungen gedeiht X weiterhin" |
@@ -55,7 +55,7 @@ im Zuge von, vor dem Hintergrund von, in Bezug auf, seitens (overused)
 
 ---
 
-## Tier 4 — Übergänge und Füllwörter (Deutsch)
+## Tier 4: Übergänge und Füllwörter (Deutsch)
 
 **Übergangswörter zum Streichen:**
 - "Darüber hinaus", "Überdies", "Nichtsdestotrotz", "Das gesagt", "Vor diesem Hintergrund"

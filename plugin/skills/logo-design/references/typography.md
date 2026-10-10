@@ -19,7 +19,7 @@ choosing brand typefaces.
 ## 1. Choosing a direction: type study
 
 1. Set the name in 20–40 candidate typefaces across categories, in lowercase, uppercase and title case.
-   Starting with type is a legitimate way to begin a logo — once the type is right, the rest can flow from it.
+   Starting with type is a legitimate way to begin a logo: once the type is right, the rest can flow from it.
 2. Judge by: the shape of the letters *in combination* (not individually), legibility, the rhythm of the word,
    how the letters echo the way the word sounds, and how it reads at small size.
 3. Shortlist 3–5 and look for **opportunities**: interesting letter pairs, shared strokes, counters that can hold a
@@ -55,7 +55,7 @@ Tone rules of thumb:
 
 - Most viewers can't tell a custom face from a stock one, yet it's precisely the unique attributes of custom
   letters that give the client ownership and protect against imitation. An unmodified stock font can be typed by
-  anyone — including competitors and counterfeiters.
+  anyone, including competitors and counterfeiters.
 - Levels of customisation, from light to heavy:
   1. Tight custom spacing and kerning of an existing face.
   2. Modify a few letters (a distinctive `a`, `g`, `e`, `R`, a cut terminal, a joined pair, a swapped dot).
@@ -63,7 +63,7 @@ Tone rules of thumb:
   4. Draw from scratch on a system (e.g. built on a square grid, or with the symbol's curvature applied to the type).
 - **Warning**: the further letterforms depart from familiar shapes, the more quickly they date and the harder they
   are to read.
-- Reflect the symbol in the type subtly (a corner radius, a cut angle, a stroke ending) — echo, don't duplicate.
+- Reflect the symbol in the type subtly (a corner radius, a cut angle, a stroke ending): echo, don't duplicate.
 - Redraw and re-space existing marks for legibility when refreshing an old logo; making it impossible to reproduce
   by typing in any existing font is itself protective.
 
@@ -82,7 +82,7 @@ Tone rules of thumb:
   size and doesn't feel like a cliché.
 - **Small-size fixes**: open apertures, larger counters, slightly heavier weight and looser spacing for a
   small-use version (optical size) of the wordmark.
-- In SVG, final logo type must be **outlined paths**, not `<text>` — see `svg-construction.md`.
+- In SVG, final logo type must be **outlined paths**, not `<text>`: see `svg-construction.md`.
 
 ## 5. Lockups: symbol + type
 
@@ -90,15 +90,15 @@ Tone rules of thumb:
   never rearranged ad hoc.
 - Create several lockups for different formats: **horizontal** (most common for headers/signage), **stacked /
   vertical** (square formats, social), **symbol only** (app icon, favicon, avatar), **wordmark only**, **with
-  tagline**. Simplify complexity as size shrinks — a letterhead lockup may carry more than a mobile header.
+  tagline**. Simplify complexity as size shrinks: a letterhead lockup may carry more than a mobile header.
 - **Balance**: an ornate or detailed symbol pairs with plain, neutral type; a bold symbol pairs with a lighter type
   weight. The goal is complement, not contrast for its own sake.
-- **Alignment**: align the symbol optically — typically centred on the cap height or x-height band, or spanning
+- **Alignment**: align the symbol optically, typically centred on the cap height or x-height band, or spanning
   baseline to cap height/ascender. Check by eye; geometric centring often looks low.
 - **Spacing**: the gap between symbol and wordmark is usually derived from an element of the mark (e.g. the width
   of a stem, the height of the x-height, or a fraction of the symbol's width) so it scales consistently.
 - **Tagline**: significantly smaller, a lighter or contrasting style, aligned to the wordmark; define the size ratio
-  and specify a version without it. Taglines rarely survive at small sizes — drop them there.
+  and specify a version without it. Taglines rarely survive at small sizes: drop them there.
 - Details like "bold vs slightly more bold" or a small kerning tweak aren't noticed consciously, but they are the
   difference between good and great.
 
@@ -120,16 +120,16 @@ Tone rules of thumb:
 - Check glyph coverage: accented characters for all the brand's languages, punctuation, `@`, `&`, numerals, currency
   symbols. Incomplete fonts silently substitute or show boxes.
 - Prefer professional OpenType fonts with proper kerning tables.
-- Once outlined in the logo file, the font is no longer needed to display the logo — but the brand typefaces still
+- Once outlined in the logo file, the font is no longer needed to display the logo, but the brand typefaces still
   need licences for everyday use.
 
 ## 8. Common mistakes
 
-- Using the default weight and spacing of a popular geometric sans with no modification — instantly generic.
+- Using the default weight and spacing of a popular geometric sans with no modification: instantly generic.
 - Too many typefaces in one mark (a script + a serif + a sans).
 - Tracking lowercase text very wide (lowercase is designed to be read tight).
 - Effects on type (outlines, drop shadows, bevels, distortion via horizontal/vertical scaling). Never scale type
-  non-uniformly to fit — choose a condensed/extended width instead.
+  non-uniformly to fit: choose a condensed/extended width instead.
 - Overused faces chosen because they are fashionable this year.
 - Thin hairlines or tiny counters that close up at small sizes.
 - Letters so customised the name becomes a puzzle.

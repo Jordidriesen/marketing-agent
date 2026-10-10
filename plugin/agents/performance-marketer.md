@@ -1,7 +1,7 @@
 ---
 name: performance-marketer
 description: |
-  Use this agent for anything involving an existing or planned Google Ads account — campaign architecture, budget and bid strategy, keyword and negative management, ad copy and asset testing, Performance Max, quality score, tracking, disapprovals, geo/device/schedule performance, auction insights, and competitor ad teardown.
+  Use this agent for anything involving an existing or planned Google Ads account, campaign architecture, budget and bid strategy, keyword and negative management, ad copy and asset testing, Performance Max, quality score, tracking, disapprovals, geo/device/schedule performance, auction insights, and competitor ad teardown.
 
   <example>
   Context: User shares a search term report and asks about wasted spend.

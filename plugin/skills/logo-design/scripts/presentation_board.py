@@ -26,8 +26,8 @@ spec.json (paths relative to the spec file; see templates/presentation-spec.exam
 }
 Each concept needs at least one of symbol / lockup / avatar; "stacked" (optional) is used on bags, signs and badges.
 Optional colour artwork (otherwise the mark is forced to white on those surfaces):
-  "symbol_on_tile" / "stacked_on_tile" (or "lockup_on_tile") — for brand-colour tiles (cards, app icon, cup, shirt, bag);
-  "symbol_on_dark" / "lockup_on_dark" / "stacked_on_dark" — for the near-black signage, README, terminal and reversed strip.
+  "symbol_on_tile" / "stacked_on_tile" (or "lockup_on_tile"), for brand-colour tiles (cards, app icon, cup, shirt, bag);
+  "symbol_on_dark" / "lockup_on_dark" / "stacked_on_dark", for the near-black signage, README, terminal and reversed strip.
 Top-level "tile_color" overrides brand_color for the tiles (e.g. a dark ink so a bright second colour can show).
 Missing ones fall back sensibly
 (a wordmark-only concept can provide just "lockup" plus an "avatar" for small uses).
@@ -252,7 +252,7 @@ def mock_html(kind, c):
                 '<span class="lbl">Payment card</span></div>')
     if kind == "favicon-tab":
         return (f'<div class="m" style="background:#eceff1"><div class="tabbar"><div class="tab"><img class="{cls}" src="{av}" style="width:16px;height:16px;object-fit:contain">'
-                f'{n} — Home<span style="margin-left:auto">✕</span></div><div class="addr">https://{handle}.com</div></div><span class="lbl">Browser tab</span></div>')
+                f'{n}; Home<span style="margin-left:auto">✕</span></div><div class="addr">https://{handle}.com</div></div><span class="lbl">Browser tab</span></div>')
     raise KeyError(kind)
 
 
@@ -303,7 +303,7 @@ def main():
     deck_title = spec.get("deck_title", "final identity" if final else "identity concepts")
 
     def foot(i):
-        return f'<div class="foot"><span>{html.escape(brand)} — {html.escape(deck_title)}</span><span>{i}</span></div>'
+        return f'<div class="foot"><span>{html.escape(brand)}: {html.escape(deck_title)}</span><span>{i}</span></div>'
 
     slides = []
     custom_title = spec.get("deck_title")
@@ -343,7 +343,7 @@ def main():
             pick = lambda *keys: next((c[k] for k in keys if c.get(k)), None)
             if c.get("symbol_on_dark") and not c.get("symbol_on_tile"):
                 print(f"note: concept {chr(65 + i)} has no symbol_on_tile; symbol_on_dark is used on the {tile} tiles "
-                      "(app icon, cards) — check its contrast there, or pass a dedicated tile file")
+                      "(app icon, cards): check its contrast there, or pass a dedicated tile file")
             for k, src in (("avatar_tile", pick("symbol_on_tile", "symbol_on_dark")),
                            ("stack_tile", pick("stacked_on_tile", "lockup_on_tile")),
                            ("avatar_dark", pick("symbol_on_dark")), ("lock_dark", pick("lockup_on_dark")),
@@ -380,7 +380,7 @@ def main():
         slides.append(f"""<section class="slide"><div class="kicker">{'Next steps' if final else 'Recommendation & next steps'}</div><h2>{title}</h2>
 <p class="idea">{html.escape(spec['recommendation'])}</p>
 <ul class="rat" style="margin-top:30px">{''.join(f'<li>{html.escape(s)}</li>' for s in steps)}</ul>{foot(len(slides) + 1)}</section>""")
-    doc = (f"<!doctype html><html lang='en'><head><meta charset='utf-8'><title>{html.escape(brand)} — {html.escape(deck_title)}</title>"
+    doc = (f"<!doctype html><html lang='en'><head><meta charset='utf-8'><title>{html.escape(brand)}, {html.escape(deck_title)}</title>"
            f"<style>{CSS}</style></head><body>{''.join(slides)}</body></html>")
     with open(a.out, "w", encoding="utf-8") as fh:
         fh.write(doc)

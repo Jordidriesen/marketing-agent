@@ -1,10 +1,10 @@
 # Campaign Planning Playbook
 
-Supporting methodology for `campaign-plan`. Consulted while filling in the Channel Strategy, Content Calendar, and Budget Allocation sections — not reproduced in full each time.
+Supporting methodology for `campaign-plan`. Consulted while filling in the Channel Strategy, Content Calendar, and Budget Allocation sections, not reproduced in full each time.
 
 ## The Objective/Audience/Message/Channel/Measure Framework
 
-Every campaign rests on five decisions, in this order — each one constrains the next, so don't skip ahead to Channel before Message is settled.
+Every campaign rests on five decisions, in this order: each one constrains the next, so don't skip ahead to Channel before Message is settled.
 
 **Objective.** Define what success looks like before planning anything else.
 
@@ -18,9 +18,9 @@ Every campaign rests on five decisions, in this order — each one constrains th
 
 Good objectives are SMART. "Generate 200 marketing qualified leads from mid-market SaaS companies in North America within 6 weeks" is plannable; "raise awareness" is not.
 
-**Audience.** Specific enough to guide messaging and channel decisions — demographics (role, seniority, company size, industry), psychographics (motivations, pain points, objections), behavioral (where they consume content, how they buy), and buying stage. One brief profile is enough: "[Role] at [company type] struggling with [pain point], looking for [outcome], discovers solutions through [channels]."
+**Audience.** Specific enough to guide messaging and channel decisions: demographics (role, seniority, company size, industry), psychographics (motivations, pain points, objections), behavioral (where they consume content, how they buy), and buying stage. One brief profile is enough: "[Role] at [company type] struggling with [pain point], looking for [outcome], discovers solutions through [channels]."
 
-**Message.** See `content-references/references/communication-frameworks.md` for framework selection (StoryBrand, PAS, Sparkline, Minto, BLUF) — the core campaign message and its 3–4 supporting points should follow whichever framework fits the objective and channel, not be freestyled per piece.
+**Message.** See `content-references/references/communication-frameworks.md` for framework selection (StoryBrand, PAS, Sparkline, Minto, BLUF): the core campaign message and its 3–4 supporting points should follow whichever framework fits the objective and channel, not be freestyled per piece.
 
 **Channel.** Select based on where the audience actually is, not where content is easiest to produce. See the Channel Selection Guide below.
 
@@ -62,11 +62,11 @@ Good objectives are SMART. "Generate 200 marketing qualified leads from mid-mark
 
 ## Content Calendar Creation
 
-1. Start with fixed milestones — launch date, event date, product release.
+1. Start with fixed milestones: launch date, event date, product release.
 2. Work backward from them using the production timeline benchmarks below.
 3. Map content to funnel stages so awareness/consideration/conversion all have coverage, not just the stage that's easiest to write for.
 4. Batch by weekly or bi-weekly theme rather than scattering unrelated pieces.
-5. Balance channels — don't over-index on one so the audience only sees the campaign in a single place.
+5. Balance channels: don't over-index on one so the audience only sees the campaign in a single place.
 6. Leave roughly 20% of calendar slots open for reactive or opportunistic content.
 
 **Cadence guidelines:** blog 1–4 posts/week, email newsletter weekly or bi-weekly, social 3–7 posts/week/platform, paid continuous within the campaign window with creative refreshes every 2–4 weeks, webinars monthly or quarterly.
@@ -75,7 +75,7 @@ Good objectives are SMART. "Generate 200 marketing qualified leads from mid-mark
 
 ## Budget Allocation Approaches
 
-**Percentage of revenue** — industry range is 5–15% of revenue for marketing (B2B typically 5–10%, B2C 10–15%; startups/growth-stage often 15–25%). Split between brand (long-term) and performance (short-term) within that total.
+**Percentage of revenue**: industry range is 5–15% of revenue for marketing (B2B typically 5–10%, B2C 10–15%; startups/growth-stage often 15–25%). Split between brand (long-term) and performance (short-term) within that total.
 
 **Channel allocation starting point** (adjust against historical data once it exists):
 

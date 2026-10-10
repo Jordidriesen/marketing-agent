@@ -7,7 +7,7 @@ human designer with a sketchbook. SKILL.md gives the short version; read this fo
 1. Stage map
 2. Concepting
 3. Mood boards and reference gathering
-4. Exploration ("sketching") — three stages
+4. Exploration ("sketching"): three stages
 5. Development in vector
 6. Refinement and gridding
 7. Final artwork checklist
@@ -32,7 +32,7 @@ Integrate existing equity (colours, shapes, heritage details) during exploration
 
 ## 2. Concepting
 
-- Begin with the name and a detailed brief — from the brand's big idea down to how it operates.
+- Begin with the name and a detailed brief, from the brand's big idea down to how it operates.
 - The most useful clues are **adjectives** describing the brand; they give abstract visual cues that can become
   symbols. Also mine: the name's letters and meaning, the promise, the audience's world, the product's process
   and materials, place and origin.
@@ -40,39 +40,39 @@ Integrate existing equity (colours, shapes, heritage details) during exploration
   hiding in plain sight.
 - Write each concept as **one sentence** ("A 'T' whose crossbar is a shield's top edge, for a logistics firm whose
   promise is protection"). If it can't be said in a sentence, it won't be understood in a glance.
-- Aim for concepts that are clever *and* visually pleasing — marks with a clever idea and sound visual appeal make the
+- Aim for concepts that are clever *and* visually pleasing: marks with a clever idea and sound visual appeal make the
   strongest first impression.
 - Consider the audience's demographics and culture (colourful/rounded for children; bold for some audiences;
-  cultural symbols where relevant) — but the brand strategy decides; a children's product can have an adult identity.
+  cultural symbols where relevant), but the brand strategy decides; a children's product can have an adult identity.
 
 ## 3. Mood boards and reference gathering
 
 - Not just logos: include nature, architecture, painting, materials, typography, photography, product details.
-- Compartmentalise by direction — classic, futuristic/high-tech, colourful, monochrome — and by mark type
+- Compartmentalise by direction, classic, futuristic/high-tech, colourful, monochrome, and by mark type
   (pictorial, letterform, monogram), each with relevant imagery. Clear boundaries make choices easier.
-- Gather logo references by technique and subject from the open web or the user's own examples. References are for learning construction and tone — never to be traced.
+- Gather logo references by technique and subject from the open web or the user's own examples. References are for learning construction and tone, never to be traced.
 - Mood boards can be shared with the client to align on style, or kept private; clients can't always foresee how a
   direction will develop, so don't let an early mood preference lock the outcome.
 
-## 4. Exploration — three stages
+## 4. Exploration: three stages
 
 A human designer does this with pencil and tracing paper; as an AI, do the equivalent with quick descriptions and
 rough SVG thumbnails. The logic is the same.
 
-### Stage A — Initial (quantity over quality)
+### Stage A: Initial (quantity over quality)
 - Pour out ideas with no judgement about clarity, spacing, form or silhouette. Rough strokes, imperfect shapes,
   careless curves. The page should look like a battlefield of half-formed ideas.
 - Quantity matters because it lets unexpected accidents happen. For an AI: list 15–30 micro-variations across
   the 6–10 concepts (different letter treatments, crops, containers, negative-space pairings, angles).
 - Rough SVG thumbnails at 64–128 px are ideal: small size forces silhouette thinking.
 
-### Stage B — Refinement (from ~30 % to ~60 %)
+### Stage B: Refinement (from ~30 % to ~60 %)
 - Pick the most promising concept by gut feel; it may be only ~30 % of the final. The goal is to reach 50–60 %.
 - Redraw it as a reference, then make many similar versions, each trying one new improvement: how elements
   interact, balanced flow, outline, proportion. Compare each version with the previous; keep what works, cut what
   doesn't.
 
-### Stage C — Fine-tuning (clean and precise)
+### Stage C: Fine-tuning (clean and precise)
 - Trace over the best version repeatedly with small improvements until the form is clean and precise. At the end,
   few formal changes should remain for the vector stage.
 
@@ -88,7 +88,7 @@ Designers who stop at the first acceptable result leave quality on the table. Ke
   (horizontal/vertical handles at extrema).
 - **Build with shapes.** Use circles, rectangles and consistent radii to construct and to check curves and corners.
 - **Black first.** Develop in solid black on white. Colour comes after the concept is chosen.
-- Present at about **80 % finish** — refined enough to judge the idea, not so polished that effort is wasted on a
+- Present at about **80 % finish**: refined enough to judge the idea, not so polished that effort is wasted on a
   direction that gets dropped.
 
 ## 6. Refinement and gridding
@@ -123,7 +123,7 @@ Don't grid organic curves that don't decompose into circles; leave them.
 - Carry a sketchbook (or a notes file): ideas arrive at odd moments and slip away quickly. Photograph interesting
   shapes, architecture, and the negative spaces in signage.
 - Experiment outside the brief: work in the opposite of your usual style (colour if you work in black and white,
-  lines if you work in solids, messy if you work clean). Accidents — a slipped stroke, a mis-set layer — can be
+  lines if you work in solids, messy if you work clean). Accidents, a slipped stroke, a mis-set layer, can be
   exactly what a project was missing.
 - Treat client feedback as valuable information, not an attack; clients usually know their business better than
   you. Don't fall in love with your creations, and don't demonise clients.

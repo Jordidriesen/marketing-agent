@@ -22,13 +22,13 @@ the concept is chosen.
 1. **Design in black and white.** A mark that only works because of its colours is not yet a mark. Monochrome
    exposes form problems and forces the concept to stand on shape.
 2. **Present concepts in greyscale first** so reactions are about the idea, not about a colour someone dislikes.
-3. **Choose colour after the direction is selected** — research competitor colours and deliberately avoid their
+3. **Choose colour after the direction is selected**: research competitor colours and deliberately avoid their
    palette unless there is a strategic reason.
 4. **Specify every version**: full colour, one colour, black, white/reversed, and on the primary brand colour.
 
 ## 2. Associations (and their limits)
 
-Common Western associations — useful as a starting vocabulary, never as a rule:
+Common Western associations; useful as a starting vocabulary, never as a rule:
 
 | Colour | Frequently associated with | Watch out for |
 |---|---|---|
@@ -36,7 +36,7 @@ Common Western associations — useful as a starting vocabulary, never as a rule
 | Orange | friendliness, enthusiasm, playfulness, affordability, confidence | cheapness if overused; low contrast on white |
 | Yellow | optimism, warmth, attention, originality, cheer | illegible on white; caution/warning |
 | Green | growth, health, nature, balance, renewal, money (US) | "eco" cliché; hard in process print when vivid |
-| Blue | trust, stability, calm, integrity, technology, loyalty | the default of tech, finance and healthcare — hard to stand out |
+| Blue | trust, stability, calm, integrity, technology, loyalty | the default of tech, finance and healthcare: hard to stand out |
 | Purple | creativity, imagination, wisdom, luxury, individuality | can feel immature or mystical |
 | Pink | care, playfulness, youth, sweetness, boldness (hot pinks) | gender stereotypes |
 | Black / grey | authority, sophistication, neutrality, strength, mystery | can feel cold, heavy or generic |
@@ -47,32 +47,32 @@ Common Western associations — useful as a starting vocabulary, never as a rule
   celebration in China, danger in signage, and taboo for losses in financial reporting; green has religious
   significance in some regions. Check the audience's cultures.
 - **Learned conventions**: red = stop, green = go, blue links on screens, yellow/black = hazard. Use knowingly.
-- **Personal memory** attaches emotions to colours unpredictably — another reason to anchor decisions in strategy,
+- **Personal memory** attaches emotions to colours unpredictably: another reason to anchor decisions in strategy,
   not taste.
 - **Demographic tendencies** (e.g. children's brands trending colourful and saturated) are only tendencies; a brand
   strategy can deliberately contradict them.
 
 ## 3. Owning a colour
 
-- Owning a colour is one of the highest priorities of an identity — a signature colour, used consistently across
+- Owning a colour is one of the highest priorities of an identity: a signature colour, used consistently across
   every touchpoint, becomes recognisable even without the mark.
 - **Subverting category norms makes a colour proprietary.** When every competitor is blue, a red, orange or green
   brand is instantly distinguishable. A colour swap experiment makes the point: put a competitor's colours on a
   famous logo and it immediately feels like a different company.
-- Keep existing colour equity during redesigns unless there is a strong reason to drop it — colour is often what the
+- Keep existing colour equity during redesigns unless there is a strong reason to drop it: colour is often what the
   public remembers most.
 - Pair a signature colour with a neutral (black, white, a dark tone) to give it room.
 
 ## 4. Harmony systems
 
 Use the colour wheel as a generator, then refine by eye:
-- **Complementary** — opposites (red/green, blue/orange, yellow/purple). High contrast, energetic; familiar, can feel
+- **Complementary**: opposites (red/green, blue/orange, yellow/purple). High contrast, energetic; familiar, can feel
   obvious. Shift hues slightly off the exact complement for sophistication.
-- **Split-complementary** — a base plus the two neighbours of its complement. Contrast with less tension.
-- **Analogous** — neighbours on the wheel. Calm, cohesive; needs value contrast to stay legible.
-- **Triadic / tetradic** — rotate a triangle or rectangle on the wheel; vivid, playful, good for multi-colour
+- **Split-complementary**: a base plus the two neighbours of its complement. Contrast with less tension.
+- **Analogous**: neighbours on the wheel. Calm, cohesive; needs value contrast to stay legible.
+- **Triadic / tetradic**: rotate a triangle or rectangle on the wheel; vivid, playful, good for multi-colour
   systems. Balance by letting one colour dominate.
-- **Monochromatic** — one hue in several tints/shades. Elegant; relies on value contrast.
+- **Monochromatic**: one hue in several tints/shades. Elegant; relies on value contrast.
 - Think in **hue, saturation, value**: most palette problems are value problems (two colours of similar lightness
   blur together, especially in greyscale or for colour-blind viewers).
 
@@ -92,7 +92,7 @@ Use the colour wheel as a generator, then refine by eye:
   / spot equivalent for premium print. Whole-number CMYK percentages are cleaner to hand to printers.
 - **RGB ≠ print.** Neon, saturated greens, electric blues and bright oranges can fall outside the CMYK gamut and print
   dull. Check the CMYK conversion early; choose a spot colour if the signature colour must be vivid on paper.
-- **Gradients**: see `visual-techniques.md` — keep a flat master.
+- **Gradients**: see `visual-techniques.md`, keep a flat master.
 - **Materials**: embroidery thread, vinyl, enamel, neon, laser-etched metal each shift colour; one-colour and
   two-colour versions keep production affordable (screen printing charges per colour).
 - **Dark mode / dark backgrounds**: the brand colour may need a lighter tint to keep contrast on dark UI; specify it.
@@ -129,4 +129,4 @@ pairing, or form.
 ### Logo colour versions
 Full colour on white · Reversed (white) on Harbor Teal / Ink · One-colour Ink · One-colour white
 ```
-(Pantone matches are approximations — verify against a physical guide before print production.)
+(Pantone matches are approximations, verify against a physical guide before print production.)

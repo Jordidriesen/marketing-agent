@@ -1,6 +1,6 @@
 # Building Logos in SVG
 
-How to turn a concept into clean, production-grade SVG code by hand (as an AI writing markup) — geometric,
+How to turn a concept into clean, production-grade SVG code by hand (as an AI writing markup): geometric,
 minimal, and easy for printers, developers and vector editors to use.
 
 ## Contents
@@ -31,7 +31,7 @@ minimal, and easy for printers, developers and vector editors to use.
   height 256 and let the width follow (e.g. `0 0 960 256`). Keep the width
   to a clean number too.
 - **Padding**: leave consistent padding inside the viewBox (≈ 4–8 % of the size for symbols) or crop tight and let
-  the clear-space rule handle spacing — be consistent across the set.
+  the clear-space rule handle spacing, be consistent across the set.
 - **Integer or 1–2 decimal coordinates**. Excess precision (`127.99999`) bloats files and hides misalignment.
 - **Include `<title>`** for accessibility; keep IDs meaningful (`symbol`, `wordmark`).
 - **Group logically**: `<g id="symbol">`, `<g id="wordmark">` so lockups can be recomposed.
@@ -51,14 +51,14 @@ Then choose the simplest element that expresses each part:
 - `<polygon>` for straight-edged shapes.
 
 Pick a **unit** (e.g. 8 or 16 on a 256 canvas) and snap key dimensions to multiples of it; the mark will feel
-systematic and gridding later is trivial. Keep a list of the radii and angles you use — reuse them.
+systematic and gridding later is trivial. Keep a list of the radii and angles you use: reuse them.
 
 ## 3. Paths: writing clean geometry
 
 - **Commands**: `M` move, `L`/`H`/`V` lines, `A` elliptical arc (perfect for circle segments), `C` cubic Bézier,
   `Q` quadratic, `Z` close. Uppercase = absolute (prefer while designing), lowercase = relative.
 - **Arcs for circular geometry**: `A r r 0 largeArc sweep x y`. Circle-based curves keep radii consistent and
-  are easy to verify. Example — a semicircle cap: `M 64 128 A 64 64 0 0 1 192 128`.
+  are easy to verify. Example; a semicircle cap: `M 64 128 A 64 64 0 0 1 192 128`.
 - **Béziers for organic curves**: place anchors at extrema (top, bottom, left, right of a curve) with handles
   horizontal or vertical there; this gives smooth, predictable curves with few points. A quarter circle as a cubic
   uses handle length ≈ 0.5523 × radius.
@@ -72,21 +72,21 @@ systematic and gridding later is trivial. Keep a list of the radii and angles yo
 
 ## 4. Negative space and compound shapes
 
-- Put outer contour and holes in **one path** and use `fill-rule="evenodd"` — holes appear where subpaths overlap
+- Put outer contour and holes in **one path** and use `fill-rule="evenodd"`: holes appear where subpaths overlap
   an odd number of times. Or wind holes in the opposite direction with the default `nonzero` rule.
   ```svg
   <path fill-rule="evenodd" d="M128 16 A112 112 0 1 1 127.9 16 Z  M128 80 A48 48 0 1 0 128.1 80 Z"/>
   ```
 - For a hidden figure between two shapes, design the **negative shape first** (the arrow, the letter), then build the
   positive shapes around it; this guarantees the negative form is clean.
-- Avoid `<mask>` and `<clipPath>` in the master unless essential — some tools and embroidery/cutting software handle
+- Avoid `<mask>` and `<clipPath>` in the master unless essential: some tools and embroidery/cutting software handle
   them poorly. Bake the geometry into paths for final files. (In exploration, masks are fine for speed.)
 - Where two filled shapes of the same colour touch, merge them into one path so there is no hairline seam when
   rendered or cut.
 
 ## 5. Strokes vs fills
 
-- Explore with strokes (`stroke-width`, `stroke-linecap="round"`, `stroke-linejoin="round"`) — they're quick.
+- Explore with strokes (`stroke-width`, `stroke-linecap="round"`, `stroke-linejoin="round"`): they're quick.
 - In the master, **convert strokes to filled outlines** so the mark scales proportionally everywhere and survives
   tools that ignore stroke settings. As an AI without an outline tool, either construct the outlined geometry
   directly (offset curves by half the stroke width), or keep strokes but set `vector-effect` nowhere and verify that
@@ -98,7 +98,7 @@ systematic and gridding later is trivial. Keep a list of the radii and angles yo
 
 - Final logos must not depend on installed fonts: `<text>` renders differently (or not at all) on other machines.
 - Options, in order of preference:
-  1. **Construct letterforms geometrically** as paths (ideal for short wordmarks, monograms, letterform symbols —
+  1. **Construct letterforms geometrically** as paths (ideal for short wordmarks, monograms, letterform symbols,
      and it forces ownable, custom letters).
   2. If the user has a font file and a vector tool, set the word, customise, and **convert to outlines**; paste the
      path data.
@@ -134,13 +134,13 @@ systematic and gridding later is trivial. Keep a list of the radii and angles yo
 <rect x="0" y="0" width="256" height="256" rx="56" fill="#0F7C80"/>
 ```
 
-**Equilateral triangle (side 203.2, height 176), centred on its bounding box** — its visual mass (centroid)
+**Equilateral triangle (side 203.2, height 176), centred on its bounding box**: its visual mass (centroid)
 sits low, so nudge it up a few units if it looks bottom-heavy inside a container.
 ```svg
 <polygon points="128,40 229.6,216 26.4,216" fill="#111"/>
 ```
 
-**Letter "A" as a letterform symbol** — flat apex, every edge on the same 1 : 2 slope, and a constant
+**Letter "A" as a letterform symbol**: flat apex, every edge on the same 1 : 2 slope, and a constant
 48-unit stroke (legs, crossbar and apex all measure 48)
 ```svg
 <path fill="#111" fill-rule="evenodd"
@@ -172,7 +172,7 @@ These are starting points; refine proportions and add the concept's twist.
 
 Without a vector editor you can't boolean-unite shapes, but you can get close:
 - Overlapping sub-paths inside **one** `<path>` with the default `nonzero` rule (all wound the same way) render as a
-  seamless union on screen and in print — acceptable for web and most print masters.
+  seamless union on screen and in print: acceptable for web and most print masters.
 - Cutters, vinyl plotters and embroidery software prefer truly merged outlines. If Inkscape is installed, it can
   expand strokes and union everything from the command line:
   ```bash

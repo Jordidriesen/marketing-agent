@@ -3,12 +3,12 @@ name: mcp-efficiency
 description: "Shared reference for calling any MCP connector in this stack (Google Ads, LinkedIn Ads, LinkedIn Ad Library, OpenSEO, Search Console, Bing Webmaster Tools, Firecrawl, Exa, HubSpot, Brevo, Typefully, WP Umbrella, Adobe for creativity, Canva, Figma, G2, vidIQ, Notion, Google Drive, Tally.so, Make, Zapier) cheaply and safely: filtering, batching, resolving the account once, and respecting credit, billing and write gates. Not triggered directly: loaded by other skills that make live connector calls."
 ---
 
-# MCP Efficiency — Shared Reference
+# MCP Efficiency: Shared Reference
 
 One module, reusable across every skill that calls a live MCP connector,
 covering how to call it without pulling more into context than the task
 needs. This doesn't replace a connector's own tool-map reference (e.g.
-`google-ads-tool-map`, `openseo-tool-map`) — those say *which* tool to call
+`google-ads-tool-map`, `openseo-tool-map`): those say *which* tool to call
 and with *what* parameters; this says how to call *any* of them cheaply.
 
 ## Rules
@@ -38,11 +38,11 @@ and with *what* parameters; this says how to call *any* of them cheaply.
    multi-step Google Ads or SEO workflow.
 5. **Don't restate raw tool output in the reply.** A tool call's raw
    response is already in context once. Extract the specific rows,
-   numbers, or fields the finding needs — never re-paste a full table or
+   numbers, or fields the finding needs, never re-paste a full table or
    JSON blob back into the conversation to "show the work." Present the
    analysis, not the payload.
 6. **No blind retries.** An error or an empty result has a specific
-   cause — check the skill's own Error Handling table first (wrong
+   cause: check the skill's own Error Handling table first (wrong
    account/project ID, bad location/language code, a date range the tool
    rejects, a rate limit). Retrying the identical call and hoping is a
    second wasted call, not a fix.
@@ -54,14 +54,14 @@ and with *what* parameters; this says how to call *any* of them cheaply.
    approval), keep it; where one doesn't, this is the default: batch
    conservatively, check in before the next large batch.
 8. **Delegate large one-off pulls to a subagent.** When a single pull is
-   genuinely large — a full account export, a full campaign history, a
-   bulk keyword list beyond what one call's batch limit covers — and the
+   genuinely large, a full account export, a full campaign history, a
+   bulk keyword list beyond what one call's batch limit covers, and the
    task only needs the synthesized result (a findings table, a ranked
    list), consider running that pull inside a subagent via the Agent tool
    rather than in the main conversation. The subagent does the fetching
    and returns only the synthesis; the raw pull never enters the main
    context. Use this for genuinely large one-off pulls, not as a default
-   for every connector call — the overhead of spinning up a subagent
+   for every connector call: the overhead of spinning up a subagent
    isn't worth it for a handful of calls a skill can just make directly.
 
 9. **Resolve the account with the connector's own identity call.** Rule 3
@@ -112,7 +112,7 @@ Every skill in this library that talks to a live connector (Google Ads,
 LinkedIn Ads, OpenSEO, Firecrawl, HubSpot, Brevo, WP Umbrella, Adobe, and
 the rest of the stack in `CONNECTORS.md`) was written separately,
 and each one re-derives its own batching and filtering discipline in its
-own words if it derives it at all — `content-research-orchestrator` has
+own words if it derives it at all: `content-research-orchestrator` has
 strong discipline here, several of the Google Ads audit skills have none.
 Rather than repeating the same ten rules inside every skill that calls
 a connector, they live here once and get pulled in by reference, the same
