@@ -1,6 +1,6 @@
 # OpenSEO Tool Reference
 
-Quick reference for every tool used across the content research skills —
+Quick reference for every tool used across the content research skills:
 `content-research-orchestrator` and its component stages
 (`seo-keyword-research`, `keyword-clustering`, `competitive-landscape`,
 `competitor-analysis`, `content-gap-mapping`), plus `media-mapping` and
@@ -8,13 +8,13 @@ Quick reference for every tool used across the content research skills —
 
 **Replaces `dfs-tool-map.md`.** OpenSEO wraps DataForSEO with a
 project-scoped, credit-tracked interface. Every OpenSEO tool call needs a
-`projectId` — resolve one first (below) before anything else in this file.
+`projectId`: resolve one first (below) before anything else in this file.
 Three DataForSEO Labs tools that had no OpenSEO wrapper (domain
 intersection, page intersection, domain-based competitor discovery) are
 handled with a workaround pattern instead of a direct call (also below).
 Four other DataForSEO tools that appeared in the old reference (bulk
 traffic estimation, both historical-data endpoints, all Trends endpoints)
-are dropped entirely — a check of every skill's actual workflow steps, not
+are dropped entirely: a check of every skill's actual workflow steps, not
 just its Tools list, found none of them are called by anything live, so
 nothing is lost by removing them.
 
@@ -41,7 +41,7 @@ any session:
    own first-party data (see the plugin's `CONNECTORS.md` data-source
    rule). When the answer is yes, `create_project` with the
    client's name, root domain, and default market. One project per
-   client, not per market — override `locationCode`/`languageCode` on
+   client, not per market: override `locationCode`/`languageCode` on
    individual calls for each of a client's markets rather than creating a
    project per market.
 4. **One-off or prospective research** (a cold competitor lookup, a
@@ -64,7 +64,7 @@ keyword or SERP call without a `projectId` in hand.
 
 **Purpose:** Expand from 1-5 seed keywords into related keywords with
 volume/difficulty/CPC. Replaces `dataforseo_labs_google_keyword_ideas`,
-`_keyword_suggestions`, and `_related_keywords` — OpenSEO merges what used
+`_keyword_suggestions`, and `_related_keywords`: OpenSEO merges what used
 to be three separate calls into one.
 
 | Param | Required | Notes |
@@ -82,7 +82,7 @@ to be three separate calls into one.
 **Purpose:** Hydrate up to 700 known keywords with volume, KD, CPC,
 intent, and monthly trends in one call. Replaces
 `dataforseo_labs_google_keyword_overview`, `_bulk_keyword_difficulty`, and
-`_search_intent` — intent classification is now a field on this response,
+`_search_intent`: intent classification is now a field on this response,
 not a separate call.
 
 | Param | Required | Notes |
@@ -95,7 +95,7 @@ not a separate call.
 
 **Key output fields:** `keyword`, `searchVolume`, `keywordDifficulty`,
 `cpc`, `competition`, `intent` (`informational`/`navigational`/
-`transactional`/`commercial`/`unknown` — same four labels DataForSEO used).
+`transactional`/`commercial`/`unknown`, same four labels DataForSEO used).
 
 ---
 
@@ -111,7 +111,7 @@ DataForSEO didn't expose as cleanly.
 |---|---|---|
 | projectId | * | |
 | target | * | Domain (no protocol) or a full page URL |
-| scope | optional | `domain`, `subdomains`, `subfolder`, or `exact_url` — use `exact_url` when comparing one specific page |
+| scope | optional | `domain`, `subdomains`, `subfolder`, or `exact_url`: use `exact_url` when comparing one specific page |
 | minSearchVolume / maxRank | optional | Filter noise out before it hits the table |
 | excludeBrandTerms | optional | Up to 10 terms |
 | limit | optional | 1-100, defaults to 50 |
@@ -123,7 +123,7 @@ DataForSEO didn't expose as cleanly.
 ### get_serp_results
 
 **Purpose:** Live Google organic SERPs for 1-10 keywords in one call.
-Direct replacement for `serp_organic_live_advanced` — bulk by default
+Direct replacement for `serp_organic_live_advanced`: bulk by default
 instead of one keyword per call.
 
 | Param | Required | Notes |
@@ -154,7 +154,7 @@ replacement for `dataforseo_labs_google_serp_competitors`.
 
 ### get_domain_overview
 
-**Purpose:** High-level organic footprint — traffic, keyword count,
+**Purpose:** High-level organic footprint, traffic, keyword count,
 backlinks, referring domains. Direct replacement for
 `dataforseo_labs_google_domain_rank_overview`.
 
@@ -197,7 +197,7 @@ check which URLs from the tracked set show up in each SERP is often
 faster than intersecting full ranked-keyword pulls.
 
 **Domain-based competitor discovery** (given one domain, who are its real
-organic competitors): chain two calls instead of one — pull that domain's
+organic competitors): chain two calls instead of one, pull that domain's
 top keywords with `get_domain_keyword_suggestions`, then run
 `find_serp_competitors` on that keyword set. Slightly more roundabout than
 a single `competitors_domain` call, but both steps already exist in this
@@ -220,13 +220,13 @@ Unchanged, not part of this migration.
 Tool: firecrawl scrape
 Required params:
   url: full URL string (e.g. "https://competitor.com/their-page")
-  formats: ["markdown"]          — returns cleaned body text in markdown
-  onlyMainContent: true          — strips nav, footer, sidebar
+  formats: ["markdown"], returns cleaned body text in markdown
+  onlyMainContent: true, strips nav, footer, sidebar
 Optional params:
-  includeTags: ["h1","h2","h3"]  — limit to specific HTML tags
-  excludeTags: ["footer","nav"]  — exclude unwanted elements
-  waitFor: 2000                  — ms to wait before scraping (for JS-heavy pages)
-  timeout: 15000                 — max wait in ms
+  includeTags: ["h1","h2","h3"], limit to specific HTML tags
+  excludeTags: ["footer","nav"], exclude unwanted elements
+  waitFor: 2000, ms to wait before scraping (for JS-heavy pages)
+  timeout: 15000, max wait in ms
 ```
 
 **Output fields:** `markdown` (full page text), `metadata.title`,

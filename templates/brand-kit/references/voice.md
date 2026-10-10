@@ -7,7 +7,7 @@ How the prose is built. Load with `context.md` for any writing task.
 ## Language Standards
 
 - Which English/Dutch/French/etc. variant and spelling convention applies
-  (British English, Belgian Dutch/Flemish, fr-BE vs fr-FR, etc.) — never assume;
+  (British English, Belgian Dutch/Flemish, fr-BE vs fr-FR, etc.), never assume;
   state it explicitly.
 - House terms: "customer" vs "client", or any other word the client has a fixed
   preference for.
@@ -17,7 +17,7 @@ How the prose is built. Load with `context.md` for any writing task.
 ### Locked Terminology
 
 Only include this table if the client has fixed translations or naming for specific
-terms across locales — delete the section if not.
+terms across locales: delete the section if not.
 
 | Term | [Locale A] | [Locale B] |
 |------|------------|------------|
@@ -31,12 +31,12 @@ Most brand kits in this plugin use three to five voice pillars. Name them, give 
 one a one-line descriptor, then a short do/don't pair so the pillar is checkable,
 not just aspirational.
 
-### 1. [Pillar Name] — [One-line descriptor]
+### 1. [Pillar Name]: [One-line descriptor]
 
 **Do:** [A real example sentence written in this pillar's voice]
 **Don't:** [The generic or off-brand version of the same sentence]
 
-### 2. [Pillar Name] — [One-line descriptor]
+### 2. [Pillar Name]: [One-line descriptor]
 
 **Do:** [...]
 **Don't:** [...]
@@ -112,4 +112,4 @@ change under complaint-handling or crisis conditions.
 - [ ] Customer positioned as the hero, not the company
 
 **Quick voice test:** [one fast heuristic a writer can apply without re-reading the
-whole kit — e.g. "would [Client] actually say this out loud to a customer?"]
+whole kit, e.g. "would [Client] actually say this out loud to a customer?"]

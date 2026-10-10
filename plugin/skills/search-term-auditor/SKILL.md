@@ -21,8 +21,8 @@ You audit search term reports like a senior PPC analyst who bills by the finding
 ## Tools
 
 - `Google Ads:list_accounts`: call first if the account isn't already clear, especially when more than one Google Ads account is connected. Resolve the right `customer_id` before pulling reports.
-- `Google Ads:run_gaql`: for a single-campaign audit, query `search_term_view` with an explicit `campaign.id = X` filter instead of `search_terms` — see the scope note in Workflow step 1.
-- `Google Ads:search_terms`: the primary pull for an account-wide question, terms triggering ads with cost/impressions/conversions. Set `min_cost`/`min_impressions` to keep noise out rather than pulling everything and filtering after. Has no campaign filter and caps at 500 rows account-wide — on an active account this can silently drop most of a single campaign's spend, so don't use it for a single-campaign audit.
+- `Google Ads:run_gaql`: for a single-campaign audit, query `search_term_view` with an explicit `campaign.id = X` filter instead of `search_terms`, see the scope note in Workflow step 1.
+- `Google Ads:search_terms`: the primary pull for an account-wide question, terms triggering ads with cost/impressions/conversions. Set `min_cost`/`min_impressions` to keep noise out rather than pulling everything and filtering after. Has no campaign filter and caps at 500 rows account-wide, on an active account this can silently drop most of a single campaign's spend, so don't use it for a single-campaign audit.
 - `Google Ads:negative_keywords`: the account's existing negatives, if the connector exposes them. Pull them before proposing new ones so the list never repeats or contradicts what is already blocked. Check the tool's own description for what it returns.
 - `Google Ads:wasted_spend_report`: purpose-built for this skill's core question, terms that spent money with zero conversions. Use it to cross-check the primary pull rather than relying on either alone; they source from different views and occasionally disagree at the edges.
 
@@ -30,7 +30,7 @@ If the connector isn't connected, ask for a pasted or attached search term repor
 
 ## Workflow
 
-1. Determine scope first. For a single-campaign audit, use `run_gaql` against `search_term_view` with an explicit `campaign.id = X` filter, not `search_terms` (see Tools above) — then verify completeness with a follow-up query for any cost-bearing rows outside the pull (e.g. `cost_micros > 0` filtered to rows not already returned). For an account-wide question, resolve the account (`list_accounts` if ambiguous) and pull `search_terms` and `wasted_spend_report` for at least the last 30 days rather than asking the user to export first.
+1. Determine scope first. For a single-campaign audit, use `run_gaql` against `search_term_view` with an explicit `campaign.id = X` filter, not `search_terms` (see Tools above), then verify completeness with a follow-up query for any cost-bearing rows outside the pull (e.g. `cost_micros > 0` filtered to rows not already returned). For an account-wide question, resolve the account (`list_accounts` if ambiguous) and pull `search_terms` and `wasted_spend_report` for at least the last 30 days rather than asking the user to export first.
 2. Flag every search term with meaningful spend and zero conversions. Default threshold: $20+ spend. Adjust proportionally for small accounts (use 2% of monthly budget as the threshold).
 3. Group the wasted terms by theme, not just by campaign. "Free / DIY intent", "wrong location", "job seekers", "wrong product", "research-only intent". Themes tell the user what attracts junk. A flat list doesn't.
 4. Find the winners too: converting search terms that aren't exact-match keywords yet. Recommend which deserve their own ad group or keyword.

@@ -32,8 +32,8 @@ Judge CPL against lead-to-opportunity rate, never on its own.
 | Motion | Lead → opportunity | Lead → customer |
 |---|---|---|
 | B2B, sales-assisted | 3–10% | 1–5% |
-| B2B, product-led (trial in the funnel) | — | 2–8% of leads start a trial; a fraction of those convert |
-| B2C / low-ticket | — | often < 1%, offset by volume |
+| B2B, product-led (trial in the funnel) || 2–8% of leads start a trial; a fraction of those convert |
+| B2C / low-ticket || often < 1%, offset by volume |
 
 Decision-stage magnets (templates, ROI calculators, migration guides) convert to customer several times better than awareness-stage magnets, at lower volume. A healthy programme runs both.
 
@@ -49,7 +49,7 @@ Decision-stage magnets (templates, ROI calculators, migration guides) convert to
 
 ## Time to conversion
 
-Track median days from lead-magnet download to opportunity, split by magnet. Awareness magnets commonly sit at 60–180 days; decision magnets at 7–45. A magnet whose leads never progress, regardless of time, is attracting the wrong audience — change the topic or the gate, not the nurture.
+Track median days from lead-magnet download to opportunity, split by magnet. Awareness magnets commonly sit at 60–180 days; decision magnets at 7–45. A magnet whose leads never progress, regardless of time, is attracting the wrong audience: change the topic or the gate, not the nurture.
 
 ## What "good" looks like overall
 

@@ -1,4 +1,4 @@
-# Mark Types — What to Choose and When
+# Mark Types: What to Choose and When
 
 Choosing the type of mark is a strategic decision that comes before drawing. Each type has different
 strengths, costs and failure modes. Look at real examples of each type in the user's category before choosing.
@@ -42,19 +42,19 @@ icons near-square, and both have to work.
 
 The brand name alone, in type with strong, defined character.
 
-- **Advantage**: sidesteps the recognition problem — the name is always visible, so there is no symbol to learn.
+- **Advantage**: sidesteps the recognition problem, the name is always visible, so there is no symbol to learn.
 - **Disadvantage**: if not handled skilfully, it's generic and has little mnemonic value.
 - **Make it ownable**: customise letterforms (cuts, joins, terminals, a distinctive `a`/`g`/`e`), build a ligature,
   substitute one letter with a meaningful sign, hide a shape in the counters or between letters, adjust weight
   contrast, or draw it from scratch. If using a neutral sans, some device (ligature, trick, hidden sign) is
   necessary to make it memorable.
-- **Extreme minimal wordmarks** — very clean, near-neutral type — can signal sophistication, useful in B2B and
+- **Extreme minimal wordmarks**, very clean, near-neutral type, can signal sophistication, useful in B2B and
   premium sectors crowded by loud identities.
 - **Case matters**: lowercase reads approachable and contemporary; uppercase reads stable, institutional,
-  monumental; title case reads conventional. Legibility depends on the typeface — test both.
+  monumental; title case reads conventional. Legibility depends on the typeface: test both.
 - **Spoken sound**: letter rhythm should echo how the word sounds; a playful shift on the baseline can make
   the viewer "hear" the word.
-- **Length**: long names become thin, wide strips that shrink poorly — consider a stacked version or a
+- **Length**: long names become thin, wide strips that shrink poorly, consider a stacked version or a
   companion monogram/letterform for small sizes.
 
 ## 3. Lettermark / monogram
@@ -68,7 +68,7 @@ Two or more initials combined into one mark.
   interesting ways; simple letters (`i`, `l`, `I`) offer little. Look for shared strokes, mirrored shapes,
   and counters that can nest.
 - **Numbers pair well** with letters when the name includes one (a `D` and a `4` share curves and diagonals).
-- Traditionally strong in fashion, luxury, publishing, institutions — where a person's or house's name is the brand.
+- Traditionally strong in fashion, luxury, publishing, institutions, where a person's or house's name is the brand.
 
 ## 4. Letterform (single-letter symbol)
 
@@ -76,13 +76,13 @@ One initial treated as a symbol that conceptually, stylistically or metaphorical
 
 - Carries less information than pictorial marks, so it's more neutral and often more timeless. Favoured by
   finance and technology.
-- Many brands share the same initial — the concept must live in the *treatment*: a letter that is also an arrow,
+- Many brands share the same initial; the concept must live in the *treatment*: a letter that is also an arrow,
   a path, a fold, a spark, a bracket, a container, a person.
 - Excellent as app icon / favicon / avatar; pair with a wordmark for the full lockup.
 
 ## 5. Pictorial mark
 
-A meaningful, recognisable icon — object, animal, plant — as the primary identifier.
+A meaningful, recognisable icon, object, animal, plant, as the primary identifier.
 
 - The most widespread and one of the most effective forms; ideally recognisable **without** the name.
 - Can depict the brand directly (name = object) or metaphorically (an animal's qualities = brand's qualities).
@@ -95,7 +95,7 @@ A meaningful, recognisable icon — object, animal, plant — as the primary ide
 
 ## 6. Abstract mark
 
-A form that represents an idea in a suggestive, subjective way — a phenomenon rather than an object.
+A form that represents an idea in a suggestive, subjective way: a phenomenon rather than an object.
 
 - Useful when the business is diversified, the name gives no visual clue, or the brand wants a conceptual,
   ownable shape.
@@ -104,15 +104,15 @@ A form that represents an idea in a suggestive, subjective way — a phenomenon 
   so meaning is assigned through story and repetition.
 - An abstract mark is only meaningful after heavy exposure. It works for organisations with the reach to teach
   it; it's risky for a small business with little media presence.
-- Avoid unintended connotations (political, ethnic, religious, sexual) — broad institutions especially need
+- Avoid unintended connotations (political, ethnic, religious, sexual): broad institutions especially need
   marks with no negative associations.
 
 ## 7. Negative-space mark
 
 Uses the surrounding space as part of the concept: figure and ground both carry meaning.
 
-- The strongest versions merge **two strongly recognisable silhouettes that are conceptually related** — one
-  positive, one negative — so the whole becomes more than its parts (a Gestalt effect).
+- The strongest versions merge **two strongly recognisable silhouettes that are conceptually related**, one
+  positive, one negative, so the whole becomes more than its parts (a Gestalt effect).
 - They are rare and arguably the hardest marks to create; only simple elements with distinctive silhouettes
   combine cleanly.
 - Also usable at smaller scale: an arrow hidden between two letters, a shape formed inside a counter.
@@ -130,7 +130,7 @@ A character with a face and personality.
 
 ## 9. Emblem / badge
 
-Text integrated inside a seal, crest, shield or enclosure — the parts cannot be separated.
+Text integrated inside a seal, crest, shield or enclosure: the parts cannot be separated.
 
 - Conveys tradition, authority, membership, craft. Common for universities, sports clubs, breweries, public bodies.
 - Loses legibility quickly at small sizes; plan a simplified inner symbol for favicons and avatars.

@@ -6,7 +6,7 @@ judgement. Run them on every concept before presenting and again on the final ar
 
 ## 1. Scale
 - [ ] **16 px favicon**: the core idea survives; no mush. If not, design a simplified small-size version
-      (fewer elements, thicker strokes, bigger gaps) — detailed marks may keep a reduced companion.
+      (fewer elements, thicker strokes, bigger gaps): detailed marks may keep a reduced companion.
 - [ ] **24–32 px** (app lists, social avatars): recognisable at a glance.
 - [ ] **Very large** (billboard, building): curves are smooth, no lumpy anchors, kerning holds up; flaws
       invisible at small sizes become glaring.
@@ -15,9 +15,9 @@ judgement. Run them on every concept before presenting and again on the final ar
 
 ## 2. Colour and value
 - [ ] Works in **one-colour black** on white.
-- [ ] Works in **one-colour white** on black — and doesn't look heavier than the black version (irradiation). If it
+- [ ] Works in **one-colour white** on black, and doesn't look heavier than the black version (irradiation). If it
       does, provide a slightly thinned reversed file.
-- [ ] Works on the **brand colour**, on **photos** and on **patterns** (use a graphic device — outline or container —
+- [ ] Works on the **brand colour**, on **photos** and on **patterns** (use a graphic device, outline or container,
       if not).
 - [ ] **Greyscale**: colour segments still separate by value; nothing relies on hue alone.
 - [ ] Colours reproduce in **CMYK** and have spot/Pantone equivalents if vivid.
@@ -35,7 +35,7 @@ judgement. Run them on every concept before presenting and again on the final ar
 
 - [ ] **Letter test**: every customised letter still reads as the intended letter at first glance (ask: "what
       letter is this?"). A K that reads as an h, or an N that reads as a lightning bolt, needs revising.
-- [ ] **Junction check**: zoom in on every place strokes meet or overlap — no accidental notches, slivers, lumps,
+- [ ] **Junction check**: zoom in on every place strokes meet or overlap, no accidental notches, slivers, lumps,
       hairline gaps or ink traps.
 - [ ] **Peer test**: next to 3–4 well-resolved marks from the category at the same size, yours looks equally resolved.
 
@@ -46,7 +46,7 @@ judgement. Run them on every concept before presenting and again on the final ar
       it isn't yours, it's someone else's.
 - [ ] **Similarity check**: search the web for the same subject and technique in the category; make sure yours is clearly different.
 - [ ] **Trademark check** (recommend to the user): search the relevant trademark databases and do a reverse image
-      search before launch. You cannot give legal clearance — say so.
+      search before launch. You cannot give legal clearance: say so.
 
 ## 5. Meaning and fit
 - [ ] The idea can be explained in **one sentence**.

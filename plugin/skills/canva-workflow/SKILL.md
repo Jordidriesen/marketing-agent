@@ -13,8 +13,8 @@ description: >
   convert to an editable design, edit text/images/colour/layout in a
   validated per-page transaction, resize for variants, export to a
   download URL), and hands back a manual build checklist in Canva's own
-  UI terms when it isn't. Use when an asset suits Canva — template-based
-  social, one-pagers, presentations, docs, printables, bulk variants — or
+  UI terms when it isn't. Use when an asset suits Canva, template-based
+  social, one-pagers, presentations, docs, printables, bulk variants, or
   when someone says "make this in Canva", "Canva workflow", or "run this
   in Canva". For generated or composited imagery and design-system work,
   use figma-weavy-workflow.
@@ -25,7 +25,7 @@ argument-hint: "<the asset or brief to build in Canva>"
 
 You either build the asset through the Canva MCP and hand back a link to the finished design, or, if the connector isn't there, hand back a checklist precise enough that a person builds it without a single creative decision left to make.
 
-## Step 0 — Load the brand and the brief
+## Step 0: Load the brand and the brief
 
 Load the matching `[brand]-brand-kit` skill and the `creative-brief` output for this asset. You need: palette hex values, brand fonts, logo files and clear-space rules, and the deliverable's exact dimensions. If any are missing, get them before starting.
 
@@ -66,7 +66,7 @@ Then check whether the **Canva MCP connector is connected**. If its tools are av
 
 ### 2d. Import route
 
-- `import-design-from-url` with a **public HTTPS URL** and `intended_design_type`. For an agent-generated HTML page, add `data-document-role="page"` to each element that should be a Canva page, `data-label` for a page title, `data-speaker-notes` for notes. Never publish a private or local file to a public host to get a URL — if there's no already-public URL, stop and tell the user.
+- `import-design-from-url` with a **public HTTPS URL** and `intended_design_type`. For an agent-generated HTML page, add `data-document-role="page"` to each element that should be a Canva page, `data-label` for a page title, `data-speaker-notes` for notes. Never publish a private or local file to a public host to get a URL, if there's no already-public URL, stop and tell the user.
 
 ### 3. Bring in brand assets
 
@@ -78,7 +78,7 @@ For any logo, product shot, or image to place: `upload-asset-from-url` with an *
 2. `edit-design` with `transaction_id`, `page_index` (1-based), `operations: [...]`, `finalize: "keep_open"`. **One page per call.** Useful operations:
    - Text: `replace_text` / `find_and_replace_text` (use exact approved copy), `add_text`, `format_text` (`color` hex, `font_size`, `font_weight`, `text_align`, list markers), `update_text_anchoring`.
    - Image: `update_fill` (swap the image in a frame to an `asset_id`), `insert_fill` (place a new image at x/y/w/h), `crop_media`, `flip_media`.
-   - Colour and shape: `recolor_element` (hex), `insert_shape` (SVG path — only `M/L/H/V/C/S/A/Z`, no `Q`/`T`), `replace_shape`, `update_stroke_properties`.
+   - Colour and shape: `recolor_element` (hex), `insert_shape` (SVG path, only `M/L/H/V/C/S/A/Z`, no `Q`/`T`), `replace_shape`, `update_stroke_properties`.
    - Layout: `position_element`, `resize_element` (text: width only; image: one dimension if `preserve_aspect_ratio`), `layer_element` (front/back), `group_elements`, `add_page`, `reorder_page`, `update_opacity`, `delete_element`.
    - `update_title` for the design name; `update_autofill_field` to wire an element to an autofill field (fixed-page designs only).
 3. After each `edit-design` call: compare the returned after-thumbnail against the before-thumbnail and inspect the returned `document`. Fix anything wrong with another `keep_open` call.
@@ -90,7 +90,7 @@ For any logo, product shot, or image to place: `upload-asset-from-url` with an *
 
 ### 6. Export
 
-- `get-export-formats` for the design **first** — it lists what this design actually supports. Never guess.
+- `get-export-formats` for the design **first**: it lists what this design actually supports. Never guess.
 - `export-design` (`design_id`, `format`: `{type, export_quality, size, pages, transparent_background, width, height}` as relevant). PNG for flat graphics, `transparent_background: true` for logos and overlays, `pdf` + `size` + `export_quality: pro` for print, `pptx` for decks.
 - Show the returned download URL to the user.
 
@@ -100,21 +100,21 @@ For any logo, product shot, or image to place: `upload-asset-from-url` with an *
 
 ### Execution guardrails
 
-- `commit` is permanent — always validate thumbnails first.
+- `commit` is permanent: always validate thumbnails first.
 - One page per `edit-design` call; don't batch operations across pages.
 - `get-export-formats` before every `export-design`.
 - Never publish a private/local file to a public host to satisfy `upload-asset-from-url` or `import-design-from-url`.
-- Canva silently substitutes missing fonts — after commit, export a preview and check the type rendered in the brand face.
+- Canva silently substitutes missing fonts, after commit, export a preview and check the type rendered in the brand face.
 
 ---
 
 ## Manual path (no connector)
 
 ### A. Setup
-Canva design type and custom dimensions (from the brief). Which brand template or Brand Kit to start from. Note whether the brand has a Canva Brand Kit set up (fonts, colours, logos uploaded in Canva) — if not, say that setting one up once removes most of the manual styling below.
+Canva design type and custom dimensions (from the brief). Which brand template or Brand Kit to start from. Note whether the brand has a Canva Brand Kit set up (fonts, colours, logos uploaded in Canva), if not, say that setting one up once removes most of the manual styling below.
 
 ### B. Generative steps (if Magic Design or Magic Media is used)
-For each, the **exact prompt text**, ready to paste: subject, style, composition, colour (brand hex), mood, and exclusions. State the aspect ratio to set. Flag that generated output needs a brand pass — Canva's models don't know the brand.
+For each, the **exact prompt text**, ready to paste: subject, style, composition, colour (brand hex), mood, and exclusions. State the aspect ratio to set. Flag that generated output needs a brand pass: Canva's models don't know the brand.
 
 ### C. Build checklist
 Numbered steps in Canva's own terms: "Apply the brand template," "Replace the headline frame with: [exact copy]," "Set the headline to [brand font] [weight] [size]," "Recolour the shape to [hex]," "Place the logo top-left, clear space = logo height ÷ 2," "Position the CTA button [where], label: [exact copy]." Cover the whole asset.

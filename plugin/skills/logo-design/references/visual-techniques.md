@@ -30,39 +30,39 @@ perfect one. Read during development and refinement (phases 4–5), and when cri
   Curves built from circle segments are easy to grid and reproduce; free-drawn curves are harder to justify
   and to fix.
 - **Golden ratio (≈1.618) and Fibonacci proportions** (1, 2, 3, 5, 8, 13, 21 …) are useful as a standard of
-  organisation — e.g. circle radii in a construction following 1 : 1.618 or Fibonacci multiples. Use them where
+  organisation; e.g. circle radii in a construction following 1 : 1.618 or Fibonacci multiples. Use them where
   they help; never let numbers overpower a form that already feels right. If a form feels right, the maths
   should not get in the way.
 - **Whole-number angles.** Aim for clean angles: 0°, 15°, 30°, 45°, 60°, 90°. An element at 43° should be 45°;
   33.46° should become 30° or 35°. Lines that are 1–2° off horizontal/vertical read as mistakes, and clean
   angles show the elements were placed deliberately. (Colour values too: prefer whole-number CMYK percentages.)
-- **Perfect primitives.** A circle must be a perfect circle and a square a perfect square — unless the deviation
+- **Perfect primitives.** A circle must be a perfect circle and a square a perfect square, unless the deviation
   is an intentional optical correction.
 - **Gridding is for finishing, not for starting.** Apply construction grids after the concept is approved to find
   and fix misalignments, uneven radii and stray angles. The changes are usually too small for viewers to notice
-  consciously — but they feel the difference.
+  consciously, but they feel the difference.
 - **Don't over-grid.** Complex organic curves may not decompose into circles; it's fine to leave them ungridded.
   If something doesn't work within the grid, make it work outside the grid. A construction drawing cluttered with
   dozens of meaningless circles is a presentation gimmick, not rigour.
 
 ## 2. Balance
 
-1. **Stability** — the mark should not feel accidentally tilted. There should be a sense of gravity; where the
+1. **Stability**: the mark should not feel accidentally tilted. There should be a sense of gravity; where the
    concept allows, a heavier or wider base feels grounded.
-2. **Proportion** — aim for an overall footprint closer to a square than a long rectangle. Very tall or very wide
+2. **Proportion**: aim for an overall footprint closer to a square than a long rectangle. Very tall or very wide
    symbols are awkward to use and to lock up with type.
-3. **Composition** — distribute elements and gaps evenly. Clusters in one area and emptiness in another create
+3. **Composition**: distribute elements and gaps evenly. Clusters in one area and emptiness in another create
    dissonance (unless tension is the intent).
-4. **Consistency** — keep weights related. Very thick next to very thin reads as imbalance; in line marks, keep
+4. **Consistency**: keep weights related. Very thick next to very thin reads as imbalance; in line marks, keep
    stroke width consistent throughout. Repeat radii and angles.
-5. **Scalability** — every decision must survive enlargement and reduction.
+5. **Scalability**: every decision must survive enlargement and reduction.
 
 ## 3. Optical corrections
 
 ### Overshoot
 Round and pointed shapes look smaller than flat-edged shapes of the same measured height. A circle placed
 between squares of equal height looks too small; an `O` beside an `H` looks short. Let curves and apexes extend
-slightly past the baseline/cap line/edge — typically **1–3 % of the height** for curves and more for sharp points
+slightly past the baseline/cap line/edge, typically **1–3 % of the height** for curves and more for sharp points
 (triangles/apexes can need 3–6 %). Do it in the final stage, with one or two anchor tweaks. This is the
 difference between great and perfect.
 
@@ -73,7 +73,7 @@ rectangles; rounded triangles), the straight segment appears to pinch inward lik
 2. Pull the curve handles so curvature ramps up gradually instead of jumping from zero to the full circle.
 3. Use a smooth curvature transition (a "squircle"/superellipse-like corner): extra anchors that ease from straight
    to curved; copy the tuned curve to the symmetrical corners.
-Not every instance needs fixing — sometimes the bone effect is expressive (bulkiness in a figure). Fixing it often
+Not every instance needs fixing: sometimes the bone effect is expressive (bulkiness in a figure). Fixing it often
 frees up interior space and makes rounded marks crisper at small sizes. In SVG, prefer continuous-curvature
 corners (cubic Béziers with handles ≈ 0.55–0.65 of the corner size, extended past the tangent point) over plain
 `rx` arcs when the corner is prominent.
@@ -103,8 +103,8 @@ to be shifted toward their visual mass, not their bounding box.
 
 ## 4. Composition dynamics between shapes
 
-Shapes interacting create feelings. First define the goal — harmony, tension, dynamism, balance, dissonance,
-entropy — then arrange.
+Shapes interacting create feelings. First define the goal, harmony, tension, dynamism, balance, dissonance,
+entropy, then arrange.
 - Circle resting on a square of the same width → harmony, stability.
 - Square balanced on a circle → tension, instability.
 - Circle beside the apex of a triangle → motion.
@@ -119,7 +119,7 @@ Years of playing with forms build the intuition; in the meantime, test variation
 - Perfect mirror symmetry is stable and formal but often boring; repetition by mirroring can feel mechanical.
 - A subtle asymmetry keeps the eye travelling: a change in colour on one side, a detail added or removed, an
   offset element, a mirrored-then-shifted part.
-- Especially useful when the overall silhouette is symmetrical — let one detail break it.
+- Especially useful when the overall silhouette is symmetrical: let one detail break it.
 - Symmetry still has its place for institutions and marks that must feel absolute (seals, public bodies).
 
 ## 6. Solid vs. line
@@ -135,18 +135,18 @@ Years of playing with forms build the intuition; in the meantime, test variation
 
 ## 7. Sharp vs. round
 
-- Sharp, angular forms read as assertive, authoritative, technical, sometimes threatening — we instinctively treat
+- Sharp, angular forms read as assertive, authoritative, technical, sometimes threatening: we instinctively treat
   sharp objects with caution.
-- Rounded forms read as friendly, inviting, soft, safe — we want to touch and hold them.
+- Rounded forms read as friendly, inviting, soft, safe: we want to touch and hold them.
 - Keep sharp elements out of the silhouette unless the brand needs edge (security, sport, performance, luxury
-  precision). Most brands want to feel approachable, so rounded corners are a sensible default — but a slightly
+  precision). Most brands want to feel approachable, so rounded corners are a sensible default, but a slightly
   rounded corner (small radius) often reads more premium than fully pill-shaped forms.
 - Mixing: a sharp exterior with soft interior details (or vice versa) can express duality ("secure but friendly").
 
 ## 8. Negative space & figure/ground
 
 - Every silhouette has surrounding space. Treat the negative shapes (counters, gaps, space between elements) with the
-  same care as the positive shapes — the inner shapes of letters echoing the outer form create coherence.
+  same care as the positive shapes: the inner shapes of letters echoing the outer form create coherence.
 - Clever negative space (a hidden arrow, an animal between two shapes, a letter carved out of an object) creates a
   moment of discovery. Keep it simple: two elements with distinct silhouettes, conceptually related.
 - Gaps must be large enough to survive reduction; a 1 px gap at 32 px disappears. As a rule of thumb, make the
@@ -156,13 +156,13 @@ Years of playing with forms build the intuition; in the meantime, test variation
 
 When something appears to be one thing and becomes another on closer inspection, the mind solves a small problem and
 enjoys the solution. Three families:
-1. **Impossible figures** — shapes that can't exist in 3D (reversed perspective, manipulated line connections,
+1. **Impossible figures**: shapes that can't exist in 3D (reversed perspective, manipulated line connections,
    misaligned layers). Study the concept, don't copy famous figures; transpose the principle (e.g. a letter whose
    perspective switches direction halfway).
-2. **Ambiguous forms** — one image that reads as two. Rare to succeed intentionally. The bigger risk is the
+2. **Ambiguous forms**: one image that reads as two. Rare to succeed intentionally. The bigger risk is the
    *unintended* reading: after hours of work a designer stops seeing what is obvious to others (including sexual or
    offensive readings). Always ask fresh eyes, rotate the mark 90/180°, view it tiny and mirrored.
-3. **Motion illusions** — tapering sweeps, speed lines, progressive repetition. For speed, run the form from thin to
+3. **Motion illusions**: tapering sweeps, speed lines, progressive repetition. For speed, run the form from thin to
    thick in the reading direction (left to right in Latin-script cultures); consider right-to-left audiences.
 
 Other tools for turning a mundane shape into something memorable: layering, interlacing, overlapping with
@@ -175,7 +175,7 @@ transparency, juxtaposing flat and dimensional, and playing with colour at inter
   version as the master and treat gradients as an optional enhancement.
 - **Simplify gradation.** Replace a smooth gradient with a few distinct steps (3–5 flat bands of related hues). At
   small sizes the steps read as seamless; at large sizes they look crafted rather than default.
-- **Light and shading for plain marks.** Simple is not always attractive — some marks look plain because they lack
+- **Light and shading for plain marks.** Simple is not always attractive: some marks look plain because they lack
   content. Introducing a light source (a fold, an overlap shadow, a highlight) can add depth and sophistication. If the
   mark is interesting in its reduced state, don't add light.
 - **Few tones.** Many shades of grey kill sharpness at small sizes. Use at most highlight, one mid-tone, shadow and
@@ -183,19 +183,19 @@ transparency, juxtaposing flat and dimensional, and playing with colour at inter
   parts that fold under or overlap others is usually enough.
 - **Structure of light on a sphere**: highlight, midtone, core shadow, reflected light, cast shadow, occlusion shadow.
   Understand it to shade any form convincingly; then reduce to 2–3 tones.
-- **Tapered strokes (engraving style)**: tonal gradation built from arrow-like strokes that thin toward the tip — a
+- **Tapered strokes (engraving style)**: tonal gradation built from arrow-like strokes that thin toward the tip, a
   versatile way to render volume on organic forms. Time-consuming; reserve for brands where craft is the message.
 
 ## 11. Dimension
 
 - Realistic 3D renders carry too much detail for logos.
-- Dimension achieved by the simplest means — two or three flat faces, an isometric fold, an overlap — can be striking
+- Dimension achieved by the simplest means, two or three flat faces, an isometric fold, an overlap, can be striking
   and widens the space of original solutions, since flat combinations of primitives are largely exhausted.
 - Always keep a version that works flat and in one colour.
 
 ## 12. Visibility devices
 
-A logo designed for light backgrounds may not invert well (a white swan inverted becomes a black swan — maybe desired,
+A logo designed for light backgrounds may not invert well (a white swan inverted becomes a black swan, maybe desired,
 maybe not). For busy, photographic or multicoloured backgrounds use a **graphic device**:
 - An outline (a sufficiently thick light stroke around the silhouette), or
 - A containing shape: circle for circular marks; square or rounded square for most others (the safest for rectangular
@@ -217,7 +217,7 @@ maybe not). For busy, photographic or multicoloured backgrounds use a **graphic 
 - **Save every meaningful iteration** side by side instead of overwriting. Designers often favour a lesser variant
   in the moment of excitement and lose the better one.
 - **Compare pairs** directly and pick the stronger; then iterate from the winner.
-- **Rest before deciding** — fatigue makes judgement less objective.
+- **Rest before deciding**: fatigue makes judgement less objective.
 - **Mirror the mark.** Flipping horizontally reveals proportion problems the eye has adapted to (especially in
   animals and figures).
 - **Blur/squint and shrink.** If the silhouette is unclear when blurred, the idea is not strong enough.

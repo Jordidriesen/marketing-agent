@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Render SVG logos to PNG (transparent by default) and build favicon.ico files — no required dependencies.
+"""Render SVG logos to PNG (transparent by default) and build favicon.ico files: no required dependencies.
 
 Use it to *look* at your work (render, then view the PNG) and to produce raster deliverables.
 The SVG is fitted ("contain") into an exact WIDTH×HEIGHT box with optional padding and background.
 
 Backends are tried in order until one works:
   1. cairosvg (python package)   2. rsvg-convert   3. inkscape
-  4. headless Chrome / Chromium / Edge / Brave     5. macOS Quick Look (qlmanage) — last resort
+  4. headless Chrome / Chromium / Edge / Brave     5. macOS Quick Look (qlmanage): last resort
 Quick Look renders on opaque white; transparency is recovered by rendering on white and black
 ("difference matting") when Pillow is installed, otherwise the PNG stays opaque white.
 
@@ -317,7 +317,7 @@ def main():
 
     if a.which:
         found = available_backends()
-        print("available backends:", ", ".join(found) if found else "none — install cairosvg (pip install cairosvg) "
+        print("available backends:", ", ".join(found) if found else "none, install cairosvg (pip install cairosvg) "
               "or librsvg, or use a Chromium-based browser")
         return 0
     if not a.files:

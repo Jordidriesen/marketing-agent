@@ -10,7 +10,7 @@ and with `design.md` for visual work.
 One paragraph: what the client does, who they serve, what makes their position
 distinctive, and the single sentence that should anchor every tone decision below.
 Example shape (not real content): "[Client] is a [industry] company serving
-[audience] since [year] — [what makes them different from competitors in one
+[audience] since [year], [what makes them different from competitors in one
 clause]. Every word or visual decision should reflect [the one thing the client
 wants to be known for]."
 
@@ -33,7 +33,7 @@ confirming in a closing "Open Items" section.
 
 ## The Customer Hero Framework
 
-(Rename this section if a different protagonist framing fits the client better —
+(Rename this section if a different protagonist framing fits the client better,
 e.g. a homeowner/professional split rather than an enterprise-buyer split.)
 
 | Role | Who |
@@ -55,8 +55,8 @@ include a short before/after table like this one:
 
 ## Audience Calibration
 
-How tone shifts by audience segment — e.g. technical buyer vs. budget holder vs.
-end user — without breaking the core pillars. One short paragraph or table per
+How tone shifts by audience segment, e.g. technical buyer vs. budget holder vs.
+end user, without breaking the core pillars. One short paragraph or table per
 segment is usually enough.
 
 ---

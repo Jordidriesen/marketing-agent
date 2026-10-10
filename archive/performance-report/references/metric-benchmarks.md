@@ -1,6 +1,6 @@
 # Metric Definitions and Benchmarks
 
-Supporting reference for `performance-report`'s Key Metrics Dashboard section. For Google Ads-specific metrics and diagnostics, prefer `quality-score-doctor`, `device-performance-analyzer`, `geo-performance-analyzer`, and `metric-detective` over the generic Paid Advertising table below — they use live account data instead of industry benchmarks.
+Supporting reference for `performance-report`'s Key Metrics Dashboard section. For Google Ads-specific metrics and diagnostics, prefer `quality-score-doctor`, `device-performance-analyzer`, `geo-performance-analyzer`, and `metric-detective` over the generic Paid Advertising table below: they use live account data instead of industry benchmarks.
 
 ## Email Marketing
 

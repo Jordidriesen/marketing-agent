@@ -11,7 +11,7 @@ Usage:
   python3 scripts/svg_audit.py logo.svg --bg "#0F7C80"    # also report contrast of colours on a background
 
 Exit code is 0 unless a file cannot be parsed. Findings are advice, not law: a deliberate choice can
-override a warning — but you should be able to say why.
+override a warning, but you should be able to say why.
 """
 import argparse
 import json
@@ -101,22 +101,22 @@ def audit(path, bg=None):
                         knock += 1
                     break
     if on_tile and not knock:
-        add("INFO", "on-tile", "White artwork on a full-canvas tile/container — fine for app icons and avatars; make sure a "
+        add("INFO", "on-tile", "White artwork on a full-canvas tile/container, fine for app icons and avatars; make sure a "
             "version without the tile exists for other uses.")
     if knock:
         add("WARN", "white-knockout", f"{knock} white shape(s) are painted on top of coloured shapes. If they are meant as "
-            "holes, they will show as white blobs on coloured/photo backgrounds and break one-colour versions — make real "
+            "holes, they will show as white blobs on coloured/photo backgrounds and break one-colour versions: make real "
             "holes (fill-rule=\"evenodd\" or subtracted paths). Ignore if the white is deliberate (e.g. a symbol on a tile).")
     all_white = bool(colors) and all(svglib.lightness(c) > 0.9 for c in colors)
     if bg:
         bgc = svglib.normalize_color(bg)
         if bgc and all_white and svglib.lightness(bgc) > 0.6:
-            add("INFO", "reversed-file", f"All paint is white/near-white: this looks like a reversed version — test it with a "
+            add("INFO", "reversed-file", f"All paint is white/near-white: this looks like a reversed version, test it with a "
                 "dark --bg instead of " + bgc + ".")
         elif bgc:
             low = [f"{c} ({svglib.contrast_ratio(c, bgc):.1f}:1)" for c in colors if svglib.contrast_ratio(c, bgc) < 3]
             if low:
-                add("WARN", "low-contrast", f"Low contrast on {bgc}: " + ", ".join(low) + " — aim for ≥3:1 for logo parts, 4.5:1 for small text.")
+                add("WARN", "low-contrast", f"Low contrast on {bgc}: " + ", ".join(low) + ", aim for ≥3:1 for logo parts, 4.5:1 for small text.")
 
     # --- strokes -----------------------------------------------------------------------------
     stroked = 0
@@ -149,10 +149,10 @@ def audit(path, bg=None):
                 near.append((round(ang, 1), closest % 180, round(length, 1), a))
         if near:
             sample = "; ".join(f"{x[0]}° (→{x[1]}°) len {x[2]} at ({x[3][0]:.0f},{x[3][1]:.0f})" for x in near[:6])
-            add("WARN", "near-miss-angle", f"{len(near)} straight edge(s) are 0.3–3° off a clean angle — they read as "
+            add("WARN", "near-miss-angle", f"{len(near)} straight edge(s) are 0.3–3° off a clean angle, they read as "
                 f"mistakes. Snap them: {sample}" + (" …" if len(near) > 6 else "") +
-                ". (Expected — and fine — for type set on a curve or deliberately rotated elements.)")
-        # tiny details — symbols must survive ~48 px, lockups ~32 px of height
+                ". (Expected, and fine, for type set on a curve or deliberately rotated elements.)")
+        # tiny details: symbols must survive ~48 px, lockups ~32 px of height
         if info.get("aspect_class") in ("wide", "horizontal", "extra-wide"):
             ref, label = vb[3] / 32, "1/32 of the lockup height (≈1 px at 32 px tall)"
         else:
@@ -162,7 +162,7 @@ def audit(path, bg=None):
         if tiny:
             ex = "; ".join(f"{bb[2] - bb[0]:.1f}×{bb[3] - bb[1]:.1f} at ({bb[0]:.0f},{bb[1]:.0f})" for bb in tiny[:4])
             add("WARN", "tiny-detail", f"{len(tiny)} sub-shape(s) smaller than {label}: {ex}{' …' if len(tiny) > 4 else ''}. "
-                "They vanish when small — enlarge, merge or remove them, or provide a small-size version.")
+                "They vanish when small: enlarge, merge or remove them, or provide a small-size version.")
     # padding / centring
     bb = geo["bbox"]
     if bb and vb:

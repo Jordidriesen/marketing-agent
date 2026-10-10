@@ -1,15 +1,15 @@
-# <Brand> — Logo Guidelines (compact)
+# <Brand>: Logo Guidelines (compact)
 
 > Keep it to one or two pages for small brands. Write for non-designers. More "do"s than "don't"s.
 
 ## 1. The logo
-- **Idea**: <one sentence — what the mark means and why>
+- **Idea**: <one sentence, what the mark means and why>
 - **Versions**: primary (horizontal) · stacked · symbol-only · wordmark-only
 - **Files**: `digital/*.svg|png` for screens · `print/*.pdf` for printers · use the right one (RGB for screens, CMYK/spot for print)
 
 ## 2. Clear space
 Keep a clear zone of **1 × <unit>** around the logo on all sides, where <unit> = <an element of the logo, e.g. the height
-of the symbol's dot / the cap height of the wordmark>. The zone scales with the logo — never use a fixed distance.
+of the symbol's dot / the cap height of the wordmark>. The zone scales with the logo, never use a fixed distance.
 
 ## 3. Minimum size
 | Version | Screen | Print |

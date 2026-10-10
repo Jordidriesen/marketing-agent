@@ -5,7 +5,7 @@ Load this file when the input text is in Spanish.
 
 ---
 
-## Tier 1 — Eliminaciones obligatorias (equivalentes en español)
+## Tier 1: Eliminaciones obligatorias (equivalentes en español)
 
 | Patrón | Ejemplos | Corrección |
 |---|---|---|
@@ -16,7 +16,7 @@ Load this file when the input text is in Spanish.
 
 ---
 
-## Tier 2 — Vocabulario IA (Español)
+## Tier 2: Vocabulario IA (Español)
 
 **Verbos:** aprovechar (overused), optimizar, facilitar, fomentar, potenciar, fortalecer,
 subrayar, desvelar, navegar (figurativo), agilizar, mejorar, cultivar, arrojar luz sobre,
@@ -38,24 +38,24 @@ al respecto, en la medida en que (como coletilla), de cara a
 
 ---
 
-## Tier 3 — Indicadores estructurales (Español)
+## Tier 3: Indicadores estructurales (Español)
 
 | Patrón | Descripción |
 |---|---|
 | Inflación de la importancia | "marca un hito decisivo", "subraya el papel vital de", "refleja tendencias más amplias", "es un testimonio de" |
-| Construcciones *llevar a cabo* y *en el marco de* | "Se llevó a cabo la implementación en el marco de la estrategia de transformación..." — reformular directamente |
+| Construcciones *llevar a cabo* y *en el marco de* | "Se llevó a cabo la implementación en el marco de la estrategia de transformación...": reformular directamente |
 | Nominalización en cadena | "la implementación de la optimización de los procesos de trabajo" → reformular en oración activa |
 | Lenguaje promocional | "enclavado en el corazón de", "comunidad vibrante", "rico patrimonio cultural" |
 | Atribución vaga | "Los expertos argumentan", "Los observadores del sector señalan" sin fuente nombrada |
 | Boilerplate de desafíos | "A pesar de los desafíos típicos de...", "A pesar de estos retos, X continúa prosperando" |
 | Paralelismos negativos | "No es solo X, es Y", "No meramente A, sino B" (overused) |
 | Regla de tres forzada | Tríadas forzadas: "innovación, inspiración e intuición" |
-| Pasiva refleja excesiva | Abuso de "se llevó a cabo", "se realizó", "se implementó" — usar construcciones activas |
+| Pasiva refleja excesiva | Abuso de "se llevó a cabo", "se realizó", "se implementó": usar construcciones activas |
 | Cierre genérico | "En definitiva...", "En resumen, podemos concluir que..." con relleno al final |
 
 ---
 
-## Tier 4 — Transiciones y muletillas (Español)
+## Tier 4: Transiciones y muletillas (Español)
 
 **Frases de transición a eliminar:**
 - "Además", "Por otra parte", "No obstante", "Dicho esto", "En este contexto"

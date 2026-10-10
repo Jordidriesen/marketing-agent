@@ -13,7 +13,7 @@ Raster (needs any backend of render_png.py: cairosvg, rsvg-convert, inkscape, Ch
   --png 32 512 1024         PNGs of every SVG variant written (transparent)
   --web-icons               favicon.ico (16/32/48), favicon-16/32/48.png, apple-touch-icon.png (180),
                             icon-192.png, icon-512.png, maskable-512.png, plus site.webmanifest and
-                            head-snippet.html — the full web/PWA icon set
+                            head-snippet.html: the full web/PWA icon set
 
 Usage:
   python3 scripts/export_variants.py brand-symbol.svg --mono "#0F7C80" --icon-bg "#0F7C80" --title "Brand"
@@ -159,7 +159,7 @@ def main():
 
     colors = svglib.collect_colors(root)
     if any(svglib.lightness(c) > 0.97 for c in colors) and len(colors) > 1:
-        print("note: master contains white paint — check the one-colour files for blobs (fake cut-outs).")
+        print("note: master contains white paint, check the one-colour files for blobs (fake cut-outs).")
 
     raster = []
     if a.png:

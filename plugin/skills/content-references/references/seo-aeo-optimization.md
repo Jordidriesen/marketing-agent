@@ -2,7 +2,7 @@
 
 Structural and technical rules for content meant to rank in traditional
 search and be cited by AI answer engines (Gemini, Perplexity, SearchGPT).
-Format-agnostic — a generation skill applies the parts relevant to what
+Format-agnostic: a generation skill applies the parts relevant to what
 it's producing rather than the whole reference every time. A landing page
 needs the keyword-integration rules but not the FAQ/Hook architecture; a
 blog post needs both.
@@ -27,7 +27,7 @@ without surrounding context.
 
 **The opening determines citation.** The first ~50 words are processed by
 an extractive QA layer. Content that builds toward an answer gets skipped
-in favor of content that opens with the answer — a direct answer in the
+in favor of content that opens with the answer: a direct answer in the
 first 50 words meaningfully raises citation probability.
 
 **Entity consistency enables attribution.** If a paragraph uses "the
@@ -36,7 +36,7 @@ can't confidently attribute the claim and moves on.
 
 **DOM structure affects extraction.** Semantic HTML5 (`<article>`,
 `<section>`, `<aside>`) signals extractable content boundaries. Clean
-heading hierarchy (H1→H2→H3, no skipping) mirrors what the DOM should do —
+heading hierarchy (H1→H2→H3, no skipping) mirrors what the DOM should do:
 a developer concern, but one content structure should support, not fight.
 
 ---
@@ -45,13 +45,13 @@ a developer concern, but one content structure should support, not fight.
 
 **Content architecture:**
 - Answer one clear primary question per piece
-- Open with a direct, declarative answer in the first 50–100 words — no
+- Open with a direct, declarative answer in the first 50–100 words: no
   literary lead-in, no question, no statistic buildup first
 - Structure every section as a standalone "atomic" chunk, answerable
   without the rest of the page for context
 
 **Entity consistency:**
-- Use canonical names throughout — always "OpenAI," never "the company"
+- Use canonical names throughout: always "OpenAI," never "the company"
   or "the startup," for the same entity in the same piece
 
 **Chunk hygiene:**
@@ -66,19 +66,19 @@ a developer concern, but one content structure should support, not fight.
   cited
 
 **Bolded certainty anchors:**
-- Bold the single most citable sentence per section — ideally one
+- Bold the single most citable sentence per section, ideally one
   containing a statistic or clear fact. Functions as an LLM "certainty
   anchor" for that chunk.
 
 **Structured formats AI engines extract directly:**
 - Numbered lists for any step-by-step process
-- Markdown tables for any "X vs Y" or "which is better" comparison —
+- Markdown tables for any "X vs Y" or "which is better" comparison:
   built from structured tables, not prose comparisons
 - FAQ answers: 40–60 words, one concept, standalone without page context
 
 **Credibility chain:**
 - 3–5 external citations to high-authority domains (.edu, .gov, tier-1
-  industry publications) — this is what internal trustworthiness
+  industry publications): this is what internal trustworthiness
   classifiers weigh most
 
 ---
@@ -95,7 +95,7 @@ a developer concern, but one content structure should support, not fight.
 | Meta description | Primary keyword, naturally integrated, 150–160 chars |
 
 Secondary keywords and LSI/related terms: use naturally in H2s and body
-paragraphs. Never force keyword density — semantic relevance and entity
+paragraphs. Never force keyword density: semantic relevance and entity
 clarity outrank density.
 
 ---
@@ -104,12 +104,12 @@ clarity outrank density.
 
 Before finalizing any piece meant to rank, verify it adds something beyond
 a baseline LLM answer to the same question. At least one of:
-- **Original data or research** — proprietary benchmarks, internal stats,
+- **Original data or research**: proprietary benchmarks, internal stats,
   first-party surveys
-- **Expert or first-hand perspective** — practitioner verdicts, "I tried
+- **Expert or first-hand perspective**: practitioner verdicts, "I tried
   this" insight, named-source quotes
-- **Numerical density** — precise, sourced figures vs. vague claims
-- **An extra layer of analysis** — aligns with consensus but adds an angle
+- **Numerical density**: precise, sourced figures vs. vague claims
+- **An extra layer of analysis**: aligns with consensus but adds an angle
   competing pieces don't cover
 
 No qualifying element present → flag it before shipping. AI engines
@@ -120,34 +120,34 @@ deprioritize consensus content with no differentiating layer.
 ## E-E-A-T quality gate
 
 A compact, checkable pass for Experience/Expertise/Authoritativeness/
-Trustworthiness — run once a draft is otherwise complete, as a gate before
+Trustworthiness: run once a draft is otherwise complete, as a gate before
 copy editing rather than a drafting rule. Several E-E-A-T-adjacent checks
 already live elsewhere in this file or in `web-content-pipeline` itself;
 this section covers only what isn't already handled, so nothing gets
 checked twice:
 
-**Already covered — don't re-check here:** direct-answer opening (Content
+**Already covered; don't re-check here:** direct-answer opening (Content
 architecture, above), heading hierarchy and TOC (`web-content-pipeline`'s
 blog template), chunk size and section chunking (Chunk hygiene, above),
 keyword placement (Traditional keyword integration, above), sourced
 statistics (Factual density and Information gain audit, above), entity
 consistency at the canonical-name level (Entity consistency, above).
 
-**Genuinely additive — apply these:**
+**Genuinely additive; apply these:**
 
 | Check | What it means | How to apply |
 |---|---|---|
-| Audience targeting | State plainly who the piece is for | One explicit sentence early on ("if you're evaluating X for Y, this covers...") — cheap, often skipped |
-| Query coverage | Cover 3+ real query variants for the topic — synonyms, long-tail, question forms — not just the primary keyword | Pull variants from the keyword research stage rather than guessing at drafting time |
+| Audience targeting | State plainly who the piece is for | One explicit sentence early on ("if you're evaluating X for Y, this covers..."): cheap, often skipped |
+| Query coverage | Cover 3+ real query variants for the topic, synonyms, long-tail, question forms, not just the primary keyword | Pull variants from the keyword research stage rather than guessing at drafting time |
 | Data precision floor | 5+ precise numbers with units per piece | Sharpens `behavioral-psychology.md`'s Precision-over-round-numbers principle with a concrete minimum |
 | Citation density floor | 1+ external citation per 500 words | Tighter than this file's Credibility chain (3–5 per piece); apply whichever is stricter for the piece's length |
 | Evidence-claim mapping | Every claim is backed by a cited or linked source, not just asserted | Flag any claim in the draft that has no evidence attached |
-| Entity precision | Full name for a person, org, or product on its first mention in the piece, even if later mentions use the canonical short form | Extends Entity consistency (above) — that section says use one name consistently; this adds that the *first* use should be the full name |
-| Multimedia structure | Every image or video has a caption and carries real information — never decorative filler | Cross-reference `behavioral-psychology.md`'s Picture superiority principle; decorative stock fails both checks at once |
-| Practical tools | Offer a downloadable template, checklist, or calculator where the topic genuinely supports one | Don't build it inline — flag the opportunity and hand off to `free-tool-strategy` |
+| Entity precision | Full name for a person, org, or product on its first mention in the piece, even if later mentions use the canonical short form | Extends Entity consistency (above), that section says use one name consistently; this adds that the *first* use should be the full name |
+| Multimedia structure | Every image or video has a caption and carries real information, never decorative filler | Cross-reference `behavioral-psychology.md`'s Picture superiority principle; decorative stock fails both checks at once |
+| Practical tools | Offer a downloadable template, checklist, or calculator where the topic genuinely supports one | Don't build it inline: flag the opportunity and hand off to `free-tool-strategy` |
 
-**Scoring:** after the checklist, give one overall read — how many of the
-eight checks the piece clearly passes — rather than a formal 1–10 score.
+**Scoring:** after the checklist, give one overall read, how many of the
+eight checks the piece clearly passes, rather than a formal 1–10 score.
 The number matters less than which specific checks are weak, since those
 are what determine the fix.
 
@@ -261,10 +261,10 @@ inconsistency.
 `Person` (author) + `Organization` (publisher) + `BreadcrumbList`. Include
 `dateModified` on `Article` for freshness re-crawl signals.
 
-- `FAQPage` — optional, only for pieces with visible FAQ content; an
+- `FAQPage`: optional, only for pieces with visible FAQ content; an
   entity and AI-citation signal, not a Google rich-result target on its
   own
-- `HowTo` — any step-by-step guide; include `step` and `instruction`
+- `HowTo`: any step-by-step guide; include `step` and `instruction`
   properties
 
 ## Platform differences (brief)
@@ -284,11 +284,11 @@ consensus serve SearchGPT.
 
 ## Visual assets for SEO/AEO content
 
-Cross-reference `behavioral-psychology.md` for the full detail — the two
+Cross-reference `behavioral-psychology.md` for the full detail; the two
 principles that matter most for this specific use case:
 - **Picture superiority / dual coding:** pair any process, comparison, or
   structural explanation with a real diagram or screenshot, never
-  decorative stock — paired image+text is remembered far better than
+  decorative stock, paired image+text is remembered far better than
   prose alone, and gives AI engines an additional extraction target
 - **Distinctive brand assets:** any chart, quote card, or pull-image
   should reuse the brand's established colour/shape/iconography system

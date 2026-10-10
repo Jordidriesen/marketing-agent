@@ -14,4 +14,4 @@ Describe the workflow or output you're after.
 What task does this remove or speed up?
 
 **Anything similar already in the repo?**
-Check the README table first — mention any skill this would overlap or compose with.
+Check the README table first: mention any skill this would overlap or compose with.

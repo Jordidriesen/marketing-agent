@@ -102,7 +102,7 @@ def concept_block(name, uri, aspect, brand, idx):
                    f"<div class='cap'>{s}px</div></div>")
     out.append("</div>")
     # pixel test
-    out.append("<h3>Pixel test — rendered at 16 / 32 / 48 px, enlarged</h3><div class='row pix'>")
+    out.append("<h3>Pixel test, rendered at 16 / 32 / 48 px, enlarged</h3><div class='row pix'>")
     for n, k in ((16, 8), (32, 4), (48, 3)):
         for bg in ("#ffffff", "#111111"):
             out.append(f"<div class='cell'><canvas data-src='{uri}' data-n='{n}' data-k='{k}' data-bg='{bg}'></canvas>"
@@ -131,7 +131,7 @@ def concept_block(name, uri, aspect, brand, idx):
     out.append("</div>")
     # contexts
     out.append("<h3>Contexts</h3><div class='row'>")
-    out.append(f"<div class='cell'><div class='tab'>{img(uri)}<span>{html.escape(name)} — Home</span>"
+    out.append(f"<div class='cell'><div class='tab'>{img(uri)}<span>{html.escape(name)}, Home</span>"
                f"<span style='margin-left:auto'>✕</span></div><div class='cap'>browser tab (16 px favicon)</div></div>")
     icon = (f"<div class='ico' style='background:{brand};display:flex;align-items:center;justify-content:center'>"
             f"{img(uri, h=28, w=30, cls='mono-white')}</div>")
@@ -210,10 +210,10 @@ def main():
             a.brand_color = max(cols, key=lambda c: colorsys.rgb_to_hls(*[v / 255 for v in svglib.hex_to_rgb(c)])[2])
             color_note = "taken from the logo"
         else:
-            a.brand_color, color_note = "#3a3a3a", "none given — neutral grey; pass --brand-color"
+            a.brand_color, color_note = "#3a3a3a", "none given: neutral grey; pass --brand-color"
     refs = list(a.refs)
 
-    body = [f"<header><h1>Logo test sheet — {html.escape(brand_name)}</h1>"
+    body = [f"<header><h1>Logo test sheet: {html.escape(brand_name)}</h1>"
             f"<div class='cap' style='text-align:left'>{len(items)} file(s) · brand colour {a.brand_color} ({color_note}). "
             f"Look critically; fix what fails, then re-run.</div>{CHECKLIST}</header><div class='wrap'>"]
     if len(items) > 1 or a.compare_only:
@@ -224,12 +224,12 @@ def main():
     if refs:
         body.append(shelf_block(items, refs))
     body.append("</div>")
-    doc = (f"<!doctype html><html lang='en'><head><meta charset='utf-8'><title>Logo test — {html.escape(brand_name)}</title>"
+    doc = (f"<!doctype html><html lang='en'><head><meta charset='utf-8'><title>Logo test, {html.escape(brand_name)}</title>"
            f"<meta name='viewport' content='width=device-width,initial-scale=1'><style>{CSS}</style></head>"
            f"<body>{''.join(body)}<script>{PIX_JS}</script></body></html>")
     with open(a.out, "w", encoding="utf-8") as fh:
         fh.write(doc)
-    print(f"wrote {a.out}  ({len(items)} logo(s), {len(refs)} reference(s)) — open it in a browser")
+    print(f"wrote {a.out}  ({len(items)} logo(s), {len(refs)} reference(s)), open it in a browser")
 
 
 if __name__ == "__main__":

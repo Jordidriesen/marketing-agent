@@ -5,14 +5,14 @@ before a redesign. Be specific, kind and useful: name what works, what doesn't, 
 
 ## Method
 
-1. **Understand the context first** — what the organisation does, for whom, what it should feel like. A logo can only
+1. **Understand the context first**: what the organisation does, for whom, what it should feel like. A logo can only
    be judged against its purpose. If unknown, ask one question or state assumptions.
-2. **First impression (2 seconds)** — what do you see, feel, and remember? What would a stranger call it?
-3. **Technical pass** — if an SVG is available, run `scripts/svg_audit.py` and `scripts/preview_sheet.py`, then look at
+2. **First impression (2 seconds)**: what do you see, feel, and remember? What would a stranger call it?
+3. **Technical pass**: if an SVG is available, run `scripts/svg_audit.py` and `scripts/preview_sheet.py`, then look at
    the preview. For a raster image, reason visually about the same checks.
-4. **Principles pass** — score each dimension below 1–5 with one-line evidence.
-5. **Prioritise** — the 3 changes with the biggest impact, most important first. Make each actionable.
-6. **Optionally demonstrate** — sketch the fix as an SVG revision when the user wants it.
+4. **Principles pass**: score each dimension below 1–5 with one-line evidence.
+5. **Prioritise**: the 3 changes with the biggest impact, most important first. Make each actionable.
+6. **Optionally demonstrate**: sketch the fix as an SVG revision when the user wants it.
 
 ## Scorecard
 
@@ -46,18 +46,18 @@ outweighs a high total.
 | Rounded rectangle looks pinched | Bone effect | Smooth curvature transitions |
 | Reversed version looks bold | Irradiation | Thin the white version slightly |
 | Fails on photos | No graphic device | Add an outline/container version |
-| Hidden meaning nobody sees | Too subtle or too complex | Make it a bonus, not the point — or simplify until it reads |
+| Hidden meaning nobody sees | Too subtle or too complex | Make it a bonus, not the point, or simplify until it reads |
 | Unfortunate reading | Designer blindness after long exposure | Change the offending shape; test with fresh eyes |
 
 ## Output format
 
 ```markdown
-## Logo critique — <name>
+## Logo critique: <name>
 **First impression:** <1–2 sentences>
 **What works:** <2–3 bullets>
 **Scorecard:** <table above, filled>
 **Top 3 changes (in priority order):**
-1. <change> — why, and how (specific: "open the counter of the e from 6 to 12 units")
+1. <change>; why, and how (specific: "open the counter of the e from 6 to 12 units")
 2. …
 3. …
 **Optional next step:** <offer a revised SVG / alternative directions>

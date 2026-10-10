@@ -5,7 +5,7 @@ Load this file when the input text is in Dutch.
 
 ---
 
-## Tier 1 — Harde verwijderingen (Dutch equivalents)
+## Tier 1: Harde verwijderingen (Dutch equivalents)
 
 | Patroon | Voorbeelden | Fix |
 |---|---|---|
@@ -16,7 +16,7 @@ Load this file when the input text is in Dutch.
 
 ---
 
-## Tier 2 — AI-woordenschat (Nederlands)
+## Tier 2: AI-woordenschat (Nederlands)
 
 **Werkwoorden:** benutten, inzetten (overmatig), optimaliseren, faciliteren, versterken,
 stimuleren, onderstrepen, onthullen, navigeren (figuurlijk), stroomlijnen, verbeteren,
@@ -36,13 +36,13 @@ het feit dat, teneinde (formeel/archaïsch)
 
 ---
 
-## Tier 3 — Structurele vertellers (Nederlands)
+## Tier 3: Structurele vertellers (Nederlands)
 
 | Patroon | Beschrijving |
 |---|---|
 | Belang-inflatie | "markeert een cruciaal moment", "onderstreept de essentiële rol", "weerspiegelt bredere trends", "staat als een bewijs van" |
-| Overbodige als-constructies | "fungeert als een...", "dient als een leidraad voor...", "staat als een voorbeeld van..." — vervangen door directe bewering |
-| Nominalisering-stacking | Zinnen vol abstracte zelfstandige naamwoorden: "de implementatie van de optimalisering van de werkprocessen" — herschrijven als actieve zin |
+| Overbodige als-constructies | "fungeert als een...", "dient als een leidraad voor...", "staat als een voorbeeld van...": vervangen door directe bewering |
+| Nominalisering-stacking | Zinnen vol abstracte zelfstandige naamwoorden: "de implementatie van de optimalisering van de werkprocessen", herschrijven als actieve zin |
 | Promotionele taal | "gelegen in het hart van", "levendige gemeenschap", "rijk cultureel erfgoed", "gastvrije omgeving" |
 | Vage bronvermelding | "Experts stellen", "Branchekenners merken op", "Sommige critici suggereren" zonder naam |
 | Uitdagingen-boilerplate | "Ondanks de typische uitdagingen van...", "Ondanks deze uitdagingen blijft X floreren" |
@@ -52,7 +52,7 @@ het feit dat, teneinde (formeel/archaïsch)
 
 ---
 
-## Tier 4 — Overgangen en vulwoorden (Nederlands)
+## Tier 4: Overgangen en vulwoorden (Nederlands)
 
 **Overgangswoorden om te snijden:**
 - "Bovendien", "Daarnaast", "Desalniettemin", "Dat gezegd hebbende", "Met dat in gedachten"
@@ -83,7 +83,7 @@ aanzienlijk, simpelweg, zeker, werkelijk, uiteindelijk, ongetwijfeld, zeer
 Nederlands klinkt vaak te formeel en omslachtig. Herschrijf naar kortere, directe zinnen.
 
 **Geen voorzichtig gekronkel.** Nederlandse lezers waarderen duidelijkheid. Weg met "zou
-kunnen worden beschouwd als", "lijkt te suggereren dat" — kies positie.
+kunnen worden beschouwd als", "lijkt te suggereren dat": kies positie.
 
 **Actieve constructies.** AI-Nederlands neigt naar passief en nominalisering. "De beslissing
 werd genomen om..." → "Ze besloten om..."
