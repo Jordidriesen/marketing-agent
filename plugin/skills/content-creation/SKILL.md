@@ -21,7 +21,8 @@ Each content type has its own skill, tuned to that format's actual process (web 
 | A single/one-off marketing email or newsletter | `newsletter-writer` |
 | A multi-email lifecycle sequence (onboarding, nurture, win-back, etc.) | `email-sequence-hubspot-brevo` |
 | A press release | `press-release-writer` |
-| Cold email, LinkedIn outreach messages or a sales battlecard | `cold-email-sequence`, `linkedin-outreach`, `battlecard` (via the `sales-enablement-specialist` agent) |
+| Cold email, LinkedIn outreach messages, replies to outreach, an account brief or an ABM plan | `cold-email-sequence`, `linkedin-outreach`, `reply-triage`, `account-brief`, `abm-plan` (via the `sdr-specialist` agent) |
+| A sales battlecard | `battlecard` (via the `sales-enablement-specialist` agent) |
 | Paid social or video ads (LinkedIn, Meta, YouTube, TikTok): hooks, variations, test set | `ad-creative-matrix` |
 | Google search ads (RSA headlines and descriptions) | `rsa-writer` |
 | Several of the above from one brief (a launch, a campaign) | Run each relevant specialist in turn, passing the shared inputs from Step 2 to each |

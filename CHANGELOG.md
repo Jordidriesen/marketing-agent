@@ -4,6 +4,14 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [2.5.0]
+
+- **`sdr-specialist` (new agent) and the `0-sdr` shortcut.** Outbound pipeline in one place: target account lists, account briefs, cold email and LinkedIn outreach drafts for a person to send, reply triage and ABM plans. Drafts and prepares only: it never sends, schedules, imports contacts or scrapes LinkedIn. It routes to the `scraper-*` suite for account lists when that suite is installed; the suite is not in this repo yet, so until it is, the agent works from a supplied list or asks for one.
+- **`account-brief`, `reply-triage` and `abm-plan` 1.0.0 (new).** `account-brief`: one page per target account with sourced, dated trigger events, the buying committee by role, ICP fit, the angle and the first touch. `reply-triage`: classifies real replies (adds data-rights requests, bounces, hostile and unclear to the cold email reply guide), drafts answers, lists stops, suppressions and resume dates, and writes handover notes for warm leads. `abm-plan`: tiers (one-to-one, one-to-few, one-to-many), buying committee, plays per tier across outreach, paid audiences, content and events, sales handover and account-level measurement.
+- **`sales-enablement-specialist` narrowed** to battlecards and material that equips the sales team. `cold-email-sequence` and `linkedin-outreach` move to `sdr-specialist`; the skills themselves are unchanged apart from two Related Skills lines each. `0-sales` description updated.
+- **`marketing-director`** routes outbound to `sdr-specialist`, runs `competitive-intel-analyst` first when accounts still need sourcing, and passes the account list to paid social. `content-creation` routing table split into outbound and battlecard rows.
+- Skill count is now 60 (plus 13 shortcuts) and the agent count twelve specialists plus the director.
+
 ## [2.4.0]
 
 - **Agent shortcuts in the plugin menu (12 new `0-` entries).** The Claude Desktop `/` menu lists a plugin's skills alphabetically and does not list its agents, so each agent now has a manual shortcut skill that sorts above the rest: `0-marketing` (director), `0-paid-ads`, `0-seo`, `0-content`, `0-social`, `0-email`, `0-creative`, `0-sales`, `0-intel`, `0-campaign`, `0-localise` and `0-report`. Each takes your request as its argument and runs it through the matching agent (`context: fork` with `agent:`). They are `disable-model-invocation: true`, so they never trigger on their own, and the 57 skills stay visible and auto-loadable. `0-marketing` does not fork: it tells the main thread to hand the request to the director. **Unverified:** menu sort order, digit-leading skill names, forking onto a plugin-scoped agent name, and a forked director dispatching specialists. Test after updating and report back.

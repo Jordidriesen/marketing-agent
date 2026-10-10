@@ -142,6 +142,8 @@ Deliver as a document the sender can edit (a Docs artifact, or markdown). Chat f
 
 ## Related Skills
 
+- `account-brief`: the sourced trigger and angle per account before you write.
+- `reply-triage`: sorting and answering the real replies once the sequence runs.
 - `linkedin-outreach`: the LinkedIn side of the same prospect. Coordinate the two so they do not hit the
   same person on the same day with the same message.
 - `battlecard`: competitor reframes and proof points.
