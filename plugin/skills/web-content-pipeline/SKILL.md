@@ -1,9 +1,9 @@
 ---
 name: web-content-pipeline
 metadata:
-  version: 1.2.0
-  history: "v1.2.0: no invented product facts. Features, integrations, compliance, service promises and proof come only from the brief, the brand kit or its product files; gaps become placeholders, and assumptions may cover format only."
-description: "Always use for any website copy, however short or fully specified: landing pages, homepages, product, solution, feature, pricing and about pages, a hero section, benefit blocks, CTAs, SEO or AEO blog posts. Not social posts or ebooks."
+  version: 1.2.1
+  history: "v1.2.1: derived capabilities and demo promises count as invented facts; description widened to copywriting and page design. v1.2.0: no invented product facts. Features, integrations, compliance, service promises and proof come only from the brief, the brand kit or its product files; gaps become placeholders, and assumptions may cover format only."
+description: "Always use for any website copy or copywriting, however short or fully specified: landing pages, homepages, product, solution, feature, pricing and about pages, page design and page copy work, a hero section, benefit blocks, CTAs, SEO or AEO blog posts. Not social posts or ebooks."
 ---
 
 # Web Content Pipeline
@@ -27,6 +27,16 @@ brand kit (`context.md`, `voice.md`) or the brand's product files (`products/<sl
 - **Compliance and security claims** (GDPR, ISO, NIS2, data location)
 - **Service promises** (setup support, response times, free trial terms, "no obligation")
 - **Proof** (statistics, customer names, logos, testimonials, awards, ratings)
+- **Derived capabilities and promises**: anything implied by a feature category but not stated, such as
+  zones, areas or permissions detail, multi-site support, mobile access, "records" or reports, who
+  builds or supports the product, or what a demo, call or trial will contain or tailor ("we'll show
+  you your site"). A call to action may only name the action ("Book a demo"); anything about what
+  happens next is a placeholder unless the brief says it.
+
+Write the benefit from the literal brief statement only. If the brief says "cloud visitor management and
+access control", the copy may say that and the plain consequence of the words (it runs in the cloud, it
+registers visitors, it controls access), and nothing more specific. Audience and segment details from the
+request (for example "mid-sized warehouses", "facility managers") are fine to use.
 
 When the page needs something you do not have, write the benefit at the level the brief supports
 ("see who is on site, live" if the brief says live visibility) or insert a labelled placeholder:
