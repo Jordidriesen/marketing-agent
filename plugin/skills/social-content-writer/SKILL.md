@@ -1,6 +1,6 @@
 ---
 name: social-content-writer
-description: "Writes organic social posts for LinkedIn, Instagram, X or Reddit, platform by platform: hook, structure, hashtags, CTA. Use for \"LinkedIn post\", \"company post\", \"social post\", \"Instagram caption\", \"tweet\". Not paid ads (ad-creative-matrix)."
+description: "Always use for any organic social post, however short: LinkedIn, Instagram, X or Reddit, with hook, structure, hashtags and CTA per platform. Use for \"LinkedIn post\", \"company post\", \"caption\", \"tweet\". Not paid ads (ad-creative-matrix)."
 ---
 
 # Social Content Writer

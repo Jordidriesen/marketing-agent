@@ -1,6 +1,6 @@
 ---
 name: customer-story-writer
-description: "Writes B2B customer stories and case studies from a brief or interview: challenge, solution, results. Uses only facts and quotes the user supplied, never invents. Use for \"case study\", \"customer story\", \"success story\", \"win story\"."
+description: "Always use for any B2B customer story or case study, however short: writes it strictly from the supplied brief or interview, never adds facts, context or quotes. Use for \"case study\", \"customer story\", \"success story\", \"win story\"."
 metadata:
   version: 1.2.0
   history: >
@@ -272,7 +272,11 @@ Before the clean pass, audit the draft line by line:
 3. Delete or rewrite every statement with no match. Do not keep it as an "assumption"; remove it.
 4. Re-read the remaining draft for sentences that imply something new (a consequence, a feeling, a scale) and cut those too.
 
-Deliver the result as a compact table after the draft: `Statement | Source in brief`. Every row must have a source. If the table has a row with no source, the draft is not finished.
+5. Apply every fix to the draft itself, then rebuild the table from the fixed draft.
+
+Deliver the result as a compact table after the draft: `Statement | Source in brief`. Every row must have a source. **Never deliver a table that contains an unsourced row, a "delete this" or "would fix" note: fix the draft first.** Closing lines and summaries count too: a flourish such as "and now it isn't" that restates nothing from the brief is cut.
+
+If the brief supports fewer words than the requested length, deliver the shorter story and say why in one line. Never pad to reach a length.
 
 ---
 

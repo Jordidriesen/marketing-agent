@@ -2,7 +2,7 @@
 name: web-content-pipeline
 metadata:
   version: 1.1.0
-description: "Writes or rewrites any website copy: landing pages, homepages, product, solution, feature, pricing and about pages, hero sections, benefit blocks, CTAs, and SEO or AEO blog posts. Use for any page a site visitor reads. Not social posts or ebooks."
+description: "Always use for any website copy, however short or fully specified: landing pages, homepages, product, solution, feature, pricing and about pages, a hero section, benefit blocks, CTAs, SEO or AEO blog posts. Not social posts or ebooks."
 ---
 
 # Web Content Pipeline
