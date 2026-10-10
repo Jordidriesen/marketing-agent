@@ -132,6 +132,7 @@ Deliver as a document the sender can edit (a Docs artifact, or markdown). Chat f
 ## Rules
 
 - **Never send, schedule or import.** Draft only.
+- **Never imply experience the sender has not stated**: no "teams often tell me", "what I see at other sites", "most of our customers" or similar, unless the user supplied it.
 - **Never invent** a personalisation, a customer, a result, a deadline or a mutual connection.
 - **No deception**: no fake replies or forwards, no false urgency, no hidden sender, no misleading
   subject.

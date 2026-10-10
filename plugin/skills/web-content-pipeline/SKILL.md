@@ -1,7 +1,8 @@
 ---
 name: web-content-pipeline
 metadata:
-  version: 1.1.0
+  version: 1.2.0
+  history: "v1.2.0: no invented product facts. Features, integrations, compliance, service promises and proof come only from the brief, the brand kit or its product files; gaps become placeholders, and assumptions may cover format only."
 description: "Always use for any website copy, however short or fully specified: landing pages, homepages, product, solution, feature, pricing and about pages, a hero section, benefit blocks, CTAs, SEO or AEO blog posts. Not social posts or ebooks."
 ---
 
@@ -16,6 +17,23 @@ differs by page type is the template in Step 4, not the process around it.
 
 **Scope:** Web content only. Not social media (separate skill). Not
 print/downloadable content like ebooks or whitepapers.
+
+## Non-negotiable: no invented product facts
+
+Every factual statement about the product, the company or its customers must come from the brief, the
+brand kit (`context.md`, `voice.md`) or the brand's product files (`products/<slug>.md`). That covers:
+
+- **Features and capabilities** (QR check-in, inductions, integrations, automation, retention settings)
+- **Compliance and security claims** (GDPR, ISO, NIS2, data location)
+- **Service promises** (setup support, response times, free trial terms, "no obligation")
+- **Proof** (statistics, customer names, logos, testimonials, awards, ratings)
+
+When the page needs something you do not have, write the benefit at the level the brief supports
+("see who is on site, live" if the brief says live visibility) or insert a labelled placeholder:
+`[FEATURE NEEDED: how drivers check in]`, `[PROOF NEEDED: customer quote or metric]`. Never write an
+assumed feature as copy, and never move it into an "assumptions" note instead: an assumption list may
+cover format only (tone, length, language, CTA wording), never facts. Before delivery, re-read the copy
+and remove or placeholder every product claim you cannot point to in the sources.
 
 **Formerly two skills** (`web-content-pipeline` for blog posts,
 `copywriting` for landing/product/solution pages): merged because the

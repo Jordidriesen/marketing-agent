@@ -103,6 +103,7 @@ Chat framing stays short. Deliver as a short document or a markdown block the se
 
 - **Never automate** sending, connecting, profile viewing or data collection. Never scrape.
 - **Never invent** a shared connection, a post the sender has not read, a result or a customer.
+- **Never imply experience the sender has not stated**: no "teams often tell me", "what I see at other sites", "most of our customers" or similar, unless the user supplied it.
 - **Never infer or mention personal attributes** (health, age, family, beliefs, nationality).
 - **No pitch in the first message.** No pressure. Respect a "no" or silence.
 - No em dashes. No emoji unless the sender's voice uses them.
