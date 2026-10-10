@@ -111,6 +111,8 @@ Chat framing stays short. Deliver as a short document or a markdown block the se
 
 ## Related Skills
 
+- `account-brief`: the sourced trigger and angle per account before you write.
+- `reply-triage`: sorting and answering the real replies once messages go out.
 - `cold-email-sequence`: the email side of outbound. Coordinate the two.
 - `battlecard`: competitor reframes if the prospect already uses a rival.
 - `social-content-writer`: feed posts, which also warm a prospect indirectly.

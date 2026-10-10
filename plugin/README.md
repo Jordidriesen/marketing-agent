@@ -2,7 +2,7 @@
 
 A marketing team of subagents for Claude, built by [Jordi Driesen](https://github.com/Jordidriesen) for Cowork and Claude Code. A director dispatches each request to the right specialist and sequences multi-discipline campaigns in dependency order, rather than running everything at once.
 
-**One install, agents and skills together.** As of 2.0.0 the plugin ships its 57 skills (plus 12 `0-` agent shortcuts, see below) in [`skills/`](skills) alongside the agents, so the two can't drift apart. Only client brand kits live outside it: each brand gets a private `[brand]-brand-kit` skill that every content, review and design skill loads automatically (see [`templates/brand-kit`](../templates/brand-kit)).
+**One install, agents and skills together.** As of 2.0.0 the plugin ships its 60 skills (plus 13 `0-` agent shortcuts, see below) in [`skills/`](skills) alongside the agents, so the two can't drift apart. Only client brand kits live outside it: each brand gets a private `[brand]-brand-kit` skill that every content, review and design skill loads automatically (see [`templates/brand-kit`](../templates/brand-kit)).
 
 ## Installation
 
@@ -28,7 +28,8 @@ Talk to `marketing-director` for anything that spans more than one discipline; i
 | 3 | [`email-marketer`](agents/email-marketer.md) | Newsletters and lifecycle sequences (HubSpot or Brevo) | `newsletter-writer`, `email-sequence-hubspot-brevo`, `brand-review` |
 | 3 | [`creative-specialist`](agents/creative-specialist.md) | Creative direction and assets on approved copy | `creative-brief`, `frontend-design`, `canva-workflow`, `figma-weavy-workflow`, `logo-design`, `launch-video` |
 | 3 | [`performance-marketer`](agents/performance-marketer.md) | Google Ads end to end | the Google Ads skills, `paid-ads-report-writer` |
-| 3 | [`sales-enablement-specialist`](agents/sales-enablement-specialist.md) | Battlecards, cold email and LinkedIn outreach drafts for a person to send | `battlecard`, `cold-email-sequence`, `linkedin-outreach`, `brand-review` |
+| 3 | [`sdr-specialist`](agents/sdr-specialist.md) | Outbound pipeline: account lists, account briefs, cold email and LinkedIn outreach drafts for a person to send, reply triage, ABM plans | `account-brief`, `cold-email-sequence`, `linkedin-outreach`, `reply-triage`, `abm-plan`, the scraper suite when installed |
+| 3 | [`sales-enablement-specialist`](agents/sales-enablement-specialist.md) | Battlecards and other material that equips the sales team | `battlecard`, `brand-review` |
 | 3.5 | [`localization-specialist`](agents/localization-specialist.md) | Target-language versions of signed-off content (NL, FR, DE, ES) | `content-translate`, `brand-review` |
 | 4 | [`performance-reporter`](agents/performance-reporter.md) | Cross-channel reporting once execution is live | `paid-ads-report-writer`, `metric-detective` |
 
@@ -71,7 +72,7 @@ Every content, review, design and localisation skill identifies the brand and lo
 
 ## Agent shortcuts
 
-Open the `/` menu, choose Plugins, then Marketing Agent. The twelve `0-` entries sort above the skills and each runs your request through one agent. Type your request after the name.
+Open the `/` menu, choose Plugins, then Marketing Agent. The thirteen `0-` entries sort above the skills and each runs your request through one agent. Type your request after the name.
 
 | Entry | Agent |
 |---|---|
@@ -82,13 +83,14 @@ Open the `/` menu, choose Plugins, then Marketing Agent. The twelve `0-` entries
 | `0-social` | social-media-specialist |
 | `0-email` | email-marketer |
 | `0-creative` | creative-specialist |
+| `0-sdr` | sdr-specialist |
 | `0-sales` | sales-enablement-specialist |
 | `0-intel` | competitive-intel-analyst |
 | `0-campaign` | campaign-strategist |
 | `0-localise` | localization-specialist |
 | `0-report` | performance-reporter |
 
-They are manual only (`disable-model-invocation: true`), so Claude never picks them by itself; the 57 skills still load automatically in a normal chat. The shortcuts depend on how the Claude Code and Desktop menus sort and fork, which has not been tested here. If an entry does not sort first or does not run, `@agent-marketing-agent:<name>` still calls the agent directly.
+They are manual only (`disable-model-invocation: true`), so Claude never picks them by itself; the 60 skills still load automatically in a normal chat. The shortcuts depend on how the Claude Code and Desktop menus sort and fork, which has not been tested here. If an entry does not sort first or does not run, `@agent-marketing-agent:<name>` still calls the agent directly.
 
 ## Connectors
 
