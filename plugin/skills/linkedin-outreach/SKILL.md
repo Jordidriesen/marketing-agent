@@ -1,8 +1,8 @@
 ---
 name: linkedin-outreach
 metadata:
-  version: '1.1.0'
-  history: "v1.1.0: no call or meeting request in the connection note or the first message after acceptance; the first ask comes only after the prospect has engaged. v1.0.0: new skill. Drafts LinkedIn connection notes, first messages, follow-ups, comment-first warm-ups and InMail for a person to send by hand, in the sender's voice. No automation, no scraping.\n"
+  version: '1.2.0'
+  history: "v1.2.0: conversational ask-first gate; no drafts while the post, the sender voice or the relationship is missing. v1.1.0: no call or meeting request in the connection note or the first message after acceptance; the first ask comes only after the prospect has engaged. v1.0.0: new skill. Drafts LinkedIn connection notes, first messages, follow-ups, comment-first warm-ups and InMail for a person to send by hand, in the sender's voice. No automation, no scraping.\n"
 description: "Always use for LinkedIn messages to a prospect: connection notes, first messages, follow-ups, InMail, sent by hand in the sender's voice, no pitch or call ask early. Use for \"LinkedIn outreach\", \"connection request\", \"LinkedIn DM\". Not feed posts."
 argument-hint: "<who you are messaging (role, company), the sender, the goal, and any profile text or trigger you can paste>"
 ---
@@ -39,7 +39,16 @@ requests, messages, profile visits or data collection, and you never scrape.
 - **Language and market.** Belgian Dutch for Flemish prospects, written as a Fleming would write it.
 - **Any related email outreach** to the same prospect, so the two do not collide.
 
-If the goal is unclear, ask one question before drafting.
+### Gate: talk first, draft second
+
+Before drafting, check you have: what the prospect's post or profile actually says (pasted text, not a
+summary of your guess), whether the sender has read it, the sender's own voice (a few lines of their
+writing, or a voice file), and the relationship. If any is missing, **do not draft**. Reply like a
+colleague would: one or two friendly sentences, then 2 to 4 short questions, nothing else. No messages
+with `[brackets]`, no list of assumptions standing in for answers, no "here is a version you can adapt".
+Only a sender who explicitly says to draft anyway changes this: then every gap is a bracket in the
+message, and nothing is implied about the post, the incident or the sender's experience. Once they
+answer, draft; keep the conversation going for edits.
 
 ## Step 0: Load the brand and the sender voice
 

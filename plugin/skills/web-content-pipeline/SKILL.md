@@ -1,8 +1,8 @@
 ---
 name: web-content-pipeline
 metadata:
-  version: 1.2.1
-  history: "v1.2.1: derived capabilities and demo promises count as invented facts; description widened to copywriting and page design. v1.2.0: no invented product facts. Features, integrations, compliance, service promises and proof come only from the brief, the brand kit or its product files; gaps become placeholders, and assumptions may cover format only."
+  version: 1.3.0
+  history: "v1.3.0: ask-first gate for missing brand, action, audience or product facts; visible page type, framework and brand kit lines; proof placeholders inside the copy. v1.2.1: derived capabilities and demo promises count as invented facts; description widened to copywriting and page design. v1.2.0: no invented product facts. Features, integrations, compliance, service promises and proof come only from the brief, the brand kit or its product files; gaps become placeholders, and assumptions may cover format only."
 description: "Always use for any website copy or copywriting, however short or fully specified: landing pages, homepages, product, solution, feature, pricing and about pages, page design and page copy work, a hero section, benefit blocks, CTAs, SEO or AEO blog posts. Not social posts or ebooks."
 ---
 
@@ -162,11 +162,24 @@ single default tone this skill can assume. Before drafting anything:
 | Tone (only if no brand kit exists) | professional / casual / technical |
 | Competitor URLs or top-ranking posts | if known |
 
-If any field is missing, ask before writing.
+### Gate: ask before writing, never assume
+
+If the brand, the primary action, the target audience, or the product facts the page needs (what it does,
+what makes it different, what proof exists) are missing from the brief, the brand kit and the product
+files, **stop and ask**. Reply with 2 to 5 short, specific questions, nothing else: no draft, no copy
+with placeholders, no list of assumptions standing in for answers. Say what you will do once they
+answer. Only a user who explicitly says to proceed with gaps changes this: then write, with every gap
+as a placeholder in the copy itself. Format-only choices (tone, language, length) may default, and you
+say which default you used.
 
 ---
 
 ## Step 4: Write to Page-Type Template
+
+Open the reply with three lines, so the process is visible: **Page type and intent**, **Framework**
+(StoryBrand or PAS, and the copy must actually follow its sequence), **Brand kit** (loaded, or none
+found and the generic voice used). Proof the page needs but the brief lacks (customers, numbers,
+quotes) is a `[PROOF NEEDED: ...]` placeholder in the copy where it would sit, not only in a note.
 
 ### Writing style rules (apply to every page type)
 
