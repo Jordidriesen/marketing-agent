@@ -2,8 +2,9 @@
 name: newsletter-writer
 description: "Writes one marketing email or newsletter: announcement, update, promotion or roundup, with subject lines and preview text. Use for \"newsletter\", \"announcement email\", \"promo email\". Multi-email flows: email-sequence-hubspot-brevo."
 metadata:
-  version: 1.2.0
+  version: 1.2.1
   history: >
+    v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline.
     v1.2.0: content-references files renamed and merged; references to them updated.
     v1.1: added a structural-framework step (Step 3) citing
     content-references/references/content-briefing.md, a one-off
@@ -15,6 +16,8 @@ metadata:
 # Newsletter Writer
 
 Drafts one standalone marketing email, not a lifecycle sequence.
+
+**Required skill calls.** After drafting, call `copy-editing` and `ai-content-cleaner` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips either is not finished. End the reply with one line: `Skills run: ...`.
 
 **Scope:** A single send: an announcement, product update, promotion, or content roundup. For a multi-email onboarding/nurture/re-engagement/win-back flow with branching logic, use `email-sequence-hubspot-brevo` instead.
 

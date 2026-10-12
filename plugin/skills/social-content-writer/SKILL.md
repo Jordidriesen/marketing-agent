@@ -2,13 +2,15 @@
 name: social-content-writer
 description: "Always use for any organic social post, however short: LinkedIn, Instagram, X or Reddit, with hook, structure, hashtags and CTA per platform. Use for \"LinkedIn post\", \"company post\", \"caption\", \"tweet\". Not paid ads (ad-creative-matrix)."
 metadata:
-  version: 1.2.0
-  history: "v1.2.0: platform rules moved to references/ (one file per platform), read on demand in Step 6. v1.1.0: content-references files renamed and merged; references to them updated."
+  version: 1.2.1
+  history: "v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.2.0: platform rules moved to references/ (one file per platform), read on demand in Step 6. v1.1.0: content-references files renamed and merged; references to them updated."
 ---
 
 # Social Content Writer
 
 Drafts ready-to-post social copy, one platform at a time or several at once, in the right brand voice: built around Instagram, LinkedIn, Reddit, and X, since each has its own algorithm behavior, format expectations, and (for Reddit especially) its own social contract around self-promotion.
+
+**Required skill calls.** After drafting, call `copy-editing` and `ai-content-cleaner` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips either is not finished. End the reply with one line: `Skills run: ...`.
 
 **Scope:** A single post or a short batch of posts for one topic/announcement. Not paid ads (`ad-creative-matrix` writes those). Not a content calendar (`campaign-plan` plans that) and not the underlying web content being promoted (`web-content-pipeline` / `customer-story-writer` write that).
 

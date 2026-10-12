@@ -4,6 +4,20 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [2.6.1]
+
+Library and agent optimisation pass, each change measured before and after with the eval tools. No skills were merged: the real skills share little text (at most 12% between any two), so merging them would add a router and an extra read per use for a small saving in the skill listing.
+
+- **Agent descriptions trimmed** from 18.9k to 5.2k characters in total, which is about 3.4k tokens saved in every session where the plugin is installed. The long example blocks are gone; each description keeps its one routing sentence. Routing check on 12 realistic requests that name no agent, 2 runs each: 22 of 24 correct before, **24 of 24** after.
+- **Required skill calls in 14 more skills** (`social-content-writer`, `newsletter-writer`, `press-release-writer`, `rsa-writer`, `ad-copy-tester`, `ad-creative-matrix`, `battlecard`, `cold-email-sequence`, `content-research-orchestrator`, `content-translate`, `disapproval-diagnoser`, `email-sequence-hubspot-brevo`, `figma-weavy-workflow`, `launch-video`): the follow-up skills (`copy-editing`, `ai-content-cleaner`, `brand-review`) are called through the Skill tool, never imitated inline. Four skills tested: follow-up skills were called in **8 of 8 runs, against 0 of 9** before. The cost of following the skills is real: a LinkedIn post went from about 3.3k to 13.3k tokens loaded, because `copy-editing` and the cleaner now run.
+- **`social-content-writer` 1.2.1:** platform rules moved to one file per platform, read on demand (13.2 kB to 8.5 kB plus the one platform file read; output unchanged).
+- **`european-market-intelligence` 1.1.0:** the six workflows moved to `references/`, read on demand (23.5 kB to 14.5 kB plus the workflow read). The agent also reads the data-sources reference more consistently now, so a market sizing run loads about the same in total (about 7.6k tokens against 7.0k).
+- **Agent skill ownership:** `performance-marketer` now owns `sea-keyword-research`, and `content-writer` owns `lead-magnets` and `free-tool-strategy`. Before, no agent named them.
+- **`free-tool-strategy` 1.1.1:** removed the reference to a missing file.
+- **Evals:** 12 routing cases, plus `social-linkedin`, `press-release`, `newsletter`, `rsa` and `emi-sizing`.
+
+Not done, with reasons: the ai-content-cleaner (27 kB, now two thirds of most runs) has only about 8% that is on demand, so a real saving needs a short-form mode and its own eval first; the marketing director still works only as the main agent, and making it the default needs a decision (see the PR notes).
+
 ## [2.6.0]
 
 Phase 2 of the web content library clean-up: restructure for load efficiency. Measured before and after with the new `evals/tools/loadreport.py`; no new capability.

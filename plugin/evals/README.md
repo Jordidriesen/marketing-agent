@@ -33,6 +33,18 @@ Both call the `sdr-specialist` agent.
 - **needs-input:** the brief is missing the product, audience and sender. The agent should come back with questions and write no email.
 - **cold-email:** a complete brief. Checks that `cold-email-sequence` ran, the compliance gate is respected, claims stay inside the brief, the closing `Skills run:` line is present, and no LinkedIn text appears.
 
+## routing-*
+
+Twelve realistic requests that name no agent, each checking that the right specialist is called. Used to test that shorter agent descriptions still route correctly.
+
+## social-linkedin, press-release, newsletter, rsa
+
+Check that the skill fires and that its follow-up skills (`copy-editing`, `ai-content-cleaner`) are actually called through the Skill tool, and for the LinkedIn post that the platform rules are followed.
+
+## emi-sizing
+
+Forces `european-market-intelligence` on a market sizing request and checks which reference files are read.
+
 ## solution-page
 
 A trigger check only: does `web-content-pipeline` fire on a request for a solution page.

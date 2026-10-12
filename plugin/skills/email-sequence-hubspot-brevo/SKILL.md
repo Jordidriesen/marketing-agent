@@ -2,8 +2,9 @@
 name: email-sequence-hubspot-brevo
 description: "Builds multi-email sequences (onboarding, nurture, re-engagement, win-back, launch) for HubSpot Workflows or Brevo Automation: copy, timing, branching, exit rules, build steps. Use for \"email sequence\", \"drip\", \"nurture flow\". Cold outbound: cold-email-sequence."
 metadata:
-  version: 1.2.0
+  version: 1.2.1
   history: >
+    v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline.
     v1.2.0: content-references files renamed and merged; references to them updated.
     v1.1.1: history note no longer names the removed pointer file.
     v1.1: wired into content-references. The sequence arc (Step 1) and the
@@ -18,6 +19,8 @@ metadata:
 # Email Sequence Builder: HubSpot & Brevo
 
 Design and draft complete email sequences with full copy, timing, branching logic, and performance benchmarks, then translate the whole thing into the exact steps, menu names, and terminology of either **HubSpot Workflows** or **Brevo Automation**, so it can be built in the platform without re-interpreting anything.
+
+**Required skill calls.** After drafting, call `ai-content-cleaner` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips it is not finished. End the reply with one line: `Skills run: ...`.
 
 ## Trigger
 

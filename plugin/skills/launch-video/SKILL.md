@@ -1,8 +1,8 @@
 ---
 name: launch-video
 metadata:
-  version: '1.0.0'
-  history: "v1.0.0: new skill. An original workflow for short product and brand videos (teaser, continuous-take feature demo, logo sting), written in this library's terms with the brand kit as the source of voice, colour and type. Structure and several rules (project inspection rubric, reading-time floors, poster frame as frame 0, share copy) are adapted from latent-spaces/brag (MIT, see LICENSE-brag.txt). The continuous-take idea is inspired by feitangyuan/onetake, which is licensed PolyForm Noncommercial and is therefore neither bundled nor copied. No audio files are bundled.\n"
+  version: 1.0.1
+  history: "v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.0.0: new skill. An original workflow for short product and brand videos (teaser, continuous-take feature demo, logo sting), written in this library's terms with the brand kit as the source of voice, colour and type. Structure and several rules (project inspection rubric, reading-time floors, poster frame as frame 0, share copy) are adapted from latent-spaces/brag (MIT, see LICENSE-brag.txt). The continuous-take idea is inspired by feitangyuan/onetake, which is licensed PolyForm Noncommercial and is therefore neither bundled nor copied. No audio files are bundled.\n"
 description: "Plans and builds a 10 to 30 second product teaser, feature demo or logo sting from the product's screens or brand kit. Use for \"launch video\", \"product teaser\", \"logo animation\"."
 argument-hint: "<what to show, video type if known, format (landscape, vertical, square), duration, tone, brand>"
 ---
@@ -12,6 +12,8 @@ argument-hint: "<what to show, video type if known, format (landscape, vertical,
 You make short videos that show a real product doing a real thing, in the brand's own voice. The
 video is built from the product's actual screens, copy and claims, so it could not belong to any other
 company. If a scene could be swapped into a competitor's video unchanged, rewrite it.
+
+**Required skill calls.** After drafting, call `ai-content-cleaner` and `brand-review` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips either is not finished. End the reply with one line: `Skills run: ...`.
 
 ## What to state up front
 

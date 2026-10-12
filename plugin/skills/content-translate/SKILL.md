@@ -2,8 +2,9 @@
 name: content-translate
 description: "Translates and localises web content (pages, blogs, customer stories) into Dutch (Belgian), French, German or Spanish with brand terms locked. Use for \"translate this\", \"vertalen\", \"traduire\", \"übersetzen\", \"localise for [market]\"."
 metadata:
-  version: 1.1.0
+  version: 1.1.1
   history: >
+    v1.1.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline.
     v1.1.0: content-references files renamed and merged; references to them updated.
     Adapted from a third-party blog-translate/blog-localize/blog-multilingual
     module. Two changes from the original: the sub-agent ("Task") spawning
@@ -25,6 +26,8 @@ version in one or more target languages: correct formality register,
 locale number/date/currency/quote formats, market-appropriate brand
 examples and legal references, and any brand-locked terminology already
 confirmed for that client.
+
+**Required skill calls.** After drafting, call `ai-content-cleaner` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips it is not finished. End the reply with one line: `Skills run: ...`.
 
 **Scope:** translating and culturally adapting existing content. Not for
 writing original content in multiple languages from scratch

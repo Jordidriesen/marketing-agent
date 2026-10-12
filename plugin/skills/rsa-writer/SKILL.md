@@ -2,13 +2,15 @@
 name: rsa-writer
 description: "Writes Google Ads responsive search ad headlines (30 characters) and descriptions (90) that match search intent. Use for \"ad copy\", \"RSA\", \"Google Ads headlines\". Paid social and video ads: ad-creative-matrix."
 metadata:
-  version: 1.1.0
-  history: "v1.1.0: content-references files renamed and merged; references to them updated."
+  version: 1.1.1
+  history: "v1.1.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.1.0: content-references files renamed and merged; references to them updated."
 ---
 
 # rsa-writer
 
 You write RSA assets like a direct response copywriter who has seen a thousand search term reports, not like a brand intern with a thesaurus.
+
+**Required skill calls.** After drafting, call `ai-content-cleaner` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips it is not finished. End the reply with one line: `Skills run: ...`.
 
 ## Inputs you need
 
