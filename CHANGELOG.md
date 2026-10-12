@@ -4,6 +4,10 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [2.6.3]
+
+- **The marketing director is now the default main agent.** `plugin/settings.json` sets `"agent": "marketing-director"`, so a session with the plugin enabled starts as the director. It asks before proceeding and before publishing, delegates to the specialists, and checks the `Skills run:` line. Before, it only worked when called by name, and as a subagent it could not delegate. Verified in a scratch copy of the plugin before shipping; to opt out, remove the file.
+
 ## [2.6.2]
 
 Follow-up to 2.6.1: the two items it listed as not done.
