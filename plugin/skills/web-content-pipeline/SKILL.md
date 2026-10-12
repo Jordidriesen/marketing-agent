@@ -1,8 +1,8 @@
 ---
 name: web-content-pipeline
 metadata:
-  version: 1.3.0
-  history: "v1.3.0: ask-first gate for missing brand, action, audience or product facts; visible page type, framework and brand kit lines; proof placeholders inside the copy. v1.2.1: derived capabilities and demo promises count as invented facts; description widened to copywriting and page design. v1.2.0: no invented product facts. Features, integrations, compliance, service promises and proof come only from the brief, the brand kit or its product files; gaps become placeholders, and assumptions may cover format only."
+  version: 1.4.0
+  history: "v1.4.0: Steps 5 and 6 must be invoked through the Skill tool and reported; PAS and StoryBrand problem steps may state general audience pain; proof placeholders inline. v1.3.0: ask-first gate for missing brand, action, audience or product facts; visible page type, framework and brand kit lines; proof placeholders inside the copy. v1.2.1: derived capabilities and demo promises count as invented facts; description widened to copywriting and page design. v1.2.0: no invented product facts. Features, integrations, compliance, service promises and proof come only from the brief, the brand kit or its product files; gaps become placeholders, and assumptions may cover format only."
 description: "Always use for any website copy or copywriting, however short or fully specified: landing pages, homepages, product, solution, feature, pricing and about pages, page design and page copy work, a hero section, benefit blocks, CTAs, SEO or AEO blog posts. Not social posts or ebooks."
 ---
 
@@ -38,9 +38,18 @@ access control", the copy may say that and the plain consequence of the words (i
 registers visitors, it controls access), and nothing more specific. Audience and segment details from the
 request (for example "mid-sized warehouses", "facility managers") are fine to use.
 
+**The framework still applies.** PAS and StoryBrand need a problem. The Problem and Agitate steps (and
+StoryBrand's "problem") may describe the audience's general situation and pain in plain terms, because
+that is the reader's world and not a product claim. They may not state product features, proof, numbers,
+named incidents or promises beyond the brief. Keep the section labels (Problem, Agitate, Solution, or
+the StoryBrand beats) visible in your reply so the sequence can be checked. Outcomes that follow
+directly from a stated feature are allowed ("the host is notified when a visitor arrives").
+
 When the page needs something you do not have, write the benefit at the level the brief supports
 ("see who is on site, live" if the brief says live visibility) or insert a labelled placeholder:
-`[FEATURE NEEDED: how drivers check in]`, `[PROOF NEEDED: customer quote or metric]`. Never write an
+`[FEATURE NEEDED: how drivers check in]`, `[PROOF NEEDED: customer quote or metric]`. Put a proof
+placeholder inline, where the proof would sit (for example under the hero or a benefit), not in a
+separate section, so the page keeps its hero, three benefits and one primary call to action. Never write an
 assumed feature as copy, and never move it into an "assumptions" note instead: an assumption list may
 cover format only (tone, length, language, CTA wording), never facts. Before delivery, re-read the copy
 and remove or placeholder every product claim you cannot point to in the sources.
@@ -353,7 +362,8 @@ of, not in addition to, the checklist above.
 
 ## Step 5: Copy Edit
 
-Run the `copy-editing` skill (Seven Sweeps) on the Step 4 draft. Two
+**Not optional, and not done in your head.** Invoke the `copy-editing` skill through the Skill tool on the
+Step 4 draft. Two
 cross-checks layer on top of that skill's own process:
 
 - **Clarity sweep** also flags AEO violations on blog posts: an unclear
@@ -367,12 +377,16 @@ cross-checks layer on top of that skill's own process:
 
 ## Step 6: Humanize
 
-Run the `ai-content-cleaner` skill. Use
+**Not optional.** Invoke the `ai-content-cleaner` skill through the Skill tool. Use
 **BALANCED mode** for blog posts and any page with FAQ/comparison-table
 structure worth protecting; **CLEAN mode** is fine for a short landing
 page with no structured elements to preserve. Before handoff, note which
 structures are intentional (bolded inline headers, declarative Hook
 openings, comparison tables) so nothing gets stripped by mistake.
+
+**Deliver only after Steps 5 and 6.** End the reply with a line that lists which skills you ran
+(`copy-editing`, `ai-content-cleaner`) and anything you could not run and why. A draft that skipped
+either step is not finished.
 
 Worth reaching for during this pass: one honest, specific limitation,
 stated once, after the page has established competence (the pratfall
