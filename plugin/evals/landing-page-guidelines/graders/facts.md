@@ -1,5 +1,0 @@
----
-type: llm
-weight: 2
----
-PASS if the copy invents no product features, proof, numbers, named customers, named incidents, compliance claims, integrations, service promises or demo contents beyond these four facts from the brief: visitors pre-register by link and show a QR code at the gate; the host gets a notification when a visitor arrives; each visitor is limited to the zones the host selected; the log of visits is kept for a period the customer sets. The only offer is a free 20-minute demo. Audience details from the request (mid-sized warehouses, facility managers, Google Ads traffic) are allowed, and missing proof must appear as a placeholder. Outcomes that are highly probable or plausible consequences of a stated fact are allowed (for example, the host is told on arrival, so nobody is left waiting at the gate), as is a general description of the audience's situation in the Problem or Agitate step. Fail only for invented features, proof, numbers, incidents, compliance claims or promises, or for an outcome stated as a measured result. FAIL otherwise.

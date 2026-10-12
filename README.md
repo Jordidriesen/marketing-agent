@@ -99,7 +99,6 @@ See [`plugin/README.md`](plugin/README.md) for each agent's role and the order a
 |---|---|
 | `battlecard` | One-page sales card on one competitor: where we win and lose, landmines, objection responses, source-tagged |
 | `cold-email-sequence` | Cold B2B email sequence drafted for a person to send, with a compliance gate, personalisation fields and a reply guide |
-| `linkedin-outreach` | LinkedIn connection notes, messages and follow-ups drafted for manual sending |
 
 ### Content writing and editing
 

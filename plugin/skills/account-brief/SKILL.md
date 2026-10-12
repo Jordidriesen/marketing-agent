@@ -63,7 +63,7 @@ professional source shows they hold that role, and record the source.
   the score.
 - **Angle**: one sentence connecting a sourced trigger to a messaging pillar or proof point the brand
   can back. No trigger means a segment angle, labelled as such.
-- **First touch**: which channel and play (from `cold-email-sequence` or `linkedin-outreach`) and why.
+- **First touch**: which channel and play (for email, `cold-email-sequence`) and why.
 
 ## Output
 
@@ -84,7 +84,7 @@ suggested first touch.
 
 ## Related Skills
 
-- `cold-email-sequence`, `linkedin-outreach`: write the touches the brief recommends.
+- `cold-email-sequence`: writes the email touches the brief recommends.
 - `abm-plan`: tiers accounts and decides which ones get a brief.
 - `european-market-intelligence`: registries, tenders and market-level research.
 - `battlecard`: when the account already uses a named competitor.

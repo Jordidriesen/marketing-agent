@@ -1,8 +1,8 @@
 ---
 name: web-content-pipeline
 metadata:
-  version: 1.4.2
-  history: "v1.4.2: a Design cues list is required with the copy. v1.4.1: highly probable or plausible outcomes of a stated feature are allowed; invented features, proof, numbers, incidents, compliance and promises are not. v1.4.0: Steps 5 and 6 must be invoked through the Skill tool and reported; PAS and StoryBrand problem steps may state general audience pain; proof placeholders inline. v1.3.0: ask-first gate for missing brand, action, audience or product facts; visible page type, framework and brand kit lines; proof placeholders inside the copy. v1.2.1: derived capabilities and demo promises count as invented facts; description widened to copywriting and page design. v1.2.0: no invented product facts. Features, integrations, compliance, service promises and proof come only from the brief, the brand kit or its product files; gaps become placeholders, and assumptions may cover format only."
+  version: 1.2.0
+  history: "v1.2.0: description rewritten for the skill listing budget and widened to copywriting and page design; Steps 5 and 6 invoked through the Skill tool; claim test added. Body otherwise unchanged from 1.1.0."
 description: "Always use for any website copy or copywriting, however short or fully specified: landing pages, homepages, product, solution, feature, pricing and about pages, page design and page copy work, a hero section, benefit blocks, CTAs, SEO or AEO blog posts. Not social posts or ebooks."
 ---
 
@@ -18,49 +18,29 @@ differs by page type is the template in Step 4, not the process around it.
 **Scope:** Web content only. Not social media (separate skill). Not
 print/downloadable content like ebooks or whitepapers.
 
-## Non-negotiable: no invented product facts
-
-Every factual statement about the product, the company or its customers must come from the brief, the
-brand kit (`context.md`, `voice.md`) or the brand's product files (`products/<slug>.md`). That covers:
-
-- **Features and capabilities** (QR check-in, inductions, integrations, automation, retention settings)
-- **Compliance and security claims** (GDPR, ISO, NIS2, data location)
-- **Service promises** (setup support, response times, free trial terms, "no obligation")
-- **Proof** (statistics, customer names, logos, testimonials, awards, ratings)
-- **Derived capabilities and promises**: anything implied by a feature category but not stated, such as
-  zones, areas or permissions detail, multi-site support, mobile access, "records" or reports, who
-  builds or supports the product, or what a demo, call or trial will contain or tailor ("we'll show
-  you your site"). A call to action may only name the action ("Book a demo"); anything about what
-  happens next is a placeholder unless the brief says it.
-
-Write the benefit from the literal brief statement only. If the brief says "cloud visitor management and
-access control", the copy may say that and the plain consequence of the words (it runs in the cloud, it
-registers visitors, it controls access), and nothing more specific. Audience and segment details from the
-request (for example "mid-sized warehouses", "facility managers") are fine to use.
-
-**The framework still applies.** PAS and StoryBrand need a problem. The Problem and Agitate steps (and
-StoryBrand's "problem") may describe the audience's general situation and pain in plain terms, because
-that is the reader's world and not a product claim. They may not state product features, proof, numbers,
-named incidents or promises beyond the brief. Keep the section labels (Problem, Agitate, Solution, or
-the StoryBrand beats) visible in your reply so the sequence can be checked. Outcomes that are highly
-probable or plausible consequences of a stated feature are allowed ("the host is notified when a visitor
-arrives, so nobody is left waiting at the gate"). Never invent features, proof, numbers, named incidents,
-compliance claims or promises, and never state an outcome as a measured result.
-
-When the page needs something you do not have, write the benefit at the level the brief supports
-("see who is on site, live" if the brief says live visibility) or insert a labelled placeholder:
-`[FEATURE NEEDED: how drivers check in]`, `[PROOF NEEDED: customer quote or metric]`. Put a proof
-placeholder inline, where the proof would sit (for example under the hero or a benefit), not in a
-separate section, so the page keeps its hero, three benefits and one primary call to action. Never write an
-assumed feature as copy, and never move it into an "assumptions" note instead: an assumption list may
-cover format only (tone, length, language, CTA wording), never facts. Before delivery, re-read the copy
-and remove or placeholder every product claim you cannot point to in the sources.
-
 **Formerly two skills** (`web-content-pipeline` for blog posts,
 `copywriting` for landing/product/solution pages): merged because the
 split was artificial. A comparison-intent article and a landing page
 making the same argument differ in structural framework and template, not
 in process.
+
+---
+
+## Claim test: write what is plausible, never what is invented
+
+Facts about the product, the offer or the company come from the brief, then the brand kit or the product
+file (`products/<slug>.md`). Before you write a statement about what the product does or what a visitor
+gets, ask: given those sources, is this at least about 90% likely to be true? If yes, write it plainly,
+with no hedge and no placeholder, and let the framework do its work (the problem and agitation steps
+describe the audience's situation, and outcomes that follow from a stated feature are fine). If it is
+a guess below that level (a specific mechanism, integration, setting or step), use the general version
+the sources support, or mark it `[CONFIRM: ...]` inline.
+
+These always need a source, however plausible they sound: numbers and percentages, customer names and
+logos, quotes, awards and ratings, certifications and compliance claims, and prices. Missing proof
+becomes `[PROOF NEEDED: ...]` in the copy.
+
+A call to action may promise what the offering is meant to fix, as the brief states it.
 
 ---
 
@@ -173,25 +153,11 @@ single default tone this skill can assume. Before drafting anything:
 | Tone (only if no brand kit exists) | professional / casual / technical |
 | Competitor URLs or top-ranking posts | if known |
 
-### Gate: ask before writing, never assume
-
-If the brand, the primary action, the target audience, or the product facts the page needs (what it does,
-what makes it different, what proof exists) are missing from the brief, the brand kit and the product
-files, **stop and ask**. Reply with 2 to 5 short, specific questions, nothing else: no draft, no copy
-with placeholders, no list of assumptions standing in for answers. Say what you will do once they
-answer. Only a user who explicitly says to proceed with gaps changes this: then write, with every gap
-as a placeholder in the copy itself. Format-only choices (tone, language, length) may default, and you
-say which default you used.
+If any field is missing, ask before writing.
 
 ---
 
 ## Step 4: Write to Page-Type Template
-
-Open the reply with three lines, so the process is visible: **Page type and intent**, **Framework**
-(StoryBrand or PAS, and the copy must actually follow its sequence), **Brand kit** (loaded, or none
-found and the generic voice used). End the copy with a **Design cues** list (hero visual, button
-prominence, icons or layout for the benefit blocks); this is a checklist item, never skipped. Proof the page needs but the brief lacks (customers, numbers,
-quotes) is a `[PROOF NEEDED: ...]` placeholder in the copy where it would sit, not only in a note.
 
 ### Writing style rules (apply to every page type)
 
@@ -365,8 +331,7 @@ of, not in addition to, the checklist above.
 
 ## Step 5: Copy Edit
 
-**Not optional, and not done in your head.** Invoke the `copy-editing` skill through the Skill tool on the
-Step 4 draft. Two
+Invoke the `copy-editing` skill (Seven Sweeps) through the Skill tool on the Step 4 draft; do not do it from memory. Two
 cross-checks layer on top of that skill's own process:
 
 - **Clarity sweep** also flags AEO violations on blog posts: an unclear
@@ -380,16 +345,12 @@ cross-checks layer on top of that skill's own process:
 
 ## Step 6: Humanize
 
-**Not optional.** Invoke the `ai-content-cleaner` skill through the Skill tool. Use
+Invoke the `ai-content-cleaner` skill through the Skill tool. Use
 **BALANCED mode** for blog posts and any page with FAQ/comparison-table
 structure worth protecting; **CLEAN mode** is fine for a short landing
 page with no structured elements to preserve. Before handoff, note which
 structures are intentional (bolded inline headers, declarative Hook
 openings, comparison tables) so nothing gets stripped by mistake.
-
-**Deliver only after Steps 5 and 6.** End the reply with a line that lists which skills you ran
-(`copy-editing`, `ai-content-cleaner`) and anything you could not run and why. A draft that skipped
-either step is not finished.
 
 Worth reaching for during this pass: one honest, specific limitation,
 stated once, after the page has established competence (the pratfall

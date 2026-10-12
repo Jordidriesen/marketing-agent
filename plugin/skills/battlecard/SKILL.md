@@ -98,5 +98,5 @@ team wants a designed version.
 - `competitor-analysis`, `competitive-landscape`, `european-market-intelligence`: upstream research.
 - `competitor-teardown`: how the competitor sells in paid ads. Its open angles can feed the landmines.
 - `customer-story-writer`: supplies proof points with customer approval.
-- `cold-email-sequence`, `linkedin-outreach`: outreach that can use the card's reframes.
+- `cold-email-sequence`: outreach that can use the card's reframes.
 - `brand-review`, `ai-content-cleaner`: the gates before delivery.

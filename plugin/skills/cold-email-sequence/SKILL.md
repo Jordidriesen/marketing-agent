@@ -132,7 +132,6 @@ Deliver as a document the sender can edit (a Docs artifact, or markdown). Chat f
 ## Rules
 
 - **Never send, schedule or import.** Draft only.
-- **Never imply experience the sender has not stated**: no "teams often tell me", "what I see at other sites", "most of our customers" or similar, unless the user supplied it.
 - **Never invent** a personalisation, a customer, a result, a deadline or a mutual connection.
 - **No deception**: no fake replies or forwards, no false urgency, no hidden sender, no misleading
   subject.
@@ -144,9 +143,6 @@ Deliver as a document the sender can edit (a Docs artifact, or markdown). Chat f
 ## Related Skills
 
 - `account-brief`: the sourced trigger and angle per account before you write.
-- `reply-triage`: sorting and answering the real replies once the sequence runs.
-- `linkedin-outreach`: the LinkedIn side of the same prospect. Coordinate the two so they do not hit the
-  same person on the same day with the same message.
 - `battlecard`: competitor reframes and proof points.
 - `email-sequence-hubspot-brevo`: lifecycle email to people who have opted in. That is a different job.
 - `customer-story-writer`: supplies proof with customer approval.
