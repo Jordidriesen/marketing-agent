@@ -1,8 +1,8 @@
 ---
 name: web-content-pipeline
 metadata:
-  version: 1.4.1
-  history: "v1.4.1: highly probable or plausible outcomes of a stated feature are allowed; invented features, proof, numbers, incidents, compliance and promises are not. v1.4.0: Steps 5 and 6 must be invoked through the Skill tool and reported; PAS and StoryBrand problem steps may state general audience pain; proof placeholders inline. v1.3.0: ask-first gate for missing brand, action, audience or product facts; visible page type, framework and brand kit lines; proof placeholders inside the copy. v1.2.1: derived capabilities and demo promises count as invented facts; description widened to copywriting and page design. v1.2.0: no invented product facts. Features, integrations, compliance, service promises and proof come only from the brief, the brand kit or its product files; gaps become placeholders, and assumptions may cover format only."
+  version: 1.4.2
+  history: "v1.4.2: a Design cues list is required with the copy. v1.4.1: highly probable or plausible outcomes of a stated feature are allowed; invented features, proof, numbers, incidents, compliance and promises are not. v1.4.0: Steps 5 and 6 must be invoked through the Skill tool and reported; PAS and StoryBrand problem steps may state general audience pain; proof placeholders inline. v1.3.0: ask-first gate for missing brand, action, audience or product facts; visible page type, framework and brand kit lines; proof placeholders inside the copy. v1.2.1: derived capabilities and demo promises count as invented facts; description widened to copywriting and page design. v1.2.0: no invented product facts. Features, integrations, compliance, service promises and proof come only from the brief, the brand kit or its product files; gaps become placeholders, and assumptions may cover format only."
 description: "Always use for any website copy or copywriting, however short or fully specified: landing pages, homepages, product, solution, feature, pricing and about pages, page design and page copy work, a hero section, benefit blocks, CTAs, SEO or AEO blog posts. Not social posts or ebooks."
 ---
 
@@ -189,7 +189,8 @@ say which default you used.
 
 Open the reply with three lines, so the process is visible: **Page type and intent**, **Framework**
 (StoryBrand or PAS, and the copy must actually follow its sequence), **Brand kit** (loaded, or none
-found and the generic voice used). Proof the page needs but the brief lacks (customers, numbers,
+found and the generic voice used). End the copy with a **Design cues** list (hero visual, button
+prominence, icons or layout for the benefit blocks); this is a checklist item, never skipped. Proof the page needs but the brief lacks (customers, numbers,
 quotes) is a `[PROOF NEEDED: ...]` placeholder in the copy where it would sit, not only in a note.
 
 ### Writing style rules (apply to every page type)
