@@ -1,17 +1,6 @@
 ---
 name: content-research-orchestrator
-description: >
-  Gated, five-stage content research pipeline: keyword research → keyword
-  clustering → competitive landscape → competitor analysis → content gap
-  mapping, ending in prioritized content briefs. Use when the user wants
-  the full research flow on a topic, "research this topic," "full content
-  research," "run the research pipeline," "keyword research through
-  content gaps," or a request that spans more than one of the five stages.
-  Each stage is also its own standalone skill (seo-keyword-research,
-  keyword-clustering, competitive-landscape, competitor-analysis,
-  content-gap-mapping), use this orchestrator to run several in sequence
-  with gating between them, or call any one skill directly for a one-off.
-  This skill replaces the old keyword-research-dfs pipeline.
+description: "Gated five-stage content research: keywords, clustering, landscape, competitor analysis, content gaps, ending in content briefs. Use for \"research this topic\", \"full content research\"."
 ---
 
 # Content Research Orchestrator

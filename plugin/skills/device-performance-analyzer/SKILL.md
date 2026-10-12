@@ -1,6 +1,6 @@
 ---
 name: device-performance-analyzer
-description: Breaks down Google Ads performance by device and recommends bid adjustments, separating a real device problem from a landing page problem. Use when the user shares device data or asks about mobile performance.
+description: "Breaks Google Ads performance down by device and recommends adjustments, separating device from landing page problems. Use for mobile performance questions."
 ---
 
 # device-performance-analyzer

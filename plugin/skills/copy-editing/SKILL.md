@@ -1,6 +1,6 @@
 ---
 name: copy-editing
-description: "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,' 'proofread,' 'polish this,' 'make this better,' 'copy sweep,' 'tighten this up,' 'this reads awkwardly,' 'clean up this text,' 'too wordy,' or 'sharpen the messaging.' Use this when the user already has copy and wants it improved rather than rewritten from scratch. For writing new copy from scratch, see web-content-pipeline (pages and posts), social-content-writer, newsletter-writer, or press-release-writer."
+description: "Edits and improves existing marketing copy: clarity, structure, persuasion, tightening, proofreading. Use for \"edit this copy\", \"proofread\", \"tighten this\", \"polish this\", \"copy feedback\". New copy: web-content-pipeline and the other writers."
 metadata:
   version: 1.2.0
   history: >

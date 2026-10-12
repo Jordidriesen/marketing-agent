@@ -1,6 +1,6 @@
 ---
 name: quality-score-doctor
-description: "Diagnoses Google Ads Quality Score by component and ranks the fixes by how much spend each leak is costing, pulling live from the Google Ads connector when connected. Use when the user shares a keyword export with Quality Score data, connects their Google Ads account, or asks why their CPCs are high."
+description: "Diagnoses Google Ads Quality Score by component and ranks fixes by cost. Use for low Quality Score or high CPCs."
 ---
 
 # quality-score-doctor

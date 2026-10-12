@@ -1,6 +1,6 @@
 ---
 name: sea-keyword-research
-description: Runs first-pass Google Ads (SEA) keyword research grouped by intent, with trap keywords flagged and a launch list sized to a stated budget, using OpenSEO's Google-Ads-derived data for real search volume, competition, and CPC. Use when the user asks for PPC keywords, search terms to target with paid budget, or is planning a new Google Ads campaign. For organic/content keyword research (keyword difficulty, clustering into pages), see seo-keyword-research instead.
+description: "Google Ads keyword research by intent with traps flagged and a launch list sized to budget, using OpenSEO volume and CPC. Use for \"PPC keywords\", planning a new Google Ads campaign."
 ---
 
 # sea-keyword-research

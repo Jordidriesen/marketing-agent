@@ -1,6 +1,6 @@
 ---
 name: ad-schedule-analyzer
-description: Builds a day and hour performance heatmap from Google Ads data and turns it into a dayparting plan. Use when the user asks when their ads perform best or wants to set an ad schedule.
+description: "Builds a day and hour heatmap from Google Ads data and a dayparting plan. Use for \"when do my ads perform best\", \"ad schedule\"."
 ---
 
 # ad-schedule-analyzer

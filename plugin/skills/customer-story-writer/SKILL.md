@@ -1,10 +1,13 @@
 ---
 name: customer-story-writer
-description: |
-  Write, structure, or draft B2B customer stories and case studies using a proven persuasion framework. Use when asked to write a case study, customer success story, customer reference, win story, or any narrative-led piece showing how a customer achieved results with a product. Also use when asked to "turn this brief into a case study," "write this up as a customer story," "we need a case study for [customer]," or "help me structure a win story." Use this skill even for partial briefs, if the user has some customer data and wants a story out of it, start here. After drafting, the final copy pass runs ai-content-cleaner (BALANCED mode) to strip AI tells while preserving intentional SEO/AEO structure.
+description: "Always use for any B2B customer story or case study, however short: writes it from the supplied brief or interview. Use for \"case study\", \"customer story\", \"success story\", \"win story\"."
 metadata:
-  version: 1.1.0
+  version: 1.2.0
   history: >
+    v1.2: description rewritten for the skill listing budget. The strict no-fabrication rule is
+    kept, with context and consequences covered explicitly. Source fidelity overrides the structure
+    and any length target, the clean pass is invoked through the Skill tool, a sentence-by-sentence
+    source check runs before the self-check, and editor-facing notes go in a hidden comment.
     v1.1: stopped re-explaining Sparkline / StoryBrand / PAS / Duarte
     inline, the fixed 12-section structure and its framework-to-section
     mapping stay, but the framework definitions now cite
@@ -33,8 +36,11 @@ The rules:
 - **Metrics and outcomes:** Only use numbers the user has explicitly provided. Do not round up, extrapolate, or estimate. If a metric is directional ("significant time savings"), keep it directional in copy: do not convert it to a percentage.
 - **Problems and pain points:** Only describe the customer's situation using what the user has told you. Do not assume typical industry pain points apply to this customer. If the "Before" state is vague, flag it and ask: do not fill in a plausible-sounding problem.
 - **Implementation details:** Do not invent timelines, onboarding steps, or "aha moments" not present in the source material.
+- **Context and consequences:** No inferred context about the customer, its people, its site or its day-to-day, and no consequences the brief does not state, not even when labelled "typically" or "likely". Restating the brief in better words is fine; adding to it is not.
 
 When material is missing, use explicit placeholders and surface them clearly in the output. A story with honest gaps is more useful than a polished draft built on invented facts.
+
+**Source fidelity overrides the structure and any length target.** The 12-section structure and a word count never justify content. A section with no source material is shortened, merged into a neighbour or marked `[PLACEHOLDER: ...]`. It is not padded to reach a length, and a short, true story is the correct result of a thin brief.
 
 ---
 
@@ -255,7 +261,7 @@ Apply these throughout the draft.
 
 ## Phase 3: AI content clean pass
 
-After drafting, run `ai-content-cleaner` in **BALANCED** mode.
+After drafting, invoke the `ai-content-cleaner` skill through the Skill tool in **BALANCED** mode. Do not do the clean pass from memory.
 
 Customer stories are especially prone to:
 - em dashes, collaborative scaffolding, copula avoidance ("serves as a testament to")
@@ -268,7 +274,7 @@ Use BALANCED (not CLEAN) to preserve:
 - Deliberate FAQ or structured data patterns for SEO
 - Heading capitalisation choices that match brand standards
 
-After the clean pass, run the self-check:
+After the clean pass, run the source check first: go through the draft sentence by sentence, and for every statement about the customer, its people, its situation or its results, find where the brief says it. Delete or correct any statement that is not there, including scene-setting and linking sentences. Then run the self-check:
 - [ ] Are all quotes sourced from real material provided by the user: no invented or illustrative quotes?
 - [ ] Do quotes sit in their anchor sections (epiphany in Trigger and challenge, transformation in Results, partnership in the close) rather than only clustered in Quotes at a glance?
 - [ ] Does the close end with real forward motion or an earned recap, not a bare `[PLACEHOLDER]` used as a default?
@@ -289,8 +295,7 @@ Deliver the story in this order:
 
 1. **Working headline** (with note if metric placeholder is needed): short and catchy, not a full descriptive sentence
 2. **Full draft** using the 12-section structure above. Every section gets its own specific, outcome-carrying subheading, headline-length, never the generic framework name. Quotes sit in their anchor sections (epiphany in section 4, transformation in section 9, partnership in section 12); include Facts & figures (10) when the numbers are scope rather than outcome, and include Quotes at a glance (11) only if a standalone pull-quote block is useful for other formats. Section 12 always closes with forward motion or a recap, never a bare placeholder by default
-3. **Missing elements**: brief list of any `[PLACEHOLDER]` items and what would make each one stronger
-4. **AI content sweep summary**: brief list of patterns found and removed in the BALANCED clean pass
+3. **Hidden notes** (an HTML comment at the end, not visible on the finished page, headed `OPEN ITEMS`): every `QUESTION` you would ask the editor, every statement you are `UNSURE` about with the words "needs judging by the person operating the chat", the list of `[PLACEHOLDER]` items and what would make each one stronger, a one-line source-check result (what was removed and why), and a brief list of patterns found and removed in the BALANCED clean pass. End it with `Skills run: ai-content-cleaner`.
 
 If the user provided a complete brief, deliver the full draft in one pass. If significant elements are missing, ask for them first (Step 0 gates this).
 

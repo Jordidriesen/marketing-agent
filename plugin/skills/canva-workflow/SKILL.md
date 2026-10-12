@@ -7,17 +7,7 @@ metadata:
     full Canva MCP execution path (generate / brand-template / import →
     convert → transactional per-page edit → export) and keeps the manual
     checklist as the fallback when the connector isn't connected.
-description: >
-  Produces a Canva asset two ways: EXECUTES it end to end when the Canva
-  MCP connector is available (generate or autofill from a brand template,
-  convert to an editable design, edit text/images/colour/layout in a
-  validated per-page transaction, resize for variants, export to a
-  download URL), and hands back a manual build checklist in Canva's own
-  UI terms when it isn't. Use when an asset suits Canva, template-based
-  social, one-pagers, presentations, docs, printables, bulk variants, or
-  when someone says "make this in Canva", "Canva workflow", or "run this
-  in Canva". For generated or composited imagery and design-system work,
-  use figma-weavy-workflow.
+description: "Produces Canva assets (social, one-pagers, decks, printables, bulk variants) through the Canva connector, or gives a build checklist without it. Use for \"make this in Canva\"."
 argument-hint: "<the asset or brief to build in Canva>"
 ---
 

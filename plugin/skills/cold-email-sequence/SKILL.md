@@ -3,7 +3,7 @@ name: cold-email-sequence
 metadata:
   version: '1.0.0'
   history: "v1.0.0: new skill. Drafts cold B2B email sequences for human review and sending, with a compliance gate first, real personalisation fields only, subject variants, send gaps, stop rules and a reply-handling guide. Never sends.\n"
-description: "Drafts a cold B2B email sequence of 3 to 5 touches for human review and sending: compliance gate first, personalisation fields with fallbacks, subject line variants, send gaps, stop rules and a reply-handling guide. Use for \"cold email\", \"outbound sequence\", \"prospecting emails\", \"sales outreach email\" or \"follow-up to a prospect who has not replied\". Not for opted-in nurture, onboarding or win-back flows (email-sequence-hubspot-brevo), one-off newsletters (newsletter-writer) or LinkedIn messages (linkedin-outreach). Drafts only: it never sends and never scrapes."
+description: "Drafts cold B2B email sequences (3 to 5 touches) for a person to send: compliance gate first, personalisation, subject variants, gaps, stop rules, reply guide. Use for \"cold email\", \"outbound sequence\", \"prospecting emails\". Never sends."
 argument-hint: "<who you are emailing (role, segment, country), what you offer, one real reason to write to them, and the sender>"
 ---
 
@@ -38,7 +38,10 @@ tool on your own, and you never scrape contact data.
 - **Language and market.** Write in the recipient's language. Dutch for Flanders is Belgian Dutch.
 - **The sending tool**, if known (it decides the merge-field syntax and the unsubscribe mechanics).
 
-If the offer or the reason to write is unclear, ask one question before drafting.
+**Gate: stop and ask before drafting.** If the recipient segment, the offer or the sender is missing, do not
+draft and do not carry on with assumptions or placeholders. Reply with 2 to 4 specific questions and
+nothing else. A missing trigger is fine (the sequence is then segment-level and says so); a missing
+proof point is fine (leave it out). Language may default from the market; say which default you used.
 
 ## Step 0: Load the brand
 
@@ -143,9 +146,6 @@ Deliver as a document the sender can edit (a Docs artifact, or markdown). Chat f
 ## Related Skills
 
 - `account-brief`: the sourced trigger and angle per account before you write.
-- `reply-triage`: sorting and answering the real replies once the sequence runs.
-- `linkedin-outreach`: the LinkedIn side of the same prospect. Coordinate the two so they do not hit the
-  same person on the same day with the same message.
 - `battlecard`: competitor reframes and proof points.
 - `email-sequence-hubspot-brevo`: lifecycle email to people who have opted in. That is a different job.
 - `customer-story-writer`: supplies proof with customer approval.

@@ -3,7 +3,7 @@ name: reply-triage
 metadata:
   version: '1.0.0'
   history: "v1.0.0: new skill. Sorts real replies from cold email and LinkedIn outreach, drafts each answer for a person to send, lists stops, suppressions and resume dates, and writes handover notes for warm leads. Never sends.\n"
-description: "Sorts the real replies that come back from cold email and LinkedIn outreach: classifies each one, drafts the answer for a person to send, lists who to stop, suppress or resume and when, flags data-rights requests, and writes a handover note for every warm lead. Use when the user pastes or exports replies and asks \"what do I do with these\", \"triage these replies\", \"answer these prospects\", \"sort my outreach replies\" or \"who should go to sales\". Not for writing the sequence itself (cold-email-sequence, linkedin-outreach), opted-in nurture replies (email-marketer) or customer support. Drafts only: it never sends and never changes a list or CRM on its own."
+description: "Sorts real replies from cold email and LinkedIn outreach: classifies each, drafts answers, lists stops, suppressions and resume dates, flags data-rights requests, writes sales handover notes. Use for \"triage these replies\", \"answer these prospects\"."
 argument-hint: "<the replies (pasted or exported), the sequence or campaign they belong to, the sender and the brand>"
 ---
 

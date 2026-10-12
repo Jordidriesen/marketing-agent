@@ -1,6 +1,6 @@
 ---
 name: campaign-architect
-description: Designs Google Ads campaign structures with budget splits, bidding strategies, and match type plans. Use when the user is launching, restructuring, or asks how to organize campaigns.
+description: "Designs Google Ads campaign structure: campaigns, ad groups, budget split, bidding and match types. Use when launching or restructuring an account."
 ---
 
 # campaign-architect

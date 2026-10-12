@@ -3,7 +3,7 @@ name: launch-video
 metadata:
   version: '1.0.0'
   history: "v1.0.0: new skill. An original workflow for short product and brand videos (teaser, continuous-take feature demo, logo sting), written in this library's terms with the brand kit as the source of voice, colour and type. Structure and several rules (project inspection rubric, reading-time floors, poster frame as frame 0, share copy) are adapted from latent-spaces/brag (MIT, see LICENSE-brag.txt). The continuous-take idea is inspired by feitangyuan/onetake, which is licensed PolyForm Noncommercial and is therefore neither bundled nor copied. No audio files are bundled.\n"
-description: "Plans and produces a short (10 to 30 second) product or brand video from the product's own source or brand kit: picks the video type (launch teaser, continuous-take feature demo, logo sting), writes the storyboard with reading-time floors, builds it as an HTML composition rendered with Hyperframes, then picks a poster frame and writes the share caption. Use for \"launch video\", \"product teaser\", \"feature demo video\", \"turn this into a video\", \"logo animation\", \"brag video\" or \"announce this with a video\". Not for logo design (logo-design), static campaign art direction (creative-brief), social graphics (canva-workflow) or video ad copy and hooks (ad-creative-matrix)."
+description: "Plans and builds a 10 to 30 second product teaser, feature demo or logo sting from the product's screens or brand kit. Use for \"launch video\", \"product teaser\", \"logo animation\"."
 argument-hint: "<what to show, video type if known, format (landscape, vertical, square), duration, tone, brand>"
 ---
 

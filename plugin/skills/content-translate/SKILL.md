@@ -1,19 +1,6 @@
 ---
 name: content-translate
-description: >
-  Translate existing web content (blog posts, landing pages, product pages,
-  customer stories) into one or more target languages with locale-correct
-  formatting, native-sounding tone, and brand-locked terminology carried
-  over. Combines language translation and cultural adaptation into one
-  pass, formality, brand examples, legal references, and CTA tone are
-  applied during translation itself, not as a separate step. Use when the
-  user says "translate this," "translate to German/French/Dutch/Spanish,"
-  "vertalen naar het Nederlands," "traduire en français," "übersetzen ins
-  Deutsche," "traducir al español," or wants a page localized for a
-  specific European market. Composes with the relevant `[brand]-brand-kit`
-  skill for voice and locked terminology, with `content-references`
-  for schema rules, and with `ai-content-cleaner` for the target-language
-  humanising pass.
+description: "Translates and localises web content (pages, blogs, customer stories) into Dutch (Belgian), French, German or Spanish with brand terms locked. Use for \"translate this\", \"vertalen\", \"traduire\", \"übersetzen\", \"localise for [market]\"."
 metadata:
   version: 1.0.0
   history: >

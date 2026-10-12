@@ -1,6 +1,6 @@
 ---
 name: conversion-tracking-auditor
-description: "Audits Google Ads conversion tracking for gaps, double counting, and misconfigured actions that corrupt bidding. Use when numbers look wrong or before trusting smart bidding."
+description: "Audits Google Ads conversion tracking for gaps, double counting and misconfigured actions. Use when numbers look wrong or before trusting smart bidding."
 ---
 
 # conversion-tracking-auditor

@@ -9,15 +9,7 @@ metadata:
     canva-workflow or figma-weavy-workflow for production. v1.1 adds an
     accessibility section (contrast, min sizes, alt text, localisation
     text expansion).
-description: >
-  Turns an objective, audience, message and a list of wanted visuals into
-  a structured creative brief: concept, art direction, visual style, mood,
-  do and don't, and a table of every asset with its format, dimensions and
-  where it runs. Use when a campaign or content piece needs design work
-  and there is no direction yet, when someone asks for "a creative brief",
-  "art direction", "design direction", or "a moodboard", or before handing
-  anything to canva-workflow or figma-weavy-workflow. Not for producing the
-  files themselves.
+description: "Writes a creative brief: concept, art direction, mood, do and don't, and an asset table with formats and sizes. Use for \"creative brief\", \"art direction\", \"moodboard\", before design production."
 argument-hint: "<what needs designing, and for which campaign or brand>"
 ---
 

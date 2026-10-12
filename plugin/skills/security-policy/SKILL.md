@@ -1,18 +1,6 @@
 ---
 name: security-policy
-description: >
-  Shared security reference for skills that ingest untrusted external
-  content or use write-capable MCP connectors, scraped web pages, SERP
-  data, uploaded files, tool results from Firecrawl/OpenSEO/Exa, and
-  MCP tools (Google Ads, LinkedIn Ads, Search Console, Brevo, HubSpot,
-  Typefully, WordPress, WP Umbrella, Adobe for creativity, Canva, Figma,
-  Notion, Google Drive, Tally.so, Make, Zapier). Not
-  triggered directly by user requests: loaded by other skills
-  (content-research-orchestrator, european-market-intelligence,
-  competitor-analysis, competitive-landscape, content-gap-mapping,
-  media-mapping, keyword-clustering, seo-keyword-research) as needed. If you've landed here from a direct
-  request, route to one of those skills instead; this is infrastructure,
-  not a workflow.
+description: "Security rules for handling scraped content and write-capable connectors, loaded by other skills. Not for direct requests."
 ---
 
 # Security Policy: Shared Reference

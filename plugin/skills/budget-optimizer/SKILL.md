@@ -1,6 +1,6 @@
 ---
 name: budget-optimizer
-description: Models what happens if budget shifts between Google Ads campaigns, using the account's real marginal performance rather than a generic forecast. Use when the user asks where to move budget or whether to scale a campaign.
+description: "Models Google Ads budget shifts between campaigns from real marginal performance. Use for \"where should budget go\", \"should we scale this campaign\"."
 ---
 
 # budget-optimizer

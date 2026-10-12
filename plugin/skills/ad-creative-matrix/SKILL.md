@@ -3,7 +3,7 @@ name: ad-creative-matrix
 metadata:
   version: '1.0.0'
   history: "v1.0.0: new skill. Writes up the 50-5-3 ad method (50 hooks, 5 bodies, 3 CTAs), commonly attributed to Alex Hormozi, as an original workflow in this library's own terms: angle spread, a screening rubric, a compatibility check, tagged assembly and a staged test plan scaled to budget. The attribution has not been checked against a primary source.\n"
-description: "Builds a modular ad creative set from one offer: 50 hooks, 5 bodies and 3 CTAs (the 50-5-3 method), screens the hooks down to a testable shortlist, assembles tagged combinations and writes a staged test plan, for paid social and video ads on LinkedIn, Meta, YouTube, TikTok and similar. Use for \"ad hooks\", \"hook variations\", \"ad angles\", \"50-5-3\", \"write ads for LinkedIn or Meta\", \"creative testing set\", \"UGC or video ad scripts\", or \"I need a lot of ad variations\". Not for Google search RSA headlines (rsa-writer), organic posts (social-content-writer), reading live asset performance (ad-copy-tester) or analysing rivals' ads (competitor-teardown)."
+description: "Builds paid social and video ad sets with the 50-5-3 method (50 hooks, 5 bodies, 3 CTAs), screened, tagged and with a test plan, for LinkedIn, Meta, YouTube, TikTok. Use for \"ad hooks\", \"ad variations\", \"LinkedIn or Meta ads\"."
 argument-hint: "<offer, audience, platform(s) and any budget or proof you can share>"
 ---
 

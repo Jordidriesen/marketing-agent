@@ -1,6 +1,6 @@
 ---
 name: auction-insights-monitor
-description: Reads Google Ads auction insights to track competitor movement week over week, flagging new entrants, impression share shifts, and lost position, pulling live from the Google Ads connector when connected. Use when the user shares auction insights data, connects their Google Ads account, or asks who is moving against them.
+description: "Tracks Google Ads auction insights week over week: new entrants, impression share shifts, lost position. Use for \"auction insights\", \"who is moving against us\"."
 ---
 
 # auction-insights-monitor

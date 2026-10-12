@@ -1,17 +1,9 @@
 ---
 name: web-content-pipeline
 metadata:
-  version: 1.1.0
-description: >
-  Sequential workflow for writing, editing, and humanizing web content,
-  informational blog posts, landing pages, product pages, solution pages,
-  homepages, pricing pages, feature pages, and about pages. Covers both
-  SEO/AEO-optimized informational content and conversion-focused page
-  copy in one pipeline, since both are "web content" and the only real
-  difference is which structural framework and page template apply. Use
-  when writing or rewriting any page a visitor reaches on the website.
-  Not for social media posts and not for print or downloadable content
-  like ebooks or whitepapers.
+  version: 1.5.1
+  history: "v1.5.1: chat reply is the file plus two sentences; no visible instructions in navigation rows. v1.5.0: questions and doubts become QUESTION and UNSURE comments collected in an OPEN ITEMS block for the person operating the chat. v1.4.1: required skill calls stated at the top, no inline substitute for copy-editing and ai-content-cleaner. v1.4.0: framework is the skill's choice, not forced; editor notes are hidden comments; component tags above each section; Lorem Ipsum proof placeholders; neutral headings; page-type guide with FAQ counts; pillar, comparison and glossary page types. v1.3.0: hidden confirm comments and visible proof placeholders replace the claim placeholders; ask-first gate; audience line, closing CTA block and hidden production notes for articles; implementation brief, single goal and objection FAQ for landing pages; Steps 5 and 6 are mandatory and reported. v1.2.0: description rewritten for the skill listing budget and widened to copywriting and page design; Steps 5 and 6 invoked through the Skill tool; claim test added. Body otherwise unchanged from 1.1.0."
+description: "Always use for any website copy or copywriting, however short or fully specified: landing pages, homepages, product, solution, feature, pricing and about pages, page design and page copy work, a hero section, benefit blocks, CTAs, SEO or AEO blog posts. Not social posts or ebooks."
 ---
 
 # Web Content Pipeline
@@ -23,6 +15,11 @@ process is identical: classify intent, classify page type, pick a
 structural framework, write to the right template, edit, humanize. What
 differs by page type is the template in Step 4, not the process around it.
 
+**Required skill calls.** Two other skills are part of this pipeline and must be called through the
+Skill tool, never imitated with an inline edit: `copy-editing` after the Step 4 draft, and
+`ai-content-cleaner` after that. If you have a draft and have not called both, call them now, before you
+reply. A reply that says the edit pass was done inline, or that skips either skill, is not finished.
+
 **Scope:** Web content only. Not social media (separate skill). Not
 print/downloadable content like ebooks or whitepapers.
 
@@ -31,6 +28,32 @@ print/downloadable content like ebooks or whitepapers.
 split was artificial. A comparison-intent article and a landing page
 making the same argument differ in structural framework and template, not
 in process.
+
+---
+
+## Claim test: write what is plausible, never what is invented
+
+Facts about the product, the offer or the company come from the brief, then the brand kit or the product
+file (`products/<slug>.md`). Before you write a statement about what the product does or what a visitor
+gets, ask: given those sources, is this at least about 90% likely to be true? If yes, write it plainly,
+with no hedge, and let the framework do its work (the problem and agitation steps describe the audience's
+situation, and outcomes that follow from a stated feature are fine). A plausible claim the sources do not
+confirm (EU hosting, a walkthrough length, a deployment option) is still written, with a hidden note next to
+it: `<!-- confirm: EU hosting, check region before publish -->`. The reader sees clean copy and the
+editor sees what to check. If you would be guessing below that level (a specific mechanism, integration,
+setting or step), use the general version the sources support.
+
+These always need a source, however plausible they sound: numbers and percentages, customer names and
+logos, quotes, awards and ratings, certifications and compliance claims, and prices. Missing proof is a
+Lorem Ipsum placeholder in the form the proof will take, with a hidden `PROOF NEEDED` comment (see Step 4).
+Never invent a customer or a figure to fill it. Leave a fact out, with a hidden
+note, rather than approximate it.
+
+A call to action may promise what the offering is meant to fix, as the brief states it.
+
+Do not build selling points on a single fact. "A Belgian company" does not mean "a team in your time
+zone and language", and "cloud" does not mean a named hosting region. If a benefit rests on something
+the sources only hint at, leave it out or flag it with a hidden `confirm` note.
 
 ---
 
@@ -80,6 +103,9 @@ if Step 1's page type doesn't match this table's default.
 | Pricing page | Transactional | Decision-support as much as persuasion |
 | Feature page | Transactional | Narrower than a product page: one feature, one use case |
 | About page | Informational/brand | Origin story, still needs a CTA |
+| Pillar page / content hub | Informational | Broad topic, links out to every spoke, each spoke links back |
+| Comparison page (A vs B) | Informational leaning Transactional | Fair to the option the reader runs today; helps them decide |
+| Glossary / reference page | Informational | Stand-alone definitions with stable anchors; no sales arc |
 
 If unclear from the brief, ask. Getting this wrong wastes the rest of the
 pipeline: the template in Step 4 depends entirely on it.
@@ -100,8 +126,14 @@ piece has an unusual goal.
 | Pricing page | **Minto-flavored comparison** (MECE-grouped plan differences) layered with **PAS-style** anchoring in the surrounding copy | Plan comparison is a logical-grouping problem; the sales copy around it is still an urgency/persuasion problem |
 | Feature page | **PAS** (narrow, ad-driven) or **StoryBrand** (broader in-app explainer) | Depends on traffic source: ad-driven feature pages behave like landing pages |
 | About page | **Sparkline-style** (origin story: what was → what is now) | Natural fit for a "what is / what could be" arc |
+| Pillar page / content hub | **Minto-style** (answer first, then the map of subtopics) | The hub states the answer to the broad question, then routes the reader to the spokes |
+| Comparison page (A vs B) | **Minto-style** with a side-by-side table | The reader wants the decision rule first, then the evidence |
+| Glossary / reference page | None (definition format) | Each entry stands alone; no persuasion arc |
 
-Note the chosen framework explicitly: it shapes Step 4's template.
+The skill chooses the framework that fits the page type, the traffic source and the goal. StoryBrand is the
+common default for conversion pages, not a requirement: use PAS, Minto, Sparkline or another when it
+fits better, and say which in one line with the reason. Note the chosen framework explicitly: it shapes
+Step 4's template. If the brief names a framework, use it unless it clearly does not fit, and say so.
 
 ## Step 3: Gather Requirements
 
@@ -143,7 +175,10 @@ single default tone this skill can assume. Before drafting anything:
 | Tone (only if no brand kit exists) | professional / casual / technical |
 | Competitor URLs or top-ranking posts | if known |
 
-If any field is missing, ask before writing.
+If any field is missing, ask before writing. When the brand, the primary action, the audience or the
+product facts the page needs are missing from the brief, the brand kit and the product files, stop and
+reply with 2 to 5 specific questions and nothing else: no draft, no copy with placeholders. Tone, length and
+language may default; say which default you used.
 
 ---
 
@@ -165,6 +200,57 @@ Quick check before moving on: jargon that could confuse an outsider?
 Sentences trying to do too much? Passive voice? Exclamation points (cut
 them)? Buzzwords without substance?
 
+### Hidden notes, placeholders and headings (all page types)
+
+- **Editor notes are comments, not copy.** The file has two audiences: people reading the finished page and
+  people editing the source. Everything meant for editors and for AI is an HTML comment in the same
+  file: the implementation brief, a component tag above each section, `confirm` and `verify` notes,
+  `PROOF NEEDED` notes, headline alternatives, the reasoning behind choices, and the closing
+  `<!-- Skills run: ... -->` line. Nothing editor-facing may be visible when the page is rendered.
+- **Questions and doubts go in the file, as comments.** Anything you would otherwise ask the editor
+  becomes a comment next to the line: `<!-- QUESTION: ... -->`. A statement you cannot call about 90%
+  likely and cannot check against the sources is written in its most cautious supported form, or left
+  out, and gets `<!-- UNSURE: ... needs judging by the person operating the chat -->`. Collect every
+  `QUESTION`, `UNSURE`, `PROOF NEEDED` and `confirm` note in one `<!-- OPEN ITEMS: ... -->` block at the
+  end of the file, so the editor and the marketing director find them in one place. The page itself
+  stays clean.
+- **The chat reply is the file plus at most two sentences.** Do not repeat the open items, the edit-pass
+  summary or the framework reasoning outside the file: they live in its comments. Navigation and
+  button rows show the labels only, never instructions in parentheses outside a comment.
+- **Component tags.** When the site has a component library, put the exact component name in a comment
+  above each section (`<!-- COMPONENT: 3-up problem cards -->`). Reuse the existing components and
+  introduce none. A form modal is not a page component. Never use numbers or labels like "Section 1".
+  With no component library, skip the tags.
+- **Missing proof becomes Lorem Ipsum.** When a section needs proof (a quote, a logo strip, a metric, a
+  case card) and the brief, the brand kit and the product files do not supply it, fill that slot with
+  Lorem Ipsum in the exact form the real proof will take, so the layout and the need are visible, and add
+  a comment `<!-- PROOF NEEDED: customer quote, role, company -->`. Never invent a customer, a figure or
+  a logo.
+- **Neutral headings until proof exists.** A heading must not imply proof that is not there. Use "Where it
+  runs", "References" or "Proof", not "Trusted by", "Customers like you" or "Used by teams like yours",
+  until real proof fills the section.
+
+### Page-type guide (defaults, adjust to the brief)
+
+These are common practices, not rules. Practitioner sources agree on the broad shape and differ on the
+details, so follow the brief and the brand kit first.
+
+| Page type | Core sections | Proof | FAQ |
+|---|---|---|---|
+| Landing page (paid) | Hero, problem, plan, proof, objections, closing CTA; one goal, no site navigation | Close to the CTAs | 3 to 6 objection questions from this traffic source |
+| Product page | Hero, features framed as use cases, how it works, proof, pricing path | Named, specific; near CTAs | Optional, 3 to 6, on fit and set-up |
+| Solution page | Hero, the situation, use cases by role or industry, how it works, proof, related products | Close to the CTAs; case studies linked | 4 to 8, on roles, integration and replacing what exists |
+| Feature page | One feature, one use case, visual, path to try | Light | Optional, 3 to 5 |
+| Homepage | Value proposition, routes by audience, proof, one clear next step | Logos and one or two headline results | Usually none |
+| Pricing page | Plans tied to buyer segments, a recommended plan, comparison grouped by outcome, billing toggle if relevant | Next to the decision point | 4 to 8 last-minute hesitations (billing, contract, support, security) |
+| About page | Why the company exists, what it believes, who is behind it, a CTA | Light | None |
+| Blog post | Answer-first hook, sections of one topic each, takeaways | Sources and examples | 3 to 5 |
+| Pillar page / hub | Answer to the broad question, a map of subtopics, a link out to every spoke | Sources | 3 to 6; every spoke links back |
+| Comparison page | Decision rule first, side-by-side table, when to choose each, what can stay | Sources, no vendor attacks | 3 to 5 |
+| Glossary | Definitions with stable anchors, grouped by theme | None | None |
+
+Keep spokes distinct in search intent and do not publish thin spokes to add volume.
+
 ### Blog post template (Informational, per Step 1)
 
 Apply the AEO architecture from
@@ -178,14 +264,28 @@ chain) to this shape:
 [Hook]                First 50–100 words: direct declarative answer
                       (Minto-style) or a brief status-quo pain point
                       before the answer (Sparkline-style, per Step 2).
+                      Bold the answer paragraph.
+[Audience line]       One sentence after the hook: who the page is for
+                      and what it covers, with a link to the pillar page.
 [Table of Contents]   Anchor-linked H2 list
 [H2 sections]         Each = one atomic topic, 40–120 words per paragraph
 [Key Takeaways box]   Bulleted; bold the most citable sentence per section
 [Comparison table]    For any "A vs B" angle
 [FAQ section]         Min. 3 questions, 40–60 word standalone answers
-[Conclusion]          Re-answers the opening question + soft next-step CTA
-[Meta description]    150–160 chars, primary keyword, CTA hook
+[Conclusion]          Re-answers the opening question, then one short
+                      product paragraph and ONE bold CTA line with a link
+[Production notes]    Hidden HTML comment at the end: meta description
+                      (150–160 chars, primary keyword, CTA hook), schema
+                      suggestion (Article or TechArticle; FAQPage for the
+                      FAQ), word-count target, byline placeholder, and
+                      `verify` flags on unconfirmed claims
 ```
+
+**Comparison pages ("A vs B")** are written fair to the incumbent: say what it
+does well, keep "when to choose" lists that a reader can honestly answer no to,
+and say when the current setup is the right answer. **Regulatory or legal topics**
+cite the instrument and article, add a Sources section, and flag a legal review gate
+in the production notes. Never present a draft as legal advice.
 
 Run the information-gain audit from `seo-aeo-optimization.md` before
 finalizing.
@@ -203,16 +303,23 @@ finalizing.
 - Subheadline: expands the headline, adds specificity, 1–2 sentences max
 - Primary CTA; states what they get: "Start Free Trial," not "Sign Up"
 
+**Implementation brief** (hidden HTML comment at the top of the page): URL, traffic source or ad
+group, negative keywords for paid traffic, the framework chosen in Step 2 and why, the ONE conversion
+goal, form fields, meta title and description, and schema (Organization, BreadcrumbList,
+SoftwareApplication or Product, FAQPage). Every primary CTA on the page opens the same action; a
+secondary path (a one-pager, say) is visibly smaller and lower contrast, there to catch someone who is
+not ready.
+
 **Core sections** (map onto Step 2's chosen framework, StoryBrand's
 Problem/Guide/Plan/Success or PAS's Problem/Agitate/Solution):
 
 | Section | Purpose |
 |---|---|
-| Social proof | Build credibility: logos, stats, testimonials |
+| Social proof | Build credibility: logos, stats, testimonials. Lorem Ipsum placeholders until real cases are approved (see Step 4) |
 | Problem/pain | Show you understand the visitor's situation (StoryBrand's Problem / PAS's Problem+Agitate) |
 | Solution/benefits | Connect to outcomes, 3–5 key benefits (StoryBrand's Plan / PAS's Solution) |
 | How it works | Reduce perceived complexity, 3–4 steps |
-| Objection handling | FAQ, comparisons, guarantees |
+| Objection handling | FAQ with the question count from the page-type guide, taken from the objections this traffic source arrives with (replace a system? another console? we already have X?), comparisons, guarantees |
 | Final CTA | Recap value, repeat CTA, risk reversal |
 
 **CTA copy:** avoid "Submit," "Sign Up," "Learn More," "Click Here,"
@@ -299,9 +406,9 @@ these pages aren't trying to rank on link breadth.
 
 ### Step 4 output
 
-Deliver: full draft organized by section, 2–3 headline/title options with
-rationale, meta content if relevant (page title, meta description), and
-brief annotations on which principle each key choice applies.
+Deliver: the full draft organized by section. The 2–3 headline/title options with
+rationale, the meta content (page title, meta description) and the brief annotations on which
+principle each key choice applies go in hidden comments, per the rules above.
 
 ### E-E-A-T Quality Gate
 
@@ -321,7 +428,7 @@ of, not in addition to, the checklist above.
 
 ## Step 5: Copy Edit
 
-Run the `copy-editing` skill (Seven Sweeps) on the Step 4 draft. Two
+**Not optional, and not done from memory.** Invoke the `copy-editing` skill (Seven Sweeps) through the Skill tool on the Step 4 draft. Two
 cross-checks layer on top of that skill's own process:
 
 - **Clarity sweep** also flags AEO violations on blog posts: an unclear
@@ -335,7 +442,7 @@ cross-checks layer on top of that skill's own process:
 
 ## Step 6: Humanize
 
-Run the `ai-content-cleaner` skill. Use
+**Not optional.** Invoke the `ai-content-cleaner` skill through the Skill tool. Use
 **BALANCED mode** for blog posts and any page with FAQ/comparison-table
 structure worth protecting; **CLEAN mode** is fine for a short landing
 page with no structured elements to preserve. Before handoff, note which
@@ -346,6 +453,9 @@ Worth reaching for during this pass: one honest, specific limitation,
 stated once, after the page has established competence (the pratfall
 effect). Different from hedging, which the humanizing pass will still
 flag and remove.
+
+**Deliver only after Steps 5 and 6.** End the file with a hidden line naming the skills you ran
+(`<!-- Skills run: copy-editing, ai-content-cleaner -->`). If either is missing from that line, go back and call it. There is no inline substitute.
 
 ### Final output
 

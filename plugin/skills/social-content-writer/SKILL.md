@@ -1,6 +1,6 @@
 ---
 name: social-content-writer
-description: "Draft social media posts for Instagram, LinkedIn, Reddit, or X (Twitter) with a platform-selection gate up front, then platform-specific structure, hook, hashtag, and format guidance tuned to each platform's current algorithm behavior, including Reddit's community-first self-promotion norms, which are fundamentally different from the other three. Use for \"write a LinkedIn post,\" \"social post,\" \"Twitter/X post,\" \"Instagram caption,\" \"Reddit post,\" or \"social media content.\" Not for paid ads or ad creative sets (see ad-creative-matrix), not for a full content calendar (see campaign-plan) and not for web pages (see web-content-pipeline) or lifecycle email flows (see email-sequence-hubspot-brevo)."
+description: "Always use for any organic social post, however short: LinkedIn, Instagram, X or Reddit, with hook, structure, hashtags and CTA per platform. Use for \"LinkedIn post\", \"company post\", \"caption\", \"tweet\". Not paid ads (ad-creative-matrix)."
 ---
 
 # Social Content Writer
@@ -144,5 +144,4 @@ Ask: "Would you like this adapted for another platform, a variant to test, or sh
 - `web-content-pipeline`: for the web page a social post might link to
 - `customer-story-writer`: for a case study a social post might summarize
 - `content-creation`: the gateway skill; routes here when the content type is social
-- `linkedin-outreach`: for one-to-one LinkedIn messages to prospects. This skill is for public posts
 - `ad-creative-matrix`: for paid social and video ads (hooks, bodies, CTAs, test plan). This skill is organic only

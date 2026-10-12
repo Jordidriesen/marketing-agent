@@ -8,17 +8,7 @@ metadata:
     datatype/colour connection rules, consistency controls, iterators for
     batching, publishing a graph as a reusable "tool", and the Figma MCP
     run path (which can run a published Weave tool but not build a graph).
-description: >
-  Designs a Figma Weave (formerly Weavy) node graph for generated,
-  composited or retouched imagery and video, node by node, with wiring,
-  parameters, consistency controls and iterators, so a person builds it
-  once and publishes it as a reusable Weave "tool". When the Figma MCP
-  connector is available and that tool is published, also runs it:
-  uploads brand assets, sets inputs, executes, polls, returns the output.
-  Use for hero images, product shots, composited scenes, character/style
-  consistency, batch variants, or short video. For template-based social,
-  docs and bulk text-variant assets, use canva-workflow. For a storyboarded product
-  teaser or demo video built from the product's own screens, use launch-video.
+description: "Designs and runs Figma Weave node graphs for generated or composited imagery and short video: hero images, product shots, batch variants. Templates and text variants: canva-workflow."
 argument-hint: "<the imagery or video to build in Figma Weave>"
 ---
 

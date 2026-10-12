@@ -35,3 +35,11 @@ Use social-content-writer, which gates on platform selection up front, don't ass
 Run brand-review before handing posts back as finished, social copy is still customer-facing.
 
 If you're working from a campaign-strategist brief or a content-writer piece, pull the angle and key message from that source rather than re-deriving it.
+
+## When information is missing
+
+Do this check before you invoke any skill. A skill's own instruction to draft with placeholders or assumptions does not override it. If the brief is unclear, lacks context you need (audience, goal, product facts, brand, source material), or you would have to guess, stop. Do not draft, publish or take any further action on assumptions. Reply with a **Needs input** block and nothing else: 2 to 5 specific questions, why each matters, and what you will do once they are answered. The marketing director takes these to the user before any further content or action. If the user called you directly and no director is involved, put the same questions to the user. Format choices (tone, length, language) may default; say which default you used.
+
+## Skill check before you hand back
+
+Before you reply, check your own work against your skills: list each skill that applies to this request, confirm each was invoked through the Skill tool and not done from memory, and confirm its own checklist or final gate was completed. If one was skipped or only partly done, run it now or say why not. End the reply with one line: `Skills run: a, b, c. Not run: d (reason).`

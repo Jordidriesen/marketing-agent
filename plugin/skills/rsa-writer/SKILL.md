@@ -1,6 +1,6 @@
 ---
 name: rsa-writer
-description: Writes Google Ads responsive search ad headlines and descriptions that fit character limits and match search intent. Use when the user asks for ad copy, RSA assets, headlines, or descriptions. For paid social or video ads (LinkedIn, Meta, YouTube, TikTok) use ad-creative-matrix instead.
+description: "Writes Google Ads responsive search ad headlines (30 characters) and descriptions (90) that match search intent. Use for \"ad copy\", \"RSA\", \"Google Ads headlines\". Paid social and video ads: ad-creative-matrix."
 ---
 
 # rsa-writer

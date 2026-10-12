@@ -1,6 +1,6 @@
 ---
 name: email-sequence-hubspot-brevo
-description: Design and draft multi-email sequences (onboarding, lead nurture, re-engagement, win-back, product launch) built specifically for HubSpot Workflows or Brevo Automation, including full copy, timing, branching logic, exit conditions, and a platform-specific build checklist in the tool's actual menu/step names. Opens by asking which platform to build for. Use whenever building an email sequence, drip campaign, nurture flow, or automation for HubSpot or Brevo, or when the user says "email sequence," "workflow," "automation," "drip campaign," or names either platform. For cold outbound to prospects who have not opted in, use cold-email-sequence instead.
+description: "Builds multi-email sequences (onboarding, nurture, re-engagement, win-back, launch) for HubSpot Workflows or Brevo Automation: copy, timing, branching, exit rules, build steps. Use for \"email sequence\", \"drip\", \"nurture flow\". Cold outbound: cold-email-sequence."
 metadata:
   version: 1.1.0
   history: >

@@ -1,6 +1,6 @@
 ---
 name: competitor-analysis
-description: "Analyzes one named competitor's organic footprint, ranking keywords, and actual page content using OpenSEO for rankings and domain data and Firecrawl to crawl their top pages, deep enough to decide what to learn from, avoid, counter-position against, or outrank. Use for \"analyze this competitor,\" \"competitor deep dive,\" or comparing the user's domain against one named rival. For identifying market leaders first, use competitive-landscape."
+description: "Deep dive on one named competitor's organic footprint, rankings and page content. Use for \"analyse this competitor\", \"competitor deep dive\"."
 ---
 
 # Competitor Analysis

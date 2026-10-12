@@ -1,6 +1,6 @@
 ---
 name: press-release-writer
-description: "Draft a press release, headline, dateline, lead paragraph, body, quotes, boilerplate, and media contact, following standard PR conventions and AP-style formatting. Use for \"write a press release,\" \"PR announcement,\" \"launch announcement,\" \"funding announcement,\" or \"partnership announcement.\" For finding outlets to pitch it to, see media-mapping."
+description: "Writes press releases in standard structure: headline, dateline, lead, body, quotes marked for approval, boilerplate, media contact. Use for \"press release\", \"launch, funding, partnership or office announcement\". Outlets: media-mapping."
 metadata:
   version: 1.1.0
   history: >

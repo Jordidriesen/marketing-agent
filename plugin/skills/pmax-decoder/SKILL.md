@@ -1,6 +1,6 @@
 ---
 name: pmax-decoder
-description: Surfaces the Performance Max data Google buries, including asset group performance, search categories, and brand cannibalization, pulling asset-level data live from the Google Ads connector when connected. Use when the user shares PMax exports, connects their Google Ads account, or asks what is happening inside a Performance Max campaign.
+description: "Shows what Performance Max hides: asset groups, search categories, brand cannibalisation. Use for PMax questions or exports."
 ---
 
 # pmax-decoder
