@@ -1,8 +1,8 @@
 ---
 name: web-content-pipeline
 metadata:
-  version: 1.4.0
-  history: "v1.4.0: framework is the skill's choice, not forced; editor notes are hidden comments; component tags above each section; Lorem Ipsum proof placeholders; neutral headings; page-type guide with FAQ counts; pillar, comparison and glossary page types. v1.3.0: hidden confirm comments and visible proof placeholders replace the claim placeholders; ask-first gate; audience line, closing CTA block and hidden production notes for articles; implementation brief, single goal and objection FAQ for landing pages; Steps 5 and 6 are mandatory and reported. v1.2.0: description rewritten for the skill listing budget and widened to copywriting and page design; Steps 5 and 6 invoked through the Skill tool; claim test added. Body otherwise unchanged from 1.1.0."
+  version: 1.4.1
+  history: "v1.4.1: required skill calls stated at the top, no inline substitute for copy-editing and ai-content-cleaner. v1.4.0: framework is the skill's choice, not forced; editor notes are hidden comments; component tags above each section; Lorem Ipsum proof placeholders; neutral headings; page-type guide with FAQ counts; pillar, comparison and glossary page types. v1.3.0: hidden confirm comments and visible proof placeholders replace the claim placeholders; ask-first gate; audience line, closing CTA block and hidden production notes for articles; implementation brief, single goal and objection FAQ for landing pages; Steps 5 and 6 are mandatory and reported. v1.2.0: description rewritten for the skill listing budget and widened to copywriting and page design; Steps 5 and 6 invoked through the Skill tool; claim test added. Body otherwise unchanged from 1.1.0."
 description: "Always use for any website copy or copywriting, however short or fully specified: landing pages, homepages, product, solution, feature, pricing and about pages, page design and page copy work, a hero section, benefit blocks, CTAs, SEO or AEO blog posts. Not social posts or ebooks."
 ---
 
@@ -14,6 +14,11 @@ publish-ready. One pipeline instead of two, because the underlying
 process is identical: classify intent, classify page type, pick a
 structural framework, write to the right template, edit, humanize. What
 differs by page type is the template in Step 4, not the process around it.
+
+**Required skill calls.** Two other skills are part of this pipeline and must be called through the
+Skill tool, never imitated with an inline edit: `copy-editing` after the Step 4 draft, and
+`ai-content-cleaner` after that. If you have a draft and have not called both, call them now, before you
+reply. A reply that says the edit pass was done inline, or that skips either skill, is not finished.
 
 **Scope:** Web content only. Not social media (separate skill). Not
 print/downloadable content like ebooks or whitepapers.
@@ -45,6 +50,10 @@ Never invent a customer or a figure to fill it. Leave a fact out, with a hidden
 note, rather than approximate it.
 
 A call to action may promise what the offering is meant to fix, as the brief states it.
+
+Do not build selling points on a single fact. "A Belgian company" does not mean "a team in your time
+zone and language", and "cloud" does not mean a named hosting region. If a benefit rests on something
+the sources only hint at, leave it out or flag it with a hidden `confirm` note.
 
 ---
 
@@ -436,7 +445,7 @@ effect). Different from hedging, which the humanizing pass will still
 flag and remove.
 
 **Deliver only after Steps 5 and 6.** End the file with a hidden line naming the skills you ran
-(`<!-- Skills run: copy-editing, ai-content-cleaner. Not run: none -->`) and anything you could not run and why.
+(`<!-- Skills run: copy-editing, ai-content-cleaner -->`). If either is missing from that line, go back and call it. There is no inline substitute.
 
 ### Final output
 
