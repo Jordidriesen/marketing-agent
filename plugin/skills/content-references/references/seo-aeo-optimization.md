@@ -122,12 +122,12 @@ deprioritize consensus content with no differentiating layer.
 A compact, checkable pass for Experience/Expertise/Authoritativeness/
 Trustworthiness: run once a draft is otherwise complete, as a gate before
 copy editing rather than a drafting rule. Several E-E-A-T-adjacent checks
-already live elsewhere in this file or in `web-content-pipeline` itself;
+already live elsewhere in this file or in the generation skill's own page template;
 this section covers only what isn't already handled, so nothing gets
 checked twice:
 
 **Already covered; don't re-check here:** direct-answer opening (Content
-architecture, above), heading hierarchy and TOC (`web-content-pipeline`'s
+architecture, above), heading hierarchy and TOC (the generation skill's
 blog template), chunk size and section chunking (Chunk hygiene, above),
 keyword placement (Traditional keyword integration, above), sourced
 statistics (Factual density and Information gain audit, above), entity

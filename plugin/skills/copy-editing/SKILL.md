@@ -2,14 +2,15 @@
 name: copy-editing
 description: "Edits and improves existing marketing copy: clarity, structure, persuasion, tightening, proofreading. Use for \"edit this copy\", \"proofread\", \"tighten this\", \"polish this\", \"copy feedback\". New copy: web-content-pipeline and the other writers."
 metadata:
-  version: 1.2.0
+  version: 1.2.1
   history: >
+    v1.2.1: removed the broken Plain English Alternatives reference; the lexical pass has one owner, ai-content-cleaner.
     v1.2: stopped re-implementing persuasion principles and AI-tell word
     lists inline, the Seven Sweeps process stays here (it's the
     differentiator), but the "why" behind So What / Prove It / Heightened
     Emotion / Zero Risk now points at content-references'
     behavioral-psychology.md, and the lexical AI-tell cleanup defers to
-    ai-content-humanizing.md instead of a duplicated swap table. Replaced
+    ai-content-cleaner (via the former pointer file) instead of a duplicated swap table. Replaced
     the .agents/product-marketing-context.md lookup with the standard
     [brand]-brand-kit Step 0. Fixed Related Skills to name skills that
     exist.
@@ -300,7 +301,3 @@ When editing collaboratively: run a sweep and present findings (what you found, 
 2. What action should readers take?
 3. Are there specific concerns or known issues?
 4. What proof/evidence do you have available?
-
-## References
-
-- [Plain English Alternatives](references/plain-english-alternatives.md): simpler words for complex ones, a quick lookup; the fuller lexical pass is `ai-content-cleaner`.

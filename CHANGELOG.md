@@ -4,6 +4,22 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [2.5.3]
+
+Phase 1 of the web content library clean-up: corrections only, no new capability.
+
+- **`content-references` index is truthful.** It counts its modules correctly (five) and describes `seo-aeo-optimization.md` only by what the file contains. It no longer promises off-page signals or a Who/How/Why pre-gate, which the file never had.
+- **Canonical honesty rule** now lives once, in the `content-references` index. The reference files point at it and never into a generation skill; the `web-content-pipeline` claim test is its operational form. Hard-coded module counts ("the other four modules") removed.
+- **Personal content removed from the shared library** (`behavioral-psychology.md`, `communication-frameworks.md`); the mappings are kept as a pattern in `templates/personal-context.md` (not installed).
+- **Pointer file `ai-content-humanizing.md` deleted**, and the stale mentions in the history notes of `copy-editing`, `customer-story-writer`, `email-sequence-hubspot-brevo`, `press-release-writer` and `ai-content-cleaner` now name `ai-content-cleaner`.
+- **`copy-editing` 1.2.1:** removed the reference to the missing Plain English Alternatives file.
+- **`web-content-pipeline` 1.5.2:** the empty Step 3 input cells now cross-reference Steps 0, 1 and 2.
+- **`security-policy`:** the scope list in `SECURITY.md` names `seo-keyword-research` and `sea-keyword-research` (it named two skills that do not exist); last-reviewed date updated.
+- **`scripts/lint_skills.py`** now also fails on a description longer than 500 characters or a malformed `metadata.version`, and warns (without failing) about skills with no version, since Claude Code ignores it at runtime. Correction to the 2.5.2 notes: the lint does check `plugin/skills/`.
+- Touched skills carry a bumped `metadata.version` and a one-line history entry.
+
+Noticed, not fixed here: `security-policy/SKILL.md` and `SECURITY.md` still name the owner personally.
+
 ## [2.5.2]
 
 Fixes why the content skills stopped running, and tightens how the agents follow them. Found by comparing 2.4.0 and 2.5.1 in evals: landing page copy and LinkedIn outreach scored lower, and `web-content-pipeline` did not run at all in the landing page runs.

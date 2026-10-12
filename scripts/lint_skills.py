@@ -5,7 +5,9 @@ Checks:
 - SKILL.md exists in every top-level folder (excluding dotfiles/scripts)
 - Frontmatter is valid YAML, delimited by --- ... ---
 - 'name' field is present and matches the folder name
-- 'description' field is present and non-trivial (catches empty/placeholder text)
+- 'description' field is present, non-trivial (catches empty/placeholder text) and at most 500 characters
+- 'metadata.version', when present, is a semantic version (x.y.z). A missing version is a warning,
+  not an error: Claude Code ignores it at runtime, and skills carry one for maintainers
 
 Exits non-zero on any failure so it can gate CI.
 """
@@ -22,6 +24,9 @@ except ImportError:
 ROOT = Path(__file__).resolve().parent.parent
 SKIP_DIRS = {".github", ".git", "scripts", "plugin", "archive", "templates"}
 MIN_DESCRIPTION_LEN = 20
+MAX_DESCRIPTION_LEN = 500
+SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+$")
+WARNINGS: list[str] = []
 
 FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.S)
 
@@ -53,6 +58,17 @@ def check_skill(folder: Path) -> list[str]:
     description = fm.get("description")
     if not description or len(str(description).strip()) < MIN_DESCRIPTION_LEN:
         errors.append(f"{folder.name}: frontmatter 'description' missing or too short")
+    elif len(" ".join(str(description).split())) > MAX_DESCRIPTION_LEN:
+        errors.append(
+            f"{folder.name}: 'description' is longer than {MAX_DESCRIPTION_LEN} characters"
+        )
+
+    metadata = fm.get("metadata") or {}
+    version = metadata.get("version") if isinstance(metadata, dict) else None
+    if version is None:
+        WARNINGS.append(f"{folder.name}: no metadata.version")
+    elif not SEMVER_RE.match(str(version)):
+        errors.append(f"{folder.name}: metadata.version '{version}' is not x.y.z")
 
     return errors
 
@@ -76,6 +92,8 @@ def main() -> int:
             print(f"  - {e}")
         return 1
 
+    if WARNINGS:
+        print(f"{len(WARNINGS)} skill(s) without metadata.version (warning only).")
     print("All skills passed frontmatter validation.")
     return 0
 

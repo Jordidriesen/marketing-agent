@@ -2,9 +2,9 @@
 
 ## AI Agent Security Policy: Prompt Injection & Tool-Use Safeguards
 
-**Scope:** This policy governs how Claude (via skills, MCP connectors, and web-facing tools) handles untrusted content and privileged actions within this workspace. It applies to all skills that fetch, scrape, or ingest external content (including `content-research-orchestrator`, `european-market-intelligence`, `competitor-analysis`, `competitive-landscape`, `content-gap-mapping`, `media-mapping`, `keyword-clustering`, `keyword-research`, and `keyword-research-dfs`) and to all connected MCP servers with write or send capability (Google Ads, LinkedIn Ads, Search Console, Bing Webmaster Tools, OpenSEO, Brevo, HubSpot, Typefully, WordPress MCPs such as NovaMira, WP Umbrella, Adobe for creativity, Canva, Figma, Notion, Google Drive, Tally.so, Make, Zapier, and Gmail, Google Calendar or Airtable if they are connected later).
+**Scope:** This policy governs how Claude (via skills, MCP connectors, and web-facing tools) handles untrusted content and privileged actions within this workspace. It applies to all skills that fetch, scrape, or ingest external content (including `content-research-orchestrator`, `european-market-intelligence`, `competitor-analysis`, `competitive-landscape`, `content-gap-mapping`, `media-mapping`, `keyword-clustering`, `seo-keyword-research`, and `sea-keyword-research`) and to all connected MCP servers with write or send capability (Google Ads, LinkedIn Ads, Search Console, Bing Webmaster Tools, OpenSEO, Brevo, HubSpot, Typefully, WordPress MCPs such as NovaMira, WP Umbrella, Adobe for creativity, Canva, Figma, Notion, Google Drive, Tally.so, Make, Zapier, and Gmail, Google Calendar or Airtable if they are connected later).
 
-**Last reviewed:** 2026-10-01 (added WP Umbrella, Adobe for creativity, Make, Zapier, G2, vidIQ). Review at least quarterly or after adding any new connector/skill.
+**Last reviewed:** 2026-10-12 (scope list corrected to the current keyword skill names; earlier: added WP Umbrella, Adobe for creativity, Make, Zapier, G2, vidIQ). Review at least quarterly or after adding any new connector/skill.
 
 ---
 

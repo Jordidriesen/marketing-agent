@@ -1,7 +1,7 @@
 # Internal Link Architecture
 
-Part of the `content-references` shared library. Loaded by
-`web-content-pipeline` (and any other content-generation skill) during
+Part of the `content-references` shared library. Loaded by the
+content-generation skills during
 drafting, not as a post-publish afterthought, since link placement and
 anchor text are easiest to get right while the section is being written.
 

@@ -1,8 +1,8 @@
 ---
 name: web-content-pipeline
 metadata:
-  version: 1.5.1
-  history: "v1.5.1: chat reply is the file plus two sentences; no visible instructions in navigation rows. v1.5.0: questions and doubts become QUESTION and UNSURE comments collected in an OPEN ITEMS block for the person operating the chat. v1.4.1: required skill calls stated at the top, no inline substitute for copy-editing and ai-content-cleaner. v1.4.0: framework is the skill's choice, not forced; editor notes are hidden comments; component tags above each section; Lorem Ipsum proof placeholders; neutral headings; page-type guide with FAQ counts; pillar, comparison and glossary page types. v1.3.0: hidden confirm comments and visible proof placeholders replace the claim placeholders; ask-first gate; audience line, closing CTA block and hidden production notes for articles; implementation brief, single goal and objection FAQ for landing pages; Steps 5 and 6 are mandatory and reported. v1.2.0: description rewritten for the skill listing budget and widened to copywriting and page design; Steps 5 and 6 invoked through the Skill tool; claim test added. Body otherwise unchanged from 1.1.0."
+  version: 1.5.2
+  history: "v1.5.2: Step 3 inputs filled with cross-references; claim test points at the canonical honesty rule. v1.5.1: chat reply is the file plus two sentences; no visible instructions in navigation rows. v1.5.0: questions and doubts become QUESTION and UNSURE comments collected in an OPEN ITEMS block for the person operating the chat. v1.4.1: required skill calls stated at the top, no inline substitute for copy-editing and ai-content-cleaner. v1.4.0: framework is the skill's choice, not forced; editor notes are hidden comments; component tags above each section; Lorem Ipsum proof placeholders; neutral headings; page-type guide with FAQ counts; pillar, comparison and glossary page types. v1.3.0: hidden confirm comments and visible proof placeholders replace the claim placeholders; ask-first gate; audience line, closing CTA block and hidden production notes for articles; implementation brief, single goal and objection FAQ for landing pages; Steps 5 and 6 are mandatory and reported. v1.2.0: description rewritten for the skill listing budget and widened to copywriting and page design; Steps 5 and 6 invoked through the Skill tool; claim test added. Body otherwise unchanged from 1.1.0."
 description: "Always use for any website copy or copywriting, however short or fully specified: landing pages, homepages, product, solution, feature, pricing and about pages, page design and page copy work, a hero section, benefit blocks, CTAs, SEO or AEO blog posts. Not social posts or ebooks."
 ---
 
@@ -50,6 +50,7 @@ Never invent a customer or a figure to fill it. Leave a fact out, with a hidden
 note, rather than approximate it.
 
 A call to action may promise what the offering is meant to fix, as the brief states it.
+This test is the operational form of the canonical honesty rule in `content-references/SKILL.md`.
 
 Do not build selling points on a single fact. "A Belgian company" does not mean "a team in your time
 zone and language", and "cloud" does not mean a named hosting region. If a benefit rests on something
@@ -164,9 +165,9 @@ single default tone this skill can assume. Before drafting anything:
 | Field | Input |
 |---|---|
 | Brand/client | Which brand: determines which brand kit applies |
-| Page type (Step 1) | |
-| Content Bucket (Step 0) | |
-| Structural framework (Step 2) | |
+| Page type (Step 1) | Outcome of Step 1 |
+| Content Bucket (Step 0) | Outcome of Step 0 |
+| Structural framework (Step 2) | Outcome of Step 2 |
 | Primary keyword + secondary keywords | (still relevant for landing/product/solution pages, not just blog) |
 | Target audience | Who is the ideal visitor/reader? |
 | Primary action | The ONE thing you want them to do |

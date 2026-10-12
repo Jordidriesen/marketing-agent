@@ -1,6 +1,9 @@
 ---
 name: content-references
 description: "Shared writing references (frameworks, SEO and AEO rules, psychology, schema) loaded by the content skills. Not for direct requests."
+metadata:
+  version: 1.0.1
+  history: "v1.0.1: index describes each file truthfully and counts its modules correctly; canonical honesty rule added; the pointer-only humanising file removed."
 ---
 
 # Content References: Shared Library
@@ -14,9 +17,12 @@ modules relevant to the piece it's producing, not all five, every time.
 | `references/content-intent-framework.md` | Informational / Navigational / Transactional classification | **Always**: the first step of any content-generation skill, not optional |
 | `references/communication-frameworks.md` | Minto, Sparkline, StoryBrand, PAS, BLUF: structural framework selection | Any piece longer than a few sentences needs a deliberate structural choice, not just intent |
 | `references/behavioral-psychology.md` | Shotton, Ehrenberg-Bass, Cialdini, fluency research: copy and visual persuasion principles | Copywriting and strategy work; lighter touch for pure reference/informational content |
-| `references/seo-aeo-optimization.md` | Traditional SEO + AEO (AI citation) structural rules, off-page/freshness GEO signals, an E-E-A-T quality gate (with a Who/How/Why pre-gate), and an optional 100-point quality scorecard for when a formal score is actually needed | Any content meant to rank or be cited: blog posts, guides, product pages |
-| `references/internal-linking.md` | Link density targets, anchor text distribution and anti-patterns, placement priority, hub-and-spoke architecture, orphan-page detection. Cannibalization detection lives in `keyword-clustering`/`seo-audit` instead, not duplicated here | Any piece over a couple hundred words: run during drafting, not as a post-publish afterthought |
-| `references/ai-content-humanizing.md` | Pointer only: the humanising rules and language files moved to the `ai-content-cleaner` skill, which is now their single owner | Final pass on any drafted content: invoke `ai-content-cleaner` |
+| `references/seo-aeo-optimization.md` | Traditional SEO + AEO (AI citation) structural rules: AEO architecture, traditional keyword integration, an information gain audit, an E-E-A-T quality gate (eight additive checks), an optional 100-point quality scorecard for when a formal score is needed, schema recommendations, platform differences and visual asset rules | Any content meant to rank or be cited: blog posts, guides, product pages |
+| `references/internal-linking.md` | Link density targets, anchor text distribution and anti-patterns, placement priority, bidirectional linking, hub-and-spoke architecture, orphan-page detection, an audit checklist, link velocity and tracking. Cannibalization detection lives in `keyword-clustering` and `seo-audit`, not here | Any piece over a couple hundred words: run during drafting, not as a post-publish afterthought |
+
+## Canonical honesty rule
+
+Every skill that loads this library follows this rule, stated once here. Never invent numbers, quotes, customers, logos, awards, certifications or prices. Missing proof becomes a visible placeholder (Lorem Ipsum in the form the proof will take on a web page, a bracketed placeholder in a story) with a hidden `PROOF NEEDED` note. A claim the sources (the brief, the brand kit, the product file) support at about 90% likelihood or better is written plainly. Anything weaker gets a hidden `confirm` note, or the general version the sources do support. Reference files in this library point here and never into a generation skill.
 
 ## How a generation skill should use this
 
@@ -31,7 +37,7 @@ modules relevant to the piece it's producing, not all five, every time.
    intent bucket and content type.
 4. **Run the humanising pass** (the `ai-content-cleaner` skill) as the last
    step on every piece, regardless of type. It loads the brand voice and the
-   right language file itself.
+   right language file itself. It owns the humanising rules and the language pattern files.
 
 ## Why this exists
 

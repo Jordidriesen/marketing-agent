@@ -2,8 +2,9 @@
 name: customer-story-writer
 description: "Always use for any B2B customer story or case study, however short: writes it from the supplied brief or interview. Use for \"case study\", \"customer story\", \"success story\", \"win story\"."
 metadata:
-  version: 1.2.0
+  version: 1.2.1
   history: >
+    v1.2.1: history note no longer names the removed pointer file.
     v1.2: description rewritten for the skill listing budget. The strict no-fabrication rule is
     kept, with context and consequences covered explicitly. Source fidelity overrides the structure
     and any length target, the clean pass is invoked through the Skill tool, a sentence-by-sentence
@@ -12,8 +13,7 @@ metadata:
     inline, the fixed 12-section structure and its framework-to-section
     mapping stay, but the framework definitions now cite
     content-references/references/communication-frameworks.md. The Phase 3
-    clean pass points at ai-content-humanizing.md (the ai-content-cleaner
-    skill is the same rules, directly invocable).
+    clean pass points at ai-content-cleaner (via the former pointer file).
 ---
 
 # Customer Story Writer

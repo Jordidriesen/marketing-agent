@@ -120,28 +120,26 @@ need to feel the gap before the answer will land.
 
 ---
 
-## Mapping to Content Bucket and to Jordi's actual work
+## Mapping to Content Bucket
 
 Cross-reference against `content-intent-framework.md`: intent and
 framework are separate decisions, but they correlate:
 
 | Content Bucket | Frameworks that usually fit | Example |
 |---|---|---|
-| Informational | Minto (if the reader already wants the answer) or a light Sparkline open (if the post needs to first establish why the topic matters) | A client guide page that opens with "what is" the current pain before answering |
+| Informational | Minto (if the reader already wants the answer) or a light Sparkline open (if the post needs to first establish why the topic matters) | A guide page that opens with the current pain before answering "what is" |
 | Navigational | Neither: wayfinding, not persuasion | N/A |
-| Transactional | StoryBrand or PAS, almost always | A client's Google Ads landing pages, product/solution pages |
+| Transactional | StoryBrand or PAS, almost always | A paid-search landing page, a product or solution page |
 
 **Practical mapping for recurring work:**
-- A client's executive-facing content (board decks, strategic proposals,
-  management presentations) → **Minto**
-- A client's product launches, category-defining keynote content → **Sparkline**
-- A client's landing pages, solution pages → **StoryBrand**
-- A client's Google Ads copy, lead-gen email sequences → **PAS**
-- Internal status updates, quick team Slack/email summaries → **BLUF**
-- A voice-led personal/lifestyle review series → none of these fit
-  cleanly; a verdict-led structure is closer to BLUF in spirit (bottom
-  line up front, no defended pyramid) but shouldn't be forced into any
-  of the five above
+- Executive-facing content (board decks, strategic proposals, management
+  presentations) → **Minto**
+- Product launches, category-defining keynote content → **Sparkline**
+- Landing pages, solution pages → **StoryBrand**
+- Ad copy, lead-gen email sequences → **PAS**
+- Internal status updates, quick team summaries → **BLUF**
+- Where none of these fits cleanly, do not force one: use the structure
+  the content needs and name it.
 
 ## Combining frameworks
 

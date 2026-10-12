@@ -2,12 +2,13 @@
 name: press-release-writer
 description: "Writes press releases in standard structure: headline, dateline, lead, body, quotes marked for approval, boilerplate, media contact. Use for \"press release\", \"launch, funding, partnership or office announcement\". Outlets: media-mapping."
 metadata:
-  version: 1.1.0
+  version: 1.1.1
   history: >
+    v1.1.1: history note no longer names the removed pointer file.
     v1.1: wired into content-references, Step 3 cites
     communication-frameworks.md for the inverted-pyramid / BLUF structure
     instead of leaving it implicit, and a Step 5 humanizing pass
-    (ai-content-humanizing.md, CLEAN) was added; previously the skill only
+    (ai-content-cleaner in CLEAN mode, via the former pointer file) was added; previously the skill only
     ran copy-editing and never a humanizing pass.
 ---
 

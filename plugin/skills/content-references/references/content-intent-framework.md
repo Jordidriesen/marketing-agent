@@ -6,7 +6,7 @@ structure, proof type, CTA strength, and which behavioral-science levers apply
 
 Part of the `content-references` shared library: see
 `content-references/SKILL.md` for how generation skills should use this
-alongside the other four modules.
+with the library's other modules.
 
 For the full effect-by-effect playbook this framework points into, see
 `content-references/references/behavioral-psychology.md`.
@@ -92,8 +92,8 @@ Ads landing pages and product/solution pages. Hand off to `web-content-pipeline`
 **Primary behavioral levers** (this is where most of the persuasion playbook
 concentrates, see the full table):
 anchoring & price relativity, charm pricing & extremeness aversion (tiering),
-scarcity & social proof (real only, never fabricated, per the web-content-pipeline
-skill's honesty rule), framing (loss-averse phrasing, "sold out" not
+scarcity & social proof (real only, never fabricated, per the canonical honesty rule
+in `content-references/SKILL.md`), framing (loss-averse phrasing, "sold out" not
 "unavailable"), reactance reduction ("no obligation," "cancel anytime"),
 pratfall effect (one honest caveat late in the page, only once competence is
 established), peak-end rule (end on the strongest benefit + easiest action,
