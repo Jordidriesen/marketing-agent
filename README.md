@@ -1,6 +1,6 @@
 # Marketing Agent: a Claude marketing team
 
-A marketing team for Claude in one install: a director, twelve specialist subagents, the 60 skills they run on, and 13 menu shortcuts (`0-` entries) that open an agent directly. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, outbound and sales, creative and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
+A marketing team for Claude in one install: a director, twelve specialist subagents, the 58 skills they run on, and 13 menu shortcuts (`0-` entries) that open an agent directly. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, outbound and sales, creative and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
 
 You act as the operator: ask `marketing-director` for anything that spans disciplines, or call a specialist directly for a single task.
 
