@@ -1,8 +1,8 @@
 ---
 name: web-content-pipeline
 metadata:
-  version: 1.4.1
-  history: "v1.4.1: required skill calls stated at the top, no inline substitute for copy-editing and ai-content-cleaner. v1.4.0: framework is the skill's choice, not forced; editor notes are hidden comments; component tags above each section; Lorem Ipsum proof placeholders; neutral headings; page-type guide with FAQ counts; pillar, comparison and glossary page types. v1.3.0: hidden confirm comments and visible proof placeholders replace the claim placeholders; ask-first gate; audience line, closing CTA block and hidden production notes for articles; implementation brief, single goal and objection FAQ for landing pages; Steps 5 and 6 are mandatory and reported. v1.2.0: description rewritten for the skill listing budget and widened to copywriting and page design; Steps 5 and 6 invoked through the Skill tool; claim test added. Body otherwise unchanged from 1.1.0."
+  version: 1.5.1
+  history: "v1.5.1: chat reply is the file plus two sentences; no visible instructions in navigation rows. v1.5.0: questions and doubts become QUESTION and UNSURE comments collected in an OPEN ITEMS block for the person operating the chat. v1.4.1: required skill calls stated at the top, no inline substitute for copy-editing and ai-content-cleaner. v1.4.0: framework is the skill's choice, not forced; editor notes are hidden comments; component tags above each section; Lorem Ipsum proof placeholders; neutral headings; page-type guide with FAQ counts; pillar, comparison and glossary page types. v1.3.0: hidden confirm comments and visible proof placeholders replace the claim placeholders; ask-first gate; audience line, closing CTA block and hidden production notes for articles; implementation brief, single goal and objection FAQ for landing pages; Steps 5 and 6 are mandatory and reported. v1.2.0: description rewritten for the skill listing budget and widened to copywriting and page design; Steps 5 and 6 invoked through the Skill tool; claim test added. Body otherwise unchanged from 1.1.0."
 description: "Always use for any website copy or copywriting, however short or fully specified: landing pages, homepages, product, solution, feature, pricing and about pages, page design and page copy work, a hero section, benefit blocks, CTAs, SEO or AEO blog posts. Not social posts or ebooks."
 ---
 
@@ -207,6 +207,16 @@ them)? Buzzwords without substance?
   file: the implementation brief, a component tag above each section, `confirm` and `verify` notes,
   `PROOF NEEDED` notes, headline alternatives, the reasoning behind choices, and the closing
   `<!-- Skills run: ... -->` line. Nothing editor-facing may be visible when the page is rendered.
+- **Questions and doubts go in the file, as comments.** Anything you would otherwise ask the editor
+  becomes a comment next to the line: `<!-- QUESTION: ... -->`. A statement you cannot call about 90%
+  likely and cannot check against the sources is written in its most cautious supported form, or left
+  out, and gets `<!-- UNSURE: ... needs judging by the person operating the chat -->`. Collect every
+  `QUESTION`, `UNSURE`, `PROOF NEEDED` and `confirm` note in one `<!-- OPEN ITEMS: ... -->` block at the
+  end of the file, so the editor and the marketing director find them in one place. The page itself
+  stays clean.
+- **The chat reply is the file plus at most two sentences.** Do not repeat the open items, the edit-pass
+  summary or the framework reasoning outside the file: they live in its comments. Navigation and
+  button rows show the labels only, never instructions in parentheses outside a comment.
 - **Component tags.** When the site has a component library, put the exact component name in a comment
   above each section (`<!-- COMPONENT: 3-up problem cards -->`). Reuse the existing components and
   introduce none. A form modal is not a page component. Never use numbers or labels like "Section 1".

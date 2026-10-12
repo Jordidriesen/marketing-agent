@@ -295,7 +295,7 @@ Deliver the story in this order:
 
 1. **Working headline** (with note if metric placeholder is needed): short and catchy, not a full descriptive sentence
 2. **Full draft** using the 12-section structure above. Every section gets its own specific, outcome-carrying subheading, headline-length, never the generic framework name. Quotes sit in their anchor sections (epiphany in section 4, transformation in section 9, partnership in section 12); include Facts & figures (10) when the numbers are scope rather than outcome, and include Quotes at a glance (11) only if a standalone pull-quote block is useful for other formats. Section 12 always closes with forward motion or a recap, never a bare placeholder by default
-3. **Hidden notes** (an HTML comment at the end, not visible on the finished page): the list of `[PLACEHOLDER]` items and what would make each one stronger, a one-line source-check result (what was removed and why), and a brief list of patterns found and removed in the BALANCED clean pass. End it with `Skills run: ai-content-cleaner`.
+3. **Hidden notes** (an HTML comment at the end, not visible on the finished page, headed `OPEN ITEMS`): every `QUESTION` you would ask the editor, every statement you are `UNSURE` about with the words "needs judging by the person operating the chat", the list of `[PLACEHOLDER]` items and what would make each one stronger, a one-line source-check result (what was removed and why), and a brief list of patterns found and removed in the BALANCED clean pass. End it with `Skills run: ai-content-cleaner`.
 
 If the user provided a complete brief, deliver the full draft in one pass. If significant elements are missing, ask for them first (Step 0 gates this).
 

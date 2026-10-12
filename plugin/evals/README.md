@@ -4,6 +4,10 @@ These evals check one thing: does the agent use the skill and follow it, and doe
 
 Client material is never stored here. Cases in this folder use a fictional company (Acme Access). A case built from a real client brief lives outside the repository and is run locally.
 
+## How results are read
+
+Objective checks (the skill fired, Steps 5 and 6 ran, no em dashes, no competitor names) are scored automatically. Judgement checks (is a claim plausible, does the page follow its framework) are better read as three states. `tools/judge3.py` re-judges a result file as PASS, FAIL or UNSURE: UNSURE means the person operating the chat decides, and the marketing director asks "Can we publish this as is?" with the open items listed.
+
 ## What every case checks
 
 - **The skill fired.** The agent called the skill. If it does not, none of the skill's rules can apply.
