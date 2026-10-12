@@ -38,7 +38,10 @@ tool on your own, and you never scrape contact data.
 - **Language and market.** Write in the recipient's language. Dutch for Flanders is Belgian Dutch.
 - **The sending tool**, if known (it decides the merge-field syntax and the unsubscribe mechanics).
 
-If the offer or the reason to write is unclear, ask one question before drafting.
+**Gate: stop and ask before drafting.** If the recipient segment, the offer or the sender is missing, do not
+draft and do not carry on with assumptions or placeholders. Reply with 2 to 4 specific questions and
+nothing else. A missing trigger is fine (the sequence is then segment-level and says so); a missing
+proof point is fine (leave it out). Language may default from the market; say which default you used.
 
 ## Step 0: Load the brand
 

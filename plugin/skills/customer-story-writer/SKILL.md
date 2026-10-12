@@ -34,7 +34,7 @@ The rules:
 - **Quotes:** Only write quotes when the user has provided source material (call transcript, written response, email). If no quote material exists, insert a clearly labelled placeholder: `[QUOTE NEEDED, target: epiphany / transformation / partnership]`. Never draft a "representative" or "example" quote and present it as real.
 - **Metrics and outcomes:** Only use numbers the user has explicitly provided. Do not round up, extrapolate, or estimate. If a metric is directional ("significant time savings"), keep it directional in copy: do not convert it to a percentage.
 - **Problems and pain points:** Start from what the user told you. You may add context that is at least about 90% likely to be true for this customer given the brief, such as the usual pressure in their industry or role, as long as it does not state a fact about this customer's situation that the brief contradicts or does not support. If the "Before" state is vague, keep it general rather than vivid.
-- **Implementation details:** Keep timelines, onboarding steps and "aha moments" to what the source material says. Where the source is silent, say less, or use a `[CONFIRM: ...]` placeholder.
+- **Implementation details:** Keep timelines, onboarding steps and "aha moments" to what the source material says. Where the source is silent, say less, or add a hidden note next to it: `<!-- confirm: ... -->`.
 
 When material is missing, use explicit placeholders and surface them clearly in the output. A story with honest gaps is more useful than a polished draft built on invented facts.
 

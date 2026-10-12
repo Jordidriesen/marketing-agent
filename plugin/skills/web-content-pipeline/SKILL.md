@@ -1,8 +1,8 @@
 ---
 name: web-content-pipeline
 metadata:
-  version: 1.2.0
-  history: "v1.2.0: description rewritten for the skill listing budget and widened to copywriting and page design; Steps 5 and 6 invoked through the Skill tool; claim test added. Body otherwise unchanged from 1.1.0."
+  version: 1.3.0
+  history: "v1.3.0: hidden confirm comments and visible proof placeholders replace the claim placeholders; ask-first gate; audience line, closing CTA block and hidden production notes for articles; implementation brief, single goal and objection FAQ for landing pages; Steps 5 and 6 are mandatory and reported. v1.2.0: description rewritten for the skill listing budget and widened to copywriting and page design; Steps 5 and 6 invoked through the Skill tool; claim test added. Body otherwise unchanged from 1.1.0."
 description: "Always use for any website copy or copywriting, however short or fully specified: landing pages, homepages, product, solution, feature, pricing and about pages, page design and page copy work, a hero section, benefit blocks, CTAs, SEO or AEO blog posts. Not social posts or ebooks."
 ---
 
@@ -31,14 +31,18 @@ in process.
 Facts about the product, the offer or the company come from the brief, then the brand kit or the product
 file (`products/<slug>.md`). Before you write a statement about what the product does or what a visitor
 gets, ask: given those sources, is this at least about 90% likely to be true? If yes, write it plainly,
-with no hedge and no placeholder, and let the framework do its work (the problem and agitation steps
-describe the audience's situation, and outcomes that follow from a stated feature are fine). If it is
-a guess below that level (a specific mechanism, integration, setting or step), use the general version
-the sources support, or mark it `[CONFIRM: ...]` inline.
+with no hedge, and let the framework do its work (the problem and agitation steps describe the audience's
+situation, and outcomes that follow from a stated feature are fine). A plausible claim the sources do not
+confirm (EU hosting, a walkthrough length, a deployment option) is still written, with a hidden note next to
+it: `<!-- confirm: EU hosting, check region before publish -->`. The reader sees clean copy and the
+editor sees what to check. If you would be guessing below that level (a specific mechanism, integration,
+setting or step), use the general version the sources support.
 
 These always need a source, however plausible they sound: numbers and percentages, customer names and
-logos, quotes, awards and ratings, certifications and compliance claims, and prices. Missing proof
-becomes `[PROOF NEEDED: ...]` in the copy.
+logos, quotes, awards and ratings, certifications and compliance claims, and prices. Missing proof is a
+visible bracketed placeholder where it would sit, for example `[customer logo or case: regulated
+multi-site operator]`. Never invent a customer or a figure to fill it. Leave a fact out, with a hidden
+note, rather than approximate it.
 
 A call to action may promise what the offering is meant to fix, as the brief states it.
 
@@ -153,7 +157,10 @@ single default tone this skill can assume. Before drafting anything:
 | Tone (only if no brand kit exists) | professional / casual / technical |
 | Competitor URLs or top-ranking posts | if known |
 
-If any field is missing, ask before writing.
+If any field is missing, ask before writing. When the brand, the primary action, the audience or the
+product facts the page needs are missing from the brief, the brand kit and the product files, stop and
+reply with 2 to 5 specific questions and nothing else: no draft, no copy with placeholders. Tone, length and
+language may default; say which default you used.
 
 ---
 
@@ -188,14 +195,28 @@ chain) to this shape:
 [Hook]                First 50–100 words: direct declarative answer
                       (Minto-style) or a brief status-quo pain point
                       before the answer (Sparkline-style, per Step 2).
+                      Bold the answer paragraph.
+[Audience line]       One sentence after the hook: who the page is for
+                      and what it covers, with a link to the pillar page.
 [Table of Contents]   Anchor-linked H2 list
 [H2 sections]         Each = one atomic topic, 40–120 words per paragraph
 [Key Takeaways box]   Bulleted; bold the most citable sentence per section
 [Comparison table]    For any "A vs B" angle
 [FAQ section]         Min. 3 questions, 40–60 word standalone answers
-[Conclusion]          Re-answers the opening question + soft next-step CTA
-[Meta description]    150–160 chars, primary keyword, CTA hook
+[Conclusion]          Re-answers the opening question, then one short
+                      product paragraph and ONE bold CTA line with a link
+[Production notes]    Hidden HTML comment at the end: meta description
+                      (150–160 chars, primary keyword, CTA hook), schema
+                      suggestion (Article or TechArticle; FAQPage for the
+                      FAQ), word-count target, byline placeholder, and
+                      `verify` flags on unconfirmed claims
 ```
+
+**Comparison pages ("A vs B")** are written fair to the incumbent: say what it
+does well, keep "when to choose" lists that a reader can honestly answer no to,
+and say when the current setup is the right answer. **Regulatory or legal topics**
+cite the instrument and article, add a Sources section, and flag a legal review gate
+in the production notes. Never present a draft as legal advice.
 
 Run the information-gain audit from `seo-aeo-optimization.md` before
 finalizing.
@@ -213,16 +234,23 @@ finalizing.
 - Subheadline: expands the headline, adds specificity, 1–2 sentences max
 - Primary CTA; states what they get: "Start Free Trial," not "Sign Up"
 
+**Implementation brief** (hidden HTML comment at the top of the page): URL, traffic source or ad
+group, negative keywords for paid traffic, framework, the ONE conversion goal, form fields, meta
+title and description, schema (Organization, BreadcrumbList, SoftwareApplication or Product, FAQPage),
+and, when the site has a component library, a component name against every section. Reuse the
+existing components and introduce none. Every primary CTA on the page opens the same action; a secondary
+path (a one-pager, say) is visibly smaller and lower contrast, there to catch someone who is not ready.
+
 **Core sections** (map onto Step 2's chosen framework, StoryBrand's
 Problem/Guide/Plan/Success or PAS's Problem/Agitate/Solution):
 
 | Section | Purpose |
 |---|---|
-| Social proof | Build credibility: logos, stats, testimonials |
+| Social proof | Build credibility: logos, stats, testimonials. Visible bracketed placeholders until real cases are approved |
 | Problem/pain | Show you understand the visitor's situation (StoryBrand's Problem / PAS's Problem+Agitate) |
 | Solution/benefits | Connect to outcomes, 3–5 key benefits (StoryBrand's Plan / PAS's Solution) |
 | How it works | Reduce perceived complexity, 3–4 steps |
-| Objection handling | FAQ, comparisons, guarantees |
+| Objection handling | FAQ of 4 to 6 questions taken from the objections this traffic source arrives with (replace a system? another console? we already have X?), comparisons, guarantees |
 | Final CTA | Recap value, repeat CTA, risk reversal |
 
 **CTA copy:** avoid "Submit," "Sign Up," "Learn More," "Click Here,"
@@ -331,7 +359,7 @@ of, not in addition to, the checklist above.
 
 ## Step 5: Copy Edit
 
-Invoke the `copy-editing` skill (Seven Sweeps) through the Skill tool on the Step 4 draft; do not do it from memory. Two
+**Not optional, and not done from memory.** Invoke the `copy-editing` skill (Seven Sweeps) through the Skill tool on the Step 4 draft. Two
 cross-checks layer on top of that skill's own process:
 
 - **Clarity sweep** also flags AEO violations on blog posts: an unclear
@@ -345,7 +373,7 @@ cross-checks layer on top of that skill's own process:
 
 ## Step 6: Humanize
 
-Invoke the `ai-content-cleaner` skill through the Skill tool. Use
+**Not optional.** Invoke the `ai-content-cleaner` skill through the Skill tool. Use
 **BALANCED mode** for blog posts and any page with FAQ/comparison-table
 structure worth protecting; **CLEAN mode** is fine for a short landing
 page with no structured elements to preserve. Before handoff, note which
@@ -356,6 +384,9 @@ Worth reaching for during this pass: one honest, specific limitation,
 stated once, after the page has established competence (the pratfall
 effect). Different from hedging, which the humanizing pass will still
 flag and remove.
+
+**Deliver only after Steps 5 and 6.** End the reply with one line naming the skills you ran
+(`copy-editing`, `ai-content-cleaner`) and anything you could not run and why.
 
 ### Final output
 

@@ -2,4 +2,4 @@
 type: llm
 weight: 2
 ---
-PASS if the landing page copy visibly follows the structural framework the reply names (PAS or StoryBrand): it starts from the audience's situation or problem, shows what that costs or risks them, and then presents the product as the way out, with the customer as the hero of the page. Section labels are not required. The copy also has a hero, three benefit blocks and one primary call to action. FAIL if the reply names a framework but the copy is just a feature list, or if it names none.
+PASS if the page follows StoryBrand with the customer as the hero and the company as the guide: it starts from the visitor's problem stated as a cost or risk to them, presents the company as the guide with a plan (how it works), shows success or proof, and ends with a clear call to action. Visible labels are not required. FAIL if it reads as a feature list or makes the company the hero.
