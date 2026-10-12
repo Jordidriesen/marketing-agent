@@ -1,8 +1,8 @@
 ---
 name: web-content-pipeline
 metadata:
-  version: 1.4.0
-  history: "v1.4.0: Steps 5 and 6 must be invoked through the Skill tool and reported; PAS and StoryBrand problem steps may state general audience pain; proof placeholders inline. v1.3.0: ask-first gate for missing brand, action, audience or product facts; visible page type, framework and brand kit lines; proof placeholders inside the copy. v1.2.1: derived capabilities and demo promises count as invented facts; description widened to copywriting and page design. v1.2.0: no invented product facts. Features, integrations, compliance, service promises and proof come only from the brief, the brand kit or its product files; gaps become placeholders, and assumptions may cover format only."
+  version: 1.4.1
+  history: "v1.4.1: highly probable or plausible outcomes of a stated feature are allowed; invented features, proof, numbers, incidents, compliance and promises are not. v1.4.0: Steps 5 and 6 must be invoked through the Skill tool and reported; PAS and StoryBrand problem steps may state general audience pain; proof placeholders inline. v1.3.0: ask-first gate for missing brand, action, audience or product facts; visible page type, framework and brand kit lines; proof placeholders inside the copy. v1.2.1: derived capabilities and demo promises count as invented facts; description widened to copywriting and page design. v1.2.0: no invented product facts. Features, integrations, compliance, service promises and proof come only from the brief, the brand kit or its product files; gaps become placeholders, and assumptions may cover format only."
 description: "Always use for any website copy or copywriting, however short or fully specified: landing pages, homepages, product, solution, feature, pricing and about pages, page design and page copy work, a hero section, benefit blocks, CTAs, SEO or AEO blog posts. Not social posts or ebooks."
 ---
 
@@ -42,8 +42,10 @@ request (for example "mid-sized warehouses", "facility managers") are fine to us
 StoryBrand's "problem") may describe the audience's general situation and pain in plain terms, because
 that is the reader's world and not a product claim. They may not state product features, proof, numbers,
 named incidents or promises beyond the brief. Keep the section labels (Problem, Agitate, Solution, or
-the StoryBrand beats) visible in your reply so the sequence can be checked. Outcomes that follow
-directly from a stated feature are allowed ("the host is notified when a visitor arrives").
+the StoryBrand beats) visible in your reply so the sequence can be checked. Outcomes that are highly
+probable or plausible consequences of a stated feature are allowed ("the host is notified when a visitor
+arrives, so nobody is left waiting at the gate"). Never invent features, proof, numbers, named incidents,
+compliance claims or promises, and never state an outcome as a measured result.
 
 When the page needs something you do not have, write the benefit at the level the brief supports
 ("see who is on site, live" if the brief says live visibility) or insert a labelled placeholder:
