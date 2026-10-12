@@ -2,4 +2,4 @@
 type: llm
 weight: 2
 ---
-PASS if the page follows StoryBrand with the customer as the hero and the company as the guide: it starts from the visitor's problem stated as a cost or risk to them, presents the company as the guide with a plan (how it works), shows success or proof, and ends with a clear call to action. Visible labels are not required. FAIL if it reads as a feature list or makes the company the hero.
+PASS if the copy follows the framework it names (for example StoryBrand, PAS or another), that framework is a sensible fit for a paid-search landing page for this audience, and the page reads that way: the visitor's situation or problem first, the offer as the way out, a plan or how it works, proof, and a clear call to action. StoryBrand is not required. Visible section labels are not required. FAIL if no framework is named, if the copy is just a feature list, or if the page contradicts the framework it names.

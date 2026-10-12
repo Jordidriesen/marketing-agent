@@ -4,9 +4,10 @@ description: "Always use for any B2B customer story or case study, however short
 metadata:
   version: 1.2.0
   history: >
-    v1.2: description rewritten for the skill listing budget; problems and
-    implementation details follow a plausibility test (about 90% likely from
-    the brief); quotes and metrics stay source-only. Body otherwise as 1.1.
+    v1.2: description rewritten for the skill listing budget. The strict no-fabrication rule is
+    kept, with context and consequences covered explicitly. Source fidelity overrides the structure
+    and any length target, the clean pass is invoked through the Skill tool, a sentence-by-sentence
+    source check runs before the self-check, and editor-facing notes go in a hidden comment.
     v1.1: stopped re-explaining Sparkline / StoryBrand / PAS / Duarte
     inline, the fixed 12-section structure and its framework-to-section
     mapping stay, but the framework definitions now cite
@@ -25,7 +26,7 @@ The framework below is a **fixed structure**. It opens with a Duarte Sparkline-s
 
 ## Non-negotiable: no fabrication
 
-**Never invent quotes or metrics, and never state a specific fact about this customer that the brief does not support.**
+**Never invent quotes, metrics, problems, or implementation details.**
 
 Customer stories are published materials tied to real people and real companies. Fabricated content creates legal exposure, destroys trust with the customer, and, if it goes live, damages the brand producing it.
 
@@ -33,10 +34,13 @@ The rules:
 
 - **Quotes:** Only write quotes when the user has provided source material (call transcript, written response, email). If no quote material exists, insert a clearly labelled placeholder: `[QUOTE NEEDED, target: epiphany / transformation / partnership]`. Never draft a "representative" or "example" quote and present it as real.
 - **Metrics and outcomes:** Only use numbers the user has explicitly provided. Do not round up, extrapolate, or estimate. If a metric is directional ("significant time savings"), keep it directional in copy: do not convert it to a percentage.
-- **Problems and pain points:** Start from what the user told you. You may add context that is at least about 90% likely to be true for this customer given the brief, such as the usual pressure in their industry or role, as long as it does not state a fact about this customer's situation that the brief contradicts or does not support. If the "Before" state is vague, keep it general rather than vivid.
-- **Implementation details:** Keep timelines, onboarding steps and "aha moments" to what the source material says. Where the source is silent, say less, or add a hidden note next to it: `<!-- confirm: ... -->`.
+- **Problems and pain points:** Only describe the customer's situation using what the user has told you. Do not assume typical industry pain points apply to this customer. If the "Before" state is vague, flag it and ask: do not fill in a plausible-sounding problem.
+- **Implementation details:** Do not invent timelines, onboarding steps, or "aha moments" not present in the source material.
+- **Context and consequences:** No inferred context about the customer, its people, its site or its day-to-day, and no consequences the brief does not state, not even when labelled "typically" or "likely". Restating the brief in better words is fine; adding to it is not.
 
 When material is missing, use explicit placeholders and surface them clearly in the output. A story with honest gaps is more useful than a polished draft built on invented facts.
+
+**Source fidelity overrides the structure and any length target.** The 12-section structure and a word count never justify content. A section with no source material is shortened, merged into a neighbour or marked `[PLACEHOLDER: ...]`. It is not padded to reach a length, and a short, true story is the correct result of a thin brief.
 
 ---
 
@@ -257,7 +261,7 @@ Apply these throughout the draft.
 
 ## Phase 3: AI content clean pass
 
-After drafting, run `ai-content-cleaner` in **BALANCED** mode.
+After drafting, invoke the `ai-content-cleaner` skill through the Skill tool in **BALANCED** mode. Do not do the clean pass from memory.
 
 Customer stories are especially prone to:
 - em dashes, collaborative scaffolding, copula avoidance ("serves as a testament to")
@@ -270,7 +274,7 @@ Use BALANCED (not CLEAN) to preserve:
 - Deliberate FAQ or structured data patterns for SEO
 - Heading capitalisation choices that match brand standards
 
-After the clean pass, run the self-check:
+After the clean pass, run the source check first: go through the draft sentence by sentence, and for every statement about the customer, its people, its situation or its results, find where the brief says it. Delete or correct any statement that is not there, including scene-setting and linking sentences. Then run the self-check:
 - [ ] Are all quotes sourced from real material provided by the user: no invented or illustrative quotes?
 - [ ] Do quotes sit in their anchor sections (epiphany in Trigger and challenge, transformation in Results, partnership in the close) rather than only clustered in Quotes at a glance?
 - [ ] Does the close end with real forward motion or an earned recap, not a bare `[PLACEHOLDER]` used as a default?
@@ -291,8 +295,7 @@ Deliver the story in this order:
 
 1. **Working headline** (with note if metric placeholder is needed): short and catchy, not a full descriptive sentence
 2. **Full draft** using the 12-section structure above. Every section gets its own specific, outcome-carrying subheading, headline-length, never the generic framework name. Quotes sit in their anchor sections (epiphany in section 4, transformation in section 9, partnership in section 12); include Facts & figures (10) when the numbers are scope rather than outcome, and include Quotes at a glance (11) only if a standalone pull-quote block is useful for other formats. Section 12 always closes with forward motion or a recap, never a bare placeholder by default
-3. **Missing elements**: brief list of any `[PLACEHOLDER]` items and what would make each one stronger
-4. **AI content sweep summary**: brief list of patterns found and removed in the BALANCED clean pass
+3. **Hidden notes** (an HTML comment at the end, not visible on the finished page): the list of `[PLACEHOLDER]` items and what would make each one stronger, a one-line source-check result (what was removed and why), and a brief list of patterns found and removed in the BALANCED clean pass. End it with `Skills run: ai-content-cleaner`.
 
 If the user provided a complete brief, deliver the full draft in one pass. If significant elements are missing, ask for them first (Step 0 gates this).
 

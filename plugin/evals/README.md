@@ -11,17 +11,17 @@ Client material is never stored here. Cases in this folder use a fictional compa
 
 ## landing-page-guidelines
 
-**The prompt:** a paid-search landing page written from an implementation brief, the way a real page is specced: URL, ad group, negative keywords, StoryBrand, one conversion goal, a short form, and a fixed list of site components. The brief gives product facts, marks two facts as not confirmed, and says there is no customer proof yet.
+**The prompt:** a paid-search landing page written from an implementation brief, the way a real page is specced: URL, ad group, negative keywords, one conversion goal, a short form, and a fixed list of site components. The framework is left to the skill. The brief gives product facts, marks two facts as not confirmed, and says there is no customer proof yet.
 
 **What is checked:**
 - `web-content-pipeline` was used, and so were `copy-editing` and `ai-content-cleaner` (Steps 5 and 6).
-- **Structure:** a hidden implementation brief at the top, every section tagged with an allowed component, one primary action everywhere, a smaller secondary path, a 4 to 6 question objection FAQ, proof as visible placeholders.
-- **Framework applied:** StoryBrand with the customer as the hero: problem as a cost, the company as guide, a plan, proof, a call to action.
+- **Structure:** a hidden implementation brief at the top, a hidden component tag above every section, one primary action everywhere, a smaller secondary path, a 3 to 6 question objection FAQ, missing proof as Lorem Ipsum with a hidden note, neutral headings, and nothing editor-facing visible on the rendered page.
+- **Framework applied:** the page follows the framework it names (any fitting one, not necessarily StoryBrand).
 - **Claims plausible:** plausible claims are allowed when the brief supports them. Unconfirmed ones need a hidden `confirm` note. Statistics, customers, quotes, awards, certifications and prices are never invented.
 
 ## customer-story
 
-A 400 word story from a short brief with one quote and one result. Checks that `customer-story-writer` was used and that only the supplied quote and result appear, with added context only where it is highly likely to be true.
+A story from a short brief with one quote and one result. Checks that `customer-story-writer` was used and that nothing beyond the brief appears: no added context, scenes or consequences.
 
 ## sdr-needs-input and sdr-cold-email
 
