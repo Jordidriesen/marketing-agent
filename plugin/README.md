@@ -28,7 +28,7 @@ Talk to `marketing-director` for anything that spans more than one discipline; i
 | 3 | [`email-marketer`](agents/email-marketer.md) | Newsletters and lifecycle sequences (HubSpot or Brevo) | `newsletter-writer`, `email-sequence-hubspot-brevo`, `brand-review` |
 | 3 | [`creative-specialist`](agents/creative-specialist.md) | Creative direction and assets on approved copy | `creative-brief`, `frontend-design`, `canva-workflow`, `figma-weavy-workflow`, `logo-design`, `launch-video` |
 | 3 | [`performance-marketer`](agents/performance-marketer.md) | Google Ads end to end | the Google Ads skills, `paid-ads-report-writer` |
-| 3 | [`sdr-specialist`](agents/sdr-specialist.md) | Audience research for outbound: target account lists, account briefs, ABM plans. No outreach drafting (parked) | `account-brief`, `abm-plan`, the scraper suite when installed |
+| 3 | [`sdr-specialist`](agents/sdr-specialist.md) | Audience research and cold email: target account lists, account briefs, ABM plans, cold email sequences. LinkedIn and reply handling parked | `account-brief`, `abm-plan`, `cold-email-sequence`, the scraper suite when installed |
 | 3 | [`sales-enablement-specialist`](agents/sales-enablement-specialist.md) | Battlecards and other material that equips the sales team | `battlecard`, `brand-review` |
 | 3.5 | [`localization-specialist`](agents/localization-specialist.md) | Target-language versions of signed-off content (NL, FR, DE, ES) | `content-translate`, `brand-review` |
 | 4 | [`performance-reporter`](agents/performance-reporter.md) | Cross-channel reporting once execution is live | `paid-ads-report-writer`, `metric-detective` |

@@ -21,8 +21,7 @@ Each content type has its own skill, tuned to that format's actual process (web 
 | A single/one-off marketing email or newsletter | `newsletter-writer` |
 | A multi-email lifecycle sequence (onboarding, nurture, win-back, etc.) | `email-sequence-hubspot-brevo` |
 | A press release | `press-release-writer` |
-| A cold email sequence | `cold-email-sequence` |
-| A target account list, an account brief or an ABM plan | `account-brief`, `abm-plan` (via the `sdr-specialist` agent) |
+| A cold email sequence, a target account list, an account brief or an ABM plan | `cold-email-sequence`, `account-brief`, `abm-plan` (via the `sdr-specialist` agent) |
 | A sales battlecard | `battlecard` (via the `sales-enablement-specialist` agent) |
 | Paid social or video ads (LinkedIn, Meta, YouTube, TikTok): hooks, variations, test set | `ad-creative-matrix` |
 | Google search ads (RSA headlines and descriptions) | `rsa-writer` |
