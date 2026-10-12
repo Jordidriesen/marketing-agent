@@ -1,11 +1,11 @@
 ---
 name: european-market-intelligence
-description: "European market and competitor research: market sizing, competitor dossiers, pricing, segmentation, market entry, public tenders, from registries and free sources. Use for business-level research naming a European market. SEO-only: competitor-analysis."
+description: "Always use for any market sizing or market research on a European market, however short: TAM, SAM and SOM, competitor dossiers, pricing and segmentation research, market entry, public tenders, from registries and public data. Use for \"how big is the market\", \"market sizing\", \"who are the competitors in Belgium\", \"market entry\". SEO-only competitor work: competitor-analysis."
 metadata:
   category: research
   complexity: complex
-  version: "1.1.0"
-  history: "v1.1.0: the six workflows moved to references/, read on demand; tool stack, compliance layer and output formats stay here."
+  version: "1.1.1"
+  history: "v1.1.1: description front-loaded with Always use for. v1.1.0: the six workflows moved to references/, read on demand; tool stack, compliance layer and output formats stay here."
   author: "Jordi Driesen (Europeanized merge of ID8Labs market-research-analyst + competitive-intelligence)"
   tags: market-research, competitive-intelligence, europe, market-sizing, osint, gdpr
   triggers: market research, market sizing, TAM SAM SOM, competitive landscape, competitor dossier, market entry, battlecard research, pricing intelligence

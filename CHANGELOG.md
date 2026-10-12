@@ -4,6 +4,14 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [2.6.2]
+
+Follow-up to 2.6.1: the two items it listed as not done.
+
+- **`ai-content-cleaner` 2.1.0 has a short path.** Text under about 300 words (a post, a headline, an email) is cleaned from the core file alone; the long-form material (content-type step, full Tier 3 table, Tier 5, DETECT and BALANCED modes, full self-check) moved to `references/long-form.md`, which the skill tells the agent to read for longer text. Measured on 3 runs each: a short English or Dutch text now loads **19.0 kB instead of 27.1 kB** (Dutch adds the 7.5 kB pattern file as before), and a long text reads `long-form.md` in 3 of 3 runs and loads 30.3 kB, about 3 kB more than before. Quality is unchanged: protected spans (price, quote, URL) intact and all listed tells removed in every run, English and Dutch, no em dashes.
+- **`european-market-intelligence` 1.1.1:** the description now starts with "Always use for any market sizing or market research on a European market, however short". The trigger check passed 3 of 3 before and after, so there is no measured gain yet; the change is a safeguard for the skill listing budget, not a fix for an observed failure.
+- **Evals:** `cleaner-short-en`, `cleaner-short-nl`, `cleaner-long` and `emi-trigger`. The tells-removed rubrics now say to judge only the cleaned post, because the judge was failing runs for quoting the removed phrases in the list of changes.
+
 ## [2.6.1]
 
 Library and agent optimisation pass, each change measured before and after with the eval tools. No skills were merged: the real skills share little text (at most 12% between any two), so merging them would add a router and an extra read per use for a small saving in the skill listing.

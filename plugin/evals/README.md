@@ -49,6 +49,14 @@ Forces `european-market-intelligence` on a market sizing request and checks whic
 
 A trigger check only: does `web-content-pipeline` fire on a request for a solution page.
 
+## cleaner-short-en, cleaner-short-nl and cleaner-long
+
+Check the `ai-content-cleaner` paths. The short cases (English and Belgian Dutch LinkedIn posts) check that the AI tells are gone and that the price, the quote and the URL are untouched. The long case checks that `references/long-form.md` is read and that the text keeps its meaning.
+
+## emi-trigger
+
+A trigger check only: does `european-market-intelligence` fire on a plain "how big is the market" request.
+
 ## Not covered
 
 - The marketing director cannot delegate when it is called as a subagent, so its ask-first behaviour needs a main-agent test that this harness does not offer.
