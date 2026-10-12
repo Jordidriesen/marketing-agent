@@ -14,6 +14,9 @@ Phase 2 of the web content library clean-up: restructure for load efficiency. Me
 - **One rule each** for sourcing (at least one sourced statistic per 500 words, minimum four, every material claim mapped to a source), chunk size and CTA strength, replacing three conflicting statistic thresholds and the "apply whichever is stricter" instruction. The E-E-A-T gate now has six additive checks.
 - **`content-references` index** gets a dependency map (who loads which file and when) and a one-line provenance note; the pique-effect clause is removed from `behavioral-psychology.md`.
 - Skills that cited the renamed files carry a minor version bump and a history line.
+- **Agents:** the Needs input and Skills run rules in the twelve specialists are compressed from about 14.3 kB of repeated text to about 6.9 kB with the same behaviour (SDR agent re-tested: asks first 3/3, `Skills run` line 3/3).
+- **`web-content-pipeline` 1.6.1:** adds a no-em-dash style rule.
+- **`evals/tools/loadreport.py`** reports what each eval run loads (skill bodies and files read, with an estimated token count). Measured on the Acme landing page case: 74.7 kB (about 18.7k tokens) before, 65.0 kB (about 16.2k tokens) after, with the template file read in 3/3 runs and the output shape unchanged. The two skills the pipeline calls (`copy-editing` 15.8 kB, `ai-content-cleaner` 27 kB) are now two thirds of a run's load.
 
 ## [2.5.3]
 

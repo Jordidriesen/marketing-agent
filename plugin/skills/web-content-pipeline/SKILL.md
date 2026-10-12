@@ -1,8 +1,8 @@
 ---
 name: web-content-pipeline
 metadata:
-  version: 1.6.0
-  history: "v1.6.0: orchestration only. Page templates moved to content-references (page-templates-article, page-templates-conversion), steps 0 to 2 merged into one router table, and the formerly-two-skills note (blog pipeline plus copywriting, merged in 1.0) reduced to this line. Earlier history is in CHANGELOG.md."
+  version: 1.6.1
+  history: "v1.6.1: no-em-dash style rule. v1.6.0: orchestration only. Page templates moved to content-references (page-templates-article, page-templates-conversion), steps 0 to 2 merged into one router table, and the formerly-two-skills note (blog pipeline plus copywriting, merged in 1.0) reduced to this line. Earlier history is in CHANGELOG.md."
 description: "Always use for any website copy or copywriting, however short or fully specified: landing pages, homepages, product, solution, feature, pricing and about pages, page design and page copy work, a hero section, benefit blocks, CTAs, SEO or AEO blog posts. Not social posts or ebooks."
 ---
 
@@ -101,6 +101,7 @@ Load only the one you need. Load `../content-references/references/seo-aeo-core.
 4. **Confident over qualified**: cut "almost," "very," "really"
 5. **Show over tell**: describe the outcome, not adjectives about it
 6. **Honest over sensational**: never invent proof
+7. **No em dashes**: use a colon, comma or full stop
 
 Quick check: jargon an outsider could not follow? Sentences doing too much? Passive voice? Exclamation points (cut them)? Buzzwords without substance?
 

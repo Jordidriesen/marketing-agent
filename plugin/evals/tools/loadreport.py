@@ -35,7 +35,12 @@ def main():
                         event = json.loads(line)
                     except ValueError:
                         continue
-                    content = (event.get('message') or {}).get('content')
+                    if not isinstance(event, dict):
+                        continue
+                    message = event.get('message')
+                    if not isinstance(message, dict):
+                        continue
+                    content = message.get('content')
                     if not isinstance(content, list):
                         continue
                     for block in content:
