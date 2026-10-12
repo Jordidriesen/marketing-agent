@@ -2,23 +2,39 @@
 name: content-references
 description: "Shared writing references (frameworks, SEO and AEO rules, psychology, schema) loaded by the content skills. Not for direct requests."
 metadata:
-  version: 1.0.1
-  history: "v1.0.1: index describes each file truthfully and counts its modules correctly; canonical honesty rule added; the pointer-only humanising file removed."
+  version: 1.1.0
+  history: "v1.1.0: restructured for load efficiency. Intent and frameworks merged into content-briefing; page templates moved out of the pipeline; SEO/AEO and internal linking split into always-load and on-demand files; dependency map added; one rule each for sourcing, chunk size and CTA strength. v1.0.1: truthful index, canonical honesty rule, pointer file removed. Provenance: the shared library replaced rules once duplicated inside several skills."
 ---
 
 # Content References: Shared Library
 
-Five reference modules, each reusable across every content-creation skill
-instead of duplicated inside each one. A generation skill pulls in only the
-modules relevant to the piece it's producing, not all five, every time.
+Eight reference files, each reusable across the content skills instead of duplicated inside each one. Reference files are not loaded for you: a skill that needs one reads it, and loads only what the piece in hand needs. The first column says when.
 
-| Reference | What it covers | Pull it in when... |
+| File | What it covers | Load when |
 |---|---|---|
-| `references/content-intent-framework.md` | Informational / Navigational / Transactional classification | **Always**: the first step of any content-generation skill, not optional |
-| `references/communication-frameworks.md` | Minto, Sparkline, StoryBrand, PAS, BLUF: structural framework selection | Any piece longer than a few sentences needs a deliberate structural choice, not just intent |
-| `references/behavioral-psychology.md` | Shotton, Ehrenberg-Bass, Cialdini, fluency research: copy and visual persuasion principles | Copywriting and strategy work; lighter touch for pure reference/informational content |
-| `references/seo-aeo-optimization.md` | Traditional SEO + AEO (AI citation) structural rules: AEO architecture, traditional keyword integration, an information gain audit, an E-E-A-T quality gate (eight additive checks), an optional 100-point quality scorecard for when a formal score is needed, schema recommendations, platform differences and visual asset rules | Any content meant to rank or be cited: blog posts, guides, product pages |
-| `references/internal-linking.md` | Link density targets, anchor text distribution and anti-patterns, placement priority, bidirectional linking, hub-and-spoke architecture, orphan-page detection, an audit checklist, link velocity and tracking. Cannibalization detection lives in `keyword-clustering` and `seo-audit`, not here | Any piece over a couple hundred words: run during drafting, not as a post-publish afterthought |
+| `references/content-briefing.md` | Intent (Informational, Navigational, Transactional), page type, structural framework (Minto, Sparkline, StoryBrand, PAS, BLUF), one decision path, the CTA-strength rule | A brief needs intent or framework reasoning the skill's own table does not settle, and for any piece longer than a few sentences with no table to follow |
+| `references/page-templates-article.md` | Blog, pillar or hub, comparison and glossary templates, full-weight keyword and linking rules, the E-E-A-T gate | Step 4 for article types (required) |
+| `references/page-templates-conversion.md` | Landing, product, solution, feature, homepage, pricing and about templates, CTA formulas, implementation brief, behavioural layer, visual cues | Step 4 for conversion and site pages (required) |
+| `references/behavioral-psychology.md` | Shotton, Ehrenberg-Bass, Cialdini and fluency research: copy and visual persuasion principles, with caveats | Persuasion detail for conversion pages, ads and emails; light touch for informational content |
+| `references/seo-aeo-core.md` | AEO architecture, the sourcing rule and chunk rule, keyword integration, information gain audit, E-E-A-T gate (six additive checks), schema, platform differences, visual asset rules | Articles meant to rank or be cited; schema and AEO questions |
+| `references/seo-aeo-scorecard.md` | Optional 100-point scorecard, scoring bands, triage priorities | Only when a formal quality score is requested |
+| `references/internal-linking-drafting.md` | Link density, anchor text distribution, placement, bidirectional linking, hub-and-spoke | While drafting any piece over a couple of hundred words |
+| `references/internal-linking-audit.md` | Orphan-page detection, audit checklist, link velocity, tracking | Only when auditing an existing site section |
+
+Cannibalization detection lives in `keyword-clustering` and `seo-audit`, not here.
+
+## Dependency map
+
+Who loads what. "Required" means the skill reads it every run; the rest are on demand.
+
+| Skill | Loads |
+|---|---|
+| `web-content-pipeline` | page-templates-article or page-templates-conversion (required, one of them); content-briefing, seo-aeo-core, behavioral-psychology (on demand); the template files point to seo-aeo-core and internal-linking-drafting for articles |
+| `customer-story-writer` | content-briefing (framework definitions) |
+| `social-content-writer`, `press-release-writer`, `newsletter-writer`, `email-sequence-hubspot-brevo`, `campaign-plan`, `landing-page-matcher`, `ad-creative-matrix` | content-briefing; behavioral-psychology where the skill cites it |
+| `copy-editing`, `ad-copy-tester`, `rsa-writer`, `competitor-teardown`, `disapproval-diagnoser`, `lead-magnets` | behavioral-psychology |
+| `seo-audit`, `content-translate` | seo-aeo-core (AEO rules, schema) |
+| nobody by default | seo-aeo-scorecard (a formal score), internal-linking-audit (a site audit) |
 
 ## Canonical honesty rule
 
@@ -26,30 +42,6 @@ Every skill that loads this library follows this rule, stated once here. Never i
 
 ## How a generation skill should use this
 
-1. **Classify intent first** (`content-intent-framework.md`); this determines
-   everything downstream: CTA strength, proof type, which structural
-   framework fits.
-2. **Pick a structural framework** (`communication-frameworks.md`): informed
-   by intent, but a separate decision. Intent says *what the reader wants*;
-   the framework says *how the piece is built* to deliver it.
-3. **Write the draft**, pulling behavioral-psychology, SEO/AEO, and
-   internal-linking principles in only where they're relevant to the
-   intent bucket and content type.
-4. **Run the humanising pass** (the `ai-content-cleaner` skill) as the last
-   step on every piece, regardless of type. It loads the brand voice and the
-   right language file itself. It owns the humanising rules and the language pattern files.
-
-## Why this exists
-
-Previously, AEO rules, AI-pattern detection, and behavioral-science
-principles were each fully re-implemented inside multiple skills
-(`blog-content-pipeline`, `copywriting`, `copy-editing`, `seo-content-writer`
-before it was retired). That meant editing a rule required finding and
-updating every copy of it, and skills grew large with content that had
-nothing to do with their actual differentiator. `blog-content-pipeline`
-and `copywriting` were later merged into `web-content-pipeline` for the
-same reason at a structural level: the split between "blog" and
-"landing/product page" was artificial, both are web content, differing
-only in page-type template, not in process. This hub holds the shared
-knowledge once; skills hold only what's genuinely specific to the format
-they produce.
+1. **Classify intent and page type first**, then choose a structural framework (`content-briefing.md`). Intent says what the reader wants; the framework says how the piece is built to deliver it.
+2. **Read the page template** for the page type, then pull in persuasion, SEO/AEO and linking detail only where the piece needs it.
+3. **Run the humanising pass** (`ai-content-cleaner`) as the last step on every piece. It owns the humanising rules and the language pattern files, and loads the brand voice itself.

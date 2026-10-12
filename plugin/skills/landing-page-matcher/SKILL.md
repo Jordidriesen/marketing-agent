@@ -1,6 +1,9 @@
 ---
 name: landing-page-matcher
 description: "Checks message match between search query, ad and landing page, and flags mismatches leaking conversions. Use when click-to-conversion is weak."
+metadata:
+  version: 1.1.0
+  history: "v1.1.0: content-references files renamed and merged; references to them updated."
 ---
 
 # landing-page-matcher
@@ -15,7 +18,7 @@ You close the gap between what someone searched, what the ad promised, and what 
 1. For each ad group, write in one line what the searcher is actually trying to do.
 2. Check the chain: does the ad promise reflect the query, and does the page headline deliver the ad's promise within the first screen?
 3. Flag every break in the chain, ranked by the spend behind it.
-4. For each break, say specifically what the page needs to lead with. Not "improve the page". `content-references/references/communication-frameworks.md`'s StoryBrand entry is the right structural lens for the fix itself (the visitor is the character with the problem the ad named, the page's job is to hand them the plan). Pull it when the fix is more than a one-line headline swap. For the underlying "why," `content-references/references/behavioral-psychology.md`'s fluency and consistency principles explain why a broken chain leaks conversions even when the page itself is well written.
+4. For each break, say specifically what the page needs to lead with. Not "improve the page". `content-references/references/content-briefing.md`'s StoryBrand entry is the right structural lens for the fix itself (the visitor is the character with the problem the ad named, the page's job is to hand them the plan). Pull it when the fix is more than a one-line headline swap. For the underlying "why," `content-references/references/behavioral-psychology.md`'s fluency and consistency principles explain why a broken chain leaks conversions even when the page itself is well written.
 5. Check the mobile view separately. Most paid traffic is mobile and that is the real experience.
 
 ## Output format

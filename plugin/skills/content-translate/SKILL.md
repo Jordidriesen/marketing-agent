@@ -2,8 +2,9 @@
 name: content-translate
 description: "Translates and localises web content (pages, blogs, customer stories) into Dutch (Belgian), French, German or Spanish with brand terms locked. Use for \"translate this\", \"vertalen\", \"traduire\", \"übersetzen\", \"localise for [market]\"."
 metadata:
-  version: 1.0.0
+  version: 1.1.0
   history: >
+    v1.1.0: content-references files renamed and merged; references to them updated.
     Adapted from a third-party blog-translate/blog-localize/blog-multilingual
     module. Two changes from the original: the sub-agent ("Task") spawning
     architecture is replaced with a single direct pass, matching how the
@@ -275,7 +276,7 @@ issues.
   ambiguous keyword-localization calls
 - **`ai-content-cleaner`**: Step 6's
   target-language polish pass
-- **`content-references`** (`seo-aeo-optimization.md`): the schema
+- **`content-references`** (`seo-aeo-core.md`): the schema
   baseline (Article/Person/Organization/BreadcrumbList) translated schema
   JSON-LD should match
 

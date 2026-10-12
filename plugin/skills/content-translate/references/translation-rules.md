@@ -46,7 +46,7 @@ Preserve unchanged:
   `headline` and `description`; never translate Person, Organization, or
   Brand names, URLs, IDs, `@id`, or `sameAs`. Follow the Article/Person/
   Organization/BreadcrumbList baseline from
-  `content-references/references/seo-aeo-optimization.md`'s Schema
+  `content-references/references/seo-aeo-core.md`'s Schema
   recommendations when adding or updating schema on the translated version.
 - Internal-link zone markers (`[INTERNAL-LINK: ...]`).
 

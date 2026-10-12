@@ -4,6 +4,17 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [2.6.0]
+
+Phase 2 of the web content library clean-up: restructure for load efficiency. Measured before and after with the new `evals/tools/loadreport.py`; no new capability.
+
+- **`web-content-pipeline` 1.6.0 is orchestration only** (31.9 kB to 16.2 kB). Steps 0 to 2 are one router table (page type, intent, default framework, core sections, proof, FAQ count, template). The page templates moved out, and Step 4 now requires reading exactly one template file.
+- **Page templates** live in `content-references/references/`: `page-templates-article.md` (blog, pillar or hub, comparison, glossary) and `page-templates-conversion.md` (landing, product, solution, feature, homepage, pricing, about). Two files, not one per brief: a file read loads the whole file, so one file with a section per page type would load every template.
+- **`content-briefing.md`** merges the intent and framework references into one decision path (12.9 kB to 6.3 kB). **`seo-aeo-core.md`** and **`seo-aeo-scorecard.md`** split the SEO/AEO reference (the 100-point scorecard is on demand). **`internal-linking-drafting.md`** and **`internal-linking-audit.md`** split the linking reference (the audit is on demand). The four old files are deleted and every inbound reference updated.
+- **One rule each** for sourcing (at least one sourced statistic per 500 words, minimum four, every material claim mapped to a source), chunk size and CTA strength, replacing three conflicting statistic thresholds and the "apply whichever is stricter" instruction. The E-E-A-T gate now has six additive checks.
+- **`content-references` index** gets a dependency map (who loads which file and when) and a one-line provenance note; the pique-effect clause is removed from `behavioral-psychology.md`.
+- Skills that cited the renamed files carry a minor version bump and a history line.
+
 ## [2.5.3]
 
 Phase 1 of the web content library clean-up: corrections only, no new capability.

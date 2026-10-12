@@ -2,10 +2,11 @@
 name: newsletter-writer
 description: "Writes one marketing email or newsletter: announcement, update, promotion or roundup, with subject lines and preview text. Use for \"newsletter\", \"announcement email\", \"promo email\". Multi-email flows: email-sequence-hubspot-brevo."
 metadata:
-  version: 1.1.0
+  version: 1.2.0
   history: >
+    v1.2.0: content-references files renamed and merged; references to them updated.
     v1.1: added a structural-framework step (Step 3) citing
-    content-references/references/communication-frameworks.md, a one-off
+    content-references/references/content-briefing.md, a one-off
     email still needs a deliberate PAS / BLUF choice by purpose rather
     than a default body shape. CTA guidance points at
     behavioral-psychology.md.
@@ -34,7 +35,7 @@ Same pattern as `web-content-pipeline`: determine the brand/client, check for a 
 
 ## Step 3: Pick a Structural Framework
 
-The body shape follows the purpose, not habit. Definitions are in `content-references/references/communication-frameworks.md`; the choice for a one-off email:
+The body shape follows the purpose, not habit. Definitions are in `content-references/references/content-briefing.md`; the choice for a one-off email:
 
 | Purpose | Framework | Why |
 |---|---|---|
@@ -72,7 +73,7 @@ Ask: "Would you like a version for a different segment, or should this become th
 ## Related Skills
 
 - `[brand]-brand-kit`: loaded in Step 1
-- `content-references` (`communication-frameworks.md`, `behavioral-psychology.md`): Step 3; `ai-content-cleaner`: Step 5
+- `content-references` (`content-briefing.md`, `behavioral-psychology.md`): Step 3; `ai-content-cleaner`: Step 5
 - `email-sequence-hubspot-brevo`: for a multi-email flow instead of a single send
 - `copy-editing` / `ai-content-cleaner`: Step 5
 - `content-creation`: the gateway skill; routes here when the content type is a one-off email/newsletter

@@ -2,11 +2,12 @@
 name: press-release-writer
 description: "Writes press releases in standard structure: headline, dateline, lead, body, quotes marked for approval, boilerplate, media contact. Use for \"press release\", \"launch, funding, partnership or office announcement\". Outlets: media-mapping."
 metadata:
-  version: 1.1.1
+  version: 1.2.0
   history: >
+    v1.2.0: content-references files renamed and merged; references to them updated.
     v1.1.1: history note no longer names the removed pointer file.
     v1.1: wired into content-references, Step 3 cites
-    communication-frameworks.md for the inverted-pyramid / BLUF structure
+    content-briefing.md for the inverted-pyramid / BLUF structure
     instead of leaving it implicit, and a Step 5 humanizing pass
     (ai-content-cleaner in CLEAN mode, via the former pointer file) was added; previously the skill only
     ran copy-editing and never a humanizing pass.
@@ -35,7 +36,7 @@ Same pattern as `web-content-pipeline`: determine the brand/client, check for a 
 
 ## Step 3: Write to Structure
 
-The press release is a fixed structure built on the **inverted pyramid**: most newsworthy fact first, detail in descending order of importance. That's BLUF / Minto applied to news; see `content-references/references/communication-frameworks.md` for the mechanics. Don't re-sequence it for narrative effect.
+The press release is a fixed structure built on the **inverted pyramid**: most newsworthy fact first, detail in descending order of importance. That's BLUF / Minto applied to news; see `content-references/references/content-briefing.md` for the mechanics. Don't re-sequence it for narrative effect.
 
 - **Headline**: factual, newsworthy, under ~80 characters
 - **Subheadline**: optional, adds context
@@ -69,5 +70,5 @@ Ask: "Would you like help identifying outlets to pitch this to?" (Hand off to `m
 - `[brand]-brand-kit`: loaded in Step 1
 - `media-mapping`: identifies outlets to pitch the release to
 - `copy-editing`: Step 4
-- `content-references` (`communication-frameworks.md`): Step 3; `ai-content-cleaner`: Step 5
+- `content-references` (`content-briefing.md`): Step 3; `ai-content-cleaner`: Step 5
 - `content-creation`: the gateway skill; routes here when the content type is a press release

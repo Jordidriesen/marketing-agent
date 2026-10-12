@@ -2,11 +2,12 @@
 name: email-sequence-hubspot-brevo
 description: "Builds multi-email sequences (onboarding, nurture, re-engagement, win-back, launch) for HubSpot Workflows or Brevo Automation: copy, timing, branching, exit rules, build steps. Use for \"email sequence\", \"drip\", \"nurture flow\". Cold outbound: cold-email-sequence."
 metadata:
-  version: 1.1.1
+  version: 1.2.0
   history: >
+    v1.2.0: content-references files renamed and merged; references to them updated.
     v1.1.1: history note no longer names the removed pointer file.
     v1.1: wired into content-references. The sequence arc (Step 1) and the
-    per-email body copy (Step 2) now cite communication-frameworks.md and
+    per-email body copy (Step 2) now cite content-briefing.md and
     behavioral-psychology.md instead of leaving structure implicit, and a
     per-email humanizing pass (ai-content-cleaner, via the former pointer file) was added. Brand
     voice now checks for a [brand]-brand-kit skill. Platform build guides
@@ -53,7 +54,7 @@ Gather the following. If not provided, ask before proceeding:
 ## Process
 
 ### 1. Sequence Strategy
-- **Narrative arc**: the story across all emails. Build it on a deliberate framework, not a vibe: a nurture arc is Sparkline stretched across emails (widen the "what is" / "what could be" gap, then close it), a launch sequence is escalating PAS, an onboarding series is a guided plan (StoryBrand). Definitions in `content-references/references/communication-frameworks.md`.
+- **Narrative arc**: the story across all emails. Build it on a deliberate framework, not a vibe: a nurture arc is Sparkline stretched across emails (widen the "what is" / "what could be" gap, then close it), a launch sequence is escalating PAS, an onboarding series is a guided plan (StoryBrand). Definitions in `content-references/references/content-briefing.md`.
 - **Journey mapping**: map each email to a buyer/user journey stage (awareness, consideration, decision, activation, expansion).
 - **Escalation logic**: how urgency/value builds email to email.
 - **Success definition**: the specific action that means the sequence has done its job and the contact should exit.
