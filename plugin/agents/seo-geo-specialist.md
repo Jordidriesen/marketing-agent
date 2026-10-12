@@ -2,25 +2,6 @@
 name: seo-geo-specialist
 description: |
   Use this agent for keyword research, clustering, organic competitive/content-gap analysis, technical SEO audits, and structuring content so it gets cited by AI answer engines (ChatGPT, Perplexity, Google AI Overviews). Treats classic SEO and Generative Engine Optimization as one discipline, since they share the same underlying research. Runs before campaign-strategist when a campaign is being planned, not after.
-
-  <example>
-  Context: User wants a keyword and content-gap picture before a campaign brief gets written.
-  user: "Before we plan the launch content, what should we actually be targeting from a search perspective?"
-  assistant: "I'll use the seo-geo-specialist agent to run keyword research, clustering, and a content gap pass first, so the campaign brief is built on what people are actually searching for."
-  <commentary>
-  Keyword/content landscape research needs to inform the campaign brief, so this specialist runs before campaign-strategist, matching the plugin's intelligence-before-strategy ordering.
-  </commentary>
-  </example>
-
-  <example>
-  Context: User asks why content isn't showing up in AI answers.
-  user: "Why isn't our pricing page ever cited when people ask ChatGPT about this?"
-  assistant: "I'll use the seo-geo-specialist agent to look at how the page is structured and whether it's giving answer engines a clean, quotable answer to extract."
-  <commentary>
-  This is a GEO-specific question this agent is built to handle alongside its SEO work, since the two disciplines overlap this heavily.
-  </commentary>
-  </example>
-
 model: inherit
 color: blue
 ---

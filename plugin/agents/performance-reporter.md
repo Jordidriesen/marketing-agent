@@ -2,25 +2,6 @@
 name: performance-reporter
 description: |
   Use this agent to build cross-channel marketing performance reports, key metrics, trend analysis, wins and misses, prioritized recommendations, for a campaign or period. Use when wrapping a campaign or preparing a stakeholder-facing summary that spans more than just paid media. Runs last in a campaign, after execution has been live long enough to report on.
-
-  <example>
-  Context: A campaign has been live for a month and needs a stakeholder update.
-  user: "We've been running the launch campaign for a month, put together a performance report."
-  assistant: "I'll use the performance-reporter agent to build a cross-channel report: paid, organic, and content performance, with wins, misses, and next-period priorities."
-  <commentary>
-  This is a period-end, cross-channel report, exactly this agent's job, and it runs after execution has produced real data.
-  </commentary>
-  </example>
-
-  <example>
-  Context: User wants only the Google Ads slice explained.
-  user: "Just explain why our Ads conversion rate dropped last week."
-  assistant: "I'll use the performance-reporter agent, which will lean on its Google Ads-specific tooling (metric-detective) for that single-metric diagnosis rather than building a full cross-channel report."
-  <commentary>
-  A narrow single-metric question doesn't need the full report structure, but still belongs to this agent since it owns the Ads-specific diagnostic skills too.
-  </commentary>
-  </example>
-
 model: inherit
 color: cyan
 ---

@@ -2,34 +2,6 @@
 name: sdr-specialist
 description: |
   Use this agent to gather the information that outbound work starts from and to build audiences: target account lists, account briefs, account-based (ABM) plans and, when asked, cold email sequences. Use when someone wants to define a segment or a named set of accounts, find out who to reach and why now, plan an ABM programme, or draft a cold email sequence. It prepares drafts for a person to send and never contacts anyone. LinkedIn outreach and reply handling are parked for now.
-
-  <example>
-  Context: The user wants to know who to go after.
-  user: "Build me a list of mid-sized Belgian warehouses we should target for visitor management."
-  assistant: "I'll use the sdr-specialist agent. It takes your list or builds one from the sources available, tiers the accounts, and briefs the priority ones with a sourced trigger and angle for each."
-  <commentary>
-  Building the audience is this agent's core job. It stops at the list and the briefs; writing to the accounts is a separate step.
-  </commentary>
-  </example>
-
-  <example>
-  Context: The user wants a programme for a short list of named accounts.
-  user: "We want to go after 30 named hospitals in Flanders over the next quarter."
-  assistant: "I'll use the sdr-specialist agent to build an ABM plan: tier the 30 accounts, map the buying committee by role, and set the plays per tier."
-  <commentary>
-  A named-account programme is abm-plan territory; the agent hands the account list to the paid social owner for matched audiences rather than running the ads itself.
-  </commentary>
-  </example>
-
-  <example>
-  Context: The user wants a cold email sequence for a segment.
-  user: "Draft a cold email sequence for facility managers at mid-sized Belgian companies."
-  assistant: "I'll use the sdr-specialist agent. It runs the compliance gate first, takes or builds the account list, briefs the priority accounts, then drafts the email sequence for you to review and send by hand."
-  <commentary>
-  Cold email is the one outreach format this agent drafts today. LinkedIn messages and reply handling are parked.
-  </commentary>
-  </example>
-
 model: inherit
 color: orange
 tools: ["Read", "Write", "Edit", "WebSearch", "WebFetch", "Skill"]

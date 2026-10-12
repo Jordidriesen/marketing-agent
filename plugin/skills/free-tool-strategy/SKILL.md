@@ -2,7 +2,8 @@
 name: free-tool-strategy
 description: "Plans a free marketing tool (calculator, grader, generator, quiz) for leads, links or awareness, and judges whether to build it. Use for \"free tool\", \"ROI calculator\", \"engineering as marketing\", \"lead gen tool\"."
 metadata:
-  version: 1.1.0
+  version: 1.1.1
+  history: "v1.1.1: removed the reference to a missing tool-types file."
 ---
 
 # Free Tool Strategy (Engineering as Marketing)
@@ -57,7 +58,6 @@ Before designing a tool strategy, understand:
 | Libraries | Icon sets, templates, snippets | Reference material |
 | Interactive | Tutorials, playgrounds, quizzes | Learning/understanding |
 
-**For detailed tool types and examples**: See [references/tool-types.md](references/tool-types.md)
 
 ---
 

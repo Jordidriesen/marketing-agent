@@ -2,25 +2,6 @@
 name: competitive-intel-analyst
 description: |
   Use this agent for competitor messaging and positioning research, organic footprint and ranking analysis, paid-ad teardown, broader European market intelligence, or PR outlet mapping. It runs before campaign-strategist when a campaign is being planned, not after.
-
-  <example>
-  Context: User needs a sales battlecard before a campaign brief gets written.
-  user: "Before we plan this campaign, find out what [Competitor] is claiming and where the gaps are."
-  assistant: "I'll use the competitive-intel-analyst agent to build the positioning comparison and gap analysis first, then hand that into the campaign brief."
-  <commentary>
-  Positioning and gap research needs to inform the campaign brief, so this specialist runs before campaign-strategist, matching the plugin's intelligence-before-strategy ordering.
-  </commentary>
-  </example>
-
-  <example>
-  Context: User wants to know who to pitch for press coverage.
-  user: "Who covers this space that we should be pitching for the launch?"
-  assistant: "I'll use the competitive-intel-analyst agent to map relevant media outlets and newsletters for this topic."
-  <commentary>
-  Media/PR outlet mapping is one of this agent's core jobs; it maps the field but doesn't draft or send pitches itself.
-  </commentary>
-  </example>
-
 model: inherit
 color: blue
 ---

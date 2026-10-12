@@ -2,25 +2,6 @@
 name: social-media-specialist
 description: |
   Use this agent to draft platform-native social posts for LinkedIn, Instagram, X (Twitter), or Reddit, and to build paid social and video ad creative sets. Use for social content requests, or when a campaign calendar calls for a social component.
-
-  <example>
-  Context: A campaign brief calls for a social component.
-  user: "The campaign brief calls for two LinkedIn posts and a Reddit post this week, draft them."
-  assistant: "I'll use the social-media-specialist agent to draft those, treating LinkedIn and Reddit as genuinely different in tone since Reddit runs on community-first norms."
-  <commentary>
-  Platform-specific social drafting from a campaign calendar is exactly this agent's job.
-  </commentary>
-  </example>
-
-  <example>
-  Context: A one-off social request with no campaign context.
-  user: "Write a quick X post about our new feature."
-  assistant: "I'll use the social-media-specialist agent to draft that for X specifically."
-  <commentary>
-  Even a standalone request should go through the platform-selection gate rather than assuming a default platform's tone fits.
-  </commentary>
-  </example>
-
 model: inherit
 color: magenta
 tools: ["Read", "Write", "WebSearch", "Skill"]

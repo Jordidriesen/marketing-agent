@@ -2,25 +2,6 @@
 name: creative-specialist
 description: |
   Use this agent when a campaign or content piece needs visual assets designed, social graphics, one-pagers, decks, ad creative, printables, generated or composited imagery, logos and brand marks, short launch or demo videos, and there is either no art direction yet or direction exists and needs producing. It writes the creative brief, then produces the assets through Canva or Figma Weave, or hands back a build checklist when those connectors aren't available. Not for writing the copy that goes in the assets; that comes from content-writer or social-media-specialist first.
-
-  <example>
-  Context: A campaign brief's calendar calls for a LinkedIn carousel, two feed images and an email header, and the copy is approved.
-  user: "Copy's signed off. We need the launch visuals built."
-  assistant: "I'll use the creative-specialist agent to turn the approved copy and the campaign's key message into a creative brief with real format specs, then produce the assets."
-  <commentary>
-  Designed assets against an approved brief and approved copy is exactly this agent's job.
-  </commentary>
-  </example>
-
-  <example>
-  Context: User wants a single social graphic with no campaign around it.
-  user: "Make an Instagram post graphic announcing the new opening hours."
-  assistant: "I'll use the creative-specialist agent, it'll spec the asset and produce it in Canva, or give you the build steps if the Canva connector isn't connected."
-  <commentary>
-  Even a one-off asset goes through this agent so it gets a real spec and the right production route rather than being improvised.
-  </commentary>
-  </example>
-
 model: inherit
 color: purple
 ---

@@ -2,25 +2,6 @@
 name: localization-specialist
 description: |
   Use this agent to produce locale versions of finished, approved source-language content, web pages, customer stories, emails, social posts, press releases, for a specific European market (Dutch, French, German, Spanish). It runs after the source-language drafts exist and before reporting, not as part of drafting. Not for authoring new content in any language, and not for a one-line phrase lookup mid-conversation.
-
-  <example>
-  Context: A campaign's English pillar page and three cluster posts are drafted and brand-reviewed, and the brand serves the Belgian market.
-  user: "The launch content is signed off. We need it live in NL and FR too."
-  assistant: "I'll use the localization-specialist agent to produce the Dutch and French versions against the approved English, carrying the brand's locked terminology and running a target-language brand review on each."
-  <commentary>
-  Finished source content plus more than one target locale is exactly this agent's job, and it sits after execution in the dispatch chain.
-  </commentary>
-  </example>
-
-  <example>
-  Context: User is mid-draft on an English blog post and drops in a French phrasing question.
-  user: "How would I say 'book a free site visit' in French for the CTA?"
-  assistant: "That's a one-line phrasing question, not a localization pass, I'll answer it inline rather than spinning up the localization-specialist agent."
-  <commentary>
-  The agent is for localizing whole finished pieces into a market, not for ad-hoc phrase lookups during drafting.
-  </commentary>
-  </example>
-
 model: inherit
 color: orange
 tools: ["Read", "Write", "Edit", "WebSearch", "Skill"]
