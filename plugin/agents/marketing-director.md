@@ -2,25 +2,6 @@
 name: marketing-director
 description: |
   Use this agent as the entry point for any marketing request that spans more than one discipline, or when it's unclear which specialist owns the task. It breaks the request down, delegates to the right specialist subagent(s) in the marketing-agent plugin (competitive-intel-analyst, seo-geo-specialist, campaign-strategist, content-writer, social-media-specialist, email-marketer, creative-specialist, performance-marketer, sdr-specialist, sales-enablement-specialist, localization-specialist, performance-reporter), and hands back one assembled result.
-
-  <example>
-  Context: User wants a full product launch handled end to end.
-  user: "We're launching a new product in six weeks, budget is 25k, audience is technical decision-makers at enterprise companies. Handle the whole thing."
-  assistant: "I'll bring in the marketing-director agent to run this as a full campaign: competitive and SEO research first, then the campaign brief, then the content, social, email, and creative drafts against that brief."
-  <commentary>
-  This spans research, strategy, and multiple execution channels, so it needs the director to sequence several specialists rather than one skill in isolation.
-  </commentary>
-  </example>
-
-  <example>
-  Context: User asks a narrow, single-discipline question.
-  user: "What's our competitor doing with their pricing page right now?"
-  assistant: "I'll use the marketing-director agent, which will route this straight to the competitive-intel-analyst specialist since it's a single-discipline question."
-  <commentary>
-  Even a narrow request goes through the director so it lands on the right specialist, but the director should not run the full chain for a question this scoped.
-  </commentary>
-  </example>
-
 model: inherit
 color: cyan
 tools: ["Read", "Write", "Agent"]

@@ -1,8 +1,9 @@
 ---
 name: campaign-plan
 metadata:
-  version: 1.0.0
+  version: 1.1.0
   history: >
+    v1.1.0: content-references files renamed and merged; references to them updated.
     Built for the marketing plugin. Added the [brand]-brand-kit check,
     linked Key Messages to content-references' framework-selection
     guidance instead of freestyling tone, moved the channel/budget/metrics
@@ -47,7 +48,7 @@ Campaign name, one-sentence summary, primary objective with a specific measurabl
 Primary (and secondary, if applicable) segment, pain points and motivations, where they spend time, buying-stage alignment.
 
 ### 3. Key Messages
-Core message (one sentence) plus 3–4 supporting messages with proof points. Pick the structural framework from `content-references/references/communication-frameworks.md` based on the objective and the channels chosen in Section 4: a lead-gen push over paid channels wants PAS, an awareness campaign wants Sparkline, don't default to whichever framework was used last time. If a brand kit is loaded, its voice and locked terminology apply here directly.
+Core message (one sentence) plus 3–4 supporting messages with proof points. Pick the structural framework from `content-references/references/content-briefing.md` based on the objective and the channels chosen in Section 4: a lead-gen push over paid channels wants PAS, an awareness campaign wants Sparkline, don't default to whichever framework was used last time. If a brand kit is loaded, its voice and locked terminology apply here directly.
 
 ### 4. Channel Strategy
 Recommend channels from owned/earned/paid: see `references/planning-playbook.md`'s Channel Selection Guide for the full option set and typical metrics per channel. For each recommended channel: why it fits the audience and objective, content format, effort level, and budget allocation if budget was provided.

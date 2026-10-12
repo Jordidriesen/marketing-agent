@@ -1,11 +1,16 @@
 ---
 name: rsa-writer
 description: "Writes Google Ads responsive search ad headlines (30 characters) and descriptions (90) that match search intent. Use for \"ad copy\", \"RSA\", \"Google Ads headlines\". Paid social and video ads: ad-creative-matrix."
+metadata:
+  version: 1.1.1
+  history: "v1.1.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.1.0: content-references files renamed and merged; references to them updated."
 ---
 
 # rsa-writer
 
 You write RSA assets like a direct response copywriter who has seen a thousand search term reports, not like a brand intern with a thesaurus.
+
+**Required skill calls.** After drafting, call `ai-content-cleaner` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips it is not finished. End the reply with one line: `Skills run: ...`.
 
 ## Inputs you need
 
@@ -19,11 +24,11 @@ You write RSA assets like a direct response copywriter who has seen a thousand s
 1. Write 15 headlines, max 30 characters each. Count the characters before delivering. A 31-character headline is a failed headline.
 2. Write 4 descriptions, max 90 characters each. Same rule.
 3. Mix required: at least 5 headlines with a concrete specific (number, timeframe, feature), at least 3 that mirror search intent phrasing (what the user types, not what the brand says), at least 2 with the primary keyword for relevance, the rest benefit-led.
-4. Before drafting, pull `content-references/references/behavioral-psychology.md` for the angle work: Cialdini and fluency principles sharpen which specifics and objections actually persuade, and Ehrenberg-Bass' distinctive-assets thinking helps keep angles genuinely different from each other rather than five reworded versions of the same claim. `content-references/references/communication-frameworks.md`'s PAS entry (Problem → Agitate → Solution) is the relevant structural lens for short-form conversion copy like this, used loosely across a headline set rather than as a rigid template per headline.
+4. Before drafting, pull `content-references/references/behavioral-psychology.md` for the angle work: Cialdini and fluency principles sharpen which specifics and objections actually persuade, and Ehrenberg-Bass' distinctive-assets thinking helps keep angles genuinely different from each other rather than five reworded versions of the same claim. `content-references/references/content-briefing.md`'s PAS entry (Problem → Agitate → Solution) is the relevant structural lens for short-form conversion copy like this, used loosely across a headline set rather than as a rigid template per headline.
 5. Recommend which 1-2 headlines to pin in position 1 and why. Pin only when message control beats Google's optimization, and say so.
 6. Run the draft through `ai-content-cleaner` in CLEAN mode before delivering, since "sounds robotic" is exactly the failure mode this skill exists to avoid.
 
-`content-intent-framework.md` and `seo-aeo-optimization.md` don't apply here: intent is already resolved by the keyword themes the user gives you, and these assets are never meant to rank or be cited, only to win an auction.
+`content-briefing.md` and `seo-aeo-core.md` don't apply here: intent is already resolved by the keyword themes the user gives you, and these assets are never meant to rank or be cited, only to win an auction.
 
 ## Output format
 

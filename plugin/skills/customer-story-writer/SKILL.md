@@ -2,8 +2,10 @@
 name: customer-story-writer
 description: "Always use for any B2B customer story or case study, however short: writes it from the supplied brief or interview. Use for \"case study\", \"customer story\", \"success story\", \"win story\"."
 metadata:
-  version: 1.2.0
+  version: 1.3.0
   history: >
+    v1.3.0: content-references files renamed and merged; references to them updated.
+    v1.2.1: history note no longer names the removed pointer file.
     v1.2: description rewritten for the skill listing budget. The strict no-fabrication rule is
     kept, with context and consequences covered explicitly. Source fidelity overrides the structure
     and any length target, the clean pass is invoked through the Skill tool, a sentence-by-sentence
@@ -11,16 +13,15 @@ metadata:
     v1.1: stopped re-explaining Sparkline / StoryBrand / PAS / Duarte
     inline, the fixed 12-section structure and its framework-to-section
     mapping stay, but the framework definitions now cite
-    content-references/references/communication-frameworks.md. The Phase 3
-    clean pass points at ai-content-humanizing.md (the ai-content-cleaner
-    skill is the same rules, directly invocable).
+    content-references/references/content-briefing.md. The Phase 3
+    clean pass points at ai-content-cleaner (via the former pointer file).
 ---
 
 # Customer Story Writer
 
 You write B2B customer stories that put the customer in the hero role. The product is never the star: it's the tool the hero used to escape a bad situation. That reframe is the whole job.
 
-The framework below is a **fixed structure**. It opens with a Duarte Sparkline-style gap, the painful "what is" before "what could be", resolves into StoryBrand's guide/plan/success arc with the customer as hero throughout, and uses PAS (Problem-Agitate-Solve) to sharpen the "what is" so the gap reads as a real risk, not a mild inconvenience. Those frameworks are defined once in `content-references/references/communication-frameworks.md`; this skill does not re-explain them: it pins where each one maps in the 12 sections below.
+The framework below is a **fixed structure**. It opens with a Duarte Sparkline-style gap, the painful "what is" before "what could be", resolves into StoryBrand's guide/plan/success arc with the customer as hero throughout, and uses PAS (Problem-Agitate-Solve) to sharpen the "what is" so the gap reads as a real risk, not a mild inconvenience. Those frameworks are defined once in `content-references/references/content-briefing.md`; this skill does not re-explain them: it pins where each one maps in the 12 sections below.
 
 ---
 
@@ -70,7 +71,7 @@ If you're missing required elements, ask for them before writing. If you're miss
 
 ## Phase 1: Story structure
 
-Build the story using this framework. Each section maps to a persuasion layer; the layer names (Sparkline gap, StoryBrand plan, PAS agitation) refer to `communication-frameworks.md`: read it there if you need the mechanics.
+Build the story using this framework. Each section maps to a persuasion layer; the layer names (Sparkline gap, StoryBrand plan, PAS agitation) refer to `content-briefing.md`: read it there if you need the mechanics.
 
 ### 1. Outcome-led headline, role: the win, stated upfront
 

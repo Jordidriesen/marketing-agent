@@ -1,8 +1,9 @@
 ---
 name: figma-weavy-workflow
 metadata:
-  version: 2.0.0
+  version: 2.0.1
   history: >
+    v2.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline.
     v1 gave a loose Weavy prompt-chain outline. v2 is built from Figma
     Weave's actual node documentation: real node names by category,
     datatype/colour connection rules, consistency controls, iterators for
@@ -15,6 +16,8 @@ argument-hint: "<the imagery or video to build in Figma Weave>"
 # Figma Weave (Weavy) Workflow
 
 Figma Weave is a node canvas: each node is a function with inputs on the left and outputs on the right; you wire an output handle to a compatible input handle and the graph re-runs downstream whenever an input changes. Your job is to specify that graph precisely, then, if the tooling allows, run it.
+
+**Required skill calls.** After drafting, call `brand-review` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips it is not finished. End the reply with one line: `Skills run: ...`.
 
 Two things the Figma MCP **cannot** do: create or edit a Weave graph. It can only *run* a graph that has already been built in Weave and published as a "tool" with exposed inputs. So the graph spec below is the deliverable even when a connector is present.
 

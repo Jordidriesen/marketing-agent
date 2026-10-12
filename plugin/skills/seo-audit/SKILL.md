@@ -2,7 +2,8 @@
 name: seo-audit
 description: "Audits a site's SEO: technical, on-page, indexing, Core Web Vitals, ranking drops. Use for \"SEO audit\", \"why am I not ranking\", \"traffic dropped\"."
 metadata:
-  version: 1.3.0
+  version: 1.4.0
+  history: "v1.4.0: content-references files renamed and merged; references to them updated."
 ---
 
 # SEO Audit
@@ -372,7 +373,7 @@ Same format as above
 ## References
 
 - For AI writing pattern detection and cleanup, use the `ai-content-cleaner` skill.
-- For AI search optimization (AEO, GEO, LLMO, AI Overviews), apply the structural rules in the `content-references` skill's `seo-aeo-optimization.md` reference (the same one `web-content-pipeline` and `customer-story-writer` already use).
+- For AI search optimization (AEO, GEO, LLMO, AI Overviews), apply the structural rules in the `content-references` skill's `seo-aeo-core.md` reference (the same one `web-content-pipeline` and `customer-story-writer` already use).
 
 ---
 
@@ -421,6 +422,6 @@ Use these before asking for exports. Follow `mcp-efficiency` (resolve the projec
 
 ## Related Skills
 
-- **content-references** (`seo-aeo-optimization.md`): structural rules for AI search optimization (AEO, GEO, LLMO), apply directly; no dedicated ai-seo skill exists in this library.
+- **content-references** (`seo-aeo-core.md`): structural rules for AI search optimization (AEO, GEO, LLMO), apply directly; no dedicated ai-seo skill exists in this library.
 - **ai-content-cleaner**: AI writing pattern detection and cleanup.
 - **seo-keyword-research** / **keyword-clustering**: keyword discovery and page-level clustering, this skill covers technical/on-page auditing, not keyword discovery itself.

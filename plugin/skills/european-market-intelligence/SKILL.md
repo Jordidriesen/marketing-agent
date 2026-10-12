@@ -1,10 +1,11 @@
 ---
 name: european-market-intelligence
-description: "European market and competitor research: market sizing, competitor dossiers, pricing, segmentation, market entry, public tenders, from registries and free sources. Use for business-level research naming a European market. SEO-only: competitor-analysis."
+description: "Always use for any market sizing or market research on a European market, however short: TAM, SAM and SOM, competitor dossiers, pricing and segmentation research, market entry, public tenders, from registries and public data. Use for \"how big is the market\", \"market sizing\", \"who are the competitors in Belgium\", \"market entry\". SEO-only competitor work: competitor-analysis."
 metadata:
   category: research
   complexity: complex
-  version: "1.0.0"
+  version: "1.1.1"
+  history: "v1.1.1: description front-loaded with Always use for. v1.1.0: the six workflows moved to references/, read on demand; tool stack, compliance layer and output formats stay here."
   author: "Jordi Driesen (Europeanized merge of ID8Labs market-research-analyst + competitive-intelligence)"
   tags: market-research, competitive-intelligence, europe, market-sizing, osint, gdpr
   triggers: market research, market sizing, TAM SAM SOM, competitive landscape, competitor dossier, market entry, battlecard research, pricing intelligence
@@ -32,7 +33,7 @@ A merged market-research + competitive-intelligence agent, rebuilt around Europe
 | Google Ads copy iteration once a campaign is running | `rsa-writer`, `ad-copy-tester` |
 | Google Ads structure, bidding, budget once a campaign is running | `campaign-architect`, `bid-strategy-advisor`, `budget-optimizer` |
 
-Workflow 4 below (Marketing & Messaging Intelligence) is the seam between this skill and your SEO skill family - it calls into `seo-keyword-research`/`competitive-landscape` for the organic-search slice rather than duplicating it.
+Workflow 4 (Marketing & Messaging Intelligence, in its reference file) is the seam between this skill and your SEO skill family - it calls into `seo-keyword-research`/`competitive-landscape` for the organic-search slice rather than duplicating it.
 
 ## Tool stack
 
@@ -53,76 +54,18 @@ Load `references/european-data-sources.md` before Workflows 1, 2, and 6 - it hol
 
 ## Core Workflows
 
-### Workflow 1: Market Sizing (TAM/SAM/SOM) - Europe-first
+**Read the workflow file for the task in hand, now, before you start** (use the Read tool; these files are not loaded for you). Load only the one you need. Paths are relative to this skill's folder.
 
-**Objective:** Calculate TAM/SAM/SOM with European official statistics as the backbone, not press-release market-size claims.
+| # | Workflow | File |
+|---|---|---|
+| 1 | Market Sizing (TAM/SAM/SOM) - Europe-first | `references/workflow-1-market-sizing.md` |
+| 2 | Competitive Landscape & Company Profiling | `references/workflow-2-competitive-landscape.md` |
+| 3 | Pricing & Product Intelligence | `references/workflow-3-pricing-product.md` |
+| 4 | Marketing & Messaging Intelligence | `references/workflow-4-marketing-messaging.md` |
+| 5 | Customer Segment Analysis | `references/workflow-5-customer-segments.md` |
+| 6 | Market Entry & Public-Sector Opportunity Analysis | `references/workflow-6-market-entry-public-sector.md` |
 
-1. **Scope the market in NACE terms.** Every EU statistical dataset is organized by NACE Rev. 2 activity codes, not by marketing category names. Translate "security software for critical infrastructure" into the relevant NACE division(s) first - this is the single biggest accuracy lever in European market sizing.
-2. **Top-down via Eurostat Structural Business Statistics (SBS)** - enterprise counts, turnover, value added, and employment by NACE code, country, and size class. This is the closest thing Europe has to a single authoritative top-down source; see references for dataset codes (`sbs_sc_ovw`, `bd_size`). Cross-check with national statistical offices (Statbel, Destatis, INSEE, CBS, INE, ISTAT) for finer geographic or sector cuts Eurostat doesn't carry.
-3. **Bottom-up** - unit economics × addressable buyer count, sourced from BRIS/national business registers (enterprise counts by legal form and size class) plus Exa/Firecrawl-built company lists from the free sources in Section 4 of the references file (Bizzy, Databakkes, Pappers.fr, Companies House, Northdata, KVK). Dealroom/Orbis remain listed as an optional paid upgrade if you ever need named-account financial depth beyond what the free registries expose.
-4. **Narrow to SAM** - apply country/language/regulatory constraints explicitly. A CE-marked, GDPR-compliant product doesn't have the same SAM as a US-only competitor entering Europe; note standards/certification barriers (CE marking, national security clearances for defence/critical-infrastructure buyers, sector-specific licensing) as SAM reducers, not footnotes.
-5. **Project SOM** - competitive intensity from Workflow 2, plus realistic GTM capacity. Compare to comparable companies' actual market-share trajectories in the same NACE code where findable via SBS enterprise-birth/death and high-growth-enterprise data.
-6. **Document everything** - dataset code, geography, NACE code(s), currency, VAT treatment, and vintage (Eurostat SBS typically lags 18–24 months; state this explicitly rather than presenting it as current).
-
-**Deliverable:** Report with top-down and bottom-up TAM, SAM with stated constraints, SOM (Year 1/3/5, conservative/base/optimistic), full source and methodology trail.
-
-### Workflow 2: Competitive Landscape & Company Profiling
-
-**Objective:** Merge landscape mapping and deep single-competitor dossiers - discover the field, then go deep on the ones that matter.
-
-1. **Discover.** Exa for semantic discovery of comparable companies and category terms per target market's own language (not just English - "gestion du personnel," "Personalverwaltung," "personeelsbeheer" surface different competitor sets than "workforce management"). OpenSEO SERP data per country/language. Firecrawl on G2/Capterra/Product Hunt category pages.
-2. **Verify corporate facts against registries, not marketing copy.** Legal name, seat, legal form, filing status via BRIS (European e-Justice Portal) for a cross-border existence check, then the relevant national register for real depth - see references for the country table. BRIS is a verification layer, not a research database; budget time for national-register lookups per country in scope.
-3. **Funding and ownership - free-first.** Start with Exa for funding/press signals (a real substitute for a chunk of what a paid database like Dealroom provides), then pull financials and NACEBEL/NACE codes from free national sources: Bizzy or Databakkes/Busibee for Belgium, Pappers.fr for France, Northdata or Handelsregister for Germany, KVK for the Netherlands, Companies House for the UK (genuinely excellent and fully free). Firecrawl handles the ones with scrape-friendly pages; use Claude for Chrome for anything gated behind a search form or session, most commonly Bizzy. Check BORIS for beneficial ownership where the member state has gone live - coverage is partial as of 2026 (roughly half of EU/EEA countries), so treat gaps as "unknown," not "no ownership." Dealroom/Orbis stay noted as optional paid upgrades, not a dependency.
-4. **Categorize** direct/indirect/potential and build a positioning matrix, same as a standard competitive landscape.
-5. **Profile deeply** for the 3–7 competitors that matter: product (Firecrawl on product/doc pages), customers (case studies, G2/Capterra/Trustrader-style reviews), hiring signals (job postings as roadmap tells), marketing (Workflow 4), sales motion.
-
-**Deliverable:** Landscape report with positioning matrix, plus full dossiers (SWOT + battlecard, see format below) for priority competitors.
-
-### Workflow 3: Pricing & Product Intelligence
-
-**Objective:** Reverse-engineer pricing strategy and feature parity - same as the source skills, with a European pricing-display note.
-
-1. Extract published pricing via Firecrawl. **Flag VAT treatment explicitly** - B2B European pricing pages often show ex-VAT prices that aren't directly comparable across countries with different VAT rates (17–27% across the EU) without normalizing.
-2. Cross-reference multi-country pricing pages (many European vendors price per-country or per-currency) rather than assuming one EU-wide price point.
-3. Build the feature comparison matrix (binary + quality rating + maturity) as in the source workflow.
-4. Uncover non-published pricing via reviews, job postings mentioning quota/ACV, and - for anything touching public buyers - actual awarded contract values from TED (see Workflow 6). TED award notices are one of the only places European B2B pricing becomes a matter of public record.
-
-**Deliverable:** Pricing intelligence report normalized to a common currency and VAT basis, with a feature-gap matrix.
-
-### Workflow 4: Marketing & Messaging Intelligence
-
-**Objective:** Reverse-engineer channel strategy and messaging - the seam with your SEO skill stack.
-
-1. **Organic:** hand off to `competitive-landscape`/`seo-keyword-research` for SERP overlap and ranking data per country/language rather than re-deriving it here.
-2. **Paid social:** LinkedIn Ad Library MCP for actual live/historical B2B ad creative and stated targeting - this beats estimating spend from traffic tools for European B2B competitors, most of whose real budget is on LinkedIn, not display.
-3. **Paid search:** Google Ads MCP auction-insights where account overlap exists; otherwise OpenSEO paid-SERP data.
-4. **Content & positioning:** Firecrawl to catalogue blog/resource content by language - note which languages a competitor covers natively vs. machine-translates; this is a real signal of market commitment in multilingual Europe.
-5. **Trade-press and PR angle:** which vertical trade publications and newsletters cover the competitor (useful both as intelligence and as a target list if the user later wants PR - see the `media-mapping` skill for that follow-on).
-
-**Deliverable:** Channel and messaging breakdown per target country, cross-linked to any existing `competitive-landscape` output rather than duplicating it.
-
-### Workflow 5: Customer Segment Analysis
-
-**Objective:** Identify and size target segments, largely unchanged from the source skill, with one European addition.
-
-1. Demographic/firmographic/psychographic/behavioral segmentation as standard.
-2. **Firmographic sizing uses the same Eurostat SBS enterprise-count-by-size-class data as Workflow 1**, so segment sizing and TAM sizing should reconcile - if they don't, one of the two NACE mappings is wrong.
-3. ICP profiling via Firecrawl on testimonials/case studies, cross-referenced with your own Search Console/CRM data where the user already has a customer base to pattern-match against.
-4. Prioritize segments factoring in per-country regulatory accessibility (e.g., public-sector buyers require different qualification/compliance paths per member state - see Workflow 6).
-
-**Deliverable:** Segment profiles with sizing, prioritization, and ICP definitions, reconciled against Workflow 1's TAM.
-
-### Workflow 6: Market Entry & Public-Sector Opportunity Analysis
-
-**Objective:** New workflow not in the source skills - evaluates entry feasibility with Europe-specific barriers and, where relevant, government demand.
-
-1. **Market attractiveness** - Porter's Five Forces as standard, informed by Workflows 1–3.
-2. **Entry barriers specific to Europe:** CE marking and product-conformity requirements, GDPR/data-residency obligations for anything processing EU personal data, sector-specific licensing (security clearances for defence/critical-infrastructure buyers, financial services passporting, etc.), and language/localization as a genuine barrier, not a checkbox - a product with only EN/DE content is not addressable to a FR- or ES-only buyer in practice.
-3. **Public-sector demand via TED (Tenders Electronic Daily).** For any market where government or critical-infrastructure buyers matter, pull TED notices by CPV code and country: contract notices show live demand, award notices show who's winning and at what value, and buyer names show exactly which public bodies are active purchasers. This is a uniquely European data asset - there's no US equivalent this structured. Use it to (a) size public-sector SOM, (b) identify which competitors are actually winning government work vs. just claiming public-sector credibility, and (c) build a target-account list of buyers with open or upcoming tenders.
-4. **Entry strategy comparison** - organic, partnership, acquisition, or distributor/reseller - informed by how the competitive field in Workflow 2 actually goes to market in each country (many European B2B markets, especially DACH and the Nordics, still run heavily through local resellers/system integrators rather than direct sales).
-5. **GTM planning** - target segment, positioning, channel, pricing, and localization plan per priority country.
-
-**Deliverable:** Market-entry feasibility report per target country with a public-sector opportunity appendix where applicable.
+A request that spans two workflows reads both.
 
 ## GDPR & OSINT Compliance Layer
 

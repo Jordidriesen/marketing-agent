@@ -20,7 +20,7 @@ Good objectives are SMART. "Generate 200 marketing qualified leads from mid-mark
 
 **Audience.** Specific enough to guide messaging and channel decisions: demographics (role, seniority, company size, industry), psychographics (motivations, pain points, objections), behavioral (where they consume content, how they buy), and buying stage. One brief profile is enough: "[Role] at [company type] struggling with [pain point], looking for [outcome], discovers solutions through [channels]."
 
-**Message.** See `content-references/references/communication-frameworks.md` for framework selection (StoryBrand, PAS, Sparkline, Minto, BLUF): the core campaign message and its 3–4 supporting points should follow whichever framework fits the objective and channel, not be freestyled per piece.
+**Message.** See `content-references/references/content-briefing.md` for framework selection (StoryBrand, PAS, Sparkline, Minto, BLUF): the core campaign message and its 3–4 supporting points should follow whichever framework fits the objective and channel, not be freestyled per piece.
 
 **Channel.** Select based on where the audience actually is, not where content is easiest to produce. See the Channel Selection Guide below.
 

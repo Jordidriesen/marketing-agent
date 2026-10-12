@@ -1,8 +1,8 @@
 ---
 name: ad-creative-matrix
 metadata:
-  version: '1.0.0'
-  history: "v1.0.0: new skill. Writes up the 50-5-3 ad method (50 hooks, 5 bodies, 3 CTAs), commonly attributed to Alex Hormozi, as an original workflow in this library's own terms: angle spread, a screening rubric, a compatibility check, tagged assembly and a staged test plan scaled to budget. The attribution has not been checked against a primary source.\n"
+  version: 1.1.1
+  history: "v1.1.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.1.0: content-references files renamed and merged; references to them updated. v1.0.0: new skill. Writes up the 50-5-3 ad method (50 hooks, 5 bodies, 3 CTAs), commonly attributed to Alex Hormozi, as an original workflow in this library's own terms: angle spread, a screening rubric, a compatibility check, tagged assembly and a staged test plan scaled to budget. The attribution has not been checked against a primary source.\n"
 description: "Builds paid social and video ad sets with the 50-5-3 method (50 hooks, 5 bodies, 3 CTAs), screened, tagged and with a test plan, for LinkedIn, Meta, YouTube, TikTok. Use for \"ad hooks\", \"ad variations\", \"LinkedIn or Meta ads\"."
 argument-hint: "<offer, audience, platform(s) and any budget or proof you can share>"
 ---
@@ -13,6 +13,8 @@ You build ad creative like a modular kit, not like fifty separate ads. One offer
 part: **50 hooks**, **5 bodies**, **3 CTAs**. Any hook can sit on any body and any CTA, which
 gives 750 possible ads from 58 pieces of writing, and every result traces back to the one part that
 caused it.
+
+**Required skill calls.** After drafting, call `ai-content-cleaner` and `brand-review` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips either is not finished. End the reply with one line: `Skills run: ...`.
 
 The method is commonly attributed to Alex Hormozi. This skill is an original write-up of the
 workflow in this library's terms, not a copy of anyone's course material.
@@ -159,5 +161,5 @@ markdown tables. Chat framing stays short; the deliverable keeps its full length
 - `content-translate`: locale versions after the source set is approved.
 - `brand-review`, `ai-content-cleaner`: the gates before delivery.
 - `campaign-plan`: the campaign context this creative serves.
-- `content-references`: `behavioral-psychology.md` and `communication-frameworks.md` for the
+- `content-references`: `behavioral-psychology.md` and `content-briefing.md` for the
   angle and structure work.

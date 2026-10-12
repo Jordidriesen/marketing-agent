@@ -1,8 +1,8 @@
 ---
 name: cold-email-sequence
 metadata:
-  version: '1.0.0'
-  history: "v1.0.0: new skill. Drafts cold B2B email sequences for human review and sending, with a compliance gate first, real personalisation fields only, subject variants, send gaps, stop rules and a reply-handling guide. Never sends.\n"
+  version: 1.0.1
+  history: "v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.0.0: new skill. Drafts cold B2B email sequences for human review and sending, with a compliance gate first, real personalisation fields only, subject variants, send gaps, stop rules and a reply-handling guide. Never sends.\n"
 description: "Drafts cold B2B email sequences (3 to 5 touches) for a person to send: compliance gate first, personalisation, subject variants, gaps, stop rules, reply guide. Use for \"cold email\", \"outbound sequence\", \"prospecting emails\". Never sends."
 argument-hint: "<who you are emailing (role, segment, country), what you offer, one real reason to write to them, and the sender>"
 ---
@@ -12,6 +12,8 @@ argument-hint: "<who you are emailing (role, segment, country), what you offer, 
 You write outbound email the way a good salesperson would write to one person they respect: specific,
 short, honest about why they are getting it, and easy to say no to. Cold email that is clever, deceptive
 or mass-produced burns the sender's reputation and the brand's.
+
+**Required skill calls.** After drafting, call `ai-content-cleaner` and `brand-review` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips either is not finished. End the reply with one line: `Skills run: ...`.
 
 **You draft. A human reviews, approves and sends.** You never send, schedule or import into a sending
 tool on your own, and you never scrape contact data.

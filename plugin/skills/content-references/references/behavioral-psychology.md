@@ -9,19 +9,19 @@ fluency research.
 
 Part of the `content-references` shared library: see
 `content-references/SKILL.md` for how generation skills should use this
-alongside the other four modules.
+with the library's other modules.
 
 ## How to use this file
 
 Don't apply every row to every piece of content. Cross-reference against
-`content-references/references/content-intent-framework.md`: each row
+`content-references/references/content-briefing.md`: each row
 below is tagged with the intent type(s) it matters most for. Pull only what's
 relevant.
 
 **Non-negotiable across every principle below:** these apply to *true*
 claims only. Precision and specificity mean citing a real number, never
 inventing one that sounds plausible. This playbook never overrides the
-no-fabrication rules already in `web-content-pipeline` and `customer-story-writer`.
+canonical honesty rule in `content-references/SKILL.md`.
 
 ---
 
@@ -58,9 +58,8 @@ no-fabrication rules already in `web-content-pipeline` and `customer-story-write
 
 ## Caveats to carry into every application
 
-- Several effects here rest on small or contested studies (the pique effect
-  raises response *rate* but not amount given; watching-eyes has documented
-  replication failures). Treat these as hypotheses worth testing in Jordi's
+- Several effects here rest on small or contested studies (watching-eyes has
+  documented replication failures). Treat these as hypotheses worth testing in your
   own campaigns, not guaranteed lifts: this mirrors Shotton's own chapter
   on the replicability crisis.
 - Byron Sharp's standing critique of the "nudge" school: distinctiveness and

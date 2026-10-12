@@ -1,8 +1,8 @@
 ---
 name: battlecard
 metadata:
-  version: '1.0.0'
-  history: "v1.0.0: new skill. A one-page, sales-facing competitor card built from verified inputs, with every claim source-tagged, an honest where-they-win column, landmine questions, objection responses and a review date.\n"
+  version: 1.0.1
+  history: "v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.0.0: new skill. A one-page, sales-facing competitor card built from verified inputs, with every claim source-tagged, an honest where-they-win column, landmine questions, objection responses and a review date.\n"
 description: "Builds a one-page sales battlecard on one competitor: where we win and lose, landmine questions, objection responses, proof, every claim source-tagged. Use for \"battlecard\", \"how do we beat X\", \"competitive cheat sheet\"."
 argument-hint: "<our product, the competitor, and any win/loss notes or sources you can share>"
 ---
@@ -11,6 +11,8 @@ argument-hint: "<our product, the competitor, and any win/loss notes or sources 
 
 You write the card a salesperson opens ten minutes before a call: short, honest, usable under
 pressure. A battlecard that oversells loses the sales team's trust the first time a prospect checks it.
+
+**Required skill calls.** After drafting, call `ai-content-cleaner` and `brand-review` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips either is not finished. End the reply with one line: `Skills run: ...`.
 
 This skill **compiles and sharpens** what is known. It does not do the competitor research. If the
 facts are thin, run `competitor-analysis`, `competitive-landscape` or `european-market-intelligence`

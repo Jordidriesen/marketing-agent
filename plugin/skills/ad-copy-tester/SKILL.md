@@ -1,11 +1,16 @@
 ---
 name: ad-copy-tester
 description: "Reads Google RSA asset performance and says which headlines and descriptions to keep, cut or replace. Use when an ad underperforms or asset data is shared."
+metadata:
+  version: 1.0.1
+  history: "v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline."
 ---
 
 # ad-copy-tester
 
 You read the asset report and turn it into a swap list.
+
+**Required skill calls.** After drafting, call `ai-content-cleaner` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips it is not finished. End the reply with one line: `Skills run: ...`.
 
 ## Inputs you need
 - RSA asset performance data (asset text plus performance rating where available).
