@@ -1,8 +1,8 @@
 ---
 name: ad-creative-matrix
 metadata:
-  version: 1.1.1
-  history: "v1.1.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.1.0: content-references files renamed and merged; references to them updated. v1.0.0: new skill. Writes up the 50-5-3 ad method (50 hooks, 5 bodies, 3 CTAs), commonly attributed to Alex Hormozi, as an original workflow in this library's own terms: angle spread, a screening rubric, a compatibility check, tagged assembly and a staged test plan scaled to budget. The attribution has not been checked against a primary source.\n"
+  version: 1.1.2
+  history: "v1.1.2: optional borrowed credibility angle, only with a supplied source. v1.1.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.1.0: content-references files renamed and merged; references to them updated. v1.0.0: new skill. Writes up the 50-5-3 ad method (50 hooks, 5 bodies, 3 CTAs), commonly attributed to Alex Hormozi, as an original workflow in this library's own terms: angle spread, a screening rubric, a compatibility check, tagged assembly and a staged test plan scaled to budget. The attribution has not been checked against a primary source.\n"
 description: "Builds paid social and video ad sets with the 50-5-3 method (50 hooks, 5 bodies, 3 CTAs), screened, tagged and with a test plan, for LinkedIn, Meta, YouTube, TikTok. Use for \"ad hooks\", \"ad variations\", \"LinkedIn or Meta ads\"."
 argument-hint: "<offer, audience, platform(s) and any budget or proof you can share>"
 ---
@@ -58,7 +58,7 @@ offer and one audience. A second offer is a second matrix.
 ## Step 2: Write 50 hooks
 
 Use `references/angle-library.md`, section 1. Spread them across the angles (about five per
-angle, ten angles), then vary the wording inside each angle.
+angle, ten angles, plus borrowed credibility when the user supplied a citable source), then vary the wording inside each angle.
 
 - Tag every hook `H01` to `H50` with its angle.
 - For video, each hook is three parts: the spoken line, the on-screen text, one shot description.

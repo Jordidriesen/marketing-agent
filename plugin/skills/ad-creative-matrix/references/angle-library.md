@@ -22,6 +22,9 @@ then vary the wording inside each angle.
 | Identity | Speaks to a role or situation, not a personal attribute | "For [role] who [situation]" |
 | Question | Asks something the viewer already asks themselves | "Why does [common situation] keep happening?" |
 | Objection | Answers the doubt before it forms | "Not another [category] that [common failure]" |
+| Borrowed credibility (optional) | Leans on a source the audience already trusts | "[Named, citable source] on [the point], and what it means for [role]" |
+
+Borrowed credibility is the eleventh angle and is used only when the user supplied a named source they may cite (a report, a regulator, a customer who gave permission). With no such source, skip the angle and spread its hooks over the other ten. Never name a source, study or person the user did not give you.
 
 Rules for every hook:
 
