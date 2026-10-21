@@ -4,6 +4,38 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [2.8.1]
+
+Phase D of the gap-closing work: AI visibility, the agent wiring, and the measurement of what all seven new skills cost to list.
+
+- **`ai-visibility-tracker` 1.0.0:** a repeatable protocol, not an automated score: a versioned prompt set (`references/prompt-set.md`), a dated check protocol per engine, a citation log (`references/citation-log.md`), a read of Search Console's generative AI report and of AI referrals in GA4, and a round-over-round movement report with the sample stated. Nothing is reported as movement before round 2. Eval `ai-vis` (two seeded rounds, 3 runs): the skill fired 3 of 3 (0 of 3 before); the right mover and engine were named 2 of 3 with the binary judge and 3 of 3 with the three-state judge; invented scores 0 of 3 before the skill against 2 of 3 (binary) and 3 of 3 (three-state) after.
+- **Agent wiring:** `seo-geo-specialist` owns `ai-visibility-tracker`; `performance-reporter` owns `ga4-audit` and `attribution-readout`; `performance-marketer` owns `meta-ads-manager` and `linkedin-ads-manager`; `content-writer` owns `cro-auditor` and `ab-test-planner`. The director's reporting line and the four `0-` shortcuts mention the new work. Routing eval, four plain requests that name no agent, 2 runs each: **2 of 8 correct before, 7 of 8 after**. The one miss is a run where the main agent answered without calling any subagent.
+- **Cost of listing the new skills:** the descriptions of model-invocable skills total 10836 characters across 58 skills on 2.6.3 and 13319 across 65 skills now; agent descriptions total 5160 characters before and 5430 now. Together that is about 688 tokens more in every session where the plugin is installed. The new descriptions start with "Always use for" where the skill must fire on short requests, and stay under 360 characters. `web-content-pipeline` and `content-references` are untouched in this release, so the landing page load measured in 2.6.x is unchanged.
+- **README:** skill tables for conversion and testing, measurement, paid social and AI visibility; skill count now 65.
+
+## [2.8.0]
+
+Phase C: paid social build plans.
+
+- **`meta-ads-manager` 1.0.0 and `linkedin-ads-manager` 1.0.0:** build plans for Meta (Facebook and Instagram) and LinkedIn Ads. Neither platform has a connector yet, so each output opens by saying it is a plan and not a built campaign, and nothing is created or changed in any account. Meta covers objective and optimisation event, Advantage+ against manual structure, audiences with exclusions, budget arithmetic and a pixel, Conversions API and consent checklist. LinkedIn covers campaign types, role, company and list targeting, and an audience-size verdict against LinkedIn's 300 member account minimum, with the forecast in Campaign Manager as the deciding number. Settings that change often are marked "confirm in Ads Manager" or "confirm in Campaign Manager". Costs per click, CPM and cost per lead are never invented or filled with scenario values.
+- **Measured, 3 runs per case, `main` without the skills against this branch:** `meta-plan` complete plan 0 of 3 before, 3 of 3 after the first run and 2 of 3 on the rerun after the cost wording was tightened (the miss was an opening line without the "not connected" statement); no invented numbers 0 of 3 before, 2 of 3 after. `meta-trigger` ("set up a Facebook campaign"): the skill fired 0 of 3 before, 3 of 3 after. `linkedin-plan` (40 account list, 4,000 euro): audience-size verdict 0 of 3 before, 3 of 3 after; without the skill all three runs invented CPM, CPC or cost per lead ranges; with it, after the second wording fix, the three-state judge passed 2 of 3 and the binary judge 0 of 3. The one three-state fail was a rubric error (it called the follow-up owner named in the brief an invented contact; the rubric now says the brief supplies that name), and the case has not been re-run since.
+- **`ad-creative-matrix` 1.1.2:** an optional eleventh hook angle, borrowed credibility, used only when the user supplied a source that may be cited.
+
+## [2.7.1]
+
+Phase B: measurement.
+
+- **`ga4-audit` 1.0.0:** audits a GA4 property from exports, screenshots or a connector: key events against the funnel, counting method, consent mode in the EU context (a checklist, not legal advice), UTM taxonomy, filters, cross-domain and PII, ranked by the decisions the data must support. `references/ga4-export-protocol.md` lists what to pull when there is no connector. With no export it stops and says so. Eval `ga4-audit` (seeded export, 3 runs): skill fired 3 of 3 (0 of 3 before); the two planted problems were ranked at the top 3 of 3 with and without the skill, so the gain is the fixed structure and the labelling rather than finding the problems; honest labelling 0 of 3 before, 1 of 3 after with the binary judge and 3 of 3 with the three-state judge.
+- **`attribution-readout` 1.0.0:** lines up source definitions first, compares what each attribution model shows and hides, ranks the likely causes of a named discrepancy and names the incrementality test that would settle the question. Eval `attribution` (GA4 against Google Ads gap, 3 runs): the counting method ranked first 3 of 3, with and without the skill; skill fired 3 of 3 after a routing fix; the "honest numbers" check passed 0 of 3 before and 1 of 3 after, and is **not resolved**: one run made an unsupported claim about what channels do, one did not say that LinkedIn leads are not comparable with GA4 key events.
+
+## [2.7.0]
+
+Phase A: conversion and testing.
+
+- **`cro-auditor` 1.0.0:** a heuristic conversion audit of one page against a checklist (`references/cro-checklist.md`): clarity, friction, credibility, message match, form and CTA, mobile. Findings are ranked by expected impact with a fix and an owner skill each, and the top finding becomes a hypothesis for `ab-test-planner`. No lift numbers and no benchmarks. Eval `cro-audit` (3 planted flaws, 3 runs): skill fired and checklist read 3 of 3 (0 of 3 before); the three flaws were found 3 of 3 with and without the skill, so the gain is the fixed checklist, ranking and hand-off, not detection.
+- **`ab-test-planner` 1.0.0:** hypothesis tied to a finding, one variable, sample size and duration computed with `scripts/sample_size.py` (a table and a formula are the fallback when commands cannot be run), variants, tracking, stop rules and an explicit "do not run" verdict. Eval `ab-test-plan` (2% baseline, 10,000 sessions, 20% minimum effect): duration within range 3 of 3 (2 of 3 before), honest verdict 3 of 3 (1 of 3 before). Eval `ab-test-infeasible` (0.1%, 800 sessions): "do not run" 3 of 3 with and without the skill; skill fired 3 of 3.
+- **Examples:** two bad and good headline pairs in `rsa-writer` 1.2.0 and a bad and good negative keyword pair in `search-term-auditor` 2.1.0.
+
 ## [2.6.3]
 
 - **The marketing director is now the default main agent.** `plugin/settings.json` sets `"agent": "marketing-director"`, so a session with the plugin enabled starts as the director. It asks before proceeding and before publishing, delegates to the specialists, and checks the `Skills run:` line. Before, it only worked when called by name, and as a subagent it could not delegate. Verified in a scratch copy of the plugin before shipping; to opt out, remove the file.

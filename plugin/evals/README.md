@@ -57,6 +57,26 @@ Check the `ai-content-cleaner` paths. The short cases (English and Belgian Dutch
 
 A trigger check only: does `european-market-intelligence` fire on a plain "how big is the market" request.
 
+## cro-audit, ab-test-plan and ab-test-infeasible
+
+`cro-audit` gives a page with three planted flaws (vague button, buried proof, a six-field newsletter form) and checks that `cro-auditor` fired, that its checklist was read, that all three flaws are found and that no lift or benchmark is invented. `ab-test-plan` checks the computed sample size and duration for 2% baseline, 10,000 sessions and a 20% minimum effect (about 21,000 per variant, about 18 weeks) and an honest verdict. `ab-test-infeasible` gives 0.1% on 800 sessions and expects a clear "do not run".
+
+## ga4-audit and attribution
+
+`ga4-audit` is run on a seeded export (the goal event has zero counts, UTMs in several conventions) and checks that both are ranked at the top and that the evidence is labelled honestly. `attribution` is a GA4 against Google Ads gap where the planted cause is the counting method (every against once per session, plus a refreshed thank-you page); the cause must rank first and the figures must stay within the numbers given.
+
+## meta-plan, meta-trigger and linkedin-plan
+
+`meta-plan` and `linkedin-plan` check that the build plan is complete and honest: no invented cost per lead, CPM, CPC or audience size, the 300 member account minimum and a size verdict for the 40 account LinkedIn list, and the statement that the channel is not connected so the output is a plan. `meta-trigger` checks that a plain "set up a Facebook campaign" request reaches `meta-ads-manager`. These cases go through the `performance-marketer` agent.
+
+## ai-vis
+
+Two seeded rounds of citation counts; the report must name the right mover and engine (Perplexity), call ChatGPT and Google AI Overviews flat, state the small sample and invent no score.
+
+## routing-meta, routing-measure, routing-cro and routing-aivis
+
+Plain requests that name no agent. The expected agents are `performance-marketer`, `performance-reporter`, `content-writer` and `seo-geo-specialist`.
+
 ## Not covered
 
 - The marketing director cannot delegate when it is called as a subagent, so its ask-first behaviour needs a main-agent test that this harness does not offer.
