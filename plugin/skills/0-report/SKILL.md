@@ -1,6 +1,6 @@
 ---
 name: 0-report
-description: "Menu shortcut: runs the performance-reporter agent on your request. Pick it from the plugin menu when you want performance reporting work done by that specialist, for cross-channel performance reports with wins, misses and next steps. Manual only; it never triggers on its own."
+description: "Menu shortcut: runs the performance-reporter agent on your request. Pick it from the plugin menu when you want performance reporting work done by that specialist, for cross-channel performance reports with wins, misses and next steps, GA4 audits and attribution questions. Manual only; it never triggers on its own."
 argument-hint: "<what you need, with any context or files>"
 disable-model-invocation: true
 context: fork

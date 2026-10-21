@@ -1,6 +1,6 @@
 # Marketing Agent: a Claude marketing team
 
-A marketing team for Claude in one install: a director, twelve specialist subagents, the 58 skills they run on, and 13 menu shortcuts (`0-` entries) that open an agent directly. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, outbound and sales, creative and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
+A marketing team for Claude in one install: a director, twelve specialist subagents, the 65 skills they run on, and 13 menu shortcuts (`0-` entries) that open an agent directly. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, outbound and sales, creative and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
 
 You act as the operator: ask `marketing-director` for anything that spans disciplines, or call a specialist directly for a single task.
 
@@ -10,7 +10,7 @@ You act as the operator: ask `marketing-director` for anything that spans discip
 plugin/                    the installable plugin
   .claude-plugin/          plugin manifest
   agents/                  marketing-director and twelve specialists
-  skills/                  every skill the agents use (60), plus 13 `0-` agent shortcuts
+  skills/                  every skill the agents use (65), plus 13 `0-` agent shortcuts
   .mcp.json                connectors with a public endpoint
   CONNECTORS.md            which connector each discipline uses, and the data-source rule
 templates/brand-kit/       blank modular brand kit: router + context, voice, design
@@ -65,6 +65,27 @@ See [`plugin/README.md`](plugin/README.md) for each agent's role and the order a
 | `sea-keyword-research` | Paid search keyword list by intent, sized to budget |
 | `search-term-auditor` | Wasted spend, keep/block/review classification and paste-ready negative lists with match types |
 
+### Paid social campaigns
+
+| Skill | What it does |
+|---|---|
+| `meta-ads-manager` | Meta (Facebook and Instagram) campaign build plan: objective, Advantage+ or manual, audiences and exclusions, budget, tracking and consent checklist. Plan only until a Meta connector exists |
+| `linkedin-ads-manager` | LinkedIn Ads build plan for B2B: targeting, matched audiences with an honest audience-size verdict, budget realities, lead gen form or landing page. Plan only until a LinkedIn connector exists |
+
+### Conversion and testing
+
+| Skill | What it does |
+|---|---|
+| `cro-auditor` | Heuristic conversion audit of one page: findings ranked by expected impact, with fixes and what to test first |
+| `ab-test-planner` | A/B test design with a hypothesis, one variable, computed sample size and duration, stop rules and a do-not-run verdict |
+
+### Measurement
+
+| Skill | What it does |
+|---|---|
+| `ga4-audit` | GA4 audit from exports or a connector: key events against the funnel, consent mode, UTM taxonomy, filters, PII, ranked by decision impact |
+| `attribution-readout` | Why GA4 and platform numbers differ, what each attribution model shows and hides, and which test would settle it |
+
 ### Paid media reporting
 
 | Skill | What it does |
@@ -76,6 +97,7 @@ See [`plugin/README.md`](plugin/README.md) for each agent's role and the order a
 | Skill | What it does |
 |---|---|
 | `competitive-landscape` | SEO market leaders across several competitors |
+| `ai-visibility-tracker` | Repeatable protocol to track a brand's citations and mentions in AI answers: prompt set, citation log, round-over-round movement |
 | `competitor-analysis` | Deep dive on one competitor's organic footprint and content |
 | `content-gap-mapping` | Gaps, parity and advantages against competitors per cluster |
 | `content-research-orchestrator` | Gated pipeline: keywords, clustering, landscape, competitor, gaps |
