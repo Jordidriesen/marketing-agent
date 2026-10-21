@@ -2,8 +2,8 @@
 name: rsa-writer
 description: "Writes Google Ads responsive search ad headlines (30 characters) and descriptions (90) that match search intent. Use for \"ad copy\", \"RSA\", \"Google Ads headlines\". Paid social and video ads: ad-creative-matrix."
 metadata:
-  version: 1.1.1
-  history: "v1.1.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.1.0: content-references files renamed and merged; references to them updated."
+  version: 1.2.0
+  history: "v1.2.0: two bad and good headline examples added. v1.1.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.1.0: content-references files renamed and merged; references to them updated."
 ---
 
 # rsa-writer
@@ -42,6 +42,17 @@ You write RSA assets like a direct response copywriter who has seen a thousand s
 - No exclamation marks. No "best in class", "top rated", "world class" filler unless the user has proof they can legally claim.
 - Never invent specifics. No fake percentages, prices, or review counts. If the copy needs a number, ask for it.
 - Don't write 15 versions of the same headline. Cover different angles: price, speed, trust, outcome, objection.
+
+## Examples
+
+Two headline pairs, fictional (Acme Access, a visitor management product; the brief supplied the QR check-in). The first headline of each pair fails, the second passes.
+
+| Bad | Why it fails | Good | Why it works |
+|---|---|---|---|
+| Best Visitor Software! (22) | Exclamation mark, "best" with no proof, no specific | QR Check-In for Visitors (24) | A concrete feature the user supplied, in the words a buyer uses |
+| Innovative Access Solutions (27) | Brand-speak: nobody types it, and it says nothing | Visitor Management Software (27) | Mirrors the search query, so the ad matches the intent |
+
+The good headlines use only what the brief said; none adds a number, price or claim the user did not give.
 
 ## Related Skills
 
