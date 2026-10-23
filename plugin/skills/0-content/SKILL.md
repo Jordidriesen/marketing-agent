@@ -1,6 +1,6 @@
 ---
 name: 0-content
-description: "Menu shortcut: runs the content-writer agent on your request. Pick it from the plugin menu when you want content writer work done by that specialist, for web and long-form content: pillar pages, landing pages, blog posts, customer stories, press releases, plus editing. Manual only; it never triggers on its own."
+description: "Menu shortcut: runs the content-writer agent on your request. Pick it from the plugin menu when you want content writer work done by that specialist, for web and long-form content: pillar pages, landing pages, blog posts, customer stories, press releases, plus editing, page conversion audits and A/B test plans. Manual only; it never triggers on its own."
 argument-hint: "<what you need, with any context or files>"
 disable-model-invocation: true
 context: fork

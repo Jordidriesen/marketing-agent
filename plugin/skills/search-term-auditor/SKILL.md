@@ -1,8 +1,8 @@
 ---
 name: search-term-auditor
 metadata:
-  version: '2.0.0'
-  history: "v2.0.0: merged with the former negative-keywords skill (now in archive/). Added KEEP, NEGATIVE and REVIEW classification, match type and placement rules, the pre-launch exclusion mode and the root-cause pattern note. The audit workflow and live connector wiring are unchanged.\n"
+  version: '2.1.0'
+  history: "v2.1.0: one bad and good negative keyword example added. v2.0.0: merged with the former negative-keywords skill (now in archive/). Added KEEP, NEGATIVE and REVIEW classification, match type and placement rules, the pre-launch exclusion mode and the root-cause pattern note. The audit workflow and live connector wiring are unchanged.\n"
 description: "Audits Google Ads search terms for wasted spend and builds paste-ready negative keyword lists with match types and placement. Use for \"wasted spend\", \"negatives\", \"search term report\"."
 ---
 
@@ -59,3 +59,14 @@ If the connector isn't connected, ask for a pasted or attached search term repor
 - Small sample sizes get a "not enough data yet" label, not a verdict. Be explicit about statistical confidence.
 - If the data the user gave you can't answer something, say so. Don't fill gaps with guesses.
 - Live-pulled data is only as fresh as the connector's last sync; if a number looks stale or inconsistent with what the user expects, say so rather than presenting it as certain.
+
+## Example: a bad and a good negative
+
+Fictional account (Acme Access, visitor management software for warehouses).
+
+| | Negative | Problem or reason |
+|---|---|---|
+| Bad | `visitor` as a broad match negative on the account | Blocks every search the business wants, including "visitor management software". One careless word, an empty account |
+| Good | `"free"` as a phrase negative on the shared account list "Junk intent", and `[visitor log template]` as an exact negative on the campaign "Warehouse Search" (ad group "Visitor logbook") | "free" is an intent pattern that is junk everywhere, so it sits account-wide; "visitor log template" is a specific bad term that contains a good keyword, so it is exact and scoped to where it is junk |
+
+Each recommendation gives its ad group and one line of reasoning, as in the rules above.
