@@ -4,6 +4,10 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+- **`non-negotiables` 1.0.0:** a shared reference listing the hard rules for every deliverable (no em dashes, en_GB, Belgian Dutch, no invented facts, ad group beside every paid keyword, no sending or publishing without a yes), each marked mechanical, judgement or process. `scripts/check_rules.py` runs the mechanical ones as a blocklist (em dashes, common US spellings, US date order and vocabulary, Netherlands-only Dutch words from the `ai-content-cleaner` Belgian section, keyword tables without an ad group column). Tested on seeded samples only; no eval yet.
+- **`marketing-director`:** writes acceptance criteria into every multi-step brief and gives each deliverable a verdict (Accepted, Drift, Gap or Extra) against them. Tools now include Skill and Bash, Bash for running `check_rules.py` only.
+- **Bash for the cleaner's Unicode pass:** `content-writer`, `sdr-specialist` and `sales-enablement-specialist` are told to run `ai-content-cleaner`, whose Unicode pass runs `unicode_audit.py`, but had no Bash to run it. Each now has Bash. They also have Write, so this widens what they can do; their instructions are unchanged.
+
 ## [2.9.0]
 
 `frontend-design` 2.2.0: selective additions from dembrandt-skills (MIT), no new skills.
