@@ -30,6 +30,14 @@ Read the site or codebase and document, briefly:
   migrate frameworks or styling systems as part of a redesign.
 - **Brand tokens in use:** colours, fonts, radii, logo treatment. Compare them with the brand
   kit's `design.md`. Where they differ, report the difference; don't silently pick one.
+- **Estate consistency:** list the surfaces that should look like one product (marketing site,
+  app or portal, documentation, email templates, landing pages on other tools) and compare their
+  tokens: type, colour, radius, spacing. A marketing page may be louder than an app screen, but
+  they share one token set. Report drift between surfaces; do not redesign one surface as if the
+  others did not exist. (Adapted from dembrandt-skills, MIT.)
+- **Optional measured baseline:** when the live site's tokens matter and dembrandt is available
+  (see `SKILL.md` Step 0), extract them instead of reading them by eye, and use the result as the
+  "tokens in use" list above.
 - **Information architecture:** page tree, main navigation, key conversion paths.
 - **WordPress health baseline (WP Umbrella, when the site is in it):** installed plugins and
   theme (`list_plugins`, `list_themes`), outstanding vulnerabilities (`get_vulnerabilities`),
@@ -90,7 +98,8 @@ Work through these and list every finding before fixing.
 - No max-width container; content stretching edge to edge on wide screens.
 - Equal-height cards forced where content differs; CTAs at random heights across a row of cards.
 - Feature lists or prices starting at different heights across comparison columns.
-- Shared elements (titles, prices, buttons) not aligned across side-by-side items.
+- Shared elements (titles, prices, buttons) not aligned across side-by-side items (slot model in
+  `layout-and-accessibility.md`).
 - Optical misalignment: icons beside text, text in buttons, play icons in circles that are
   mathematically centred but look off.
 - Identical top and bottom padding where the bottom needs a little more.

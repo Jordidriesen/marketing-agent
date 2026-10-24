@@ -149,6 +149,23 @@ below means OKLCH `L`, 0 to 1.
   for destructive actions.
 - Never let colour be the only carrier of meaning: pair it with an icon or a label.
 
+### Status colours
+
+Adapted from dembrandt-skills (MIT).
+
+- Keep the status set small: red for error or destructive, amber for warning, green for success,
+  blue for information. Each means one thing across the whole product. Amber is always a
+  warning, never pending, neutral or decoration.
+- Every status tone must render visibly different from the others. Two tokens that look alike are
+  one status with two names; merge them. Draft and pending states take neutral, not the warning
+  tone.
+- A scale of likeness or amount (how alike two things are, how much of something) is one hue from
+  near-black to the accent. Red to green reads as a grade or an error, and turns a page of
+  differences into a page of warnings. A chart with a known convention keeps it.
+- An error says what went wrong and what to do next, in plain language; state a consequence
+  before the action that causes it ("This will email all 240 subscribers") instead of
+  after.
+
 ### Emphasis
 
 - Fill exactly one action per view. Peers stay neutral. Put the colour on the background, not the

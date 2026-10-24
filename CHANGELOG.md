@@ -4,6 +4,14 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [2.9.0]
+
+`frontend-design` 2.2.0: selective additions from dembrandt-skills (MIT), no new skills.
+
+- **References:** a fixed slot model for repeated components, separator and borderless-region rules and "cause and effect stay close" in `layout-and-accessibility.md`; defined-edge, accent-border-versus-radius, one-button-radius and text-shadow rules; a status colours section in `type-and-colour.md`; a "Waiting" section in `motion.md` (loader by wait length, fix the request before dressing the wait, the cursor is not a loading state); estate consistency and an optional measured baseline in `redesign-protocol.md`.
+- **Step 0:** an optional dembrandt token extraction (CLI or MCP) for the client's own sites, treated as data under `security-policy`, with a by-eye fallback. Not run in this release; untested against the live tooling.
+- **Not imported on purpose:** the button scale ban, disabling submit until valid, `ease-in` exits, HSL state derivation, the 14px floor, `clone-website` and the app-UI skills.
+
 ## [2.8.1]
 
 Phase D of the gap-closing work: AI visibility, the agent wiring, and the measurement of what all seven new skills cost to list.

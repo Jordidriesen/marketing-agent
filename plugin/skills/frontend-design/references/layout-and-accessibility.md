@@ -2,7 +2,8 @@
 
 Additions to `interface-checklist.md` for `frontend-design`. Adapted and rewritten from
 jakubkrehel's [better-layout, better-accessibility and better-ui](https://github.com/jakubkrehel/skills)
-(MIT). This file only holds what the checklist does not already say; it does not repeat its focus,
+(MIT), plus selected rules adapted from [dembrandt-skills](https://github.com/dembrandt/dembrandt-skills)
+(MIT, Copyright (c) 2026 Dembrandt): repeated components, separators, edges and elevation. This file only holds what the checklist does not already say; it does not repeat its focus,
 form, hit-area, alt-text or reduced-motion basics. `interface-checklist.md` stays a pinned copy of
 the upstream Vercel guidelines and is not edited.
 
@@ -52,6 +53,51 @@ overlap, a broken mirror, a misread group), not just a different value.
   wrap. Test with one long-string locale. Never park a critical action where resize, zoom or
   scroll can clip it.
 
+### Separators, regions and cause and effect
+
+- **The need for a line grows with distance.** Tightly packed rows separate themselves; the same
+  rows at full width or with tall padding need a stripe or hairline or the eye loses its place.
+  Pick the lightest device that bridges the gap, in this order: space, a subtle fill, a hairline,
+  a boxed region. Set it per size, so a wide table may carry row lines while its compact sidebar
+  version drops them. Removing a line means adding space; budget it rather than just deleting.
+- **A borderless region needs air.** A card with no border or fill reads as one unit only through
+  generous inner padding and a clear gap to its neighbours. Borderless is fine; cramped and
+  borderless collapses into one blur.
+- **Cause and effect stay close.** What a click produces appears next to the click. A left menu
+  that opens content starting at the far right makes the eye cross the screen every time. Anchor
+  content to the leading edge of its pane, put the title level with the selected row, and do it
+  the same way on every view.
+
+### Repeated components: a fixed slot model
+
+Cards, list rows, KPI tiles, search results and pricing columns are patterns, and the value of a
+pattern is rhythm. Treat each as a slot model, not a free container, so content of any length
+gives instances that look identical.
+
+- **Every slot has a fixed position,** filled or not. **One slot absorbs the variance** (usually
+  the description); all others are fixed or clamped.
+- **Pin the anchor** (price, CTA, status, trend) to the same edge in every instance:
+  `margin-top: auto` in a column, `margin-left: auto` in a row. Let the grid or flex track stretch
+  siblings to equal height; never hard-code a `height` to force it.
+- **Reserve or overlay optional slots** (badge, discount, verified tick) so they never push the
+  slots after them. Reserve for inline metadata (`min-height` on the row); overlay for markers on
+  media (absolute position).
+- **Media gets a fixed `aspect-ratio`.** Constrain one image dimension, never both, and protect
+  the image from grid or flex stretch. Measure the asset before blaming CSS: padding baked into
+  the file moves the ink off-centre.
+- **Label and value lists** use a fixed-width label column (grid or table), not a flex row with a
+  separator glyph. Values then start on one line.
+- **Clamp, then give the full value back.** Multi-line slots clamp to a line count, single-line
+  values take an ellipsis with `min-width: 0` on the flex row. The full text stays reachable
+  (`title`, a tooltip, or a "read more"). Generated lists with fixed-width columns (navigation,
+  table of contents) give every row its full label as `title`, decoded, so `&amp;` never shows.
+- **Write to length first.** Give authors a target (for example titles up to 60 characters,
+  snippets up to 120) so clamping is a safety net, not the norm, then check the slots against the
+  longest-translating locale.
+- **A cell that swaps controls by state** (button, then input, then link) keeps one fixed width
+  and stretches whatever it holds. A control area keeps one height across states, so the canvas
+  beside it never resizes.
+
 ### Layout review table
 
 | Pattern | Fix |
@@ -83,6 +129,17 @@ overlap, a broken mirror, a misread group), not just a different value.
   states and form inputs (an input boundary needs 3:1 non-text contrast). Forced-colours mode
   removes every `box-shadow`, so keep `border: 1px solid transparent` under a shadow ring so an
   edge still draws.
+- **A defined edge.** A white card on a near-white ground loses its edge to a soft shadow alone;
+  add a 1 px hairline (a grey darker than the shadow's core tone) so border defines and shadow
+  lifts. A card whose background shifts on hover needs the same edge, or the shift reads as a
+  stray fill: on a flat borderless card, hover with a border or shadow change, not a fill.
+- **A thick accent edge and a radius never share a side.** Borders miter, so a 4 px accent on an 8
+  px radius tapers and peels away before the corner ends. Use a filled bar or wash that the
+  container's radius clips cleanly, or keep that box square.
+- **One radius token for every button variant.** Different radii on primary and secondary imply a
+  semantic difference that does not exist; the radius is a brand decision, set once.
+- **Text shadow is a last nudge,** never a contrast fix: opacity below 0.30, blur 2 to 4 px,
+  offset `0 1px` or `0 0`, and only on unpredictable imagery or colours already close to passing.
 - **Outline content images** with a 1 px inset outline in pure black or white at 10 percent
   (`oklch(0 0 0 / 0.1)` light, `oklch(1 0 0 / 0.1)` dark), never a tinted neutral or the accent,
   or a coloured fringe shows on the image edge. Skip transparent artwork such as logos.
@@ -97,6 +154,10 @@ overlap, a broken mirror, a misread group), not just a different value.
 | Pattern | Fix |
 |---|---|
 | Padded parent and child with the same radius | Outer = inner + padding |
+| Card CTAs or prices at different heights across a row | Flexible description slot, `margin-top: auto` on the footer |
+| Badge present on some cards and the title shifts | Reserve the row or overlay the badge |
+| Different `border-radius` on primary and secondary buttons | One button radius token |
+| Heavy coloured left border on a rounded box | Filled accent bar clipped by the radius, or a square box |
 | `box-shadow: 0 0 0 1px` ring with no border beside it | `border: 1px solid transparent` |
 | Image outline in a palette grey or hex colour | Pure black or white at 10 percent |
 | `fill="#..."` or `stroke="#..."` inside an icon SVG | `currentColor` |

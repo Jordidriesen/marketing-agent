@@ -113,6 +113,25 @@ company should be crisp and quiet. The easing, duration and visual design should
 decision. Review motion the next day with fresh eyes, and replay it at 10 to 25 percent speed to
 spot two states overlapping, a wrong origin or properties out of sync.
 
+## 7. Waiting
+
+Adapted from dembrandt-skills (MIT).
+
+- **Match the loader to the wait.** Under about 1 s an inline spinner or nothing; 1 to 3 s a
+  skeleton that matches the final layout and holds its space; longer a determinate progress bar.
+  Past about 10 s the user needs real progress and a way to cancel, and past about 30 s people
+  read the page as stuck whatever is animating.
+- **Fix the request before dressing the wait.** A request that routinely crosses those limits
+  needs fixing; a richer indicator only delays the error. A wait that is genuinely irreducible
+  (a large export, a model call) is taken out of the view: accept the job, say it is running,
+  release the user and notify when it lands.
+- **Skeletons stay recessive:** the subtlest neutral, a slow shimmer (1.5 s or more) or none, and
+  content fades in over them in 150 to 200 ms with no scaling, which would shift layout.
+- **Load in order of value,** fetch only what the current view needs, and prefetch the one
+  predictable next step. Never prefetch everything.
+- **The cursor is not a loading state.** Show progress in the element that is waiting. Keep the
+  button width stable while it loads and prevent a second submission.
+
 ## Review table
 
 | Pattern | Fix |
@@ -129,3 +148,5 @@ spot two states overlapping, a wrong origin or properties out of sync.
 | Colour transitions plus a theme toggle, no suppression | Suppress on switch |
 | Content hidden until a scroll animation fires | Visible at rest |
 | `will-change: all`, or on an element that never animates | Name the property or delete it |
+| `cursor: wait` or `progress` as the loading signal | Show progress in the waiting element |
+| Spinner over a request that regularly exceeds 10 s | Fix the request, or run it as a background job |
