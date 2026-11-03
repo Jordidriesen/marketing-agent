@@ -5,7 +5,7 @@ Temporary branch for downloading two zip files. Delete this branch once you have
 | File | What it is |
 |---|---|
 | `ATLAS-theme.zip` | The ATLAS WordPress theme: performance work, theme hook points for content blocks, and a fallback so the theme loads without ACF Pro instead of a fatal error. |
-| `atlas-content-blocks.zip` | The ATLAS Content Blocks plugin (version 1.1.0): reusable blocks placed at theme hooks, inside the post content or as popups, with display conditions, aligned with Blocksy's content blocks (hooks and popups). |
+| `atlas-content-blocks.zip` | The ATLAS Content Blocks plugin (version 1.2.0): reusable blocks placed at theme hooks, inside the post content or as popups, with display conditions, aligned with Blocksy's content blocks (hooks and popups). Version 1.2.0 redesigns the settings box: location dropdowns, conditions edited in a dialog and collapsible popup sections. |
 
 ## Installing
 
