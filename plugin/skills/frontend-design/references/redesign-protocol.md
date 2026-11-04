@@ -50,6 +50,10 @@ Read the site or codebase and document, briefly:
   redesign risk.
 - **Analytics dependencies:** button IDs, form field names, section IDs that tracking or
   conversion actions rely on.
+- **Inventory (write it to a file):** for every page in scope, every link (`href`), every form
+  (action, method, field names, required flags), every tracked button or handler ID, and every
+  heading with its level. Take it from the rendered HTML, not the source, so builder output is
+  included.
 - **What to keep:** signature elements, a recognisable hero, the copy voice, accessibility that
   already works.
 - **What to retire:** the AI tells in `taste.md` section 8, broken layouts, dead links, stock
@@ -166,3 +170,11 @@ mobile), propose a full redesign with strict content and URL preservation, and g
   the baseline, and run OpenSEO `inspect_urls` on the key URLs to confirm they are still indexed.
 - Hand back the audit, the changes made in the order above, and anything left for the user to
   decide.
+
+---
+
+## 7. Verify nothing went missing
+
+After the changes, extract the same inventory from the redesigned pages and diff it against the
+saved one. Anything missing is a Floor finding unless the user approved it under section 3, in
+which case list it in the handover as `dropped`. Do this on the staging copy, before publishing.

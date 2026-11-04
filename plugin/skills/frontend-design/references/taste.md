@@ -215,6 +215,7 @@ Flag these when reviewing, and avoid them when building, unless the brief asks f
 - [ ] No invented figures, quotes, customers or dates on anything that could go live.
 - [ ] No em dashes in visible text.
 - [ ] The interface checklist's non-negotiables pass (`interface-checklist.md`).
+- [ ] No open Floor gate; Reflex gates fixed or waived; Finish gates answered (`gates.md`).
 
 ---
 

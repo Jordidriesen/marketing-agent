@@ -1,7 +1,7 @@
 ---
 name: frontend-design
 metadata:
-  version: 2.2.0
+  version: 2.3.0
   history: >
     v1.0: synthesised Anthropic's frontend-design skill (anti-generic
     philosophy, two-pass plan and critique) and vercel-labs'
@@ -29,6 +29,12 @@ metadata:
     extraction in Step 0. Rules that conflict with this library were not
     imported (button scale ban, disabling submit until valid, ease-in exits,
     HSL state derivation).
+    v2.3: selectively adapted from Hallmark (MIT): Floor, Reflex and Finish tiers
+    with a waiver rule in references/gates.md, a hero-first build with a cold
+    fresh-context review (Part 5), a link, form and heading inventory diffed
+    after a redesign, and gates for the fake send, the stock close, the accented
+    word, the echo and the thin section. Theme dealing, the build log and the
+    word-count caps were not imported.
 description: "Designs, builds or reviews web UI in the brand's visual identity: landing page layouts, sites, WordPress pages and themes, components, accessibility. Use for \"design this page\", \"review my UI\". Page copy: web-content-pipeline."
 ---
 
@@ -52,6 +58,7 @@ references:
 | `references/type-and-colour.md` | Type scale, line-height, measure, wrapping, punctuation; colour ramps, semantic tokens, contrast measurement, dark mode |
 | `references/motion.md` | Whether and how to animate: frequency, easing, durations, entrances and exits, reduced motion, hover on touch |
 | `references/layout-and-accessibility.md` | Grouping, alignment, responsive structure, translation growth, surfaces and icons, WCAG 2.2 criteria and ARIA additions |
+| `references/gates.md` | Floor, Reflex and Finish tiers, waivers, and the gates the sweep in Part 5 walks |
 
 ---
 
@@ -166,8 +173,9 @@ The non-negotiables, applied without being asked:
   images that could pass as the client's real work (`taste.md` sections 6 and 7). No em dashes
   in visible text.
 
-Take a screenshot mid-build, critique it once, adjust. Run the pre-flight check in `taste.md`
-section 9 before handing over. Before shipping, remove one thing.
+**Hero first.** Build the nav and hero alone. Screenshot them at 375, 1280 x 800 and
+1440 x 900, and put them through the cold review (Part 5, step 3) before building the sections
+below. Then build the rest and run Part 5 before handing over. Before shipping, remove one thing.
 
 ---
 
@@ -192,13 +200,29 @@ path/to/file.tsx:42  <div onClick> used for a nav action; use <a> so Cmd-click a
 middle-click work
 ```
 
-Group by category (Accessibility, Focus, Forms, Type, Colour, Layout, Motion, Performance,
-Content, Design), most severe first. Cite the WCAG 2.2 criterion for accessibility findings
+Tag every finding Floor, Reflex or Finish (`references/gates.md`), then group by category
+(Accessibility, Focus, Forms, Type, Colour, Layout, Motion, Performance, Content, Design),
+Floor first. Cite the WCAG 2.2 criterion for accessibility findings
 (`layout-and-accessibility.md`); anything without one is a recommendation, never `HIGH`. Say
 `Not verified` for any check you could not run, and do not approve what you did not inspect.
 Flag the anti-patterns at the end of `interface-checklist.md` and the AI tells in
 `taste.md` section 8 explicitly. If the user gave no files or URL, ask which to review rather
 than guessing.
+
+---
+
+## Part 5: Sweep (build and redesign modes)
+
+1. Walk the pre-flight check (`taste.md` section 9) and `references/gates.md`.
+2. Screenshot at 375, 1280 x 800, 1440 x 900 and 1920 x 1080. If a width could not be
+   checked, say `Not verified` for it.
+3. Cold review. Start a fresh-context subagent that has not seen the build. Give it the
+   screenshots, the source, the design read, the tokens and `gates.md`, and ask for one
+   verdict: ship, fix or rebuild, with findings tagged by tier. Never pass the build
+   conversation. Act on the verdict; if it says rebuild or names a Floor gate, send the
+   recaptures back once. No subagent available: re-read the screenshots cold and record
+   `in-thread`.
+4. Close out: Floor items fixed, Reflex items fixed or waived, Finish items answered.
 
 ---
 
@@ -220,5 +244,7 @@ than guessing.
 
 **Build mode:** the design read and settings in one line each, the token system (as CSS custom
 properties or the project's format), then the code, then a one-line note on the deliberate risk
-taken and what was cut. **Redesign mode:** the audit, the changes in fix order, open decisions.
+taken and what was cut, then the sweep line (`Floor 0 open, Reflex 2 (1 waived), Finish 3
+answered, cold review: subagent, ship`), any waivers, and the one piece of real material
+(photo, number, screenshot) that would improve the page most. **Redesign mode:** the audit, the changes in fix order, open decisions.
 **Review mode:** the grouped findings list, nothing else.
