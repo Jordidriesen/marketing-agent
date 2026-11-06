@@ -4,6 +4,10 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [3.0.1]
+
+- **Figma skill names:** `web-developer` and `frontend-design` 2.4.1 call the Figma plugin's skills by their real names, `figma:figma-design-to-code` and `figma:figma-use`; without the plugin prefix the agent could not find them.
+
 ## [3.0.0]
 
 Design and web split into two agents. Breaking: the `creative-specialist` agent and the `0-creative` shortcut are renamed.

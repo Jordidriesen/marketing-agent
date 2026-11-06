@@ -1,7 +1,7 @@
 ---
 name: frontend-design
 metadata:
-  version: 2.4.0
+  version: 2.4.1
   history: >
     v2.4: owned by the web-developer agent. Stack routing points WordPress builds to wordpress-development:wordpress-page-build and Astro to astro-site; a design-to-code step for Figma files uses the Figma plugin's own skills; the sweep can add Impeccable's detector; outside skills transitions-dev, pick-ui-library and Mobbin are referenced, not copied. taste.md and gates.md gained patterns from Impeccable's public pattern gallery, rewritten in this library's words.
     v1.0: synthesised Anthropic's frontend-design skill (anti-generic
@@ -114,7 +114,7 @@ read its installed plugins, theme and performance there first (`list_plugins`, `
 self-contained HTML file. A framework project keeps its framework and styling system.
 
 **Starting from a Figma design.** When the user hands over a Figma file or frame, call the Figma
-MCP's `create_session` with the file key first, then follow the Figma plugin's `figma-design-to-code`
+MCP's `create_session` with the file key first, then follow the Figma plugin's `figma:figma-design-to-code`
 skill before `get_design_context` (it is mandatory for that tool). Treat what comes back as a
 reference to adapt to the stack and the brand kit's tokens, not as final code; `get_variable_defs`
 gives the file's variables to map onto the token system in Part 1. If the Figma skills are not

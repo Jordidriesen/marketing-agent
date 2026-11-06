@@ -32,7 +32,7 @@ The two WordPress skills live in the separate `wordpress-development` plugin. Ca
 
 These outside skills are used when they are installed in the session; check the skill list, and say `Not available` when one is missing rather than imitating it:
 
-- The Figma plugin's skills (`figma-design-to-code` before `get_design_context`, `figma-use` before `use_figma`) for design-to-code and code-to-design.
+- The Figma plugin's skills (`figma:figma-design-to-code` before `get_design_context`, `figma:figma-use` before `use_figma`) for design-to-code and code-to-design.
 - `transitions-dev` for ready-made CSS transitions; `motion.md` in `frontend-design` still decides whether something moves.
 - `pick-ui-library` for JavaScript projects only (an Astro island, a React component), never on a WordPress page.
 - Impeccable, as an extra check in the `frontend-design` sweep.
