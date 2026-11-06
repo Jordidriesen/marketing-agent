@@ -4,6 +4,12 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [3.1.3] and marketing-operator 0.1.0
+
+- **New experimental plugin `marketing-operator`** in the same marketplace (`operator/`): one main agent that runs the marketing-agent skills itself, keeps the job's state in a job folder (`brief.md`, `decisions.md`, `research/`, `deliverables/`), and spawns sub-agent threads only under four rules (parallel, noise, fresh eyes, model or tools). It holds no copies of skills: it calls `marketing-agent:` skills and profiles. Shortcut `/0-operator` works only when the operator is the session's main agent, because a forked sub-agent cannot start threads.
+- **Comparison evals:** `compare-campaign`, `compare-landing` and `compare-report`, each as a `-director` and an `-operator` case with the same prompt. Not run yet.
+- `marketing-agent` itself is unchanged apart from the evals.
+
 ## [3.1.2]
 
 - **`web-developer` on Opus** (effort medium): page builds run long chains of tool calls on live sites.

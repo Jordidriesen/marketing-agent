@@ -22,7 +22,7 @@ except ImportError:
     sys.exit(2)
 
 ROOT = Path(__file__).resolve().parent.parent
-SKIP_DIRS = {".github", ".git", "scripts", "plugin", "archive", "templates"}
+SKIP_DIRS = {".github", ".git", "scripts", "plugin", "operator", "archive", "templates"}
 MIN_DESCRIPTION_LEN = 20
 MAX_DESCRIPTION_LEN = 500
 SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+$")
@@ -80,11 +80,12 @@ def main() -> int:
             continue
         all_errors.extend(check_skill(folder))
 
-    plugin_skills_dir = ROOT / "plugin" / "skills"
-    if plugin_skills_dir.is_dir():
-        for folder in sorted(plugin_skills_dir.iterdir()):
-            if folder.is_dir():
-                all_errors.extend(check_skill(folder))
+    for plugin_dir in ("plugin", "operator"):
+        plugin_skills_dir = ROOT / plugin_dir / "skills"
+        if plugin_skills_dir.is_dir():
+            for folder in sorted(plugin_skills_dir.iterdir()):
+                if folder.is_dir():
+                    all_errors.extend(check_skill(folder))
 
     if all_errors:
         print(f"Found {len(all_errors)} issue(s):\n")

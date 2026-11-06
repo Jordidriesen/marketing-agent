@@ -77,6 +77,18 @@ Two seeded rounds of citation counts; the report must name the right mover and e
 
 Plain requests that name no agent. The expected agents are `performance-marketer`, `performance-reporter`, `content-writer` and `seo-geo-specialist`.
 
+## compare-campaign, compare-landing and compare-report (director against operator)
+
+Three jobs, each in two cases with the same prompt: `-director` runs it through `marketing-director`, `-operator` through the experimental `marketing-operator` (separate plugin, see `operator/README.md` at the repository root). All use Acme Access and no connectors: a three-week LinkedIn campaign with posts and a nurture pair, a landing page from copy to an Elementor build checklist, and a monthly paid report from given figures.
+
+**How to run them.** The architecture under test must be the session's **main agent**, because a sub-agent cannot start threads of its own. The prompts therefore name no agent. Run the `-director` cases with the default main agent (`marketing-director`) and the `-operator` cases with `"agent": "marketing-operator:marketing-operator"` in the project's `.claude/settings.json`. Whether the eval runner honours that setting has not been tested; check the first run's transcript before trusting the results.
+
+**Graded:** no em dashes, the `Skills run` line, the skills the job needs, the publish question with nothing claimed as published, and job-specific quality (for the report, the cost per demo request computed from the figures and the ad group beside every search term). The operator cases also check that every spawned thread has a reason matching one of its four spawn rules.
+
+**Measured, not graded:** tokens, wall-clock time and number of turns per run, from the run output or the session usage, and how many times a person would have had to correct the result. Record them per case and per run; the decision to switch is made on those numbers together with the grades.
+
+Not run yet.
+
 ## Not covered
 
 - The marketing director cannot delegate when it is called as a subagent, so its ask-first behaviour needs a main-agent test that this harness does not offer.

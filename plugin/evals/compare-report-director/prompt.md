@@ -1,0 +1,7 @@
+---
+max_turns: 80
+timeout_seconds: 2400
+allowed_tools: [Read, Write, Edit, Glob, Grep, Bash, Skill, Agent, SendMessage]
+---
+
+Acme Access is a fictional Belgian company selling cloud visitor management and access control for offices and warehouses. Product facts you may use: visitors pre-register by link and show a QR code at the gate; the host gets a notification when a visitor arrives; each visitor is limited to the zones the host selected; the visit log is kept for a period the customer sets. There is no brand kit: use a neutral, plain B2B voice. No customer proof is available. No connectors are available in this test: do not try to reach any ad account, website or sending tool. Work in the folder you are in; if you keep a job folder, put it under ./eval-jobs/. Write the October 2026 paid media report for Acme Access from these figures. Google Ads: spend EUR 2,400, 31,000 impressions, 1,240 clicks, 38 demo requests (September: spend EUR 2,300, 29 demo requests). Ad groups: 'Visitor management' spend EUR 1,500, 26 demo requests; 'Access control' spend EUR 900, 12 demo requests. Top search terms: 'visitor management software' (Visitor management, 14 demo requests), 'warehouse access control' (Access control, 7 demo requests), 'free visitor log template' (Visitor management, 0 demo requests, EUR 180 spend). LinkedIn Ads: spend EUR 1,000, 52,000 impressions, 410 clicks, 9 demo requests (September: EUR 1,000, 6 demo requests). Return the report in your reply and end with the publish question.

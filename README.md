@@ -29,6 +29,12 @@ claude plugin marketplace add Jordidriesen/marketing-agent
 
 This installs the agents and all skills together, so they can't drift apart. Update later with `claude plugin marketplace update marketing-agent`.
 
+The same marketplace also carries `marketing-operator`, an experimental single-operator alternative to the director. It needs `marketing-agent` installed and is only for the comparison described in `operator/README.md`:
+
+```
+/plugin install marketing-operator@marketing-agent
+```
+
 To use a single skill without the plugin, copy its folder from `plugin/skills/` into `~/.claude/skills/` or upload it as a zip in Claude settings.
 
 Connect the tools you use in Claude's connector settings; see [`plugin/CONNECTORS.md`](plugin/CONNECTORS.md). Skills say plainly when a connector they need isn't there rather than estimating data.

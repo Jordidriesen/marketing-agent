@@ -1,0 +1,9 @@
+{
+  "name": "marketing-operator",
+  "version": "0.1.0",
+  "description": "Experimental single-operator setup for the marketing-agent plugin: one main agent that runs the marketing-agent skills itself, keeps state in a job folder, and spawns sub-agent threads only for parallel research, long data jobs, cold review or a job that needs its own model. Requires the marketing-agent plugin. Built to be compared against marketing-director before any switch.",
+  "author": {
+    "name": "Jordi Driesen"
+  },
+  "license": "MIT"
+}

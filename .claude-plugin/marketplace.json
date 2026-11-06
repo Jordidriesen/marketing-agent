@@ -13,7 +13,7 @@
       "displayName": "Marketing Agent",
       "source": "./plugin",
       "description": "A marketing team for Claude: a director plus thirteen specialist subagents (competitive intel, SEO/GEO, campaign strategy, content, social, email, graphic design, web development, paid ads, outbound SDR, sales enablement, localisation, reporting) and the skill library they run on. Client brand kits stay private and load via the [brand]-brand-kit naming pattern. Web development calls WordPress skills from the separate wordpress-development plugin.",
-      "version": "3.1.2",
+      "version": "3.1.3",
       "author": {
         "name": "Jordi Driesen"
       },
@@ -28,6 +28,24 @@
         "google-ads",
         "campaign",
         "agents"
+      ],
+      "category": "marketing"
+    },
+    {
+      "name": "marketing-operator",
+      "displayName": "Marketing Operator (experimental)",
+      "source": "./operator",
+      "description": "Experimental single-operator setup: one main agent that runs the marketing-agent skills itself, keeps state in a job folder, and spawns sub-agent threads only for parallel research, long data jobs, cold review or a job that needs its own model. Requires marketing-agent. For comparison against marketing-director.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Jordi Driesen"
+      },
+      "repository": "https://github.com/Jordidriesen/marketing-agent",
+      "license": "MIT",
+      "keywords": [
+        "marketing",
+        "agents",
+        "experimental"
       ],
       "category": "marketing"
     }
