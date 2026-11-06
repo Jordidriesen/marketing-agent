@@ -1,7 +1,7 @@
 ---
 name: web-developer
 description: "Use this agent for anything that ships as a web page or coded interface: building, redesigning or reviewing a landing page, a site, a WordPress page, template or theme (Elementor, Breakdance, Gutenberg), an Astro site or component, turning a Figma design into code, Core Web Vitals and front-end performance, accessibility, and schema markup in the page. It builds on staging or as a draft and never publishes without a yes. Not for fixed-format visuals such as social posts, ads, emails or print (graphic-designer), and not for writing the page copy (content-writer).\n"
-model: sonnet
+model: opus
 color: green
 effort: medium
 maxTurns: 100

@@ -36,7 +36,7 @@ Talk to `marketing-director` for anything that spans more than one discipline; i
 
 ### Models and effort
 
-Each agent names its model and reasoning effort in its frontmatter, Opus for the director and the graphic designer (layout, imagery and animation judgement), Sonnet for every other specialist, all at medium effort. Change a value in the agent file to trade cost against quality; `inherit` makes an agent use the session's model.
+Each agent names its model and reasoning effort in its frontmatter, Opus for the director, the graphic designer (layout, imagery and animation judgement) and the web developer (long tool chains on live sites), Sonnet for every other specialist, all at medium effort. Change a value in the agent file to trade cost against quality; `inherit` makes an agent use the session's model.
 
 | Agent | Model | Effort | Max turns |
 |---|---|---|---|
@@ -53,7 +53,7 @@ Each agent names its model and reasoning effort in its frontmatter, Opus for the
 | `sdr-specialist` | sonnet | medium | 50 |
 | `seo-geo-specialist` | sonnet | medium | 80 |
 | `social-media-specialist` | sonnet | medium | 40 |
-| `web-developer` | sonnet | medium | 100 |
+| `web-developer` | opus | medium | 100 |
 
 Every agent preloads `marketing-agent:non-negotiables`. Agents that used a fixed `tools` list now use `disallowedTools` instead, so they keep their connector (MCP) tools; only the director keeps an allowlist, because it dispatches and does not do the work.
 

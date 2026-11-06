@@ -4,6 +4,10 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [3.1.2]
+
+- **`web-developer` on Opus** (effort medium): page builds run long chains of tool calls on live sites.
+
 ## [3.1.1]
 
 - **Models and effort rebalanced:** `marketing-director` and `graphic-designer` on Opus, every other specialist on Sonnet, all agents at medium effort.
