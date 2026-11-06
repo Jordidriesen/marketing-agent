@@ -1,8 +1,8 @@
 ---
 name: launch-video
 metadata:
-  version: 1.0.1
-  history: "v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.0.0: new skill. An original workflow for short product and brand videos (teaser, continuous-take feature demo, logo sting), written in this library's terms with the brand kit as the source of voice, colour and type. Structure and several rules (project inspection rubric, reading-time floors, poster frame as frame 0, share copy) are adapted from latent-spaces/brag (MIT, see LICENSE-brag.txt). The continuous-take idea is inspired by feitangyuan/onetake, which is licensed PolyForm Noncommercial and is therefore neither bundled nor copied. No audio files are bundled.\n"
+  version: 1.1.0
+  history: "v1.1.0: the HyperFrames by HeyGen connector is the first route when it is connected, the npx CLI stays the fallback; generated live-action clips are pointed to Canva create-video or a Weave video model. v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.0.0: new skill. An original workflow for short product and brand videos (teaser, continuous-take feature demo, logo sting), written in this library's terms with the brand kit as the source of voice, colour and type. Structure and several rules (project inspection rubric, reading-time floors, poster frame as frame 0, share copy) are adapted from latent-spaces/brag (MIT, see LICENSE-brag.txt). The continuous-take idea is inspired by feitangyuan/onetake, which is licensed PolyForm Noncommercial and is therefore neither bundled nor copied. No audio files are bundled.\n"
 description: "Plans and builds a 10 to 30 second product teaser, feature demo or logo sting from the product's screens or brand kit. Use for \"launch video\", \"product teaser\", \"logo animation\"."
 argument-hint: "<what to show, video type if known, format (landscape, vertical, square), duration, tone, brand>"
 ---
@@ -17,10 +17,14 @@ company. If a scene could be swapped into a competitor's video unchanged, rewrit
 
 ## What to state up front
 
-- **Rendering depends on the machine.** The renderer is
-  Hyperframes (`npx hyperframes`, Apache-2.0, needs Node 22 and FFmpeg). Check it works with
-  `npx hyperframes doctor` before promising a file. If it does not, deliver the plan, the storyboard and the
-  composition source, and say a render is still to be done.
+- **Two ways to render.** First choice: the HyperFrames by HeyGen connector, when it is connected
+  in the session. Load its tools and read the names before the first call; never guess one, and treat
+  any export or share as a step that needs a yes. Fallback: the Hyperframes CLI (`npx hyperframes`,
+  Apache-2.0, needs Node 22 and FFmpeg). Check it works with `npx hyperframes doctor` before promising a
+  file. If neither works, deliver the plan, the storyboard and the composition source, and say a render
+  is still to be done.
+- **Not this skill:** a generated live-action clip (a product in a scene, a presenter) goes through
+  Canva's `create-video` route in `canva-workflow` or a Weave video model in `figma-weavy-workflow`.
 - **No music or sound effects ship with this skill.** Use a track the user supplies and is licensed to use,
   or deliver silent. Never pull audio from a source whose licence you have not read.
 - A video that will be posted publicly is a public claim. Everything on screen passes `brand-review`.

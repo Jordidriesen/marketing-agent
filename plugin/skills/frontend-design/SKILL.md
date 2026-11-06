@@ -1,8 +1,9 @@
 ---
 name: frontend-design
 metadata:
-  version: 2.3.0
+  version: 2.4.0
   history: >
+    v2.4: owned by the web-developer agent. Stack routing points WordPress builds to wordpress-development:wordpress-page-build and Astro to astro-site; a design-to-code step for Figma files uses the Figma plugin's own skills; the sweep can add Impeccable's detector; outside skills transitions-dev, pick-ui-library and Mobbin are referenced, not copied. taste.md and gates.md gained patterns from Impeccable's public pattern gallery, rewritten in this library's words.
     v1.0: synthesised Anthropic's frontend-design skill (anti-generic
     philosophy, two-pass plan and critique) and vercel-labs'
     web-interface-guidelines (MIT), wired to the [brand]-brand-kit pattern.
@@ -104,11 +105,24 @@ which stack. Then set the three settings (section 2).
 Decide the mode: new build, redesign (preserve or overhaul, per `redesign-protocol.md`), or
 review. If the read or the mode genuinely forks, ask one question; otherwise proceed.
 
-**Work with the existing stack.** A WordPress site gets theme settings, block patterns or the
-site's own MCP (for example NovaMira), not a React rebuild. If the site is managed in WP Umbrella,
+**Work with the existing stack.** A WordPress site gets its page builder, theme settings, block
+patterns or the site's own MCP (for example NovaMira or the page builder's own server), not a React
+rebuild; the build itself follows `wordpress-development:wordpress-page-build` when that plugin is
+installed. An Astro project follows `astro-site`. If the site is managed in WP Umbrella,
 read its installed plugins, theme and performance there first (`list_plugins`, `list_themes`,
 `get_performance`); that is read-only and needs no approval. A Claude artifact gets one
 self-contained HTML file. A framework project keeps its framework and styling system.
+
+**Starting from a Figma design.** When the user hands over a Figma file or frame, call the Figma
+MCP's `create_session` with the file key first, then follow the Figma plugin's `figma-design-to-code`
+skill before `get_design_context` (it is mandatory for that tool). Treat what comes back as a
+reference to adapt to the stack and the brand kit's tokens, not as final code; `get_variable_defs`
+gives the file's variables to map onto the token system in Part 1. If the Figma skills are not
+installed, say so and read the frame with `get_screenshot` and `get_metadata` instead.
+
+**Research.** When the Mobbin connector and its skill are installed, real-product screenshots can
+inform the design read for app-like UI (onboarding, pricing, dashboards). Use them as evidence of
+patterns, never as a layout to copy. Marketing pages rarely need it.
 
 ---
 
@@ -222,7 +236,11 @@ than guessing.
    conversation. Act on the verdict; if it says rebuild or names a Floor gate, send the
    recaptures back once. No subagent available: re-read the screenshots cold and record
    `in-thread`.
-4. Close out: Floor items fixed, Reflex items fixed or waived, Finish items answered.
+4. Optional extra check: when Impeccable is installed, run its detector on the build as well and
+   fold its findings into the tiers above (its "outside DESIGN.md" findings map to the brand kit's
+   tokens). Where Impeccable and this skill disagree, the brand kit and `gates.md` decide. Not
+   installed: skip it and say so.
+5. Close out: Floor items fixed, Reflex items fixed or waived, Finish items answered.
 
 ---
 
@@ -234,8 +252,15 @@ than guessing.
   direction yet. Its deliverables table feeds this skill's build.
 - **`web-content-pipeline`:** writes the copy that goes into the layout; take approved text
   verbatim.
-- **`canva-workflow`, `figma-weavy-workflow`:** raster and vector assets that sit in the UI, not
-  the coded interface itself.
+- **`graphic-designer` agent** (`canva-workflow`, `affinity-workflow`, `figma-weavy-workflow`,
+  `logo-design`): raster and vector assets that sit in the UI, not the coded interface itself.
+  Ask for them with sizes and alt text; place what comes back.
+- **`wordpress-development:wordpress-page-build`, `astro-site`:** the stack-specific build steps.
+- **Outside skills, used only when installed** (check the skill list; say `Not available`
+  otherwise, never imitate them): `transitions-dev` for ready-made CSS transitions once
+  `motion.md` has decided something should move; `pick-ui-library` for choosing a library in a
+  JavaScript project (an Astro island, a React component), never on a WordPress page; the Figma
+  plugin's skills for design-to-code; Mobbin for pattern research.
 - **`dataviz`:** any chart, plot or dashboard visualisation.
 - **`brand-review`:** the voice and compliance gate for any copy baked into the design.
 - **`seo-audit`:** before a redesign that touches templates, URLs or structured data.

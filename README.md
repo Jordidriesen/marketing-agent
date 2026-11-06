@@ -1,6 +1,6 @@
 # Marketing Agent: a Claude marketing team
 
-A marketing team for Claude in one install: a director, twelve specialist subagents, the 65 skills they run on, and 13 menu shortcuts (`0-` entries) that open an agent directly. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, outbound and sales, creative and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
+A marketing team for Claude in one install: a director, thirteen specialist subagents, the 69 skills they run on, and 14 menu shortcuts (`0-` entries) that open an agent directly. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, outbound and sales, graphic design, web development and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
 
 You act as the operator: ask `marketing-director` for anything that spans disciplines, or call a specialist directly for a single task.
 
@@ -9,8 +9,8 @@ You act as the operator: ask `marketing-director` for anything that spans discip
 ```
 plugin/                    the installable plugin
   .claude-plugin/          plugin manifest
-  agents/                  marketing-director and twelve specialists
-  skills/                  every skill the agents use (65), plus 13 `0-` agent shortcuts
+  agents/                  marketing-director and thirteen specialists
+  skills/                  every skill the agents use (69), plus 14 `0-` agent shortcuts
   .mcp.json                connectors with a public endpoint
   CONNECTORS.md            which connector each discipline uses, and the data-source rule
 templates/brand-kit/       blank modular brand kit: router + context, voice, design
@@ -138,7 +138,7 @@ See [`plugin/README.md`](plugin/README.md) for each agent's role and the order a
 | `social-content-writer` | Platform-specific posts for LinkedIn, Instagram, X and Reddit |
 | `web-content-pipeline` | Any web page, from brief to humanised draft |
 
-### Creative and design
+### Graphic design (graphic-designer)
 
 | Skill | What it does |
 |---|---|
@@ -147,7 +147,17 @@ See [`plugin/README.md`](plugin/README.md) for each agent's role and the order a
 | `figma-weavy-workflow` | Figma Weave graphs for generated or composited imagery and video |
 | `launch-video` | Short product teaser, continuous-take demo or logo sting: storyboard, Hyperframes build, poster frame, caption |
 | `logo-design` | Logos, wordmarks, app icons and favicons as clean SVG: brief, concepts, tests, checkpoint, then the full kit |
+| `affinity-workflow` | Scripted layout, vector, photo and batch work in Affinity by Canva through its local connector, verified with renders, or a manual checklist |
+| `email-design` | Email templates and email visuals for Brevo, HubSpot or Canva: modular layout, bulletproof buttons, dark mode, Outlook-safe HTML |
+
+### Web development (web-developer)
+
+| Skill | What it does |
+|---|---|
 | `frontend-design` | Builds, redesigns or reviews front-end UI in a brand's visual identity: design read and settings, anti-generic rules, redesign protocol, interface checklist |
+| `astro-site` | Astro sites: structure, content collections, islands, images, i18n, SEO and schema, build checks |
+
+WordPress page building and plugin work come from the separate `wordpress-development` plugin (`wordpress-page-build`, `wordpress-plugin-development`), which the web-developer agent calls with the plugin prefix.
 
 ### Shared infrastructure
 

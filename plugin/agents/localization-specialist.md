@@ -22,7 +22,7 @@ You have access to the following skills, invoke each by name through the Skill t
 
 - The localized piece(s), one per locale, structure intact.
 - Any term you could not resolve against the brand kit's terminology, flagged rather than guessed.
-- A layout-expansion flag when the target runs materially longer than the source (German and French commonly run ~30% longer). Pass this to `creative-specialist` if the piece feeds a designed asset.
+- A layout-expansion flag when the target runs materially longer than the source (German and French commonly run ~30% longer). Pass this to `graphic-designer` (or `web-developer` for a web page) if the piece feeds a designed asset.
 - A back-check confirmation: numbers, product names, URLs, CTAs and any legal or compliance claim match the source exactly.
 
 Never introduce a claim, figure or product fact that is not in the source. If the source is ambiguous, ask rather than resolve it silently in the target language.

@@ -1,8 +1,9 @@
 ---
 name: canva-workflow
 metadata:
-  version: 2.0.0
+  version: 2.1.0
   history: >
+    v2.1: checked against the live Canva MCP tools on 5 Nov 2026. The generate route now splits: create-design for a design that needs no brand kit, the legacy generate-design (and request-outline-review then generate-design-structured for decks) only for on-brand work, because create-design cannot apply a brand kit. Local files upload through create-upload-url. Adds remove-background, separate-image-layers, generate-image, copy-design, merge-designs and the gated create-video route.
     v1 wrote a manual click-by-click Canva build checklist. v2 adds the
     full Canva MCP execution path (generate / brand-template / import →
     convert → transactional per-page edit → export) and keeps the manual
@@ -50,9 +51,12 @@ Then check whether the **Canva MCP connector is connected**. If its tools are av
 
 ### 2c. Generate route
 
-- Ask the user once whether they want it on-brand; if yes, pass `brand_kit_id`.
-- `generate-design` (or `create-design` if that's the name shown) with a detailed `query` (subject, style, composition, colour named as brand hex, mood, what to exclude), the right `design_type` (e.g. `instagram_post`, `poster`, `flyer`, `email`, `doc`, `presentation`), `brand_kit_id`, and any `asset_ids` to place. It returns **design candidates** and a `job_id`.
-- Pick the best candidate (show the user if there's genuine ambiguity), then `create-design-from-candidate` (`job_id`, `candidate_id`) → an editable `design_id`.
+Ask the user once whether it should be on-brand. The answer decides the tool, because Canva's newer generator cannot apply a brand kit.
+
+- **Not on-brand:** `create-design` with a `brief` in the user's words (subject, purpose, exact wording, colours as hex) and, when the size matters, a `format` that names the orientation ("Flyer (Landscape A4)", "Instagram Post"). It returns a `job_id`; when no widget shows, poll `get-create-design-async-job` at the interval it gives. The result is an editable design.
+- **On-brand (brand kit, brand fonts, colours or logo, or a brand template):** `generate-design` with a detailed `query`, the right `design_type` (for example `instagram_post`, `poster`, `flyer`, `email`, `doc`), the `brand_kit_id` from `list-brand-kits` and any `asset_ids`. It returns **design candidates** and a `job_id`; pick the best (show the user when it is genuinely open), then `create-design-from-candidate` (`job_id`, `candidate_id`) → an editable `design_id`. `generate-design` does not make presentations.
+- **On-brand deck:** `request-outline-review` with the slide outline (keep to five slides unless asked), wait for the user to approve the outline, then `generate-design-structured` with the approved outline exactly. Change the outline only through another review.
+- **A standalone image** (a picture, illustration, icon, not a layout): `generate-image`, then place it. Never use it for the logo or for a photo that must show the client's real product, people or projects.
 
 ### 2d. Import route
 
@@ -60,7 +64,13 @@ Then check whether the **Canva MCP connector is connected**. If its tools are av
 
 ### 3. Bring in brand assets
 
-For any logo, product shot, or image to place: `upload-asset-from-url` with an **already-public HTTPS URL** and a name → an `asset_id`. Use it in `generate-design`'s `asset_ids`, or in an `update_fill` / `insert_fill` edit operation.
+For any logo, product shot, or image to place:
+- Already at a public HTTPS URL: `upload-asset-from-url` with the URL and a name → an `asset_id`.
+- A local file or chat attachment: `create-upload-url`, then POST the raw file bytes to that single-use URL (`Content-Type: application/octet-stream`); the response holds the asset ID. One URL per file.
+
+Use the ID in `generate-design`'s `asset_ids`, in `generate-image`'s `imageReferences`, or in an `update_fill` / `insert_fill` edit operation.
+
+Quick image fixes inside Canva: `remove-background` cuts the subject out onto transparency (no new scene). `separate-image-layers` turns a flat graphic (PNG, JPEG, WEBP) into a new design with editable text, objects and background, which is how an old flat banner becomes editable; it converts photographs poorly.
 
 ### 4. Edit in a validated transaction
 
@@ -84,6 +94,12 @@ For any logo, product shot, or image to place: `upload-asset-from-url` with an *
 - `export-design` (`design_id`, `format`: `{type, export_quality, size, pages, transparent_background, width, height}` as relevant). PNG for flat graphics, `transparent_background: true` for logos and overlays, `pdf` + `size` + `export_quality: pro` for print, `pptx` for decks.
 - Show the returned download URL to the user.
 
+### 6b. Copies, pages and video
+
+- `copy-design` before editing a design someone else still uses, so the original stays as it is.
+- `merge-designs` combines designs, inserts, moves or deletes pages. It needs the user's approval of the exact operations every time; deleted pages are gone.
+- Video: `get-video-production-guide` first (list, then the matching guide), then `create-video` with the full production spec. Before the first video in a conversation, tell the user it may use a significant part or all of their monthly Canva AI limit and wait for a yes. Real products, people and places only from genuine uploaded assets. For a product teaser or demo built from the product's own screens, `launch-video` is the better route.
+
 ### 7. Make it reusable (optional)
 
 `create-brand-template-draft` then `publish-brand-template` turns the finished design into a reusable brand template with autofill fields for future variant runs.
@@ -93,7 +109,8 @@ For any logo, product shot, or image to place: `upload-asset-from-url` with an *
 - `commit` is permanent: always validate thumbnails first.
 - One page per `edit-design` call; don't batch operations across pages.
 - `get-export-formats` before every `export-design`.
-- Never publish a private/local file to a public host to satisfy `upload-asset-from-url` or `import-design-from-url`.
+- Never publish a private/local file to a public host to satisfy `upload-asset-from-url` or `import-design-from-url`; upload it with `create-upload-url` instead.
+- Load the Canva tools before the first call and read the names; this skill was checked against the live tools on 5 Nov 2026, and Canva renames and retires tools.
 - Canva silently substitutes missing fonts, after commit, export a preview and check the type rendered in the brand face.
 
 ---

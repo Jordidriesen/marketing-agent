@@ -197,6 +197,20 @@ Flag these when reviewing, and avoid them when building, unless the brief asks f
 - Progress bars with filled grey tracks used as comparison visuals on a landing page.
 - Generic step labels ("Stage 1", "Phase 01") instead of the step itself ("Install").
 
+Also from Impeccable's public pattern gallery (impeccable.style/slop), described here in this
+library's own words; check the gallery for the current list:
+
+- Glass, blur and glow used as decoration on surfaces that carry no layered content.
+- Cards nested inside cards; a coloured stripe down one side of a card that makes it read as an
+  alert; a hairline border and a wide soft shadow both defining the same card.
+- A rounded icon tile stacked above every feature heading in a grid of equal cards.
+- The "hero metric": one huge number, a small label and a row of stats, used as the opening by
+  habit rather than because the number is the story.
+- A pulsing dot on a status that never changes; a blinking cursor on text nobody can type in.
+- Decorative grid-line or striped backgrounds outside maps, canvases or measurement tasks.
+- Crude hand-drawn or placeholder-style illustrations, and torn or jagged image masks.
+- Text or images half hidden under a near-opaque overlay.
+
 ---
 
 ## 9. Pre-flight check (build mode)

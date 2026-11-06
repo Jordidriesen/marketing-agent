@@ -1,9 +1,10 @@
 ---
 name: creative-brief
 metadata:
-  version: 1.2.0
+  version: 1.3.0
   history: >
-    Built for the marketing plugin's creative-specialist agent. Structures
+    v1.3: production routes add affinity-workflow and email-design, web assets are handed to the web-developer agent, and Mobbin is an optional reference source.
+    Built for the marketing plugin's graphic-designer agent (formerly creative-specialist). Structures
     a brief plus a deliverables table with real format/dimension specs,
     loads the brand kit for visual direction, and hands off to
     canva-workflow or figma-weavy-workflow for production. v1.1 adds an
@@ -43,7 +44,7 @@ The single idea the visual must land, in the viewer's terms. Everything in the d
 
 ### 5. Art direction
 - **Concept**: the visual idea in one or two sentences. What is the hero element, what is the visual metaphor if any.
-- **Style**: photography / illustration / 3D / type-led / data-led. Reference 2–3 existing pieces (links or named examples) that are close to the target.
+- **Style**: photography / illustration / 3D / type-led / data-led. Reference 2–3 existing pieces (links or named examples) that are close to the target. When the Mobbin connector and its skill are installed, real product screens from Mobbin can serve as references for app-like visuals (onboarding, pricing, product UI shots); link them, never copy them.
 - **Composition**: focal point, reading order, where the logo and CTA sit, how much breathing room.
 - **Colour**: which brand tokens, in what roles (ground, accent, text). Note any deliberate deviation and why.
 - **Typography**: which brand faces, which weights, hierarchy from headline to caption.
@@ -68,7 +69,7 @@ Fill real numbers. Common ones: LinkedIn feed image 1200×627, LinkedIn carousel
 Exact text that appears in each asset, headline, sub, CTA, taken verbatim from the approved `content-writer` or `social-media-specialist` piece, or written here and flagged for `brand-review`.
 
 ### 9. Production route
-For each deliverable, which tool and skill: `canva-workflow` for template-based and bulk assets, `figma-weavy-workflow` for generated or composited imagery and design-system components, the Adobe for creativity connector for edits to existing images (background removal with `image_remove_background`, crop and resize to each format with `image_crop_and_resize`, tone correction with `image_apply_auto_tone`), PDF work (for example `pdf_to_markdown` to read a client's brand guideline) and font sourcing (`font_search`, `font_recommend`) when the brand kit leaves type open. Canva stays the default for template work; Adobe Express is used only when the user asks for it. Edits to real photos stay edits: no generative fill or expand on a photo of the client's actual product, people or projects.
+For each deliverable, which tool and skill: `canva-workflow` for template-based and bulk assets, `affinity-workflow` for precise vector, print and multi-page layout or when the brand's source files are Affinity files, `email-design` for email templates and email visuals, `figma-weavy-workflow` for generated or composited imagery and design-system components, the Adobe for creativity connector for edits to existing images (background removal with `image_remove_background`, crop and resize to each format with `image_crop_and_resize`, tone correction with `image_apply_auto_tone`), PDF work (for example `pdf_to_markdown` to read a client's brand guideline) and font sourcing (`font_search`, `font_recommend`) when the brand kit leaves type open. Canva stays the default for template work; Adobe Express is used only when the user asks for it. A deliverable that ships as a web page or component is not produced here: list it with "route: web-developer" and the assets it needs from this brief. Edits to real photos stay edits: no generative fill or expand on a photo of the client's actual product, people or projects.
 
 ## Related Skills
 

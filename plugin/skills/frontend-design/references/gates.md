@@ -46,6 +46,7 @@ move it into that client's brand kit `design.md`.
 - No card inside a card, no emoji as an icon, no hand-drawn browser bar or OS window, no
   purple-to-blue gradient (`taste.md` section 3).
 - On new builds, no colour or `font-family` literal outside the token block.
+- A dropdown, tooltip or popover clipped by its container's `overflow`.
 
 ## Reflex
 
@@ -69,6 +70,11 @@ move it into that client's brand kit `design.md`.
 - The same hover lift or scale on every card; an image scaling on hover.
 - The photo wall: photographs cover more than about a third of the page below the hero.
 - Control height outside 44 to 52px on a marketing page (app UI may sit at 32 to 40px).
+- Decorative glass, glow or blur; a coloured side stripe on a card; a hairline border plus a wide
+  shadow on the same card (`taste.md` section 8). Nested cards are already a Floor gate.
+- The icon tile above every feature heading; the hero metric opening (`taste.md` section 8).
+- A pulsing status dot or a blinking cursor on static text (`taste.md` section 8, `motion.md`).
+- Cards touching the ends of a horizontal scroller with no inset.
 
 ## Finish
 

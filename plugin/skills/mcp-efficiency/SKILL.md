@@ -66,7 +66,7 @@ and with *what* parameters; this says how to call *any* of them cheaply.
 
 9. **Resolve the account with the connector's own identity call.** Rule 3
    says resolve once; this is the call to use. Tool names below were checked
-   against the live connectors on 1 Oct 2026. For any connector not listed,
+   against the live connectors on 1 Oct 2026; the Figma and Canva rows on 5 Nov 2026. For any connector not listed,
    or whose tools aren't loaded yet, load its tools first and read the names;
    never guess a method name.
 
@@ -77,9 +77,13 @@ and with *what* parameters; this says how to call *any* of them cheaply.
    | WP Umbrella | `list_projects` with `search` set to the domain | `projectId` (internal; don't show it in replies) |
    | Typefully | `list_social_sets` | social set ID |
    | Brevo | `accounts_get_account`, then `senders_get_senders` before any draft | account, sender |
-   | Figma | `whoami` | user and plan |
+   | Figma | `whoami`; then `create_session` with the file key before any file tool (not needed for Weave runs) | user and plan; `sessionId` for every file call in the task |
+   | Canva | `list-brand-kits` when the work is on-brand | `brand_kit_id` |
+   | Affinity (local; only while Affinity by Canva is open with its MCP server on, and Claude runs in the desktop app on that computer) | Load the tools and read the names; the tool set was not checked here | the open document |
+   | WordPress site MCPs (the page builder's own server, NovaMira, Rank Math, a managed host's) | Load the tools; use the server's own list or discover call (for example a list of posts, site parts or abilities) | the site and the post or page ID |
+   | HyperFrames by HeyGen | Load the tools and read the names; not checked here | the project or composition ID |
    | Adobe for creativity | `adobe_mandatory_init`, once per conversation, before any other Adobe tool | session ID from its result |
-   | LinkedIn Ads, LinkedIn Ad Library, Search Console, Bing Webmaster Tools, G2, vidIQ, Tally.so, Canva, Notion, Google Drive | Load the tools, then use the connector's own list or "me" call | the resolved ID |
+   | LinkedIn Ads, LinkedIn Ad Library, Search Console, Bing Webmaster Tools, G2, vidIQ, Tally.so, Notion, Google Drive | Load the tools, then use the connector's own list or "me" call | the resolved ID |
 
 10. **Respect cost and side effects before the call, not after.**
     - **OpenSEO credits.** Research tools spend credits; first-party tools
@@ -102,6 +106,16 @@ and with *what* parameters; this says how to call *any* of them cheaply.
       exports need approval. Canva stays the default for template-based
       design work; reach for Adobe when the job is an image edit, a PDF task,
       font sourcing, or the user asks for Adobe Express.
+    - **Canva.** Creating, editing and exporting designs is fine once asked
+      for. `merge-designs` needs approval of the exact page operations; a
+      `commit` in `edit-design` is permanent; `create-video` can use most or
+      all of the user's monthly Canva AI limit and needs a yes first.
+    - **Figma Weave.** `weave_run_tool` and `weave_run_model` spend Weave
+      credits: the first call only quotes; show the cost and get an explicit
+      yes before the paid call, every run.
+    - **WordPress site MCPs.** Reading is free. Creating, updating or
+      publishing a page, template, menu or setting waits for a yes, on staging
+      or as a draft first, per `security-policy`.
     - **Brevo, Typefully, Tally.so, Make, Zapier, HubSpot.** Drafts only.
       Sending, scheduling, publishing a form, or running an automation waits
       for the user's go-ahead on that specific item.

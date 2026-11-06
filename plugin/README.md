@@ -2,7 +2,7 @@
 
 A marketing team of subagents for Claude, built by [Jordi Driesen](https://github.com/Jordidriesen) for Cowork and Claude Code. A director dispatches each request to the right specialist and sequences multi-discipline campaigns in dependency order, rather than running everything at once.
 
-**One install, agents and skills together.** As of 2.0.0 the plugin ships its 65 skills (plus 13 `0-` agent shortcuts, see below) in [`skills/`](skills) alongside the agents, so the two can't drift apart. Only client brand kits live outside it: each brand gets a private `[brand]-brand-kit` skill that every content, review and design skill loads automatically (see [`templates/brand-kit`](../templates/brand-kit)).
+**One install, agents and skills together.** As of 2.0.0 the plugin ships its 69 skills (plus 14 `0-` agent shortcuts, see below) in [`skills/`](skills) alongside the agents, so the two can't drift apart. Only client brand kits live outside it: each brand gets a private `[brand]-brand-kit` skill that every content, review and design skill loads automatically (see [`templates/brand-kit`](../templates/brand-kit)).
 
 ## Installation
 
@@ -26,7 +26,8 @@ Talk to `marketing-director` for anything that spans more than one discipline; i
 | 3 | [`content-writer`](agents/content-writer.md) | Pages, articles, case studies, press releases | `web-content-pipeline`, `customer-story-writer`, `press-release-writer`, `copy-editing`, `ai-content-cleaner`, `brand-review`, `cro-auditor`, `ab-test-planner` |
 | 3 | [`social-media-specialist`](agents/social-media-specialist.md) | Platform-native social posts and paid social ad sets | `social-content-writer`, `ad-creative-matrix`, `brand-review` |
 | 3 | [`email-marketer`](agents/email-marketer.md) | Newsletters and lifecycle sequences (HubSpot or Brevo) | `newsletter-writer`, `email-sequence-hubspot-brevo`, `brand-review` |
-| 3 | [`creative-specialist`](agents/creative-specialist.md) | Creative direction and assets on approved copy | `creative-brief`, `frontend-design`, `canva-workflow`, `figma-weavy-workflow`, `logo-design`, `launch-video` |
+| 3 | [`graphic-designer`](agents/graphic-designer.md) | Fixed-format visuals on approved copy: social, ads, email templates, print, decks, logos, short video | `creative-brief`, `canva-workflow`, `affinity-workflow`, `figma-weavy-workflow`, `email-design`, `logo-design`, `launch-video` |
+| 3 | [`web-developer`](agents/web-developer.md) | Pages and sites in WordPress and Astro, redesigns, Figma to code, performance and accessibility | `frontend-design`, `astro-site`, `wordpress-development:wordpress-page-build`, `wordpress-development:wordpress-plugin-development` |
 | 3 | [`performance-marketer`](agents/performance-marketer.md) | Google Ads end to end, plus Meta and LinkedIn Ads build plans | the Google Ads skills, `meta-ads-manager`, `linkedin-ads-manager`, `paid-ads-report-writer` |
 | 3 | [`sdr-specialist`](agents/sdr-specialist.md) | Audience research and cold email: target account lists, account briefs, ABM plans, cold email sequences. LinkedIn and reply handling parked | `account-brief`, `abm-plan`, `cold-email-sequence`, the scraper suite when installed |
 | 3 | [`sales-enablement-specialist`](agents/sales-enablement-specialist.md) | Battlecards and other material that equips the sales team | `battlecard`, `brand-review` |
@@ -72,7 +73,7 @@ Every content, review, design and localisation skill identifies the brand and lo
 
 ## Agent shortcuts
 
-Open the `/` menu, choose Plugins, then Marketing Agent. The thirteen `0-` entries sort above the skills and each runs your request through one agent. Type your request after the name.
+Open the `/` menu, choose Plugins, then Marketing Agent. The fourteen `0-` entries sort above the skills and each runs your request through one agent. Type your request after the name.
 
 | Entry | Agent |
 |---|---|
@@ -82,7 +83,8 @@ Open the `/` menu, choose Plugins, then Marketing Agent. The thirteen `0-` entri
 | `0-content` | content-writer |
 | `0-social` | social-media-specialist |
 | `0-email` | email-marketer |
-| `0-creative` | creative-specialist |
+| `0-design` | graphic-designer |
+| `0-web` | web-developer |
 | `0-sdr` | sdr-specialist |
 | `0-sales` | sales-enablement-specialist |
 | `0-intel` | competitive-intel-analyst |
@@ -90,7 +92,7 @@ Open the `/` menu, choose Plugins, then Marketing Agent. The thirteen `0-` entri
 | `0-localise` | localization-specialist |
 | `0-report` | performance-reporter |
 
-They are manual only (`disable-model-invocation: true`), so Claude never picks them by itself; the 65 skills still load automatically in a normal chat. The shortcuts depend on how the Claude Code and Desktop menus sort and fork, which has not been tested here. If an entry does not sort first or does not run, `@agent-marketing-agent:<name>` still calls the agent directly.
+They are manual only (`disable-model-invocation: true`), so Claude never picks them by itself; the 69 skills still load automatically in a normal chat. The shortcuts depend on how the Claude Code and Desktop menus sort and fork, which has not been tested here. If an entry does not sort first or does not run, `@agent-marketing-agent:<name>` still calls the agent directly.
 
 ## Connectors
 

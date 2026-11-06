@@ -1,8 +1,9 @@
 ---
 name: figma-weavy-workflow
 metadata:
-  version: 2.0.1
+  version: 2.1.0
   history: >
+    v2.1.0: run path rewritten against the live Figma MCP tool names (checked 5 Nov 2026): weave_list_tools, weave_get_tool_inputs, weave_upload_asset, weave_run_tool with its cost gate, weave_get_tool_run_output, weave_cancel_tool_run, plus the direct model route (weave_find_model, weave_run_model, weave_get_model_run_output) that runs one model without a published tool. The MCP still cannot build or edit a graph.
     v2.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline.
     v1 gave a loose Weavy prompt-chain outline. v2 is built from Figma
     Weave's actual node documentation: real node names by category,
@@ -19,7 +20,7 @@ Figma Weave is a node canvas: each node is a function with inputs on the left an
 
 **Required skill calls.** After drafting, call `brand-review` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips it is not finished. End the reply with one line: `Skills run: ...`.
 
-Two things the Figma MCP **cannot** do: create or edit a Weave graph. It can only *run* a graph that has already been built in Weave and published as a "tool" with exposed inputs. So the graph spec below is the deliverable even when a connector is present.
+What the Figma MCP **cannot** do: create or edit a Weave graph. It can *run* a graph that has already been built in Weave and published as a "tool" with exposed inputs, and it can run a **single model** directly (one generation or edit, no graph). So the graph spec below is the deliverable whenever the job needs more than one model call, even when a connector is present.
 
 ## Step 0: Load the brand, the brief, and references
 
@@ -108,20 +109,22 @@ Expose the inputs a non-technical user should control as **labelled input nodes 
 
 ## Run path (Figma MCP connected)
 
-Figma Weave tools run through the **Figma MCP server** (no separate Weavy MCP). Requires: a Figma Weave account on Starter/Pro/Team/Enterprise, and the Figma account linked to Weave (*Settings → Profile → Linked accounts* in Weave), with the correct Weave workspace active.
+Figma Weave runs through the **Figma MCP server** (no separate Weavy MCP). Requires a Figma Weave account on Starter, Pro, Team or Enterprise, the Figma account linked to Weave (*Settings → Profile → Linked accounts* in Weave), and the right Weave workspace active. Load the Weave tools in one tool search; never guess a name. Weave work needs no Figma file, so `create_session` is not part of this path. Every run spends **Weave credits** (not Figma AI credits).
 
-When the connector is available:
-1. **List** the user's Weave tools (own + shared in the active workspace); find the one for this job by name.
-2. **Check its required inputs** before running.
-3. **Upload** any brand asset files (image/video/3D) the tool needs.
-4. **Run** the tool with the inputs. It uses **Weave credits** (not Figma AI credits): the run shows a cost and asks for confirmation; dynamic-cost graphs (dynamic iterators) can't be quoted up front.
-5. **Poll** the run for progress; read the output when ready. **Cancel** a run still in progress if needed.
+**Route A: a published tool (the normal route for a graph).**
+1. `weave_list_tools` (with `search` set to the name, if known) → the tool's `recipeId`. A pasted `app.weavy.ai/tool/<id>` or `/flow/<id>` URL already is the `recipeId`; skip the list and never open a browser for Weave.
+2. `weave_get_tool_inputs` → the `version`, the `outputs` summary and the `inputs` list (`nodeId`, `type`, `default`, `required`). Fill every required input; confirm with the user any default the run would silently use.
+3. Media: an https URL can go in directly; a local file goes through `weave_upload_asset`, which shows the user a file picker. Pass the whole returned asset object as the value.
+4. `weave_run_tool` without `acknowledgedCost` only quotes. Show the user the quoted cost and get an explicit approve or cancel, then call again with `acknowledgedCost` (`-1` for a dynamic-cost graph). Every rerun is quoted and approved again.
+5. `weave_get_tool_run_output` with the `runIds` until each run reports the status `COMPLETED`, `FAILED` or `CANCELED` (the API's spelling); download outputs with the curl instructions it returns rather than embedding media. `weave_cancel_tool_run` stops a run and cannot be undone.
 
-The MCP runs graphs; it does not build or edit them. If no suitable published tool exists, hand back the graph spec for someone to build once.
+**Route B: one model, no graph.** For a single generation or edit (one hero variant, one upscale, one image-to-video clip): `weave_find_model` with the model name → its `id` and input contract; `weave_run_model` (quote, approve, run, same gate as above); `weave_get_model_run_output` with the `predictionIds`. Brand assets still go in afterwards as real layers, so a one-model run is rarely the finished asset: composite it in Canva, Affinity or a Compositor graph.
+
+If no suitable published tool exists and the job needs a graph, hand back the graph spec for someone to build once in Weave, then publish it as a tool for future runs.
 
 ## Related Skills
 
-The brief comes from `creative-brief`. Layout-and-template assembly of the pieces can move to `canva-workflow`. Copy in the final asset comes from `content-writer` or `social-media-specialist` and passes `brand-review`.
+The brief comes from `creative-brief`. Layout-and-template assembly of the pieces can move to `canva-workflow`, precise vector or print layout to `affinity-workflow`. Copy in the final asset comes from `content-writer` or `social-media-specialist` and passes `brand-review`.
 
 ## Output
 

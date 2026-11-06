@@ -10,6 +10,12 @@ decides how much a page moves; this file decides how each movement is built. Whe
 slightly different numbers, one value is picked here. Values are starting points to judge by eye,
 not laws.
 
+**Ready-made transitions.** When the `transitions-dev` skill (Jakub Antalik's transitions.dev) is
+installed, use its snippets to build a transition once this file has decided that the element moves
+and how fast. It is plain CSS with a reduced-motion guard on every snippet, so it suits WordPress and
+Astro alike. Check its values against section 2 and the brand kit; where they differ, this file and
+the kit decide. It is referenced, not bundled: the skill is generated from its site and changes often.
+
 ---
 
 ## 1. Decide whether it animates

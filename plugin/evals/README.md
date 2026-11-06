@@ -35,7 +35,7 @@ Both call the `sdr-specialist` agent.
 
 ## routing-*
 
-Twelve realistic requests that name no agent, each checking that the right specialist is called. Used to test that shorter agent descriptions still route correctly.
+Seventeen realistic requests that name no agent, each checking that the right specialist is called. `routing-creative` (a logo) expects `graphic-designer`; `routing-web` (a WordPress page template) expects `web-developer`. Used to test that shorter agent descriptions still route correctly.
 
 ## social-linkedin, press-release, newsletter, rsa
 
