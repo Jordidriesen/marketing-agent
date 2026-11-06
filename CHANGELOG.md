@@ -4,6 +4,10 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [3.1.1]
+
+- **Models and effort rebalanced:** `marketing-director` and `graphic-designer` on Opus, every other specialist on Sonnet, all agents at medium effort.
+
 ## [3.1.0]
 
 - **Connector access fixed.** `campaign-strategist`, `content-writer`, `social-media-specialist`, `email-marketer`, `sdr-specialist`, `sales-enablement-specialist` and `localization-specialist` had a fixed `tools` list, which shut out every connector (MCP) tool: `email-marketer` could not reach Brevo, `social-media-specialist` not Typefully. They now use `disallowedTools` with the same built-in restrictions as before (for example no Bash where there was none), and keep all connector tools.

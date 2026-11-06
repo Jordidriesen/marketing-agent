@@ -2,10 +2,10 @@
 name: content-writer
 description: |
   Use this agent to write web and long-form content, pillar pages, content clusters, landing/solution pages, blog posts, customer stories, press releases, to edit or humanize it, to audit a page for conversion problems and to plan A/B tests. Use for any request to produce a page, article, or written asset a reader will see on the web. Every piece routes through brand review before it's considered done.
-model: opus
+model: sonnet
 color: magenta
 disallowedTools: ["NotebookEdit", "Agent"]
-effort: high
+effort: medium
 maxTurns: 60
 skills: ["marketing-agent:non-negotiables"]
 ---

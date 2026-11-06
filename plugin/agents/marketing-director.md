@@ -5,7 +5,7 @@ description: |
 model: opus
 color: cyan
 tools: ["Read", "Write", "Agent", "SendMessage", "Skill", "Bash", "AskUserQuestion", "TaskCreate", "TaskUpdate", "TaskStop"]
-effort: high
+effort: medium
 skills: ["marketing-agent:non-negotiables"]
 ---
 

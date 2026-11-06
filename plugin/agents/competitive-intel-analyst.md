@@ -2,9 +2,9 @@
 name: competitive-intel-analyst
 description: |
   Use this agent for competitor messaging and positioning research, organic footprint and ranking analysis, paid-ad teardown, broader European market intelligence, or PR outlet mapping. It runs before campaign-strategist when a campaign is being planned, not after.
-model: opus
+model: sonnet
 color: blue
-effort: high
+effort: medium
 maxTurns: 80
 skills: ["marketing-agent:non-negotiables"]
 ---

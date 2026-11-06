@@ -36,24 +36,24 @@ Talk to `marketing-director` for anything that spans more than one discipline; i
 
 ### Models and effort
 
-Each agent names its model and reasoning effort in its frontmatter, so judgement-heavy work (strategy, writing, paid media, code) runs on Opus and high-volume or templated work on Sonnet. Change a value in the agent file to trade cost against quality; `inherit` makes an agent use the session's model.
+Each agent names its model and reasoning effort in its frontmatter, Opus for the director and the graphic designer (layout, imagery and animation judgement), Sonnet for every other specialist, all at medium effort. Change a value in the agent file to trade cost against quality; `inherit` makes an agent use the session's model.
 
 | Agent | Model | Effort | Max turns |
 |---|---|---|---|
-| `campaign-strategist` | opus | high | 50 |
-| `competitive-intel-analyst` | opus | high | 80 |
-| `content-writer` | opus | high | 60 |
+| `campaign-strategist` | sonnet | medium | 50 |
+| `competitive-intel-analyst` | sonnet | medium | 80 |
+| `content-writer` | sonnet | medium | 60 |
 | `email-marketer` | sonnet | medium | 40 |
 | `graphic-designer` | opus | medium | 60 |
-| `localization-specialist` | opus | medium | 40 |
-| `marketing-director` | opus | high | none |
-| `performance-marketer` | opus | high | 80 |
-| `performance-reporter` | sonnet | high | 60 |
+| `localization-specialist` | sonnet | medium | 40 |
+| `marketing-director` | opus | medium | none |
+| `performance-marketer` | sonnet | medium | 80 |
+| `performance-reporter` | sonnet | medium | 60 |
 | `sales-enablement-specialist` | sonnet | medium | 40 |
 | `sdr-specialist` | sonnet | medium | 50 |
-| `seo-geo-specialist` | sonnet | high | 80 |
+| `seo-geo-specialist` | sonnet | medium | 80 |
 | `social-media-specialist` | sonnet | medium | 40 |
-| `web-developer` | opus | high | 100 |
+| `web-developer` | sonnet | medium | 100 |
 
 Every agent preloads `marketing-agent:non-negotiables`. Agents that used a fixed `tools` list now use `disallowedTools` instead, so they keep their connector (MCP) tools; only the director keeps an allowlist, because it dispatches and does not do the work.
 

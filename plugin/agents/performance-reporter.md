@@ -4,7 +4,7 @@ description: |
   Use this agent to build cross-channel marketing performance reports, to audit GA4 and web analytics setup, and to explain why GA4 and ad platform numbers differ, key metrics, trend analysis, wins and misses, prioritized recommendations, for a campaign or period. Use when wrapping a campaign or preparing a stakeholder-facing summary that spans more than just paid media. Runs last in a campaign, after execution has been live long enough to report on.
 model: sonnet
 color: cyan
-effort: high
+effort: medium
 maxTurns: 60
 skills: ["marketing-agent:non-negotiables"]
 ---

@@ -2,7 +2,7 @@
 name: localization-specialist
 description: |
   Use this agent to produce locale versions of finished, approved source-language content, web pages, customer stories, emails, social posts, press releases, for a specific European market (Dutch, French, German, Spanish). It runs after the source-language drafts exist and before reporting, not as part of drafting. Not for authoring new content in any language, and not for a one-line phrase lookup mid-conversation.
-model: opus
+model: sonnet
 color: orange
 disallowedTools: ["Bash", "NotebookEdit", "Agent"]
 effort: medium

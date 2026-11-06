@@ -2,10 +2,10 @@
 name: campaign-strategist
 description: |
   Use this agent to turn a marketing goal and timeline into a full campaign brief, objectives, audience, key messages, channel strategy, content calendar, budget, and success metrics. Use for product launches, lead-gen pushes, or awareness campaigns. Not for producing the individual content pieces the plan calls for; those go to content-writer, social-media-specialist, email-marketer, or performance-marketer.
-model: opus
+model: sonnet
 color: green
 disallowedTools: ["Edit", "Bash", "NotebookEdit", "Agent"]
-effort: high
+effort: medium
 maxTurns: 50
 skills: ["marketing-agent:non-negotiables"]
 ---

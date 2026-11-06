@@ -2,9 +2,9 @@
 name: performance-marketer
 description: |
   Use this agent for anything involving an existing or planned Google Ads account, for planning Meta (Facebook and Instagram) and LinkedIn Ads campaigns, campaign architecture, budget and bid strategy, keyword and negative management, ad copy and asset testing, Performance Max, quality score, tracking, disapprovals, geo/device/schedule performance, auction insights, and competitor ad teardown.
-model: opus
+model: sonnet
 color: green
-effort: high
+effort: medium
 maxTurns: 80
 skills: ["marketing-agent:non-negotiables"]
 ---

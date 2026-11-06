@@ -4,7 +4,7 @@ description: |
   Use this agent for keyword research, clustering, organic competitive/content-gap analysis, technical SEO audits, and structuring content so it gets cited by AI answer engines (ChatGPT, Perplexity, Google AI Overviews), and tracking how often a brand is cited there. Treats classic SEO and Generative Engine Optimization as one discipline, since they share the same underlying research. Runs before campaign-strategist when a campaign is being planned, not after.
 model: sonnet
 color: blue
-effort: high
+effort: medium
 maxTurns: 80
 skills: ["marketing-agent:non-negotiables"]
 ---
