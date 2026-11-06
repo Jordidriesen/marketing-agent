@@ -4,6 +4,14 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [3.1.0]
+
+- **Connector access fixed.** `campaign-strategist`, `content-writer`, `social-media-specialist`, `email-marketer`, `sdr-specialist`, `sales-enablement-specialist` and `localization-specialist` had a fixed `tools` list, which shut out every connector (MCP) tool: `email-marketer` could not reach Brevo, `social-media-specialist` not Typefully. They now use `disallowedTools` with the same built-in restrictions as before (for example no Bash where there was none), and keep all connector tools.
+- **Non-negotiables preloaded.** Every agent has `skills: ["marketing-agent:non-negotiables"]` and a rule line to load it through the Skill tool if the preload did not land.
+- **Model and effort per agent.** Opus for strategy, research judgement, writing, design, code, paid media and localisation; Sonnet for SEO data work, social, email, reporting, SDR and sales enablement. Effort high or medium per agent, and a `maxTurns` limit on every specialist so a stuck run returns partial work instead of running on. Table in `plugin/README.md`.
+- **`marketing-director` runs the team better:** independent specialists start in parallel in one message, long research runs in the background, checkpoints use `AskUserQuestion`, send-backs continue the same specialist with `SendMessage` instead of starting over, and stages of a larger request show as tasks. Tools added: `SendMessage`, `AskUserQuestion`, `TaskCreate`, `TaskUpdate`, `TaskStop`.
+- Not tested in a live session yet: whether the namespaced skill preload loads, and the routing evals.
+
 ## [3.0.1]
 
 - **Figma skill names:** `web-developer` and `frontend-design` 2.4.1 call the Figma plugin's skills by their real names, `figma:figma-design-to-code` and `figma:figma-use`; without the plugin prefix the agent could not find them.
