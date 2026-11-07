@@ -100,7 +100,7 @@ Open the `/` menu, choose Plugins, then Marketing Agent. The fourteen `0-` entri
 
 | Entry | Agent |
 |---|---|
-| `0-marketing` | marketing-director (multi-discipline or unsure who owns it) |
+| `0-marketing` | marketing-director, run in the main thread so it can call specialists (multi-discipline or unsure who owns it) |
 | `0-paid-ads` | performance-marketer |
 | `0-seo` | seo-geo-specialist |
 | `0-content` | content-writer |

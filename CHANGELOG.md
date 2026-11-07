@@ -4,6 +4,11 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [3.2.0]
+
+- **The director now works in the Claude app.** `/0-marketing` used to start `marketing-director` as a sub-agent, and a sub-agent cannot start sub-agents, so the director could never call a specialist (found in the report comparison on 7 Nov 2026). `/0-marketing` now loads the new `director-playbook` into the main thread, which becomes the director and delegates through the Agent tool.
+- **`director-playbook` 1.0.0** (hidden from the menu) holds the director's instructions, moved unchanged from the agent file. The `marketing-director` agent preloads it, and says so in one line when it is started as a sub-agent instead of trying to work.
+
 ## marketing-operator 0.2.0
 
 - **Self-contained.** The operator carries every skill and thread profile it uses and no longer needs marketing-agent. The skills were generated once from marketing-agent 3.1.2 (read only) and are this plugin's own copies from now on. Install it instead of marketing-agent in a test session, not next to it.
