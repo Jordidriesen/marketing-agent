@@ -77,18 +77,6 @@ Two seeded rounds of citation counts; the report must name the right mover and e
 
 Plain requests that name no agent. The expected agents are `performance-marketer`, `performance-reporter`, `content-writer` and `seo-geo-specialist`.
 
-## compare-campaign, compare-landing and compare-report (director against operator)
-
-Three jobs, each in two cases with the same prompt: `-director` runs it through `marketing-director`, `-operator` through the experimental `marketing-operator` (separate plugin, see `operator/README.md` at the repository root). All use Acme Access and no connectors: a three-week LinkedIn campaign with posts and a nurture pair, a landing page from copy to an Elementor build checklist, and a monthly paid report from given figures.
-
-**How to run them.** Each case runs the way that setup actually runs in the Claude app. The `-director` prompts start with "Use the marketing-director agent", so the director runs as a sub-agent, which is how it runs in the app today; a sub-agent cannot start sub-agents, so expect the director to do the work without delegating. The `-operator` prompts start by loading `marketing-operator:operator-routing`, so the main thread becomes the operator and can start threads. Both plugins must be installed. Check the first run's transcript to confirm each setup behaved that way before trusting the results.
-
-**Graded:** no em dashes, the `Skills run` line, the skills the job needs, the publish question with nothing claimed as published, and job-specific quality (for the report, the cost per demo request computed from the figures and the ad group beside every search term). The operator cases also check that every spawned thread has a reason matching one of its four spawn rules.
-
-**Measured, not graded:** tokens, wall-clock time and number of turns per run, from the run output or the session usage, and how many times a person would have had to correct the result. Record them per case and per run; the decision to switch is made on those numbers together with the grades.
-
-Not run yet.
-
 ## Not covered
 
 - The marketing director cannot delegate when it is called as a subagent, so its ask-first behaviour needs a main-agent test that this harness does not offer.

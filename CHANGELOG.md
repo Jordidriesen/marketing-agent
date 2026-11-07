@@ -4,6 +4,15 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## marketing-operator 0.2.0
+
+- **Self-contained.** The operator carries every skill and thread profile it uses and no longer needs marketing-agent. The skills were generated once from marketing-agent 3.1.2 (read only) and are this plugin's own copies from now on. Install it instead of marketing-agent in a test session, not next to it.
+- **Five family skills** hold 24 former skills as references: `google-ads-build`, `google-ads-analyse`, `google-ads-ads`, `competitive-research`, `measurement`. Their descriptions keep the old trigger phrases. The former `google-ads-tool-map` is a shared reference in the three Google Ads families. 44 single skills are copied unchanged apart from names and paths; `non-negotiables`, `security-policy`, `content-references` and `mcp-efficiency` are hidden from the menu. 49 skills in all, against 69.
+- **Thread profiles** copied from marketing-agent with their skill names pointing at this plugin.
+- **Model table** in `operator-routing` (section 3b): model and effort passed explicitly on every spawn and logged in `decisions.md`. Haiku for bulk data pulls is marked untested.
+- **Evals** moved to `operator/evals/`, plus 24 routing cases, one per absorbed skill. Not run. `plugin/evals/` is back to its state before the operator was added.
+- marketing-agent is unchanged: its skills, agents and evals match 3.1.2; only the 3.1.3 version number stays.
+
 ## marketing-operator 0.1.1
 
 - **Runs in the main thread in the Claude app.** `/0-operator` no longer asks for an agent switch: it loads `operator-routing` into the main thread, which becomes the operator and can start threads. The Claude app does not appear to apply a plugin's default main agent, and a forked or sub-agent operator cannot start threads.

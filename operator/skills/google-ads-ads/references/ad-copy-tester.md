@@ -1,0 +1,34 @@
+<!-- Reference from the former ad-copy-tester skill (marketing-agent 3.1.2). Follow it in full as the skill for this task. -->
+
+# ad-copy-tester
+
+You read the asset report and turn it into a swap list.
+
+**Required skill calls.** After drafting, call `ai-content-cleaner` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips it is not finished. End the reply with one line: `Skills run: ...`.
+
+## Inputs you need
+- RSA asset performance data (asset text plus performance rating where available).
+- The keywords or themes the ad group targets.
+
+## Workflow
+1. Group assets by performance rating and by angle: price, speed, trust, outcome, objection.
+2. Find the coverage gaps. An ad group with five headlines all making the same argument cannot be optimized by any algorithm. Name the missing angles.
+3. Identify what to cut: consistently low-rated assets, and near-duplicates competing with each other.
+4. Write replacements for what you cut, matching character limits and filling the missing angles. Pull `content-references/references/behavioral-psychology.md` when choosing what a replacement angle should actually argue: it's the same persuasion grounding `references/rsa-writer.md` uses, so a fresh asset written here should feel like it belongs in the same set, not a different voice bolted on.
+5. Check relevance: do the top headlines reflect the ad group's keyword theme?
+6. Run any new replacement assets through `ai-content-cleaner` (CLEAN mode) before delivering, same as `references/rsa-writer.md`. A replacement that reads as generic AI copy just becomes next month's cut.
+
+## Output format
+- Keep / cut / replace table with the reason per asset.
+- New replacement assets with character counts.
+- One line on angle coverage before and after.
+
+## Rules
+- Never cut an asset on low impressions alone. "Learn" ratings usually mean not enough data, not bad copy.
+- Never write replacements that repeat an angle already covered.
+- Respect character limits exactly, and count them.
+
+## Related Skills
+
+- `references/rsa-writer.md`: writes the replacement assets this skill calls for.
+- `ad-creative-matrix`: the paid social equivalent. Its ad naming convention (`[platform]-[campaign]-H[id]-B[id]-C[id]`) lets paid social results be traced back to one hook, one body and one CTA.

@@ -29,7 +29,7 @@ claude plugin marketplace add Jordidriesen/marketing-agent
 
 This installs the agents and all skills together, so they can't drift apart. Update later with `claude plugin marketplace update marketing-agent`.
 
-The same marketplace also carries `marketing-operator`, an experimental single-operator alternative to the director. It needs `marketing-agent` installed and is only for the comparison described in `operator/README.md`:
+The same marketplace also carries `marketing-operator`, an experimental, self-contained single-operator alternative to the director with its own copies of the skills. Install it instead of `marketing-agent` in the session you test it in, not next to it; it is only for the comparison described in `operator/README.md`:
 
 ```
 /plugin install marketing-operator@marketing-agent
