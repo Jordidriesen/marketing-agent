@@ -1,5 +1,16 @@
 # Redesign protocol
 
+**Contents**
+
+- 1. Detect the mode first
+- 2. Audit before touching anything
+- 3. Never change silently
+- 4. Design audit checklist
+- 5. Fix in this order
+- 6. Rules while changing things
+- 7. Verify nothing went missing
+
+
 How `frontend-design` handles an existing site or page. Merged and adapted from Leonxlnx's
 [taste-skill](https://github.com/Leonxlnx/taste-skill) (section 11) and
 [redesign-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/redesign-skill) (MIT),

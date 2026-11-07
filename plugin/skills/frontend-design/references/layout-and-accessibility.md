@@ -1,5 +1,13 @@
 # Layout, surfaces and accessibility
 
+**Contents**
+
+- Layout
+- Surfaces and icons
+- Accessibility: cite the criterion
+- Reporting a review
+
+
 Additions to `interface-checklist.md` for `frontend-design`. Adapted and rewritten from
 jakubkrehel's [better-layout, better-accessibility and better-ui](https://github.com/jakubkrehel/skills)
 (MIT), plus selected rules adapted from [dembrandt-skills](https://github.com/dembrandt/dembrandt-skills)

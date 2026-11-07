@@ -1,10 +1,12 @@
 ---
 name: account-brief
 metadata:
-  version: '1.0.0'
-  history: "v1.0.0: new skill. One-page brief per target account before outreach: what the company does, trigger events with sources, likely buying committee by role, fit against the ICP, the angle and the first touch. Sourced facts only.\n"
-description: "One-page brief on a target account before outreach: what it does, sourced and dated triggers, buying committee by role, ICP fit, angle, first touch. Use for \"account brief\", \"research this prospect\", \"prep outreach to [company]\"."
-argument-hint: "<company name and domain or registry number, the brand you sell for, and anything you already know about the account>"
+  version: 1.0.0
+  history: 'v1.0.0: new skill. One-page brief per target account before outreach: what the company does, trigger events with sources, likely buying committee by role, fit against the ICP, the angle and the first touch. Sourced facts only.
+
+    '
+description: 'One-page brief on a target account before outreach: what it does, sourced and dated triggers, buying committee by role, ICP fit, angle, first touch. Use for "account brief", "research this prospect", "prep outreach to [company]".'
+argument-hint: <company name and domain or registry number, the brand you sell for, and anything you already know about the account>
 ---
 
 # Account brief

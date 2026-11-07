@@ -2,16 +2,11 @@
 name: figma-weavy-workflow
 metadata:
   version: 2.1.0
-  history: >
-    v2.1.0: run path rewritten against the live Figma MCP tool names (checked 5 Nov 2026): weave_list_tools, weave_get_tool_inputs, weave_upload_asset, weave_run_tool with its cost gate, weave_get_tool_run_output, weave_cancel_tool_run, plus the direct model route (weave_find_model, weave_run_model, weave_get_model_run_output) that runs one model without a published tool. The MCP still cannot build or edit a graph.
-    v2.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline.
-    v1 gave a loose Weavy prompt-chain outline. v2 is built from Figma
-    Weave's actual node documentation: real node names by category,
-    datatype/colour connection rules, consistency controls, iterators for
-    batching, publishing a graph as a reusable "tool", and the Figma MCP
-    run path (which can run a published Weave tool but not build a graph).
-description: "Designs and runs Figma Weave node graphs for generated or composited imagery and short video: hero images, product shots, batch variants. Templates and text variants: canva-workflow."
-argument-hint: "<the imagery or video to build in Figma Weave>"
+  history: 'v2.1.0: run path rewritten against the live Figma MCP tool names (checked 5 Nov 2026): weave_list_tools, weave_get_tool_inputs, weave_upload_asset, weave_run_tool with its cost gate, weave_get_tool_run_output, weave_cancel_tool_run, plus the direct model route (weave_find_model, weave_run_model, weave_get_model_run_output) that runs one model without a published tool. The MCP still cannot build or edit a graph. v2.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1 gave a loose Weavy prompt-chain outline. v2 is built from Figma Weave''s actual node documentation: real node names by category, datatype/colour connection rules, consistency controls, iterators for batching, publishing a graph as a reusable "tool", and the Figma MCP run path (which can run a published Weave tool but not build a graph).
+
+    '
+description: 'Designs and runs Figma Weave node graphs for generated or composited imagery and short video: hero images, product shots, batch variants. Templates and text variants: canva-workflow.'
+argument-hint: <the imagery or video to build in Figma Weave>
 ---
 
 # Figma Weave (Weavy) Workflow

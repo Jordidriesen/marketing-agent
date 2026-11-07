@@ -1,13 +1,12 @@
 ---
 name: astro-site
-description: "Builds and changes marketing sites in Astro: project structure, layouts and components, content collections, images, islands with as little JavaScript as possible, i18n routes, SEO and schema, build and deploy. Use for \"Astro site\", \"build this in Astro\", \"add a page to the Astro project\". Design read and tokens: frontend-design."
+description: 'Builds and changes marketing sites in Astro: project structure, layouts and components, content collections, images, islands with as little JavaScript as possible, i18n routes, SEO and schema, build and deploy. Use for "Astro site", "build this in Astro", "add a page to the Astro project". Design read and tokens: frontend-design.'
 metadata:
   version: 1.0.0
-  history: >
-    v1.0.0: new skill for the web-developer agent. Version-agnostic on purpose: it reads the project's
-    Astro version and the matching docs before using an API, because Astro renames and moves APIs
-    between major versions.
-argument-hint: "<the project or repo, the page or feature, the brand>"
+  history: 'v1.0.0: new skill for the web-developer agent. Version-agnostic on purpose: it reads the project''s Astro version and the matching docs before using an API, because Astro renames and moves APIs between major versions.
+
+    '
+argument-hint: <the project or repo, the page or feature, the brand>
 ---
 
 # Astro Site

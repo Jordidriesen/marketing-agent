@@ -1,9 +1,10 @@
 ---
 name: content-references
-description: "Shared writing references (frameworks, SEO and AEO rules, psychology, schema) loaded by the content skills. Not for direct requests."
+description: Shared writing references (frameworks, SEO and AEO rules, psychology, schema) loaded by the content skills. Not for direct requests.
 metadata:
   version: 1.1.0
-  history: "v1.1.0: restructured for load efficiency. Intent and frameworks merged into content-briefing; page templates moved out of the pipeline; SEO/AEO and internal linking split into always-load and on-demand files; dependency map added; one rule each for sourcing, chunk size and CTA strength. v1.0.1: truthful index, canonical honesty rule, pointer file removed. Provenance: the shared library replaced rules once duplicated inside several skills."
+  history: 'v1.1.0: restructured for load efficiency. Intent and frameworks merged into content-briefing; page templates moved out of the pipeline; SEO/AEO and internal linking split into always-load and on-demand files; dependency map added; one rule each for sourcing, chunk size and CTA strength. v1.0.1: truthful index, canonical honesty rule, pointer file removed. Provenance: the shared library replaced rules once duplicated inside several skills.'
+user-invocable: false
 ---
 
 # Content References: Shared Library
@@ -31,8 +32,8 @@ Who loads what. "Required" means the skill reads it every run; the rest are on d
 |---|---|
 | `web-content-pipeline` | page-templates-article or page-templates-conversion (required, one of them); content-briefing, seo-aeo-core, behavioral-psychology (on demand); the template files point to seo-aeo-core and internal-linking-drafting for articles |
 | `customer-story-writer` | content-briefing (framework definitions) |
-| `social-content-writer`, `press-release-writer`, `newsletter-writer`, `email-sequence-hubspot-brevo`, `campaign-plan`, `landing-page-matcher`, `ad-creative-matrix` | content-briefing; behavioral-psychology where the skill cites it |
-| `copy-editing`, `ad-copy-tester`, `rsa-writer`, `competitor-teardown`, `disapproval-diagnoser`, `lead-magnets` | behavioral-psychology |
+| `social-content-writer`, `press-release-writer`, `newsletter-writer`, `email-sequence-hubspot-brevo`, `campaign-plan`, `google-ads-analyse` (its `landing-page-matcher` reference), `ad-creative-matrix` | content-briefing; behavioral-psychology where the skill cites it |
+| `copy-editing`, `google-ads-ads` (its `ad-copy-tester` reference), `google-ads-ads` (its `rsa-writer` reference), `competitive-research` (its `competitor-teardown` reference), `google-ads-analyse` (its `disapproval-diagnoser` reference), `lead-magnets` | behavioral-psychology |
 | `seo-audit`, `content-translate` | seo-aeo-core (AEO rules, schema) |
 | nobody by default | seo-aeo-scorecard (a formal score), internal-linking-audit (a site audit) |
 

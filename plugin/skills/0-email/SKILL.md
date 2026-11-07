@@ -1,7 +1,7 @@
 ---
 name: 0-email
-description: "Menu shortcut: runs the email-marketer agent on your request. Pick it from the plugin menu when you want email work done by that specialist, for newsletters and multi-email sequences for HubSpot or Brevo. Manual only; it never triggers on its own."
-argument-hint: "<what you need, with any context or files>"
+description: 'Menu shortcut: runs the email-marketer agent on your request. Pick it from the plugin menu when you want email work done by that specialist, for newsletters and multi-email sequences for HubSpot or Brevo. Manual only; it never triggers on its own.'
+argument-hint: <what you need, with any context or files>
 disable-model-invocation: true
 context: fork
 agent: marketing-agent:email-marketer

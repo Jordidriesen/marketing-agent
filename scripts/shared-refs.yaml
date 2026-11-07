@@ -1,0 +1,49 @@
+# Shared reference files: source of truth -> skills that carry a copy.
+# Edit the source, then run scripts/sync_shared_refs.py. CI runs it with --check.
+ai-content-cleaner/references/patterns-nl.md:
+- non-negotiables
+content-references/references/behavioral-psychology.md:
+- ad-creative-matrix
+- competitive-research
+- copy-editing
+- cro-auditor
+- email-sequence-hubspot-brevo
+- google-ads-ads
+- google-ads-analyse
+- lead-magnets
+- newsletter-writer
+- web-content-pipeline
+content-references/references/content-briefing.md:
+- campaign-plan
+- customer-story-writer
+- email-sequence-hubspot-brevo
+- google-ads-ads
+- google-ads-analyse
+- newsletter-writer
+- press-release-writer
+- social-content-writer
+- web-content-pipeline
+content-references/references/page-templates-article.md:
+- web-content-pipeline
+content-references/references/page-templates-conversion.md:
+- web-content-pipeline
+content-references/references/seo-aeo-core.md:
+- content-translate
+- web-content-pipeline
+content-research-orchestrator/references/openseo-tool-map.md:
+- competitive-research
+- european-market-intelligence
+- google-ads-build
+- keyword-clustering
+- media-mapping
+- seo-keyword-research
+google-ads-analyse/references/google-ads-tool-map.md:
+- google-ads-ads
+- google-ads-build
+security-policy/references/SECURITY.md:
+- competitive-research
+- content-research-orchestrator
+- european-market-intelligence
+- keyword-clustering
+- media-mapping
+- seo-keyword-research

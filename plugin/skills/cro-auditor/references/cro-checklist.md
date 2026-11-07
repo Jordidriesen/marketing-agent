@@ -35,7 +35,7 @@ Show only the first screen (desktop and mobile) to yourself and answer in one li
 
 - **Proof fits the stage.** Proof placed where the reader's doubt peaks (next to the claim, next to
   the form), not collected in one block far from the action. See the scepticism stages in
-  `content-references/references/behavioral-psychology.md`.
+  `references/behavioral-psychology.md`.
 - **Proof is real and specific.** Named customers, quotes with a name and role, figures with a source.
   Vague superlatives ("trusted by leading companies") are a finding. Absent proof is a finding of
   its own: flag it, do not assume it exists elsewhere.
@@ -52,7 +52,7 @@ Show only the first screen (desktop and mobile) to yourself and answer in one li
 - Does the first screen repeat the promise of the ad, email or search result in the visitor's words?
 - If the visitor came from a specific query or offer, is that specific thing visible without scrolling?
 - Does the offer, price signal or deadline match what the source said?
-- For paid search, run the deeper chain check with `landing-page-matcher` and note that you did.
+- For paid search, run the deeper chain check with `google-ads-analyse` (its `landing-page-matcher` reference) and note that you did.
 
 ## 5. Form and CTA microcopy
 

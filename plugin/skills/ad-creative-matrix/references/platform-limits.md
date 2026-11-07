@@ -53,5 +53,5 @@ Tag every assembled ad so results map back to the parts.
 Example pattern: `li-launch-H07-B2-C1`
 
 Keep the hook, body and CTA IDs stable between the sheet, the ad names and any later analysis in
-`ad-copy-tester` or `paid-ads-report-writer`, so a result can be traced to one hook, one body and
+`google-ads-ads` (its `ad-copy-tester` reference) or `paid-ads-report-writer`, so a result can be traced to one hook, one body and
 one CTA.

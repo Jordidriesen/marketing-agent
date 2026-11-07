@@ -1,5 +1,13 @@
 # Internal Linking: Audit (on demand)
 
+**Contents**
+
+- Orphan Page Detection
+- Internal Link Audit Checklist
+- Link Velocity Guidelines
+- Internal Link Tracking
+
+
 Load this only when auditing an existing site section: orphan pages, link checklists, velocity and tracking. For drafting new content use `internal-linking-drafting.md`.
 
 ## Orphan Page Detection

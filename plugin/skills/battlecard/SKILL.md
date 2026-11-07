@@ -2,9 +2,11 @@
 name: battlecard
 metadata:
   version: 1.0.1
-  history: "v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.0.0: new skill. A one-page, sales-facing competitor card built from verified inputs, with every claim source-tagged, an honest where-they-win column, landmine questions, objection responses and a review date.\n"
-description: "Builds a one-page sales battlecard on one competitor: where we win and lose, landmine questions, objection responses, proof, every claim source-tagged. Use for \"battlecard\", \"how do we beat X\", \"competitive cheat sheet\"."
-argument-hint: "<our product, the competitor, and any win/loss notes or sources you can share>"
+  history: 'v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.0.0: new skill. A one-page, sales-facing competitor card built from verified inputs, with every claim source-tagged, an honest where-they-win column, landmine questions, objection responses and a review date.
+
+    '
+description: 'Builds a one-page sales battlecard on one competitor: where we win and lose, landmine questions, objection responses, proof, every claim source-tagged. Use for "battlecard", "how do we beat X", "competitive cheat sheet".'
+argument-hint: <our product, the competitor, and any win/loss notes or sources you can share>
 ---
 
 # Battlecard
@@ -15,7 +17,7 @@ pressure. A battlecard that oversells loses the sales team's trust the first tim
 **Required skill calls.** After drafting, call `ai-content-cleaner` and `brand-review` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips either is not finished. End the reply with one line: `Skills run: ...`.
 
 This skill **compiles and sharpens** what is known. It does not do the competitor research. If the
-facts are thin, run `competitor-analysis`, `competitive-landscape` or `european-market-intelligence`
+facts are thin, run `competitive-research` (its `competitor-analysis` reference), `competitive-research` (its `competitive-landscape` reference) or `european-market-intelligence`
 first, or ask the user for the sources. For a European competitor where registry-verified facts matter (legal name, seat, legal form), run `european-market-intelligence` first and carry its "Registry-verified facts" line to the top of the card.
 
 **A battlecard is internal.** It is not a customer-facing document. Anything that will be shown to a
@@ -97,8 +99,8 @@ team wants a designed version.
 
 ## Related Skills
 
-- `competitor-analysis`, `competitive-landscape`, `european-market-intelligence`: upstream research.
-- `competitor-teardown`: how the competitor sells in paid ads. Its open angles can feed the landmines.
+- `competitive-research` (its `competitor-analysis` reference), `competitive-research` (its `competitive-landscape` reference), `european-market-intelligence`: upstream research.
+- `competitive-research` (its `competitor-teardown` reference): how the competitor sells in paid ads. Its open angles can feed the landmines.
 - `customer-story-writer`: supplies proof points with customer approval.
 - `cold-email-sequence`: outreach that can use the card's reframes.
 - `brand-review`, `ai-content-cleaner`: the gates before delivery.

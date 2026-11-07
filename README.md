@@ -1,16 +1,16 @@
 # Marketing Agent: a Claude marketing team
 
-A marketing team for Claude in one install: a director, thirteen specialist subagents, the 69 skills they run on, and 14 menu shortcuts (`0-` entries) that open an agent directly. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, outbound and sales, graphic design, web development and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
+A marketing team for Claude in one install: a director, thirteen specialist thread profiles plus a cold reviewer, the 50 skills they run on, and 14 menu shortcuts (`0-` entries) that open an agent directly. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, outbound and sales, graphic design, web development and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
 
-You act as the operator: ask `marketing-director` for anything that spans disciplines, or call a specialist directly for a single task.
+Run `/0-marketing` for anything that spans disciplines: the main thread becomes the director, does the work with the skills, and starts specialist threads only where they pay off. For a single task you can also call a skill or a specialist directly.
 
 ## Repository layout
 
 ```
 plugin/                    the installable plugin
   .claude-plugin/          plugin manifest
-  agents/                  marketing-director and thirteen specialists
-  skills/                  every skill the agents use (69), plus 14 `0-` agent shortcuts
+  agents/                  marketing-director, thirteen specialist profiles and cold-reviewer
+  skills/                  every skill the agents use (50), plus 14 `0-` agent shortcuts
   .mcp.json                connectors with a public endpoint
   CONNECTORS.md            which connector each discipline uses, and the data-source rule
 templates/brand-kit/       blank modular brand kit: router + context, voice, design
@@ -29,11 +29,6 @@ claude plugin marketplace add Jordidriesen/marketing-agent
 
 This installs the agents and all skills together, so they can't drift apart. Update later with `claude plugin marketplace update marketing-agent`.
 
-The same marketplace also carries `marketing-operator`, an experimental, self-contained single-operator alternative to the director with its own copies of the skills. Install it instead of `marketing-agent` in the session you test it in, not next to it; it is only for the comparison described in `operator/README.md`:
-
-```
-/plugin install marketing-operator@marketing-agent
-```
 
 To use a single skill without the plugin, copy its folder from `plugin/skills/` into `~/.claude/skills/` or upload it as a zip in Claude settings.
 
@@ -47,29 +42,16 @@ See [`plugin/README.md`](plugin/README.md) for each agent's role and the order a
 
 ### Paid search and Google Ads
 
+Since 4.0.0, related Google Ads tasks live in three family skills. Each holds the former skills as references and still answers to their trigger phrases.
+
 | Skill | What it does |
 |---|---|
-| `ad-copy-tester` | Keep, cut or replace RSA headlines and descriptions from asset performance |
+| `google-ads-build` | Planning and setup. References: `campaign-architect` (structure, budget splits, bidding, match types), `sea-keyword-research` (keywords by intent, sized to budget), `bid-strategy-advisor` (bid strategy for the conversion volume), `budget-optimizer` (budget shifts on real marginal performance) |
+| `google-ads-analyse` | Diagnosis on live data. References: `full-account-audit`, `search-term-auditor` (wasted spend, paste-ready negatives with match types), `quality-score-doctor`, `pmax-decoder`, `geo-performance-analyzer`, `device-performance-analyzer`, `ad-schedule-analyzer`, `auction-insights-monitor`, `conversion-tracking-auditor`, `disapproval-diagnoser`, `landing-page-matcher` |
+| `google-ads-ads` | Ad copy. References: `rsa-writer` (RSA headlines and descriptions within character limits), `ad-copy-tester` (keep, cut or replace assets from performance) |
 | `ad-creative-matrix` | 50 hooks, 5 bodies and 3 CTAs for paid social and video ads, screened, tagged and test-planned |
-| `ad-schedule-analyzer` | Day-and-hour heatmap and a dayparting plan |
-| `auction-insights-monitor` | Competitor movement in auction insights, week over week |
-| `bid-strategy-advisor` | The right bid strategy for the conversion volume and data quality |
-| `budget-optimizer` | Models budget shifts between campaigns on real marginal performance |
-| `campaign-architect` | Campaign structure, budget splits, bidding and match types |
-| `competitor-teardown` | Angles competitors' ads claim, angles nobody claims, what to test |
-| `conversion-tracking-auditor` | Gaps, double counting and misconfigured conversion actions |
-| `device-performance-analyzer` | Device performance and bid adjustments |
-| `disapproval-diagnoser` | Why something was disapproved and what to change |
-| `full-account-audit` | Complete account audit ranked by money impact |
-| `geo-performance-analyzer` | Regions to bid up and regions draining budget |
-| `google-ads-tool-map` | Shared reference: Google Ads connector tools and parameters |
-| `landing-page-matcher` | Message match between query, ad and landing page |
-| `metric-detective` | Why a metric moved, with ranked causes and how to verify each |
-| `pmax-decoder` | Performance Max asset groups, search categories, brand cannibalisation |
-| `quality-score-doctor` | Quality Score by component, fixes ranked by spend at risk |
-| `rsa-writer` | RSA headlines and descriptions within character limits |
-| `sea-keyword-research` | Paid search keyword list by intent, sized to budget |
-| `search-term-auditor` | Wasted spend, keep/block/review classification and paste-ready negative lists with match types |
+
+The Google Ads connector reference (`google-ads-tool-map`) is a shared reference inside the three families.
 
 ### Paid social campaigns
 
@@ -89,8 +71,7 @@ See [`plugin/README.md`](plugin/README.md) for each agent's role and the order a
 
 | Skill | What it does |
 |---|---|
-| `ga4-audit` | GA4 audit from exports or a connector: key events against the funnel, consent mode, UTM taxonomy, filters, PII, ranked by decision impact |
-| `attribution-readout` | Why GA4 and platform numbers differ, what each attribution model shows and hides, and which test would settle it |
+| `measurement` | Family skill. References: `metric-detective` (why a metric moved, ranked causes and how to verify each), `ga4-audit` (GA4 setup from exports or a connector, ranked by decision impact), `attribution-readout` (why GA4 and platform numbers differ, and which test would settle it) |
 
 ### Paid media reporting
 
@@ -102,10 +83,8 @@ See [`plugin/README.md`](plugin/README.md) for each agent's role and the order a
 
 | Skill | What it does |
 |---|---|
-| `competitive-landscape` | SEO market leaders across several competitors |
 | `ai-visibility-tracker` | Repeatable protocol to track a brand's citations and mentions in AI answers: prompt set, citation log, round-over-round movement |
-| `competitor-analysis` | Deep dive on one competitor's organic footprint and content |
-| `content-gap-mapping` | Gaps, parity and advantages against competitors per cluster |
+| `competitive-research` | Family skill. References: `competitor-analysis` (one competitor's organic footprint), `competitive-landscape` (SEO market leaders across competitors), `content-gap-mapping` (gaps, parity and advantages per cluster), `competitor-teardown` (angles competitors' ads claim and leave open) |
 | `content-research-orchestrator` | Gated pipeline: keywords, clustering, landscape, competitor, gaps |
 | `european-market-intelligence` | Market sizing, competitor dossiers and entry feasibility for European markets |
 | `free-tool-strategy` | Plans a free tool for leads, links or awareness |

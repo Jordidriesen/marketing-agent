@@ -1,10 +1,12 @@
 ---
 name: linkedin-ads-manager
 metadata:
-  version: '1.0.0'
-  history: "v1.0.0: new skill. Builds or restructures LinkedIn Ads campaigns for B2B as a paste-ready build plan: objective and campaign type, targeting by role, company and list, matched audiences with an honest audience-size verdict, budget and bidding realities, lead gen form against landing page, creative specs and tracking. No LinkedIn connector exists yet.\n"
-description: "Always use for any LinkedIn Ads campaign plan or restructure, however short: objective, campaign types, role, company and list targeting, matched audiences with an audience-size verdict, budget and bidding, lead gen form vs landing page. Use for \"LinkedIn Ads\", \"sponsored content\", \"LinkedIn campaign\". Organic posts: social-content-writer."
-argument-hint: "<the brand, the goal, the budget and period, the target roles/companies or an account list, and whether to plan only or also build>"
+  version: 1.0.0
+  history: 'v1.0.0: new skill. Builds or restructures LinkedIn Ads campaigns for B2B as a paste-ready build plan: objective and campaign type, targeting by role, company and list, matched audiences with an honest audience-size verdict, budget and bidding realities, lead gen form against landing page, creative specs and tracking. No LinkedIn connector exists yet.
+
+    '
+description: 'Always use for any LinkedIn Ads campaign plan or restructure, however short: objective, campaign types, role, company and list targeting, matched audiences with an audience-size verdict, budget and bidding, lead gen form vs landing page. Use for "LinkedIn Ads", "sponsored content", "LinkedIn campaign". Organic posts: social-content-writer.'
+argument-hint: <the brand, the goal, the budget and period, the target roles/companies or an account list, and whether to plan only or also build>
 ---
 
 # LinkedIn ads manager
@@ -85,7 +87,7 @@ chosen (maximum delivery, a cost cap or manual bidding) and why; check campaign 
 Compare the two routes for this goal: a lead gen form (low friction, pre-filled, tracked inside
 LinkedIn, but lead quality and downstream tracking need care) against a landing page (more friction,
 better qualification and tracking, needs message match). Choose one and say why. For the landing page
-route, check message match per `landing-page-matcher`. For forms: a short field list, a clear privacy
+route, check message match per `google-ads-analyse` (its `landing-page-matcher` reference). For forms: a short field list, a clear privacy
 statement and a consent line for the markets served (a legal question that stays on the Needs decision
 list), and a defined follow-up owner and time.
 
@@ -98,8 +100,8 @@ State how many concepts the budget can support, the formats, text lengths and im
 ## Step 6: Tracking
 
 Insight Tag installed and firing; conversions defined for the goal; UTM parameters on every ad URL,
-following the property's taxonomy (`ga4-audit`); leads reaching the CRM with a campaign source; the
-outcome visible in GA4 so LinkedIn's numbers can be reconciled (`attribution-readout`). Mark every item
+following the property's taxonomy (`measurement` (its `ga4-audit` reference)); leads reaching the CRM with a campaign source; the
+outcome visible in GA4 so LinkedIn's numbers can be reconciled (`measurement` (its `attribution-readout` reference)). Mark every item
 that cannot be verified.
 
 ## Step 7: Launch checklist
@@ -135,7 +137,7 @@ Deliver in the reply, or as a document in the run folder when one is in use.
 
 - `ad-creative-matrix`: ad hooks, bodies and CTAs, and the test plan.
 - `abm-plan`: the account list, tiers and plays this skill builds audiences for.
-- `landing-page-matcher`: message match from ad to page.
-- `ga4-audit` and `attribution-readout`: the measurement behind the campaign.
+- `google-ads-analyse` (its `landing-page-matcher` reference): message match from ad to page.
+- `measurement` (its `ga4-audit` reference) and `measurement` (its `attribution-readout` reference): the measurement behind the campaign.
 - `social-content-writer`: organic LinkedIn posts.
 - `paid-ads-report-writer`: reporting across platforms.

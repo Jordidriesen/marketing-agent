@@ -1,6 +1,6 @@
 ---
 name: content-creation
-description: "Router for content requests that name no format or span several: picks the format skills, collects shared inputs once. Use for \"create content for the launch\", \"turn this into a blog, post and press release\"."
+description: 'Router for content requests that name no format or span several: picks the format skills, collects shared inputs once. Use for "create content for the launch", "turn this into a blog, post and press release".'
 ---
 
 # Content Creation
@@ -24,7 +24,7 @@ Each content type has its own skill, tuned to that format's actual process (web 
 | A cold email sequence, a target account list, an account brief or an ABM plan | `cold-email-sequence`, `account-brief`, `abm-plan` (via the `sdr-specialist` agent) |
 | A sales battlecard | `battlecard` (via the `sales-enablement-specialist` agent) |
 | Paid social or video ads (LinkedIn, Meta, YouTube, TikTok): hooks, variations, test set | `ad-creative-matrix` |
-| Google search ads (RSA headlines and descriptions) | `rsa-writer` |
+| Google search ads (RSA headlines and descriptions) | `google-ads-ads` (its `rsa-writer` reference) |
 | Several of the above from one brief (a launch, a campaign) | Run each relevant specialist in turn, passing the shared inputs from Step 2 to each |
 
 If the type is genuinely unclear from the request, ask directly rather than guessing: "What are we creating, a blog post, a landing page, a social post, an email, a press release, a case study, or a mix?"

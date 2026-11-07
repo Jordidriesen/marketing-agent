@@ -39,6 +39,8 @@ Seventeen realistic requests that name no agent, each checking that the right sp
 
 ## social-linkedin, press-release, newsletter, rsa
 
+Since 4.0.0, `rsa` checks that the `google-ads-ads` family skill fired (it holds the former `rsa-writer` as a reference).
+
 Check that the skill fires and that its follow-up skills (`copy-editing`, `ai-content-cleaner`) are actually called through the Skill tool, and for the LinkedIn post that the platform rules are followed.
 
 ## emi-sizing
@@ -63,7 +65,7 @@ A trigger check only: does `european-market-intelligence` fire on a plain "how b
 
 ## ga4-audit and attribution
 
-`ga4-audit` is run on a seeded export (the goal event has zero counts, UTMs in several conventions) and checks that both are ranked at the top and that the evidence is labelled honestly. `attribution` is a GA4 against Google Ads gap where the planted cause is the counting method (every against once per session, plus a refreshed thank-you page); the cause must rank first and the figures must stay within the numbers given.
+Both cases go to the `measurement` family skill (4.0.0). `ga4-audit` is run on a seeded export (the goal event has zero counts, UTMs in several conventions) and checks that both are ranked at the top and that the evidence is labelled honestly. `attribution` is a GA4 against Google Ads gap where the planted cause is the counting method (every against once per session, plus a refreshed thank-you page); the cause must rank first and the figures must stay within the numbers given.
 
 ## meta-plan, meta-trigger and linkedin-plan
 
@@ -76,6 +78,14 @@ Two seeded rounds of citation counts; the report must name the right mover and e
 ## routing-meta, routing-measure, routing-cro and routing-aivis
 
 Plain requests that name no agent. The expected agents are `performance-marketer`, `performance-reporter`, `content-writer` and `seo-geo-specialist`.
+
+## route-* (4.0.0)
+
+One case per skill that 4.0.0 absorbed into a family skill (24). Each is a plain request that names no skill and checks that the right family fired (`google-ads-build`, `google-ads-analyse`, `google-ads-ads`, `competitive-research`, `measurement`) and that the reply works from the right reference inside it. They run with the main thread as the director (`director-playbook` loaded). First built for the marketing-operator trial; not run yet.
+
+## job-campaign, job-landing and job-report (4.0.0)
+
+Three end-to-end jobs on Acme Access, run with the main thread as the director: a three-week LinkedIn campaign with posts and a nurture pair, a landing page from copy to an Elementor build checklist, and a monthly paid report from given figures. Graded: no em dashes, the `Skills run` line, the skills each job needs, the publish question with nothing claimed as published, job-specific quality, that every thread has a reason matching one of the four spawn rules, and that a `full-opus` cold review ran and its findings were dealt with. Record tokens, time and the model of every thread from `decisions.md`. In the trial on 07/11/2026 the campaign job cost about 280,000 thread tokens with a `full-opus` review; the report job ran without threads.
 
 ## Not covered
 

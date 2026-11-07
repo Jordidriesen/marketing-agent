@@ -1,5 +1,17 @@
 # SEO + AEO Core
 
+**Contents**
+
+- Why these rules exist
+- AEO architecture (apply to any content meant to be cited)
+- Traditional keyword integration
+- Information gain audit
+- E-E-A-T quality gate
+- Schema recommendations (for implementation, not content itself)
+- Platform differences (brief)
+- Visual assets for SEO/AEO content
+
+
 Structural and technical rules for content meant to rank in search and be cited by AI answer engines (Gemini, Perplexity, SearchGPT). Apply the parts relevant to what you are producing: a landing page needs the keyword rules but not the hook and FAQ architecture, a blog post needs both. The optional formal scorecard lives in `seo-aeo-scorecard.md`.
 
 ---

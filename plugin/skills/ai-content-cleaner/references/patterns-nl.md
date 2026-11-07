@@ -1,5 +1,15 @@
 # AI-schrijfpatronen: Nederlands
 
+**Contents**
+
+- Tier 1: Harde verwijderingen (Dutch equivalents)
+- Tier 2: AI-woordenschat (Nederlands)
+- Tier 3: Structurele vertellers (Nederlands)
+- Tier 4: Overgangen en vulwoorden (Nederlands)
+- Stem en ritme (Nederlands)
+- Belgisch Nederlands (Vlaanderen)
+
+
 This file extends the universal patterns in SKILL.md with Dutch-specific AI tells.
 Load this file when the input text is in Dutch.
 

@@ -1,5 +1,12 @@
 # Type and colour
 
+**Contents**
+
+- Type
+- Colour
+- Reporting a review
+
+
 Rules for typography and colour systems in `frontend-design`. Adapted and rewritten from
 jakubkrehel's [better-typography and better-colors](https://github.com/jakubkrehel/skills) (MIT),
 cut down to marketing sites, landing pages and WordPress block themes.

@@ -1,7 +1,7 @@
 ---
 name: 0-seo
-description: "Menu shortcut: runs the seo-geo-specialist agent on your request. Pick it from the plugin menu when you want seo and geo work done by that specialist, for keyword research, clustering, content gaps, technical SEO audits, AI answer engine visibility and tracking it. Manual only; it never triggers on its own."
-argument-hint: "<what you need, with any context or files>"
+description: 'Menu shortcut: runs the seo-geo-specialist agent on your request. Pick it from the plugin menu when you want seo and geo work done by that specialist, for keyword research, clustering, content gaps, technical SEO audits, AI answer engine visibility and tracking it. Manual only; it never triggers on its own.'
+argument-hint: <what you need, with any context or files>
 disable-model-invocation: true
 context: fork
 agent: marketing-agent:seo-geo-specialist

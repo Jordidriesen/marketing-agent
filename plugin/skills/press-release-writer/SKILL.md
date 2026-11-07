@@ -1,17 +1,9 @@
 ---
 name: press-release-writer
-description: "Writes press releases in standard structure: headline, dateline, lead, body, quotes marked for approval, boilerplate, media contact. Use for \"press release\", \"launch, funding, partnership or office announcement\". Outlets: media-mapping."
+description: 'Writes press releases in standard structure: headline, dateline, lead, body, quotes marked for approval, boilerplate, media contact. Use for "press release", "launch, funding, partnership or office announcement". Outlets: media-mapping.'
 metadata:
   version: 1.2.1
-  history: >
-    v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline.
-    v1.2.0: content-references files renamed and merged; references to them updated.
-    v1.1.1: history note no longer names the removed pointer file.
-    v1.1: wired into content-references, Step 3 cites
-    content-briefing.md for the inverted-pyramid / BLUF structure
-    instead of leaving it implicit, and a Step 5 humanizing pass
-    (ai-content-cleaner in CLEAN mode, via the former pointer file) was added; previously the skill only
-    ran copy-editing and never a humanizing pass.
+  history: 'v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.2.0: content-references files renamed and merged; references to them updated. v1.1.1: history note no longer names the removed pointer file. v1.1: wired into content-references, Step 3 cites content-briefing.md for the inverted-pyramid / BLUF structure instead of leaving it implicit, and a Step 5 humanizing pass (ai-content-cleaner in CLEAN mode, via the former pointer file) was added; previously the skill only ran copy-editing and never a humanizing pass.'
 ---
 
 # Press Release Writer
@@ -39,7 +31,7 @@ Same pattern as `web-content-pipeline`: determine the brand/client, check for a 
 
 ## Step 3: Write to Structure
 
-The press release is a fixed structure built on the **inverted pyramid**: most newsworthy fact first, detail in descending order of importance. That's BLUF / Minto applied to news; see `content-references/references/content-briefing.md` for the mechanics. Don't re-sequence it for narrative effect.
+The press release is a fixed structure built on the **inverted pyramid**: most newsworthy fact first, detail in descending order of importance. That's BLUF / Minto applied to news; see `references/content-briefing.md` for the mechanics. Don't re-sequence it for narrative effect.
 
 - **Headline**: factual, newsworthy, under ~80 characters
 - **Subheadline**: optional, adds context

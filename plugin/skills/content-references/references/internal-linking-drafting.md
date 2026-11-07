@@ -1,5 +1,15 @@
 # Internal Linking: Drafting Rules
 
+**Contents**
+
+- Why Internal Links Matter
+- Link Density Targets
+- Anchor Text Distribution
+- Link Placement Strategy
+- Bidirectional Linking
+- Hub-and-Spoke Model
+
+
 Apply while drafting, not as a post-publish afterthought: link placement and anchor text are easiest to get right while the section is being written. Auditing an existing site section is a separate job, in `internal-linking-audit.md`.
 
 **Not covered here:** topic cannibalization. `keyword-clustering` flags it

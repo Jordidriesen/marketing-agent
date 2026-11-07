@@ -1,9 +1,9 @@
 ---
 name: seo-audit
-description: "Audits a site's SEO: technical, on-page, indexing, Core Web Vitals, ranking drops. Use for \"SEO audit\", \"why am I not ranking\", \"traffic dropped\"."
+description: 'Audits a site''s SEO: technical, on-page, indexing, Core Web Vitals, ranking drops. Use for "SEO audit", "why am I not ranking", "traffic dropped".'
 metadata:
   version: 1.4.0
-  history: "v1.4.0: content-references files renamed and merged; references to them updated."
+  history: 'v1.4.0: content-references files renamed and merged; references to them updated.'
 ---
 
 # SEO Audit

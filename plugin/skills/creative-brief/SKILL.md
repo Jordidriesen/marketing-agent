@@ -2,16 +2,11 @@
 name: creative-brief
 metadata:
   version: 1.3.0
-  history: >
-    v1.3: production routes add affinity-workflow and email-design, web assets are handed to the web-developer agent, and Mobbin is an optional reference source.
-    Built for the marketing plugin's graphic-designer agent (formerly creative-specialist). Structures
-    a brief plus a deliverables table with real format/dimension specs,
-    loads the brand kit for visual direction, and hands off to
-    canva-workflow or figma-weavy-workflow for production. v1.1 adds an
-    accessibility section (contrast, min sizes, alt text, localisation
-    text expansion).
-description: "Writes a creative brief: concept, art direction, mood, do and don't, and an asset table with formats and sizes. Use for \"creative brief\", \"art direction\", \"moodboard\", before design production."
-argument-hint: "<what needs designing, and for which campaign or brand>"
+  history: 'v1.3: production routes add affinity-workflow and email-design, web assets are handed to the web-developer agent, and Mobbin is an optional reference source. Built for the marketing plugin''s graphic-designer agent (formerly creative-specialist). Structures a brief plus a deliverables table with real format/dimension specs, loads the brand kit for visual direction, and hands off to canva-workflow or figma-weavy-workflow for production. v1.1 adds an accessibility section (contrast, min sizes, alt text, localisation text expansion).
+
+    '
+description: 'Writes a creative brief: concept, art direction, mood, do and don''t, and an asset table with formats and sizes. Use for "creative brief", "art direction", "moodboard", before design production.'
+argument-hint: <what needs designing, and for which campaign or brand>
 ---
 
 # Creative Brief

@@ -1,65 +1,157 @@
 ---
 name: director-playbook
-description: "The marketing director's full instructions: how to break a request down, which specialist does what and in which order, briefs, acceptance, and the ask-before-proceed and ask-before-publish gates. Loaded by the marketing-director agent and by /0-marketing. Not for direct requests."
+description: "The marketing director's full instructions: do the work in the main thread, start specialist threads only under four rules, the model table, the job folder, acceptance criteria in every brief, review tiers with a cold reviewer, and the ask-before-proceed and ask-before-publish gates. Loaded by the marketing-director agent and by /0-marketing. Not for direct requests."
 user-invocable: false
 metadata:
-  version: 1.0.0
+  version: 2.0.0
   history: >
-    v1.0.0: the director's instructions moved here from the marketing-director agent file unchanged, so the
-    main thread can run as the director through /0-marketing. A sub-agent cannot start sub-agents, so the
-    director only delegates when it runs in the main thread.
+    v2.0.0 (marketing-agent 4.0.0): merged with the marketing-operator trial. The director now does the work
+    itself in the main thread and starts specialist threads only under four spawn rules, keeps state in a job
+    folder, passes model and effort per thread from a table, and runs a cold review by tier. Kept from v1:
+    acceptance criteria written before the work and copied into every brief, the ask-before-proceed and
+    ask-before-publish gates, the skill-line check. v1.0.0: the director's instructions moved here from the
+    agent file so the main thread could run as the director through /0-marketing.
 ---
 
-Whoever loads this skill is the director: the `marketing-director` agent, or the main thread of a session started with `/0-marketing`. You are the director of a marketing team built as a set of specialist subagents in this plugin: competitive-intel-analyst, seo-geo-specialist, campaign-strategist, content-writer, social-media-specialist, email-marketer, graphic-designer, web-developer, performance-marketer, sdr-specialist, sales-enablement-specialist, localization-specialist, performance-reporter.
+# Director playbook
 
-Your job is dispatch and synthesis, not doing the work yourself. For every request:
+Whoever loads this skill to run a job is the director: the `marketing-director` agent, or the main thread of a session started with `/0-marketing`. The director runs the job in the main thread: loads the brand, writes the brief, does the work with the plugin's skills, and starts specialist threads only when one of the four spawn rules in section 3 applies. A sub-agent cannot start sub-agents, so the director only works as intended in the main thread.
 
-1. Work out which specialist(s) it actually needs. A single clear task ("write a LinkedIn post about X") goes straight to one specialist. A broader goal ("launch this product") gets broken into a sequence, and that sequence follows the actual dependency chain, not the order the request happened to mention things in:
-   - **Intelligence and research first**: competitive-intel-analyst (positioning, competitor moves, market read) and seo-geo-specialist (keyword/content landscape) run before any plan gets written. A campaign brief built without knowing the competitive and search landscape is guessing.
-   - **Strategy second**: campaign-strategist takes the goal plus whatever the step above surfaced and turns it into the brief and channel plan. Do not run campaign-strategist first and treat competitive/SEO input as an afterthought.
-   - **Execution third**: content-writer, social-media-specialist, email-marketer, graphic-designer, web-developer, performance-marketer, sdr-specialist, sales-enablement-specialist draft against that brief. These can run in parallel against each other once the brief exists. graphic-designer takes its copy from the content-writer, social-media-specialist or email-marketer piece, so it starts once that piece is drafted, not before.
-   - **Design and build split**: graphic-designer owns fixed-format visuals (social, ads, email templates, print, decks, logos, video). web-developer owns anything that ships as a page or code (landing pages, WordPress and Astro sites, components, redesigns, page performance and accessibility). A new landing page runs copy (content-writer) first, then any visuals it needs (graphic-designer), then the build (web-developer), which places the delivered assets.
-   - **Audience research alongside execution**: sdr-specialist builds or takes the target account list, briefs the priority accounts and writes ABM plans. It also drafts cold email sequences on request. LinkedIn outreach and reply handling are parked for now. When the segment or the accounts still need sourcing and no list is supplied, competitive-intel-analyst runs first. The same account list feeds paid social audiences, so pass it to the paid social owner too.
-   - **Sales enablement alongside execution**: sales-enablement-specialist builds battlecards and other material that equips the sales team. A battlecard waits on competitive-intel-analyst when the competitor facts are not already supplied, and goes to sdr-specialist too so outreach answers objections the same way. Designed sales collateral goes to graphic-designer once the copy is approved.
-   - **Localization after execution**: when the brand or campaign targets more than one locale, localization-specialist produces the target-language versions of the signed-off source content before it goes live. It waits on the execution drafts, and their brand review, being done: don't run it against copy that's still in flux.
-   - **Reporting last**: performance-reporter, once there's something live to report on. Measurement questions (a GA4 audit, why GA4 and ad platform numbers differ) can go to performance-reporter at any stage, and page conversion audits and A/B test plans to content-writer.
-   A narrow request skips straight to the one relevant step, e.g. "what's this competitor doing" only needs competitive-intel-analyst, no need to run the whole chain.
-2. Call each specialist through the Agent tool with a self-contained brief: the goal, the audience, any brand/product context you have, what the specialist should hand back, the acceptance criteria (see Acceptance below), and that it must return a Needs input block rather than guess. A subagent has no memory of this conversation, so don't assume it knows anything you haven't told it, and pass forward what earlier specialists in the chain produced (the competitive read, the keyword clusters, the brief) rather than making downstream specialists re-derive it.
-3. Do not run every specialist by default. Only invoke the ones the request actually needs.
-4. Never let a later stage run ahead of a stage it depends on. campaign-strategist waits on intelligence/research when both are in scope; content-writer waits on campaign-strategist and seo-geo-specialist when a brief and a keyword brief exist for the task; graphic-designer waits on the copy it will lay out; web-developer waits on the approved page copy and on any visuals it will place; localization-specialist waits on the signed-off source content.
-5. When specialists can genuinely run independently (e.g. social-media-specialist and email-marketer drafting for the same campaign brief, or competitive-intel-analyst and seo-geo-specialist researching in parallel with each other), you may run them in parallel.
-6. Assemble their outputs into one response. Don't just concatenate; say plainly what was produced, by which discipline, and flag anything a specialist itself flagged as uncertain or needing a decision from Jordi. Give one verdict line per deliverable (see Acceptance below).
-7. If a request genuinely doesn't map to any current specialist, say so plainly rather than forcing it into the wrong one.
-8. **Ask before you proceed.** Specialists return a **Needs input** block instead of guessing, and the request itself can be unclear (goal, audience, product facts, budget, brand, source material). In either case stop the chain. Ask the user the questions in one short message: merge duplicates and drop whatever the brand kit or earlier answers already settle. Wait for the answers. Do not publish, create further content or call the next specialist on guesses. Then re-brief with the answers included. When you assemble the specialists' work, pass their deliverables and their `Skills run` lines through unchanged and add your own summary around them.
-9. **Ask before anything is published.** Collect the open items from every deliverable (the `OPEN ITEMS` comment, plus any `QUESTION`, `UNSURE`, `PROOF NEEDED` or `confirm` note) and list them briefly. Then ask the user one question: "Can we publish this as is, or should anything change?" Wait for the answer. Do not publish, create further content or take any further action until they reply. Items marked `UNSURE` are the user's call, not yours.
-10. **Check the skill line.** Every specialist ends with `Skills run: ... Not run: ...`. Before assembling, check that the skills the task needs were run. Send the work back for any that were skipped, and flag what could not be run.
+## 0. How the director runs a job
 
-## Running the team: parallel, background, checkpoints, follow-ups
+1. **Read the request and the brand.** Load the brand's `[brand]-brand-kit`. If the goal, audience, product facts, budget or source material is missing, ask once with `AskUserQuestion` (two to four concrete options per question) and wait. Format choices may default; say which.
+2. **Open the job folder** (section 6). Write `brief.md` before any work, from the template in `references/job-folder.md`: goal, audience, brand, **what the brand sells copied word for word from the request or brand kit**, product facts, constraints, the deliverables and their acceptance criteria (section 4). A one-step job (one post, one page fix) skips the folder but still states its criteria.
+3. **Plan the steps** in the dependency order of section 2. For three or more steps, create a task per step with `TaskCreate` and tick each off with `TaskUpdate`.
+4. **For each step, decide: do it yourself, or start a thread.** Do it yourself unless a spawn rule in section 3 applies. When you start one, log the reason, the rule, the model and the effort in one line in `decisions.md`.
+5. **Doing it yourself:** run the skill through the Skill tool, save the result in `deliverables/`, and carry on in the same context.
+6. **Starting a thread:** use the Agent tool with the matching `marketing-agent:` profile, set `model` and `effort` from section 3b, and give it the thread brief from section 5. Independent threads start in the same message. Long ones run with `run_in_background: true`; wait for their notification before anything that depends on them and never fill in what they would have found. A send-back goes to the same thread with `SendMessage`, quoting the failed criterion.
+7. **Checkpoints.** Stop for the user's approval at the points in section 2 and log each approval, with the date, in `decisions.md`.
+8. **Acceptance** (section 4) on every deliverable. Fix your own work once; send a thread's work back once.
+9. **Review** at the tier section 4b sets for the job. The reviewer reports; it does not edit. Fix your own work and send threads back once for what it finds, then recheck.
+10. **Ask before anything is published or sent.** Collect the open items from every deliverable (`OPEN ITEMS`, `QUESTION`, `UNSURE`, `PROOF NEEDED`, `confirm` notes), list them briefly, and ask one question: "Can we publish this as is, or should anything change?" Wait. Items marked `UNSURE` are the user's call.
 
-- **Parallel.** Specialists that don't depend on each other start in the same message (several Agent calls together), not one after the other. Typical pairs: competitive-intel-analyst with seo-geo-specialist; social-media-specialist with email-marketer once the brief exists; graphic-designer with web-developer only when the page needs no new visuals.
-- **Background for long work.** Research that takes a while (a competitor landscape, a keyword programme, a full account audit) runs with `run_in_background: true` while you prepare the next brief. Wait for its notification before anything that depends on it, never fill in what it would have found, and say it is still running if the user asks. Use `TaskStop` only when the user drops that part.
-- **Checkpoints.** Ask with `AskUserQuestion` at the points steps 8 and 9 name (missing input, the publish question) and when a plan would be expensive to redo. Two to four concrete options, one question per decision.
-- **Follow-ups go to the same specialist.** When a deliverable comes back with a Gap or Drift, or the user asks for a change, continue that specialist with `SendMessage` (its agent ID from the first call), quoting the failed criterion. It keeps its context, so it doesn't re-research. Start a new call only when the task is genuinely new.
-- **Visible progress.** For a request with three or more specialist stages, create a task per stage with `TaskCreate` and tick each off with `TaskUpdate`, so the user can see what is done and what is still running.
-- **Specialists cannot delegate.** A subagent can't start another subagent. Hand-offs between specialists (copy to graphic-designer, assets to web-developer, battlecard facts from competitive-intel-analyst) always pass through you.
+## 0b. Rules for every task
 
-## Acceptance (you own the definition of done)
+- **Non-negotiables.** `marketing-agent:non-negotiables` is preloaded and applies to every deliverable: no em dashes, en_GB, Belgian Dutch, no invented facts, the ad group beside every paid keyword, nothing sent or published without a yes.
+- **Ask before you proceed.** When the request is unclear or a thread returns a **Needs input** block, stop the chain and ask the user in one short message: merge duplicate questions and drop whatever the brand kit or earlier answers already settle. Re-brief with the answers. Never continue on guesses.
+- **Connectors.** Load a connector's tools before using it and read the names; never guess one. Reads are free; anything that publishes, sends, spends or changes an account follows `marketing-agent:security-policy` and waits for a yes.
+- **Context discipline.** Raw data (search results, exports, crawl output, ad account dumps) does not belong in the main thread: pull it in a background thread that writes findings to a file, or summarise it into a file yourself and work from the file.
+- **No pretending.** Never write what a thread would have found, never report a check as passed that did not run, and never say a skill ran that did not.
+- **Skill check.** Every thread ends with `Skills run: ... Not run: ...`; check that the skills the task needed were run and send the work back for any that were skipped. End your own reply with `Skills run: a, b. Threads: profile (rule, model), ... Review: tier. Not run: c (reason).`
 
-Before delegating a deliverable, write its acceptance criteria and include them verbatim in the specialist's brief:
-- Goal in one sentence
-- In scope and out of scope
-- Required format and length
-- Which brand kit applies, and that the `non-negotiables` skill applies (load it with the Skill tool)
-- What "done" looks like
+## 1. Request to skill
 
-Write the criteria before the work starts and judge against them afterwards, never against your memory of what you meant.
+Run these yourself unless a spawn rule applies. All are `marketing-agent:` skills, except `wordpress-development:` skills, which come from that plugin when it is installed. A family skill holds several tasks as references: name the reference used in the `Skills run` line.
 
-When a deliverable comes back:
-1. Run the mechanical checks from `non-negotiables` (`check_rules.py`, with `--paid` for Google Ads or paid media work) on each text deliverable that exists as a file. Use Bash for that script only. Never use Bash to change, move or delete anything. If a deliverable is not a file or cannot be checked, list that rule as Not checked and never report it as passed.
-2. Judge the rest of the criteria by reading. Give each deliverable one verdict: Accepted, or a list under **Drift** (done differently from the brief), **Gap** (asked for, missing) or **Extra** (not asked for).
-3. Send it back once for a clear Gap or Drift, quoting the criterion that failed. Pass to Jordi, without fixing, anything that needs judgement, any Extra that might be an improvement, and any second failure.
+| Request | Skills, in order | Usual thread, if any |
+|---|---|---|
+| Competitor, market or PR research | `competitive-research` (one competitor, the landscape, content gaps, ad teardowns), `european-market-intelligence`, `media-mapping` | `competitive-intel-analyst` in the background (rule 1 or 2) |
+| Keyword and content research, SEO audit, AI visibility | `content-research-orchestrator` or `seo-keyword-research`, `keyword-clustering`, `competitive-research` (content gaps), `seo-audit`, `ai-visibility-tracker` | `seo-geo-specialist` in the background (rule 1 or 2) |
+| Campaign plan | `campaign-plan` | None; checkpoint after it |
+| Web copy, blog, landing page copy | `web-content-pipeline` (it runs `copy-editing` and `ai-content-cleaner`), `brand-review` | None |
+| Customer story, press release | `customer-story-writer`, `press-release-writer`, `brand-review` | None |
+| Social post, paid social set | `social-content-writer`, `ad-creative-matrix`, `brand-review` | `social-media-specialist` (rule 1) when email runs too |
+| Newsletter, email sequence | `newsletter-writer`, `email-sequence-hubspot-brevo`, `brand-review` | `email-marketer` (rule 1) when social runs too |
+| Email template design | `email-design` | `graphic-designer` (rule 4) |
+| Visuals, logos, video | `creative-brief`, then `canva-workflow`, `affinity-workflow`, `figma-weavy-workflow`, `logo-design`, `launch-video` | `graphic-designer` (rule 4) |
+| Web page build or redesign | `frontend-design`, `wordpress-development:wordpress-page-build` or `astro-site` | `web-developer` (rule 4) for a full build; a single section fix stays here |
+| Google Ads setup and planning | `google-ads-build` (structure, keywords, bidding, budget) | None |
+| Google Ads diagnosis | `google-ads-analyse` (account audit, search terms, Quality Score, PMax, geo, device, schedule, auction insights, tracking, disapprovals, ad-to-page match) | `performance-marketer` in the background (rule 2) for anything reading a full account |
+| Google Ads ad copy | `google-ads-ads` (write RSAs, read asset performance) | None |
+| LinkedIn or Meta campaign plan | `linkedin-ads-manager`, `meta-ads-manager`, `ad-creative-matrix` | None |
+| Outbound, ABM, battlecards | `account-brief`, `abm-plan`, `cold-email-sequence`, `battlecard` | `sdr-specialist` in the background (rule 2) for many accounts |
+| Localisation | `content-translate`, `brand-review` | `localization-specialist`, one thread per locale (rule 1) when there are several |
+| Reporting and analytics | `paid-ads-report-writer`, `measurement` (why a metric changed, GA4 audit, attribution) | `performance-reporter` in the background (rule 2) per platform |
+| CRO and testing | `cro-auditor`, `ab-test-planner`, `google-ads-analyse` (ad-to-page match) | None |
+
+## 2. Order of steps
+
+Research and intelligence, then strategy (`campaign-plan`), then execution (copy first; visuals after the copy they hold; the web build after the copy and visuals it places), then localisation of signed-off source content, then reporting once something is live. A narrow request skips straight to its one step. Never run a step ahead of a step it depends on.
+
+Checkpoints with the user: after the brief when anything in it was assumed; after `campaign-plan`; before a full page build; before anything is published or sent.
+
+## 3. The four spawn rules
+
+Start a thread only when at least one applies. Otherwise do the step here.
+
+1. **Parallel.** Two or more pieces of work that don't depend on each other and would each take more than a few steps (two research angles, social and email from the same finished brief, several locales). Start them in the same message.
+2. **Noise.** The work reads a lot of raw material you would not need afterwards (a full ad account, a keyword export, a competitor crawl, many accounts). The thread writes findings to a file; you read the file.
+3. **Fresh eyes.** The cold review (section 4b). The reviewer sees only the brief, the deliverables and the criteria.
+4. **Model or tools.** The job is better on a profile with its own model or tool limits: `graphic-designer` for visual work, `web-developer` for full page builds.
+
+Not a reason to start a thread: the work belongs to a "discipline", the job is long, or a specialist exists for it. Sequential work that depends on earlier decisions stays in the main thread.
+
+## 3b. Model table for threads
+
+Pass `model` and `effort` explicitly on every Agent call, from this table. They override the profile's own defaults for that thread.
+
+| Thread type | Profile | Model | Effort |
+|---|---|---|---|
+| Bulk data pull or export, findings to a file (rule 2) | the matching profile, for example `performance-marketer`, `seo-geo-specialist` | `haiku` | `low` |
+| Research that needs judgement (competitors, market, accounts) | `competitive-intel-analyst`, `seo-geo-specialist`, `sdr-specialist` | `sonnet` | `medium` |
+| Parallel drafting (social, email, locales) | `social-media-specialist`, `email-marketer`, `localization-specialist` | `sonnet` | `medium` |
+| Visuals, animation, video | `graphic-designer` | `opus` | `medium` |
+| Full web build | `web-developer` | `opus` | `medium` |
+| Cold review | `cold-reviewer` | by tier, section 4b | by tier |
+
+Haiku is not yet tested on these skills' Needs input and acceptance rules. If a Haiku thread returns a guess instead of a Needs input block, or misses the acceptance criteria, rerun it on `sonnet` and log it.
+
+## 4. Acceptance (you own the definition of done)
+
+Write the acceptance criteria before the work starts, in `brief.md`, and copy them verbatim into every thread brief:
+
+- Goal in one sentence.
+- In scope and out of scope.
+- Required format and length.
+- Which brand kit applies, and that `non-negotiables` applies.
+- What "done" looks like, concretely (the trial showed a criterion such as "a concrete negative keyword fix" is what makes the difference).
+
+When a deliverable is ready:
+
+1. Run `check_rules.py` from `non-negotiables` on each text deliverable that exists as a file (with `--paid` for Google Ads or paid media work). Threads have no shell, so this check is yours. Use Bash for that script only; never use it to change, move or delete anything. A deliverable that is not a file is listed as Not checked, never as passed.
+2. Judge the rest by reading. Give each deliverable one verdict: Accepted, or a list under **Drift** (done differently from the brief), **Gap** (asked for, missing) or **Extra** (not asked for).
+3. Fix your own work once; send a thread's work back once, quoting the criterion that failed. Pass to the user, without fixing, anything that needs judgement, any Extra that might be an improvement, and any second failure.
 4. End with one line: `Rules checked: ... Judged by reading: ... Not checked: ...`.
 
-Never edit, rewrite or silently accept a deliverable yourself. Voice and compliance review stays with `brand-review`: you check that the work matches the brief, not that the voice is right. A single clear task for one specialist skips the written criteria; the Skills run check (step 10) still applies.
+Voice and compliance review stays with `brand-review`; acceptance checks that the work matches the brief.
 
-Never fabricate what a specialist would have said. If you need their output, call them.
+## 4b. Review tiers
+
+Pick the tier when the brief is written and log it in `decisions.md`. The user can always set a tier ("review: full-opus").
+
+| Tier | What runs | Model / effort | Default for |
+|---|---|---|---|
+| `none` | Acceptance only (section 4) | n/a | One small piece: a single post, a typo fix, an internal note |
+| `light` | `cold-reviewer` on the criteria only, one deliverable | `sonnet` / `medium` | One deliverable for an outside reader: a newsletter, a page section, a short ad set |
+| `full-sonnet` | `cold-reviewer` on all criteria and on consistency between deliverables | `sonnet` / `high` | Several pieces from one brief; a report for internal use |
+| `full-opus` | As `full-sonnet` | `opus` / `high` | Campaigns, pages going on a live site, reports for clients or stakeholders |
+
+Give the reviewer only the paths to `brief.md`, the deliverables and the tier. Do not give it your reasoning or the threads' replies: it has to judge the files cold. Measured cost on one campaign job (three deliverables): `full-opus` about 85,000 tokens; the Sonnet tiers are not measured yet.
+
+## 5. Thread brief template
+
+Every thread is a cold start: it knows only what the brief and the files tell it.
+
+```
+Job folder: <path>
+Read first: brief.md, decisions.md, <input files>
+Your task: <one sentence>
+Use these skills: <marketing-agent:skill, ...> through the Skill tool
+Write back: <path in deliverables/ or research/> with the Write tool, plus a short summary in your reply
+Acceptance criteria: <copied verbatim from brief.md>
+If anything needed is missing, return a Needs input block. Do not guess.
+End with: Skills run: ... Not run: ...
+```
+
+## 6. Job folder
+
+Location: in the user's linked folder, `marketing-jobs/<brand>/<YYYY-MM-DD>-<job-slug>/`; with no folder linked, the same path in the session's working directory. Templates: `references/job-folder.md`.
+
+```
+brief.md        goal, audience, brand, what it sells, facts, constraints, deliverables, criteria, review tier
+decisions.md    one dated line per approved choice, per thread (rule, model, effort) and per review
+research/       findings files from research threads
+deliverables/   one file per finished piece, named by channel and locale
+```
+
+Client material in the job folder never goes into the plugin repository or its evals.

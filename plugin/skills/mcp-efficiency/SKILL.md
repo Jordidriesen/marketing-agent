@@ -1,6 +1,7 @@
 ---
 name: mcp-efficiency
-description: "Rules for calling MCP connectors cheaply and safely, loaded by skills that make live calls. Not for direct requests."
+description: Rules for calling MCP connectors cheaply and safely, loaded by skills that make live calls. Not for direct requests.
+user-invocable: false
 ---
 
 # MCP Efficiency: Shared Reference
@@ -8,7 +9,7 @@ description: "Rules for calling MCP connectors cheaply and safely, loaded by ski
 One module, reusable across every skill that calls a live MCP connector,
 covering how to call it without pulling more into context than the task
 needs. This doesn't replace a connector's own tool-map reference (e.g.
-`google-ads-tool-map`, `openseo-tool-map`): those say *which* tool to call
+`google-ads-analyse` (its `google-ads-tool-map` reference), `openseo-tool-map`): those say *which* tool to call
 and with *what* parameters; this says how to call *any* of them cheaply.
 
 ## Rules

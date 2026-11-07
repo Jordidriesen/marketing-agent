@@ -2,9 +2,11 @@
 name: ad-creative-matrix
 metadata:
   version: 1.1.2
-  history: "v1.1.2: optional borrowed credibility angle, only with a supplied source. v1.1.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.1.0: content-references files renamed and merged; references to them updated. v1.0.0: new skill. Writes up the 50-5-3 ad method (50 hooks, 5 bodies, 3 CTAs), commonly attributed to Alex Hormozi, as an original workflow in this library's own terms: angle spread, a screening rubric, a compatibility check, tagged assembly and a staged test plan scaled to budget. The attribution has not been checked against a primary source.\n"
-description: "Builds paid social and video ad sets with the 50-5-3 method (50 hooks, 5 bodies, 3 CTAs), screened, tagged and with a test plan, for LinkedIn, Meta, YouTube, TikTok. Use for \"ad hooks\", \"ad variations\", \"LinkedIn or Meta ads\"."
-argument-hint: "<offer, audience, platform(s) and any budget or proof you can share>"
+  history: 'v1.1.2: optional borrowed credibility angle, only with a supplied source. v1.1.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.1.0: content-references files renamed and merged; references to them updated. v1.0.0: new skill. Writes up the 50-5-3 ad method (50 hooks, 5 bodies, 3 CTAs), commonly attributed to Alex Hormozi, as an original workflow in this library''s own terms: angle spread, a screening rubric, a compatibility check, tagged assembly and a staged test plan scaled to budget. The attribution has not been checked against a primary source.
+
+    '
+description: Builds paid social and video ad sets with the 50-5-3 method (50 hooks, 5 bodies, 3 CTAs), screened, tagged and with a test plan, for LinkedIn, Meta, YouTube, TikTok. Use for "ad hooks", "ad variations", "LinkedIn or Meta ads".
+argument-hint: <offer, audience, platform(s) and any budget or proof you can share>
 ---
 
 # Ad creative matrix (50-5-3)
@@ -46,9 +48,9 @@ and channels. Older kits keep this in a separate tone-of-voice skill. The kit's 
 and banned list outrank everything below. With no kit, say so and write in a plain, neutral
 register.
 
-For work that needs competitor angles first, run `competitor-teardown` and feed its open
+For work that needs competitor angles first, run `competitive-research` (its `competitor-teardown` reference) and feed its open
 positioning list in as inputs. For anything built on behavioural principles, pull
-`content-references/references/behavioral-psychology.md`.
+`references/behavioral-psychology.md`.
 
 ## Step 1: Fix the offer and the audience
 
@@ -113,7 +115,7 @@ Rules for the plan:
 - Decide the stopping rule before launch, in the user's metric, and write it down.
 - Do not state significance thresholds, sample sizes or expected lifts as facts. They depend on
   the account's real volumes. Offer to derive them from the user's figures when given.
-- Name every live ad with the convention so `ad-copy-tester` and `paid-ads-report-writer` can read
+- Name every live ad with the convention so `google-ads-ads` (its `ad-copy-tester` reference) and `paid-ads-report-writer` can read
   results back to hook, body and CTA.
 
 ## Output
@@ -149,15 +151,15 @@ markdown tables. Chat framing stays short; the deliverable keeps its full length
 
 ## Related Skills
 
-- `competitor-teardown`: upstream. Its open-positioning list supplies angles worth writing hooks
+- `competitive-research` (its `competitor-teardown` reference): upstream. Its open-positioning list supplies angles worth writing hooks
   for.
 - `creative-brief`: downstream. Turns the winning hooks and bodies into a visual direction and a
   deliverables table with real formats.
 - `canva-workflow`, `figma-weavy-workflow`: produce the visual assets once the brief exists.
-- `rsa-writer`: the Google search equivalent, with its own character limits and no hook, body and
+- `google-ads-ads` (its `rsa-writer` reference): the Google search equivalent, with its own character limits and no hook, body and
   CTA structure.
 - `social-content-writer`: organic posts. This skill is for paid ads.
-- `ad-copy-tester`: reads asset performance once ads are live and calls keep, cut or replace.
+- `google-ads-ads` (its `ad-copy-tester` reference): reads asset performance once ads are live and calls keep, cut or replace.
 - `content-translate`: locale versions after the source set is approved.
 - `brand-review`, `ai-content-cleaner`: the gates before delivery.
 - `campaign-plan`: the campaign context this creative serves.

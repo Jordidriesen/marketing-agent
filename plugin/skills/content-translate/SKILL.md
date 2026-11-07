@@ -1,21 +1,9 @@
 ---
 name: content-translate
-description: "Translates and localises web content (pages, blogs, customer stories) into Dutch (Belgian), French, German or Spanish with brand terms locked. Use for \"translate this\", \"vertalen\", \"traduire\", \"übersetzen\", \"localise for [market]\"."
+description: Translates and localises web content (pages, blogs, customer stories) into Dutch (Belgian), French, German or Spanish with brand terms locked. Use for "translate this", "vertalen", "traduire", "übersetzen", "localise for [market]".
 metadata:
   version: 1.1.1
-  history: >
-    v1.1.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline.
-    v1.1.0: content-references files renamed and merged; references to them updated.
-    Adapted from a third-party blog-translate/blog-localize/blog-multilingual
-    module. Two changes from the original: the sub-agent ("Task") spawning
-    architecture is replaced with a single direct pass, matching how the
-    rest of this library works, and cultural adaptation is folded into the
-    same pass rather than deferred to a separate localize skill, since the
-    real workflow here is translating already-written English content, not
-    writing five market versions from scratch. The original's hreflang/
-    sitemap generation (blog-multilingual Phase 5) isn't included yet,
-    every market is already live with its own URL structure; build that
-    piece later if a from-scratch multi-market launch actually needs it.
+  history: 'v1.1.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.1.0: content-references files renamed and merged; references to them updated. Adapted from a third-party blog-translate/blog-localize/blog-multilingual module. Two changes from the original: the sub-agent ("Task") spawning architecture is replaced with a single direct pass, matching how the rest of this library works, and cultural adaptation is folded into the same pass rather than deferred to a separate localize skill, since the real workflow here is translating already-written English content, not writing five market versions from scratch. The original''s hreflang/ sitemap generation (blog-multilingual Phase 5) isn''t included yet, every market is already live with its own URL structure; build that piece later if a from-scratch multi-market launch actually needs it.'
 ---
 
 # Content Translate

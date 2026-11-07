@@ -1,5 +1,19 @@
 # Taste: direction, settings and AI tells
 
+**Contents**
+
+- 1. Read the brief before designing
+- 2. Three settings
+- 3. Defaults to reach past
+- 4. Locks: one of each per page
+- 5. Layout discipline
+- 6. Images
+- 7. Content and data: placeholders, never inventions
+- 8. AI tells to remove in review
+- 9. Pre-flight check (build mode)
+- 10. Critique dimensions (review mode and self-check)
+
+
 Design direction for `frontend-design`. Adapted from Leonxlnx's
 [taste-skill](https://github.com/Leonxlnx/taste-skill) (MIT), cut down to what applies to this
 library's work (landing pages, marketing sites, WordPress block themes, HTML artifacts) and

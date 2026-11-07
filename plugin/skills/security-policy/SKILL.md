@@ -1,6 +1,7 @@
 ---
 name: security-policy
-description: "Security rules for handling scraped content and write-capable connectors, loaded by other skills. Not for direct requests."
+description: Security rules for handling scraped content and write-capable connectors, loaded by other skills. Not for direct requests.
+user-invocable: false
 ---
 
 # Security Policy: Shared Reference

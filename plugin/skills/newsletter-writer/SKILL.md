@@ -1,16 +1,9 @@
 ---
 name: newsletter-writer
-description: "Writes one marketing email or newsletter: announcement, update, promotion or roundup, with subject lines and preview text. Use for \"newsletter\", \"announcement email\", \"promo email\". Multi-email flows: email-sequence-hubspot-brevo."
+description: 'Writes one marketing email or newsletter: announcement, update, promotion or roundup, with subject lines and preview text. Use for "newsletter", "announcement email", "promo email". Multi-email flows: email-sequence-hubspot-brevo.'
 metadata:
   version: 1.2.1
-  history: >
-    v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline.
-    v1.2.0: content-references files renamed and merged; references to them updated.
-    v1.1: added a structural-framework step (Step 3) citing
-    content-references/references/content-briefing.md, a one-off
-    email still needs a deliberate PAS / BLUF choice by purpose rather
-    than a default body shape. CTA guidance points at
-    behavioral-psychology.md.
+  history: 'v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.2.0: content-references files renamed and merged; references to them updated. v1.1: added a structural-framework step (Step 3) citing references/content-briefing.md, a one-off email still needs a deliberate PAS / BLUF choice by purpose rather than a default body shape. CTA guidance points at behavioral-psychology.md.'
 ---
 
 # Newsletter Writer
@@ -38,7 +31,7 @@ Same pattern as `web-content-pipeline`: determine the brand/client, check for a 
 
 ## Step 3: Pick a Structural Framework
 
-The body shape follows the purpose, not habit. Definitions are in `content-references/references/content-briefing.md`; the choice for a one-off email:
+The body shape follows the purpose, not habit. Definitions are in `references/content-briefing.md`; the choice for a one-off email:
 
 | Purpose | Framework | Why |
 |---|---|---|
@@ -46,7 +39,7 @@ The body shape follows the purpose, not habit. Definitions are in `content-refer
 | Announcement / product update | **BLUF** (inverted pyramid) | The news in sentence one; detail in descending importance: matches how people skim an inbox |
 | Content roundup / digest | **Numbered / scannable list** | No persuasion arc; each item earns its own line and link |
 
-For the CTA itself, button verb, framing, risk reduction near the ask, see `content-references/references/behavioral-psychology.md`.
+For the CTA itself, button verb, framing, risk reduction near the ask, see `references/behavioral-psychology.md`.
 
 ## Step 4: Write the Email
 

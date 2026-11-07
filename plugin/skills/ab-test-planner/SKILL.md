@@ -1,10 +1,12 @@
 ---
 name: ab-test-planner
 metadata:
-  version: '1.0.0'
-  history: "v1.0.0: new skill. Designs an A/B test from a finding: hypothesis, one variable, sample size and duration computed from real traffic (with a bundled calculator), variant design, tracking and QA, stop rules, and an explicit do-not-run verdict when the traffic cannot support the test.\n"
-description: "Always use for any A/B or split test plan, however short: hypothesis tied to a finding, one variable, sample size and duration computed from real traffic and baseline, variants, tracking, stop rules, and \"do not run this test\" when traffic is too low. Use for \"A/B test\", \"split test this\", \"what should we test next\". Finds the problems: cro-auditor."
-argument-hint: "<the finding or hypothesis to test, the page or funnel step, baseline conversion rate, monthly traffic or volume, and how traffic splits>"
+  version: 1.0.0
+  history: 'v1.0.0: new skill. Designs an A/B test from a finding: hypothesis, one variable, sample size and duration computed from real traffic (with a bundled calculator), variant design, tracking and QA, stop rules, and an explicit do-not-run verdict when the traffic cannot support the test.
+
+    '
+description: 'Always use for any A/B or split test plan, however short: hypothesis tied to a finding, one variable, sample size and duration computed from real traffic and baseline, variants, tracking, stop rules, and "do not run this test" when traffic is too low. Use for "A/B test", "split test this", "what should we test next". Finds the problems: cro-auditor.'
+argument-hint: <the finding or hypothesis to test, the page or funnel step, baseline conversion rate, monthly traffic or volume, and how traffic splits>
 ---
 
 # A/B test planner
@@ -70,7 +72,7 @@ month that is about 18 weeks. Never present a duration without its inputs next t
   a bigger lever (a larger expected effect), a higher-volume page, a closer micro-conversion that has a
   real link to the goal (named and justified), or shipping the fix without a test and reading before
   and after.
-- **Do not run until tracking is fixed**: the metric cannot be measured reliably (see `ga4-audit`).
+- **Do not run until tracking is fixed**: the metric cannot be measured reliably (see `measurement` (its `ga4-audit` reference)).
 
 ## Step 4: Variant design
 
@@ -82,7 +84,7 @@ break the promise of the traffic source.
 ## Step 5: Tracking and QA
 
 List what must fire (the exposure and the goal event), where it can be seen (GA4 or the test tool;
-`ga4-audit` for gaps), and a pre-launch checklist: equal split confirmed, variants render on mobile and
+`measurement` (its `ga4-audit` reference) for gaps), and a pre-launch checklist: equal split confirmed, variants render on mobile and
 desktop, goal event fires once per conversion, no other change shipped to the page during the test, test
 and control run on the same dates.
 
@@ -116,5 +118,5 @@ and control run on the same dates.
 - `cro-auditor`: finds the problems that become hypotheses.
 - `web-content-pipeline`: writes copy variants.
 - `frontend-design`: builds layout variants.
-- `ga4-audit`: checks the measurement before a test relies on it.
-- `attribution-readout`: for questions about channels, where an incrementality test is the answer.
+- `measurement` (its `ga4-audit` reference): checks the measurement before a test relies on it.
+- `measurement` (its `attribution-readout` reference): for questions about channels, where an incrementality test is the answer.

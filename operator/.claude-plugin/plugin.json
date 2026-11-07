@@ -1,9 +1,0 @@
-{
-  "name": "marketing-operator",
-  "version": "0.2.0",
-  "description": "Experimental, self-contained single-operator setup: one main agent that runs its own skills (49, five of them family skills), keeps state in a job folder, and spawns sub-agent threads only for parallel research, long data jobs, cold review or a job that needs its own model, with the model chosen per thread. Install instead of marketing-agent, not next to it. For comparison against marketing-director.",
-  "author": {
-    "name": "Jordi Driesen"
-  },
-  "license": "MIT"
-}

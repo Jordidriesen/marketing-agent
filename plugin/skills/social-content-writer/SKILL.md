@@ -1,9 +1,9 @@
 ---
 name: social-content-writer
-description: "Always use for any organic social post, however short: LinkedIn, Instagram, X or Reddit, with hook, structure, hashtags and CTA per platform. Use for \"LinkedIn post\", \"company post\", \"caption\", \"tweet\". Not paid ads (ad-creative-matrix)."
+description: 'Always use for any organic social post, however short: LinkedIn, Instagram, X or Reddit, with hook, structure, hashtags and CTA per platform. Use for "LinkedIn post", "company post", "caption", "tweet". Not paid ads (ad-creative-matrix).'
 metadata:
   version: 1.2.1
-  history: "v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.2.0: platform rules moved to references/ (one file per platform), read on demand in Step 6. v1.1.0: content-references files renamed and merged; references to them updated."
+  history: 'v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.2.0: platform rules moved to references/ (one file per platform), read on demand in Step 6. v1.1.0: content-references files renamed and merged; references to them updated.'
 ---
 
 # Social Content Writer
@@ -53,7 +53,7 @@ Before writing, research the topic for: data points or statistics that support t
 
 ## Step 4: Choose a Structural Framework
 
-Per `content-references/references/content-briefing.md`, structure follows objective, not habit:
+Per `references/content-briefing.md`, structure follows objective, not habit:
 
 | Objective | Framework | Why |
 |---|---|---|
@@ -113,7 +113,7 @@ Ask: "Would you like this adapted for another platform, a variant to test, or sh
 ## Related Skills
 
 - `[brand]-brand-kit`: a brand-specific skill following this naming pattern, loaded in Step 1 when one exists
-- `content-references/references/content-briefing.md`: Step 4's framework choices
+- `references/content-briefing.md`: Step 4's framework choices
 - `copy-editing` / `ai-content-cleaner`: Step 7
 - `brand-review`: voice and compliance gate before publishing
 - `web-content-pipeline`: for the web page a social post might link to

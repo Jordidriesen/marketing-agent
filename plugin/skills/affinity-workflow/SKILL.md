@@ -1,16 +1,12 @@
 ---
 name: affinity-workflow
-description: "Produces or edits assets in Affinity by Canva through its local MCP server (scripted layout, vector, photo and batch work, verified with renders), or gives an exact build checklist when Affinity isn't reachable. Use for \"make this in Affinity\", print layouts with bleed, batch layer or export jobs, Affinity source files."
+description: Produces or edits assets in Affinity by Canva through its local MCP server (scripted layout, vector, photo and batch work, verified with renders), or gives an exact build checklist when Affinity isn't reachable. Use for "make this in Affinity", print layouts with bleed, batch layer or export jobs, Affinity source files.
 metadata:
   version: 1.0.0
-  history: >
-    v1.0.0: new skill. Built on the tools the official Affinity connector lists (checked 5 Nov 2026):
-    execute_script, render_spread, render_selection, list_sdk_documentation,
-    read_sdk_documentation_topic, search_sdk_hints, list_library_scripts, read_library_script,
-    save_script_to_library, add_sdk_hint, report_sdk_issue. The connector works by running scripts
-    against Affinity's SDK, so this skill reads the SDK docs before every script and verifies every
-    change with a render.
-argument-hint: "<the asset or edit, the Affinity document if one is open, the brand>"
+  history: 'v1.0.0: new skill. Built on the tools the official Affinity connector lists (checked 5 Nov 2026): execute_script, render_spread, render_selection, list_sdk_documentation, read_sdk_documentation_topic, search_sdk_hints, list_library_scripts, read_library_script, save_script_to_library, add_sdk_hint, report_sdk_issue. The connector works by running scripts against Affinity''s SDK, so this skill reads the SDK docs before every script and verifies every change with a render.
+
+    '
+argument-hint: <the asset or edit, the Affinity document if one is open, the brand>
 ---
 
 # Affinity Workflow

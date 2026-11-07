@@ -8,16 +8,16 @@ The plugin declares no MCP servers of its own (the old `.mcp.json` was removed i
 
 | Discipline | Connector | Used by | If it isn't connected |
 |---|---|---|---|
-| Keyword, SERP, ranking and backlink data | OpenSEO | SEO research skills, `sea-keyword-research`, competitive intel | Say so; fall back to web research, never estimate figures |
-| Site audits, rank tracking, GA4, near-miss pages (`get_search_opportunities`), index status (`inspect_urls`), saved keywords and reports | OpenSEO (needs an OpenSEO project for the domain) | `seo-audit`, `seo-keyword-research`, `content-gap-mapping`, `performance-reporter` | See "Data-source rule" below |
-| Local search: Google Business Profile, reviews, Q&A, Maps rank grid | OpenSEO (any project; spends credits) | `competitor-analysis`, `competitive-landscape`, `seo-audit` | Say so; local claims stay organic-only |
-| First-party search performance | Search Console, or OpenSEO's Search Console tools | `content-gap-mapping`, `seo-keyword-research`, `seo-audit` | See "Data-source rule" below |
+| Keyword, SERP, ranking and backlink data | OpenSEO | SEO research skills, `google-ads-build` (its `sea-keyword-research` reference), competitive intel | Say so; fall back to web research, never estimate figures |
+| Site audits, rank tracking, GA4, near-miss pages (`get_search_opportunities`), index status (`inspect_urls`), saved keywords and reports | OpenSEO (needs an OpenSEO project for the domain) | `seo-audit`, `seo-keyword-research`, `competitive-research` (its `content-gap-mapping` reference), `performance-reporter` | See "Data-source rule" below |
+| Local search: Google Business Profile, reviews, Q&A, Maps rank grid | OpenSEO (any project; spends credits) | `competitive-research` (its `competitor-analysis` reference), `competitive-research` (its `competitive-landscape` reference), `seo-audit` | Say so; local claims stay organic-only |
+| First-party search performance | Search Console, or OpenSEO's Search Console tools | `competitive-research` (its `content-gap-mapping` reference), `seo-keyword-research`, `seo-audit` | See "Data-source rule" below |
 | Page content and crawling | Firecrawl | Research and content-gap skills | Use web fetch for single pages |
 | Web and company research | Exa | `european-market-intelligence`, research skills | Use web search |
 | Google Ads (read-only) | Google Ads | Google Ads skills, `paid-ads-report-writer` | Ask for exports |
 | LinkedIn Ads | LinkedIn Ads | `paid-ads-report-writer` | Ask for Campaign Manager exports |
-| Competitor B2B ads | LinkedIn Ad Library | `competitor-teardown`, `european-market-intelligence` | Ask for screenshots or copy |
-| B2B buyer reviews and category position | G2 | `competitor-analysis`, `competitive-landscape` | Leave it out and say so |
+| Competitor B2B ads | LinkedIn Ad Library | `competitive-research` (its `competitor-teardown` reference), `european-market-intelligence` | Ask for screenshots or copy |
+| B2B buyer reviews and category position | G2 | `competitive-research` (its `competitor-analysis` reference), `competitive-research` (its `competitive-landscape` reference) | Leave it out and say so |
 | AI citations (Copilot) | Bing Webmaster Tools | SEO/GEO work | Ask for the AI Performance CSV export |
 | Email | Brevo, HubSpot | `email-sequence-hubspot-brevo`, `newsletter-writer` | Produce copy and a build checklist without live data |
 | Design (templates, bulk variants, email and social layouts) | Canva | `canva-workflow`, `email-design` | Hand back a manual build checklist |

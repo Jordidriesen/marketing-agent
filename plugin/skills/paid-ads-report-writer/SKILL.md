@@ -1,13 +1,9 @@
 ---
 name: paid-ads-report-writer
-description: "Writes client-ready paid media reports across Google, Microsoft, LinkedIn and Meta: executive summary, per-platform sections, normalised cross-platform view. Use for \"ads report\", \"monthly paid report\"."
+description: 'Writes client-ready paid media reports across Google, Microsoft, LinkedIn and Meta: executive summary, per-platform sections, normalised cross-platform view. Use for "ads report", "monthly paid report".'
 metadata:
   version: 2.0.0
-  history: >
-    v2.0: renamed from report-writer and widened from Google Ads only to all
-    paid platforms, search and social. Added platform resolution, live pulls,
-    a normalisation step, per-platform sections and a platform-metrics
-    reference. The executive-summary rules from v1 are kept unchanged.
+  history: 'v2.0: renamed from report-writer and widened from Google Ads only to all paid platforms, search and social. Added platform resolution, live pulls, a normalisation step, per-platform sections and a platform-metrics reference. The executive-summary rules from v1 are kept unchanged.'
 ---
 
 # Paid Ads Report Writer
@@ -26,7 +22,7 @@ Per platform, in this order of preference:
 
 | Platform | Live source | Fallback |
 |---|---|---|
-| Google Ads | Google Ads connector: resolve the account once (`list_accounts`), then `list_campaigns` and `run_gaql` for campaign and ad group metrics per `google-ads-tool-map`; `impression_share_report` for lost share | Campaign and ad group export from the Google Ads UI |
+| Google Ads | Google Ads connector: resolve the account once (`list_accounts`), then `list_campaigns` and `run_gaql` for campaign and ad group metrics per `google-ads-analyse` (its `google-ads-tool-map` reference); `impression_share_report` for lost share | Campaign and ad group export from the Google Ads UI |
 | LinkedIn Ads | LinkedIn Ads connector. Load its tools via tool search and confirm the method names before the first call; don't guess them | Campaign Manager export (campaign group, campaign, creative level) |
 | Microsoft Ads | No connector in this stack | Export from Microsoft Advertising (campaign and ad group level) |
 | Meta and any other platform | No connector in this stack | Ads Manager or platform export |
@@ -70,8 +66,8 @@ Read `references/platform-metrics.md` before writing any cross-platform comparis
 
 ## Related skills
 
-- `metric-detective`: the "why did this move" diagnosis for a Google Ads metric, before you write about it
-- `full-account-audit`, `search-term-auditor`: deeper Google Ads findings that can feed the priorities
-- `competitor-teardown`: when a competitor's ads explain a shift in auction or CTR
+- `measurement` (its `metric-detective` reference): the "why did this move" diagnosis for a Google Ads metric, before you write about it
+- `google-ads-analyse` (its `full-account-audit` reference), `google-ads-analyse` (its `search-term-auditor` reference): deeper Google Ads findings that can feed the priorities
+- `competitive-research` (its `competitor-teardown` reference): when a competitor's ads explain a shift in auction or CTR
 - `[brand]-brand-kit`: client context, KPIs and reporting language (Step 0)
-- `mcp-efficiency`, `google-ads-tool-map`: how to pull live data cheaply
+- `mcp-efficiency`, `google-ads-analyse` (its `google-ads-tool-map` reference): how to pull live data cheaply

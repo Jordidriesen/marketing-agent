@@ -2,14 +2,11 @@
 name: canva-workflow
 metadata:
   version: 2.1.0
-  history: >
-    v2.1: checked against the live Canva MCP tools on 5 Nov 2026. The generate route now splits: create-design for a design that needs no brand kit, the legacy generate-design (and request-outline-review then generate-design-structured for decks) only for on-brand work, because create-design cannot apply a brand kit. Local files upload through create-upload-url. Adds remove-background, separate-image-layers, generate-image, copy-design, merge-designs and the gated create-video route.
-    v1 wrote a manual click-by-click Canva build checklist. v2 adds the
-    full Canva MCP execution path (generate / brand-template / import →
-    convert → transactional per-page edit → export) and keeps the manual
-    checklist as the fallback when the connector isn't connected.
-description: "Produces Canva assets (social, one-pagers, decks, printables, bulk variants) through the Canva connector, or gives a build checklist without it. Use for \"make this in Canva\"."
-argument-hint: "<the asset or brief to build in Canva>"
+  history: 'v2.1: checked against the live Canva MCP tools on 5 Nov 2026. The generate route now splits: create-design for a design that needs no brand kit, the legacy generate-design (and request-outline-review then generate-design-structured for decks) only for on-brand work, because create-design cannot apply a brand kit. Local files upload through create-upload-url. Adds remove-background, separate-image-layers, generate-image, copy-design, merge-designs and the gated create-video route. v1 wrote a manual click-by-click Canva build checklist. v2 adds the full Canva MCP execution path (generate / brand-template / import → convert → transactional per-page edit → export) and keeps the manual checklist as the fallback when the connector isn''t connected.
+
+    '
+description: Produces Canva assets (social, one-pagers, decks, printables, bulk variants) through the Canva connector, or gives a build checklist without it. Use for "make this in Canva".
+argument-hint: <the asset or brief to build in Canva>
 ---
 
 # Canva Workflow

@@ -1,10 +1,12 @@
 ---
 name: ai-visibility-tracker
 metadata:
-  version: '1.0.0'
-  history: "v1.0.0: new skill. Measures and tracks a brand's visibility in AI answers as a repeatable protocol: a versioned prompt set, a dated check protocol per engine, a citation log, a read of Search Console's generative AI report and AI-referred traffic in GA4, and a round-over-round movement report with stated limits. A protocol, not an automated score.\n"
-description: "Always use for any request to measure or track a brand's visibility in AI answers, even a first check: builds a repeatable prompt set, runs the check protocol, logs citations and mentions per engine, reads AI traffic in Search Console and GA4, and reports movement with stated limits. Use for \"AI visibility\", \"are we cited in ChatGPT\", \"GEO report\". Writing for citations: seo-aeo-core."
-argument-hint: "<the brand, competitors to track against, the market languages, and how many rounds of checking already exist>"
+  version: 1.0.0
+  history: 'v1.0.0: new skill. Measures and tracks a brand''s visibility in AI answers as a repeatable protocol: a versioned prompt set, a dated check protocol per engine, a citation log, a read of Search Console''s generative AI report and AI-referred traffic in GA4, and a round-over-round movement report with stated limits. A protocol, not an automated score.
+
+    '
+description: 'Always use for any request to measure or track a brand''s visibility in AI answers, even a first check: builds a repeatable prompt set, runs the check protocol, logs citations and mentions per engine, reads AI traffic in Search Console and GA4, and reports movement with stated limits. Use for "AI visibility", "are we cited in ChatGPT", "GEO report". Writing for citations: seo-aeo-core.'
+argument-hint: <the brand, competitors to track against, the market languages, and how many rounds of checking already exist>
 ---
 
 # AI visibility tracker
@@ -17,7 +19,7 @@ This skill never produces a score the log cannot support.
 ## Inputs you need
 
 - **The brand** and its main URLs, and **competitors** to track against (named by the user, or from
-  `competitor-analysis` or `competitive-landscape`).
+  `competitive-research` (its `competitor-analysis` reference) or `competitive-research` (its `competitive-landscape` reference)).
 - **The markets and languages** the brand sells in. Each language is its own prompt set.
 - **Existing rounds**: a citation log from earlier checks, if there is one. With none, this is round 1
   and the report says it has no movement to show.
@@ -64,7 +66,7 @@ pages were cited. Quote nothing beyond a short excerpt.
   and move on. `seo-audit` covers the rest of Search Console.
 - **GA4.** Sessions that arrive from AI assistants appear as referral sources; list the referrers the
   property actually shows rather than assuming a list, and note that some AI visits arrive without a
-  referrer and land in Direct, so the number is a floor. `ga4-audit` checks the tagging.
+  referrer and land in Direct, so the number is a floor. `measurement` (its `ga4-audit` reference) checks the tagging.
 
 Report these as measured traffic, separate from the logged answers: they are different evidence.
 
@@ -103,5 +105,5 @@ One page:
 - `seo-aeo-core`: how to write and structure pages so they are cited.
 - `web-content-pipeline`: the pages themselves.
 - `seo-audit`: Search Console and technical checks.
-- `ga4-audit`: the tagging behind AI-referred sessions.
-- `competitor-analysis`: who to track against.
+- `measurement` (its `ga4-audit` reference): the tagging behind AI-referred sessions.
+- `competitive-research` (its `competitor-analysis` reference): who to track against.

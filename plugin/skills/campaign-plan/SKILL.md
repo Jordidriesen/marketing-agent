@@ -2,15 +2,11 @@
 name: campaign-plan
 metadata:
   version: 1.1.0
-  history: >
-    v1.1.0: content-references files renamed and merged; references to them updated.
-    Built for the marketing plugin. Added the [brand]-brand-kit check,
-    linked Key Messages to content-references' framework-selection
-    guidance instead of freestyling tone, moved the channel/budget/metrics
-    reference tables out of the main flow into references/, and tightened
-    Output to this library's no-padding standard.
-description: "Turns a goal and timeline into a campaign brief: objectives, audience, messages, channels, content calendar, budget, metrics, risks. Use for \"campaign plan\", \"launch plan\", \"plan a lead-gen push\". Pieces themselves go to the writing skills."
-argument-hint: "<campaign objective or product>"
+  history: 'v1.1.0: content-references files renamed and merged; references to them updated. Built for the marketing plugin. Added the [brand]-brand-kit check, linked Key Messages to content-references'' framework-selection guidance instead of freestyling tone, moved the channel/budget/metrics reference tables out of the main flow into references/, and tightened Output to this library''s no-padding standard.
+
+    '
+description: 'Turns a goal and timeline into a campaign brief: objectives, audience, messages, channels, content calendar, budget, metrics, risks. Use for "campaign plan", "launch plan", "plan a lead-gen push". Pieces themselves go to the writing skills.'
+argument-hint: <campaign objective or product>
 ---
 
 # Campaign Plan
@@ -48,7 +44,7 @@ Campaign name, one-sentence summary, primary objective with a specific measurabl
 Primary (and secondary, if applicable) segment, pain points and motivations, where they spend time, buying-stage alignment.
 
 ### 3. Key Messages
-Core message (one sentence) plus 3–4 supporting messages with proof points. Pick the structural framework from `content-references/references/content-briefing.md` based on the objective and the channels chosen in Section 4: a lead-gen push over paid channels wants PAS, an awareness campaign wants Sparkline, don't default to whichever framework was used last time. If a brand kit is loaded, its voice and locked terminology apply here directly.
+Core message (one sentence) plus 3–4 supporting messages with proof points. Pick the structural framework from `references/content-briefing.md` based on the objective and the channels chosen in Section 4: a lead-gen push over paid channels wants PAS, an awareness campaign wants Sparkline, don't default to whichever framework was used last time. If a brand kit is loaded, its voice and locked terminology apply here directly.
 
 ### 4. Channel Strategy
 Recommend channels from owned/earned/paid: see `references/planning-playbook.md`'s Channel Selection Guide for the full option set and typical metrics per channel. For each recommended channel: why it fits the audience and objective, content format, effort level, and budget allocation if budget was provided.
@@ -76,7 +72,7 @@ Immediate action items, stakeholder approvals needed, key decision points.
 
 ## Related Skills
 
-Once the calendar is set, hand individual pieces to the specialist skill for that format: `web-content-pipeline` for a landing or blog page, `lead-magnets` for a gated asset and its capture page, `email-sequence-hubspot-brevo` for a lifecycle flow, `social-content-writer` for a social post, `newsletter-writer` for a one-off email, `press-release-writer` for a launch announcement, `rsa-writer` for paid search ad copy, `creative-brief` for a visual deliverable. Before finalising messaging, `competitor-analysis` (or the `competitive-intel-analyst` agent) can surface positioning gaps worth building the campaign's Key Messages around. `brand-review` is the gate to run finished pieces through before they ship.
+Once the calendar is set, hand individual pieces to the specialist skill for that format: `web-content-pipeline` for a landing or blog page, `lead-magnets` for a gated asset and its capture page, `email-sequence-hubspot-brevo` for a lifecycle flow, `social-content-writer` for a social post, `newsletter-writer` for a one-off email, `press-release-writer` for a launch announcement, `google-ads-ads` (its `rsa-writer` reference) for paid search ad copy, `creative-brief` for a visual deliverable. Before finalising messaging, `competitive-research` (its `competitor-analysis` reference) (or the `competitive-intel-analyst` agent) can surface positioning gaps worth building the campaign's Key Messages around. `brand-review` is the gate to run finished pieces through before they ship.
 
 ## Output
 
@@ -87,7 +83,7 @@ After the brief, ask:
 "Would you like me to:
 - Dive deeper into any section?
 - Draft specific content pieces from the calendar?
-- Run `competitor-analysis` on the main competitor to sharpen the messaging?
+- Run `competitive-research` (its `competitor-analysis` reference) on the main competitor to sharpen the messaging?
 - Adjust the plan for a different budget or timeline?"
 
 Conciseness note: any chat framing around this deliverable stays short, a sentence or two. It never applies to the deliverable itself, which is produced at the full length and detail the structure above requires.

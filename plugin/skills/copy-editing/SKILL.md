@@ -1,19 +1,9 @@
 ---
 name: copy-editing
-description: "Edits and improves existing marketing copy: clarity, structure, persuasion, tightening, proofreading. Use for \"edit this copy\", \"proofread\", \"tighten this\", \"polish this\", \"copy feedback\". New copy: web-content-pipeline and the other writers."
+description: 'Edits and improves existing marketing copy: clarity, structure, persuasion, tightening, proofreading. Use for "edit this copy", "proofread", "tighten this", "polish this", "copy feedback". New copy: web-content-pipeline and the other writers.'
 metadata:
   version: 1.2.1
-  history: >
-    v1.2.1: removed the broken Plain English Alternatives reference; the lexical pass has one owner, ai-content-cleaner.
-    v1.2: stopped re-implementing persuasion principles and AI-tell word
-    lists inline, the Seven Sweeps process stays here (it's the
-    differentiator), but the "why" behind So What / Prove It / Heightened
-    Emotion / Zero Risk now points at content-references'
-    behavioral-psychology.md, and the lexical AI-tell cleanup defers to
-    ai-content-cleaner (via the former pointer file) instead of a duplicated swap table. Replaced
-    the .agents/product-marketing-context.md lookup with the standard
-    [brand]-brand-kit Step 0. Fixed Related Skills to name skills that
-    exist.
+  history: 'v1.2.1: removed the broken Plain English Alternatives reference; the lexical pass has one owner, ai-content-cleaner. v1.2: stopped re-implementing persuasion principles and AI-tell word lists inline, the Seven Sweeps process stays here (it''s the differentiator), but the "why" behind So What / Prove It / Heightened Emotion / Zero Risk now points at content-references'' behavioral-psychology.md, and the lexical AI-tell cleanup defers to ai-content-cleaner (via the former pointer file) instead of a duplicated swap table. Replaced the .agents/product-marketing-context.md lookup with the standard [brand]-brand-kit Step 0. Fixed Related Skills to name skills that exist.'
 ---
 
 # Copy Editing
@@ -46,7 +36,7 @@ Before the first sweep, work out whether this copy belongs to a brand with a doc
 
 This skill owns the **Seven Sweeps process**: the disciplined multi-pass edit with back-checking after each pass. It does not re-teach the underlying principles:
 
-- The persuasion logic behind the So What, Prove It, Heightened Emotion and Zero Risk sweeps lives in `content-references/references/behavioral-psychology.md` (Cialdini, loss aversion, fluency, Ehrenberg-Bass). Pull it in when a sweep needs the "why," rather than working from memory.
+- The persuasion logic behind the So What, Prove It, Heightened Emotion and Zero Risk sweeps lives in `references/behavioral-psychology.md` (Cialdini, loss aversion, fluency, Ehrenberg-Bass). Pull it in when a sweep needs the "why," rather than working from memory.
 - Lexical AI tells (buzzwords, filler intensifiers, copula avoidance, rule-of-three padding) are handled by the `ai-content-cleaner` skill. Copy-editing's passes are **structural**; run the humanizing pass alongside or after for the word-level cleanup instead of duplicating a swap table here.
 
 ## Core Philosophy
@@ -101,7 +91,7 @@ Edit copy through seven sequential passes, each focusing on one dimension. After
 *So what?*
 ✅ "Our AI-powered analytics surface insights you'd miss manually, so you can make better decisions in half the time"
 
-For the benefit-desire mapping (why a given benefit lands), see `content-references/references/behavioral-psychology.md`.
+For the benefit-desire mapping (why a given benefit lands), see `references/behavioral-psychology.md`.
 
 **Process:** read each claim and literally ask "so what?"; highlight claims missing the answer; add the benefit bridge; ensure benefits connect to real reader desires.
 
@@ -119,7 +109,7 @@ For the benefit-desire mapping (why a given benefit lands), see `content-referen
 
 **Common gaps:** "Trusted by thousands" (which thousands?), "industry-leading" (according to whom?), "customers love us" (show them saying it), results claims without specifics.
 
-The credibility mechanics behind why proof works, and which proof type fits which objection, are in `content-references/references/behavioral-psychology.md`. Unsubstantiated-claim risk overlaps with `brand-review`'s compliance screen; flag anything legally exposed for that skill.
+The credibility mechanics behind why proof works, and which proof type fits which objection, are in `references/behavioral-psychology.md`. Unsubstantiated-claim risk overlaps with `brand-review`'s compliance screen; flag anything legally exposed for that skill.
 
 **Process:** identify every claim that needs proof; check if proof exists nearby; flag unsupported assertions; recommend adding proof or softening the claim.
 
@@ -155,7 +145,7 @@ The credibility mechanics behind why proof works, and which proof type fits whic
 
 **Emotional dimensions:** pain of the current state, frustration with alternatives, fear of missing out, desire for transformation, pride in a smart choice, relief from solving the problem.
 
-**Techniques:** paint the "before" state vividly, use sensory language, tell micro-stories, reference shared experiences, ask questions that prompt reflection. The research on why these move people (and where emotion tips into manipulation) is in `content-references/references/behavioral-psychology.md`.
+**Techniques:** paint the "before" state vividly, use sensory language, tell micro-stories, reference shared experiences, ask questions that prompt reflection. The research on why these move people (and where emotion tips into manipulation) is in `references/behavioral-psychology.md`.
 
 **Process:** read for emotional impact, does it move you?; identify flat sections that should resonate; add emotional texture while staying authentic; ensure emotion serves the message.
 
@@ -169,7 +159,7 @@ The credibility mechanics behind why proof works, and which proof type fits whic
 
 **Check for:** friction near CTAs, unanswered objections, missing trust signals, unclear next steps, hidden costs or surprises.
 
-**Risk reducers:** money-back guarantees, free trials, "no credit card required," "cancel anytime," social proof near the CTA, clear expectations of what happens next, privacy assurances. Reactance-reduction and the psychology of the ask are covered in `content-references/references/behavioral-psychology.md`.
+**Risk reducers:** money-back guarantees, free trials, "no credit card required," "cancel anytime," social proof near the CTA, clear expectations of what happens next, privacy assurances. Reactance-reduction and the psychology of the ask are covered in `references/behavioral-psychology.md`.
 
 **Process:** focus on sections near CTAs; list every reason someone might hesitate; check if the copy addresses each concern; add risk reversals or trust signals as needed.
 
@@ -289,7 +279,7 @@ When editing collaboratively: run a sweep and present findings (what you found, 
 | Writing new page or post copy from scratch | `web-content-pipeline` |
 | Writing new social / email / press copy from scratch | `social-content-writer` / `newsletter-writer` / `press-release-writer` |
 | Removing lexical AI tells (buzzwords, filler, copula avoidance) | `ai-content-cleaner` |
-| The persuasion principles behind the sweeps | `content-references/references/behavioral-psychology.md` |
+| The persuasion principles behind the sweeps | `references/behavioral-psychology.md` |
 | Brand voice + compliance gate before publishing | `brand-review` |
 | The brand's voice and Voice Lock, which outrank this file | `[brand]-brand-kit` (its `references/voice.md`), loaded in Step 0 |
 

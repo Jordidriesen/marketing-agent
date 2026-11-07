@@ -2,41 +2,12 @@
 name: frontend-design
 metadata:
   version: 2.4.1
-  history: >
-    v2.4: owned by the web-developer agent. Stack routing points WordPress builds to wordpress-development:wordpress-page-build and Astro to astro-site; a design-to-code step for Figma files uses the Figma plugin's own skills; the sweep can add Impeccable's detector; outside skills transitions-dev, pick-ui-library and Mobbin are referenced, not copied. taste.md and gates.md gained patterns from Impeccable's public pattern gallery, rewritten in this library's words.
-    v1.0: synthesised Anthropic's frontend-design skill (anti-generic
-    philosophy, two-pass plan and critique) and vercel-labs'
-    web-interface-guidelines (MIT), wired to the [brand]-brand-kit pattern.
-    v2.0: folded in Leonxlnx's taste-skill and redesign-skill (MIT) as
-    references/taste.md (design read, three settings, locks, AI tells,
-    pre-flight check) and references/redesign-protocol.md (mode detection,
-    audit, never-change-silently list, fix order), both rewired so the brand
-    kit outranks their defaults and so no figure or image is ever invented
-    for a live page. Refreshed references/interface-checklist.md against the
-    current upstream guidelines as a pinned copy instead of fetching rules at
-    review time. Loads modular brand kits' references/design.md.
-    v2.1: added references/type-and-colour.md (adapted from jakubkrehel's
-    better-typography and better-colors, MIT), references/motion.md (from
-    emil-design-eng and better-ui, MIT), references/layout-and-accessibility.md
-    (from better-layout, better-accessibility and better-ui, MIT). taste.md
-    gained asset dependence and brand fidelity reads, a brand-assets-first rule
-    and critique dimensions (from web-design-engineer, MIT). The em dash
-    punctuation advice in better-typography was dropped to keep the library's
-    no em dash rule.
-    v2.2: selectively adapted from dembrandt-skills (MIT): repeated-component
-    slot model, separator and region rules, edge and elevation rules and status
-    colour discipline in the references, a waiting section in motion.md, estate
-    consistency in the redesign audit, and an optional dembrandt token
-    extraction in Step 0. Rules that conflict with this library were not
-    imported (button scale ban, disabling submit until valid, ease-in exits,
-    HSL state derivation).
-    v2.3: selectively adapted from Hallmark (MIT): Floor, Reflex and Finish tiers
-    with a waiver rule in references/gates.md, a hero-first build with a cold
-    fresh-context review (Part 5), a link, form and heading inventory diffed
-    after a redesign, and gates for the fake send, the stock close, the accented
-    word, the echo and the thin section. Theme dealing, the build log and the
-    word-count caps were not imported.
-description: "Designs, builds or reviews web UI in the brand's visual identity: landing page layouts, sites, WordPress pages and themes, components, accessibility. Use for \"design this page\", \"review my UI\". Page copy: web-content-pipeline."
+  history: 'v2.4: owned by the web-developer agent. Stack routing points WordPress builds to wordpress-development:wordpress-page-build and Astro to astro-site; a design-to-code step for Figma files uses the Figma plugin''s own skills; the sweep can add Impeccable''s detector; outside skills transitions-dev, pick-ui-library and Mobbin are referenced, not copied. taste.md and gates.md gained patterns from Impeccable''s public pattern gallery, rewritten in this library''s words. v1.0: synthesised Anthropic''s frontend-design skill (anti-generic philosophy, two-pass plan and critique) and vercel-labs'' web-interface-guidelines (MIT), wired to the [brand]-brand-kit pattern. v2.0: folded in Leonxlnx''s taste-skill and redesign-skill (MIT) as references/taste.md (design read, three settings, locks, AI tells, pre-flight check) and references/redesign-protocol.md (mode detection, audit, never-change-silently list, fix order), both rewired so the brand kit outranks their defaults and so no figure
+    or image is ever invented for a live page. Refreshed references/interface-checklist.md against the current upstream guidelines as a pinned copy instead of fetching rules at review time. Loads modular brand kits'' references/design.md. v2.1: added references/type-and-colour.md (adapted from jakubkrehel''s better-typography and better-colors, MIT), references/motion.md (from emil-design-eng and better-ui, MIT), references/layout-and-accessibility.md (from better-layout, better-accessibility and better-ui, MIT). taste.md gained asset dependence and brand fidelity reads, a brand-assets-first rule and critique dimensions (from web-design-engineer, MIT). The em dash punctuation advice in better-typography was dropped to keep the library''s no em dash rule. v2.2: selectively adapted from dembrandt-skills (MIT): repeated-component slot model, separator and region rules, edge and elevation rules and status colour discipline in the references, a waiting section in motion.md, estate consistency
+    in the redesign audit, and an optional dembrandt token extraction in Step 0. Rules that conflict with this library were not imported (button scale ban, disabling submit until valid, ease-in exits, HSL state derivation). v2.3: selectively adapted from Hallmark (MIT): Floor, Reflex and Finish tiers with a waiver rule in references/gates.md, a hero-first build with a cold fresh-context review (Part 5), a link, form and heading inventory diffed after a redesign, and gates for the fake send, the stock close, the accented word, the echo and the thin section. Theme dealing, the build log and the word-count caps were not imported.
+
+    '
+description: 'Designs, builds or reviews web UI in the brand''s visual identity: landing page layouts, sites, WordPress pages and themes, components, accessibility. Use for "design this page", "review my UI". Page copy: web-content-pipeline.'
 ---
 
 # Frontend Design

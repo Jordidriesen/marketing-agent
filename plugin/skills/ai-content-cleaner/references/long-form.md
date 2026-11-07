@@ -1,5 +1,12 @@
 # AI Content Cleaner: long-form reference
 
+**Contents**
+
+- Step 0.5 - Content type
+- Full self-check
+- Reference sources
+
+
 Read this from `ai-content-cleaner` for pieces over about 300 words, for BALANCED or DETECT mode, and whenever the content type decides what to keep. The brand check, language detection, protected spans, Tier 1, the English word lists and the Unicode pass stay in `SKILL.md`.
 
 ---

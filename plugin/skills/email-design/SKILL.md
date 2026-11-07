@@ -1,12 +1,12 @@
 ---
 name: email-design
-description: "Designs marketing email templates and email visuals: modular layout, header and hero, bulletproof buttons, dark mode, Outlook-safe HTML, accessibility, for Brevo, HubSpot or Canva. Use for \"email template\", \"newsletter design\", \"design this email\", \"email layout\". Copy: newsletter-writer or email-sequence-hubspot-brevo."
+description: 'Designs marketing email templates and email visuals: modular layout, header and hero, bulletproof buttons, dark mode, Outlook-safe HTML, accessibility, for Brevo, HubSpot or Canva. Use for "email template", "newsletter design", "design this email", "email layout". Copy: newsletter-writer or email-sequence-hubspot-brevo.'
 metadata:
   version: 1.0.0
-  history: >
-    v1.0.0: new skill. Fills the gap between the email copy skills (newsletter-writer,
-    email-sequence-hubspot-brevo) and the visual skills: none of them owned the look of an email.
-argument-hint: "<the email or template, the platform (Brevo, HubSpot, Canva or HTML), the brand>"
+  history: 'v1.0.0: new skill. Fills the gap between the email copy skills (newsletter-writer, email-sequence-hubspot-brevo) and the visual skills: none of them owned the look of an email.
+
+    '
+argument-hint: <the email or template, the platform (Brevo, HubSpot, Canva or HTML), the brand>
 ---
 
 # Email Design

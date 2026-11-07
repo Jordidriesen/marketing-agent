@@ -1,5 +1,14 @@
 # Angle library: hooks, bodies, CTAs and the screening rubric
 
+**Contents**
+
+- 1. Hook angles (aim for about five hooks per angle)
+- 2. The five bodies ("meat")
+- 3. The three CTAs: a commitment ladder
+- 4. Screening rubric (50 hooks down to a shortlist)
+- 5. Compatibility check before assembly
+
+
 Working material for `ad-creative-matrix`. Everything here is a structure to fill with the
 user's real facts. Nothing in this file is a claim, a figure or an example to copy.
 

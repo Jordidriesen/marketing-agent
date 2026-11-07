@@ -2,16 +2,11 @@
 name: lead-magnets
 metadata:
   version: 2.1.0
-  history: >
-    Adapted from a generic v2.0.0 lead-magnet skill for this plugin:
-    remapped every cross-reference to the skills that actually exist here
-    (free-tool-strategy, content-creation / web-content-pipeline,
-    email-sequence-hubspot-brevo, campaign-plan, social-content-writer,
-    performance-report), added the brand-kit Step 0, moved the per-format
-    creation detail and the benchmark tables into references/, and
-    tightened Output to this library's no-padding standard.
-description: "Plans a lead magnet: format, topic, gating, landing page structure, delivery, distribution, measurement. Use for \"lead magnet\", \"gated content\", \"ebook or checklist for emails\", \"what to give away\". Interactive tools: free-tool-strategy."
-argument-hint: "<the audience or topic to build a lead magnet for>"
+  history: 'Adapted from a generic v2.0.0 lead-magnet skill for this plugin: remapped every cross-reference to the skills that actually exist here (free-tool-strategy, content-creation / web-content-pipeline, email-sequence-hubspot-brevo, campaign-plan, social-content-writer, performance-report), added the brand-kit Step 0, moved the per-format creation detail and the benchmark tables into references/, and tightened Output to this library''s no-padding standard.
+
+    '
+description: 'Plans a lead magnet: format, topic, gating, landing page structure, delivery, distribution, measurement. Use for "lead magnet", "gated content", "ebook or checklist for emails", "what to give away". Interactive tools: free-tool-strategy.'
+argument-hint: <the audience or topic to build a lead magnet for>
 ---
 
 # Lead Magnets
@@ -80,7 +75,7 @@ Per-format creation detail, structure, length, tools, common mistakes, is in [re
 
 **Framing the exchange:** make the value explicit ("Get the full 25-page guide, free"), show a preview (contents, first page, sample output), add proof ("Downloaded by 5,000+ marketers"), reduce risk ("No spam. Unsubscribe anytime.").
 
-There is no dedicated form or popup optimisation skill in this plugin. Apply the behavioural-psychology and reactance-reduction guidance in `content-references/references/behavioral-psychology.md` when specifying the form and any popup. For an ad-driven landing page, `landing-page-matcher` (performance-marketer) checks ad-to-page message match.
+There is no dedicated form or popup optimisation skill in this plugin. Apply the behavioural-psychology and reactance-reduction guidance in `references/behavioral-psychology.md` when specifying the form and any popup. For an ad-driven landing page, `google-ads-analyse` (its `landing-page-matcher` reference) (performance-marketer) checks ad-to-page message match.
 
 ## Landing page and delivery
 
@@ -104,7 +99,7 @@ There is no dedicated form or popup optimisation skill in this plugin. Apply the
 - **Blog CTAs and content upgrades**: inline and end-of-post CTAs; post-specific upgrades convert 2–5× better than a generic sidebar CTA.
 - **Exit-intent and scroll-depth prompts**: match the offer to the page.
 - **Social**: teasers and carousels from the key points; the magnet as the profile CTA. Drafted by `social-content-writer`.
-- **Paid**: lead ads for top-funnel magnets, search ads for high-intent ones (templates, tools), retargeting for blog visitors. Owned by `performance-marketer`; `sea-keyword-research` sizes the keyword list.
+- **Paid**: lead ads for top-funnel magnets, search ads for high-intent ones (templates, tools), retargeting for blog visitors. Owned by `performance-marketer`; `google-ads-build` (its `sea-keyword-research` reference) sizes the keyword list.
 - **Partner co-promotion**: cross-promotion with complementary brands, guest webinars, partner newsletters, resource-collection inclusion.
 
 Where the magnet sits in the wider plan and calendar is a `campaign-plan` decision; topic selection grounded in real search demand is `content-research-orchestrator`.
@@ -132,7 +127,7 @@ Detailed benchmarks by format and B2B / B2C split are in [references/benchmarks.
 - `content-translate`: a localised version of the magnet or landing page.
 - `email-sequence-hubspot-brevo`: the nurture sequence after capture; `newsletter-writer` for a one-off delivery email.
 - `campaign-plan`: where the magnet fits in the campaign and calendar. `content-research-orchestrator`: topic selection from search demand.
-- `social-content-writer`: social promotion. `performance-marketer` (via `sea-keyword-research`, `campaign-architect`): paid promotion.
+- `social-content-writer`: social promotion. `performance-marketer` (via `google-ads-build` (its `sea-keyword-research` reference), `google-ads-build` (its `campaign-architect` reference)): paid promotion.
 - `brand-review`: gate for the landing page copy and any prose in the asset.
 
 ## Output

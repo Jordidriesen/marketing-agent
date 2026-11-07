@@ -1,5 +1,15 @@
 # Page Templates: Conversion and Site Pages
 
+**Contents**
+
+- Landing, product, solution and feature pages (Transactional)
+- Implementation brief (paid landing pages)
+- Page-type specifics
+- Behavioral-science layer (all page types)
+- Visual & layout cues (for briefing designers)
+- Keyword and internal linking (light weight on these pages)
+
+
 Load this at Step 4 of `web-content-pipeline` for landing, product, solution, feature, homepage, pricing and about pages. Articles, pillar pages, comparison pages and glossaries use `page-templates-article.md` instead.
 
 ## Landing, product, solution and feature pages (Transactional)

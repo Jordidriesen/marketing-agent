@@ -1,10 +1,12 @@
 ---
 name: abm-plan
 metadata:
-  version: '1.0.0'
-  history: "v1.0.0: new skill. Account-based marketing plan for a set of named accounts: tiers, selection criteria, buying committee by role, plays per tier across outreach, paid social, content and events, coordination with sales, and account-level measurement.\n"
-description: "Plans an account-based marketing programme for named accounts: tiers, buying committee, plays per tier across outreach, LinkedIn and Meta audiences, content and events, sales handover, account-level measurement. Use for \"ABM\", \"target account plan\"."
-argument-hint: "<the brand, the goal, the account list or how to build it, the period, the budget and who in sales works the accounts>"
+  version: 1.0.0
+  history: 'v1.0.0: new skill. Account-based marketing plan for a set of named accounts: tiers, selection criteria, buying committee by role, plays per tier across outreach, paid social, content and events, coordination with sales, and account-level measurement.
+
+    '
+description: 'Plans an account-based marketing programme for named accounts: tiers, buying committee, plays per tier across outreach, LinkedIn and Meta audiences, content and events, sales handover, account-level measurement. Use for "ABM", "target account plan".'
+argument-hint: <the brand, the goal, the account list or how to build it, the period, the budget and who in sales works the accounts>
 ---
 
 # ABM plan

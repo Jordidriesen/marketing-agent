@@ -21,3 +21,15 @@ jobs:
 
       - name: Validate SKILL.md frontmatter
         run: python scripts/lint_skills.py
+
+      - name: Shared references in sync
+        run: python scripts/sync_shared_refs.py --check
+
+      # Agent Skills reference validator (agentskills.io). Not yet verified in this workflow, so it reports
+      # without failing the build. Claude-only frontmatter fields (argument-hint, disable-model-invocation,
+      # context, agent, user-invocable) are deliberate and may be reported.
+      - name: Agent Skills spec validation (report only)
+        continue-on-error: true
+        run: |
+          pip install "git+https://github.com/agentskills/agentskills#subdirectory=skills-ref"
+          for d in plugin/skills/*/; do skills-ref validate "$d" || true; done

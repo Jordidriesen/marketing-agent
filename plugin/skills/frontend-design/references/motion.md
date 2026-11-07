@@ -1,5 +1,17 @@
 # Motion
 
+**Contents**
+
+- 1. Decide whether it animates
+- 2. Easing and duration
+- 3. Build rules
+- 4. Entrances and exits
+- 5. Reduced motion and touch
+- 6. Cohesion
+- 7. Waiting
+- Review table
+
+
 Motion rules for `frontend-design`, scoped to marketing pages, landing pages and WordPress sites.
 Adapted and rewritten from Emil Kowalski's [emil-design-eng](https://github.com/emilkowalski/skills)
 and jakubkrehel's [better-ui](https://github.com/jakubkrehel/skills), both MIT. Gestures, springs,

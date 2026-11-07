@@ -2,8 +2,8 @@
 name: web-content-pipeline
 metadata:
   version: 1.6.1
-  history: "v1.6.1: no-em-dash style rule. v1.6.0: orchestration only. Page templates moved to content-references (page-templates-article, page-templates-conversion), steps 0 to 2 merged into one router table, and the formerly-two-skills note (blog pipeline plus copywriting, merged in 1.0) reduced to this line. Earlier history is in CHANGELOG.md."
-description: "Always use for any website copy or copywriting, however short or fully specified: landing pages, homepages, product, solution, feature, pricing and about pages, page design and page copy work, a hero section, benefit blocks, CTAs, SEO or AEO blog posts. Not social posts or ebooks."
+  history: 'v1.6.1: no-em-dash style rule. v1.6.0: orchestration only. Page templates moved to content-references (page-templates-article, page-templates-conversion), steps 0 to 2 merged into one router table, and the formerly-two-skills note (blog pipeline plus copywriting, merged in 1.0) reduced to this line. Earlier history is in CHANGELOG.md.'
+description: 'Always use for any website copy or copywriting, however short or fully specified: landing pages, homepages, product, solution, feature, pricing and about pages, page design and page copy work, a hero section, benefit blocks, CTAs, SEO or AEO blog posts. Not social posts or ebooks.'
 ---
 
 # Web Content Pipeline
@@ -30,7 +30,7 @@ Do not build selling points on a single fact. "A Belgian company" does not mean 
 
 ## Steps 0 to 2: classify, then choose the framework
 
-**Step 0, intent.** Informational (how, what, why, guide: soft CTA, authority proof), Transactional including commercial investigation (buy, price, quote, best, vs: firm CTA, heavy proof), or Navigational (brand plus a page name: clarity and speed, not persuasion). A starting signal, not a rule; state your reasoning if the page type below does not match. CTA strength follows intent (rule in `content-references/references/content-briefing.md`).
+**Step 0, intent.** Informational (how, what, why, guide: soft CTA, authority proof), Transactional including commercial investigation (buy, price, quote, best, vs: firm CTA, heavy proof), or Navigational (brand plus a page name: clarity and speed, not persuasion). A starting signal, not a rule; state your reasoning if the page type below does not match. CTA strength follows intent (rule in `references/content-briefing.md`).
 
 **Step 1, page type.** Pick the row below. If it is unclear from the brief, ask: the template in Step 4 depends on it.
 
@@ -52,7 +52,7 @@ Defaults (common practice, not rules; the brief and the brand kit come first):
 | Comparison (A vs B) | Informational leaning Transactional | Minto with a table | Decision rule first, side-by-side table, when to choose each, what can stay | Sources, no vendor attacks | 3 to 5 | article |
 | Glossary / reference | Informational | None (definition format) | Stand-alone definitions, stable anchors, grouped by theme | None | None | article |
 
-For the reasoning behind intent and framework choices, and edge cases, read `../content-references/references/content-briefing.md` (on demand; not needed when the table above settles it).
+For the reasoning behind intent and framework choices, and edge cases, read `references/content-briefing.md` (on demand; not needed when the table above settles it).
 
 ---
 
@@ -88,10 +88,10 @@ If any field is missing, ask before writing. When the brand, the primary action,
 ## Step 4: Write to the page-type template
 
 **Read the template file for your page type now, before drafting** (the Template column above):
-- `article`: `../content-references/references/page-templates-article.md` (blog, pillar, comparison, glossary)
-- `conversion`: `../content-references/references/page-templates-conversion.md` (landing, product, solution, feature, homepage, pricing, about)
+- `article`: `references/page-templates-article.md` (blog, pillar, comparison, glossary)
+- `conversion`: `references/page-templates-conversion.md` (landing, product, solution, feature, homepage, pricing, about)
 
-Load only the one you need. Load `../content-references/references/seo-aeo-core.md` as well when an article is meant to rank or be cited, and `../content-references/references/behavioral-psychology.md` when a conversion page needs the full persuasion detail. Paths are relative to this skill's folder.
+Load only the one you need. Load `references/seo-aeo-core.md` as well when an article is meant to rank or be cited, and `references/behavioral-psychology.md` when a conversion page needs the full persuasion detail. Paths are relative to this skill's folder.
 
 ### Writing style rules (every page type)
 

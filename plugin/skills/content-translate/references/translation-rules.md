@@ -1,5 +1,16 @@
 # Translation Rules
 
+**Contents**
+
+- SEO Translation Principles
+- Format Preservation
+- Number, Date, Currency, and Quote Formats per Locale
+- Quote Handling
+- Quality Criteria Checklist
+- Banned Patterns in Translation
+- Translation Provenance
+
+
 SEO and format rules for translation. Loaded during the Translate step of
 `content-translate`. Covers format mechanics only, formality, brand
 examples, legal references, and CTA tone per locale live in
@@ -46,7 +57,7 @@ Preserve unchanged:
   `headline` and `description`; never translate Person, Organization, or
   Brand names, URLs, IDs, `@id`, or `sameAs`. Follow the Article/Person/
   Organization/BreadcrumbList baseline from
-  `content-references/references/seo-aeo-core.md`'s Schema
+  `references/seo-aeo-core.md`'s Schema
   recommendations when adding or updating schema on the translated version.
 - Internal-link zone markers (`[INTERNAL-LINK: ...]`).
 

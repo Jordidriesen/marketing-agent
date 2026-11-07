@@ -1,5 +1,14 @@
 # Patrones de escritura IA: Español
 
+**Contents**
+
+- Tier 1: Eliminaciones obligatorias (equivalentes en español)
+- Tier 2: Vocabulario IA (Español)
+- Tier 3: Indicadores estructurales (Español)
+- Tier 4: Transiciones y muletillas (Español)
+- Voz y ritmo (Español)
+
+
 This file extends the universal patterns in SKILL.md with Spanish-specific AI tells.
 Load this file when the input text is in Spanish.
 

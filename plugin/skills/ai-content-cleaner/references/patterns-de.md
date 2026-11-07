@@ -1,5 +1,14 @@
 # KI-Schreibmuster: Deutsch
 
+**Contents**
+
+- Tier 1: Harte Streichungen (deutsche Entsprechungen)
+- Tier 2: KI-Vokabular (Deutsch)
+- Tier 3: Strukturelle Verräter (Deutsch)
+- Tier 4: Übergänge und Füllwörter (Deutsch)
+- Stimme und Rhythmus (Deutsch)
+
+
 This file extends the universal patterns in SKILL.md with German-specific AI tells.
 Load this file when the input text is in German.
 

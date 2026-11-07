@@ -1,5 +1,18 @@
 # European Data Sources - Reference
 
+**Contents**
+
+- Table of Contents
+- 1. Pan-European Official Sources
+- 2. National Statistical Offices & Business Registers (core working set)
+- 3. Public Procurement (Government Demand)
+- 4. Company & Funding Intelligence Platforms
+- 5. Marketing / SEO / Ad Intelligence Sources
+- 6. Review & Software Marketplace Platforms
+- 7. Trade Bodies, Chambers of Commerce & Funding Agencies
+- 8. GDPR / OSINT Compliance Reference
+
+
 Loaded by `european-market-intelligence` SKILL.md for Workflows 1, 2, and 6. Organized pan-EU first, then country-specific, then commercial/private-data platforms, then compliance.
 
 ## Table of Contents
@@ -84,7 +97,7 @@ TED is the primary source (Section 1). Practical use:
 
 Already covered by your existing MCP stack - listed here for completeness within this skill's Workflow 4:
 
-- **OpenSEO** - organic rankings, keyword demand, and SERP data settable per country/language (`locationCode`/`languageCode` on each call, project-scoped, see `content-research-orchestrator/references/openseo-tool-map.md`); the right tool for "how big is search demand for X in Germany vs. France."
+- **OpenSEO** - organic rankings, keyword demand, and SERP data settable per country/language (`locationCode`/`languageCode` on each call, project-scoped, see `references/openseo-tool-map.md`); the right tool for "how big is search demand for X in Germany vs. France."
 - **OpenSEO backlinks** - backlink and referring-domain signals (credits per call). Ahrefs is an optional paid upgrade only.
 - **LinkedIn Ad Library MCP** - live and historical B2B ad creative and targeting; generally a stronger signal for European B2B competitors than estimated ad spend, since LinkedIn is the dominant paid channel for the category this kind of B2B client competes in.
 - **Google Ads MCP** - auction insights where the user's own account has overlap.

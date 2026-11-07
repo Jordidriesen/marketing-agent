@@ -1,5 +1,5 @@
 ---
 type: tool_used
 tool: Skill
-input_match: '"skill"\s*:\s*"(?:[\w-]+:)?rsa-writer"'
+input_match: '"skill"\s*:\s*"(?:[\w-]+:)?google-ads-ads"'
 ---

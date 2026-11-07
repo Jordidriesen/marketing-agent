@@ -1,19 +1,9 @@
 ---
-name: "ai-content-cleaner"
-description: "Final pass that removes AI writing tells and hidden Unicode from reader-facing text in EN, NL (Belgian), FR, DE, ES, honouring the brand kit's voice. Use for \"humanise\", \"de-AI\", \"clean up\", \"finalise this text\"."
+name: ai-content-cleaner
+description: Final pass that removes AI writing tells and hidden Unicode from reader-facing text in EN, NL (Belgian), FR, DE, ES, honouring the brand kit's voice. Use for "humanise", "de-AI", "clean up", "finalise this text".
 metadata:
   version: 2.1.0
-  history: >
-    v2.1.0: short path and long path. Long-form material (content-type step, full Tier 3 table, Tier 5, BALANCED and DETECT modes, full self-check) moved to references/long-form.md, read on demand; a piece under about 300 words in CLEAN mode needs only this file.
-    v2.0.1: history note updated now the pointer file is removed.
-    v2.0: merged clean-user-facing-text into this skill (protected spans,
-    the honesty rule, and a working invisible-Unicode pass via
-    scripts/unicode_audit.py; the original skill referenced scripts that
-    never existed). Brand check now loads a brand kit's voice module.
-    Belgian Dutch rules added to references/patterns-nl.md. This skill is
-    now the single owner of the humanising rules and language pattern
-    files; the former pointer file in content-references pointed
-    here and has been removed.
+  history: 'v2.1.0: short path and long path. Long-form material (content-type step, full Tier 3 table, Tier 5, BALANCED and DETECT modes, full self-check) moved to references/long-form.md, read on demand; a piece under about 300 words in CLEAN mode needs only this file. v2.0.1: history note updated now the pointer file is removed. v2.0: merged clean-user-facing-text into this skill (protected spans, the honesty rule, and a working invisible-Unicode pass via scripts/unicode_audit.py; the original skill referenced scripts that never existed). Brand check now loads a brand kit''s voice module. Belgian Dutch rules added to references/patterns-nl.md. This skill is now the single owner of the humanising rules and language pattern files; the former pointer file in content-references pointed here and has been removed.'
 ---
 # AI Content Cleaner
 

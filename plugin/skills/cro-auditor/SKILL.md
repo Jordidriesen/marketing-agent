@@ -1,10 +1,12 @@
 ---
 name: cro-auditor
 metadata:
-  version: '1.0.0'
-  history: "v1.0.0: new skill. Heuristic conversion audit of one page: clarity, friction, credibility, message match, form and CTA, mobile; findings ranked by expected impact with a fix each, and the top finding turned into a test hypothesis for ab-test-planner. No lift numbers, no benchmarks.\n"
-description: "Always use for any conversion audit or \"why doesn't this page convert\" question, even from pasted copy: friction, clarity, proof placement, form and CTA problems, each ranked by expected impact with a fix and a what-to-test-first verdict. Use for \"CRO audit\", \"review this landing page\". Ad-to-page match: landing-page-matcher. Rewrites: web-content-pipeline."
-argument-hint: "<the page URL or pasted copy, the conversion goal, the traffic source, and any analytics, heatmaps or session recordings you have>"
+  version: 1.0.0
+  history: 'v1.0.0: new skill. Heuristic conversion audit of one page: clarity, friction, credibility, message match, form and CTA, mobile; findings ranked by expected impact with a fix each, and the top finding turned into a test hypothesis for ab-test-planner. No lift numbers, no benchmarks.
+
+    '
+description: 'Always use for any conversion audit or "why doesn''t this page convert" question, even from pasted copy: friction, clarity, proof placement, form and CTA problems, each ranked by expected impact with a fix and a what-to-test-first verdict. Use for "CRO audit", "review this landing page". Ad-to-page match: google-ads-analyse. Rewrites: web-content-pipeline.'
+argument-hint: <the page URL or pasted copy, the conversion goal, the traffic source, and any analytics, heatmaps or session recordings you have>
 ---
 
 # CRO auditor
@@ -43,7 +45,7 @@ Read `references/cro-checklist.md` now and work through its six areas: clarity, 
 credibility, message match, form and CTA, mobile. Log a finding only when you can point at the
 checklist item and the exact element on the page. "Feels cluttered" is not a finding.
 
-For proof, use the stage logic in `content-references/references/behavioral-psychology.md`: the
+For proof, use the stage logic in `references/behavioral-psychology.md`: the
 proof must fit the reader's scepticism at that point on the page. A missing proof element is
 flagged as missing, never assumed to exist. Headings must not imply proof the page does not have.
 
@@ -62,7 +64,7 @@ traffic to test, say so and recommend shipping the fix as a change with a before
 instead.
 
 Route the fixes: copy fixes to `web-content-pipeline`, layout and visual fixes to `frontend-design`,
-ad-to-page mismatch to `landing-page-matcher`.
+ad-to-page mismatch to `google-ads-analyse` (its `landing-page-matcher` reference).
 
 ## Output
 
@@ -86,7 +88,7 @@ Deliver in the reply, or as a document in the run folder when one is in use.
 ## Related Skills
 
 - `ab-test-planner`: designs the test for the top finding.
-- `landing-page-matcher`: query, ad and page message match for paid traffic.
+- `google-ads-analyse` (its `landing-page-matcher` reference): query, ad and page message match for paid traffic.
 - `web-content-pipeline`: rewrites page copy.
 - `frontend-design`: layout and visual fixes.
-- `ga4-audit`: when the measurement behind the page is in doubt.
+- `measurement` (its `ga4-audit` reference): when the measurement behind the page is in doubt.

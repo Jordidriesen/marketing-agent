@@ -1,6 +1,6 @@
 ---
 name: brand-review
-description: "Reviews content against the brand kit's voice and screens it for legal and compliance risk (claims, comparisons, testimonials, disclaimers) before it ships. Use for \"brand check\", \"compliance review\", \"is this on brand\"."
+description: Reviews content against the brand kit's voice and screens it for legal and compliance risk (claims, comparisons, testimonials, disclaimers) before it ships. Use for "brand check", "compliance review", "is this on brand".
 ---
 
 # Brand Review

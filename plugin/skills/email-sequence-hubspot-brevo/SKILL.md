@@ -1,19 +1,9 @@
 ---
 name: email-sequence-hubspot-brevo
-description: "Builds multi-email sequences (onboarding, nurture, re-engagement, win-back, launch) for HubSpot Workflows or Brevo Automation: copy, timing, branching, exit rules, build steps. Use for \"email sequence\", \"drip\", \"nurture flow\". Cold outbound: cold-email-sequence."
+description: 'Builds multi-email sequences (onboarding, nurture, re-engagement, win-back, launch) for HubSpot Workflows or Brevo Automation: copy, timing, branching, exit rules, build steps. Use for "email sequence", "drip", "nurture flow". Cold outbound: cold-email-sequence.'
 metadata:
   version: 1.2.1
-  history: >
-    v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline.
-    v1.2.0: content-references files renamed and merged; references to them updated.
-    v1.1.1: history note no longer names the removed pointer file.
-    v1.1: wired into content-references. The sequence arc (Step 1) and the
-    per-email body copy (Step 2) now cite content-briefing.md and
-    behavioral-psychology.md instead of leaving structure implicit, and a
-    per-email humanizing pass (ai-content-cleaner, via the former pointer file) was added. Brand
-    voice now checks for a [brand]-brand-kit skill. Platform build guides
-    and benchmark tables are unchanged, those are platform-specific and
-    stay here.
+  history: 'v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.2.0: content-references files renamed and merged; references to them updated. v1.1.1: history note no longer names the removed pointer file. v1.1: wired into content-references. The sequence arc (Step 1) and the per-email body copy (Step 2) now cite content-briefing.md and behavioral-psychology.md instead of leaving structure implicit, and a per-email humanizing pass (ai-content-cleaner, via the former pointer file) was added. Brand voice now checks for a [brand]-brand-kit skill. Platform build guides and benchmark tables are unchanged, those are platform-specific and stay here.'
 ---
 
 # Email Sequence Builder: HubSpot & Brevo
@@ -57,7 +47,7 @@ Gather the following. If not provided, ask before proceeding:
 ## Process
 
 ### 1. Sequence Strategy
-- **Narrative arc**: the story across all emails. Build it on a deliberate framework, not a vibe: a nurture arc is Sparkline stretched across emails (widen the "what is" / "what could be" gap, then close it), a launch sequence is escalating PAS, an onboarding series is a guided plan (StoryBrand). Definitions in `content-references/references/content-briefing.md`.
+- **Narrative arc**: the story across all emails. Build it on a deliberate framework, not a vibe: a nurture arc is Sparkline stretched across emails (widen the "what is" / "what could be" gap, then close it), a launch sequence is escalating PAS, an onboarding series is a guided plan (StoryBrand). Definitions in `references/content-briefing.md`.
 - **Journey mapping**: map each email to a buyer/user journey stage (awareness, consideration, decision, activation, expansion).
 - **Escalation logic**: how urgency/value builds email to email.
 - **Success definition**: the specific action that means the sequence has done its job and the contact should exit.
@@ -69,7 +59,7 @@ For each email, produce:
 - **Subject line**: 2-3 options, varying curiosity/benefit/urgency/personalisation/question angles, under 50 characters where possible.
 - **Preview text**: 40-90 characters, complements rather than repeats the subject.
 - **Purpose**: one sentence on why this email exists.
-- **Body copy**: full draft, hook/body/CTA structure, short paragraphs, scannable, personalisation tokens where relevant. Structure each email to its role in the Step 1 arc; pull the persuasion principles (proof placement, reciprocity, reactance reduction, fluency) from `content-references/references/behavioral-psychology.md` rather than working from memory.
+- **Body copy**: full draft, hook/body/CTA structure, short paragraphs, scannable, personalisation tokens where relevant. Structure each email to its role in the Step 1 arc; pull the persuasion principles (proof placement, reciprocity, reactance reduction, fluency) from `references/behavioral-psychology.md` rather than working from memory.
 - **Primary CTA**: button text and destination; one primary CTA, secondary only if the stage warrants it.
 - **Timing**: days after trigger or previous email; note any engagement-based adjustment.
 - **Segment/condition notes**: who gets it, who skips it, and why.

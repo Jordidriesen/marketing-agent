@@ -1,5 +1,16 @@
 # Cultural Adaptation Profiles
 
+**Contents**
+
+- DACH (Germany, Austria, German-speaking Switzerland)
+- Francophone (France, Quebec, Belgium-FR, Switzerland-FR)
+- Benelux (Netherlands, Flemish Belgium)
+- Hispanic (Spain vs. LATAM)
+- Japanese (Japan, `ja-JP`)
+- Custom-Locale Template
+- Profile Selection Logic
+
+
 Locale profiles for cultural adaptation, loaded during the Cultural
 Profile step of `content-translate`. Covers address form (formality),
 example brands and companies to substitute in, currency and pricing

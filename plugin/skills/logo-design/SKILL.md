@@ -1,10 +1,12 @@
 ---
 name: logo-design
 metadata:
-  version: '1.0.0'
-  history: "v1.0.0: adapted from kaankiziltug/logo-design-skill (MIT, see LICENSE-logo-design-skill.txt). Kept the process, references and dependency-free scripts. Removed the 1,400-logo reference library (its logos are third-party trademarks outside the MIT grant) and every script and instruction that depended on it. Added the brand-kit step, handoff into the brand kit and the routing to this library's other design skills.\n"
-description: "Designs, critiques and packages logos and brand marks as SVG, from brief to favicon and usage guide. Use for \"design a logo\", \"wordmark\", \"favicon\", \"critique this logo\"."
-argument-hint: "<brand name, what it does, audience, and whether this is a new logo, a critique or a redesign>"
+  version: 1.0.0
+  history: 'v1.0.0: adapted from kaankiziltug/logo-design-skill (MIT, see LICENSE-logo-design-skill.txt). Kept the process, references and dependency-free scripts. Removed the 1,400-logo reference library (its logos are third-party trademarks outside the MIT grant) and every script and instruction that depended on it. Added the brand-kit step, handoff into the brand kit and the routing to this library''s other design skills.
+
+    '
+description: Designs, critiques and packages logos and brand marks as SVG, from brief to favicon and usage guide. Use for "design a logo", "wordmark", "favicon", "critique this logo".
+argument-hint: <brand name, what it does, audience, and whether this is a new logo, a critique or a redesign>
 ---
 
 # Logo design

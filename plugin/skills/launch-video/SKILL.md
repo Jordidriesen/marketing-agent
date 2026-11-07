@@ -2,9 +2,11 @@
 name: launch-video
 metadata:
   version: 1.1.0
-  history: "v1.1.0: the HyperFrames by HeyGen connector is the first route when it is connected, the npx CLI stays the fallback; generated live-action clips are pointed to Canva create-video or a Weave video model. v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.0.0: new skill. An original workflow for short product and brand videos (teaser, continuous-take feature demo, logo sting), written in this library's terms with the brand kit as the source of voice, colour and type. Structure and several rules (project inspection rubric, reading-time floors, poster frame as frame 0, share copy) are adapted from latent-spaces/brag (MIT, see LICENSE-brag.txt). The continuous-take idea is inspired by feitangyuan/onetake, which is licensed PolyForm Noncommercial and is therefore neither bundled nor copied. No audio files are bundled.\n"
-description: "Plans and builds a 10 to 30 second product teaser, feature demo or logo sting from the product's screens or brand kit. Use for \"launch video\", \"product teaser\", \"logo animation\"."
-argument-hint: "<what to show, video type if known, format (landscape, vertical, square), duration, tone, brand>"
+  history: 'v1.1.0: the HyperFrames by HeyGen connector is the first route when it is connected, the npx CLI stays the fallback; generated live-action clips are pointed to Canva create-video or a Weave video model. v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.0.0: new skill. An original workflow for short product and brand videos (teaser, continuous-take feature demo, logo sting), written in this library''s terms with the brand kit as the source of voice, colour and type. Structure and several rules (project inspection rubric, reading-time floors, poster frame as frame 0, share copy) are adapted from latent-spaces/brag (MIT, see LICENSE-brag.txt). The continuous-take idea is inspired by feitangyuan/onetake, which is licensed PolyForm Noncommercial and is therefore neither bundled nor copied. No audio files are bundled.
+
+    '
+description: Plans and builds a 10 to 30 second product teaser, feature demo or logo sting from the product's screens or brand kit. Use for "launch video", "product teaser", "logo animation".
+argument-hint: <what to show, video type if known, format (landscape, vertical, square), duration, tone, brand>
 ---
 
 # Launch video

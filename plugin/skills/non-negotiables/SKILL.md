@@ -1,6 +1,7 @@
 ---
 name: non-negotiables
-description: "Hard rules every deliverable must meet, each with how it is checked, loaded by the director and the specialists. Not for direct requests."
+description: Hard rules every deliverable must meet, each with how it is checked, loaded by the director and the specialists. Not for direct requests.
+user-invocable: false
 ---
 
 # Non-negotiables: Shared Reference
@@ -27,7 +28,7 @@ checks the returned work against them.
 |---|---|---|
 | No em dashes (U+2014) in any output | Mechanical | `check_rules.py` |
 | English output in en_GB: British spelling, British date format (24 October 2026), no US vocabulary | Mechanical for common cases, judgement for the rest | `check_rules.py` lists candidates; a US spelling it does not know will slip through |
-| Dutch output reads as written by a Fleming, not by someone from the Netherlands | Mechanical for the word list, judgement for phrasing | `check_rules.py --lang nl` uses the Netherlands-to-Flanders table in `ai-content-cleaner/references/patterns-nl.md`; phrasing and register stay with that skill |
+| Dutch output reads as written by a Fleming, not by someone from the Netherlands | Mechanical for the word list, judgement for phrasing | `check_rules.py --lang nl` uses the Netherlands-to-Flanders table in `references/patterns-nl.md`; phrasing and register stay with that skill |
 | No invented facts, figures, names, file paths, account IDs or client details | Judgement | Every figure and claim is sourced, or marked `UNSURE` or `PROOF NEEDED`; the reviewer spot-checks the biggest claims against the source |
 | Google Ads and paid media analysis names the ad group next to every keyword or search term | Mechanical for tables, judgement for lists | `check_rules.py --paid` flags tables that list keywords with no ad group column |
 | Nothing is sent, published, scheduled or edited live without a clear yes from Jordi | Process | Enforced by the director's ask-before-proceed and ask-before-publish steps, and by `security-policy` for write-capable connectors |

@@ -1,7 +1,7 @@
 ---
 name: 0-social
-description: "Menu shortcut: runs the social-media-specialist agent on your request. Pick it from the plugin menu when you want social media work done by that specialist, for platform-native posts for LinkedIn, Instagram, X and Reddit, and paid social creative sets. Manual only; it never triggers on its own."
-argument-hint: "<what you need, with any context or files>"
+description: 'Menu shortcut: runs the social-media-specialist agent on your request. Pick it from the plugin menu when you want social media work done by that specialist, for platform-native posts for LinkedIn, Instagram, X and Reddit, and paid social creative sets. Manual only; it never triggers on its own.'
+argument-hint: <what you need, with any context or files>
 disable-model-invocation: true
 context: fork
 agent: marketing-agent:social-media-specialist

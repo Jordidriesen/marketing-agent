@@ -4,6 +4,19 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [4.0.0]
+
+The marketing-operator trial is merged in, and the separate operator plugin is removed. Breaking: 24 skills and `google-ads-tool-map` no longer exist as separate skills.
+
+- **The director works like the operator.** Through `/0-marketing` the main thread becomes the director: it writes the brief in a job folder (`brief.md`, `decisions.md`, `research/`, `deliverables/`), does the work with the skills itself, and starts a specialist thread only under four rules (parallel work, a noisy data job, a cold review, a job that needs a profile's own model). Model and effort are passed per thread from a table and logged. Kept from the old director: acceptance criteria written before the work and copied into every brief, ask before proceeding, ask before publishing, the skill-line check. `director-playbook` 2.0.0 holds it all.
+- **Review tiers and a cold reviewer.** New `cold-reviewer` profile (Read, Glob and Grep only; reports, never edits). Tiers `none`, `light` (Sonnet, medium), `full-sonnet` (Sonnet, high) and `full-opus` (Opus, high), with a default per kind of job and a user override. In the trial a `full-opus` review caught stretched product facts, a second call to action, a self-contradicting consent rule and unchecked platform claims that both setups had let through.
+- **Brief template:** what the brand sells is copied word for word from the request or brand kit, so threads and the reviewer judge claims against the same line.
+- **Five family skills** replace 24 skills, which live on as references with their trigger phrases kept in the family descriptions: `google-ads-build` (campaign-architect, sea-keyword-research, bid-strategy-advisor, budget-optimizer), `google-ads-analyse` (full-account-audit, search-term-auditor, quality-score-doctor, pmax-decoder, geo-, device- and ad-schedule analysers, auction-insights-monitor, conversion-tracking-auditor, disapproval-diagnoser, landing-page-matcher), `google-ads-ads` (rsa-writer, ad-copy-tester), `competitive-research` (competitor-analysis, competitive-landscape, content-gap-mapping, competitor-teardown), `measurement` (metric-detective, ga4-audit, attribution-readout). 50 skills in all, against 69. Every mention elsewhere points at the family and the reference.
+- **Specialists are thread profiles.** Each agent file starts with a note on reading the job folder, writing to the given path and leaving the rule script to the director. `marketing-director` loses its tool allowlist (it does the work now) and preloads `director-playbook`.
+- **Agent Skills spec alignment:** every path in a skill now resolves from that skill's own root. Eight shared reference files keep one source of truth and are copied into the skills that use them by `scripts/sync_shared_refs.py` (mapping in `scripts/shared-refs.yaml`); CI fails when a copy is out of date. The GA4 export protocol is flattened to one level. Reference files over 100 lines start with a contents list. `non-negotiables`, `security-policy`, `content-references`, `mcp-efficiency` and `director-playbook` are hidden from the menu. CI also runs the `skills-ref` validator, report only for now.
+- **Evals:** 24 `route-*` cases (one per absorbed skill) and three `job-*` end-to-end cases with a review-tier grader; the `ga4-audit`, `attribution` and `rsa` graders point at the families. Not run.
+- **Removed:** the marketing-operator plugin and its marketplace entry. Uninstall it if you installed it.
+
 ## [3.2.0]
 
 - **The director now works in the Claude app.** `/0-marketing` used to start `marketing-director` as a sub-agent, and a sub-agent cannot start sub-agents, so the director could never call a specialist (found in the report comparison on 7 Nov 2026). `/0-marketing` now loads the new `director-playbook` into the main thread, which becomes the director and delegates through the Agent tool.

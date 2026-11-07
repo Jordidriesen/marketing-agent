@@ -1,10 +1,23 @@
 # OpenSEO Tool Reference
 
+**Contents**
+
+- Resolving a project
+- Keyword tools
+- Ranking and SERP tools
+- Domain tools
+- Workaround patterns: three DataForSEO Labs tools with no OpenSEO wrapper
+- Firecrawl Scrape (via MCP)
+- Other OpenSEO tools used elsewhere in the plugin
+- Location & Language Codes (Common)
+- Dropped from the old reference
+
+
 Quick reference for every tool used across the content research skills:
 `content-research-orchestrator` and its component stages
-(`seo-keyword-research`, `keyword-clustering`, `competitive-landscape`,
-`competitor-analysis`, `content-gap-mapping`), plus `media-mapping` and
-`sea-keyword-research`. Required params marked with *.
+(`seo-keyword-research`, `keyword-clustering`, `competitive-research` (its `competitive-landscape` reference),
+`competitive-research` (its `competitor-analysis` reference), `competitive-research` (its `content-gap-mapping` reference)), plus `media-mapping` and
+`google-ads-build` (its `sea-keyword-research` reference). Required params marked with *.
 
 **Replaces `dfs-tool-map.md`.** OpenSEO wraps DataForSEO with a
 project-scoped, credit-tracked interface. Every OpenSEO tool call needs a
@@ -177,8 +190,8 @@ was in active use, but it's a natural companion to `get_ranked_keywords`.
 
 `dataforseo_labs_google_domain_intersection`, `_page_intersection`, and
 `_competitors_domain` have no OpenSEO wrapper. Checked every skill that
-used them (`competitor-analysis`, `content-gap-mapping`,
-`keyword-clustering`, `competitive-landscape`): all three were already
+used them (`competitive-research` (its `competitor-analysis` reference), `competitive-research` (its `content-gap-mapping` reference),
+`keyword-clustering`, `competitive-research` (its `competitive-landscape` reference)): all three were already
 documented in those skills' own text as either a shortcut over a fallback
 the skill already knew how to do, or an explicitly secondary/complementary
 check, not the primary mechanism. Nothing is actually blocked, it's a few
@@ -245,12 +258,12 @@ Checked against the live connector on 1 Oct 2026. Full parameters come from the 
 
 | Tool | What it does | Credits | Used by |
 |---|---|---|---|
-| `get_search_opportunities` | Search Console pages in positions 4 to 20 joined with GA4 outcomes, scored | None; needs SC and GA4 linked in the project | `seo-keyword-research`, `content-gap-mapping`, `performance-reporter` |
-| `inspect_urls` | Google's stored index status, canonical and crawl date for up to 10 URLs | None; needs SC linked | `seo-audit`, `content-gap-mapping`, `frontend-design` redesigns |
+| `get_search_opportunities` | Search Console pages in positions 4 to 20 joined with GA4 outcomes, scored | None; needs SC and GA4 linked in the project | `seo-keyword-research`, `competitive-research` (its `content-gap-mapping` reference), `performance-reporter` |
+| `inspect_urls` | Google's stored index status, canonical and crawl date for up to 10 URLs | None; needs SC linked | `seo-audit`, `competitive-research` (its `content-gap-mapping` reference), `frontend-design` redesigns |
 | `get_search_console_performance`, `get_google_analytics_*` | First-party search and analytics data | None; needs the links | Data-source rule in `CONNECTORS.md` |
-| `save_keywords`, `list_saved_keywords`, `remove_saved_keywords` | Persist a keyword set to the project, optionally tagged | None; ask before tagging | `seo-keyword-research`, `content-gap-mapping` |
+| `save_keywords`, `list_saved_keywords`, `remove_saved_keywords` | Persist a keyword set to the project, optionally tagged | None; ask before tagging | `seo-keyword-research`, `competitive-research` (its `content-gap-mapping` reference) |
 | `get_rank_tracker`, `create_rank_tracker`, `add_rank_tracking_keywords`, `estimate_rank_tracker_cost`, `run_rank_tracker` | Rank tracking | Creating an empty manual tracker is free; scheduled trackers and runs spend credits. Estimate first and ask | `seo-audit`, `performance-reporter` |
-| `get_local_serp_results` | Local pack for a query and location | Yes | `competitor-analysis`, `competitive-landscape` |
+| `get_local_serp_results` | Local pack for a query and location | Yes | `competitive-research` (its `competitor-analysis` reference), `competitive-research` (its `competitive-landscape` reference) |
 | `get_local_rank_grid` | Maps rank for one business across a 3x3 or 5x5 grid | One search per grid point (9 or 25) | Local competitor work, `seo-audit` |
 | `get_business_profile`, `get_business_reviews`, `get_google_business_questions`, `search_local_businesses` | Google Business Profile data, reviews (billed per 10), Q&A | Yes | Local competitor work |
 | `get_backlinks_overview`, `get_backlinks_profile` | Backlink data | Yes, roughly 50 per domain | Competitor skills |

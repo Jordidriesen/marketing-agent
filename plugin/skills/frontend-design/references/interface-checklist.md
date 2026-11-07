@@ -1,5 +1,25 @@
 # Interface checklist
 
+**Contents**
+
+- Design quality (apply during Part 1 planning)
+- Accessibility
+- Focus states
+- Forms
+- Animation & motion
+- Typography (rendering)
+- Content handling & layout
+- Images & performance
+- Navigation & state
+- Touch & interaction
+- Hover & interactive states
+- Hydration safety (framework builds)
+- Dark mode & theming
+- Locale & i18n
+- Content & copy
+- Anti-patterns: flag these in review
+
+
 The build-and-review rule set for `frontend-design`. The interaction/accessibility
 rules are adapted from vercel-labs' [web-interface-guidelines](https://github.com/vercel-labs/web-interface-guidelines)
 (MIT), last synced with upstream `command.md` on 1 October 2026; the design-quality section

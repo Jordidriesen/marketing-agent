@@ -2,9 +2,11 @@
 name: cold-email-sequence
 metadata:
   version: 1.0.1
-  history: "v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.0.0: new skill. Drafts cold B2B email sequences for human review and sending, with a compliance gate first, real personalisation fields only, subject variants, send gaps, stop rules and a reply-handling guide. Never sends.\n"
-description: "Drafts cold B2B email sequences (3 to 5 touches) for a person to send: compliance gate first, personalisation, subject variants, gaps, stop rules, reply guide. Use for \"cold email\", \"outbound sequence\", \"prospecting emails\". Never sends."
-argument-hint: "<who you are emailing (role, segment, country), what you offer, one real reason to write to them, and the sender>"
+  history: 'v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.0.0: new skill. Drafts cold B2B email sequences for human review and sending, with a compliance gate first, real personalisation fields only, subject variants, send gaps, stop rules and a reply-handling guide. Never sends.
+
+    '
+description: 'Drafts cold B2B email sequences (3 to 5 touches) for a person to send: compliance gate first, personalisation, subject variants, gaps, stop rules, reply guide. Use for "cold email", "outbound sequence", "prospecting emails". Never sends.'
+argument-hint: <who you are emailing (role, segment, country), what you offer, one real reason to write to them, and the sender>
 ---
 
 # Cold email sequence

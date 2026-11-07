@@ -1,10 +1,12 @@
 ---
 name: meta-ads-manager
 metadata:
-  version: '1.0.0'
-  history: "v1.0.0: new skill. Builds or restructures Meta (Facebook and Instagram) campaigns as a paste-ready build plan: objective and funnel stage, Advantage+ against manual structure, audiences and exclusions, placements, budget and pacing, creative specs, and the pixel, Conversions API and consent checklist. No Meta connector exists yet, so the plan is the deliverable.\n"
-description: "Always use for any Meta, Facebook or Instagram ads campaign plan or restructure, however short: objective, Advantage+ vs manual, audiences and exclusions, placements, budget, creative specs, pixel and Conversions API checklist. Use for \"Meta ads\", \"Facebook campaign\", \"Advantage+\". Ad creative: ad-creative-matrix. Google Ads: campaign-architect."
-argument-hint: "<the brand, the goal, the budget and period, the audience, and whether to plan only or also build via a connected tool>"
+  version: 1.0.0
+  history: 'v1.0.0: new skill. Builds or restructures Meta (Facebook and Instagram) campaigns as a paste-ready build plan: objective and funnel stage, Advantage+ against manual structure, audiences and exclusions, placements, budget and pacing, creative specs, and the pixel, Conversions API and consent checklist. No Meta connector exists yet, so the plan is the deliverable.
+
+    '
+description: 'Always use for any Meta, Facebook or Instagram ads campaign plan or restructure, however short: objective, Advantage+ vs manual, audiences and exclusions, placements, budget, creative specs, pixel and Conversions API checklist. Use for "Meta ads", "Facebook campaign", "Advantage+". Ad creative: ad-creative-matrix. Google Ads: google-ads-build.'
+argument-hint: <the brand, the goal, the budget and period, the audience, and whether to plan only or also build via a connected tool>
 ---
 
 # Meta ads manager
@@ -89,7 +91,7 @@ the signals that justify a change (and the ones that do not, such as one bad day
 State what the structure needs: how many distinct concepts, formats (static, video, carousel), aspect
 ratios for feed, stories and reels (commonly 1:1, 4:5 and 9:16; **confirm current specs in Ads
 Manager**), safe zones, text length, and the language. Hand the creative itself to `ad-creative-matrix`.
-Check each ad's landing page for message match with `landing-page-matcher`.
+Check each ad's landing page for message match with `google-ads-analyse` (its `landing-page-matcher` reference).
 
 ## Step 6: Tracking and consent checklist
 
@@ -98,8 +100,8 @@ sending the same events from the server with deduplication against the pixel; ev
 (value, currency) present where the goal needs them; domain verification and event prioritisation done
 where Ads Manager asks for them; a consent banner in place for the markets served, with the pixel
 respecting the choice (a legal question that stays on the Needs decision list); UTM parameters on every ad
-URL, following the property's taxonomy (`ga4-audit`); the conversion also visible in GA4 so Meta's
-numbers can be reconciled (`attribution-readout`).
+URL, following the property's taxonomy (`measurement` (its `ga4-audit` reference)); the conversion also visible in GA4 so Meta's
+numbers can be reconciled (`measurement` (its `attribution-readout` reference)).
 
 ## Step 7: Launch checklist
 
@@ -131,7 +133,7 @@ Deliver in the reply, or as a document in the run folder when one is in use.
 
 - `ad-creative-matrix`: the hooks, bodies and CTAs, and the test plan.
 - `abm-plan`: named-account audiences and tiers.
-- `landing-page-matcher`: message match from ad to page.
-- `ga4-audit` and `attribution-readout`: the measurement behind the campaign.
-- `campaign-architect`: Google Ads structure only.
+- `google-ads-analyse` (its `landing-page-matcher` reference): message match from ad to page.
+- `measurement` (its `ga4-audit` reference) and `measurement` (its `attribution-readout` reference): the measurement behind the campaign.
+- `google-ads-build` (its `campaign-architect` reference): Google Ads structure only.
 - `paid-ads-report-writer`: reporting across platforms.
