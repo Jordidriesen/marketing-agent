@@ -12,24 +12,19 @@ A single-operator alternative to the `marketing-director` in the marketing-agent
 ## What is in it
 
 - `agents/marketing-operator.md`: the operator (Opus, medium effort). Preloads `marketing-agent:non-negotiables` and `operator-routing`.
-- `skills/operator-routing/`: request-to-skill table, order of steps, the four spawn rules, the thread brief template, and the job folder with templates in `references/job-folder.md`.
+- `skills/operator-routing/`: the operator's full instructions (sections 0 and 0b), the request-to-skill table, order of steps, the four spawn rules, the thread brief template, and the job folder with templates in `references/job-folder.md`.
 - `skills/0-operator/`: the menu shortcut.
 
 It contains no copies of skills. Every skill it runs and every profile it spawns comes from the `marketing-agent` plugin (and `wordpress-development` for WordPress builds), so that plugin has to be installed.
 
 ## How to run it
 
-The operator must be the session's **main agent**. A sub-agent cannot start threads of its own, so the shortcut does not fork.
+1. Install both plugins: `marketing-agent` and `marketing-operator`. In the Claude app, upload the plugin zip in the plugin settings if it does not appear through the marketplace.
+2. Run `/0-operator <your request>`. The shortcut loads `operator-routing` into the main thread, and the main thread becomes the operator. No agent switch is needed.
 
-1. Install both plugins from this marketplace: `marketing-agent` and `marketing-operator`.
-2. In the folder you work in, add to `.claude/settings.json`:
-   ```json
-   { "agent": "marketing-operator:marketing-operator" }
-   ```
-3. Start a new session there and give it a request, or run `/0-operator`.
-4. To go back to the director, remove the line. The marketing-agent plugin makes `marketing-director` the default.
+Why the main thread: a sub-agent cannot start sub-agents, so an operator started as a sub-agent could not start its parallel, background or review threads. In the Claude app the plugin's default main agent setting does not appear to apply (a session with marketing-agent installed answers as the normal assistant, not as `marketing-director`), so the shortcut works through the main thread instead.
 
-Not tested yet: whether a project setting takes precedence over the plugin's default main agent in every Claude surface. If the session still answers as the director, the switch did not take.
+In the Claude Code terminal you can also make the agent itself the main agent with `"agent": "marketing-operator:marketing-operator"` in the project's `.claude/settings.json`. Not tested.
 
 ## Comparison
 

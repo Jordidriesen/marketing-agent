@@ -36,7 +36,7 @@
       "displayName": "Marketing Operator (experimental)",
       "source": "./operator",
       "description": "Experimental single-operator setup: one main agent that runs the marketing-agent skills itself, keeps state in a job folder, and spawns sub-agent threads only for parallel research, long data jobs, cold review or a job that needs its own model. Requires marketing-agent. For comparison against marketing-director.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "Jordi Driesen"
       },

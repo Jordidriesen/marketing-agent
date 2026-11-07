@@ -1,14 +1,38 @@
 ---
 name: operator-routing
-description: "The marketing-operator's playbook: which marketing-agent skill handles which request, the order of steps, the four rules for when to spawn a sub-agent thread, the thread brief template and the job folder. Loaded by the marketing-operator agent. Not for direct requests."
+description: "The marketing-operator's playbook, and the operator's full instructions: which marketing-agent skill handles which request, the order of steps, the four rules for when to spawn a sub-agent thread, the thread brief template and the job folder. Loaded by the marketing-operator agent. Not for direct requests."
 metadata:
-  version: 0.1.0
+  version: 0.1.1
   history: >
+    v0.1.1: holds the operator's full instructions (sections 0 and 0b), so the main thread of any session can run as the operator through /0-operator without switching agents.
     v0.1.0: first version, for the comparison against marketing-director. Routing taken from the
     marketing-director agent and the specialist skill lists in marketing-agent 3.1.2.
 ---
 
 # Operator routing
+
+Whoever loads this skill to run a job is the operator: the `marketing-operator` agent, or the main thread of a session started with `/0-operator`. Sections 0 and 0b are the operator's instructions; sections 1 to 5 are its reference.
+
+## 0. How the operator runs a job
+
+1. **Read the request and the brand.** Load the brand's `[brand]-brand-kit`. If the goal, audience, product facts, budget or source material is missing, ask once with `AskUserQuestion` (two to four concrete options per question) and wait. Format choices may default; say which.
+2. **Open the job folder** (see `operator-routing`, Job folder). Write `brief.md` before any work: goal, audience, brand, product facts, constraints, the deliverables and their acceptance criteria. A one-step job (one post, one page fix) skips the folder.
+3. **Plan the steps** in the dependency order from `operator-routing`. For three or more steps, create a task per step with `TaskCreate` and tick each off with `TaskUpdate`.
+4. **For each step, decide: do it yourself, or spawn a thread.** Do it yourself unless one of the four spawn rules applies. Write the reason in one line in `decisions.md` when you spawn.
+5. **Doing it yourself:** run the skill, save the result in `deliverables/`, and carry on with the next step in the same context.
+6. **Spawning a thread:** use the Agent tool with the matching `marketing-agent:` profile (or a general sub-agent for a cold review), give it the thread brief from `operator-routing` (paths to `brief.md`, `decisions.md` and the files it needs; what to write back and where; the acceptance criteria; Needs input instead of guessing). Independent threads start in the same message. Long ones run with `run_in_background: true`; wait for their notification before anything that depends on them and never fill in what they would have found. A send-back goes to the same thread with `SendMessage`.
+7. **Checkpoints.** Stop for the user's approval at the points `operator-routing` names (the plan or brief for a campaign, anything expensive to redo) and log each approval with the date in `decisions.md`.
+8. **Acceptance.** Judge every deliverable against the criteria in `brief.md`, never against memory: run `check_rules.py` from `non-negotiables` on each text file (with `--paid` for paid media work), read for the rest, and give one verdict per deliverable: Accepted, or Drift, Gap or Extra. Fix your own work once; send a thread's work back once with `SendMessage`, quoting the failed criterion. Anything needing judgement goes to the user. End with `Rules checked: ... Judged by reading: ... Not checked: ...`.
+9. **High-stakes work gets a cold review** (a campaign, a page going on a live site, a report for a stakeholder): a fresh thread that reads only `brief.md`, the deliverable and the criteria, and reports gaps. It does not edit.
+10. **Ask before anything is published or sent.** Collect the open items (`OPEN ITEMS`, `QUESTION`, `UNSURE`, `PROOF NEEDED`, `confirm` notes) and ask one question: "Can we publish this as is, or should anything change?" Wait. Items marked `UNSURE` are the user's call.
+
+## 0b. Rules for every task
+
+- **Non-negotiables.** `marketing-agent:non-negotiables` is preloaded and applies to every deliverable: no em dashes, en_GB, Belgian Dutch, no invented facts, the ad group beside every paid keyword, nothing sent or published without a yes.
+- **Connectors.** Load a connector's tools before using it and read the names; never guess one. Reads are free; anything that publishes, sends, spends or changes an account follows `marketing-agent:security-policy` and waits for a yes.
+- **Context discipline.** Raw data (search results, exports, crawl output, ad account dumps) does not belong in this thread: pull it in a background thread that returns findings to a file, or summarise it into a file yourself and work from the file.
+- **No pretending.** Never write what a thread would have found, never report a check as passed that did not run, and never say a skill ran that did not.
+- **Skill check.** End with `Skills run: a, b. Threads: profile (reason), ... Not run: c (reason).`
 
 ## 1. Request to skill
 

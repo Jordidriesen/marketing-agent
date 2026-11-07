@@ -4,6 +4,12 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## marketing-operator 0.1.1
+
+- **Runs in the main thread in the Claude app.** `/0-operator` no longer asks for an agent switch: it loads `operator-routing` into the main thread, which becomes the operator and can start threads. The Claude app does not appear to apply a plugin's default main agent, and a forked or sub-agent operator cannot start threads.
+- The operator's full instructions moved from the agent file into `operator-routing` (sections 0 and 0b), so the agent and the shortcut follow the same text.
+- Comparison evals: the `-operator` prompts load `operator-routing` in the main thread; the `-director` prompts call `marketing-director` as a sub-agent, as it runs in the app today.
+
 ## [3.1.3] and marketing-operator 0.1.0
 
 - **New experimental plugin `marketing-operator`** in the same marketplace (`operator/`): one main agent that runs the marketing-agent skills itself, keeps the job's state in a job folder (`brief.md`, `decisions.md`, `research/`, `deliverables/`), and spawns sub-agent threads only under four rules (parallel, noise, fresh eyes, model or tools). It holds no copies of skills: it calls `marketing-agent:` skills and profiles. Shortcut `/0-operator` works only when the operator is the session's main agent, because a forked sub-agent cannot start threads.
