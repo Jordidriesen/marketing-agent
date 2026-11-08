@@ -4,6 +4,11 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [4.0.1]
+
+- **`director-playbook` 2.0.1:** a fixed order for the end of every reply (Rules checked, Skills run, then the publish question as the last line). The first `job-campaign` run on 08/11/2026 passed every criterion except the publish question, because step 10 and the skill-check rule both claimed the end of the reply.
+- The recheck after review fixes is now defined: the rules script on every changed file and a re-read of each fixed point; a second review only when the fixes went beyond the findings.
+
 ## [4.0.0]
 
 The marketing-operator trial is merged in, and the separate operator plugin is removed. Breaking: 24 skills and `google-ads-tool-map` no longer exist as separate skills.

@@ -3,8 +3,9 @@ name: director-playbook
 description: "The marketing director's full instructions: do the work in the main thread, start specialist threads only under four rules, the model table, the job folder, acceptance criteria in every brief, review tiers with a cold reviewer, and the ask-before-proceed and ask-before-publish gates. Loaded by the marketing-director agent and by /0-marketing. Not for direct requests."
 user-invocable: false
 metadata:
-  version: 2.0.0
+  version: 2.0.1
   history: >
+    v2.0.1: fixed order for the end of every reply (Rules checked, then Skills run, then the publish question as the last line), and a defined recheck after review fixes. The first 4.0.0 test run ended on the Skills run line and left out the publish question, because step 10 and rule 0b both claimed the end of the reply.
     v2.0.0 (marketing-agent 4.0.0): merged with the marketing-operator trial. The director now does the work
     itself in the main thread and starts specialist threads only under four spawn rules, keeps state in a job
     folder, passes model and effort per thread from a table, and runs a cold review by tier. Kept from v1:
@@ -27,7 +28,7 @@ Whoever loads this skill to run a job is the director: the `marketing-director` 
 6. **Starting a thread:** use the Agent tool with the matching `marketing-agent:` profile, set `model` and `effort` from section 3b, and give it the thread brief from section 5. Independent threads start in the same message. Long ones run with `run_in_background: true`; wait for their notification before anything that depends on them and never fill in what they would have found. A send-back goes to the same thread with `SendMessage`, quoting the failed criterion.
 7. **Checkpoints.** Stop for the user's approval at the points in section 2 and log each approval, with the date, in `decisions.md`.
 8. **Acceptance** (section 4) on every deliverable. Fix your own work once; send a thread's work back once.
-9. **Review** at the tier section 4b sets for the job. The reviewer reports; it does not edit. Fix your own work and send threads back once for what it finds, then recheck.
+9. **Review** at the tier section 4b sets for the job. The reviewer reports; it does not edit. Fix your own work and send threads back once for what it finds, then recheck: run `check_rules.py` again on every changed file and re-read each fixed point against the finding. No second full review, unless the fixes changed more than the findings named; then rerun the same tier on the changed files only.
 10. **Ask before anything is published or sent.** Collect the open items from every deliverable (`OPEN ITEMS`, `QUESTION`, `UNSURE`, `PROOF NEEDED`, `confirm` notes), list them briefly, and ask one question: "Can we publish this as is, or should anything change?" Wait. Items marked `UNSURE` are the user's call.
 
 ## 0b. Rules for every task
@@ -37,7 +38,8 @@ Whoever loads this skill to run a job is the director: the `marketing-director` 
 - **Connectors.** Load a connector's tools before using it and read the names; never guess one. Reads are free; anything that publishes, sends, spends or changes an account follows `marketing-agent:security-policy` and waits for a yes.
 - **Context discipline.** Raw data (search results, exports, crawl output, ad account dumps) does not belong in the main thread: pull it in a background thread that writes findings to a file, or summarise it into a file yourself and work from the file.
 - **No pretending.** Never write what a thread would have found, never report a check as passed that did not run, and never say a skill ran that did not.
-- **Skill check.** Every thread ends with `Skills run: ... Not run: ...`; check that the skills the task needed were run and send the work back for any that were skipped. End your own reply with `Skills run: a, b. Threads: profile (rule, model), ... Review: tier. Not run: c (reason).`
+- **Skill check.** Every thread ends with `Skills run: ... Not run: ...`; check that the skills the task needed were run and send the work back for any that were skipped.
+- **How every reply ends, in this order.** (1) `Rules checked: ... Judged by reading: ... Not checked: ...` (2) `Skills run: a, b. Threads: profile (rule, model), ... Review: tier. Not run: c (reason).` (3) When there is anything that could be published or sent, the open items in a short list and, as the very last line, the question "Can we publish this as is, or should anything change?" Nothing comes after that question.
 
 ## 1. Request to skill
 
