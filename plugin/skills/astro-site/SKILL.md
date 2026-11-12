@@ -37,7 +37,7 @@ New project: scaffold with `npm create astro@latest` only on the user's yes, in 
 
 - **Pages and layouts.** One base layout owns `<html lang>`, `<head>` (title, meta description, canonical,
   Open Graph, favicon) and the skip link. Pages pass their own title, description and canonical. Routes
-  follow the URL plan from `seo-geo-specialist` or the existing site; never change a live URL without a
+  follow the URL plan from the SEO research step or the existing site; never change a live URL without a
   redirect and a yes.
 - **Content.** Repeated content (blog posts, case studies, products, team, FAQs) lives in content
   collections with a schema, so a missing field fails the build rather than the page. Copy comes verbatim
@@ -56,7 +56,7 @@ New project: scaffold with `npm create astro@latest` only on the user's yes, in 
   transitions only when the brief asks, with a reduced-motion fallback.
 - **i18n.** Astro's i18n routing for multi-language sites (for example `/nl-be/`, `/fr-be/`), `hreflang`
   for every locale version, and a language switcher that links to the same page in the other locale.
-  Translated content comes from `localization-specialist`.
+  Translated content comes from `content-translate`.
 - **SEO and schema.** Sitemap integration, `robots.txt`, one `h1` per page, JSON-LD schema from a
   component fed by the page's real data (Organization, BreadcrumbList, Article, FAQPage only when the FAQ
   is visible on the page). Schema never states what the page doesn't.
@@ -90,5 +90,5 @@ anything the user needs to decide (a URL change, a new dependency, a deploy).
 ## Related Skills
 
 `frontend-design` for the design and the sweep; `web-content-pipeline` for page copy; `seo-audit` before a
-change to URLs, templates or structured data; `localization-specialist` for other locales;
+change to URLs, templates or structured data; `content-translate` for other locales;
 `graphic-designer` (through the director) for images and illustrations.

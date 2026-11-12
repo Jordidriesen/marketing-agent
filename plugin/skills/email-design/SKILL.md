@@ -23,7 +23,7 @@ is called finished, and never imitate it inline. End the reply with one line: `S
 1. Load the `[brand]-brand-kit` skill (`references/design.md`): palette with hex, fonts and web-safe
    fallbacks, logo files, button style.
 2. Take the copy verbatim from the approved `newsletter-writer` or `email-sequence-hubspot-brevo`
-   piece. Missing copy goes back to `email-marketer`; you don't write it.
+   piece. Missing copy goes back to `newsletter-writer` or `email-sequence-hubspot-brevo`; you don't write it.
 3. Settle the platform, because it decides what you deliver:
 
 | Platform | You deliver |

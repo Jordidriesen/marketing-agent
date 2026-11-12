@@ -258,17 +258,17 @@ Checked against the live connector on 1 Oct 2026. Full parameters come from the 
 
 | Tool | What it does | Credits | Used by |
 |---|---|---|---|
-| `get_search_opportunities` | Search Console pages in positions 4 to 20 joined with GA4 outcomes, scored | None; needs SC and GA4 linked in the project | `seo-keyword-research`, `competitive-research` (its `content-gap-mapping` reference), `performance-reporter` |
+| `get_search_opportunities` | Search Console pages in positions 4 to 20 joined with GA4 outcomes, scored | None; needs SC and GA4 linked in the project | `seo-keyword-research`, `competitive-research` (its `content-gap-mapping` reference), the reporting step |
 | `inspect_urls` | Google's stored index status, canonical and crawl date for up to 10 URLs | None; needs SC linked | `seo-audit`, `competitive-research` (its `content-gap-mapping` reference), `frontend-design` redesigns |
 | `get_search_console_performance`, `get_google_analytics_*` | First-party search and analytics data | None; needs the links | Data-source rule in `CONNECTORS.md` |
 | `save_keywords`, `list_saved_keywords`, `remove_saved_keywords` | Persist a keyword set to the project, optionally tagged | None; ask before tagging | `seo-keyword-research`, `competitive-research` (its `content-gap-mapping` reference) |
-| `get_rank_tracker`, `create_rank_tracker`, `add_rank_tracking_keywords`, `estimate_rank_tracker_cost`, `run_rank_tracker` | Rank tracking | Creating an empty manual tracker is free; scheduled trackers and runs spend credits. Estimate first and ask | `seo-audit`, `performance-reporter` |
+| `get_rank_tracker`, `create_rank_tracker`, `add_rank_tracking_keywords`, `estimate_rank_tracker_cost`, `run_rank_tracker` | Rank tracking | Creating an empty manual tracker is free; scheduled trackers and runs spend credits. Estimate first and ask | `seo-audit`, the reporting step |
 | `get_local_serp_results` | Local pack for a query and location | Yes | `competitive-research` (its `competitor-analysis` reference), `competitive-research` (its `competitive-landscape` reference) |
 | `get_local_rank_grid` | Maps rank for one business across a 3x3 or 5x5 grid | One search per grid point (9 or 25) | Local competitor work, `seo-audit` |
 | `get_business_profile`, `get_business_reviews`, `get_google_business_questions`, `search_local_businesses` | Google Business Profile data, reviews (billed per 10), Q&A | Yes | Local competitor work |
 | `get_backlinks_overview`, `get_backlinks_profile` | Backlink data | Yes, roughly 50 per domain | Competitor skills |
 | `run_site_audit`, `get_audit_status`, `get_audit_issues`, `get_audit_pages` | Site crawl | Yes | `seo-audit` |
-| `list_reports`, `save_report`, `list_report_templates` | Store a finished HTML report in the project, private by default | None; making it public needs the user's request | `performance-reporter`, `seo-audit` |
+| `list_reports`, `save_report`, `list_report_templates` | Store a finished HTML report in the project, private by default | None; making it public needs the user's request | the reporting step, `seo-audit` |
 
 ## Location & Language Codes (Common)
 

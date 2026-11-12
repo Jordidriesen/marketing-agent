@@ -61,14 +61,14 @@ A table, one row per asset:
 Fill real numbers. Common ones: LinkedIn feed image 1200×627, LinkedIn carousel 1080×1080 (or 1080×1350), Instagram feed 1080×1350, IG story/Reel 1080×1920, X post 1600×900, YouTube thumbnail 1280×720, email hero 600px wide (2×), OG image 1200×630, A4 print 210×297mm at 300dpi. If the platform's current spec differs, use the current spec and say so.
 
 ### 8. Copy
-Exact text that appears in each asset, headline, sub, CTA, taken verbatim from the approved `content-writer` or `social-media-specialist` piece, or written here and flagged for `brand-review`.
+Exact text that appears in each asset, headline, sub, CTA, taken verbatim from the approved copy (`web-content-pipeline`, `social-content-writer` or another writing skill), or written here and flagged for `brand-review`.
 
 ### 9. Production route
 For each deliverable, which tool and skill: `canva-workflow` for template-based and bulk assets, `affinity-workflow` for precise vector, print and multi-page layout or when the brand's source files are Affinity files, `email-design` for email templates and email visuals, `figma-weavy-workflow` for generated or composited imagery and design-system components, the Adobe for creativity connector for edits to existing images (background removal with `image_remove_background`, crop and resize to each format with `image_crop_and_resize`, tone correction with `image_apply_auto_tone`), PDF work (for example `pdf_to_markdown` to read a client's brand guideline) and font sourcing (`font_search`, `font_recommend`) when the brand kit leaves type open. Canva stays the default for template work; Adobe Express is used only when the user asks for it. A deliverable that ships as a web page or component is not produced here: list it with "route: web-developer" and the assets it needs from this brief. Edits to real photos stay edits: no generative fill or expand on a photo of the client's actual product, people or projects.
 
 ## Related Skills
 
-Hand the finished brief to `canva-workflow` or `figma-weavy-workflow` for the build steps. If the creative needs new copy, that comes from `content-writer` or `social-media-specialist` first (for paid social and video ads, `ad-creative-matrix` supplies the winning hooks, bodies and CTAs to brief against), and any copy written into a layout passes `brand-review`. For the campaign context this creative serves, see `campaign-plan`.
+Hand the finished brief to `canva-workflow` or `figma-weavy-workflow` for the build steps. If the creative needs new copy, that comes from the writing skills first (`web-content-pipeline`, `social-content-writer`) (for paid social and video ads, `ad-creative-matrix` supplies the winning hooks, bodies and CTAs to brief against), and any copy written into a layout passes `brand-review`. For the campaign context this creative serves, see `campaign-plan`.
 
 ## Output
 

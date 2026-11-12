@@ -1,15 +1,15 @@
 ---
 name: non-negotiables
-description: Hard rules every deliverable must meet, each with how it is checked, loaded by the director and the specialists. Not for direct requests.
+description: Hard rules every deliverable must meet, each with how it is checked, loaded by the director, its thread profiles and the skills. Not for direct requests.
 user-invocable: false
 ---
 
 # Non-negotiables: Shared Reference
 
-One module, reusable across every agent and skill that produces or accepts a
+One module, reusable across every thread profile and skill that produces or accepts a
 deliverable. It lists the rules that hold for all work in this plugin and says,
 for each one, whether a script can check it or a person has to judge it. The
-marketing-director writes these into every brief's acceptance criteria and
+director writes these into every brief's acceptance criteria and
 checks the returned work against them.
 
 ## How this layers with a brand kit
@@ -31,6 +31,7 @@ checks the returned work against them.
 | Dutch output reads as written by a Fleming, not by someone from the Netherlands | Mechanical for the word list, judgement for phrasing | `check_rules.py --lang nl` uses the Netherlands-to-Flanders table in `references/patterns-nl.md`; phrasing and register stay with that skill |
 | No invented facts, figures, names, file paths, account IDs or client details | Judgement | Every figure and claim is sourced, or marked `UNSURE` or `PROOF NEEDED`; the reviewer spot-checks the biggest claims against the source |
 | Google Ads and paid media analysis names the ad group next to every keyword or search term | Mechanical for tables, judgement for lists | `check_rules.py --paid` flags tables that list keywords with no ad group column |
+| Missing goal, audience, facts, brand or source material is asked for before drafting, in a **Needs input** block of 2 to 5 specific questions (why each matters, what happens once answered); a skill's "draft with placeholders" does not override this, and format choices may default if stated | Process | The thread or skill stops before drafting; the director merges the questions and asks once |
 | Nothing is sent, published, scheduled or edited live without a clear yes from Jordi | Process | Enforced by the director's ask-before-proceed and ask-before-publish steps, and by `security-policy` for write-capable connectors |
 
 ## Running the mechanical checks

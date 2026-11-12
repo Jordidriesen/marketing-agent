@@ -1,21 +1,21 @@
 # Marketing Agent: a Claude marketing team
 
-A marketing team for Claude in one install: a director, thirteen specialist thread profiles plus a cold reviewer, the 50 skills they run on, and 14 menu shortcuts (`0-` entries) that open an agent directly. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, outbound and sales, graphic design, web development and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
+A marketing team for Claude in one install: the `team` command, which turns the main thread into a director, six thread profiles it can start, and the 50 skills they run on. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, outbound and sales, graphic design, web development and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
 
-Run `/0-marketing` for anything that spans disciplines: the main thread becomes the director, does the work with the skills, and starts specialist threads only where they pay off. For a single task you can also call a skill or a specialist directly.
+Run `/marketing-agent:team` for jobs with several steps or deliverables, anything going live or to a client, or heavy data work: the main thread becomes the director, does the work with the skills, starts threads only where they pay off, reviews and asks before publishing. For a single task, just ask: the right skill triggers on its own.
 
 ## Repository layout
 
 ```
 plugin/                    the installable plugin
   .claude-plugin/          plugin manifest
-  agents/                  marketing-director, thirteen specialist profiles and cold-reviewer
-  skills/                  every skill the agents use (50), plus 14 `0-` agent shortcuts
-  .mcp.json                connectors with a public endpoint
+  agents/                  six thread profiles: data-puller, researcher, drafter, graphic-designer, web-developer, cold-reviewer
+  skills/                  the 50 skills, plus the `team` command
   CONNECTORS.md            which connector each discipline uses, and the data-source rule
 templates/brand-kit/       blank modular brand kit: router + context, voice, design
 archive/                   retired skills kept for reference, not installed
 scripts/lint_skills.py     frontmatter lint, run in CI
+scripts/sync_shared_refs.py  keeps shared reference copies in step with their source
 ```
 
 **Brand kits are not in this repo.** Each client gets a private `[brand]-brand-kit` skill (identity, voice, design) installed separately in your Claude account. Every content, review and design skill looks for one by that naming pattern and loads it automatically. Start from [`templates/brand-kit`](templates/brand-kit).
@@ -27,16 +27,16 @@ claude plugin marketplace add Jordidriesen/marketing-agent
 /plugin install marketing-agent@marketing-agent
 ```
 
-This installs the agents and all skills together, so they can't drift apart. Update later with `claude plugin marketplace update marketing-agent`.
+This installs the profiles and all skills together, so they can't drift apart. Update later with `claude plugin marketplace update marketing-agent`.
 
 
 To use a single skill without the plugin, copy its folder from `plugin/skills/` into `~/.claude/skills/` or upload it as a zip in Claude settings.
 
 Connect the tools you use in Claude's connector settings; see [`plugin/CONNECTORS.md`](plugin/CONNECTORS.md). Skills say plainly when a connector they need isn't there rather than estimating data.
 
-## Agents
+## Team and thread profiles
 
-See [`plugin/README.md`](plugin/README.md) for each agent's role and the order a full campaign runs in: intelligence and research, then strategy, then execution, then localisation, then reporting.
+See [`plugin/README.md`](plugin/README.md) for when to use `/team`, the six thread profiles, and the order a full job runs in: intelligence and research, then strategy, then execution, then localisation, then reporting.
 
 ## Skills
 
@@ -142,7 +142,7 @@ The Google Ads connector reference (`google-ads-tool-map`) is a shared reference
 | `frontend-design` | Builds, redesigns or reviews front-end UI in a brand's visual identity: design read and settings, anti-generic rules, redesign protocol, interface checklist |
 | `astro-site` | Astro sites: structure, content collections, islands, images, i18n, SEO and schema, build checks |
 
-WordPress page building and plugin work come from the separate `wordpress-development` plugin (`wordpress-page-build`, `wordpress-plugin-development`), which the web-developer agent calls with the plugin prefix.
+WordPress page building and plugin work come from the separate `wordpress-development` plugin (`wordpress-page-build`, `wordpress-plugin-development`), which the director and the `web-developer` profile call with the plugin prefix.
 
 ### Shared infrastructure
 

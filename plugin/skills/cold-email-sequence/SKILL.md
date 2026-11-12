@@ -1,7 +1,7 @@
 ---
 name: cold-email-sequence
 metadata:
-  version: 1.0.1
+  version: 1.1.0
   history: 'v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.0.0: new skill. Drafts cold B2B email sequences for human review and sending, with a compliance gate first, real personalisation fields only, subject variants, send gaps, stop rules and a reply-handling guide. Never sends.
 
     '
@@ -138,6 +138,7 @@ Deliver as a document the sender can edit (a Docs artifact, or markdown). Chat f
 
 ## Rules
 
+- **Shared outreach limits.** `references/outreach-rules.md` applies to every outbound and sales enablement deliverable: drafts only, nothing invented, minimal people data, legal points left open.
 - **Never send, schedule or import.** Draft only.
 - **Never invent** a personalisation, a customer, a result, a deadline or a mutual connection.
 - **No deception**: no fake replies or forwards, no false urgency, no hidden sender, no misleading

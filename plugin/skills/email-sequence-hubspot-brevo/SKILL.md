@@ -2,7 +2,7 @@
 name: email-sequence-hubspot-brevo
 description: 'Builds multi-email sequences (onboarding, nurture, re-engagement, win-back, launch) for HubSpot Workflows or Brevo Automation: copy, timing, branching, exit rules, build steps. Use for "email sequence", "drip", "nurture flow". Cold outbound: cold-email-sequence.'
 metadata:
-  version: 1.2.1
+  version: 1.3.0
   history: 'v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.2.0: content-references files renamed and merged; references to them updated. v1.1.1: history note no longer names the removed pointer file. v1.1: wired into content-references. The sequence arc (Step 1) and the per-email body copy (Step 2) now cite content-briefing.md and behavioral-psychology.md instead of leaving structure implicit, and a per-email humanizing pass (ai-content-cleaner, via the former pointer file) was added. Brand voice now checks for a [brand]-brand-kit skill. Platform build guides and benchmark tables are unchanged, those are platform-specific and stay here.'
 ---
 
@@ -180,6 +180,9 @@ All conditions, exits, and suppressions as a reference list.
 Primary conversion metric, per-email metrics (open, CTR, unsubscribe), sequence-level metrics (conversion rate, time to conversion, drop-off points), and a recommended review cadence.
 
 ## After the Sequence
+
+The sequence is a draft and a build checklist. Never activate a workflow, send or schedule without a clear yes, per `security-policy`. If neither HubSpot nor Brevo is connected, say so and hand back the copy and plan without live account data.
+
 
 Ask: "Would you like me to:
 - Revise the copy or tone for a specific email?

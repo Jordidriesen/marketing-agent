@@ -1,7 +1,7 @@
 ---
 name: account-brief
 metadata:
-  version: 1.0.0
+  version: 1.1.0
   history: 'v1.0.0: new skill. One-page brief per target account before outreach: what the company does, trigger events with sources, likely buying committee by role, fit against the ICP, the angle and the first touch. Sourced facts only.
 
     '
@@ -78,6 +78,7 @@ suggested first touch.
 
 ## Rules
 
+- **Shared outreach limits.** `references/outreach-rules.md` applies to every outbound and sales enablement deliverable: drafts only, nothing invented, minimal people data, legal points left open.
 - **Never invent** a trigger, a contact, a figure or a quote. Unsourced means it does not go in.
 - **No personal attributes.** Nothing about health, age, family, beliefs, nationality or private life.
 - **Date everything.** A trigger without a date cannot be used in outreach.

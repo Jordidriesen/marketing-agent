@@ -4,7 +4,7 @@ timeout_seconds: 1200
 allowed_tools: [Read, Glob, Grep, Skill, Agent]
 ---
 
-Use the content-writer agent. Run a CRO audit of this page. The goal is newsletter signups. Traffic comes from a LinkedIn post that links straight to the page. There is no analytics export and no brand kit. The company is Acme Access, a fictional Belgian company selling cloud visitor management and access control. Give me the findings and what to test first.
+Handle this request yourself in this main thread with the plugin's skills; do not start a sub-agent. Run a CRO audit of this page. The goal is newsletter signups. Traffic comes from a LinkedIn post that links straight to the page. There is no analytics export and no brand kit. The company is Acme Access, a fictional Belgian company selling cloud visitor management and access control. Give me the findings and what to test first.
 
 Page, top to bottom:
 
@@ -33,4 +33,4 @@ SECTION "What readers say"
 
 FOOTER: company address, privacy policy, social icons
 
-Return the agent's reply to me verbatim, including its closing Skills run line. Put the full deliverable in your reply; do not write files.
+Return your reply to me verbatim, including a closing Skills run line. Put the full deliverable in your reply; do not write files.

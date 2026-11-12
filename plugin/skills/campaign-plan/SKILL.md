@@ -72,7 +72,7 @@ Immediate action items, stakeholder approvals needed, key decision points.
 
 ## Related Skills
 
-Once the calendar is set, hand individual pieces to the specialist skill for that format: `web-content-pipeline` for a landing or blog page, `lead-magnets` for a gated asset and its capture page, `email-sequence-hubspot-brevo` for a lifecycle flow, `social-content-writer` for a social post, `newsletter-writer` for a one-off email, `press-release-writer` for a launch announcement, `google-ads-ads` (its `rsa-writer` reference) for paid search ad copy, `creative-brief` for a visual deliverable. Before finalising messaging, `competitive-research` (its `competitor-analysis` reference) (or the `competitive-intel-analyst` agent) can surface positioning gaps worth building the campaign's Key Messages around. `brand-review` is the gate to run finished pieces through before they ship.
+Once the calendar is set, hand individual pieces to the specialist skill for that format: `web-content-pipeline` for a landing or blog page, `lead-magnets` for a gated asset and its capture page, `email-sequence-hubspot-brevo` for a lifecycle flow, `social-content-writer` for a social post, `newsletter-writer` for a one-off email, `press-release-writer` for a launch announcement, `google-ads-ads` (its `rsa-writer` reference) for paid search ad copy, `creative-brief` for a visual deliverable. Before finalising messaging, `competitive-research` (its `competitor-analysis` reference) can surface positioning gaps worth building the campaign's Key Messages around. `brand-review` is the gate to run finished pieces through before they ship.
 
 ## Output
 

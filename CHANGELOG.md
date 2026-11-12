@@ -4,6 +4,20 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [5.0.0]
+
+Fewer moving parts. Breaking: thirteen menu commands and twelve agents are gone.
+
+- **One command: `/marketing-agent:team`** (was `/0-marketing`). It turns the main thread into the director, as before. The other thirteen `0-` shortcuts are removed: they started a specialist as a sub-agent, which could not start threads and skipped the brief, the review and the publish question. Every skill still triggers on its own and is in the menu as `/marketing-agent:<skill>`.
+- **Six thread profiles instead of fifteen agents.** New: `data-puller` (bulk pulls to a findings file, Haiku by default), `researcher` (research that needs judgement), `drafter` (parallel drafting from a finished brief). Kept: `graphic-designer`, `web-developer`, `cold-reviewer`. Removed: `campaign-strategist`, `competitive-intel-analyst`, `content-writer`, `email-marketer`, `localization-specialist`, `performance-marketer`, `performance-reporter`, `sales-enablement-specialist`, `sdr-specialist`, `seo-geo-specialist`, `social-media-specialist` and `marketing-director` (with `settings.json`, which set it as the Claude Code main agent). Every profile description now starts "Thread profile for the director", so none of them pulls in work on its own.
+- **What the specialists knew is kept.** `director-playbook/references/discipline-notes.md` holds each discipline's connector order, routing and hand-offs; the director reads the section before a step and pastes it into every thread brief. Hard limits moved into the skills, so they hold when a skill runs directly: a new shared `outreach-rules.md` in `account-brief`, `abm-plan`, `cold-email-sequence` and `battlecard`; four locale checks in `content-translate`; draft-only lines in `newsletter-writer` and `email-sequence-hubspot-brevo`; a Needs input rule in `non-negotiables`.
+- **`director-playbook` 3.0.0:** model table and request table on the new profiles, a Notes column pointing at the discipline notes, and a `Discipline notes` line in the thread brief template.
+- **Skills:** 24 files no longer name removed agents; they point at skills or the reporting step instead.
+- **Evals:** the 17 `routing-*` cases are removed (they graded which agent was picked). Eleven prompts that started with "Use the X agent" now ask for the work in the main thread; the `sdr-*` cases check that no sub-agent was started. New: `no-auto-delegate` and `team-command`. Not run.
+- **Lint:** every agent description must start with "Thread profile".
+
+Update: `claude plugin marketplace update marketing-agent`. If marketing-operator is still installed, uninstall it.
+
 ## [4.0.1]
 
 - **`director-playbook` 2.0.1:** a fixed order for the end of every reply (Rules checked, Skills run, then the publish question as the last line). The first `job-campaign` run on 08/11/2026 passed every criterion except the publish question, because step 10 and the skill-check rule both claimed the end of the reply.

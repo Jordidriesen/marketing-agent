@@ -1,16 +1,16 @@
 # Evals in plain language
 
-These evals check one thing: does the agent use the skill and follow it, and does the copy stay believable. Each case runs the same prompt several times, because one run proves little.
+These evals check one thing: does Claude use the skill and follow it, and does the copy stay believable. Each case runs the same prompt several times, because one run proves little.
 
 Client material is never stored here. Cases in this folder use a fictional company (Acme Access). A case built from a real client brief lives outside the repository and is run locally.
 
 ## How results are read
 
-Objective checks (the skill fired, Steps 5 and 6 ran, no em dashes, no competitor names) are scored automatically. Judgement checks (is a claim plausible, does the page follow its framework) are better read as three states. `tools/judge3.py` re-judges a result file as PASS, FAIL or UNSURE: UNSURE means the person operating the chat decides, and the marketing director asks "Can we publish this as is?" with the open items listed.
+Objective checks (the skill fired, Steps 5 and 6 ran, no em dashes, no competitor names) are scored automatically. Judgement checks (is a claim plausible, does the page follow its framework) are better read as three states. `tools/judge3.py` re-judges a result file as PASS, FAIL or UNSURE: UNSURE means the person operating the chat decides, and the director asks "Can we publish this as is?" with the open items listed.
 
 ## What every case checks
 
-- **The skill fired.** The agent called the skill. If it does not, none of the skill's rules can apply.
+- **The skill fired.** Claude called the skill. If it does not, none of the skill's rules can apply.
 - **No em dashes** in the reply.
 
 ## landing-page-guidelines
@@ -29,13 +29,15 @@ A story from a short brief with one quote and one result. Checks that `customer-
 
 ## sdr-needs-input and sdr-cold-email
 
-Both call the `sdr-specialist` agent.
-- **needs-input:** the brief is missing the product, audience and sender. The agent should come back with questions and write no email.
-- **cold-email:** a complete brief. Checks that `cold-email-sequence` ran, the compliance gate is respected, claims stay inside the brief, the closing `Skills run:` line is present, and no LinkedIn text appears.
+Both run the request directly with the plugin's skills, without a sub-agent (since 5.0.0 there is no SDR agent).
+- **needs-input:** the brief is missing the product, audience and sender. The reply should come back with questions and write no email.
+- **cold-email:** a complete brief. Checks that `cold-email-sequence` ran, the compliance gate is respected, claims stay inside the brief, the closing `Skills run:` line is present, no LinkedIn text appears, and no sub-agent was started.
 
-## routing-*
+## no-auto-delegate and team-command
 
-Seventeen realistic requests that name no agent, each checking that the right specialist is called. `routing-creative` (a logo) expects `graphic-designer`; `routing-web` (a WordPress page template) expects `web-developer`. Used to test that shorter agent descriptions still route correctly.
+Added in 5.0.0, when the specialist agents were removed.
+- **no-auto-delegate:** a plain request for one LinkedIn post. `social-content-writer` must fire and no sub-agent may be started.
+- **team-command:** the request starts with `/marketing-agent:team`. `director-playbook` must load, and the reply must open with a brief and acceptance criteria before any content. Not yet checked: whether the eval runner expands a slash command in a prompt; if it does not, this case shows it as a failed `playbook-loaded` check.
 
 ## social-linkedin, press-release, newsletter, rsa
 
@@ -69,15 +71,11 @@ Both cases go to the `measurement` family skill (4.0.0). `ga4-audit` is run on a
 
 ## meta-plan, meta-trigger and linkedin-plan
 
-`meta-plan` and `linkedin-plan` check that the build plan is complete and honest: no invented cost per lead, CPM, CPC or audience size, the 300 member account minimum and a size verdict for the 40 account LinkedIn list, and the statement that the channel is not connected so the output is a plan. `meta-trigger` checks that a plain "set up a Facebook campaign" request reaches `meta-ads-manager`. These cases go through the `performance-marketer` agent.
+`meta-plan` and `linkedin-plan` check that the build plan is complete and honest: no invented cost per lead, CPM, CPC or audience size, the 300 member account minimum and a size verdict for the 40 account LinkedIn list, and the statement that the channel is not connected so the output is a plan. `meta-trigger` checks that a plain "set up a Facebook campaign" request reaches `meta-ads-manager`. These cases run in the main thread, without a sub-agent.
 
 ## ai-vis
 
 Two seeded rounds of citation counts; the report must name the right mover and engine (Perplexity), call ChatGPT and Google AI Overviews flat, state the small sample and invent no score.
-
-## routing-meta, routing-measure, routing-cro and routing-aivis
-
-Plain requests that name no agent. The expected agents are `performance-marketer`, `performance-reporter`, `content-writer` and `seo-geo-specialist`.
 
 ## route-* (4.0.0)
 
@@ -89,5 +87,5 @@ Three end-to-end jobs on Acme Access, run with the main thread as the director: 
 
 ## Not covered
 
-- The marketing director cannot delegate when it is called as a subagent, so its ask-first behaviour needs a main-agent test that this harness does not offer.
+- The director's ask-first behaviour under `/team` is only partly covered by `team-command`; a full run needs a person answering the questions.
 - LinkedIn outreach and reply handling are parked, so there are no cases for them.

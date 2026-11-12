@@ -9,7 +9,7 @@ The plugin declares no MCP servers of its own (the old `.mcp.json` was removed i
 | Discipline | Connector | Used by | If it isn't connected |
 |---|---|---|---|
 | Keyword, SERP, ranking and backlink data | OpenSEO | SEO research skills, `google-ads-build` (its `sea-keyword-research` reference), competitive intel | Say so; fall back to web research, never estimate figures |
-| Site audits, rank tracking, GA4, near-miss pages (`get_search_opportunities`), index status (`inspect_urls`), saved keywords and reports | OpenSEO (needs an OpenSEO project for the domain) | `seo-audit`, `seo-keyword-research`, `competitive-research` (its `content-gap-mapping` reference), `performance-reporter` | See "Data-source rule" below |
+| Site audits, rank tracking, GA4, near-miss pages (`get_search_opportunities`), index status (`inspect_urls`), saved keywords and reports | OpenSEO (needs an OpenSEO project for the domain) | `seo-audit`, `seo-keyword-research`, `competitive-research` (its `content-gap-mapping` reference), the reporting step | See "Data-source rule" below |
 | Local search: Google Business Profile, reviews, Q&A, Maps rank grid | OpenSEO (any project; spends credits) | `competitive-research` (its `competitor-analysis` reference), `competitive-research` (its `competitive-landscape` reference), `seo-audit` | Say so; local claims stay organic-only |
 | First-party search performance | Search Console, or OpenSEO's Search Console tools | `competitive-research` (its `content-gap-mapping` reference), `seo-keyword-research`, `seo-audit` | See "Data-source rule" below |
 | Page content and crawling | Firecrawl | Research and content-gap skills | Use web fetch for single pages |
@@ -33,7 +33,7 @@ The plugin declares no MCP servers of its own (the old `.mcp.json` was removed i
 | WordPress pages, templates and site parts | The site's own MCP: the page builder's server (for example Elementor or Breakdance), NovaMira, or a managed host's; some run locally through the desktop app | `wordpress-development:wordpress-page-build`, `web-developer` | Hand back copy and markup for manual entry |
 | WordPress SEO settings | The site's Rank Math MCP, where one is set up | `seo-audit`, `web-developer` | Ask for the settings or an export |
 | Sitemaps and wireframes | Relume | `web-developer`, `frontend-design` | Plan the sitemap by hand |
-| WordPress maintenance and health | WP Umbrella (sites in its fleet only) | `seo-audit`, `frontend-design` redesigns, `web-developer`, `performance-reporter` | Ask for the site's plugin list and speed test |
+| WordPress maintenance and health | WP Umbrella (sites in its fleet only) | `seo-audit`, `frontend-design` redesigns, `web-developer`, the reporting step | Ask for the site's plugin list and speed test |
 | Automation between apps | Make, Zapier (only when asked) | `lead-magnets`, `free-tool-strategy` | Describe the automation for manual set-up |
 | Knowledge base and source files | Notion, Google Drive | Briefs and reference material | Ask for the material |
 

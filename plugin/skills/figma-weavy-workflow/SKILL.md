@@ -119,7 +119,7 @@ If no suitable published tool exists and the job needs a graph, hand back the gr
 
 ## Related Skills
 
-The brief comes from `creative-brief`. Layout-and-template assembly of the pieces can move to `canva-workflow`, precise vector or print layout to `affinity-workflow`. Copy in the final asset comes from `content-writer` or `social-media-specialist` and passes `brand-review`.
+The brief comes from `creative-brief`. Layout-and-template assembly of the pieces can move to `canva-workflow`, precise vector or print layout to `affinity-workflow`. Copy in the final asset comes from the writing skills (`web-content-pipeline`, `social-content-writer`) and passes `brand-review`.
 
 ## Output
 

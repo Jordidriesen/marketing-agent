@@ -1,7 +1,7 @@
 {
   "$schema": "https://code.claude.com/schemas/marketplace.json",
   "name": "marketing-agent",
-  "description": "Jordi Driesen's marketing plugin: a team of subagents plus the skill library they run on, in one install.",
+  "description": "Jordi Driesen's marketing plugin: a director command, six thread profiles and the skill library they run on, in one install.",
   "version": "1.0.0",
   "owner": {
     "name": "Jordi Driesen",
@@ -12,8 +12,8 @@
       "name": "marketing-agent",
       "displayName": "Marketing Agent",
       "source": "./plugin",
-      "description": "A marketing team for Claude: a director that runs each job in the main thread with the plugin's skills, thirteen specialist thread profiles it starts only where they pay off, and a cold reviewer with review tiers. 50 skills, five of them family skills. Client brand kits stay private and load via the [brand]-brand-kit naming pattern. Web development calls WordPress skills from the separate wordpress-development plugin.",
-      "version": "4.0.1",
+      "description": "A marketing team for Claude: /team turns the main thread into a director that writes the brief, does the work with the plugin's skills, starts threads on six profiles only where they pay off, reviews by tier and asks before publishing. 50 skills, five of them family skills. Client brand kits stay private and load via the [brand]-brand-kit naming pattern. Web development calls WordPress skills from the separate wordpress-development plugin.",
+      "version": "5.0.0",
       "author": {
         "name": "Jordi Driesen"
       },

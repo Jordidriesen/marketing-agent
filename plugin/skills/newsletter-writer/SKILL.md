@@ -2,7 +2,7 @@
 name: newsletter-writer
 description: 'Writes one marketing email or newsletter: announcement, update, promotion or roundup, with subject lines and preview text. Use for "newsletter", "announcement email", "promo email". Multi-email flows: email-sequence-hubspot-brevo.'
 metadata:
-  version: 1.2.1
+  version: 1.3.0
   history: 'v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.2.0: content-references files renamed and merged; references to them updated. v1.1: added a structural-framework step (Step 3) citing references/content-briefing.md, a one-off email still needs a deliberate PAS / BLUF choice by purpose rather than a default body shape. CTA guidance points at behavioral-psychology.md.'
 ---
 
@@ -63,6 +63,8 @@ Run `copy-editing` (Seven Sweeps), then the humanising pass, `ai-content-cleaner
 - Preview text
 - Full email body, ready to paste into any ESP
 - Note on brand voice and structural framework applied
+
+The email is a draft. Never send or schedule it, or create a campaign that sends, without a clear yes, per `security-policy`.
 
 Ask: "Would you like a version for a different segment, or should this become the first email in a sequence?" (If the latter, hand off to `email-sequence-hubspot-brevo`.)
 

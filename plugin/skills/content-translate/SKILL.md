@@ -2,7 +2,7 @@
 name: content-translate
 description: Translates and localises web content (pages, blogs, customer stories) into Dutch (Belgian), French, German or Spanish with brand terms locked. Use for "translate this", "vertalen", "traduire", "übersetzen", "localise for [market]".
 metadata:
-  version: 1.1.1
+  version: 1.2.0
   history: 'v1.1.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.1.0: content-references files renamed and merged; references to them updated. Adapted from a third-party blog-translate/blog-localize/blog-multilingual module. Two changes from the original: the sub-agent ("Task") spawning architecture is replaced with a single direct pass, matching how the rest of this library works, and cultural adaptation is folded into the same pass rather than deferred to a separate localize skill, since the real workflow here is translating already-written English content, not writing five market versions from scratch. The original''s hreflang/ sitemap generation (blog-multilingual Phase 5) isn''t included yet, every market is already live with its own URL structure; build that piece later if a from-scratch multi-market launch actually needs it.'
 ---
 
@@ -193,6 +193,20 @@ to check here; this step is "run that checklist," not a second list.
 Flag every failure inline: file or section, what's wrong, the fix. Re-pass
 any flagged section before delivery rather than shipping with known
 issues.
+
+Then four checks that hold for every locale:
+
+- **One pass per locale.** Several targets mean several passes; never one
+  blended "international" version.
+- **No new facts.** No claim, figure or product fact that is not in the
+  source. An ambiguous source is a question for the user, not a choice made
+  silently in the target language.
+- **Back-check.** Numbers, product names, URLs, CTAs and legal or compliance
+  claims match the source exactly. `brand-review` runs on the target text,
+  not the source.
+- **Layout expansion.** When the target runs much longer than the source
+  (German and French often run about 30% longer) and the piece goes into a
+  designed asset or a page, flag it in the delivery for whoever lays it out.
 
 ---
 

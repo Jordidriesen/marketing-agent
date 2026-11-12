@@ -187,7 +187,7 @@ Unless the brief or the brand asks for them:
   (a comment, "Example" label, or the user's explicit go-ahead) so it can't ship by accident.
 - Avoid the obvious placeholders ("John Doe", "Acme", lorem ipsum) in mock-ups: they read as
   unfinished. Use plausible, local sample names marked as samples.
-- Copy in the layout comes from the approved piece (`web-content-pipeline`, `content-writer`),
+- Copy in the layout comes from the approved piece (`web-content-pipeline`),
   not invented here. Before shipping, re-read every visible string: anything broken, vague or
   cute-but-meaningless gets rewritten plainly or sent back.
 - No em dashes anywhere visible: headlines, labels, buttons, captions, alt text, quotes.

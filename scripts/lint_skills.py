@@ -8,6 +8,8 @@ Checks:
 - 'description' field is present, non-trivial (catches empty/placeholder text) and at most 500 characters
 - 'metadata.version', when present, is a semantic version (x.y.z). A missing version is a warning,
   not an error: Claude Code ignores it at runtime, and skills carry one for maintainers
+- every agent in plugin/agents has a description that starts with "Thread profile", so no agent
+  pulls in work on its own outside the director
 
 Exits non-zero on any failure so it can gate CI.
 """
@@ -86,6 +88,19 @@ def main() -> int:
             for folder in sorted(plugin_skills_dir.iterdir()):
                 if folder.is_dir():
                     all_errors.extend(check_skill(folder))
+
+    agents_dir = ROOT / "plugin" / "agents"
+    if agents_dir.is_dir():
+        for agent in sorted(agents_dir.glob("*.md")):
+            m = FRONTMATTER_RE.match(agent.read_text(encoding="utf-8"))
+            if not m:
+                all_errors.append(f"{agent.name}: missing frontmatter")
+                continue
+            meta = yaml.safe_load(m.group(1)) or {}
+            if meta.get("name") != agent.stem:
+                all_errors.append(f"{agent.name}: name does not match the file name")
+            if not str(meta.get("description", "")).startswith("Thread profile"):
+                all_errors.append(f"{agent.name}: description must start with 'Thread profile'")
 
     if all_errors:
         print(f"Found {len(all_errors)} issue(s):\n")

@@ -120,8 +120,8 @@ the approved source.
 
 ## Related Skills
 
-The brief comes from `creative-brief`; copy from `content-writer`, `social-media-specialist` or
-`email-marketer`, through `brand-review`. Template and bulk variant work belongs in `canva-workflow`;
+The brief comes from `creative-brief`; copy from the writing skills (`web-content-pipeline`,
+`social-content-writer`, `newsletter-writer`), through `brand-review`. Template and bulk variant work belongs in `canva-workflow`;
 generated imagery in `figma-weavy-workflow`; marks in `logo-design`, whose SVG output can be finished
 or laid out here.
 

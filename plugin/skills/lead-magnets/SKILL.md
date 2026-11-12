@@ -75,7 +75,7 @@ Per-format creation detail, structure, length, tools, common mistakes, is in [re
 
 **Framing the exchange:** make the value explicit ("Get the full 25-page guide, free"), show a preview (contents, first page, sample output), add proof ("Downloaded by 5,000+ marketers"), reduce risk ("No spam. Unsubscribe anytime.").
 
-There is no dedicated form or popup optimisation skill in this plugin. Apply the behavioural-psychology and reactance-reduction guidance in `references/behavioral-psychology.md` when specifying the form and any popup. For an ad-driven landing page, `google-ads-analyse` (its `landing-page-matcher` reference) (performance-marketer) checks ad-to-page message match.
+There is no dedicated form or popup optimisation skill in this plugin. Apply the behavioural-psychology and reactance-reduction guidance in `references/behavioral-psychology.md` when specifying the form and any popup. For an ad-driven landing page, `google-ads-analyse` (its `landing-page-matcher` reference) checks ad-to-page message match.
 
 ## Landing page and delivery
 
@@ -99,7 +99,7 @@ There is no dedicated form or popup optimisation skill in this plugin. Apply the
 - **Blog CTAs and content upgrades**: inline and end-of-post CTAs; post-specific upgrades convert 2–5× better than a generic sidebar CTA.
 - **Exit-intent and scroll-depth prompts**: match the offer to the page.
 - **Social**: teasers and carousels from the key points; the magnet as the profile CTA. Drafted by `social-content-writer`.
-- **Paid**: lead ads for top-funnel magnets, search ads for high-intent ones (templates, tools), retargeting for blog visitors. Owned by `performance-marketer`; `google-ads-build` (its `sea-keyword-research` reference) sizes the keyword list.
+- **Paid**: lead ads for top-funnel magnets, search ads for high-intent ones (templates, tools), retargeting for blog visitors. `google-ads-build` (its `sea-keyword-research` reference) sizes the keyword list.
 - **Partner co-promotion**: cross-promotion with complementary brands, guest webinars, partner newsletters, resource-collection inclusion.
 
 Where the magnet sits in the wider plan and calendar is a `campaign-plan` decision; topic selection grounded in real search demand is `content-research-orchestrator`.
@@ -114,7 +114,7 @@ Where the magnet sits in the wider plan and calendar is a `campaign-plan` decisi
 | Email engagement | Content relevance | 30–50% open, 2–5% click |
 | Time to conversion | Nurture effectiveness | Track by lead-magnet source |
 
-Detailed benchmarks by format and B2B / B2C split are in [references/benchmarks.md](references/benchmarks.md). Reporting on a live magnet's paid promotion is a `paid-ads-report-writer` job; for the full cross-channel picture, ask the `performance-reporter` agent.
+Detailed benchmarks by format and B2B / B2C split are in [references/benchmarks.md](references/benchmarks.md). Reporting on a live magnet's paid promotion is a `paid-ads-report-writer` job; for the full cross-channel picture, run the reporting step through `/team`.
 
 **A/B test first:** headline (benefit vs. curiosity), format (checklist vs. guide on the same topic), gate level (full vs. partial), form fields (email-only vs. email + name), CTA copy, delivery method.
 
@@ -127,7 +127,7 @@ Detailed benchmarks by format and B2B / B2C split are in [references/benchmarks.
 - `content-translate`: a localised version of the magnet or landing page.
 - `email-sequence-hubspot-brevo`: the nurture sequence after capture; `newsletter-writer` for a one-off delivery email.
 - `campaign-plan`: where the magnet fits in the campaign and calendar. `content-research-orchestrator`: topic selection from search demand.
-- `social-content-writer`: social promotion. `performance-marketer` (via `google-ads-build` (its `sea-keyword-research` reference), `google-ads-build` (its `campaign-architect` reference)): paid promotion.
+- `social-content-writer`: social promotion. `google-ads-build` (its `sea-keyword-research` and `campaign-architect` references): paid promotion.
 - `brand-review`: gate for the landing page copy and any prose in the asset.
 
 ## Output

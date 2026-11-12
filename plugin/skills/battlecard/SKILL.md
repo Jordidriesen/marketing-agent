@@ -1,7 +1,7 @@
 ---
 name: battlecard
 metadata:
-  version: 1.0.1
+  version: 1.1.0
   history: 'v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.0.0: new skill. A one-page, sales-facing competitor card built from verified inputs, with every claim source-tagged, an honest where-they-win column, landmine questions, objection responses and a review date.
 
     '
@@ -90,6 +90,7 @@ team wants a designed version.
 
 ## Rules
 
+- **Shared outreach limits.** `references/outreach-rules.md` applies to every outbound and sales enablement deliverable: drafts only, nothing invented, minimal people data, legal points left open.
 - No invented facts about the competitor or about us.
 - No disparagement. State differences, not insults.
 - Every claim is dated. Competitors change, so the card carries a review date and an owner.

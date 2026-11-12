@@ -1,7 +1,7 @@
 ---
 name: abm-plan
 metadata:
-  version: 1.0.0
+  version: 1.1.0
   history: 'v1.0.0: new skill. Account-based marketing plan for a set of named accounts: tiers, selection criteria, buying committee by role, plays per tier across outreach, paid social, content and events, coordination with sales, and account-level measurement.
 
     '
@@ -59,7 +59,7 @@ For each tier, which channels run, in which order, with what message:
 - **Paid audiences**: LinkedIn matched audiences (company lists) and Meta custom audiences where the
   brand uses Meta. Hand the list and the message to the paid social owner; this plan does not build
   campaigns.
-- **Content**: which existing pieces fit each role, and the gaps to commission from `content-writer`.
+- **Content**: which existing pieces fit each role, and the gaps to commission from `web-content-pipeline` or `content-creation`.
 - **Events and direct contact**: invitations, meetings, sales touches.
 
 Lay the plays out as a week-by-week sequence over the period, so channels warm an account before
@@ -91,6 +91,7 @@ Deliver as a document in the run folder when one is in use, otherwise in the rep
 
 ## Rules
 
+- **Shared outreach limits.** `references/outreach-rules.md` applies to every outbound and sales enablement deliverable: drafts only, nothing invented, minimal people data, legal points left open.
 - **Never invent** accounts, contacts, triggers, budgets or results.
 - Paid and outreach parts are plans and drafts; nothing goes live without approval, per `security-policy`.
 - Legal points on outreach stay open until confirmed, as in `cold-email-sequence`.

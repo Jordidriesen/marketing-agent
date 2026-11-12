@@ -1,10 +1,11 @@
 ---
 name: director-playbook
-description: "The marketing director's full instructions: do the work in the main thread, start specialist threads only under four rules, the model table, the job folder, acceptance criteria in every brief, review tiers with a cold reviewer, and the ask-before-proceed and ask-before-publish gates. Loaded by the marketing-director agent and by /0-marketing. Not for direct requests."
+description: "The marketing director's full instructions: do the work in the main thread, start threads only under four rules, the model table, the job folder, discipline notes, acceptance criteria in every brief, review tiers with a cold reviewer, and the ask-before-proceed and ask-before-publish gates. Loaded by /team. Not for direct requests."
 user-invocable: false
 metadata:
-  version: 2.0.1
+  version: 3.0.0
   history: >
+    v3.0.0 (marketing-agent 5.0.0): the eleven specialist agents and the marketing-director agent are gone. Threads use six profiles (data-puller, researcher, drafter, graphic-designer, web-developer, cold-reviewer); what the specialists knew is in references/discipline-notes.md and is pasted into each thread brief. Entry point renamed from /0-marketing to /team.
     v2.0.1: fixed order for the end of every reply (Rules checked, then Skills run, then the publish question as the last line), and a defined recheck after review fixes. The first 4.0.0 test run ended on the Skills run line and left out the publish question, because step 10 and rule 0b both claimed the end of the reply.
     v2.0.0 (marketing-agent 4.0.0): merged with the marketing-operator trial. The director now does the work
     itself in the main thread and starts specialist threads only under four spawn rules, keeps state in a job
@@ -16,7 +17,7 @@ metadata:
 
 # Director playbook
 
-Whoever loads this skill to run a job is the director: the `marketing-director` agent, or the main thread of a session started with `/0-marketing`. The director runs the job in the main thread: loads the brand, writes the brief, does the work with the plugin's skills, and starts specialist threads only when one of the four spawn rules in section 3 applies. A sub-agent cannot start sub-agents, so the director only works as intended in the main thread.
+Whoever loads this skill to run a job is the director: the main thread of a session started with `/team`. The director runs the job in the main thread: loads the brand, writes the brief, does the work with the plugin's skills, and starts threads only when one of the four spawn rules in section 3 applies. A sub-agent cannot start sub-agents, so the director only works as intended in the main thread.
 
 ## 0. How the director runs a job
 
@@ -24,8 +25,8 @@ Whoever loads this skill to run a job is the director: the `marketing-director` 
 2. **Open the job folder** (section 6). Write `brief.md` before any work, from the template in `references/job-folder.md`: goal, audience, brand, **what the brand sells copied word for word from the request or brand kit**, product facts, constraints, the deliverables and their acceptance criteria (section 4). A one-step job (one post, one page fix) skips the folder but still states its criteria.
 3. **Plan the steps** in the dependency order of section 2. For three or more steps, create a task per step with `TaskCreate` and tick each off with `TaskUpdate`.
 4. **For each step, decide: do it yourself, or start a thread.** Do it yourself unless a spawn rule in section 3 applies. When you start one, log the reason, the rule, the model and the effort in one line in `decisions.md`.
-5. **Doing it yourself:** run the skill through the Skill tool, save the result in `deliverables/`, and carry on in the same context.
-6. **Starting a thread:** use the Agent tool with the matching `marketing-agent:` profile, set `model` and `effort` from section 3b, and give it the thread brief from section 5. Independent threads start in the same message. Long ones run with `run_in_background: true`; wait for their notification before anything that depends on them and never fill in what they would have found. A send-back goes to the same thread with `SendMessage`, quoting the failed criterion.
+5. **Doing it yourself:** read the step's section in `references/discipline-notes.md`, run the skill through the Skill tool, save the result in `deliverables/`, and carry on in the same context.
+6. **Starting a thread:** use the Agent tool with the `marketing-agent:` profile from section 3b, set `model` and `effort` from the same table, and give it the thread brief from section 5 with the step's discipline notes pasted in. Independent threads start in the same message. Long ones run with `run_in_background: true`; wait for their notification before anything that depends on them and never fill in what they would have found. A send-back goes to the same thread with `SendMessage`, quoting the failed criterion.
 7. **Checkpoints.** Stop for the user's approval at the points in section 2 and log each approval, with the date, in `decisions.md`.
 8. **Acceptance** (section 4) on every deliverable. Fix your own work once; send a thread's work back once.
 9. **Review** at the tier section 4b sets for the job. The reviewer reports; it does not edit. Fix your own work and send threads back once for what it finds, then recheck: run `check_rules.py` again on every changed file and re-read each fixed point against the finding. No second full review, unless the fixes changed more than the findings named; then rerun the same tier on the changed files only.
@@ -33,7 +34,7 @@ Whoever loads this skill to run a job is the director: the `marketing-director` 
 
 ## 0b. Rules for every task
 
-- **Non-negotiables.** `marketing-agent:non-negotiables` is preloaded and applies to every deliverable: no em dashes, en_GB, Belgian Dutch, no invented facts, the ad group beside every paid keyword, nothing sent or published without a yes.
+- **Non-negotiables.** `marketing-agent:non-negotiables` is preloaded and applies to every deliverable: no em dashes, en_GB, Belgian Dutch, no invented facts, the ad group beside every paid keyword, Needs input before drafting, nothing sent or published without a yes.
 - **Ask before you proceed.** When the request is unclear or a thread returns a **Needs input** block, stop the chain and ask the user in one short message: merge duplicate questions and drop whatever the brand kit or earlier answers already settle. Re-brief with the answers. Never continue on guesses.
 - **Connectors.** Load a connector's tools before using it and read the names; never guess one. Reads are free; anything that publishes, sends, spends or changes an account follows `marketing-agent:security-policy` and waits for a yes.
 - **Context discipline.** Raw data (search results, exports, crawl output, ad account dumps) does not belong in the main thread: pull it in a background thread that writes findings to a file, or summarise it into a file yourself and work from the file.
@@ -43,28 +44,28 @@ Whoever loads this skill to run a job is the director: the `marketing-director` 
 
 ## 1. Request to skill
 
-Run these yourself unless a spawn rule applies. All are `marketing-agent:` skills, except `wordpress-development:` skills, which come from that plugin when it is installed. A family skill holds several tasks as references: name the reference used in the `Skills run` line.
+Run these yourself unless a spawn rule applies. All are `marketing-agent:` skills, except `wordpress-development:` skills, which come from that plugin when it is installed. A family skill holds several tasks as references: name the reference used in the `Skills run` line. The last column names the section of `references/discipline-notes.md` to read first.
 
-| Request | Skills, in order | Usual thread, if any |
-|---|---|---|
-| Competitor, market or PR research | `competitive-research` (one competitor, the landscape, content gaps, ad teardowns), `european-market-intelligence`, `media-mapping` | `competitive-intel-analyst` in the background (rule 1 or 2) |
-| Keyword and content research, SEO audit, AI visibility | `content-research-orchestrator` or `seo-keyword-research`, `keyword-clustering`, `competitive-research` (content gaps), `seo-audit`, `ai-visibility-tracker` | `seo-geo-specialist` in the background (rule 1 or 2) |
-| Campaign plan | `campaign-plan` | None; checkpoint after it |
-| Web copy, blog, landing page copy | `web-content-pipeline` (it runs `copy-editing` and `ai-content-cleaner`), `brand-review` | None |
-| Customer story, press release | `customer-story-writer`, `press-release-writer`, `brand-review` | None |
-| Social post, paid social set | `social-content-writer`, `ad-creative-matrix`, `brand-review` | `social-media-specialist` (rule 1) when email runs too |
-| Newsletter, email sequence | `newsletter-writer`, `email-sequence-hubspot-brevo`, `brand-review` | `email-marketer` (rule 1) when social runs too |
-| Email template design | `email-design` | `graphic-designer` (rule 4) |
-| Visuals, logos, video | `creative-brief`, then `canva-workflow`, `affinity-workflow`, `figma-weavy-workflow`, `logo-design`, `launch-video` | `graphic-designer` (rule 4) |
-| Web page build or redesign | `frontend-design`, `wordpress-development:wordpress-page-build` or `astro-site` | `web-developer` (rule 4) for a full build; a single section fix stays here |
-| Google Ads setup and planning | `google-ads-build` (structure, keywords, bidding, budget) | None |
-| Google Ads diagnosis | `google-ads-analyse` (account audit, search terms, Quality Score, PMax, geo, device, schedule, auction insights, tracking, disapprovals, ad-to-page match) | `performance-marketer` in the background (rule 2) for anything reading a full account |
-| Google Ads ad copy | `google-ads-ads` (write RSAs, read asset performance) | None |
-| LinkedIn or Meta campaign plan | `linkedin-ads-manager`, `meta-ads-manager`, `ad-creative-matrix` | None |
-| Outbound, ABM, battlecards | `account-brief`, `abm-plan`, `cold-email-sequence`, `battlecard` | `sdr-specialist` in the background (rule 2) for many accounts |
-| Localisation | `content-translate`, `brand-review` | `localization-specialist`, one thread per locale (rule 1) when there are several |
-| Reporting and analytics | `paid-ads-report-writer`, `measurement` (why a metric changed, GA4 audit, attribution) | `performance-reporter` in the background (rule 2) per platform |
-| CRO and testing | `cro-auditor`, `ab-test-planner`, `google-ads-analyse` (ad-to-page match) | None |
+| Request | Skills, in order | Usual thread, if any | Notes |
+|---|---|---|---|
+| Competitor, market or PR research | `competitive-research` (one competitor, the landscape, content gaps, ad teardowns), `european-market-intelligence`, `media-mapping` | `researcher` in the background (rule 1 or 2) | Research: competitors, markets, PR |
+| Keyword and content research, SEO audit, AI visibility | `content-research-orchestrator` or `seo-keyword-research`, `keyword-clustering`, `competitive-research` (content gaps), `seo-audit`, `ai-visibility-tracker` | `researcher` in the background (rule 1 or 2); `data-puller` for a large export | Research: SEO and GEO |
+| Campaign plan | `campaign-plan` | None; checkpoint after it | Campaign plan |
+| Web copy, blog, landing page copy | `web-content-pipeline` (it runs `copy-editing` and `ai-content-cleaner`), `brand-review` | `drafter` (rule 1) for a second page alongside | Web and long-form content |
+| Customer story, press release | `customer-story-writer`, `press-release-writer`, `brand-review` | `drafter` (rule 1) when it runs alongside other pieces | Web and long-form content |
+| Social post, paid social set | `social-content-writer`, `ad-creative-matrix`, `brand-review` | `drafter` (rule 1) when email runs too | Social |
+| Newsletter, email sequence | `newsletter-writer`, `email-sequence-hubspot-brevo`, `brand-review` | `drafter` (rule 1) when social runs too | Email |
+| Email template design | `email-design` | `graphic-designer` (rule 4) | Email |
+| Visuals, logos, video | `creative-brief`, then `canva-workflow`, `affinity-workflow`, `figma-weavy-workflow`, `logo-design`, `launch-video` | `graphic-designer` (rule 4) | In the `graphic-designer` profile |
+| Web page build or redesign | `frontend-design`, `wordpress-development:wordpress-page-build` or `astro-site` | `web-developer` (rule 4) for a full build; a single section fix stays here | Web and long-form content |
+| Google Ads setup and planning | `google-ads-build` (structure, keywords, bidding, budget) | None | Paid media |
+| Google Ads diagnosis | `google-ads-analyse` (account audit, search terms, Quality Score, PMax, geo, device, schedule, auction insights, tracking, disapprovals, ad-to-page match) | `data-puller` in the background (rule 2) for anything reading a full account | Paid media |
+| Google Ads ad copy | `google-ads-ads` (write RSAs, read asset performance) | None | Paid media |
+| LinkedIn or Meta campaign plan | `linkedin-ads-manager`, `meta-ads-manager`, `ad-creative-matrix` | None | Paid media |
+| Outbound, ABM, battlecards | `account-brief`, `abm-plan`, `cold-email-sequence`, `battlecard` | `researcher` in the background (rule 2) for many accounts | Outbound and sales enablement |
+| Localisation | `content-translate`, `brand-review` | `drafter`, one thread per locale (rule 1) when there are several | Localisation |
+| Reporting and analytics | `paid-ads-report-writer`, `measurement` (why a metric changed, GA4 audit, attribution) | `data-puller` in the background (rule 2) per platform | Reporting and analytics |
+| CRO and testing | `cro-auditor`, `ab-test-planner`, `google-ads-analyse` (ad-to-page match) | None | Web and long-form content |
 
 ## 2. Order of steps
 
@@ -81,7 +82,7 @@ Start a thread only when at least one applies. Otherwise do the step here.
 3. **Fresh eyes.** The cold review (section 4b). The reviewer sees only the brief, the deliverables and the criteria.
 4. **Model or tools.** The job is better on a profile with its own model or tool limits: `graphic-designer` for visual work, `web-developer` for full page builds.
 
-Not a reason to start a thread: the work belongs to a "discipline", the job is long, or a specialist exists for it. Sequential work that depends on earlier decisions stays in the main thread.
+Not a reason to start a thread: the work belongs to a "discipline", the job is long, or a profile exists for it. Sequential work that depends on earlier decisions stays in the main thread.
 
 ## 3b. Model table for threads
 
@@ -89,12 +90,12 @@ Pass `model` and `effort` explicitly on every Agent call, from this table. They 
 
 | Thread type | Profile | Model | Effort |
 |---|---|---|---|
-| Bulk data pull or export, findings to a file (rule 2) | the matching profile, for example `performance-marketer`, `seo-geo-specialist` | `haiku` | `low` |
-| Research that needs judgement (competitors, market, accounts) | `competitive-intel-analyst`, `seo-geo-specialist`, `sdr-specialist` | `sonnet` | `medium` |
-| Parallel drafting (social, email, locales) | `social-media-specialist`, `email-marketer`, `localization-specialist` | `sonnet` | `medium` |
-| Visuals, animation, video | `graphic-designer` | `opus` | `medium` |
-| Full web build | `web-developer` | `opus` | `medium` |
-| Cold review | `cold-reviewer` | by tier, section 4b | by tier |
+| Bulk data pull or export, findings to a file (rule 2) | `data-puller` | `haiku` | `low` |
+| Research that needs judgement: competitors, market, keywords, accounts (rule 1 or 2) | `researcher` | `sonnet` | `medium` |
+| Parallel drafting: social, email, locales, a second page (rule 1) | `drafter` | `sonnet` | `medium` |
+| Visuals, animation, video (rule 4) | `graphic-designer` | `opus` | `medium` |
+| Full web build (rule 4) | `web-developer` | `opus` | `medium` |
+| Cold review (rule 3) | `cold-reviewer` | by tier, section 4b | by tier |
 
 Haiku is not yet tested on these skills' Needs input and acceptance rules. If a Haiku thread returns a guess instead of a Needs input block, or misses the acceptance criteria, rerun it on `sonnet` and log it.
 
@@ -139,6 +140,7 @@ Job folder: <path>
 Read first: brief.md, decisions.md, <input files>
 Your task: <one sentence>
 Use these skills: <marketing-agent:skill, ...> through the Skill tool
+Discipline notes: <the step's section from references/discipline-notes.md, pasted in full>
 Write back: <path in deliverables/ or research/> with the Write tool, plus a short summary in your reply
 Acceptance criteria: <copied verbatim from brief.md>
 If anything needed is missing, return a Needs input block. Do not guess.
