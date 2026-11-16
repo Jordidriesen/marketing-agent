@@ -4,6 +4,18 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [5.1.0]
+
+Video production gets a script and storyboard step before the build, and a finishing step after it.
+
+- **New `video-script-storyboard` 1.0.0:** spoken scripts for face-on-camera video and two-column A/V scripts for voice-over work, a storyboard and a shot list grouped by set-up, and one frame per scene at three levels (thumbnail sketches, styled keyframes in the brand's tokens, gated generated keyframes), published as one board with an approval checkpoint before anything is built, generated or filmed. Uses vidIQ's script guidance and length check when connected.
+- **New `video-finishing` 1.0.0:** subtitles (local transcription first, SRT and burnt-in), two-pass loudness, trims, 9:16 and 1:1 reframes, Shorts picked from a long-form transcript, platform exports and poster frames, always on a copy.
+- **`launch-video` 1.2.0:** builds from the approved board; Step 2 works without a code repo (live site, screenshots, PDFs, design system); a locale step with reading floors rechecked per language; an ffmpeg fallback render; the description states the real 3 to 40 second range; the poster bake uses a fast preset for drafts; voice-over follows the A/V script.
+- **`graphic-designer`:** runs `video-script-storyboard` first (styled keyframes for client work) and `video-finishing` for existing footage; renders and ffmpeg go back to the director, since threads have no shell.
+- **`drafter`:** writes video and voice-over scripts with `video-script-storyboard`.
+- **`director-playbook` 3.1.0:** a Video row in the request table and a Video section in the discipline notes.
+- README, plugin README and CONNECTORS updated (vidIQ, ffmpeg). 52 skills. No evals added yet.
+
 ## [5.0.0]
 
 Fewer moving parts. Breaking: thirteen menu commands and twelve agents are gone.

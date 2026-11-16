@@ -25,7 +25,9 @@ The plugin declares no MCP servers of its own (the old `.mcp.json` was removed i
 | Generated imagery and video | Figma (Weave tools) | `figma-weavy-workflow` | Hand back the graph spec |
 | Design to code, code to design | Figma (Dev Mode and file tools, with the Figma plugin's skills) | `frontend-design`, `web-developer` | Read the frame from screenshots |
 | Image edits, PDF work, fonts | Adobe for creativity (Express only when asked) | `graphic-designer`, `creative-brief`, `canva-workflow`, `frontend-design` | Hand back edit instructions |
-| Short product and logo videos | HyperFrames by HeyGen, or the Hyperframes CLI | `launch-video` | Deliver the plan, storyboard and composition source |
+| Short product and logo videos | HyperFrames by HeyGen, or the Hyperframes CLI | `launch-video` | ffmpeg fallback render from the approved frames, or deliver the board and composition source |
+| Script length and guidance (YouTube) | vidIQ | `video-script-storyboard` | Count words at 150 per minute and say it is an estimate |
+| Finishing existing video (subtitles, loudness, reframes, exports) | ffmpeg in the workspace or on the user's computer, local speech recognition for transcripts | `video-finishing` | Hand back the commands and the SRT draft |
 | UI pattern research (optional) | Mobbin | `creative-brief`, `frontend-design` | Leave it out |
 | Social scheduling | Typefully | `social-content-writer` | Hand back finished copy only |
 | YouTube, Instagram and TikTok research | vidIQ | Personal channel work (personal-content plugin), `social-content-writer` | Use web research |

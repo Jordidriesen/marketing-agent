@@ -53,13 +53,25 @@ Replace only the first frame with the poster, leaving timing and audio untouched
 ```bash
 ffmpeg -y -i video.mp4 -i video.jpg \
   -filter_complex "[0:v][1:v]overlay=0:0:enable='eq(n,0)'[v]" \
-  -map "[v]" -map "0:a?" -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p \
+  -map "[v]" -map "0:a?" -c:v libx264 -crf 18 -preset veryfast -pix_fmt yuv420p \
   -c:a copy -movflags +faststart video.poster.mp4 && mv video.poster.mp4 video.mp4
 ```
+
+This re-encodes the whole video, so use `-preset veryfast` for drafts and switch to `-preset slow` only
+for a final delivery the user wants at best quality.
 
 Keep `video.jpg`: it is the custom thumbnail for platforms that accept an upload and the `poster` image for
 any `<video>` embed. This technique is adapted from the `brag` project. Check the result plays and has the
 same duration before replacing the original.
+
+## Fallback render without Hyperframes
+
+When neither the connector nor the CLI works: write each scene as an HTML page at the output size (the
+approved styled keyframe is the scene's settled state), screenshot it with headless Chrome or Playwright
+as JPEG at quality 92, and assemble with ffmpeg: one encoded file per scene (a held still with a short fade
+in and out, or a few screenshots of the entrance), all with the same size, frame rate and encoder
+settings, joined with the concat demuxer and `-c copy`. Motion is limited to fades, slides and simple
+reveals; say so in the hand-over.
 
 ## Caption
 

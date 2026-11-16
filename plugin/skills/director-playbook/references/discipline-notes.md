@@ -38,6 +38,16 @@ What the specialist agents knew before 5.0.0, kept per discipline. Read the sect
 - Working from a campaign plan or a finished piece, take the angle and key message from it rather than re-deriving them.
 - `brand-review` before anything is handed back.
 
+## Video
+
+- Order: `video-script-storyboard` (script, storyboard, shot list for filmed work, one frame per scene), then the approval checkpoint on the frames, then the build (`launch-video`, Canva `create-video`, a Weave video model, or the shoot), then `video-finishing` (subtitles, loudness, cut-downs, exports). Nothing is built, generated or filmed before the board is approved.
+- Frames: styled keyframes in the brand's real tokens for client work, so the client approves pictures. Generated keyframes only on request; quote the credit cost first.
+- Source material: the product's real screens, site or brochures, or the client's own photos and footage. A brand without a software product has no UI flow; never invent one.
+- Multi-market brands: the source board is approved first, then `content-translate` per locale, with every timing and reading floor rechecked (German and French often run about 30% longer). One render per locale.
+- Threads have no shell: renders and ffmpeg run in the main thread from the commands the thread hands back.
+- Paid video ads start from the `ad-creative-matrix` hooks; organic posts that carry the video from `social-content-writer`.
+- Music only when the client supplied a licensed track. A voice-over is recorded by a person the client chooses; never a synthesised real voice.
+
 ## Email
 
 - One email: `newsletter-writer`. A flow with timing, branching and exits: `email-sequence-hubspot-brevo`, which asks HubSpot or Brevo first; never guess the platform.

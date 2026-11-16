@@ -3,8 +3,9 @@ name: director-playbook
 description: "The marketing director's full instructions: do the work in the main thread, start threads only under four rules, the model table, the job folder, discipline notes, acceptance criteria in every brief, review tiers with a cold reviewer, and the ask-before-proceed and ask-before-publish gates. Loaded by /team. Not for direct requests."
 user-invocable: false
 metadata:
-  version: 3.0.0
+  version: 3.1.0
   history: >
+    v3.1.0 (marketing-agent 5.1.0): a Video row (video-script-storyboard, launch-video, video-finishing) and a Video section in the discipline notes.
     v3.0.0 (marketing-agent 5.0.0): the eleven specialist agents and the marketing-director agent are gone. Threads use six profiles (data-puller, researcher, drafter, graphic-designer, web-developer, cold-reviewer); what the specialists knew is in references/discipline-notes.md and is pasted into each thread brief. Entry point renamed from /0-marketing to /team.
     v2.0.1: fixed order for the end of every reply (Rules checked, then Skills run, then the publish question as the last line), and a defined recheck after review fixes. The first 4.0.0 test run ended on the Skills run line and left out the publish question, because step 10 and rule 0b both claimed the end of the reply.
     v2.0.0 (marketing-agent 4.0.0): merged with the marketing-operator trial. The director now does the work
@@ -56,7 +57,8 @@ Run these yourself unless a spawn rule applies. All are `marketing-agent:` skill
 | Social post, paid social set | `social-content-writer`, `ad-creative-matrix`, `brand-review` | `drafter` (rule 1) when email runs too | Social |
 | Newsletter, email sequence | `newsletter-writer`, `email-sequence-hubspot-brevo`, `brand-review` | `drafter` (rule 1) when social runs too | Email |
 | Email template design | `email-design` | `graphic-designer` (rule 4) | Email |
-| Visuals, logos, video | `creative-brief`, then `canva-workflow`, `affinity-workflow`, `figma-weavy-workflow`, `logo-design`, `launch-video` | `graphic-designer` (rule 4) | In the `graphic-designer` profile |
+| Visuals, logos | `creative-brief`, then `canva-workflow`, `affinity-workflow`, `figma-weavy-workflow`, `logo-design` | `graphic-designer` (rule 4) | In the `graphic-designer` profile |
+| Video: script, storyboard, build, finishing | `video-script-storyboard` (checkpoint on the frames), then `launch-video`, Canva or Weave video, or the shoot; `video-finishing` for existing footage | `graphic-designer` (rule 4) for the board and frames; `drafter` (rule 1) for a script alongside other drafts; renders and ffmpeg in the main thread | Video |
 | Web page build or redesign | `frontend-design`, `wordpress-development:wordpress-page-build` or `astro-site` | `web-developer` (rule 4) for a full build; a single section fix stays here | Web and long-form content |
 | Google Ads setup and planning | `google-ads-build` (structure, keywords, bidding, budget) | None | Paid media |
 | Google Ads diagnosis | `google-ads-analyse` (account audit, search terms, Quality Score, PMax, geo, device, schedule, auction insights, tracking, disapprovals, ad-to-page match) | `data-puller` in the background (rule 2) for anything reading a full account | Paid media |

@@ -1,6 +1,6 @@
 # Marketing Agent: a Claude marketing team
 
-A marketing team for Claude in one install: the `team` command, which turns the main thread into a director, six thread profiles it can start, and the 50 skills they run on. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, outbound and sales, graphic design, web development and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
+A marketing team for Claude in one install: the `team` command, which turns the main thread into a director, six thread profiles it can start, and the 52 skills they run on. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, outbound and sales, graphic design, web development and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
 
 Run `/marketing-agent:team` for jobs with several steps or deliverables, anything going live or to a client, or heavy data work: the main thread becomes the director, does the work with the skills, starts threads only where they pay off, reviews and asks before publishing. For a single task, just ask: the right skill triggers on its own.
 
@@ -10,7 +10,7 @@ Run `/marketing-agent:team` for jobs with several steps or deliverables, anythin
 plugin/                    the installable plugin
   .claude-plugin/          plugin manifest
   agents/                  six thread profiles: data-puller, researcher, drafter, graphic-designer, web-developer, cold-reviewer
-  skills/                  the 50 skills, plus the `team` command
+  skills/                  the 52 skills, plus the `team` command
   CONNECTORS.md            which connector each discipline uses, and the data-source rule
 templates/brand-kit/       blank modular brand kit: router + context, voice, design
 archive/                   retired skills kept for reference, not installed
@@ -130,7 +130,9 @@ The Google Ads connector reference (`google-ads-tool-map`) is a shared reference
 | `creative-brief` | Art direction and an asset table with real formats and dimensions |
 | `canva-workflow` | Builds assets in Canva, or a manual checklist when Canva isn't connected |
 | `figma-weavy-workflow` | Figma Weave graphs for generated or composited imagery and video |
-| `launch-video` | Short product teaser, continuous-take demo or logo sting: storyboard, Hyperframes build, poster frame, caption |
+| `video-script-storyboard` | Script (spoken or two-column A/V), storyboard, shot list and one frame per scene, approved before anything is built or filmed |
+| `launch-video` | Short product teaser, continuous-take demo or logo sting from an approved board: Hyperframes build, locale versions, poster frame, caption |
+| `video-finishing` | Subtitles, loudness, cut-downs, 9:16 and 1:1 reframes, Shorts from long-form and platform exports for existing video |
 | `logo-design` | Logos, wordmarks, app icons and favicons as clean SVG: brief, concepts, tests, checkpoint, then the full kit |
 | `affinity-workflow` | Scripted layout, vector, photo and batch work in Affinity by Canva through its local connector, verified with renders, or a manual checklist |
 | `email-design` | Email templates and email visuals for Brevo, HubSpot or Canva: modular layout, bulletproof buttons, dark mode, Outlook-safe HTML |

@@ -2,7 +2,7 @@
 
 A marketing team for Claude, built by [Jordi Driesen](https://github.com/Jordidriesen) for Cowork and Claude Code. One command, `/team`, turns the main thread into a director that writes the brief, does the work with the plugin's skills, starts threads only where they pay off, reviews the result and asks before anything is published. For a single, clearly scoped task you just ask: the right skill triggers on its own.
 
-**One install, skills and profiles together.** The plugin ships its 50 skills, the `team` command and six thread profiles, so they can't drift apart. Only client brand kits live outside it: each brand gets a private `[brand]-brand-kit` skill that every content, review and design skill loads automatically (see [`templates/brand-kit`](../templates/brand-kit)).
+**One install, skills and profiles together.** The plugin ships its 52 skills, the `team` command and six thread profiles, so they can't drift apart. Only client brand kits live outside it: each brand gets a private `[brand]-brand-kit` skill that every content, review and design skill loads automatically (see [`templates/brand-kit`](../templates/brand-kit)).
 
 ## Installation
 

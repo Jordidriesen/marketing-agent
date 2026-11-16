@@ -1,11 +1,11 @@
 ---
 name: launch-video
 metadata:
-  version: 1.1.0
-  history: 'v1.1.0: the HyperFrames by HeyGen connector is the first route when it is connected, the npx CLI stays the fallback; generated live-action clips are pointed to Canva create-video or a Weave video model. v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.0.0: new skill. An original workflow for short product and brand videos (teaser, continuous-take feature demo, logo sting), written in this library''s terms with the brand kit as the source of voice, colour and type. Structure and several rules (project inspection rubric, reading-time floors, poster frame as frame 0, share copy) are adapted from latent-spaces/brag (MIT, see LICENSE-brag.txt). The continuous-take idea is inspired by feitangyuan/onetake, which is licensed PolyForm Noncommercial and is therefore neither bundled nor copied. No audio files are bundled.
+  version: 1.2.0
+  history: 'v1.2.0: the script, storyboard and frames come from video-script-storyboard, approved before the build; Step 2 works without a code repo (live site through the browser, screenshots, PDFs, a design system artifact); a locale step for multi-market brands; an ffmpeg fallback render when Hyperframes is not available; the description states the real length range; the poster bake uses a fast preset for drafts. v1.1.0: the HyperFrames by HeyGen connector is the first route when it is connected, the npx CLI stays the fallback; generated live-action clips are pointed to Canva create-video or a Weave video model. v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.0.0: new skill. An original workflow for short product and brand videos (teaser, continuous-take feature demo, logo sting), written in this library''s terms with the brand kit as the source of voice, colour and type. Structure and several rules (project inspection rubric, reading-time floors, poster frame as frame 0, share copy) are adapted from latent-spaces/brag (MIT, see LICENSE-brag.txt). The continuous-take idea is inspired by feitangyuan/onetake, which is licensed PolyForm Noncommercial and is therefore neither bundled nor copied. No audio files are bundled.
 
     '
-description: Plans and builds a 10 to 30 second product teaser, feature demo or logo sting from the product's screens or brand kit. Use for "launch video", "product teaser", "logo animation".
+description: Plans and builds a 3 to 40 second product teaser, continuous-take feature demo or logo sting from the product's real screens, site or brand kit, from an approved storyboard. Use for "launch video", "product teaser", "logo animation".
 argument-hint: <what to show, video type if known, format (landscape, vertical, square), duration, tone, brand>
 ---
 
@@ -15,7 +15,7 @@ You make short videos that show a real product doing a real thing, in the brand'
 video is built from the product's actual screens, copy and claims, so it could not belong to any other
 company. If a scene could be swapped into a competitor's video unchanged, rewrite it.
 
-**Required skill calls.** After drafting, call `ai-content-cleaner` and `brand-review` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips either is not finished. End the reply with one line: `Skills run: ...`.
+**Required skill calls.** Before building, call `video-script-storyboard` for the storyboard and frames (Step 3). After drafting, call `ai-content-cleaner` and `brand-review` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips either is not finished. End the reply with one line: `Skills run: ...`.
 
 ## What to state up front
 
@@ -23,8 +23,10 @@ company. If a scene could be swapped into a competitor's video unchanged, rewrit
   in the session. Load its tools and read the names before the first call; never guess one, and treat
   any export or share as a step that needs a yes. Fallback: the Hyperframes CLI (`npx hyperframes`,
   Apache-2.0, needs Node 22 and FFmpeg). Check it works with `npx hyperframes doctor` before promising a
-  file. If neither works, deliver the plan, the storyboard and the composition source, and say a render
-  is still to be done.
+  file. If neither works, use the fallback in `references/delivery.md` (each scene's HTML screenshotted
+  and assembled with ffmpeg, as in `video-making` when it is listed), and say the motion is simpler than a
+  Hyperframes render. If that fails too, deliver the board and the composition source and say a render is
+  still to be done.
 - **Not this skill:** a generated live-action clip (a product in a scene, a presenter) goes through
   Canva's `create-video` route in `canva-workflow` or a Weave video model in `figma-weavy-workflow`.
 - **No music or sound effects ship with this skill.** Use a track the user supplies and is licensed to use,
@@ -54,18 +56,22 @@ chain: a logo sting can close a teaser.
 
 ## Step 2: Inspect the product
 
-Read the project directly. No live URL and no screenshots are needed. Priority order:
+Use the best source the job has, in this order, and say which you used:
 
-1. The main page (`index.html` or the main route): title, hero headline, tagline, section headings,
-   CTA text and claims. This is the product's own voice.
-2. The stylesheet: colour custom properties, font families, backgrounds. They become the video's visual
-   identity unless the brand kit says otherwise.
-3. `README.md` and `package.json`: name and one-line description.
-4. The **user flow**: routes, key components, state steps, example folders. The strongest material is the
-   product in use: entry, key action, result.
-5. `public/` or `assets/`: logos and icons that can appear on screen.
+1. **A local project** (the product's code in a linked folder): the main page (`index.html` or the main
+   route) for headline, tagline, CTA and claims; the stylesheet for colour properties and fonts;
+   `README.md` and `package.json` for the name and one-liner; routes, components and state steps for the
+   **user flow**; `public/` or `assets/` for logos and icons. Skip build output, lock files, tests,
+   `.git`, `.env*`, keys and credentials.
+2. **The live site or app**, through the browser: read the page text, take screenshots at the output size
+   of the screens the video will show, and read the computed colours and fonts. Log-in areas only with the
+   user's go-ahead and never with real customer data on screen.
+3. **Supplied material**: screenshots, screen recordings, product brochures or datasheets (PDF), a deck.
+4. **The brand's design system artifact or brand kit** for tokens when there is no product UI to read.
 
-Skip build output, lock files, tests, `.git`, `.env*`, keys and credentials.
+A brand with no software product (a contractor, a club, a physical product) has no user flow: the
+strongest material is the real work, the place, the product, from the user's own photos or footage. Say
+so and plan around it rather than inventing UI.
 
 **Nothing secret leaves this step.** Anything read can end up on screen in a public video. Never carry
 secrets, tokens, internal hostnames, real customer names, email addresses or personal data into the plan,
@@ -76,12 +82,15 @@ should be shown, the shortest satisfying length, the tone, the audio posture (in
 draft caption, and the 2 or 3 beats of the user flow. If there is no app, only a landing page, say so and use
 the strongest visual instead.
 
-## Step 3: Write the plan and storyboard
+## Step 3: Plan, storyboard and frames
 
-Write `video-plan.md` in the output folder, using
-`references/storyboard.md`: the angle, the hook, the beats, the outro, the visual identity (exact values),
-scene by scene with durations, on-screen text, what real product material is used and the transition
-into the next scene.
+Run `video-script-storyboard` through the Skill tool, with the video type, the format, the target length
+and the Step 2 answers. It writes the on-screen text (or the A/V script when there is a voice-over), the
+storyboard and one frame per scene, and holds the approval checkpoint. Use this skill's
+`references/storyboard.md` as the storyboard template inside it, and keep `video-plan.md` in the output
+folder (angle, hook, beats, outro, visual identity with exact values, scenes with durations, on-screen
+text, real material, transitions). When the user brings an already approved board, skip to Step 4 and
+build from it.
 
 Hard rules for every type:
 
@@ -97,8 +106,14 @@ Hard rules for every type:
   is faster.
 - Scene durations must sum to the target. Count them.
 
-**Checkpoint.** Show the plan and storyboard and wait for the user's go-ahead before building. A
-storyboard is cheap to change and a composition is not. Skip the pause only if the user said not to check in.
+**Checkpoint.** The board with its frames is approved before building (held by
+`video-script-storyboard`). A frame is cheap to change and a composition is not. Skip the pause only if
+the user said not to check in.
+
+**Locales.** For a brand that runs several language markets, ask which locales are needed. Translate the
+on-screen text with `content-translate` after the source board is approved, recheck every reading floor in
+each locale (German and French often run about 30% longer), and lengthen the scene in every locale or cut
+words in that locale; never speed the text up. One render per locale, named `video.<locale>.mp4`.
 
 ## Step 4: Build the composition
 
@@ -111,15 +126,15 @@ npx hyperframes init            # scaffold the composition inside <output-dir>/c
 npx hyperframes docs            # read its current guidance before writing the composition
 ```
 
-If Hyperframes' own agent skills are installed in the session, read them before composing. Recreate real
-product moments in HTML from the project's own source: the upload screen, the result view, the dashboard
+If Hyperframes' own agent skills are installed in the session, read them before composing. Build each scene from its approved frame. Recreate real
+product moments in HTML from the project's own source or the screenshots: the upload screen, the result view, the dashboard
 with plausible content. Use the brand's exact colours and fonts. Anything sequential (cards arriving, text
 typing, a cursor clicking) is written into the storyboard as an explicit action so it can be animated and
 timed.
 
 Audio, only when the user supplied a licensed track: use `npx hyperframes beats` to find beats, use them for
 accents and sequential reveals (not for readable text), keep the track quieter than any voice, and fade in and
-out. Without a track, deliver silent and say so. Narration is out of scope for this version.
+out. Without a track, deliver silent and say so. A voice-over follows the A/V script from `video-script-storyboard`; it is recorded by the user or a licensed voice they choose, never synthesised from a real person's voice, and the subtitles come from `video-finishing`.
 
 Gate before rendering:
 
@@ -143,7 +158,7 @@ anything that makes a claim. Both come before delivery.
 ## Output
 
 1. The video type chosen and the assumptions made.
-2. `video-plan.md` (plan and storyboard).
+2. The approved board from `video-script-storyboard` and `video-plan.md` (plan and storyboard).
 3. `composition/` (the HTML project) and the render, `video.mp4`, when rendering worked.
 4. The poster `video.jpg` and `share-copy.txt`.
 5. Open items: claims needing a source, stand-in data used, audio not licensed, anything not rendered.
@@ -166,6 +181,9 @@ Keep chat framing short. The files carry the work.
 - `creative-brief`: campaign art direction and the deliverables table this video belongs to.
 - `ad-creative-matrix`: paid video ads. Its video hooks (spoken line, on-screen text, first shot) can feed
   the first 3 seconds of a teaser.
-- `figma-weavy-workflow`: generated or composited imagery, not time-based video.
+- `video-script-storyboard`: the script, storyboard, frames and approval checkpoint this skill builds from.
+- `video-finishing`: subtitles, loudness, vertical and square cut-downs and platform exports of the render.
+- `content-translate`: locale versions of the on-screen text.
+- `figma-weavy-workflow`: generated or composited imagery and generated clips, not built motion.
 - `brand-review`, `ai-content-cleaner`: the gates before delivery.
 - `social-content-writer`: organic posts that carry the finished video.
