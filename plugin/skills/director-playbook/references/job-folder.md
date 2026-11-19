@@ -14,6 +14,7 @@
 - Product facts that may be used: <list; mark unconfirmed facts "confirm">
 - Constraints: <budget, dates, channels, legal, words to avoid>
 - Proof available: <customers, figures, quotes; or "none">
+- Terms files: <marketing-jobs/<brand>/terms.txt, terms-<product>.txt; or "none yet">
 
 ## Deliverables
 
@@ -28,6 +29,35 @@
 - <criteria specific to this job>
 ```
 
+## plan.md
+
+The record of where the job stands. Only the director edits it; threads read it
+and report back. A job reopened in a new session starts from this file.
+
+```markdown
+# Plan
+
+| # | Step | Skill / reference | Depends on | Owner | Status | Output | Notes |
+|---|---|---|---|---|---|---|---|
+| 1 | <step> | <skill, reference> | none | director | To do | | |
+| 2 | <step> | <skill> | 1 | <profile> (rule <n>) | To do | | |
+```
+
+Status is one of: To do, In progress, Waiting on user, Sent back, Done, Dropped.
+On Sent back, Notes quotes the criterion that failed. Output is the path in
+`research/` or `deliverables/` once the file exists.
+
+## Terms files (per brand, outside the job folder)
+
+`marketing-jobs/<brand>/terms.txt`, plus `terms-<product>.txt` for a product
+with its own names. Format and checks: `non-negotiables`, section Terms files.
+
+```
+Source: <brand>-brand-kit · Checked: DD/MM/YYYY
+# correct form | wrong variants, comma-separated
+<Correct Name> | <variant>, <variant>
+```
+
 ## decisions.md
 
 ```markdown
@@ -35,5 +65,6 @@
 
 - DD/MM/YYYY: <decision, and who made it>
 - DD/MM/YYYY: Thread <profile> spawned for <task>. Rule: <1 parallel / 2 noise / 3 fresh eyes / 4 model or tools>. Model: <model>. Effort: <effort>.
+- DD/MM/YYYY: Terms files checked against <brand>-brand-kit: <files>, <updated / no change>.
 - DD/MM/YYYY: Review tier <none / light / full-sonnet / full-opus> for <job>, because <reason>.
 ```
