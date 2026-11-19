@@ -3,7 +3,7 @@ name: email-sequence-hubspot-brevo
 description: 'Builds multi-email sequences (onboarding, nurture, re-engagement, win-back, launch) for HubSpot Workflows or Brevo Automation: copy, timing, branching, exit rules, build steps. Use for "email sequence", "drip", "nurture flow". Cold outbound: cold-email-sequence.'
 metadata:
   version: 1.3.0
-  history: 'v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.2.0: content-references files renamed and merged; references to them updated. v1.1.1: history note no longer names the removed pointer file. v1.1: wired into content-references. The sequence arc (Step 1) and the per-email body copy (Step 2) now cite content-briefing.md and behavioral-psychology.md instead of leaving structure implicit, and a per-email humanizing pass (ai-content-cleaner, via the former pointer file) was added. Brand voice now checks for a [brand]-brand-kit skill. Platform build guides and benchmark tables are unchanged, those are platform-specific and stay here.'
+  history: 'v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.2.0: content-references files renamed and merged; references to them updated. v1.1.1: history note no longer names the removed pointer file. v1.1: wired into content-references. The sequence arc (Step 1) and the per-email body copy (Step 2) now cite content-briefing.md and behavioral-psychology.md instead of leaving structure implicit, and a per-email humanising pass (ai-content-cleaner, via the former pointer file) was added. Brand voice now checks for a [brand]-brand-kit skill. Platform build guides and benchmark tables are unchanged, those are platform-specific and stay here.'
 ---
 
 # Email Sequence Builder: HubSpot & Brevo
@@ -111,12 +111,12 @@ Once the sequence is drafted, translate it into the chosen platform's actual bui
 ### If HubSpot was chosen
 
 - **Where to build it**: Automation → Workflows → Contact-based workflow (or the relevant object, deal/ticket-based if the sequence needs to react to pipeline or support data).
-- **Enrollment trigger**: form submission, list membership, property change, or an AI-suggested trigger based on historical data.
+- **Enrolment trigger**: form submission, list membership, property change, or an AI-suggested trigger based on historical data.
 - **Emails**: create each one under Marketing → Email → Create email → Automated, then add via the workflow's "Send email" action.
 - **Branching**: use the **If/then branch** action (the `+` icon in the workflow) for each conditional split, e.g. branch on "opened email 2," "clicked link X," job title, lifecycle stage, or lead score. Branches can be nested for multi-level personalisation, but note a contact only travels down the *first* branch it matches: split into a second workflow if more parallel paths are needed.
 - **Delays**: fixed intervals ("wait 3 days") or event-based waits ("wait until page visited").
 - **Personalisation tokens**: `{{ contact.firstname }}`, `{{ contact.jobtitle }}`, `{{ company.name }}`, or custom tokens (Enterprise), usable in the email body, subject, and CTAs.
-- **A/B testing**: enable it in the email editor *before* publishing the automated email (Marketing Hub Pro/Enterprise); HubSpot distributes the 50/50 split gradually as contacts enroll and reports a winner. For testing anything beyond email content (e.g. timing, path), use a **Random split by percentage** branch instead.
+- **A/B testing**: enable it in the email editor *before* publishing the automated email (Marketing Hub Pro/Enterprise); HubSpot distributes the 50/50 split gradually as contacts enrol and reports a winner. For testing anything beyond email content (e.g. timing, path), use a **Random split by percentage** branch instead.
 - **Exit**: set unenrollment triggers and goals so contacts leave once they convert.
 - **Re-entry**: configurable per workflow, decide if churned/returning contacts can re-enter.
 

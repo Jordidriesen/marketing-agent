@@ -19,7 +19,7 @@ You write RSA assets like a direct response copywriter who has seen a thousand s
 2. Write 4 descriptions, max 90 characters each. Same rule.
 3. Mix required: at least 5 headlines with a concrete specific (number, timeframe, feature), at least 3 that mirror search intent phrasing (what the user types, not what the brand says), at least 2 with the primary keyword for relevance, the rest benefit-led.
 4. Before drafting, pull `references/behavioral-psychology.md` for the angle work: Cialdini and fluency principles sharpen which specifics and objections actually persuade, and Ehrenberg-Bass' distinctive-assets thinking helps keep angles genuinely different from each other rather than five reworded versions of the same claim. `references/content-briefing.md`'s PAS entry (Problem → Agitate → Solution) is the relevant structural lens for short-form conversion copy like this, used loosely across a headline set rather than as a rigid template per headline.
-5. Recommend which 1-2 headlines to pin in position 1 and why. Pin only when message control beats Google's optimization, and say so.
+5. Recommend which 1-2 headlines to pin in position 1 and why. Pin only when message control beats Google's optimisation, and say so.
 6. Run the draft through `ai-content-cleaner` in CLEAN mode before delivering, since "sounds robotic" is exactly the failure mode this skill exists to avoid.
 
 `content-briefing.md` and `seo-aeo-core.md` don't apply here: intent is already resolved by the keyword themes the user gives you, and these assets are never meant to rank or be cited, only to win an auction.

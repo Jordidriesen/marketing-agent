@@ -45,7 +45,7 @@ For the CTA itself, button verb, framing, risk reduction near the ask, see `refe
 
 - **Subject line**: 2-3 options, under ~50 characters where possible, varying curiosity/benefit/urgency
 - **Preview text**: 40-90 characters, complements (does not repeat) the subject line
-- **Greeting**: personalization token if available
+- **Greeting**: personalisation token if available
 - **Body**: 2-3 scannable sections following the Step 3 framework, each with a bold intro sentence; short paragraphs
 - **Primary CTA**: one clear, visually distinct action; button text follows [action verb] + [what they get]
 - **Sign-off**
@@ -53,7 +53,7 @@ For the CTA itself, button verb, framing, risk reduction near the ask, see `refe
 
 Mobile-first: assume most opens are on a phone. Test-worthy elements: subject line, send time, CTA copy.
 
-## Step 5: Copy Edit and Humanize
+## Step 5: Copy Edit and Humanise
 
 Run `copy-editing` (Seven Sweeps), then the humanising pass, `ai-content-cleaner`, in BALANCED mode if the email has structured sections worth preserving, CLEAN mode for a short promotional send.
 

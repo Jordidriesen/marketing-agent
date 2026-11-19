@@ -8,7 +8,7 @@ description: 'Always use for any website copy or copywriting, however short or f
 
 # Web Content Pipeline
 
-Takes any web page or blog post from brief to publish-ready: classify intent and page type, pick a structural framework, write to the right template, edit, humanize. What differs by page type is the template in Step 4, not the process around it. Web content only: not social posts, not ebooks or whitepapers.
+Takes any web page or blog post from brief to publish-ready: classify intent and page type, pick a structural framework, write to the right template, edit, humanise. What differs by page type is the template in Step 4, not the process around it. Web content only: not social posts, not ebooks or whitepapers.
 
 **Required skill calls.** Two other skills are part of this pipeline and must be called through the Skill tool, never imitated with an inline edit: `copy-editing` after the Step 4 draft, and `ai-content-cleaner` after that. If you have a draft and have not called both, call them now, before you reply. A reply that says the edit pass was done inline, or that skips either skill, is not finished.
 
@@ -95,8 +95,8 @@ Load only the one you need. Load `references/seo-aeo-core.md` as well when an ar
 
 ### Writing style rules (every page type)
 
-1. **Simple over complex**: "use" not "utilize," "help" not "facilitate"
-2. **Specific over vague**: avoid "streamline," "optimize," "innovative" as unsupported claims
+1. **Simple over complex**: "use" not "utilise," "help" not "facilitate"
+2. **Specific over vague**: avoid "streamline," "optimise," "innovative" as unsupported claims
 3. **Active over passive**: "we generate reports," not "reports are generated"
 4. **Confident over qualified**: cut "almost," "very," "really"
 5. **Show over tell**: describe the outcome, not adjectives about it
@@ -116,7 +116,7 @@ Quick check: jargon an outsider could not follow? Sentences doing too much? Pass
 
 ### Step 4 output
 
-Deliver the full draft organized by section. The 2 to 3 headline or title options with rationale, the meta content (page title, meta description) and the brief annotations on which principle each key choice applies go in hidden comments.
+Deliver the full draft organised by section. The 2 to 3 headline or title options with rationale, the meta content (page title, meta description) and the brief annotations on which principle each key choice applies go in hidden comments.
 
 ---
 
@@ -127,11 +127,11 @@ Deliver the full draft organized by section. The 2 to 3 headline or title option
 - **Clarity sweep** also flags AEO violations on blog posts: an unclear pronoun is usually the same issue as a floating pronoun breaking entity consistency for citation.
 - **Zero Risk sweep**: CTA strength must match the intent and page type (a blog post's CTA stays soft even after this sweep; a landing page's does not).
 
-## Step 6: Humanize
+## Step 6: Humanise
 
 **Not optional.** Invoke the `ai-content-cleaner` skill through the Skill tool. Use **BALANCED mode** for blog posts and any page with FAQ or comparison-table structure worth protecting; **CLEAN mode** is fine for a short landing page with no structured elements to preserve. Before handoff, note which structures are intentional (bolded inline headers, declarative hook openings, comparison tables) so nothing gets stripped by mistake.
 
-Worth reaching for during this pass: one honest, specific limitation, stated once, after the page has established competence (the pratfall effect). Different from hedging, which the humanizing pass will still flag and remove.
+Worth reaching for during this pass: one honest, specific limitation, stated once, after the page has established competence (the pratfall effect). Different from hedging, which the humanising pass will still flag and remove.
 
 **Deliver only after Steps 5 and 6.** End the file with a hidden line naming the skills you ran (`<!-- Skills run: copy-editing, ai-content-cleaner -->`). If either is missing from that line, go back and call it. There is no inline substitute. Deliver the final page copy, the Cleaned/Preserved breakdown (BALANCED) or change list (CLEAN), and confirmation that intentional structure survived.
 

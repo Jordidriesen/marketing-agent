@@ -8,7 +8,7 @@ metadata:
 
 # SEO Audit
 
-You are an expert in search engine optimization. Your goal is to identify SEO issues and provide actionable recommendations to improve organic search performance.
+You are an expert in search engine optimisation. Your goal is to identify SEO issues and provide actionable recommendations to improve organic search performance.
 
 ## Initial Assessment
 
@@ -54,7 +54,7 @@ Reporting "no schema found" based solely on `web_fetch` or `curl` leads to false
 ### Priority Order
 1. **Crawlability & Indexation** (can Google find and index it?)
 2. **Technical Foundations** (is the site fast and functional?)
-3. **On-Page Optimization** (is content optimized?)
+3. **On-Page Optimisation** (is content optimised?)
 4. **Content Quality** (does it deserve to rank?)
 5. **Authority & Links** (does it have credibility?)
 
@@ -83,7 +83,7 @@ Reporting "no schema found" based solely on `web_fetch` or `curl` leads to false
 - No orphan pages
 
 **Crawl Budget Issues** (for large sites)
-- Parameterized URLs under control
+- Parameterised URLs under control
 - Faceted navigation handled properly
 - Infinite scroll with pagination fallback
 - Session IDs not in URLs
@@ -102,7 +102,7 @@ Reporting "no schema found" based solely on `web_fetch` or `curl` leads to false
 - Soft 404s
 - Duplicate content without canonicals
 
-**Canonicalization**
+**Canonicalisation**
 - All pages have canonical tags
 - Self-referencing canonicals on unique pages
 - HTTP → HTTPS canonicals
@@ -118,7 +118,7 @@ Reporting "no schema found" based solely on `web_fetch` or `curl` leads to false
 
 **Speed Factors**
 - Server response time (TTFB)
-- Image optimization
+- Image optimisation
 - JavaScript execution
 - CSS delivery
 - Caching headers
@@ -206,7 +206,7 @@ Reporting "no schema found" based solely on `web_fetch` or `curl` leads to false
 - Headings used for styling only
 - No H1 on page
 
-### Content Optimization
+### Content Optimisation
 
 **Primary Page Content**
 - Keyword in first 100 words
@@ -221,7 +221,7 @@ Reporting "no schema found" based solely on `web_fetch` or `curl` leads to false
 - Doorway pages
 - Duplicate or near-duplicate content
 
-### Image Optimization
+### Image Optimisation
 
 **Check for:**
 - Descriptive file names
@@ -243,7 +243,7 @@ Reporting "no schema found" based solely on `web_fetch` or `curl` leads to false
 
 **Common issues:**
 - Orphan pages (no internal links)
-- Over-optimized anchor text
+- Over-optimised anchor text
 - Important pages buried
 - Excessive footer/sidebar links
 
@@ -257,12 +257,12 @@ hand over to `internal-linking` with the crawl data and the priority pages.
 - Clear primary keyword target
 - Title, H1, URL aligned
 - Content satisfies search intent
-- Not competing with other pages (cannibalization)
+- Not competing with other pages (cannibalisation)
 
 **Site-Wide**
 - Keyword mapping document
 - No major gaps in coverage
-- No keyword cannibalization
+- No keyword cannibalisation
 - Logical topical clusters
 
 ---
@@ -282,7 +282,7 @@ hand over to `internal-linking` with the crawl data and the priority pages.
 - Properly sourced claims
 
 **Authoritativeness**
-- Recognized in the space
+- Recognised in the space
 - Cited by others
 - Industry credentials
 
@@ -327,7 +327,7 @@ hand over to `internal-linking` with the crawl data and the priority pages.
 
 ### Content/Blog Sites
 - Outdated content not refreshed
-- Keyword cannibalization
+- Keyword cannibalisation
 - No topical clustering
 - Poor internal linking
 - Missing author pages
@@ -335,7 +335,7 @@ hand over to `internal-linking` with the crawl data and the priority pages.
 ### Local Business
 - Inconsistent NAP
 - Missing local schema
-- No Google Business Profile optimization
+- No Google Business Profile optimisation
 - Missing location pages
 - No local content
 - Weak Maps visibility beyond the immediate area (check with OpenSEO `get_local_rank_grid`)
@@ -366,7 +366,7 @@ Same format as above
 **Content Findings**
 Same format as above
 
-**Prioritized Action Plan**
+**Prioritised Action Plan**
 1. Critical fixes (blocking indexation/ranking)
 2. High-impact improvements
 3. Quick wins (easy, immediate benefit)
@@ -377,7 +377,7 @@ Same format as above
 ## References
 
 - For AI writing pattern detection and cleanup, use the `ai-content-cleaner` skill.
-- For AI search optimization (AEO, GEO, LLMO, AI Overviews), apply the structural rules in the `content-references` skill's `seo-aeo-core.md` reference (the same one `web-content-pipeline` and `customer-story-writer` already use).
+- For AI search optimisation (AEO, GEO, LLMO, AI Overviews), apply the structural rules in the `content-references` skill's `seo-aeo-core.md` reference (the same one `web-content-pipeline` and `customer-story-writer` already use).
 
 ---
 
@@ -426,6 +426,6 @@ Use these before asking for exports. Follow `mcp-efficiency` (resolve the projec
 
 ## Related Skills
 
-- **content-references** (`seo-aeo-core.md`): structural rules for AI search optimization (AEO, GEO, LLMO), apply directly; no dedicated ai-seo skill exists in this library.
+- **content-references** (`seo-aeo-core.md`): structural rules for AI search optimisation (AEO, GEO, LLMO), apply directly; no dedicated ai-seo skill exists in this library.
 - **ai-content-cleaner**: AI writing pattern detection and cleanup.
 - **seo-keyword-research** / **keyword-clustering**: keyword discovery and page-level clustering, this skill covers technical/on-page auditing, not keyword discovery itself.

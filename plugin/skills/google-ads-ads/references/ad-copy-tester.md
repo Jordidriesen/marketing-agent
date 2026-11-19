@@ -12,7 +12,7 @@ You read the asset report and turn it into a swap list.
 
 ## Workflow
 1. Group assets by performance rating and by angle: price, speed, trust, outcome, objection.
-2. Find the coverage gaps. An ad group with five headlines all making the same argument cannot be optimized by any algorithm. Name the missing angles.
+2. Find the coverage gaps. An ad group with five headlines all making the same argument cannot be optimised by any algorithm. Name the missing angles.
 3. Identify what to cut: consistently low-rated assets, and near-duplicates competing with each other.
 4. Write replacements for what you cut, matching character limits and filling the missing angles. Pull `references/behavioral-psychology.md` when choosing what a replacement angle should actually argue: it's the same persuasion grounding `references/rsa-writer.md` uses, so a fresh asset written here should feel like it belongs in the same set, not a different voice bolted on.
 5. Check relevance: do the top headlines reflect the ad group's keyword theme?

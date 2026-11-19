@@ -13,7 +13,7 @@
 
 Apply while drafting, not as a post-publish afterthought: link placement and anchor text are easiest to get right while the section is being written. Auditing an existing site section is a separate job, in `internal-linking-audit.md`.
 
-**Not covered here:** topic cannibalization. `keyword-clustering` flags it
+**Not covered here:** topic cannibalisation. `keyword-clustering` flags it
 at the planning stage from page-intersection and SERP-overlap evidence, and
 `seo-audit` checks for it site-wide on published content. Re-deriving that
 logic here would duplicate work those two skills already do.
@@ -29,7 +29,7 @@ John Mueller (Google): internal linking is "supercritical for SEO," helping
 Google understand site structure and page importance.
 
 seoClarity case study: a 23% organic traffic increase from internal link
-optimization alone, with no new content published.
+optimisation alone, with no new content published.
 
 ---
 
@@ -56,7 +56,7 @@ The number of internal links per post should scale with content length.
 
 ## Anchor Text Distribution
 
-Anchor text is the visible, clickable text of a hyperlink. Optimizing it
+Anchor text is the visible, clickable text of a hyperlink. Optimising it
 matters, but overusing exact-match anchors triggers spam signals.
 
 ### Recommended distribution
@@ -65,7 +65,7 @@ matters, but overusing exact-match anchors triggers spam signals.
 |-------------|-------------|----------------------------|
 | Exact match | 5-10% | "technical SEO" |
 | Partial match | 20-30% | "technical SEO best practices," "guide to technical SEO" |
-| Semantic/related | 30-40% | "site architecture optimization," "crawlability improvements" |
+| Semantic/related | 30-40% | "site architecture optimisation," "crawlability improvements" |
 | Branded | 10-15% | "our SEO guide," "[Brand] technical audit" |
 | Natural/contextual | 15-25% | "the framework we outlined earlier," "as we discussed" |
 
@@ -85,12 +85,12 @@ matters, but overusing exact-match anchors triggers spam signals.
 | Pattern | Problem | Fix |
 |---------|---------|-----|
 | "click here" | Zero topical signal | "Read our [technical SEO checklist]" |
-| "this article" | No descriptive value | "Our [guide to crawl budget optimization]" |
+| "this article" | No descriptive value | "Our [guide to crawl budget optimisation]" |
 | "read more" | Generic, no context | "[How structured data improves AI visibility]" |
 | "learn more" | Generic, no context | "Learn [how to audit your internal links]" |
 | Naked URLs | Unreadable, no context | Replace with descriptive text |
 | Full sentence as anchor | Looks spammy, dilutes signal | Reduce to 2-6 key words |
-| Same exact anchor everywhere | Over-optimization signal | Vary anchor text across pages |
+| Same exact anchor everywhere | Over-optimisation signal | Vary anchor text across pages |
 
 ---
 
@@ -146,7 +146,7 @@ visibility."
 
 **Post B**, "Schema Markup Implementation Guide," should link back: "...
 schema is a critical component of [technical SEO
-optimization](/blog/technical-seo-guide), affecting how search engines
+optimisation](/blog/technical-seo-guide), affecting how search engines
 interpret your content."
 
 ---

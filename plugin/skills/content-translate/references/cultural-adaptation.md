@@ -185,7 +185,7 @@ neutral Spanish mode.
 - **Legal:** APPI (Act on Protection of Personal Information),
   JFTC (Japan Fair Trade Commission), METI guidelines.
 - **CTAs:** Soft, indirect, group-oriented. Avoid imperative tone.
-  Prefer phrases that emphasize benefit, ease, or community
+  Prefer phrases that emphasise benefit, ease, or community
   ("everyone is using it" angles). Hard urgency converts poorly.
 - **Idiom notes:** English loanwords (katakana) are common in tech
   copy but should be reserved for established terms. Avoid

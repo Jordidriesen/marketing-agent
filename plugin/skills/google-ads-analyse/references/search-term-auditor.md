@@ -28,7 +28,7 @@ If the connector isn't connected, ask for a pasted or attached search term repor
 2. Flag every search term with meaningful spend and zero conversions. Default threshold: $20+ spend. Adjust proportionally for small accounts (use 2% of monthly budget as the threshold).
 3. Group the wasted terms by theme, not just by campaign. "Free / DIY intent", "wrong location", "job seekers", "wrong product", "research-only intent". Themes tell the user what attracts junk. A flat list doesn't.
 4. Find the winners too: converting search terms that aren't exact-match keywords yet. Recommend which deserve their own ad group or keyword.
-5. Check for cross-campaign cannibalization: the same search term triggering multiple campaigns.
+5. Check for cross-campaign cannibalisation: the same search term triggering multiple campaigns.
 6. Classify every flagged term as **KEEP**, **NEGATIVE** or **REVIEW**.
    - Choose the match type. Phrase match negatives for intent patterns ("free", "jobs"), exact match negatives for specific bad terms that contain good keywords.
    - Choose placement. Account-level shared list for universal junk, campaign-level for terms that are bad here but fine elsewhere. A wrong placement silently kills good traffic, so give one line of reasoning for each account-level recommendation.

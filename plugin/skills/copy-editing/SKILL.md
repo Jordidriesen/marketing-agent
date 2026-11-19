@@ -8,7 +8,7 @@ metadata:
 
 # Copy Editing
 
-You are an expert copy editor specializing in marketing and conversion copy. Your goal is to systematically improve existing copy through focused editing passes while preserving the core message.
+You are an expert copy editor specialising in marketing and conversion copy. Your goal is to systematically improve existing copy through focused editing passes while preserving the core message.
 
 ## Step 0: Brand check
 
@@ -37,7 +37,7 @@ Before the first sweep, work out whether this copy belongs to a brand with a doc
 This skill owns the **Seven Sweeps process**: the disciplined multi-pass edit with back-checking after each pass. It does not re-teach the underlying principles:
 
 - The persuasion logic behind the So What, Prove It, Heightened Emotion and Zero Risk sweeps lives in `references/behavioral-psychology.md` (Cialdini, loss aversion, fluency, Ehrenberg-Bass). Pull it in when a sweep needs the "why," rather than working from memory.
-- Lexical AI tells (buzzwords, filler intensifiers, copula avoidance, rule-of-three padding) are handled by the `ai-content-cleaner` skill. Copy-editing's passes are **structural**; run the humanizing pass alongside or after for the word-level cleanup instead of duplicating a swap table here.
+- Lexical AI tells (buzzwords, filler intensifiers, copula avoidance, rule-of-three padding) are handled by the `ai-content-cleaner` skill. Copy-editing's passes are **structural**; run the humanising pass alongside or after for the word-level cleanup instead of duplicating a swap table here.
 
 ## Core Philosophy
 
@@ -71,7 +71,7 @@ Edit copy through seven sequential passes, each focusing on one dimension. After
 
 **Focus:** Is the copy consistent in how it sounds, and does it match the loaded brand kit?
 
-**Check for:** shifts between formal and casual, inconsistent brand personality, jarring mood changes, word choices that don't match the brand. Common issues: starting casual then becoming corporate, mixing "we" and "the company," unintentional humor/serious swings, technical language appearing randomly.
+**Check for:** shifts between formal and casual, inconsistent brand personality, jarring mood changes, word choices that don't match the brand. Common issues: starting casual then becoming corporate, mixing "we" and "the company," unintentional humour/serious swings, technical language appearing randomly.
 
 **Process:** read aloud to hear inconsistencies; mark where tone shifts unexpectedly; recommend edits that smooth transitions; ensure the personality (and any `[brand]-brand-kit` voice rules) holds throughout.
 
@@ -121,7 +121,7 @@ The credibility mechanics behind why proof works, and which proof type fits whic
 
 **Focus:** Is the copy concrete enough to be compelling?
 
-**Check for:** vague language ("improve," "enhance," "optimize"), generic statements that could apply to anyone, round numbers that feel made up, missing details that would make it real.
+**Check for:** vague language ("improve," "enhance," "optimise"), generic statements that could apply to anyone, round numbers that feel made up, missing details that would make it real.
 
 | Vague | Specific |
 |-------|----------|
@@ -169,7 +169,7 @@ The credibility mechanics behind why proof works, and which proof type fits whic
 
 ## Structural Quick-Pass Checks
 
-Use these for faster reviews when a full seven-sweep process isn't needed. **Lexical cleanup (weak intensifiers, buzzwords, filler, "utilize → use") is not here on purpose; run `ai-content-cleaner` for that.** These are the structural checks copy-editing owns. **All of them yield to a loaded brand kit's Voice Lock (Step 0)**: they are defaults for copy with no documented voice, not laws.
+Use these for faster reviews when a full seven-sweep process isn't needed. **Lexical cleanup (weak intensifiers, buzzwords, filler, "utilise → use") is not here on purpose; run `ai-content-cleaner` for that.** These are the structural checks copy-editing owns. **All of them yield to a loaded brand kit's Voice Lock (Step 0)**: they are defaults for copy with no documented voice, not laws.
 
 ### Sentence-Level
 - One idea per sentence
@@ -178,7 +178,7 @@ Use these for faster reviews when a full seven-sweep process isn't needed. **Lex
 - Max 3 conjunctions per sentence
 - No more than ~25 words, usually
 - Passive → active where it tightens
-- Nominalizations back to verbs ("make a decision" → "decide")
+- Nominalisations back to verbs ("make a decision" → "decide")
 
 ### Paragraph-Level
 - One topic per paragraph
@@ -255,7 +255,7 @@ Use these for faster reviews when a full seven-sweep process isn't needed. **Lex
 | Problem | Symptom | Fix |
 |---|---|---|
 | Wall of features | What the product does, no why | Add "which means..." after each feature |
-| Corporate speak | "Leverage synergies to optimize outcomes" | "How would a human say this?": use those words |
+| Corporate speak | "Leverage synergies to optimise outcomes" | "How would a human say this?": use those words |
 | Weak opening | Starts with company history or vague statements | Lead with the reader's problem or desired outcome |
 | Buried CTA | The ask comes after too much buildup, or isn't clear | Make the CTA obvious, early, and repeated |
 | No proof | "Customers love us" with no evidence | Add specific testimonials, numbers, or case references |

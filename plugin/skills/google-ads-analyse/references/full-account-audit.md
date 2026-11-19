@@ -62,7 +62,7 @@ layer: don't re-resolve per layer.
    > confirmation, not a hard stop: continue automatically and note
    > that tracking passed.
 
-2. **Structure.** Campaign and ad group organization, intent separation,
+2. **Structure.** Campaign and ad group organisation, intent separation,
    brand isolated from non-brand, enough conversion volume per campaign
    to learn. Pull `list_campaigns`.
 3. **Budget and bidding.** Where the money goes vs where conversions
@@ -99,7 +99,7 @@ rule, so the raw pulls don't sit in the main conversation.
   English.
 - Full findings table: layer, finding, evidence, estimated impact,
   recommended fix.
-- A prioritized action list: this week, this month, this quarter.
+- A prioritised action list: this week, this month, this quarter.
 
 ## Rules
 - Tracking findings always come first. An audit built on broken

@@ -26,16 +26,16 @@ and a client roster tends to expand over time.
 
 ## SEO Translation Principles
 
-1. Localize, do not transliterate. Pick the term native speakers actually
+1. Localise, do not transliterate. Pick the term native speakers actually
    search for in the target market.
 2. Preserve topical and entity coverage, not keyword density. Match the
-   search intent and localized SERP phrasing without forcing repeated terms.
-3. Independently optimize the title tag and meta description per language.
+   search intent and localised SERP phrasing without forcing repeated terms.
+3. Independently optimise the title tag and meta description per language.
    Don't translate, rewrite for the target SERP.
-4. Keep slugs in the target language using the locale's romanization rules.
+4. Keep slugs in the target language using the locale's romanisation rules.
 5. Translate alt text and figcaptions; never leave English alt text on a
    non-English page.
-6. Names of organizations, brands, and people stay in their canonical form.
+6. Names of organisations, brands, and people stay in their canonical form.
 7. Where it's genuinely unclear whether to keep the English term or swap
    to a local equivalent (competitive B2B terms especially), check both
    variants' real search volume in the target market via
@@ -50,7 +50,7 @@ Preserve unchanged:
 - Frontmatter keys (translate values, not keys).
 - Image and link URLs.
 - Executable code fences and inline code. Keep them unchanged unless the user
-  explicitly asks for localized tutorial comments.
+  explicitly asks for localised tutorial comments.
 - SVG attributes (`x`, `y`, `font-size`, `fill`, `transform`,
   `viewBox`). Translate only `<text>` and `<tspan>` content.
 - Schema JSON-LD blocks. Translate user-facing content strings such as
@@ -137,7 +137,7 @@ Before reporting a translation as done, verify:
       loanwords like "Content Marketing" in DE or "workflow" in NL).
 - [ ] All numbers, dates, currencies use locale format.
 - [ ] All quote marks switched to locale style.
-- [ ] Frontmatter strings localized (`title`, `description`, `tags`,
+- [ ] Frontmatter strings localised (`title`, `description`, `tags`,
       `slug`).
 - [ ] All image alt text translated.
 - [ ] All `<figcaption>` content translated.

@@ -39,7 +39,7 @@ cite the instrument and article, add a Sources section, and flag a legal review 
 in the production notes. Never present a draft as legal advice.
 
 Run the information-gain audit from `seo-aeo-core.md` before
-finalizing.
+finalising.
 
 
 ## Pillar page or content hub

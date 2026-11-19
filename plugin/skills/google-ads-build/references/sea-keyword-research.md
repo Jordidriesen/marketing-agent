@@ -35,7 +35,7 @@ Call `get_keyword_metrics` with the full candidate list batched into as few call
 - Intent-grouped keyword table: keyword, intent, search volume, competition, CPC.
 - Trap keywords with one-line reasons.
 - The 10 launch picks with match types, and a one-line budget sanity check (how many clicks the budget realistically buys at this CPC).
-- Assumptions list, explicitly labeled.
+- Assumptions list, explicitly labelled.
 
 ## Rules
 

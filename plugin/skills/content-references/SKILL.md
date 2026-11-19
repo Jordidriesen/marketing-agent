@@ -22,7 +22,7 @@ Eight reference files, each reusable across the content skills instead of duplic
 | `references/internal-linking-drafting.md` | Link density, anchor text distribution, placement, bidirectional linking, hub-and-spoke | While drafting any piece over a couple of hundred words |
 | `references/internal-linking-audit.md` | Orphan-page detection, audit checklist, link velocity, tracking | Only when auditing an existing site section; `internal-linking` reads it every run |
 
-Cannibalization detection lives in `keyword-clustering` and `seo-audit`, not here.
+Cannibalisation detection lives in `keyword-clustering` and `seo-audit`, not here.
 
 ## Dependency map
 

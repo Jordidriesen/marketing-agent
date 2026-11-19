@@ -16,7 +16,7 @@ genuinely new, the criterion is inline.
 | Engagement elements | 4 | Summary box near the top, callouts, varied content blocks |
 | Grammar/clarity | 3 | Handled by `copy-editing`'s Seven Sweeps; this line reflects whether that pass has run |
 
-**SEO Optimization, 25 points**
+**SEO Optimisation, 25 points**
 
 | Check | Points | Criterion |
 |---|---|---|
@@ -42,7 +42,7 @@ genuinely new, the criterion is inline.
 | Check | Points | Criterion |
 |---|---|---|
 | Schema markup baseline | 4 | Per Schema recommendations in `seo-aeo-core.md`: Article/BlogPosting + Person + Organization + BreadcrumbList; FAQPage optional |
-| Image optimization | 3 | AVIF/WebP, descriptive alt text, lazy-loaded except the LCP image |
+| Image optimisation | 3 | AVIF/WebP, descriptive alt text, lazy-loaded except the LCP image |
 | Structured data elements | 2 | Per Structured formats in `seo-aeo-core.md`: tables, lists, comparison blocks present where the content calls for them |
 | Page speed signals | 2 | LCP under 2.5s, no render-blocking JS, `fetchpriority` on the hero image |
 | Mobile-friendliness | 2 | Responsive, accessible tap targets, no horizontal scroll |
