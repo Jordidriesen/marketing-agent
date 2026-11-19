@@ -2,8 +2,8 @@
 name: seo-audit
 description: 'Audits a site''s SEO: technical, on-page, indexing, Core Web Vitals, ranking drops. Use for "SEO audit", "why am I not ranking", "traffic dropped".'
 metadata:
-  version: 1.4.0
-  history: 'v1.4.0: content-references files renamed and merged; references to them updated.'
+  version: 1.5.0
+  history: 'v1.5.0: internal linking findings point to the internal-linking skill for the link map and link table. v1.4.0: content-references files renamed and merged; references to them updated.'
 ---
 
 # SEO Audit
@@ -246,6 +246,10 @@ Reporting "no schema found" based solely on `web_fetch` or `curl` leads to false
 - Over-optimized anchor text
 - Important pages buried
 - Excessive footer/sidebar links
+
+The audit flags internal linking problems; it does not build the fix. For the
+link map, orphan pages and a link table (source, target, anchor, placement),
+hand over to `internal-linking` with the crawl data and the priority pages.
 
 ### Keyword Targeting
 

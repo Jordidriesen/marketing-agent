@@ -9,7 +9,7 @@ The plugin declares no MCP servers of its own (the old `.mcp.json` was removed i
 | Discipline | Connector | Used by | If it isn't connected |
 |---|---|---|---|
 | Keyword, SERP, ranking and backlink data | OpenSEO | SEO research skills, `google-ads-build` (its `sea-keyword-research` reference), competitive intel | Say so; fall back to web research, never estimate figures |
-| Site audits, rank tracking, GA4, near-miss pages (`get_search_opportunities`), index status (`inspect_urls`), saved keywords and reports | OpenSEO (needs an OpenSEO project for the domain) | `seo-audit`, `seo-keyword-research`, `competitive-research` (its `content-gap-mapping` reference), the reporting step | See "Data-source rule" below |
+| Site audits, rank tracking, GA4, near-miss pages (`get_search_opportunities`), index status (`inspect_urls`), saved keywords and reports | OpenSEO (needs an OpenSEO project for the domain) | `seo-audit`, `internal-linking`, `seo-keyword-research`, `competitive-research` (its `content-gap-mapping` reference), the reporting step | See "Data-source rule" below |
 | Local search: Google Business Profile, reviews, Q&A, Maps rank grid | OpenSEO (any project; spends credits) | `competitive-research` (its `competitor-analysis` reference), `competitive-research` (its `competitive-landscape` reference), `seo-audit` | Say so; local claims stay organic-only |
 | First-party search performance | Search Console, or OpenSEO's Search Console tools | `competitive-research` (its `content-gap-mapping` reference), `seo-keyword-research`, `seo-audit` | See "Data-source rule" below |
 | Page content and crawling | Firecrawl | Research and content-gap skills | Use web fetch for single pages |

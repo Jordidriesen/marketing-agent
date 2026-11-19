@@ -10,6 +10,8 @@ Checks:
   not an error: Claude Code ignores it at runtime, and skills carry one for maintainers
 - every agent in plugin/agents has a description that starts with "Thread profile", so no agent
   pulls in work on its own outside the director
+- no client material in this public repository: no marketing-jobs/ folder anywhere, no jobs/
+  folder at the root, and no .marketing-client.yaml outside templates/client-repo/
 
 Exits non-zero on any failure so it can gate CI.
 """
@@ -75,8 +77,23 @@ def check_skill(folder: Path) -> list[str]:
     return errors
 
 
+def check_no_client_material() -> list[str]:
+    errors = []
+    for path in ROOT.rglob("*"):
+        rel = path.relative_to(ROOT)
+        if rel.parts and rel.parts[0] == ".git":
+            continue
+        if path.is_dir() and path.name == "marketing-jobs":
+            errors.append(f"{rel}: client job folders never go in this repository")
+        if path.name == ".marketing-client.yaml" and rel.parts[:2] != ("templates", "client-repo"):
+            errors.append(f"{rel}: a client repository marker outside templates/client-repo/")
+    if (ROOT / "jobs").is_dir():
+        errors.append("jobs/: client job folders never go in this repository")
+    return errors
+
+
 def main() -> int:
-    all_errors = []
+    all_errors = check_no_client_material()
     for folder in sorted(ROOT.iterdir()):
         if not folder.is_dir() or folder.name in SKIP_DIRS or folder.name.startswith("."):
             continue

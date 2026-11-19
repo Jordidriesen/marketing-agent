@@ -69,8 +69,9 @@ table above:
 ### Terms files
 
 One file per brand and one per product where a product has its own names, kept
-with the client's jobs: `marketing-jobs/<brand>/terms.txt` and
-`marketing-jobs/<brand>/terms-<product>.txt`. Never in this repository.
+with the client's jobs in the storage root: `brand/terms.txt` and
+`brand/terms-<product>.txt` (see `director-playbook/references/storage.md`).
+Never in this repository.
 
 ```
 Source: <brand>-brand-kit · Checked: DD/MM/YYYY

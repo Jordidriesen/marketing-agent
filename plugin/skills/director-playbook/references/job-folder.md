@@ -14,7 +14,8 @@
 - Product facts that may be used: <list; mark unconfirmed facts "confirm">
 - Constraints: <budget, dates, channels, legal, words to avoid>
 - Proof available: <customers, figures, quotes; or "none">
-- Terms files: <marketing-jobs/<brand>/terms.txt, terms-<product>.txt; or "none yet">
+- Storage: <linked folder path, or repository and branch; push agreed yes / no>
+- Terms files: <brand/terms.txt, brand/terms-<product>.txt in the storage root; or "none yet">
 
 ## Deliverables
 
@@ -49,8 +50,10 @@ On Sent back, Notes quotes the criterion that failed. Output is the path in
 
 ## Terms files (per brand, outside the job folder)
 
-`marketing-jobs/<brand>/terms.txt`, plus `terms-<product>.txt` for a product
-with its own names. Format and checks: `non-negotiables`, section Terms files.
+`brand/terms.txt` in the storage root (`marketing-jobs/<brand>/` in a linked
+folder, the repository root in a client repository), plus
+`brand/terms-<product>.txt` for a product with its own names. Layout:
+`references/storage.md`. Format and checks: `non-negotiables`, section Terms files.
 
 ```
 Source: <brand>-brand-kit · Checked: DD/MM/YYYY
@@ -65,6 +68,7 @@ Source: <brand>-brand-kit · Checked: DD/MM/YYYY
 
 - DD/MM/YYYY: <decision, and who made it>
 - DD/MM/YYYY: Thread <profile> spawned for <task>. Rule: <1 parallel / 2 noise / 3 fresh eyes / 4 model or tools>. Model: <model>. Effort: <effort>.
+- DD/MM/YYYY: Storage: <linked folder / repository and branch>. Checks passed: <list>. Push: <yes / no>, agreed by <who>.
 - DD/MM/YYYY: Terms files checked against <brand>-brand-kit: <files>, <updated / no change>.
 - DD/MM/YYYY: Review tier <none / light / full-sonnet / full-opus> for <job>, because <reason>.
 ```

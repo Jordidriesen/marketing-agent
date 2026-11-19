@@ -81,6 +81,14 @@ Two seeded rounds of citation counts; the report must name the right mover and e
 
 One case per skill that 4.0.0 absorbed into a family skill (24). Each is a plain request that names no skill and checks that the right family fired (`google-ads-build`, `google-ads-analyse`, `google-ads-ads`, `competitive-research`, `measurement`) and that the reply works from the right reference inside it. They run with the main thread as the director (`director-playbook` loaded). First built for the marketing-operator trial; not run yet.
 
+## route-internal-linking (5.2.0)
+
+A plain request for internal links to a product page, with no crawl data or connector. Checks that `internal-linking` fired and that it asks for link data and priority pages in a Needs input block instead of inventing URLs or link counts. Not run yet.
+
+## storage-reminder (5.2.0)
+
+A campaign job with no linked folder and no client repository, run from the plugin repository. Checks that the director stops before opening a job folder, reminds the user to link a folder or connect a dedicated private client repository, and writes nothing into the working directory. Not run yet.
+
 ## job-campaign, job-landing and job-report (4.0.0)
 
 Three end-to-end jobs on Acme Access, run with the main thread as the director: a three-week LinkedIn campaign with posts and a nurture pair, a landing page from copy to an Elementor build checklist, and a monthly paid report from given figures. Graded: no em dashes, the `Skills run` line, the skills each job needs, the publish question with nothing claimed as published, job-specific quality, that every thread has a reason matching one of the four spawn rules, and that a `full-opus` cold review ran and its findings were dealt with. Record tokens, time and the model of every thread from `decisions.md`. In the trial on 07/11/2026 the campaign job cost about 280,000 thread tokens with a `full-opus` review; the report job ran without threads.

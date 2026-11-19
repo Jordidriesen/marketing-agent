@@ -16,6 +16,7 @@ What the specialist agents knew before 5.0.0, kept per discipline. Read the sect
 - Every content brief or page recommendation also covers GEO: a clean, quotable answer near the top, well-labelled sections, structured data where it fits, specific enough to be cited.
 - To measure AI citations over time, use `ai-visibility-tracker`. It is a logged manual protocol, not an automated score.
 - Output for writing is a brief (target keywords, clusters, page structure, GEO notes), not finished copy. Mark live data against estimates.
+- Internal linking: `internal-linking` needs the priority pages and real link data (an OpenSEO site audit with inbound link counts, or a crawl export). Without link data it stops and asks; it never estimates counts. A full crawl export goes to a `data-puller` thread that writes the link map to a file. The link table is the deliverable; changes on a WordPress site go through `wordpress-page-build` on staging, after a yes.
 
 ## Campaign plan
 

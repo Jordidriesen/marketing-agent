@@ -1,0 +1,3 @@
+Source: <brand>-brand-kit · Checked: DD/MM/YYYY
+# correct form | wrong variants, comma-separated
+<Correct Name> | <variant>, <variant>

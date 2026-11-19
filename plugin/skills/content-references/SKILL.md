@@ -20,7 +20,7 @@ Eight reference files, each reusable across the content skills instead of duplic
 | `references/seo-aeo-core.md` | AEO architecture, the sourcing rule and chunk rule, keyword integration, information gain audit, E-E-A-T gate (six additive checks), schema, platform differences, visual asset rules | Articles meant to rank or be cited; schema and AEO questions |
 | `references/seo-aeo-scorecard.md` | Optional 100-point scorecard, scoring bands, triage priorities | Only when a formal quality score is requested |
 | `references/internal-linking-drafting.md` | Link density, anchor text distribution, placement, bidirectional linking, hub-and-spoke | While drafting any piece over a couple of hundred words |
-| `references/internal-linking-audit.md` | Orphan-page detection, audit checklist, link velocity, tracking | Only when auditing an existing site section |
+| `references/internal-linking-audit.md` | Orphan-page detection, audit checklist, link velocity, tracking | Only when auditing an existing site section; `internal-linking` reads it every run |
 
 Cannibalization detection lives in `keyword-clustering` and `seo-audit`, not here.
 
@@ -35,7 +35,8 @@ Who loads what. "Required" means the skill reads it every run; the rest are on d
 | `social-content-writer`, `press-release-writer`, `newsletter-writer`, `email-sequence-hubspot-brevo`, `campaign-plan`, `google-ads-analyse` (its `landing-page-matcher` reference), `ad-creative-matrix` | content-briefing; behavioral-psychology where the skill cites it |
 | `copy-editing`, `google-ads-ads` (its `ad-copy-tester` reference), `google-ads-ads` (its `rsa-writer` reference), `competitive-research` (its `competitor-teardown` reference), `google-ads-analyse` (its `disapproval-diagnoser` reference), `lead-magnets` | behavioral-psychology |
 | `seo-audit`, `content-translate` | seo-aeo-core (AEO rules, schema) |
-| nobody by default | seo-aeo-scorecard (a formal score), internal-linking-audit (a site audit) |
+| `internal-linking` | internal-linking-audit and internal-linking-drafting (required) |
+| nobody by default | seo-aeo-scorecard (a formal score) |
 
 ## Canonical honesty rule
 

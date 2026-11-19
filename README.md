@@ -1,6 +1,6 @@
 # Marketing Agent: a Claude marketing team
 
-A marketing team for Claude in one install: the `team` command, which turns the main thread into a director, six thread profiles it can start, and the 50 skills they run on. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, outbound and sales, graphic design, web development and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
+A marketing team for Claude in one install: the `team` command, which turns the main thread into a director, six thread profiles it can start, and the 51 skills they run on. Built for agency-style work across Google Ads, paid social, SEO and GEO research, content, email, outbound and sales, graphic design, web development and localisation, on a budget-conscious stack (OpenSEO instead of Ahrefs or Semrush, the ad platforms' own connectors instead of a paid data aggregator).
 
 Run `/marketing-agent:team` for jobs with several steps or deliverables, anything going live or to a client, or heavy data work: the main thread becomes the director, does the work with the skills, starts threads only where they pay off, reviews and asks before publishing. For a single task, just ask: the right skill triggers on its own.
 
@@ -10,7 +10,7 @@ Run `/marketing-agent:team` for jobs with several steps or deliverables, anythin
 plugin/                    the installable plugin
   .claude-plugin/          plugin manifest
   agents/                  six thread profiles: data-puller, researcher, drafter, graphic-designer, web-developer, cold-reviewer
-  skills/                  the 50 skills, plus the `team` command
+  skills/                  the 51 skills, plus the `team` command
   CONNECTORS.md            which connector each discipline uses, and the data-source rule
 templates/brand-kit/       blank modular brand kit: router + context, voice, design
 archive/                   retired skills kept for reference, not installed
@@ -90,6 +90,7 @@ The Google Ads connector reference (`google-ads-tool-map`) is a shared reference
 | `free-tool-strategy` | Plans a free tool for leads, links or awareness |
 | `keyword-clustering` | Clusters keywords by intent and SERP overlap and maps them to pages |
 | `media-mapping` | Media outlets, trade press and newsletters for PR |
+| `internal-linking` | Link map from a crawl, orphan and under-linked priority pages, hub and spoke per cluster, and a paced link table (source, target, anchor, placement) |
 | `seo-audit` | Technical and on-page SEO audit |
 | `seo-keyword-research` | Prioritised organic keyword opportunities |
 
