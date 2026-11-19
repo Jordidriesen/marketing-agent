@@ -4,6 +4,24 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [5.2.0] (19/11/2026)
+
+Where a job lives, a new internal linking skill and a British English pass.
+
+- **Storage is resolved before a job opens** (`director-playbook` 3.2.1, new `references/storage.md`): a linked local folder first; otherwise a dedicated, private client repository on GitHub or GitLab that passes four checks (not a plugin repo, a `.marketing-client.yaml` naming the brand, private, reachable); otherwise no files are written, the brief and plan are given in the reply marked as not saved, and the user is reminded to link a folder or connect the client's repository. Never the session's working directory. Branch per job, commit per step, push agreed once per job.
+- **`templates/client-repo/`**: marker file, README, `.gitignore`, `brand/terms.txt`, `jobs/` and `assets.md`. CI for client repositories follows once one exists.
+- **Safety net:** `marketing-jobs/` and `/jobs/` are ignored here, and `lint_skills.py` fails on client material in this public repository.
+- **New `internal-linking` skill** (51 skills): problem list from an OpenSEO site audit (orphans, broken links, outbound counts), and a paced link table (source, target, anchor, placement) from a crawl export. A live audit on 19/11/2026 confirmed OpenSEO returns no inbound counts or link-level rows. Wired into `seo-audit`, `content-references`, the playbook, discipline notes and CONNECTORS.
+- **Terms files** move to `<storage root>/brand/terms.txt` and `brand/terms-<product>.txt`.
+- **en_GB clean-up:** 177 US spellings changed in 52 files. File and reference names, Google Ads product names, Rank Math, schema.org types and the agents' `color` key are unchanged on purpose.
+- **Evals:** `route-internal-linking` and `storage-reminder` added. Compared with 5.0.0 on 19/11/2026: storage-reminder 0.67 to 1.00, route-internal-linking 0.33 to 0.78; team-command, rsa and no-auto-delegate at 1.00.
+
+## [5.1.0] (19/11/2026)
+
+- **`plan.md` in the job folder** (`director-playbook` 3.1.0): one row per step with dependencies, owner, status and output, edited by the director only; a reopened job resumes from it. Send-backs revise the draft.
+- **`check_rules.py` gets three checks:** `--rsa` (headline 30, description 90, stated counts), `--arith` (table totals and share columns), `--terms` (locked brand and product terms, with conflicts between files reported).
+- **Tests for every check** in `non-negotiables/scripts/tests/`, run in CI.
+
 ## [5.0.0]
 
 Fewer moving parts. Breaking: thirteen menu commands and twelve agents are gone.
