@@ -12,8 +12,12 @@ Resolve this once at the start of every job that opens a job folder, before
 2. **No linked folder: a dedicated client repository.** GitHub or GitLab. The
    storage root is the repository root; jobs go in `jobs/`. Use it only when
    every check below passes.
-3. **Neither.** Stop. Write no job folder anywhere, not in the session's working
-   directory and not in a scratch folder, and send the reminder below.
+3. **Neither.** Write no files: no job folder in the session's working
+   directory or a scratch folder. Do the thinking anyway: give the brief (in the
+   `brief.md` template) and the step plan (in the `plan.md` template) in the
+   reply, marked as not saved, then send the reminder below and wait. Once
+   storage is resolved, write both files unchanged unless the user changed
+   something, and carry on.
 
 The session's working directory is never a storage root by default. In a cloud
 session it is usually the plugin repository, which is public: client material
@@ -36,9 +40,10 @@ linked local folder or the GitHub mirror instead.
 
 ## The reminder
 
-When step 3 applies, send this and wait:
+When step 3 applies, end the reply with the brief and plan above it, then this,
+and wait:
 
-> No local folder is linked and no dedicated client repository is connected for <brand>. Link a local folder, or connect the private repository for <brand> (GitHub or GitLab), and I'll open the job there. A new client repository can start from `templates/client-repo/` in the marketing-agent repository.
+> Nothing is saved yet: no local folder is linked and no dedicated client repository is connected for <brand>. Link a local folder, or connect the private repository for <brand> (GitHub or GitLab), and I'll save the brief and plan there and carry on. A new client repository can start from `templates/client-repo/` in the marketing-agent repository.
 
 When a repository is connected but a check fails, name the check instead, for
 example: "This repository has no `.marketing-client.yaml`, so I can't confirm it
