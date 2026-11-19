@@ -2,8 +2,8 @@
 name: internal-linking
 description: 'Internal linking for an existing site: builds the link map from a crawl, finds orphan and under-linked priority pages, maps hub and spoke per keyword cluster, and returns a link table (source, target, anchor, placement, reason, priority) with a paced rollout. Use for "internal linking", "orphan pages", "which pages should link to X", "link structure". Never edits the site. Links inside a new draft: web-content-pipeline.'
 metadata:
-  version: 1.0.0
-  history: 'v1.0.0 (marketing-agent 5.2.0): new. Puts the internal-linking-audit reference to use, which no skill loaded before, and adds a concrete link table built from crawl data and keyword clusters.'
+  version: 1.0.1
+  history: 'v1.0.1: OpenSEO link data confirmed in a live audit (19/11/2026): it returns outbound link counts and orphan pages, not inbound counts or link-level rows, so a link table needs a crawl export. v1.0.0 (marketing-agent 5.2.0): new. Puts the internal-linking-audit reference to use, which no skill loaded before, and adds a concrete link table built from crawl data and keyword clusters.'
 ---
 
 # Internal Linking
@@ -25,14 +25,22 @@ on the page and why. Not a checklist of good practice, and not new content.
   pages, pillars, pages in positions 4 to 20). If not given, ask; a link table
   without priorities is just a list.
 - Link data, from one of:
-  1. An OpenSEO site audit for the project (`run_site_audit`, then
-     `get_audit_pages` and `get_audit_issues`). Read what `get_audit_pages`
-     returns: if it gives inbound and outbound internal links per page, use it;
-     if it gives page data without inbound link counts, say so and ask for a
-     crawl export instead. Never estimate link counts.
-  2. A crawl export the user supplies, such as Screaming Frog's
-     "All Inlinks" export or Sitebulb's links report (source, destination,
-     anchor, link position, status).
+  1. **For the link table: a crawl export** the user supplies, such as
+     Screaming Frog's "All Inlinks" export or Sitebulb's links report (source,
+     destination, anchor, link position, status). This is the only source of
+     inbound counts and link-level rows.
+  2. **For the problem list only: an OpenSEO site audit** for the project
+     (`run_site_audit`, then `get_audit_pages` and `get_audit_issues`). Confirmed
+     in a live audit on 19/11/2026: it returns orphan pages (`orphan-page`),
+     broken internal links, redirect chains, deep pages, status codes, sitemap
+     membership and `internalLinkCount`, which counts outbound links including
+     navigation. It does not return inbound counts, link-level rows or link
+     position. `crawlDepth` can come back empty when menu links load through
+     JavaScript; rerun with `renderJavaScript` (it costs credits, ask first)
+     before relying on it.
+
+  Without a crawl export, deliver the problem list and say that the link table
+  needs one. Never estimate link counts.
 - Optional: a keyword cluster map from `keyword-clustering`. Without one, hub
   and spoke is built from URL structure and page topics, and the output says so.
 
@@ -44,7 +52,8 @@ any analysis. A site audit spends OpenSEO credits: estimate and ask first, per
 
 - **Resolve a `projectId` first** per `references/openseo-tool-map.md`.
 - `OpenSEO:run_site_audit`, `get_audit_status`, `get_audit_pages`,
-  `get_audit_issues`: crawl data, including broken internal links.
+  `get_audit_issues`: orphans, broken internal links, outbound link counts and
+  status codes. No inbound counts or link rows (see Required inputs).
 - `OpenSEO:get_search_opportunities`: pages in positions 4 to 20 with GA4
   outcomes, the best default for priority pages when Search Console and GA4 are
   linked in the project.
@@ -58,7 +67,8 @@ thread that writes the link map to a file (spawn rule 2).
 
 1. Resolve the project and confirm scope, priority pages and the link data
    source. Stop with Needs input if any is missing.
-2. **Build the link map.** One row per page: inbound internal links (body
+2. **Build the link map** from the crawl export (with OpenSEO only, skip to
+   step 3 and list problems, not links). One row per page: inbound internal links (body
    links counted apart from navigation and footer where the data shows link
    position), outbound internal links, click depth, status code, cluster.
 3. **Find the problems**, using the site-wide table in
