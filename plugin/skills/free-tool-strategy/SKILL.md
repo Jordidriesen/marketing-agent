@@ -53,7 +53,7 @@ Before designing a tool strategy, understand:
 |------|----------|----------|
 | Calculators | ROI, savings, pricing estimators | Decisions involving numbers |
 | Generators | Templates, policies, names | Creating something quickly |
-| Analyzers | Website graders, SEO auditors | Evaluating existing work |
+| Analysers | Website graders, SEO auditors | Evaluating existing work |
 | Testers | Meta tag preview, speed tests | Checking if something works |
 | Libraries | Icon sets, templates, snippets | Reference material |
 | Interactive | Tutorials, playgrounds, quizzes | Learning/understanding |
@@ -174,7 +174,7 @@ Rate each factor 1-5:
 ## Related Skills
 
 - **lead-magnets**: For downloadable content lead magnets (ebooks, checklists, templates)
-- **page-cro**: For optimizing the tool's landing page
-- **seo-audit**: For SEO-optimizing the tool
+- **page-cro**: For optimising the tool's landing page
+- **seo-audit**: For SEO-optimising the tool
 - **analytics-tracking**: For measuring tool usage
 - **email-sequence**: For nurturing leads from the tool

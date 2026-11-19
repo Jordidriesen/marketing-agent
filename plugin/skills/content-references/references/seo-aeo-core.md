@@ -68,7 +68,7 @@ a developer concern, but one content structure should support, not fight.
 **Factual density (the sourcing rule, stated once):** at least one
 sourced statistic per 500 words, and at least four per piece, and every
 material claim maps to a source ("per a 2025 Pew report," not "studies
-show"). Vague claims are deprioritized by LLMs; precise, sourced statements
+show"). Vague claims are deprioritised by LLMs; precise, sourced statements
 get cited. Never invent a number to meet the minimum: the canonical honesty
 rule in `content-references/SKILL.md` wins, and a piece with fewer real
 statistics says so in its hidden notes.
@@ -109,7 +109,7 @@ clarity outrank density.
 
 ## Information gain audit
 
-Before finalizing any piece meant to rank, verify it adds something beyond
+Before finalising any piece meant to rank, verify it adds something beyond
 a baseline LLM answer to the same question. At least one of:
 - **Original data or research**: proprietary benchmarks, internal stats,
   first-party surveys
@@ -120,7 +120,7 @@ a baseline LLM answer to the same question. At least one of:
   competing pieces don't cover
 
 No qualifying element present → flag it before shipping. AI engines
-deprioritize consensus content with no differentiating layer.
+deprioritise consensus content with no differentiating layer.
 
 ---
 

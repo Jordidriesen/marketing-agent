@@ -3,7 +3,7 @@ name: press-release-writer
 description: 'Writes press releases in standard structure: headline, dateline, lead, body, quotes marked for approval, boilerplate, media contact. Use for "press release", "launch, funding, partnership or office announcement". Outlets: media-mapping.'
 metadata:
   version: 1.2.1
-  history: 'v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.2.0: content-references files renamed and merged; references to them updated. v1.1.1: history note no longer names the removed pointer file. v1.1: wired into content-references, Step 3 cites content-briefing.md for the inverted-pyramid / BLUF structure instead of leaving it implicit, and a Step 5 humanizing pass (ai-content-cleaner in CLEAN mode, via the former pointer file) was added; previously the skill only ran copy-editing and never a humanizing pass.'
+  history: 'v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.2.0: content-references files renamed and merged; references to them updated. v1.1.1: history note no longer names the removed pointer file. v1.1: wired into content-references, Step 3 cites content-briefing.md for the inverted-pyramid / BLUF structure instead of leaving it implicit, and a Step 5 humanising pass (ai-content-cleaner in CLEAN mode, via the former pointer file) was added; previously the skill only ran copy-editing and never a humanising pass.'
 ---
 
 # Press Release Writer
@@ -38,7 +38,7 @@ The press release is a fixed structure built on the **inverted pyramid**: most n
 - **Dateline**: city, state/region, date
 - **Lead paragraph**: who, what, when, where, why in 2-3 sentences
 - **Body paragraphs**: supporting details, context, one or two quotes
-- **Boilerplate**: standardized company description (reuse if the brand has one)
+- **Boilerplate**: standardised company description (reuse if the brand has one)
 - **Media contact**: name, email, phone
 
 Newsworthy, not promotional: state facts, avoid superlatives without evidence (mirrors `brand-review`'s unsubstantiated-claims flag), and never invent a quote or statistic, mark any placeholder clearly as `[PLACEHOLDER, confirm with source]`.
@@ -47,7 +47,7 @@ Newsworthy, not promotional: state facts, avoid superlatives without evidence (m
 
 Run `copy-editing` (Seven Sweeps), focused on Clarity and Prove It: press releases lean on evidence, not persuasion technique. Skip the Heightened Emotion sweep; press releases stay factual.
 
-## Step 5: Humanize
+## Step 5: Humanise
 
 Run `ai-content-cleaner` in **CLEAN** mode (a press release has no SEO structure worth protecting in BALANCED). This is the pass that strips the promotional-language and significance-inflation tells that a press release should not carry anyway: "marking a pivotal moment," "is poised to," rule-of-three filler. It loads the right language file itself if the release isn't in English.
 

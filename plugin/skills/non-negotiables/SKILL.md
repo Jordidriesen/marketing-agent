@@ -43,7 +43,56 @@ Python 3 launcher:
 python3 "$SCRIPTS/check_rules.py" INPUT                 # language detected
 python3 "$SCRIPTS/check_rules.py" INPUT --lang nl       # force Dutch rules
 python3 "$SCRIPTS/check_rules.py" INPUT --paid          # add the ad group table check
+python3 "$SCRIPTS/check_rules.py" INPUT --rsa           # RSA headline and description lengths
+python3 "$SCRIPTS/check_rules.py" INPUT --arith         # table totals and share columns
+python3 "$SCRIPTS/check_rules.py" INPUT --terms BRAND.txt --terms PRODUCT.txt   # locked terms
 ```
+
+The flags combine. Three of them check accuracy rather than a rule from the
+table above:
+
+- `--rsa` measures every numbered item under a heading that says Headlines or
+  Descriptions, and every cell in a table column with that header, against
+  Google's limits (30 and 90 characters). It also flags a stated count, such as
+  `(24)`, that does not match the text. It counts plain characters.
+- `--arith` recomputes markdown tables whose last row is labelled Total (or
+  Totaal, Sum) and checks that share columns (Share, Aandeel, Split, `% of`) add
+  up to 100, within rounding. It reads 1.234,5 and 1,234.5. It skips rates,
+  averages and ratios (CTR, CPC, ROAS, conversion rate), tables with subtotals,
+  and every figure in running text: those stay with the reader. The summary line
+  says how many tables and columns it recomputed; zero means nothing was checked.
+- `--terms` reads one or more terms files and flags wrong variants of locked
+  brand and product names, case-sensitively, outside code, URLs and link
+  targets. It reports a conflict when two files disagree on a term. The format
+  is below.
+
+### Terms files
+
+One file per brand and one per product where a product has its own names, kept
+with the client's jobs in the storage root: `brand/terms.txt` and
+`brand/terms-<product>.txt` (see `director-playbook/references/storage.md`).
+Never in this repository.
+
+```
+Source: <brand>-brand-kit · Checked: DD/MM/YYYY
+# correct form | wrong variants, comma-separated
+Acme Access | acme access, ACME Access, AcmeAccess
+```
+
+The director compares the file with the brand kit when it writes a brief,
+updates it where they differ, sets the Checked date and logs that in
+`decisions.md`. The script prints each file's Checked date, so an old file shows.
+
+### Tests
+
+`scripts/tests/` holds a sample with and without the problem for every check.
+Run them after any change to the script, from the repository root:
+
+```bash
+python3 -m unittest discover -s plugin/skills/non-negotiables/scripts/tests
+```
+
+CI runs the same tests on every push and pull request to main.
 
 Use `-` for INPUT to read stdin. The script reads text, Markdown and HTML
 source; never pass a PDF, DOCX, image or archive. It skips fenced code, inline
@@ -72,5 +121,6 @@ checked. Never write that a rule passed when it was not run.
 ## Adding a rule
 
 Add a row only for a rule Jordi has stated. Say how it is checked. If it can be
-checked by script, add the check to `scripts/check_rules.py` and test it on a
-sample with and without the problem before relying on it.
+checked by script, add the check to `scripts/check_rules.py`, add a sample with
+and without the problem to `scripts/tests/fixtures/` and a test to
+`scripts/tests/test_check_rules.py`, and run the tests before relying on it.

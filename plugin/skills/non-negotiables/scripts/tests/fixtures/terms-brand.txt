@@ -1,0 +1,3 @@
+Source: acme-brand-kit · Checked: 19/11/2026
+# correct | wrong variants
+Acme Access | acme access, ACME Access, AcmeAccess

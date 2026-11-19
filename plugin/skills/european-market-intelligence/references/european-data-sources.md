@@ -13,7 +13,7 @@
 - 8. GDPR / OSINT Compliance Reference
 
 
-Loaded by `european-market-intelligence` SKILL.md for Workflows 1, 2, and 6. Organized pan-EU first, then country-specific, then commercial/private-data platforms, then compliance.
+Loaded by `european-market-intelligence` SKILL.md for Workflows 1, 2, and 6. Organised pan-EU first, then country-specific, then commercial/private-data platforms, then compliance.
 
 ## Table of Contents
 1. Pan-European Official Sources
@@ -36,7 +36,7 @@ Loaded by `european-market-intelligence` SKILL.md for Workflows 1, 2, and 6. Org
 | **BORIS - Beneficial Ownership Registers Interconnection System** | Beneficial ownership (who ultimately owns/controls a company) | Live in ~17 of 30 EU/EEA countries as of early 2026 (rolling out; member states had until July 2026 to transpose operational rules, full response-time obligations from November 2026). Treat non-covered countries as "unknown," not "no owner." Public UBO access has been restricted EU-wide since a 2022 CJEU ruling - most countries now require a "legitimate interest" request. |
 | **TED - Tenders Electronic Daily** (ted.europa.eu) | All EU public procurement notices above threshold: contract notices, prior information notices, contract award notices | Official RESTful API, anonymous read access, ~740,000 notices/year, updated ~5x/week. Filter by CPV code, country, buyer, value, date. See Section 3. |
 | **EU Open Data Portal** (data.europa.eu) | Aggregated open datasets across all EU institutions, including CSV subsets of TED and trade data | Good for one-off pulls without building against the live API. |
-| **ECB Statistical Data Warehouse** | Macroeconomic, monetary, exchange-rate, interest-rate data | Use for currency-normalization and macro-context sections of a report. |
+| **ECB Statistical Data Warehouse** | Macroeconomic, monetary, exchange-rate, interest-rate data | Use for currency-normalisation and macro-context sections of a report. |
 | **CORDIS** (cordis.europa.eu) | Horizon Europe / EU-funded R&D projects and participants | Useful for innovation-trend scanning and identifying who's getting EU research funding in a category. |
 | **VIES** (VAT Information Exchange System) | VAT-number validation for any EU business | Quick legitimacy check on a named company. |
 | **EUIPO** (euipo.europa.eu) | EU trademark and design registrations | Useful signal for product launches and brand activity ahead of public announcement. |
@@ -124,12 +124,12 @@ Referenced from the main SKILL.md's compliance layer. Applies whenever research 
 1. **Purpose test** - state the genuine business purpose (market research, competitive intelligence, prospecting). These generally pass the purpose test.
 2. **Necessity test** - is processing this specific data actually necessary for that purpose, or would less/aggregated data do?
 3. **Balancing test** - weigh the business interest against the individual's rights and reasonable expectations; document it, don't just assert it.
-4. **Safeguards** - data minimization, retention limits, and a path for the individual to object.
+4. **Safeguards** - data minimisation, retention limits, and a path for the individual to object.
 
 **2026 regulatory context:** the EDPB published draft Guidelines 03/2026 on web scraping in July 2026 (public consultation ran to 30 October 2026; final version expected later in 2026). Written primarily for AI-training scraping, but the same three-part legitimate-interest reasoning is what national DPAs apply to any scraping-based research more broadly. Key practical takeaways that carry over to market/competitive research:
 - Consent is not a workable basis for scraping at scale - legitimate interest is the primary route, and it requires a *documented* LIA, not an assumption that public data is automatically fair game.
 - "Publicly accessible" does not mean "usable for any purpose" - purpose limitation still applies.
-- Ignoring `robots.txt` doesn't create direct liability by itself but is treated as evidence of bad faith that weakens a legitimate-interest defense in EU regulatory proceedings.
+- Ignoring `robots.txt` doesn't create direct liability by itself but is treated as evidence of bad faith that weakens a legitimate-interest defence in EU regulatory proceedings.
 - Distinguish targeted scraping (specific domains/topics, lower risk) from untargeted crawling (higher risk, harder to document a clean purpose for).
 
 **Practical guidance for this skill:** keep research at the corporate/aggregate level wherever the deliverable allows it. Named-individual research (leadership mapping, hiring-signal analysis from job postings with named recruiters, etc.) should stick to professionally-published facts and avoid compiling anything that reads as a personal dossier.

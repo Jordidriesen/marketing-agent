@@ -4,6 +4,24 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [5.2.0] (19/11/2026)
+
+Where a job lives, a new internal linking skill and a British English pass.
+
+- **Storage is resolved before a job opens** (`director-playbook` 3.2.1, new `references/storage.md`): a linked local folder first; otherwise a dedicated, private client repository on GitHub or GitLab that passes four checks (not a plugin repo, a `.marketing-client.yaml` naming the brand, private, reachable); otherwise no files are written, the brief and plan are given in the reply marked as not saved, and the user is reminded to link a folder or connect the client's repository. Never the session's working directory. Branch per job, commit per step, push agreed once per job.
+- **`templates/client-repo/`**: marker file, README, `.gitignore`, `brand/terms.txt`, `jobs/` and `assets.md`. CI for client repositories follows once one exists.
+- **Safety net:** `marketing-jobs/` and `/jobs/` are ignored here, and `lint_skills.py` fails on client material in this public repository.
+- **New `internal-linking` skill** (51 skills): problem list from an OpenSEO site audit (orphans, broken links, outbound counts), and a paced link table (source, target, anchor, placement) from a crawl export. A live audit on 19/11/2026 confirmed OpenSEO returns no inbound counts or link-level rows. Wired into `seo-audit`, `content-references`, the playbook, discipline notes and CONNECTORS.
+- **Terms files** move to `<storage root>/brand/terms.txt` and `brand/terms-<product>.txt`.
+- **en_GB clean-up:** 177 US spellings changed in 52 files. File and reference names, Google Ads product names, Rank Math, schema.org types and the agents' `color` key are unchanged on purpose.
+- **Evals:** `route-internal-linking` and `storage-reminder` added. Compared with 5.0.0 on 19/11/2026: storage-reminder 0.67 to 1.00, route-internal-linking 0.33 to 0.78; team-command, rsa and no-auto-delegate at 1.00.
+
+## [5.1.0] (19/11/2026)
+
+- **`plan.md` in the job folder** (`director-playbook` 3.1.0): one row per step with dependencies, owner, status and output, edited by the director only; a reopened job resumes from it. Send-backs revise the draft.
+- **`check_rules.py` gets three checks:** `--rsa` (headline 30, description 90, stated counts), `--arith` (table totals and share columns), `--terms` (locked brand and product terms, with conflicts between files reported).
+- **Tests for every check** in `non-negotiables/scripts/tests/`, run in CI.
+
 ## [5.0.0]
 
 Fewer moving parts. Breaking: thirteen menu commands and twelve agents are gone.
@@ -304,7 +322,7 @@ Breaking: skills moved and two were renamed or merged. Reinstall the plugin and 
 - Added `localization-specialist`: target-language versions (NL/FR/DE/ES) of signed-off source content via `content-translate`, run after execution and before reporting. `content-writer` no longer calls `content-translate` directly.
 - Added `creative-specialist` and the new `frontend-design` skill (design/review front-end UI in a brand's visual identity, plan/critique method from Anthropic's `frontend-design`, interface rule set adapted from vercel-labs' `web-interface-guidelines`, MIT). `chape-braspenning-brand-kit` referenced a `frontend-design` skill before one existed; it does now.
 - `campaign-plan`, `competitive-brief`, and `performance-report` moved back out of `/plugin` to the repo root: they're account skills like any other and nothing about them was plugin-specific. The plugin's agents call them by bare name, unaffected.
-- Wired five content skills into `content-references` instead of re-implementing its rules: `copy-editing` (dropped duplicated persuasion/lexical tables and four dead skill links, kept the Seven Sweeps process), `customer-story-writer` (framework definitions now cite the hub, kept its fixed structure and framework-to-section mapping), `press-release-writer` (added a humanizing pass it was missing), `newsletter-writer` (added a structural-framework step), `email-sequence-hubspot-brevo` (per-email copy now cites the hub).
+- Wired five content skills into `content-references` instead of re-implementing its rules: `copy-editing` (dropped duplicated persuasion/lexical tables and four dead skill links, kept the Seven Sweeps process), `customer-story-writer` (framework definitions now cite the hub, kept its fixed structure and framework-to-section mapping), `press-release-writer` (added a humanising pass it was missing), `newsletter-writer` (added a structural-framework step), `email-sequence-hubspot-brevo` (per-email copy now cites the hub).
 - Added `.claude-plugin/marketplace.json` at the repo root so the plugin installs via `claude plugin marketplace add Jordidriesen/marketing-agent` + `/plugin install marketing-agent@marketing-agent`, with `claude plugin marketplace update` for syncing later.
 
 ## [1.3.0]
@@ -315,7 +333,7 @@ Breaking: skills moved and two were renamed or merged. Reinstall the plugin and 
 
 ## [1.2.0]
 
-- Adopted cleaner, fully-generic anonymization and a frontmatter bug fix from a newer export across 8 skills (`competitive-landscape`, `competitor-analysis`, `content-references`, `content-research-orchestrator`, `content-translate`, `european-market-intelligence`, `seo-audit`, `web-content-pipeline`).
+- Adopted cleaner, fully-generic anonymisation and a frontmatter bug fix from a newer export across 8 skills (`competitive-landscape`, `competitor-analysis`, `content-references`, `content-research-orchestrator`, `content-translate`, `european-market-intelligence`, `seo-audit`, `web-content-pipeline`).
 - Added 8 new skills: `campaign-plan`, `competitive-brief`, `performance-report` (built specifically for the marketing plugin; brand-kit check added, reference tables split out, house style applied) and `brand-review`, `content-creation`, `newsletter-writer`, `press-release-writer`, `social-content-writer` (started from Anthropic's marketing plugin, substantially reworked, added as-is). See the Attribution note above the skill tables. 49 skills total.
 
 ## [1.1.0]

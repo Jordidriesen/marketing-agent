@@ -68,7 +68,7 @@ Run this per post at publish time, and site-wide quarterly.
 | Max clicks from homepage | Any page reachable in 3-4 clicks | Restructure navigation |
 | Broken internal links | 0 broken links (404s) | Fix or remove all broken links |
 
-Cannibalization isn't a row here on purpose, run `keyword-clustering` at
+Cannibalisation isn't a row here on purpose, run `keyword-clustering` at
 the planning stage or `seo-audit` site-wide instead.
 
 ---

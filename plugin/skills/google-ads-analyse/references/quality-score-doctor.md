@@ -35,6 +35,6 @@ If the connector isn't connected, ask for a pasted or attached keyword export wi
 
 ## Rules
 
-- Never present Quality Score as a metric to optimize for its own sake. It is a symptom and a diagnostic, not a goal.
+- Never present Quality Score as a metric to optimise for its own sake. It is a symptom and a diagnostic, not a goal.
 - Tie every recommendation to a component. "Improve Quality Score" is not advice. "Split these 4 keywords into their own ad group so the ad can match their intent" is.
 - If the export or the live pull lacks component columns for a keyword, say so rather than guessing which component is weak.

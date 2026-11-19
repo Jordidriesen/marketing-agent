@@ -11,7 +11,7 @@ You match the bid strategy to the data the account actually has, which is the pa
 
 ## Workflow
 1. Check the volume floor first. Smart bidding needs consistent conversion data. Under roughly 15 conversions a month, recommend manual CPC or Maximize Clicks and say why.
-2. Match strategy to stage: building data, optimizing to a target, or bidding to value. Name which stage the campaign is in.
+2. Match strategy to stage: building data, optimising to a target, or bidding to value. Name which stage the campaign is in.
 3. For value-based strategies, verify conversion values are real. Target ROAS on inaccurate values is worse than no smart bidding at all.
 4. Flag self-sabotage: targets so aggressive the algorithm throttles delivery, or changes so frequent the learning phase never completes.
 5. Give the switching conditions: what has to be true before moving to the next strategy.

@@ -44,7 +44,7 @@ legal must-haves. Repeat them here so a skill that reads only this file still ge
 
 List the other skills in this plugin that this brand kit should combine with, and
 how: e.g. which content-production skill identifies the brand and auto-loads this
-kit, which localization skill should carry Locked Terminology across locales, which
+kit, which localisation skill should carry Locked Terminology across locales, which
 skills this kit adds "you-first" language or customer-outcome framing on top of.
 
 ## Open items for [Client]

@@ -1,0 +1,23 @@
+# Secrets
+.env
+*.key
+
+# Design source files: keep in their own tool, link them in assets.md
+*.af
+*.afdesign
+*.afphoto
+*.afpub
+*.psd
+*.ai
+*.indd
+*.fig
+*.sketch
+
+# Video and raw media
+*.mov
+*.mp4
+*.wav
+
+# OS and tooling
+.DS_Store
+__pycache__/

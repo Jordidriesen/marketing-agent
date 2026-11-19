@@ -9,7 +9,7 @@ A router, not a writer. This skill classifies a content request by type and disp
 
 ## Why this exists
 
-Each content type has its own skill, tuned to that format's actual process (web pages get a brand-kit-aware, SEO/AEO-structured, copy-edited, humanized pipeline; a social post gets a much lighter pass). Routing through a single entry point means: shared inputs (brand, topic, key messages, audience) get collected once and passed to every specialist the request needs, instead of each one re-asking; and a multi-format request ("repurpose this across channels") produces a consistent set of pieces from one brief instead of drifting between them.
+Each content type has its own skill, tuned to that format's actual process (web pages get a brand-kit-aware, SEO/AEO-structured, copy-edited, humanised pipeline; a social post gets a much lighter pass). Routing through a single entry point means: shared inputs (brand, topic, key messages, audience) get collected once and passed to every specialist the request needs, instead of each one re-asking; and a multi-format request ("repurpose this across channels") produces a consistent set of pieces from one brief instead of drifting between them.
 
 ## Step 1: Classify the Content Type(s)
 
@@ -45,7 +45,7 @@ Only ask for fields a chosen specialist actually needs beyond this (e.g. `press-
 
 ## Step 3: Dispatch and Assemble
 
-Run each routed specialist skill with the shared inputs plus its own type-specific requirements. For a multi-format request, present the pieces together, each labeled by type, so the user can review the full set from one brief before requesting a specific piece be regenerated or adjusted.
+Run each routed specialist skill with the shared inputs plus its own type-specific requirements. For a multi-format request, present the pieces together, each labelled by type, so the user can review the full set from one brief before requesting a specific piece be regenerated or adjusted.
 
 ## Related Skills
 

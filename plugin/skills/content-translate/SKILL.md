@@ -3,7 +3,7 @@ name: content-translate
 description: Translates and localises web content (pages, blogs, customer stories) into Dutch (Belgian), French, German or Spanish with brand terms locked. Use for "translate this", "vertalen", "traduire", "übersetzen", "localise for [market]".
 metadata:
   version: 1.2.0
-  history: 'v1.1.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.1.0: content-references files renamed and merged; references to them updated. Adapted from a third-party blog-translate/blog-localize/blog-multilingual module. Two changes from the original: the sub-agent ("Task") spawning architecture is replaced with a single direct pass, matching how the rest of this library works, and cultural adaptation is folded into the same pass rather than deferred to a separate localize skill, since the real workflow here is translating already-written English content, not writing five market versions from scratch. The original''s hreflang/ sitemap generation (blog-multilingual Phase 5) isn''t included yet, every market is already live with its own URL structure; build that piece later if a from-scratch multi-market launch actually needs it.'
+  history: 'v1.1.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.1.0: content-references files renamed and merged; references to them updated. Adapted from a third-party blog-translate/blog-localise/blog-multilingual module. Two changes from the original: the sub-agent ("Task") spawning architecture is replaced with a single direct pass, matching how the rest of this library works, and cultural adaptation is folded into the same pass rather than deferred to a separate localise skill, since the real workflow here is translating already-written English content, not writing five market versions from scratch. The original''s hreflang/ sitemap generation (blog-multilingual Phase 5) isn''t included yet, every market is already live with its own URL structure; build that piece later if a from-scratch multi-market launch actually needs it.'
 ---
 
 # Content Translate
@@ -39,7 +39,7 @@ generating hreflang tags or sitemaps.
      Delivered translation(s)
 ```
 
-Run Steps 2-7 once per target language. Parallelize across languages when
+Run Steps 2-7 once per target language. Parallelise across languages when
 translating into more than one at a time: there's no dependency between
 target languages, only between steps within a single language.
 
@@ -57,14 +57,14 @@ target languages, only between steps within a single language.
    `nl-BE`, `es`, `ja`, `pt-BR`). If the target list is missing or
    unclear, ask once: "Which languages? Give hreflang tags such as de,
    fr, nl, es."
-4. Normalize each code: ISO 639-1 language in lowercase, optional ISO
+4. Normalise each code: ISO 639-1 language in lowercase, optional ISO
    15924 script in title case, optional ISO 3166-1 Alpha-2 region in
    uppercase. Reject invalid codes with a suggestion (`jp` becomes "Did
    you mean `ja`?"). Require a region, or an explicit neutral mode, for
    ambiguous language-only targets: `es`, `pt`, `zh`. `de`, `fr`, `nl`,
    and `ja` can resolve without a region per
    `cultural-adaptation.md`'s Profile Selection Logic.
-5. If a target equals the normalized source language, skip it with a
+5. If a target equals the normalised source language, skip it with a
    notice.
 
 ---
@@ -89,7 +89,7 @@ Extract:
 Preserve unchanged: markdown/HTML structure and attributes, image and link
 URLs, frontmatter keys, executable code fences and inline code (translate
 comments only if explicitly asked), internal-link zone markers, source
-organization names in citations, person names, and Schema JSON-LD
+organisation names in citations, person names, and Schema JSON-LD
 identifiers/URLs/`@id`/`sameAs` (translate only the user-facing content
 strings).
 
@@ -106,7 +106,7 @@ it now:
 
 - Apply its voice pillars in the target language, not just the source.
 - Treat any **Locked Terminology** section in the brand kit as
-  authoritative. It overrides Step 3's keyword-localization judgment call
+  authoritative. It overrides Step 3's keyword-localisation judgment call
   and this skill's own defaults: don't re-derive a term the brand has
   already confirmed.
 - If no brand kit exists yet, translate against the source content's
@@ -115,14 +115,14 @@ it now:
 
 ---
 
-## Step 3: Localize Keywords
+## Step 3: Localise Keywords
 
 Per `references/translation-rules.md`'s SEO Translation Principles:
 
 1. Decide whether the source keyword is the established term in the
    target market (e.g., "Content Marketing" stays in German). If yes,
    keep it.
-2. If a local equivalent has real search behavior, swap to it.
+2. If a local equivalent has real search behaviour, swap to it.
 3. Where it's genuinely unclear, run both variants through
    `seo-keyword-research` for the target market and keep whichever has
    real search volume, rather than guessing.
@@ -169,7 +169,7 @@ profile and a literal translation conflict, the cultural profile wins.
 
 ---
 
-## Step 6: Humanize in the Target Language
+## Step 6: Humanise in the Target Language
 
 Run the `ai-content-cleaner` skill on the translated text. It routes to
 the matching language pattern file (DE, FR, NL including Belgian Dutch, ES)
@@ -256,15 +256,15 @@ Then four checks that hold for every locale:
 
 ## Full Checklist (One-Page Summary)
 
-- [ ] Source language detected, target codes normalized and validated
+- [ ] Source language detected, target codes normalised and validated
 - [ ] Brand identified, `[brand]-brand-kit` loaded if one exists, Locked
       Terminology noted
-- [ ] Keywords localized (kept or swapped); unclear cases checked via
+- [ ] Keywords localised (kept or swapped); unclear cases checked via
       `seo-keyword-research`
 - [ ] Cultural profile selected, one formality register held throughout
 - [ ] Translation complete: mechanics + cultural fit + brand voice applied
       together
-- [ ] Humanizing pass run in the target language (BALANCED or CLEAN)
+- [ ] Humanising pass run in the target language (BALANCED or CLEAN)
 - [ ] Quality Criteria Checklist (`translation-rules.md`) run, failures
       flagged and re-passed
 - [ ] Schema `inLanguage` updated, `translationOfWork` added
@@ -278,7 +278,7 @@ Then four checks that hold for every locale:
 - **`web-content-pipeline`**: usually where the source-language content
   came from; this skill picks up after that one delivers
 - **`seo-keyword-research`**: Step 3 checks real search volume for
-  ambiguous keyword-localization calls
+  ambiguous keyword-localisation calls
 - **`ai-content-cleaner`**: Step 6's
   target-language polish pass
 - **`content-references`** (`seo-aeo-core.md`): the schema

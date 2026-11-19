@@ -135,7 +135,7 @@ To refresh, fetch it, diff it against this file, and add the changes deliberatel
 
 - `<img>` has explicit `width` and `height` (prevents CLS).
 - Below-fold images `loading="lazy"`; above-fold critical images `fetchpriority="high"`.
-- Large lists (>50) virtualize or use `content-visibility: auto`.
+- Large lists (>50) virtualise or use `content-visibility: auto`.
 - No layout reads (`getBoundingClientRect`, `offsetHeight`, `scrollTop`) during render.
 - Batch DOM reads and writes; don't interleave them.
 - Prefer uncontrolled inputs; controlled inputs must be cheap per keystroke.
@@ -206,7 +206,7 @@ To refresh, fetch it, diff it against this file, and add the changes deliberatel
 - `<div>` / `<span>` with click handlers instead of `<button>`
 - inline `onClick` navigation with no `<a>`
 - `<img>` without dimensions
-- large `.map()` lists with no virtualization
+- large `.map()` lists with no virtualisation
 - form inputs without labels; icon buttons without `aria-label`
 - hardcoded date/number formats
 - `autoFocus` with no clear justification

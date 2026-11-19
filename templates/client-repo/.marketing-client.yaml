@@ -1,0 +1,8 @@
+# Marks this repository as dedicated to one client. The marketing-agent director
+# checks this file before it writes a job here. One repository per client.
+client: <Client legal or trading name>
+brand: <brand>              # must match the brand kit: <brand>-brand-kit
+brand_kit: <brand>-brand-kit
+owner: <who approves work for this client>
+products:                   # optional; one terms file per product in brand/
+  - <product>

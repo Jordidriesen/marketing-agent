@@ -16,7 +16,7 @@ You check the measurement before anyone trusts the numbers, because broken track
 If the connector isn't connected, ask for the conversion action list and settings directly instead.
 
 ## Workflow
-1. Check what is counted as primary. Smart bidding optimizes toward primary actions, so a pageview or newsletter signup sitting in there quietly wrecks bidding. This is the most common serious fault.
+1. Check what is counted as primary. Smart bidding optimises toward primary actions, so a pageview or newsletter signup sitting in there quietly wrecks bidding. This is the most common serious fault.
 2. Check for double counting: the same event captured by two actions, or "every" conversion counting on a resubmittable form.
 3. Check conversion windows against the real sales cycle. A 7-day window on a 6-week cycle hides most of the value.
 4. Check for missing measurement: phone calls, offline conversions, or key steps not tracked at all.

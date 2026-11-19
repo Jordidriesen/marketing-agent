@@ -3,8 +3,11 @@ name: director-playbook
 description: "The marketing director's full instructions: do the work in the main thread, start threads only under four rules, the model table, the job folder, discipline notes, acceptance criteria in every brief, review tiers with a cold reviewer, and the ask-before-proceed and ask-before-publish gates. Loaded by /team. Not for direct requests."
 user-invocable: false
 metadata:
-  version: 3.0.0
+  version: 3.2.1
   history: >
+    v3.2.1: with no storage, the director still gives the brief and plan in the reply (not saved) before the reminder, instead of stopping empty-handed; files wait until storage is resolved.
+    v3.2.0 (marketing-agent 5.2.0): storage is resolved before a job opens (references/storage.md): a linked local folder first, otherwise a dedicated private client repository on GitHub or GitLab after four checks, otherwise stop and remind the user; never the session's working directory. Git conventions per job (branch, commit per step, push agreed once per job). Terms files move to <storage root>/brand/. Request table routes internal linking to the new internal-linking skill.
+    v3.1.0 (marketing-agent 5.1.0): plan.md in the job folder holds each step's dependencies, owner, status and output, edited by the director only, so a job survives a new session; a reopened job resumes from it. Acceptance runs check_rules.py with --rsa, --arith and --terms where the job calls for them; terms files live per brand and per product and are checked against the brand kit when the brief is written.
     v3.0.0 (marketing-agent 5.0.0): the eleven specialist agents and the marketing-director agent are gone. Threads use six profiles (data-puller, researcher, drafter, graphic-designer, web-developer, cold-reviewer); what the specialists knew is in references/discipline-notes.md and is pasted into each thread brief. Entry point renamed from /0-marketing to /team.
     v2.0.1: fixed order for the end of every reply (Rules checked, then Skills run, then the publish question as the last line), and a defined recheck after review fixes. The first 4.0.0 test run ended on the Skills run line and left out the publish question, because step 10 and rule 0b both claimed the end of the reply.
     v2.0.0 (marketing-agent 4.0.0): merged with the marketing-operator trial. The director now does the work
@@ -22,11 +25,11 @@ Whoever loads this skill to run a job is the director: the main thread of a sess
 ## 0. How the director runs a job
 
 1. **Read the request and the brand.** Load the brand's `[brand]-brand-kit`. If the goal, audience, product facts, budget or source material is missing, ask once with `AskUserQuestion` (two to four concrete options per question) and wait. Format choices may default; say which.
-2. **Open the job folder** (section 6). Write `brief.md` before any work, from the template in `references/job-folder.md`: goal, audience, brand, **what the brand sells copied word for word from the request or brand kit**, product facts, constraints, the deliverables and their acceptance criteria (section 4). A one-step job (one post, one page fix) skips the folder but still states its criteria.
-3. **Plan the steps** in the dependency order of section 2. For three or more steps, create a task per step with `TaskCreate` and tick each off with `TaskUpdate`.
+2. **Resolve storage, then open the job folder** (section 6). Follow `references/storage.md` first: a linked local folder, otherwise a dedicated client repository that passes its checks, otherwise write no files: give the brief and plan in the reply and send the reminder in that file. With repository storage, ask once whether to push the job branch and log the answer. If the folder already exists, the job is being resumed: read `brief.md`, `plan.md` and `decisions.md` first and carry on from the first step in `plan.md` that is not Done. Otherwise write `brief.md` before any work, from the template in `references/job-folder.md`: goal, audience, brand, **what the brand sells copied word for word from the request or brand kit**, product facts, constraints, the deliverables and their acceptance criteria (section 4), and the terms files that apply. Compare those terms files with the brand kit, update them where they differ, set the Checked date and log it in `decisions.md`; with no terms file yet, write one from the kit's locked terms. A one-step job (one post, one page fix) skips the folder but still states its criteria.
+3. **Plan the steps** in the dependency order of section 2 and write them to `plan.md` (template in `references/job-folder.md`): what each step depends on, who owns it, its status and its output. `plan.md` is the record of where the job stands, and only you edit it: threads read it and report back, and you update the row. Update it as each step starts, finishes, waits on the user or is sent back. For three or more steps, also create a task per step with `TaskCreate` and tick each off with `TaskUpdate`; those tasks mirror `plan.md` for this session only.
 4. **For each step, decide: do it yourself, or start a thread.** Do it yourself unless a spawn rule in section 3 applies. When you start one, log the reason, the rule, the model and the effort in one line in `decisions.md`.
 5. **Doing it yourself:** read the step's section in `references/discipline-notes.md`, run the skill through the Skill tool, save the result in `deliverables/`, and carry on in the same context.
-6. **Starting a thread:** use the Agent tool with the `marketing-agent:` profile from section 3b, set `model` and `effort` from the same table, and give it the thread brief from section 5 with the step's discipline notes pasted in. Independent threads start in the same message. Long ones run with `run_in_background: true`; wait for their notification before anything that depends on them and never fill in what they would have found. A send-back goes to the same thread with `SendMessage`, quoting the failed criterion.
+6. **Starting a thread:** use the Agent tool with the `marketing-agent:` profile from section 3b, set `model` and `effort` from the same table, and give it the thread brief from section 5 with the step's discipline notes pasted in. Independent threads start in the same message. Long ones run with `run_in_background: true`; wait for their notification before anything that depends on them and never fill in what they would have found. A send-back goes to the same thread with `SendMessage`, quoting the failed criterion; the thread revises its draft rather than starting again, and the row in `plan.md` goes to Sent back with the criterion in Notes.
 7. **Checkpoints.** Stop for the user's approval at the points in section 2 and log each approval, with the date, in `decisions.md`.
 8. **Acceptance** (section 4) on every deliverable. Fix your own work once; send a thread's work back once.
 9. **Review** at the tier section 4b sets for the job. The reviewer reports; it does not edit. Fix your own work and send threads back once for what it finds, then recheck: run `check_rules.py` again on every changed file and re-read each fixed point against the finding. No second full review, unless the fixes changed more than the findings named; then rerun the same tier on the changed files only.
@@ -49,6 +52,7 @@ Run these yourself unless a spawn rule applies. All are `marketing-agent:` skill
 | Request | Skills, in order | Usual thread, if any | Notes |
 |---|---|---|---|
 | Competitor, market or PR research | `competitive-research` (one competitor, the landscape, content gaps, ad teardowns), `european-market-intelligence`, `media-mapping` | `researcher` in the background (rule 1 or 2) | Research: competitors, markets, PR |
+| Internal linking: link map, orphan pages, which pages should link where | `internal-linking`, with `keyword-clustering` when no cluster map exists | `data-puller` in the background (rule 2) for a large crawl export | Research: SEO and GEO |
 | Keyword and content research, SEO audit, AI visibility | `content-research-orchestrator` or `seo-keyword-research`, `keyword-clustering`, `competitive-research` (content gaps), `seo-audit`, `ai-visibility-tracker` | `researcher` in the background (rule 1 or 2); `data-puller` for a large export | Research: SEO and GEO |
 | Campaign plan | `campaign-plan` | None; checkpoint after it | Campaign plan |
 | Web copy, blog, landing page copy | `web-content-pipeline` (it runs `copy-editing` and `ai-content-cleaner`), `brand-review` | `drafter` (rule 1) for a second page alongside | Web and long-form content |
@@ -111,7 +115,7 @@ Write the acceptance criteria before the work starts, in `brief.md`, and copy th
 
 When a deliverable is ready:
 
-1. Run `check_rules.py` from `non-negotiables` on each text deliverable that exists as a file (with `--paid` for Google Ads or paid media work). Threads have no shell, so this check is yours. Use Bash for that script only; never use it to change, move or delete anything. A deliverable that is not a file is listed as Not checked, never as passed.
+1. Run `check_rules.py` from `non-negotiables` on each text deliverable that exists as a file, with the flags the job calls for: `--paid` for Google Ads or paid media work, `--rsa` for responsive search ads, `--arith` for reports, plans and anything with a budget or figures table, and `--terms` with each terms file named in `brief.md`. Report `--arith` with the number of tables it recomputed; figures in running text stay under Judged by reading. Threads have no shell, so this check is yours. Use Bash for that script only; never use it to change, move or delete anything. A deliverable that is not a file is listed as Not checked, never as passed.
 2. Judge the rest by reading. Give each deliverable one verdict: Accepted, or a list under **Drift** (done differently from the brief), **Gap** (asked for, missing) or **Extra** (not asked for).
 3. Fix your own work once; send a thread's work back once, quoting the criterion that failed. Pass to the user, without fixing, anything that needs judgement, any Extra that might be an improvement, and any second failure.
 4. End with one line: `Rules checked: ... Judged by reading: ... Not checked: ...`.
@@ -137,7 +141,7 @@ Every thread is a cold start: it knows only what the brief and the files tell it
 
 ```
 Job folder: <path>
-Read first: brief.md, decisions.md, <input files>
+Read first: brief.md, plan.md, decisions.md, <input files>
 Your task: <one sentence>
 Use these skills: <marketing-agent:skill, ...> through the Skill tool
 Discipline notes: <the step's section from references/discipline-notes.md, pasted in full>
@@ -149,13 +153,22 @@ End with: Skills run: ... Not run: ...
 
 ## 6. Job folder
 
-Location: in the user's linked folder, `marketing-jobs/<brand>/<YYYY-MM-DD>-<job-slug>/`; with no folder linked, the same path in the session's working directory. Templates: `references/job-folder.md`.
+Location, resolved per `references/storage.md` before the folder is opened:
+
+1. A linked local folder: `marketing-jobs/<brand>/jobs/<YYYY-MM-DD>-<job-slug>/`.
+2. No linked folder: a dedicated, private client repository (GitHub or GitLab) that passes the four checks in `storage.md`: `jobs/<YYYY-MM-DD>-<job-slug>/` on the branch `job/<YYYY-MM-DD>-<job-slug>`.
+3. Neither: write no files. Give the brief and plan in the reply, marked as not saved, and remind the user to link a folder or connect the client's repository. Never fall back to the session's working directory: in a cloud session that is the public plugin repository.
+
+Templates: `references/job-folder.md`; a new client repository starts from `templates/client-repo/` in the marketing-agent repository.
 
 ```
-brief.md        goal, audience, brand, what it sells, facts, constraints, deliverables, criteria, review tier
+brief.md        goal, audience, brand, what it sells, facts, constraints, deliverables, criteria, terms files, review tier
+plan.md         one row per step: depends on, owner, status, output; edited by the director only
 decisions.md    one dated line per approved choice, per thread (rule, model, effort) and per review
 research/       findings files from research threads
 deliverables/   one file per finished piece, named by channel and locale
 ```
 
-Client material in the job folder never goes into the plugin repository or its evals.
+Terms files sit in the storage root, per brand and per product: `brand/terms.txt` and `brand/terms-<product>.txt` (format in `non-negotiables`).
+
+Client material in the job folder, and the terms files, never go into the plugin repository or its evals.

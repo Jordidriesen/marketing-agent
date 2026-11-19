@@ -8,13 +8,13 @@ metadata:
 
 # Social Content Writer
 
-Drafts ready-to-post social copy, one platform at a time or several at once, in the right brand voice: built around Instagram, LinkedIn, Reddit, and X, since each has its own algorithm behavior, format expectations, and (for Reddit especially) its own social contract around self-promotion.
+Drafts ready-to-post social copy, one platform at a time or several at once, in the right brand voice: built around Instagram, LinkedIn, Reddit, and X, since each has its own algorithm behaviour, format expectations, and (for Reddit especially) its own social contract around self-promotion.
 
 **Required skill calls.** After drafting, call `copy-editing` and `ai-content-cleaner` through the Skill tool, in that order, and never imitate them with an inline edit. A reply that skips either is not finished. End the reply with one line: `Skills run: ...`.
 
 **Scope:** A single post or a short batch of posts for one topic/announcement. Not paid ads (`ad-creative-matrix` writes those). Not a content calendar (`campaign-plan` plans that) and not the underlying web content being promoted (`web-content-pipeline` / `customer-story-writer` write that).
 
-**Core rule when several platforms are requested:** re-architect per platform, don't reformat the same text four ways. Instagram's own 2026 algorithm update explicitly deprioritizes recycled cross-platform content, and a LinkedIn post pasted into Reddit reads as an ad and gets removed. Steps 1–4 (brand, requirements, angle, framework) are shared; Step 6 is not.
+**Core rule when several platforms are requested:** re-architect per platform, don't reformat the same text four ways. Instagram's own 2026 algorithm update explicitly deprioritises recycled cross-platform content, and a LinkedIn post pasted into Reddit reads as an ad and gets removed. Steps 1–4 (brand, requirements, angle, framework) are shared; Step 6 is not.
 
 ## Step 0: Choose the Platform(s)
 
@@ -42,7 +42,7 @@ Same pattern as `web-content-pipeline`: determine which brand/client this post i
 | Platform(s) | Carried from Step 0 |
 | Topic/announcement | What the post is about |
 | Key message | The one thing the reader should take away |
-| Link or asset | URL, image, or video the post points to, if any: note per Step 6 that LinkedIn and X both penalize in-post links heavily |
+| Link or asset | URL, image, or video the post points to, if any: note per Step 6 that LinkedIn and X both penalise in-post links heavily |
 | Goal | Engagement, traffic, awareness, community, authority |
 
 If any field is missing and the platform choice materially changes the format, ask before writing.
@@ -66,12 +66,12 @@ Default by platform if the user has no preference: LinkedIn → BLUF or PAS; Ins
 
 ## Step 5: Generate Hook Options
 
-Offer 2-3 hook angles from this menu, adapted to what each platform's algorithm currently rewards (see the platform files, LinkedIn now penalizes engagement bait, Reddit penalizes anything that reads like a hook at all):
+Offer 2-3 hook angles from this menu, adapted to what each platform's algorithm currently rewards (see the platform files, LinkedIn now penalises engagement bait, Reddit penalises anything that reads like a hook at all):
 
 - **Number-led**: open with a specific metric or count
 - **Contrarian**: state a common belief, then flip it
 - **Personal transformation**: before vs. after, with a concrete detail
-- **Named reference**: a tool, person, or event the audience recognizes
+- **Named reference**: a tool, person, or event the audience recognises
 - **Admission**: a mistake, loss, or "I got this wrong"
 - **Prediction**: a forward-looking, specific claim
 
@@ -90,13 +90,13 @@ Every hook should be specific (a number, name, or concrete detail beats an abstr
 
 If the user needs a platform outside these four (Facebook, TikTok, YouTube Community, etc.), apply the universal structure, hook, body, one clear CTA, and ask for any platform-specific constraints (character limits, tone norms) the user knows, since this skill's researched depth is scoped to the four above.
 
-## Step 7: Copy Edit and Humanize
+## Step 7: Copy Edit and Humanise
 
 Run `copy-editing` (Seven Sweeps) on each platform's draft, then `ai-content-cleaner` in CLEAN mode (social posts rarely have structure worth preserving in BALANCED mode). Confirm the voice still matches the loaded brand kit afterward, and that nothing in Step 6's platform rules got softened back into what the sweep would normally recommend (e.g. don't let a generic "add urgency" edit reintroduce LinkedIn engagement bait or a Reddit sales pitch).
 
 ## Step 8: Self-Check Before Output
 
-Before presenting, verify against the rules in the platform file(s) you read in Step 6: hook is specific (not generic), no in-post link where the platform penalizes it, hashtag count matches platform norms (heavy on Instagram, light on LinkedIn, none on X or Reddit), and, for Reddit specifically, the draft reads like a person, not an ad.
+Before presenting, verify against the rules in the platform file(s) you read in Step 6: hook is specific (not generic), no in-post link where the platform penalises it, hashtag count matches platform norms (heavy on Instagram, light on LinkedIn, none on X or Reddit), and, for Reddit specifically, the draft reads like a person, not an ad.
 
 ## Output
 
@@ -117,6 +117,6 @@ Ask: "Would you like this adapted for another platform, a variant to test, or sh
 - `copy-editing` / `ai-content-cleaner`: Step 7
 - `brand-review`: voice and compliance gate before publishing
 - `web-content-pipeline`: for the web page a social post might link to
-- `customer-story-writer`: for a case study a social post might summarize
+- `customer-story-writer`: for a case study a social post might summarise
 - `content-creation`: the gateway skill; routes here when the content type is social
 - `ad-creative-matrix`: for paid social and video ads (hooks, bodies, CTAs, test plan). This skill is organic only

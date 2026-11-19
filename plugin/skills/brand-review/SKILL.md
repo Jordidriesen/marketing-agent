@@ -23,7 +23,7 @@ Evaluate against that kit's actual pillars/attributes, its banned-language list,
 
 **Voice and Tone**: consistent formality and personality throughout; no jarring shifts.
 
-**Terminology and Language**: consistent terms (no synonym-switching); jargon level appropriate to audience; product/feature names capitalized correctly.
+**Terminology and Language**: consistent terms (no synonym-switching); jargon level appropriate to audience; product/feature names capitalised correctly.
 
 **Clarity and Professionalism**: main message clear in the first paragraph; free of typos and awkward phrasing; claims are supported.
 

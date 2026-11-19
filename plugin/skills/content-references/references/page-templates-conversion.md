@@ -5,7 +5,7 @@
 - Landing, product, solution and feature pages (Transactional)
 - Implementation brief (paid landing pages)
 - Page-type specifics
-- Behavioral-science layer (all page types)
+- Behavioural-science layer (all page types)
 - Visual & layout cues (for briefing designers)
 - Keyword and internal linking (light weight on these pages)
 
@@ -89,7 +89,7 @@ not ready.
   pratfall effect). One instance, genuinely true, not a hedge on every claim.
 
 
-## Behavioral-science layer (all page types)
+## Behavioural-science layer (all page types)
 
 Apply the relevant rows from
 `content-references/references/behavioral-psychology.md`. Blog/

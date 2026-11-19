@@ -18,7 +18,7 @@ Every campaign rests on five decisions, in this order: each one constrains the n
 
 Good objectives are SMART. "Generate 200 marketing qualified leads from mid-market SaaS companies in North America within 6 weeks" is plannable; "raise awareness" is not.
 
-**Audience.** Specific enough to guide messaging and channel decisions: demographics (role, seniority, company size, industry), psychographics (motivations, pain points, objections), behavioral (where they consume content, how they buy), and buying stage. One brief profile is enough: "[Role] at [company type] struggling with [pain point], looking for [outcome], discovers solutions through [channels]."
+**Audience.** Specific enough to guide messaging and channel decisions: demographics (role, seniority, company size, industry), psychographics (motivations, pain points, objections), behavioural (where they consume content, how they buy), and buying stage. One brief profile is enough: "[Role] at [company type] struggling with [pain point], looking for [outcome], discovers solutions through [channels]."
 
 **Message.** See `references/content-briefing.md` for framework selection (StoryBrand, PAS, Sparkline, Minto, BLUF): the core campaign message and its 3–4 supporting points should follow whichever framework fits the objective and channel, not be freestyled per piece.
 
@@ -87,4 +87,4 @@ Good objectives are SMART. "Generate 200 marketing qualified leads from mid-mark
 | Tools and technology | 10–15% |
 | Testing and experimentation | 5–10% |
 
-**Optimization principles:** put 60–70% of paid budget behind the highest-confidence channel, reserve 15–20% for testing new channels, shift monthly based on performance rather than setting and forgetting, account for production costs not just media spend, and hold a 10–15% contingency.
+**Optimisation principles:** put 60–70% of paid budget behind the highest-confidence channel, reserve 15–20% for testing new channels, shift monthly based on performance rather than setting and forgetting, account for production costs not just media spend, and hold a 10–15% contingency.

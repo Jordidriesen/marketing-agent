@@ -57,7 +57,7 @@ and with *what* parameters; this says how to call *any* of them cheaply.
 8. **Delegate large one-off pulls to a subagent.** When a single pull is
    genuinely large, a full account export, a full campaign history, a
    bulk keyword list beyond what one call's batch limit covers, and the
-   task only needs the synthesized result (a findings table, a ranked
+   task only needs the synthesised result (a findings table, a ranked
    list), consider running that pull inside a subagent via the Agent tool
    rather than in the main conversation. The subagent does the fetching
    and returns only the synthesis; the raw pull never enters the main

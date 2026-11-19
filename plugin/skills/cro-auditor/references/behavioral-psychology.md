@@ -1,5 +1,5 @@
 <!-- Shared reference. Source of truth: plugin/skills/content-references/references/behavioral-psychology.md. Edit it there and run scripts/sync_shared_refs.py. -->
-# Behavioral Science Playbook for Copy & Visual Assets
+# Behavioural Science Playbook for Copy & Visual Assets
 
 Condensed from two research passes: Richard Shotton's trilogy (*The Choice
 Factory*, *The Illusion of Choice*, *Hacking the Human Mind*) plus the wider
@@ -37,7 +37,7 @@ canonical honesty rule in `content-references/SKILL.md`.
 | **Curse of knowledge** | Experts systematically overestimate what's obvious to a stranger | Strip jargon; have someone outside the category read the draft before it ships | Informational |
 | **Concreteness / specificity** | Specific, imagery-evoking language is dramatically more memorable than abstraction | Replace "improve your workflow" with the exact before/after state | All |
 | **Pratfall effect** | A small, honest admitted flaw from an already-competent source increases likeability and trust (Aronson) | One controlled, real caveat, placed once competence is established, never on a first touchpoint before trust exists | Transactional (late-page), About pages, reviews |
-| **Social proof: framed correctly** | People copy others' behavior, but a *negatively* framed norm can backfire and normalize the unwanted behavior (Cialdini's Petrified Forest field study) | State the desired norm positively; never write copy that implies "most people don't do X" | Transactional |
+| **Social proof: framed correctly** | People copy others' behaviour, but a *negatively* framed norm can backfire and normalise the unwanted behaviour (Cialdini's Petrified Forest field study) | State the desired norm positively; never write copy that implies "most people don't do X" | Transactional |
 | **Reactance reduction ("but you are free")** | Explicitly stating the reader is free to decline paradoxically increases compliance | "No obligation," "cancel anytime" placed near a firm CTA | Transactional |
 | **Rhyme-as-reason / phonological fluency** | Rhyming or phonologically smooth phrases are judged truer (McGlone & Tofighbakhsh) | Worth testing on taglines and headlines: don't force it, and don't overuse it | Informational headlines, brand lines |
 | **Cognitive / processing fluency** | Easy-to-read text and layout is judged more trustworthy and more true, independent of the argument inside it (Reber & Schwarz) | Short sentences, plain words, high visual contrast: the single highest-leverage lever across every content type | All |

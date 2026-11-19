@@ -165,7 +165,7 @@ Clean these in every mode unless a loaded brand kit protects them: significance 
 
 #### Tier 2 - AI vocabulary (English)
 
-**Verbs:** delve, leverage, optimise/optimize, utilise/utilize, facilitate, foster, bolster,
+**Verbs:** delve, leverage, optimise/optimise, utilise/utilise, facilitate, foster, bolster,
 underscore, unveil, navigate (figurative), streamline, enhance, endeavour, ascertain, elucidate,
 showcase, highlight (as verb), garner, cultivate
 
@@ -208,7 +208,7 @@ they carry attitude or precision.*
 
 ---
 
-## Rewriting: what "humanized" actually means
+## Rewriting: what "humanised" actually means
 
 Removing patterns is not enough. Clean-but-voiceless text is still obviously AI. Human writing
 has a person behind it. This applies in every language.
