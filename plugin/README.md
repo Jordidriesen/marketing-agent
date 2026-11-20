@@ -31,7 +31,7 @@ The director does the work itself and starts a thread only under four rules: par
 
 | Profile | Thread type | Model / effort | Max turns |
 |---|---|---|---|
-| [`data-puller`](agents/data-puller.md) | Bulk pulls (ad account, keyword or Search Console export, crawl, many accounts), findings to a file | haiku / low | 80 |
+| [`data-puller`](agents/data-puller.md) | Bulk pulls (ad account, keyword or Search Console export, crawl, many accounts), findings to a file | haiku / medium | 80 |
 | [`researcher`](agents/researcher.md) | Research that needs judgement: competitors, market, keywords, accounts | sonnet / medium | 80 |
 | [`drafter`](agents/drafter.md) | Parallel drafting from a finished brief: social, email, locales, a second page | sonnet / medium | 60 |
 | [`graphic-designer`](agents/graphic-designer.md) | Fixed-format visuals: social, ads, email templates, print, decks, logos, short video | opus / medium | 60 |

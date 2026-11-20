@@ -4,6 +4,10 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [5.2.1] (20/11/2026)
+
+- **`data-puller` threads run Haiku at `medium` effort** instead of `low` (`director-playbook` 3.2.2, the profile and the README). Medium is Haiku 5.5's default, so the director no longer turns it down for bulk pulls.
+
 ## [5.2.0] (19/11/2026)
 
 Where a job lives, a new internal linking skill and a British English pass.
