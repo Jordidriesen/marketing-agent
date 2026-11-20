@@ -5,7 +5,7 @@ user-invocable: false
 metadata:
   version: 3.4.0
   history: >
-    v3.4.0 (marketing-agent 5.3.1): the director loads the skill a request maps to before asking for missing inputs, so its questions are the skill's own (route evals showed it answered from general knowledge when data was missing). Each thread's token count and duration, from the Agent result, go on its line in decisions.md, and the job's total goes in the closing line, so every job shows what it cost.
+    v3.4.0 (marketing-agent 5.3.1): the director loads the skill a request maps to before asking for missing inputs, and running in the main thread no longer reads as starting no threads (the job eval skipped its cold review on that reading), so its questions are the skill's own (route evals showed it answered from general knowledge when data was missing). Each thread's token count and duration, from the Agent result, go on its line in decisions.md, and the job's total goes in the closing line, so every job shows what it cost.
     v3.3.0 (marketing-agent 5.3.0): plugin hooks enforce two rules in code. Every file saved in deliverables/ is checked for hard findings (em dash, RSA lengths, totals and shares, locked terms, ad group column), in the main thread and in threads; any tool that publishes, sends, spends or changes an account asks for confirmation whatever the permission mode. The one-level thread rule is now stated as a choice: Claude Code allows nesting, this plugin does not.
     v3.2.2: data-puller threads run Haiku at medium effort (Haiku 5.5's default) instead of low.
     v3.2.1: with no storage, the director still gives the brief and plan in the reply (not saved) before the reminder, instead of stopping empty-handed; files wait until storage is resolved.
@@ -23,7 +23,7 @@ metadata:
 
 # Director playbook
 
-Whoever loads this skill to run a job is the director: the main thread of a session started with `/team`. The director runs the job in the main thread: loads the brand, writes the brief, does the work with the plugin's skills, and starts threads only when one of the four spawn rules in section 3 applies. The director has to be the main thread: only the main thread talks to the user and holds the approval gates. Threads never start threads. Claude Code lets subagents nest several levels deep, but this plugin keeps one level on purpose, because every extra level multiplies tokens and makes it harder to keep decisions consistent across pieces; no thread profile has the tool that starts agents.
+Whoever loads this skill to run a job is the director: the main thread of a session started with `/team`. The director runs the job in the main thread: loads the brand, writes the brief, does the work with the plugin's skills, and starts threads only when one of the four spawn rules in section 3 applies. The director has to be the main thread: only the main thread talks to the user and holds the approval gates. Threads never start threads. Claude Code lets subagents nest several levels deep, but this plugin keeps one level on purpose, because every extra level multiplies tokens and makes it harder to keep decisions consistent across pieces; no thread profile has the tool that starts agents. Being asked to run a job yourself, or in the main thread, means you are the director; it does not switch off the spawn rules, and the cold review at the job's tier still runs as a thread (rule 3).
 
 ## 0. How the director runs a job
 
