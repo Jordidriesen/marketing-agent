@@ -9,6 +9,7 @@ All notable changes to this skill library are documented here. Individual skills
 - **Save check covers shell writes:** after a shell command that mentions `deliverables`, the hook checks every deliverable file under the working directory changed in the last two minutes.
 - **Thread costs in `decisions.md`** (`director-playbook` 3.4.0): each thread's token count and duration from the Agent result, and a closing total per job. Main-thread tokens are not reported to the director and are left out.
 - **Publish gate:** Zapier changes to skills, actions and connections, SEOgets changes, and Google Drive access requests now ask first.
+- **Skill first, then questions** (`director-playbook` 3.4.0): the director loads the skill a request maps to before asking for missing inputs. In the route evals on 5.3.0, the failed runs were the director asking for missing data without loading any skill, never a wrong skill.
 - **Version numbers** on the nine skills that had none (1.0.0).
 - **New eval `data-puller`:** a search terms export audited in a data-puller thread on Haiku at medium; checks the ad group beside every term, correct totals, and no invented figures.
 
