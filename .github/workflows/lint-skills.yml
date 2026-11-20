@@ -28,6 +28,9 @@ jobs:
       - name: check_rules.py tests
         run: python -m unittest discover -s plugin/skills/non-negotiables/scripts/tests -v
 
+      - name: Hook tests
+        run: python -m unittest discover -s plugin/hooks/tests -v
+
       # Agent Skills reference validator (agentskills.io). Not yet verified in this workflow, so it reports
       # without failing the build. Claude-only frontmatter fields (argument-hint, disable-model-invocation,
       # context, agent, user-invocable) are deliberate and may be reported.

@@ -71,6 +71,10 @@ Monthly paid report for [brand]: Google Ads and LinkedIn Ads, September 2026 com
 
 `paid-ads-report-writer` pulls live data where the connectors are connected (a `data-puller` thread per platform), works from exports for the rest, normalises conversion definitions across platforms, and writes the executive summary plus a section per platform. A client report gets a `full-opus` review.
 
+## Hooks
+
+Two hooks hold the hardest rules in code rather than in instructions. Every file saved in a job's `deliverables/` folder is checked at once for em dashes, RSA lengths, totals, locked terms and the ad group column, and the findings go back to whoever saved it, threads included. Every tool that publishes, sends, spends or changes an account asks you to confirm first, whatever the permission mode; the list is `hooks/publish-tools.txt`. Details: `non-negotiables`, section Hooks.
+
 ## Brand kits
 
 Every content, review, design and localisation skill identifies the brand and loads its `[brand]-brand-kit` skill when one exists. A modular kit is a short router plus three modules: `context.md` (who the brand is, audiences, channels, data sources), `voice.md` (tone of voice and Voice Lock) and `design.md` (colour, type, layout tokens). Start from [`templates/brand-kit`](../templates/brand-kit).

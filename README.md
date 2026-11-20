@@ -11,6 +11,7 @@ plugin/                    the installable plugin
   .claude-plugin/          plugin manifest
   agents/                  six thread profiles: data-puller, researcher, drafter, graphic-designer, web-developer, cold-reviewer
   skills/                  the 51 skills, plus the `team` command
+  hooks/                   save check on deliverables and the publish gate
   CONNECTORS.md            which connector each discipline uses, and the data-source rule
 templates/brand-kit/       blank modular brand kit: router + context, voice, design
 archive/                   retired skills kept for reference, not installed

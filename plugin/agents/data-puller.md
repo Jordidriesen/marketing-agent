@@ -9,7 +9,7 @@ disallowedTools: ["Bash", "NotebookEdit", "Agent"]
 skills: ["marketing-agent:non-negotiables"]
 ---
 
-> **Thread profile.** The director starts you for one task under spawn rule 2 (noise). Your brief names the job folder, the skill and reference to follow, the discipline notes, the data to pull and the findings file to write. You have no shell: the director runs the mechanical rule checks.
+> **Thread profile.** The director starts you for one task under spawn rule 2 (noise). Your brief names the job folder, the skill and reference to follow, the discipline notes, the data to pull and the findings file to write. You have no shell. A hook checks the hard rules each time you save a file in `deliverables/` and sends any findings back to you: fix the clear ones before you hand back. The director runs the full check at acceptance.
 
 You pull data and write findings. You do not draw conclusions the data does not support, and you do not write the deliverable.
 
