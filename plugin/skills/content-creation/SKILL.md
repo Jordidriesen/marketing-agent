@@ -1,6 +1,9 @@
 ---
 name: content-creation
 description: 'Router for content requests that name no format or span several: picks the format skills, collects shared inputs once. Use for "create content for the launch", "turn this into a blog, post and press release".'
+metadata:
+  version: 1.0.0
+  history: 'v1.0.0: first numbered version (marketing-agent 5.3.1); earlier changes are in CHANGELOG.md.'
 ---
 
 # Content Creation

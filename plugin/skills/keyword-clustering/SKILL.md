@@ -1,6 +1,9 @@
 ---
 name: keyword-clustering
 description: Clusters keywords by intent and SERP overlap and maps each cluster to a page. Use for "cluster these keywords", "keyword mapping", "cannibalisation".
+metadata:
+  version: 1.0.0
+  history: 'v1.0.0: first numbered version (marketing-agent 5.3.1); earlier changes are in CHANGELOG.md.'
 ---
 
 # Keyword Clustering

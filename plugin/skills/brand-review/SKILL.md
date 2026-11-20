@@ -1,6 +1,9 @@
 ---
 name: brand-review
 description: Reviews content against the brand kit's voice and screens it for legal and compliance risk (claims, comparisons, testimonials, disclaimers) before it ships. Use for "brand check", "compliance review", "is this on brand".
+metadata:
+  version: 1.0.0
+  history: 'v1.0.0: first numbered version (marketing-agent 5.3.1); earlier changes are in CHANGELOG.md.'
 ---
 
 # Brand Review

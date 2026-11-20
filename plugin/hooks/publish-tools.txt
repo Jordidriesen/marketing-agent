@@ -11,6 +11,15 @@ tool  ^mcp__.+__(.*[_-])?(send|publish|schedule|delete|trash)([_-]|$)
 # Zapier: every write action
 tool  ^mcp__Zapier__execute_zapier_write_action$
 
+# Zapier: changes to skills, actions and connections
+tool  ^mcp__Zapier__(create|update|delete|enable|disable|manage)_zapier
+
+# SEOgets: changes to portfolios, groups, clusters and annotations
+tool  ^mcp__SEOgets__(create|update|delete|add|remove|setup|prioritize)_
+
+# Google Drive: access requests notify the file's owner
+tool  ^mcp__Google_Drive__request_access$
+
 # OpenSEO: runs and schedules that spend credits, sharing and IndexNow
 tool  ^mcp__OpenSEO__(run_site_audit|run_rank_tracker|create_rank_tracker|run_ai_visibility_check|set_ai_visibility_schedule|save_ai_visibility_tracker|set_report_sharing|submit_indexnow_urls)$
 

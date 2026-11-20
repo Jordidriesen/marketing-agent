@@ -2,6 +2,9 @@
 name: mcp-efficiency
 description: Rules for calling MCP connectors cheaply and safely, loaded by skills that make live calls. Not for direct requests.
 user-invocable: false
+metadata:
+  version: 1.0.0
+  history: 'v1.0.0: first numbered version (marketing-agent 5.3.1); earlier changes are in CHANGELOG.md.'
 ---
 
 # MCP Efficiency: Shared Reference

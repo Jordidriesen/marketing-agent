@@ -2,6 +2,9 @@
 name: non-negotiables
 description: Hard rules every deliverable must meet, each with how it is checked, loaded by the director, its thread profiles and the skills. Not for direct requests.
 user-invocable: false
+metadata:
+  version: 1.0.0
+  history: 'v1.0.0: first numbered version (marketing-agent 5.3.1); earlier changes are in CHANGELOG.md.'
 ---
 
 # Non-negotiables: Shared Reference

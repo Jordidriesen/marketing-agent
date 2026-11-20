@@ -67,8 +67,9 @@ Source: <brand>-brand-kit · Checked: DD/MM/YYYY
 # Decisions
 
 - DD/MM/YYYY: <decision, and who made it>
-- DD/MM/YYYY: Thread <profile> spawned for <task>. Rule: <1 parallel / 2 noise / 3 fresh eyes / 4 model or tools>. Model: <model>. Effort: <effort>.
+- DD/MM/YYYY: Thread <profile> spawned for <task>. Rule: <1 parallel / 2 noise / 3 fresh eyes / 4 model or tools>. Model: <model>. Effort: <effort>. Tokens: <from the Agent result>. Time: <duration>.
 - DD/MM/YYYY: Storage: <linked folder / repository and branch>. Checks passed: <list>. Push: <yes / no>, agreed by <who>.
 - DD/MM/YYYY: Terms files checked against <brand>-brand-kit: <files>, <updated / no change>.
+- DD/MM/YYYY: Threads: <n>, <total> tokens (main thread not counted).
 - DD/MM/YYYY: Review tier <none / light / full-sonnet / full-opus> for <job>, because <reason>.
 ```

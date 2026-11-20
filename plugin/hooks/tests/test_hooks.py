@@ -57,6 +57,31 @@ class CheckDeliverable(unittest.TestCase):
         self.assertEqual(p.returncode, 0)
 
 
+class ShellWrites(unittest.TestCase):
+    def bash_event(self, command: str, cwd: Path) -> dict:
+        return {"hook_event_name": "PostToolUse", "tool_name": "Bash",
+                "tool_input": {"command": command}, "cwd": str(cwd)}
+
+    def test_recent_shell_write_checked(self):
+        import os
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            d = Path(tmp) / "job" / "deliverables"
+            d.mkdir(parents=True)
+            (d / "post_en.md").write_text("Hello \u2014 world\n", encoding="utf-8")
+            code, _, err = run("check_deliverable.py", self.bash_event("echo x > job/deliverables/post_en.md", Path(tmp)))
+            self.assertEqual(code, 2, err)
+            self.assertIn("[em-dash]", err)
+            old = d / "post_en.md"
+            os.utime(old, (0, 0))
+            code, _, err = run("check_deliverable.py", self.bash_event("cat job/deliverables/post_en.md", Path(tmp)))
+            self.assertEqual(code, 0, err)
+
+    def test_command_without_deliverables_ignored(self):
+        code, _, err = run("check_deliverable.py", self.bash_event("ls -la", FIX))
+        self.assertEqual(code, 0, err)
+
+
 class PublishGate(unittest.TestCase):
     def asks(self, name: str, tool_input: dict | None = None) -> bool:
         code, out, err = run("publish_gate.py", tool_event(name, tool_input))
@@ -75,6 +100,9 @@ class PublishGate(unittest.TestCase):
         self.assertTrue(self.asks("mcp__OpenSEO__run_site_audit"))
         self.assertFalse(self.asks("mcp__Zapier__execute_zapier_read_action"))
         self.assertFalse(self.asks("mcp__OpenSEO__get_audit_pages"))
+        self.assertTrue(self.asks("mcp__SEOgets__create_topic_cluster"))
+        self.assertFalse(self.asks("mcp__SEOgets__get_site_performance"))
+        self.assertTrue(self.asks("mcp__Zapier__enable_zapier_action"))
 
     def test_wordpress_abilities(self):
         tool = "mcp__novamira-staging-site__mcp-adapter-execute-ability"
