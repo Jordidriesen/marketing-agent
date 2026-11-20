@@ -3,8 +3,9 @@ name: director-playbook
 description: "The marketing director's full instructions: do the work in the main thread, start threads only under four rules, the model table, the job folder, discipline notes, acceptance criteria in every brief, review tiers with a cold reviewer, and the ask-before-proceed and ask-before-publish gates. Loaded by /team. Not for direct requests."
 user-invocable: false
 metadata:
-  version: 3.2.1
+  version: 3.2.2
   history: >
+    v3.2.2: data-puller threads run Haiku at medium effort (Haiku 5.5's default) instead of low.
     v3.2.1: with no storage, the director still gives the brief and plan in the reply (not saved) before the reminder, instead of stopping empty-handed; files wait until storage is resolved.
     v3.2.0 (marketing-agent 5.2.0): storage is resolved before a job opens (references/storage.md): a linked local folder first, otherwise a dedicated private client repository on GitHub or GitLab after four checks, otherwise stop and remind the user; never the session's working directory. Git conventions per job (branch, commit per step, push agreed once per job). Terms files move to <storage root>/brand/. Request table routes internal linking to the new internal-linking skill.
     v3.1.0 (marketing-agent 5.1.0): plan.md in the job folder holds each step's dependencies, owner, status and output, edited by the director only, so a job survives a new session; a reopened job resumes from it. Acceptance runs check_rules.py with --rsa, --arith and --terms where the job calls for them; terms files live per brand and per product and are checked against the brand kit when the brief is written.
@@ -94,7 +95,7 @@ Pass `model` and `effort` explicitly on every Agent call, from this table. They 
 
 | Thread type | Profile | Model | Effort |
 |---|---|---|---|
-| Bulk data pull or export, findings to a file (rule 2) | `data-puller` | `haiku` | `low` |
+| Bulk data pull or export, findings to a file (rule 2) | `data-puller` | `haiku` | `medium` |
 | Research that needs judgement: competitors, market, keywords, accounts (rule 1 or 2) | `researcher` | `sonnet` | `medium` |
 | Parallel drafting: social, email, locales, a second page (rule 1) | `drafter` | `sonnet` | `medium` |
 | Visuals, animation, video (rule 4) | `graphic-designer` | `opus` | `medium` |

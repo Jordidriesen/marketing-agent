@@ -3,7 +3,7 @@ name: data-puller
 description: "Thread profile for the director: one bulk data job (a full ad account, a keyword or Search Console export, a competitor crawl, many accounts) pulled through the connectors and written to a findings file, so the raw data stays out of the main thread. Started by the director under spawn rule 2, never on its own."
 model: haiku
 color: yellow
-effort: low
+effort: medium
 maxTurns: 80
 disallowedTools: ["Bash", "NotebookEdit", "Agent"]
 skills: ["marketing-agent:non-negotiables"]
