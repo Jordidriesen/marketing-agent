@@ -11,6 +11,7 @@ All notable changes to this skill library are documented here. Individual skills
 - **Publish gate:** Zapier changes to skills, actions and connections, SEOgets changes, and Google Drive access requests now ask first.
 - **Skill first, then questions** (`director-playbook` 3.4.0): the director loads the skill a request maps to before asking for missing inputs. In the route evals on 5.3.0, the failed runs were the director asking for missing data without loading any skill, never a wrong skill.
 - **Main thread does not mean no threads:** being asked to run a job in the main thread no longer stops the spawn rules or the cold review. The job-campaign eval on 5.3.1 scored 0.875 because the director read it that way and skipped its `full-opus` review.
+- **Eval results (20/11/2026):** all 25 route cases at 1.00 after the skill-first fix (on 5.3.0, 14 of 25 were at 1.00 and the rest between 0.44 and 0.89, with no wrong skill picked); `data-puller` 1.00 on 3 runs; `job-campaign` 1.00 with a `full-opus` cold review as a thread (31,532 tokens). Eval spend: about $17.
 - **Version numbers** on the nine skills that had none (1.0.0).
 - **New eval `data-puller`:** a search terms export audited in a data-puller thread on Haiku at medium; checks the ad group beside every term, correct totals, and no invented figures.
 
