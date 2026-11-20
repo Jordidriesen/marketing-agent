@@ -17,6 +17,8 @@ templates/brand-kit/       blank modular brand kit: router + context, voice, des
 archive/                   retired skills kept for reference, not installed
 scripts/lint_skills.py     frontmatter lint, run in CI
 scripts/sync_shared_refs.py  keeps shared reference copies in step with their source
+scripts/changelog_section.py one version's CHANGELOG section, used as release notes
+.github/workflows/         lint and tests on every pull request; a release on every new version merged to main
 ```
 
 **Brand kits are not in this repo.** Each client gets a private `[brand]-brand-kit` skill (identity, voice, design) installed separately in your Claude account. Every content, review and design skill looks for one by that naming pattern and loads it automatically. Start from [`templates/brand-kit`](templates/brand-kit).

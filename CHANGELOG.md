@@ -13,6 +13,7 @@ The two hardest rules move from instructions into code.
 - **`director-playbook` 3.3.0:** the one-level thread rule is stated as a choice (Claude Code allows nesting; this plugin does not), a Hooks rule in section 0b, and acceptance notes that the save hook already ran.
 - **`graphic-designer` and `web-developer` can no longer start agents**, matching the other profiles; lint now fails any profile that can. Profiles say deliverables are written with Write or Edit, so the save check runs.
 - **Tests:** 9 hook tests in `plugin/hooks/tests/`, run in CI.
+- **Release workflow** (`.github/workflows/release.yml`): every push to `main` whose `plugin.json` version has no release yet creates the `v<version>` tag and a GitHub release, with that version's CHANGELOG section as the notes (`scripts/changelog_section.py`). Run it by hand with a version and a commit to backfill an older release.
 
 ## [5.2.1] (20/11/2026)
 
