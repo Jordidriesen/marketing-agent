@@ -3,6 +3,9 @@ name: team
 description: 'Starts the marketing team on your request: this session''s main thread becomes the director, writes the brief and acceptance criteria, does the work with the plugin''s skills, starts threads only where they pay off, reviews the result and asks before anything is published. Use it for jobs with several steps or deliverables, anything going live or to a client, heavy data work, or when you are not sure which skill owns it. Manual only; it never triggers on its own.'
 argument-hint: <what you need, with any context or files>
 disable-model-invocation: true
+metadata:
+  version: 1.0.0
+  history: 'v1.0.0: first numbered version (marketing-agent 5.3.1); earlier changes are in CHANGELOG.md.'
 ---
 
 # Marketing team

@@ -4,6 +4,14 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [5.3.1] (20/11/2026)
+
+- **Save check covers shell writes:** after a shell command that mentions `deliverables`, the hook checks every deliverable file under the working directory changed in the last two minutes.
+- **Thread costs in `decisions.md`** (`director-playbook` 3.4.0): each thread's token count and duration from the Agent result, and a closing total per job. Main-thread tokens are not reported to the director and are left out.
+- **Publish gate:** Zapier changes to skills, actions and connections, SEOgets changes, and Google Drive access requests now ask first.
+- **Version numbers** on the nine skills that had none (1.0.0).
+- **New eval `data-puller`:** a search terms export audited in a data-puller thread on Haiku at medium; checks the ad group beside every term, correct totals, and no invented figures.
+
 ## [5.3.0] (20/11/2026)
 
 The two hardest rules move from instructions into code.

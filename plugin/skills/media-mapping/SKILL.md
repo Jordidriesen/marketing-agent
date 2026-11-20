@@ -1,6 +1,9 @@
 ---
 name: media-mapping
 description: Maps media outlets, trade press and newsletters for a topic for PR, with contribution and contact details. Use for "PR outlets", "who covers this", "pitch list". Does not write pitches.
+metadata:
+  version: 1.0.0
+  history: 'v1.0.0: first numbered version (marketing-agent 5.3.1); earlier changes are in CHANGELOG.md.'
 ---
 
 # Media Mapping for PR

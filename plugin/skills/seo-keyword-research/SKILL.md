@@ -1,6 +1,9 @@
 ---
 name: seo-keyword-research
 description: 'Organic keyword research from seeds, competitors or pages into a prioritised opportunity table with OpenSEO. Use for "keyword research", "what keywords should we target". Full pipeline: content-research-orchestrator. PPC: google-ads-build.'
+metadata:
+  version: 1.0.0
+  history: 'v1.0.0: first numbered version (marketing-agent 5.3.1); earlier changes are in CHANGELOG.md.'
 ---
 
 # SEO Keyword Research

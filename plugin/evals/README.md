@@ -85,6 +85,10 @@ One case per skill that 4.0.0 absorbed into a family skill (24). Each is a plain
 
 A plain request for internal links to a product page, with no crawl data or connector. Checks that `internal-linking` fired and that it asks for link data and priority pages in a Needs input block instead of inventing URLs or link counts. Not run yet.
 
+## data-puller (5.3.1)
+
+The director starts a data-puller thread (Haiku, medium) on a seven-row search terms export with known totals. Checks that the thread was started, that every term keeps its ad group, that total spend (EUR 456.28) and zero-conversion spend (EUR 156.48) are right, that nothing is invented, and that negatives carry match types. The first test of Haiku on these skills' rules.
+
 ## storage-reminder (5.2.0)
 
 A campaign job with no linked folder and no client repository, run from the plugin repository. Checks that the director stops before opening a job folder, reminds the user to link a folder or connect a dedicated private client repository, and writes nothing into the working directory. Not run yet.
