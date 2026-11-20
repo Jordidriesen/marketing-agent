@@ -26,13 +26,13 @@ checks the returned work against them.
 
 | Rule | Check | How |
 |---|---|---|
-| No em dashes (U+2014) in any output | Mechanical | `check_rules.py` |
+| No em dashes (U+2014) in any output | Mechanical | `check_rules.py`; in `deliverables/`, also the save hook |
 | English output in en_GB: British spelling, British date format (24 October 2026), no US vocabulary | Mechanical for common cases, judgement for the rest | `check_rules.py` lists candidates; a US spelling it does not know will slip through |
 | Dutch output reads as written by a Fleming, not by someone from the Netherlands | Mechanical for the word list, judgement for phrasing | `check_rules.py --lang nl` uses the Netherlands-to-Flanders table in `references/patterns-nl.md`; phrasing and register stay with that skill |
 | No invented facts, figures, names, file paths, account IDs or client details | Judgement | Every figure and claim is sourced, or marked `UNSURE` or `PROOF NEEDED`; the reviewer spot-checks the biggest claims against the source |
-| Google Ads and paid media analysis names the ad group next to every keyword or search term | Mechanical for tables, judgement for lists | `check_rules.py --paid` flags tables that list keywords with no ad group column |
+| Google Ads and paid media analysis names the ad group next to every keyword or search term | Mechanical for tables, judgement for lists | `check_rules.py --paid` flags tables that list keywords with no ad group column; the save hook runs it on paid files in `deliverables/` |
 | Missing goal, audience, facts, brand or source material is asked for before drafting, in a **Needs input** block of 2 to 5 specific questions (why each matters, what happens once answered); a skill's "draft with placeholders" does not override this, and format choices may default if stated | Process | The thread or skill stops before drafting; the director merges the questions and asks once |
-| Nothing is sent, published, scheduled or edited live without a clear yes from Jordi | Process | Enforced by the director's ask-before-proceed and ask-before-publish steps, and by `security-policy` for write-capable connectors |
+| Nothing is sent, published, scheduled or edited live without a clear yes from Jordi | Process and hook | The director's ask-before-proceed and ask-before-publish steps, `security-policy` for write-capable connectors, and the publish gate hook, which asks for confirmation before any tool that publishes, sends, spends or changes an account |
 
 ## Running the mechanical checks
 
@@ -108,6 +108,15 @@ found", never as "en_GB passed", and still read for British phrasing.
 **Findings are candidates, not verdicts.** An em dash inside a verbatim client
 quote, or "center" inside a product name, is a call for the reviewer. Judge each
 finding, fix the clear ones, and list anything kept with the reason.
+
+## Hooks
+
+The plugin ships two hooks in `plugin/hooks/`:
+
+- **Save check** (`check_deliverable.py`, after Write, Edit and MultiEdit): runs `check_rules.py` on every `.md`, `.txt` or `.html` file in a `deliverables/` folder, with `--arith`, with `--paid --rsa` when the file name says google-ads, rsa, paid, sea or ppc, and with `--terms` for every `brand/terms*.txt` in that job's storage root. Only hard findings go back to whoever saved the file: em dash, RSA length and count, totals and shares, locked terms, terms conflicts, a missing ad group column. Spelling and date candidates stay with the acceptance step. It runs in threads too. A file written with a shell command is not checked, so deliverables are written with Write or Edit.
+- **Publish gate** (`publish_gate.py`, before any MCP tool): when a tool matches a rule in `publish-tools.txt`, Claude Code asks for confirmation before the call, whatever the permission mode. Non-interactive runs cannot answer, so the call does not run. Add a connector's write tools to that file when it is connected, using the tool names it lists, never guessed ones.
+
+Tests for both: `python3 -m unittest discover -s plugin/hooks/tests`, also run in CI.
 
 ## Reporting
 

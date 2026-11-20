@@ -9,7 +9,7 @@ Checks:
 - 'metadata.version', when present, is a semantic version (x.y.z). A missing version is a warning,
   not an error: Claude Code ignores it at runtime, and skills carry one for maintainers
 - every agent in plugin/agents has a description that starts with "Thread profile", so no agent
-  pulls in work on its own outside the director
+  pulls in work on its own outside the director, and none can start agents (threads stay one level deep)
 - no client material in this public repository: no marketing-jobs/ folder anywhere, no jobs/
   folder at the root, and no .marketing-client.yaml outside templates/client-repo/
 
@@ -118,6 +118,11 @@ def main() -> int:
                 all_errors.append(f"{agent.name}: name does not match the file name")
             if not str(meta.get("description", "")).startswith("Thread profile"):
                 all_errors.append(f"{agent.name}: description must start with 'Thread profile'")
+            tools = meta.get("tools")
+            blocked = meta.get("disallowedTools") or []
+            can_spawn = ("Agent" in tools) if isinstance(tools, list) else ("Agent" not in blocked)
+            if can_spawn:
+                all_errors.append(f"{agent.name}: thread profiles must not be able to start agents (add Agent to disallowedTools)")
 
     if all_errors:
         print(f"Found {len(all_errors)} issue(s):\n")

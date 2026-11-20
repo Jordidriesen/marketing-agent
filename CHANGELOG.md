@@ -4,6 +4,16 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [5.3.0] (20/11/2026)
+
+The two hardest rules move from instructions into code.
+
+- **Save check hook** (`plugin/hooks/check_deliverable.py`): every `.md`, `.txt` or `.html` file saved in a `deliverables/` folder runs through `check_rules.py`, with the flags its file name calls for and the brand's terms files. Hard findings only (em dash, RSA lengths and counts, totals and shares, locked terms, ad group column) go back to whoever saved the file, threads included. Tested live: it fires in the main thread and in a drafter thread.
+- **Publish gate hook** (`plugin/hooks/publish_gate.py`, rules in `publish-tools.txt`): any MCP tool that publishes, sends, spends or changes an account asks for confirmation first, also under `bypassPermissions`. Covers send, publish, schedule and delete verbs on any connector, Zapier write actions, OpenSEO runs that spend credits, and WordPress abilities that change the live site (Novamira and other MCP adapters). Building on a draft stays ungated.
+- **`director-playbook` 3.3.0:** the one-level thread rule is stated as a choice (Claude Code allows nesting; this plugin does not), a Hooks rule in section 0b, and acceptance notes that the save hook already ran.
+- **`graphic-designer` and `web-developer` can no longer start agents**, matching the other profiles; lint now fails any profile that can. Profiles say deliverables are written with Write or Edit, so the save check runs.
+- **Tests:** 9 hook tests in `plugin/hooks/tests/`, run in CI.
+
 ## [5.2.1] (20/11/2026)
 
 - **`data-puller` threads run Haiku at `medium` effort** instead of `low` (`director-playbook` 3.2.2, the profile and the README). Medium is Haiku 5.5's default, so the director no longer turns it down for bulk pulls.

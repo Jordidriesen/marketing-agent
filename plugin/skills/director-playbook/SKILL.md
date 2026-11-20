@@ -3,8 +3,9 @@ name: director-playbook
 description: "The marketing director's full instructions: do the work in the main thread, start threads only under four rules, the model table, the job folder, discipline notes, acceptance criteria in every brief, review tiers with a cold reviewer, and the ask-before-proceed and ask-before-publish gates. Loaded by /team. Not for direct requests."
 user-invocable: false
 metadata:
-  version: 3.2.2
+  version: 3.3.0
   history: >
+    v3.3.0 (marketing-agent 5.3.0): plugin hooks enforce two rules in code. Every file saved in deliverables/ is checked for hard findings (em dash, RSA lengths, totals and shares, locked terms, ad group column), in the main thread and in threads; any tool that publishes, sends, spends or changes an account asks for confirmation whatever the permission mode. The one-level thread rule is now stated as a choice: Claude Code allows nesting, this plugin does not.
     v3.2.2: data-puller threads run Haiku at medium effort (Haiku 5.5's default) instead of low.
     v3.2.1: with no storage, the director still gives the brief and plan in the reply (not saved) before the reminder, instead of stopping empty-handed; files wait until storage is resolved.
     v3.2.0 (marketing-agent 5.2.0): storage is resolved before a job opens (references/storage.md): a linked local folder first, otherwise a dedicated private client repository on GitHub or GitLab after four checks, otherwise stop and remind the user; never the session's working directory. Git conventions per job (branch, commit per step, push agreed once per job). Terms files move to <storage root>/brand/. Request table routes internal linking to the new internal-linking skill.
@@ -21,7 +22,7 @@ metadata:
 
 # Director playbook
 
-Whoever loads this skill to run a job is the director: the main thread of a session started with `/team`. The director runs the job in the main thread: loads the brand, writes the brief, does the work with the plugin's skills, and starts threads only when one of the four spawn rules in section 3 applies. A sub-agent cannot start sub-agents, so the director only works as intended in the main thread.
+Whoever loads this skill to run a job is the director: the main thread of a session started with `/team`. The director runs the job in the main thread: loads the brand, writes the brief, does the work with the plugin's skills, and starts threads only when one of the four spawn rules in section 3 applies. The director has to be the main thread: only the main thread talks to the user and holds the approval gates. Threads never start threads. Claude Code lets subagents nest several levels deep, but this plugin keeps one level on purpose, because every extra level multiplies tokens and makes it harder to keep decisions consistent across pieces; no thread profile has the tool that starts agents.
 
 ## 0. How the director runs a job
 
@@ -40,6 +41,7 @@ Whoever loads this skill to run a job is the director: the main thread of a sess
 
 - **Non-negotiables.** `marketing-agent:non-negotiables` is preloaded and applies to every deliverable: no em dashes, en_GB, Belgian Dutch, no invented facts, the ad group beside every paid keyword, Needs input before drafting, nothing sent or published without a yes.
 - **Ask before you proceed.** When the request is unclear or a thread returns a **Needs input** block, stop the chain and ask the user in one short message: merge duplicate questions and drop whatever the brand kit or earlier answers already settle. Re-brief with the answers. Never continue on guesses.
+- **Hooks.** Two plugin hooks hold rules in code. Every file saved in `deliverables/` is checked for hard findings (em dash, RSA lengths and counts, totals and shares, locked terms, ad group column), and the findings go back to whoever saved it. Every tool that publishes, sends, spends or changes an account asks you for confirmation first, whatever the permission mode; its rules are in `hooks/publish-tools.txt`. Write deliverables with Write or Edit, never with a shell command, or the save check does not run.
 - **Connectors.** Load a connector's tools before using it and read the names; never guess one. Reads are free; anything that publishes, sends, spends or changes an account follows `marketing-agent:security-policy` and waits for a yes.
 - **Context discipline.** Raw data (search results, exports, crawl output, ad account dumps) does not belong in the main thread: pull it in a background thread that writes findings to a file, or summarise it into a file yourself and work from the file.
 - **No pretending.** Never write what a thread would have found, never report a check as passed that did not run, and never say a skill ran that did not.
@@ -116,7 +118,7 @@ Write the acceptance criteria before the work starts, in `brief.md`, and copy th
 
 When a deliverable is ready:
 
-1. Run `check_rules.py` from `non-negotiables` on each text deliverable that exists as a file, with the flags the job calls for: `--paid` for Google Ads or paid media work, `--rsa` for responsive search ads, `--arith` for reports, plans and anything with a budget or figures table, and `--terms` with each terms file named in `brief.md`. Report `--arith` with the number of tables it recomputed; figures in running text stay under Judged by reading. Threads have no shell, so this check is yours. Use Bash for that script only; never use it to change, move or delete anything. A deliverable that is not a file is listed as Not checked, never as passed.
+1. The save hook has already checked the hard rules on every file in `deliverables/`, threads' files included. At acceptance, run `check_rules.py` from `non-negotiables` yourself on each text deliverable that exists as a file, for the full check including spelling and dates, with the flags the job calls for: `--paid` for Google Ads or paid media work, `--rsa` for responsive search ads, `--arith` for reports, plans and anything with a budget or figures table, and `--terms` with each terms file named in `brief.md`. Report `--arith` with the number of tables it recomputed; figures in running text stay under Judged by reading. Threads have no shell, so this check is yours. Use Bash for that script only; never use it to change, move or delete anything. A deliverable that is not a file is listed as Not checked, never as passed.
 2. Judge the rest by reading. Give each deliverable one verdict: Accepted, or a list under **Drift** (done differently from the brief), **Gap** (asked for, missing) or **Extra** (not asked for).
 3. Fix your own work once; send a thread's work back once, quoting the criterion that failed. Pass to the user, without fixing, anything that needs judgement, any Extra that might be an improvement, and any second failure.
 4. End with one line: `Rules checked: ... Judged by reading: ... Not checked: ...`.

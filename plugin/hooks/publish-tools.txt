@@ -1,0 +1,19 @@
+# Publish gate: tools that publish, send, spend or change an account.
+# A match makes Claude Code ask you before the call runs, whatever the permission mode.
+# Edit freely. One rule per line:
+#   tool  <regex on the full tool name>
+#   input <regex on the tool name>  <input field>  <regex on that field's value>
+# Regexes are Python, matched with re.search, case-insensitive.
+
+# Any connector: verbs that send, publish, schedule or delete
+tool  ^mcp__.+__(.*[_-])?(send|publish|schedule|delete|trash)([_-]|$)
+
+# Zapier: every write action
+tool  ^mcp__Zapier__execute_zapier_write_action$
+
+# OpenSEO: runs and schedules that spend credits, sharing and IndexNow
+tool  ^mcp__OpenSEO__(run_site_audit|run_rank_tracker|create_rank_tracker|run_ai_visibility_check|set_ai_visibility_schedule|save_ai_visibility_tracker|set_report_sharing|submit_indexnow_urls)$
+
+# WordPress MCP adapters (Novamira and others): abilities that change the live site.
+# Drafts, previews, reads and page building on a draft stay ungated.
+input  __mcp-adapter-execute-ability$  ability_name  (publish|delete|trash|import|/fix-|/set-|activate|replay|execute-php|write-file|edit-file|disable-file|enable-file|update-settings|update-page-settings|admin-access|enable-batch-finalization|manage-site-parts|manage-global|manage-classes|manage-default-styles|manage-experiments|manage-woocommerce|clear-cache)

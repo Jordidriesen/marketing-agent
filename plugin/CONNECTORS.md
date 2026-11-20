@@ -50,7 +50,7 @@ Every OpenSEO tool takes a `projectId`, but only the first-party tools (Search C
 
 ## Write actions
 
-Every connector that can publish, send, spend or change an account (Brevo, HubSpot, Typefully, WordPress and page-builder MCPs, WP Umbrella, Tally.so, Make, Zapier, Adobe sharing and Stock licensing, Canva exports, page merges and video generation, Figma Weave runs, Affinity scripts that change or export a document, Google Ads changes, OpenSEO scheduled trackers) is gated by `security-policy`: Claude drafts, then asks before anything goes live. Credit, billing and identity rules per connector are in `mcp-efficiency`.
+Every connector that can publish, send, spend or change an account (Brevo, HubSpot, Typefully, WordPress and page-builder MCPs, WP Umbrella, Tally.so, Make, Zapier, Adobe sharing and Stock licensing, Canva exports, page merges and video generation, Figma Weave runs, Affinity scripts that change or export a document, Google Ads changes, OpenSEO scheduled trackers) is gated by `security-policy`: Claude drafts, then asks before anything goes live. The publish gate hook (`hooks/publish-tools.txt`) also asks for confirmation before each such call, whatever the permission mode; add a connector's write tools there when you connect it. Credit, billing and identity rules per connector are in `mcp-efficiency`.
 
 ## Connection status to check
 
