@@ -1,0 +1,69 @@
+name: Release
+
+# Creates a GitHub release with a v<version> tag whenever main carries a plugin version
+# that has no release yet. The notes are that version's section of CHANGELOG.md.
+# Run it by hand (Actions > Release > Run workflow) to release an older version at a
+# given commit, for example to backfill a version that was merged before this existed.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release, without the v (default: the version in plugin.json)"
+        required: false
+      target:
+        description: "Commit to tag (default: the head of main)"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Work out version and target
+        id: v
+        run: |
+          VERSION="${{ github.event.inputs.version }}"
+          if [ -z "$VERSION" ]; then
+            VERSION=$(python3 -c "import json; print(json.load(open('plugin/.claude-plugin/plugin.json'))['version'])")
+          fi
+          TARGET="${{ github.event.inputs.target }}"
+          if [ -z "$TARGET" ]; then TARGET="$GITHUB_SHA"; fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "target=$TARGET" >> "$GITHUB_OUTPUT"
+
+      - name: Skip if already released
+        id: exists
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "v${{ steps.v.outputs.version }}" >/dev/null 2>&1; then
+            echo "Release v${{ steps.v.outputs.version }} already exists; nothing to do."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Extract release notes from CHANGELOG.md
+        if: steps.exists.outputs.skip == 'false'
+        run: |
+          python3 scripts/changelog_section.py "${{ steps.v.outputs.version }}" > notes.md
+          echo "--- notes ---"; cat notes.md
+
+      - name: Create the release
+        if: steps.exists.outputs.skip == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "v${{ steps.v.outputs.version }}" \
+            --target "${{ steps.v.outputs.target }}" \
+            --title "marketing-agent ${{ steps.v.outputs.version }}" \
+            --notes-file notes.md
