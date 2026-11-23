@@ -1,8 +1,8 @@
 ---
 name: linkedin-ads-manager
 metadata:
-  version: 1.0.0
-  history: 'v1.0.0: new skill. Builds or restructures LinkedIn Ads campaigns for B2B as a paste-ready build plan: objective and campaign type, targeting by role, company and list, matched audiences with an honest audience-size verdict, budget and bidding realities, lead gen form against landing page, creative specs and tracking. No LinkedIn connector exists yet.
+  version: 1.1.0
+  history: 'v1.1.0 (marketing-agent 5.4.0): campaign and ad files filled from the account''s own Campaign Manager templates, and company lists in LinkedIn''s format, checked by scripts/linkedin_files.py. v1.0.0: new skill. Builds or restructures LinkedIn Ads campaigns for B2B as a paste-ready build plan: objective and campaign type, targeting by role, company and list, matched audiences with an honest audience-size verdict, budget and bidding realities, lead gen form against landing page, creative specs and tracking. No LinkedIn connector exists yet.
 
     '
 description: 'Always use for any LinkedIn Ads campaign plan or restructure, however short: objective, campaign types, role, company and list targeting, matched audiences with an audience-size verdict, budget and bidding, lead gen form vs landing page. Use for "LinkedIn Ads", "sponsored content", "LinkedIn campaign". Organic posts: social-content-writer.'
@@ -122,6 +122,24 @@ follow-up owner named.
 7. **Needs decision** and **Could not verify** lists, with every **confirm in Campaign Manager** item.
 
 Deliver in the reply, or as a document in the run folder when one is in use.
+
+### Upload files
+
+- **Campaigns and ads:** Campaign Manager's bulk templates differ per account and their columns are
+  not published, so never guess them. Ask once for the account's blank template (Bulk Actions >
+  Download template) and keep its header row in `brand/linkedin-templates/` in the storage root.
+  Fill a copy as `deliverables/linkedin-campaigns.csv` or `linkedin-ads.csv`, then check it:
+  `python3 <this skill folder>/scripts/linkedin_files.py template deliverables/linkedin-ads.csv brand/linkedin-templates/ads.csv`.
+  Without a template, deliver the tables in the reply and say the file is waiting for one.
+- **Company lists** (Matched Audiences): `deliverables/linkedin-company-list.csv` with LinkedIn's
+  columns (`companyname`, `companywebsite`, `companyemaildomain`, `linkedincompanypageurl`,
+  `stocksymbol`, `industry`, `city`, `state`, `companycountry`, `zipcode`). Fill several
+  identifiers per company for a better match rate; every row needs at least one. The save hook
+  validates the file.
+- **Contact lists are never built here.** They hold personal data: only a list the client supplies
+  from its own consented records, uploaded by the client.
+- **Learnings:** read the brief's **What we already know** before choosing audiences and bids; a
+  read-out that measured something proposes learning lines, written only after a yes.
 
 ## Rules
 

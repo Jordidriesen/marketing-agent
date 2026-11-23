@@ -2,8 +2,8 @@
 name: google-ads-ads
 description: 'Google Ads ad copy: responsive search ad headlines (30 characters) and descriptions (90) matched to search intent, and reading RSA asset performance to keep, cut or replace assets. Use for "ad copy", "RSA", "Google Ads headlines", "which headlines should go", "this ad underperforms". Paid social and video ads: ad-creative-matrix.'
 metadata:
-  version: 1.0.0
-  history: 'v1.0.0: new family skill in marketing-agent 4.0.0 (built first in the marketing-operator trial). Absorbs rsa-writer, ad-copy-tester as references, unchanged apart from names and paths.'
+  version: 1.1.0
+  history: 'v1.1.0 (marketing-agent 5.4.0): RSAs, sitelinks and callouts also ship as Google Ads Editor CSV files; ad-copy-tester proposes learnings from asset performance. v1.0.0: new family skill in marketing-agent 4.0.0 (built first in the marketing-operator trial). Absorbs rsa-writer, ad-copy-tester as references, unchanged apart from names and paths.'
 ---
 
 # Google Ads Ads
@@ -16,6 +16,10 @@ One skill for a family of related tasks that share the same inputs and connector
 |---|---|
 | `references/rsa-writer.md` | Writes Google Ads responsive search ad headlines (30 characters) and descriptions (90) that match search intent. Use for "ad copy", "RSA", "Google Ads headlines". Paid social and video ads: ad-creative-matrix. |
 | `references/ad-copy-tester.md` | Reads Google RSA asset performance and says which headlines and descriptions to keep, cut or replace. Use when an ad underperforms or asset data is shared. |
+
+**Upload files.** `rsa-writer` also writes `deliverables/google-ads-rsas.csv` (and `google-ads-sitelinks.csv` and `google-ads-callouts.csv` when asked for assets) in the format of `references/google-ads-exports.md`, next to the readable version with character counts. The save hook validates them; fix what it reports.
+
+**Learnings and voice.** Before writing, read the brief's **What we already know** and the brand's `brand/voice-examples.md` when they exist. `ad-copy-tester` ends with proposed learning lines (which angles and assets won or lost, with impressions and the period), written to `brand/learnings.md` only after a yes.
 
 If no row fits, say so and name the skill that does fit rather than stretching a reference.
 

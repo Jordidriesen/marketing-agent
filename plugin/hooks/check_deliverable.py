@@ -2,7 +2,9 @@
 """PostToolUse hook: run check_rules.py on a deliverable as soon as it is saved.
 
 Fires after Write, Edit and MultiEdit, in the main thread and in threads. Acts only on
-.md, .txt and .html files inside a folder named `deliverables`. Also fires after a shell
+.md, .txt, .html and .csv files inside a folder named `deliverables`. A Google Ads Editor bundle
+file (google-ads-*.csv) also runs google_ads_bundle.py on its folder, and a LinkedIn company list
+(linkedin-company-list*.csv) runs linkedin_files.py. Also fires after a shell
 command (Bash or PowerShell) that mentions `deliverables`: it then checks the deliverable files under the
 working directory that changed in the last two minutes, so a file written with a shell
 command is checked too. Reports hard findings
@@ -24,7 +26,10 @@ from pathlib import Path
 
 HARD = {"em-dash", "rsa-length", "rsa-count", "arith-total", "arith-share",
         "terms", "terms-conflict", "ad-group"}
-TEXT = {".md", ".txt", ".html", ".htm"}
+TEXT = {".md", ".txt", ".html", ".htm", ".csv"}
+PLUGIN = Path(__file__).resolve().parent.parent
+GADS = PLUGIN / "skills" / "google-ads-build" / "scripts" / "google_ads_bundle.py"
+LINKEDIN = PLUGIN / "skills" / "linkedin-ads-manager" / "scripts" / "linkedin_files.py"
 CHECKER = Path(__file__).resolve().parent.parent / "skills" / "non-negotiables" / "scripts" / "check_rules.py"
 RECENT_SECONDS = 120
 SKIP_DIRS = {".git", "node_modules", ".venv", "venv", "__pycache__", "dist", "build"}
@@ -88,10 +93,32 @@ def targets(event: dict) -> list[Path]:
     return [path] if path and is_deliverable(path) else []
 
 
+def upload_file_findings(path: Path) -> list[str]:
+    """Validator problems for Google Ads Editor bundles and LinkedIn company lists."""
+    name = path.name.lower()
+    if name.startswith("google-ads-") and GADS.is_file():
+        cmd = [sys.executable, str(GADS), str(path.parent)]
+        label = "google-ads bundle"
+    elif name.startswith("linkedin-company-list") and LINKEDIN.is_file():
+        cmd = [sys.executable, str(LINKEDIN), "companies", str(path)]
+        label = path.name
+    else:
+        return []
+    proc = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8")
+    if proc.returncode != 1:
+        return []
+    return [f"{label}: {line}" for line in proc.stdout.splitlines()
+            if line.strip() and not line.endswith("problem(s)")]
+
+
 def hard_findings(path: Path) -> list[str]:
+    if path.suffix.lower() == ".csv":
+        found = upload_file_findings(path)
+    else:
+        found = []
     proc = subprocess.run([sys.executable, str(CHECKER), str(path), *flags_for(path)],
                           capture_output=True, text=True, encoding="utf-8")
-    hard = []
+    hard = found
     for line in proc.stdout.splitlines():
         m = re.search(r"\[([a-z-]+)\]", line)
         if m and m.group(1) in HARD:

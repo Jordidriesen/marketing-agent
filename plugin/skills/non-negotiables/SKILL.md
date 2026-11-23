@@ -3,8 +3,8 @@ name: non-negotiables
 description: Hard rules every deliverable must meet, each with how it is checked, loaded by the director, its thread profiles and the skills. Not for direct requests.
 user-invocable: false
 metadata:
-  version: 1.0.0
-  history: 'v1.0.0: first numbered version (marketing-agent 5.3.1); earlier changes are in CHANGELOG.md.'
+  version: 1.1.0
+  history: 'v1.1.0 (marketing-agent 5.4.0): the save check also validates Google Ads Editor bundles and LinkedIn company lists. v1.0.0: first numbered version (marketing-agent 5.3.1); earlier changes are in CHANGELOG.md.'
 ---
 
 # Non-negotiables: Shared Reference
@@ -116,7 +116,7 @@ finding, fix the clear ones, and list anything kept with the reason.
 
 The plugin ships two hooks in `plugin/hooks/`:
 
-- **Save check** (`check_deliverable.py`, after Write, Edit and MultiEdit): runs `check_rules.py` on every `.md`, `.txt` or `.html` file in a `deliverables/` folder, with `--arith`, with `--paid --rsa` when the file name says google-ads, rsa, paid, sea or ppc, and with `--terms` for every `brand/terms*.txt` in that job's storage root. Only hard findings go back to whoever saved the file: em dash, RSA length and count, totals and shares, locked terms, terms conflicts, a missing ad group column. Spelling and date candidates stay with the acceptance step. It runs in threads too. A file written with a shell command is not checked, so deliverables are written with Write or Edit.
+- **Save check** (`check_deliverable.py`, after Write, Edit and MultiEdit): runs `check_rules.py` on every `.md`, `.txt`, `.html` or `.csv` file in a `deliverables/` folder (a `google-ads-*.csv` file also runs `google_ads_bundle.py` on its folder, a `linkedin-company-list*.csv` runs `linkedin_files.py`), with `--arith`, with `--paid --rsa` when the file name says google-ads, rsa, paid, sea or ppc, and with `--terms` for every `brand/terms*.txt` in that job's storage root. Only hard findings go back to whoever saved the file: em dash, RSA length and count, totals and shares, locked terms, terms conflicts, a missing ad group column. Spelling and date candidates stay with the acceptance step. It runs in threads too. A file written with a shell command is not checked, so deliverables are written with Write or Edit.
 - **Publish gate** (`publish_gate.py`, before any MCP tool): when a tool matches a rule in `publish-tools.txt`, Claude Code asks for confirmation before the call, whatever the permission mode. Non-interactive runs cannot answer, so the call does not run. Add a connector's write tools to that file when it is connected, using the tool names it lists, never guessed ones.
 
 Both run in exec form (`python3` plus the script path, no shell), so Windows needs no Git Bash, but `python3` must be on the PATH; see the plugin README. The gate has `onFailure: "block"`: when Python cannot start, the tools it covers are blocked. Its matcher in `hooks.json` is built from `publish-tools.txt`, so only those tools are affected; after changing the rules file, run `python3 plugin/hooks/build_matcher.py` (a test fails when they differ). A session-start hook reports a missing Python once.

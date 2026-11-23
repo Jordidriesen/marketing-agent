@@ -82,6 +82,29 @@ class ShellWrites(unittest.TestCase):
         self.assertEqual(code, 0, err)
 
 
+class UploadFiles(unittest.TestCase):
+    def test_bad_bundle_reported_on_save(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            d = Path(tmp) / "job" / "deliverables"
+            d.mkdir(parents=True)
+            f = d / "google-ads-keywords.csv"
+            f.write_text("Campaign,Ad group,Keyword,Criterion Type\nC,G,[visitor software],Exact\n", encoding="utf-8")
+            code, _, err = run("check_deliverable.py", write_event(f))
+            self.assertEqual(code, 2, err)
+            self.assertIn("match-type symbols", err)
+
+    def test_good_company_list_passes(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            d = Path(tmp) / "deliverables"
+            d.mkdir()
+            f = d / "linkedin-company-list.csv"
+            f.write_text("companyname,companywebsite\nAcme Logistics,https://acme.example\n", encoding="utf-8")
+            code, _, err = run("check_deliverable.py", write_event(f))
+            self.assertEqual(code, 0, err)
+
+
 class MatcherInSync(unittest.TestCase):
     def test_hooks_json_matcher_matches_rules(self):
         p = subprocess.run([sys.executable, str(HOOKS / "build_matcher.py"), "--check"], capture_output=True, text=True)

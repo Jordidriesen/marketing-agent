@@ -1,8 +1,8 @@
 ---
 name: ab-test-planner
 metadata:
-  version: 1.0.0
-  history: 'v1.0.0: new skill. Designs an A/B test from a finding: hypothesis, one variable, sample size and duration computed from real traffic (with a bundled calculator), variant design, tracking and QA, stop rules, and an explicit do-not-run verdict when the traffic cannot support the test.
+  version: 1.1.0
+  history: 'v1.1.0 (marketing-agent 5.4.0): a test read-out proposes a tested learning. v1.0.0: new skill. Designs an A/B test from a finding: hypothesis, one variable, sample size and duration computed from real traffic (with a bundled calculator), variant design, tracking and QA, stop rules, and an explicit do-not-run verdict when the traffic cannot support the test.
 
     '
 description: 'Always use for any A/B or split test plan, however short: hypothesis tied to a finding, one variable, sample size and duration computed from real traffic and baseline, variants, tracking, stop rules, and "do not run this test" when traffic is too low. Use for "A/B test", "split test this", "what should we test next". Finds the problems: cro-auditor.'
@@ -120,3 +120,5 @@ and control run on the same dates.
 - `frontend-design`: builds layout variants.
 - `measurement` (its `ga4-audit` reference): checks the measurement before a test relies on it.
 - `measurement` (its `attribution-readout` reference): for questions about channels, where an incrementality test is the answer.
+
+**Learnings.** When a test is read out, propose one learning line with confidence `tested`: the variants, the result with sample size and the period. It is written to `brand/learnings.md` only after a yes; format in `brand-learnings`.

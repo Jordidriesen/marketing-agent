@@ -1,8 +1,8 @@
 ---
 name: ad-creative-matrix
 metadata:
-  version: 1.1.2
-  history: 'v1.1.2: optional borrowed credibility angle, only with a supplied source. v1.1.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.1.0: content-references files renamed and merged; references to them updated. v1.0.0: new skill. Writes up the 50-5-3 ad method (50 hooks, 5 bodies, 3 CTAs), commonly attributed to Alex Hormozi, as an original workflow in this library''s own terms: angle spread, a screening rubric, a compatibility check, tagged assembly and a staged test plan scaled to budget. The attribution has not been checked against a primary source.
+  version: 1.2.0
+  history: 'v1.2.0 (marketing-agent 5.4.0): LinkedIn ad copy fills the account''s ads template when one is kept in brand/linkedin-templates/; voice examples and learnings read first. v1.1.2: optional borrowed credibility angle, only with a supplied source. v1.1.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.1.0: content-references files renamed and merged; references to them updated. v1.0.0: new skill. Writes up the 50-5-3 ad method (50 hooks, 5 bodies, 3 CTAs), commonly attributed to Alex Hormozi, as an original workflow in this library''s own terms: angle spread, a screening rubric, a compatibility check, tagged assembly and a staged test plan scaled to budget. The attribution has not been checked against a primary source.
 
     '
 description: Builds paid social and video ad sets with the 50-5-3 method (50 hooks, 5 bodies, 3 CTAs), screened, tagged and with a test plan, for LinkedIn, Meta, YouTube, TikTok. Use for "ad hooks", "ad variations", "LinkedIn or Meta ads".
@@ -165,3 +165,5 @@ markdown tables. Chat framing stays short; the deliverable keeps its full length
 - `campaign-plan`: the campaign context this creative serves.
 - `content-references`: `behavioral-psychology.md` and `content-briefing.md` for the
   angle and structure work.
+
+**Upload files and learnings.** Read the brief's **What we already know** and `brand/voice-examples.md` before writing hooks. For LinkedIn, when the account's ads template is kept in `brand/linkedin-templates/`, also fill `deliverables/linkedin-ads.csv` from it (see `linkedin-ads-manager`, Upload files) and check it with `linkedin_files.py template`.

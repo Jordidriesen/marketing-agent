@@ -16,6 +16,12 @@
 - Proof available: <customers, figures, quotes; or "none">
 - Storage: <linked folder path, or repository and branch; push agreed yes / no>
 - Terms files: <brand/terms.txt, brand/terms-<product>.txt in the storage root; or "none yet">
+- Voice examples: <brand/voice-examples.md, or "none yet">
+- Connectors this job needs: <list; anything else is a reason to ask>
+
+## What we already know
+
+<rows from brand/learnings.md that touch this job, with dates and confidence; or "nothing logged yet">
 
 ## Deliverables
 

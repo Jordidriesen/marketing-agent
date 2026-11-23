@@ -2,7 +2,7 @@
 
 A marketing team for Claude, built by [Jordi Driesen](https://github.com/Jordidriesen) for Cowork and Claude Code. One command, `/team`, turns the main thread into a director that writes the brief, does the work with the plugin's skills, starts threads only where they pay off, reviews the result and asks before anything is published. For a single, clearly scoped task you just ask: the right skill triggers on its own.
 
-**One install, skills and profiles together.** The plugin ships its 51 skills, the `team` command and six thread profiles, so they can't drift apart. Only client brand kits live outside it: each brand gets a private `[brand]-brand-kit` skill that every content, review and design skill loads automatically (see [`templates/brand-kit`](../templates/brand-kit)).
+**One install, skills and profiles together.** The plugin ships its 52 skills, the `team` command and six thread profiles, so they can't drift apart. Only client brand kits live outside it: each brand gets a private `[brand]-brand-kit` skill that every content, review and design skill loads automatically (see [`templates/brand-kit`](../templates/brand-kit)).
 
 ## Installation
 
@@ -70,6 +70,28 @@ Monthly paid report for [brand]: Google Ads and LinkedIn Ads, September 2026 com
 ```
 
 `paid-ads-report-writer` pulls live data where the connectors are connected (a `data-puller` thread per platform), works from exports for the rest, normalises conversion definitions across platforms, and writes the executive summary plus a section per platform. A client report gets a `full-opus` review.
+
+## When you don't need the team
+
+A single piece doesn't need `/team`. Every skill runs directly as a command; the brand kit, the
+non-negotiables and both hooks still apply.
+
+| Research | Analysis | Writing |
+|---|---|---|
+| `/marketing-agent:competitive-research` | `/marketing-agent:google-ads-analyse` | `/marketing-agent:google-ads-ads` |
+| `/marketing-agent:seo-keyword-research` | `/marketing-agent:measurement` | `/marketing-agent:social-content-writer` |
+| `/marketing-agent:keyword-clustering` | `/marketing-agent:seo-audit` | `/marketing-agent:web-content-pipeline` |
+| `/marketing-agent:european-market-intelligence` | `/marketing-agent:cro-auditor` | `/marketing-agent:newsletter-writer` |
+| `/marketing-agent:account-brief` | `/marketing-agent:internal-linking` | `/marketing-agent:customer-story-writer` |
+| `/marketing-agent:brand-learnings` | `/marketing-agent:ai-visibility-tracker` | `/marketing-agent:content-translate` |
+
+## Upload-ready files and learnings
+
+Google Ads work also ships as Google Ads Editor CSV files (campaigns as drafts, ad groups, keywords
+with match types, negatives with theirs, RSAs, sitelinks, callouts), and LinkedIn work as Campaign
+Manager files (company lists, and campaigns and ads filled from the account's own templates). The
+save hook validates them. Each brand keeps `brand/learnings.md` (what has worked, with numbers) and
+`brand/voice-examples.md` in its storage, read into every brief and written only after a yes.
 
 ## Hooks
 

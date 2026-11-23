@@ -1,8 +1,8 @@
 ---
 name: abm-plan
 metadata:
-  version: 1.1.0
-  history: 'v1.0.0: new skill. Account-based marketing plan for a set of named accounts: tiers, selection criteria, buying committee by role, plays per tier across outreach, paid social, content and events, coordination with sales, and account-level measurement.
+  version: 1.2.0
+  history: 'v1.2.0 (marketing-agent 5.4.0): tier-1 and tier-2 accounts also ship as a LinkedIn company list. v1.0.0: new skill. Account-based marketing plan for a set of named accounts: tiers, selection criteria, buying committee by role, plays per tier across outreach, paid social, content and events, coordination with sales, and account-level measurement.
 
     '
 description: 'Plans an account-based marketing programme for named accounts: tiers, buying committee, plays per tier across outreach, LinkedIn and Meta audiences, content and events, sales handover, account-level measurement. Use for "ABM", "target account plan".'
@@ -88,6 +88,8 @@ benchmarks.
 7. **Needs decision** and **Could not verify** lists.
 
 Deliver as a document in the run folder when one is in use, otherwise in the reply.
+
+**Company list.** When LinkedIn is in the plays, also write the tier-1 and tier-2 accounts to `deliverables/linkedin-company-list.csv` in LinkedIn's company-list format (see `linkedin-ads-manager`, Upload files): companies only, several identifiers each, never contacts. The save hook validates it.
 
 ## Rules
 
