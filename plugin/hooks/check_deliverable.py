@@ -3,7 +3,7 @@
 
 Fires after Write, Edit and MultiEdit, in the main thread and in threads. Acts only on
 .md, .txt and .html files inside a folder named `deliverables`. Also fires after a shell
-command that mentions `deliverables`: it then checks the deliverable files under the
+command (Bash or PowerShell) that mentions `deliverables`: it then checks the deliverable files under the
 working directory that changed in the last two minutes, so a file written with a shell
 command is checked too. Reports hard findings
 only (em dash, RSA lengths and counts, totals and shares, locked terms, ad group column);
@@ -78,7 +78,7 @@ def recent_deliverables(root: Path) -> list[Path]:
 
 def targets(event: dict) -> list[Path]:
     tool_input = event.get("tool_input") or {}
-    if event.get("tool_name") == "Bash":
+    if event.get("tool_name") in ("Bash", "PowerShell"):
         command = str(tool_input.get("command") or "")
         if "deliverables" not in command:
             return []

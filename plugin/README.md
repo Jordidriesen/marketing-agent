@@ -75,6 +75,8 @@ Monthly paid report for [brand]: Google Ads and LinkedIn Ads, September 2026 com
 
 Two hooks hold the hardest rules in code rather than in instructions. Every file saved in a job's `deliverables/` folder is checked at once for em dashes, RSA lengths, totals, locked terms and the ad group column, and the findings go back to whoever saved it, threads included. Every tool that publishes, sends, spends or changes an account asks you to confirm first, whatever the permission mode; the list is `hooks/publish-tools.txt`. Details: `non-negotiables`, section Hooks.
 
+**Requirement:** the hooks run `python3` directly, with no shell, so they work the same on macOS, Linux and Windows without Git Bash. `python3` must start from a terminal. On Windows, the Microsoft Store Python provides `python3`; the python.org installer provides `python` and `py` but, by default, no `python3`. Without it the hooks fail with a warning and do not run, so the save check and the publish gate are off on that machine.
+
 ## Brand kits
 
 Every content, review, design and localisation skill identifies the brand and loads its `[brand]-brand-kit` skill when one exists. A modular kit is a short router plus three modules: `context.md` (who the brand is, audiences, channels, data sources), `voice.md` (tone of voice and Voice Lock) and `design.md` (colour, type, layout tokens). Start from [`templates/brand-kit`](../templates/brand-kit).
