@@ -2,8 +2,8 @@
 name: paid-ads-report-writer
 description: 'Writes client-ready paid media reports across Google, Microsoft, LinkedIn and Meta: executive summary, per-platform sections, normalised cross-platform view. Use for "ads report", "monthly paid report".'
 metadata:
-  version: 2.0.0
-  history: 'v2.0: renamed from report-writer and widened from Google Ads only to all paid platforms, search and social. Added platform resolution, live pulls, a normalisation step, per-platform sections and a platform-metrics reference. The executive-summary rules from v1 are kept unchanged.'
+  version: 2.1.0
+  history: 'v2.1.0 (marketing-agent 5.4.0): ends with proposed learning lines. v2.0: renamed from report-writer and widened from Google Ads only to all paid platforms, search and social. Added platform resolution, live pulls, a normalisation step, per-platform sections and a platform-metrics reference. The executive-summary rules from v1 are kept unchanged.'
 ---
 
 # Paid Ads Report Writer
@@ -71,3 +71,5 @@ Read `references/platform-metrics.md` before writing any cross-platform comparis
 - `competitive-research` (its `competitor-teardown` reference): when a competitor's ads explain a shift in auction or CTR
 - `[brand]-brand-kit`: client context, KPIs and reporting language (Step 0)
 - `mcp-efficiency`, `google-ads-analyse` (its `google-ads-tool-map` reference): how to pull live data cheaply
+
+**Learnings.** End the report with proposed learning lines for `brand/learnings.md`: what the period showed, with the numbers, the period and the confidence (`observed` unless a controlled test ran). They are written only after a yes; format in `brand-learnings`.

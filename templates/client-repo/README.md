@@ -9,6 +9,9 @@ director (`/team`). One repository per client: never mix clients here.
   The director checks it before writing a job.
 - `brand/terms.txt` and `brand/terms-<product>.txt`: locked brand and product
   terms, checked by `check_rules.py --terms`.
+- `brand/learnings.md`: what has worked, with numbers; read into every brief.
+- `brand/voice-examples.md`: approved and rejected lines per channel, with why.
+- `brand/linkedin-templates/`: the account's own Campaign Manager bulk templates.
 - `jobs/<YYYY-MM-DD>-<job-slug>/`: one folder per job, with `brief.md`,
   `plan.md`, `decisions.md`, `research/` and `deliverables/`.
 - `assets.md`: links to design files in Canva, Figma, Affinity or the drive.

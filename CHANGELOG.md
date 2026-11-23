@@ -4,6 +4,20 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [5.4.0] (23/11/2026)
+
+Upload-ready files and a learning loop, from the research into how marketing teams run AI.
+
+- **Google Ads Editor bundle:** Google Ads work also ships as Editor CSV files: campaigns (imported as `Scratchpad` or `Paused`, never `Enabled`), ad groups, keywords with their match type in `Criterion Type`, negatives at ad group or campaign level with theirs, RSAs, sitelinks and callouts. Format in `google-ads-build`'s `references/google-ads-exports.md` (synced to `google-ads-ads` and `google-ads-analyse`). `scripts/google_ads_bundle.py` checks character limits, exclamation marks in headlines, match types, symbols in keyword text, duplicates, ad groups the bundle does not define, RSA minimums, and negatives that would block the bundle's own keywords.
+- **LinkedIn files:** company lists for Matched Audiences in LinkedIn's format (from `abm-plan`, `account-brief` and `linkedin-ads-manager`), and campaign and ad files filled from the account's own Campaign Manager templates kept in `brand/linkedin-templates/`, never guessed. `scripts/linkedin_files.py` checks identifiers, personal-data columns, duplicates and template headers. Contact lists are never built by the plugin.
+- **Save hook validates upload files:** `.csv` in `deliverables/` is now checked; a `google-ads-*.csv` runs the bundle validator on its folder and a `linkedin-company-list*.csv` runs the company-list check.
+- **Learning loop:** new `brand-learnings` skill and command (52 skills). `brand/learnings.md` holds what has worked, with numbers, period and confidence; the director copies the relevant rows into every brief under **What we already know**. `paid-ads-report-writer`, `ab-test-planner`, `google-ads-ads` (ad-copy-tester), `google-ads-analyse` and `measurement` end with proposed learning lines, written only after a yes.
+- **Voice examples:** `brand/voice-examples.md` per brand, logged from approvals and rejections at the publish question after a yes; drafting skills and the drafter read it, and the cold reviewer gets it as criteria. A quarterly calibration compares the reviewer's voice verdicts with the user's own.
+- **Single pieces go to their command:** the README lists the research, analysis and writing commands; `/team` runs a single piece through its own skill without a job folder.
+- **Connectors per job:** the brief names the connectors a job needs; anything else is a reason to ask.
+- **`director-playbook` 3.5.0**, client repository template with `learnings.md`, `voice-examples.md` and `linkedin-templates/`.
+- **Tests:** 5 validator tests in `scripts/tests/` and 2 more hook tests, all in CI. New eval `google-ads-bundle`.
+
 ## [5.3.2] (23/11/2026)
 
 - **Hooks run without a shell.** Both hooks use exec form (`command` plus `args`), so Claude Code starts `python3` directly instead of through bash. On Windows without Git Bash, the hooks no longer fall back to PowerShell, which caused the "Git Bash wasn't found" notice. Tested live on Linux; not yet on Windows.

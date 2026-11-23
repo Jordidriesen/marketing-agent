@@ -85,6 +85,10 @@ One case per skill that 4.0.0 absorbed into a family skill (24). Each is a plain
 
 A plain request for internal links to a product page, with no crawl data or connector. Checks that `internal-linking` fired and that it asks for link data and priority pages in a Needs input block instead of inventing URLs or link counts. Not run yet.
 
+## google-ads-bundle (5.4.0)
+
+A new search campaign delivered as Google Ads Editor upload files. Checks that the Google Ads skills fired, that keywords carry their match types in their own column, that negatives cover junk intent without blocking the campaign's own keywords, that the campaign imports as a draft, and that the bundle validator ends clean.
+
 ## data-puller (5.3.1)
 
 The director starts a data-puller thread (Haiku, medium) on a seven-row search terms export with known totals. Checks that the thread was started, that every term keeps its ad group, that total spend (EUR 456.28) and zero-conversion spend (EUR 156.48) are right, that nothing is invented, and that negatives carry match types. The first test of Haiku on these skills' rules.

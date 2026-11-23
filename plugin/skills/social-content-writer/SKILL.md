@@ -2,8 +2,8 @@
 name: social-content-writer
 description: 'Always use for any organic social post, however short: LinkedIn, Instagram, X or Reddit, with hook, structure, hashtags and CTA per platform. Use for "LinkedIn post", "company post", "caption", "tweet". Not paid ads (ad-creative-matrix).'
 metadata:
-  version: 1.2.1
-  history: 'v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.2.0: platform rules moved to references/ (one file per platform), read on demand in Step 6. v1.1.0: content-references files renamed and merged; references to them updated.'
+  version: 1.3.0
+  history: 'v1.3.0 (marketing-agent 5.4.0): reads learnings and voice examples first. v1.2.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.2.0: platform rules moved to references/ (one file per platform), read on demand in Step 6. v1.1.0: content-references files renamed and merged; references to them updated.'
 ---
 
 # Social Content Writer
@@ -120,3 +120,5 @@ Ask: "Would you like this adapted for another platform, a variant to test, or sh
 - `customer-story-writer`: for a case study a social post might summarise
 - `content-creation`: the gateway skill; routes here when the content type is social
 - `ad-creative-matrix`: for paid social and video ads (hooks, bodies, CTAs, test plan). This skill is organic only
+
+**Learnings and voice.** Before drafting, read the brief's **What we already know** and the brand's `brand/voice-examples.md` when they exist: follow the approved examples' rhythm, avoid what the rejected ones were rejected for, never copy their sentences.

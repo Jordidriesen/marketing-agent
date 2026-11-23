@@ -58,6 +58,9 @@ Template: `templates/client-repo/` in the marketing-agent repository.
 README.md                what lives here and what does not
 .gitignore               design source files, large exports, secrets
 brand/terms.txt          brand terms; brand/terms-<product>.txt per product
+brand/learnings.md       what has worked, with numbers (brand-learnings)
+brand/voice-examples.md  approved and rejected lines per channel, each with why
+brand/linkedin-templates/  the account's own Campaign Manager bulk templates
 jobs/<YYYY-MM-DD>-<job-slug>/
   brief.md  plan.md  decisions.md  research/  deliverables/
 assets.md                links to Canva, Figma, Affinity and drive files

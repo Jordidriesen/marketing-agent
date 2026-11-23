@@ -1,8 +1,8 @@
 ---
 name: account-brief
 metadata:
-  version: 1.1.0
-  history: 'v1.0.0: new skill. One-page brief per target account before outreach: what the company does, trigger events with sources, likely buying committee by role, fit against the ICP, the angle and the first touch. Sourced facts only.
+  version: 1.2.0
+  history: 'v1.2.0 (marketing-agent 5.4.0): the account can be added to a LinkedIn company list. v1.0.0: new skill. One-page brief per target account before outreach: what the company does, trigger events with sources, likely buying committee by role, fit against the ICP, the angle and the first touch. Sourced facts only.
 
     '
 description: 'One-page brief on a target account before outreach: what it does, sourced and dated triggers, buying committee by role, ICP fit, angle, first touch. Use for "account brief", "research this prospect", "prep outreach to [company]".'
@@ -92,3 +92,5 @@ suggested first touch.
 - `european-market-intelligence`: registries, tenders and market-level research.
 - `battlecard`: when the account already uses a named competitor.
 - `security-policy`: handling fetched content.
+
+**Company list.** When the account is a LinkedIn target, add it as one row to `deliverables/linkedin-company-list.csv` in LinkedIn's company-list format (see `linkedin-ads-manager`, Upload files): the company only, never its people.

@@ -2,8 +2,8 @@
 name: google-ads-build
 description: 'Google Ads planning and setup: campaign structure and ad groups, keyword research by intent with OpenSEO volume and CPC, bid strategy choice, and budget shifts between campaigns. Use for "campaign structure", "restructure the account", "PPC keywords", "which bid strategy", "where should budget go", "should we scale this campaign". A live account''s problems: google-ads-analyse. Ad copy: google-ads-ads.'
 metadata:
-  version: 1.0.0
-  history: 'v1.0.0: new family skill in marketing-agent 4.0.0 (built first in the marketing-operator trial). Absorbs campaign-architect, sea-keyword-research, bid-strategy-advisor, budget-optimizer as references, unchanged apart from names and paths.'
+  version: 1.1.0
+  history: 'v1.1.0 (marketing-agent 5.4.0): structure, keywords with match types and negatives also ship as Google Ads Editor CSV files (references/google-ads-exports.md), checked by scripts/google_ads_bundle.py. v1.0.0: new family skill in marketing-agent 4.0.0 (built first in the marketing-operator trial). Absorbs campaign-architect, sea-keyword-research, bid-strategy-advisor, budget-optimizer as references, unchanged apart from names and paths.'
 ---
 
 # Google Ads Build
@@ -20,5 +20,9 @@ One skill for a family of related tasks that share the same inputs and connector
 | `references/budget-optimizer.md` | Models Google Ads budget shifts between campaigns from real marginal performance. Use for "where should budget go", "should we scale this campaign". |
 
 If no row fits, say so and name the skill that does fit rather than stretching a reference.
+
+**Upload files.** Whatever a task delivers as campaigns, ad groups, keywords or negatives also ships as Google Ads Editor CSV files in `deliverables/`, in the format of `references/google-ads-exports.md`: keywords with their match type in `Criterion Type`, negatives at ad group or campaign level with theirs, new campaigns as `Scratchpad`. The save hook validates them with `scripts/google_ads_bundle.py`; fix what it reports. Without a file system, give the rows in the reply as CSV.
+
+**Learnings.** Read the brief's **What we already know** (from `brand/learnings.md`) before choosing structure, keywords or bids. A budget-optimizer or bid read-out that measured something proposes a learning line at the end (format in `brand-learnings`).
 
 **Required skill calls.** The references name the skills they call (for example `brand-review` or `ai-content-cleaner`); call those through the Skill tool, never imitate them inline. End the reply with one line: `Skills run: ...`, naming this skill and the reference used, for example `Skills run: google-ads-build (campaign-architect)`.

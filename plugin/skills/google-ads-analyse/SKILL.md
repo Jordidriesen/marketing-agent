@@ -2,8 +2,8 @@
 name: google-ads-analyse
 description: 'Google Ads diagnosis on live data: full account audit, search terms and negatives, Quality Score, Performance Max, geo, device and ad schedule, auction insights, conversion tracking, disapprovals, ad-to-page match. Use for "audit the account", "wasted spend", "negatives", "low Quality Score", "PMax", "where is my spend going", "mobile performance", "ad schedule", "auction insights", "disapproved ads", "conversions look wrong".'
 metadata:
-  version: 1.0.0
-  history: 'v1.0.0: new family skill in marketing-agent 4.0.0 (built first in the marketing-operator trial). Absorbs full-account-audit, search-term-auditor, quality-score-doctor, pmax-decoder, geo-performance-analyzer, device-performance-analyzer, ad-schedule-analyzer, auction-insights-monitor, conversion-tracking-auditor, disapproval-diagnoser, landing-page-matcher as references, unchanged apart from names and paths.'
+  version: 1.1.0
+  history: 'v1.1.0 (marketing-agent 5.4.0): search-term audits also ship negatives as google-ads-negatives.csv; analyses that measured something propose learnings. v1.0.0: new family skill in marketing-agent 4.0.0 (built first in the marketing-operator trial). Absorbs full-account-audit, search-term-auditor, quality-score-doctor, pmax-decoder, geo-performance-analyzer, device-performance-analyzer, ad-schedule-analyzer, auction-insights-monitor, conversion-tracking-auditor, disapproval-diagnoser, landing-page-matcher as references, unchanged apart from names and paths.'
 ---
 
 # Google Ads Analyse
@@ -25,6 +25,10 @@ One skill for a family of related tasks that share the same inputs and connector
 | `references/conversion-tracking-auditor.md` | Audits Google Ads conversion tracking for gaps, double counting and misconfigured actions. Use when numbers look wrong or before trusting smart bidding. |
 | `references/disapproval-diagnoser.md` | Explains Google Ads disapprovals and limited-status assets and what to change. Use for disapproved ads, keywords or assets. |
 | `references/landing-page-matcher.md` | Checks message match between search query, ad and landing page, and flags mismatches leaking conversions. Use when click-to-conversion is weak. |
+
+**Upload files.** `search-term-auditor` also writes its negatives to `deliverables/google-ads-negatives.csv` (format: `references/google-ads-exports.md`), ad group or campaign level with the exact match type. The save hook validates the file against the keywords in the same folder when they are there. Shared-list negatives stay in the readable table.
+
+**Learnings.** An analysis that measured something (an angle, a match type, a device or schedule pattern) ends with proposed learning lines, written to `brand/learnings.md` only after a yes.
 
 If no row fits, say so and name the skill that does fit rather than stretching a reference.
 

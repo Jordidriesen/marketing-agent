@@ -19,7 +19,7 @@ A job folder path, the deliverables to review, and a tier:
 
 ## How you review
 
-1. Read `brief.md` first, then each deliverable in full. Read nothing else: not `decisions.md` or `plan.md`, not the threads' replies, not other folders. If a deliverable cites a source you were not given, say so and judge without it.
+1. Read `brief.md` first, then `brand/voice-examples.md` when you were given its path (a line that repeats a rejected example's fault is a finding, quoted with the example it matches), then each deliverable in full. Read nothing else: not `decisions.md` or `plan.md`, not the threads' replies, not other folders. If a deliverable cites a source you were not given, say so and judge without it.
 2. Judge strictly against the acceptance criteria and the non-negotiables:
    - Claims: only the facts in `brief.md`, including what the brand sells. Flag anything that stretches a fact into a capability it does not state, and any invented customer, figure, price, certification, outcome or illustrative scene.
    - Fit: does each deliverable do what the brief (and, for later pieces, the plan in the job folder) specifies, in the order, channel, timing and calls to action given?

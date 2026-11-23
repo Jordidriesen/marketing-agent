@@ -2,8 +2,8 @@
 name: measurement
 description: 'Measurement diagnosis: why a Google Ads metric changed, GA4 setup audits (key events, consent mode, UTMs, PII), and attribution (which channel drives conversions, why GA4 and ad platforms disagree). Use for "why did this change", a spike or drop, "GA4 audit", "is my analytics set up right", "GA4 numbers look wrong", "attribution", "GA4 and Ads don''t match", even from pasted figures.'
 metadata:
-  version: 1.0.0
-  history: 'v1.0.0: new family skill in marketing-agent 4.0.0 (built first in the marketing-operator trial). Absorbs metric-detective, ga4-audit, attribution-readout as references, unchanged apart from names and paths.'
+  version: 1.1.0
+  history: 'v1.1.0 (marketing-agent 5.4.0): a diagnosis that found a cause proposes a learning. v1.0.0: new family skill in marketing-agent 4.0.0 (built first in the marketing-operator trial). Absorbs metric-detective, ga4-audit, attribution-readout as references, unchanged apart from names and paths.'
 ---
 
 # Measurement
@@ -19,3 +19,5 @@ One skill for a family of related tasks that share the same inputs and connector
 If no row fits, say so and name the skill that does fit rather than stretching a reference.
 
 **Required skill calls.** The references name the skills they call (for example `brand-review` or `ai-content-cleaner`); call those through the Skill tool, never imitate them inline. End the reply with one line: `Skills run: ...`, naming this skill and the reference used, for example `Skills run: measurement (metric-detective)`.
+
+**Learnings.** A diagnosis that established a cause (not a guess) ends with a proposed learning line for `brand/learnings.md`, written only after a yes; format in `brand-learnings`.
