@@ -24,9 +24,9 @@ def load_rules() -> list[tuple]:
             continue
         parts = line.split(None, 3)
         if parts[0] == "tool" and len(parts) >= 2:
-            rules.append(("tool", re.compile(" ".join(parts[1:]), re.I)))
+            rules.append(("tool", re.compile(" ".join(parts[1:]))))
         elif parts[0] == "input" and len(parts) == 4:
-            rules.append(("input", re.compile(parts[1], re.I), parts[2], re.compile(parts[3], re.I)))
+            rules.append(("input", re.compile(parts[1]), parts[2], re.compile(parts[3])))
     return rules
 
 

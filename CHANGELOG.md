@@ -4,6 +4,14 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [5.3.2] (23/11/2026)
+
+- **Hooks run without a shell.** Both hooks use exec form (`command` plus `args`), so Claude Code starts `python3` directly instead of through bash. On Windows without Git Bash, the hooks no longer fall back to PowerShell, which caused the "Git Bash wasn't found" notice. Tested live on Linux; not yet on Windows.
+- **Save check also after PowerShell commands** that mention `deliverables`.
+- **Publish gate fails safe:** `onFailure: "block"`, and its matcher now covers only the tools in `publish-tools.txt` (built by `plugin/hooks/build_matcher.py`; a test keeps them in step). Without Python, those tools are blocked instead of let through; every other tool keeps working. Rules are now case-sensitive, as the matcher is.
+- **Session-start check:** a hook that confirms Python 3 can start, so a machine without it shows one failure at session start. Tested live by renaming the interpreter: the session check and the gate failed as designed, and an ungated write still worked.
+- **Documented requirement:** `python3` on the PATH (on Windows, the Microsoft Store Python provides it; the python.org installer does not by default).
+
 ## [5.3.1] (20/11/2026)
 
 - **Save check covers shell writes:** after a shell command that mentions `deliverables`, the hook checks every deliverable file under the working directory changed in the last two minutes.
