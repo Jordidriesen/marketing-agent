@@ -82,6 +82,22 @@ class ShellWrites(unittest.TestCase):
         self.assertEqual(code, 0, err)
 
 
+class MatcherInSync(unittest.TestCase):
+    def test_hooks_json_matcher_matches_rules(self):
+        p = subprocess.run([sys.executable, str(HOOKS / "build_matcher.py"), "--check"], capture_output=True, text=True)
+        self.assertEqual(p.returncode, 0, p.stderr)
+
+    def test_matcher_covers_only_listed_tools(self):
+        import re
+        data = json.loads((HOOKS / "hooks.json").read_text(encoding="utf-8"))
+        rx = re.compile(data["hooks"]["PreToolUse"][0]["matcher"])
+        self.assertTrue(rx.search("mcp__Brevo__send_campaign"))
+        self.assertTrue(rx.search("mcp__OpenSEO__run_site_audit"))
+        self.assertTrue(rx.search("mcp__novamira-site__mcp-adapter-execute-ability"))
+        self.assertFalse(rx.search("mcp__OpenSEO__get_audit_pages"))
+        self.assertFalse(rx.search("mcp__github__get_file_contents"))
+
+
 class PublishGate(unittest.TestCase):
     def asks(self, name: str, tool_input: dict | None = None) -> bool:
         code, out, err = run("publish_gate.py", tool_event(name, tool_input))

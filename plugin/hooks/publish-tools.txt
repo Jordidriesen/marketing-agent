@@ -3,7 +3,9 @@
 # Edit freely. One rule per line:
 #   tool  <regex on the full tool name>
 #   input <regex on the tool name>  <input field>  <regex on that field's value>
-# Regexes are Python, matched with re.search, case-insensitive.
+# Regexes are matched with re.search and are case-sensitive. They must also be valid
+# JavaScript regexes: the tool-name parts become the hook's matcher in hooks.json.
+# After any change, run: python3 plugin/hooks/build_matcher.py
 
 # Any connector: verbs that send, publish, schedule or delete
 tool  ^mcp__.+__(.*[_-])?(send|publish|schedule|delete|trash)([_-]|$)

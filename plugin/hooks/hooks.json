@@ -1,19 +1,50 @@
 {
-  "description": "marketing-agent: check deliverables on save (hard rules only) and ask before any tool that publishes, sends, spends or changes an account. Exec form (command plus args): no shell, so the hooks run the same on macOS, Linux and Windows without Git Bash.",
+  "description": "marketing-agent: check deliverables on save (hard rules only) and ask before any tool that publishes, sends, spends or changes an account. Exec form (command plus args), so no shell: the same on macOS, Linux and Windows without Git Bash. Needs python3. Without it, the session-start check reports the hook as failed, and the publish gate blocks the tools it covers.",
   "hooks": {
     "PostToolUse": [
       {
         "matcher": "Write|Edit|MultiEdit|Bash|PowerShell",
         "hooks": [
-          { "type": "command", "command": "python3", "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/check_deliverable.py"], "timeout": 30 }
+          {
+            "type": "command",
+            "command": "python3",
+            "args": [
+              "${CLAUDE_PLUGIN_ROOT}/hooks/check_deliverable.py"
+            ],
+            "timeout": 30
+          }
         ]
       }
     ],
     "PreToolUse": [
       {
-        "matcher": "mcp__.*",
+        "matcher": "(?:^mcp__.+__(.*[_-])?(send|publish|schedule|delete|trash)([_-]|$))|(?:^mcp__Zapier__execute_zapier_write_action$)|(?:^mcp__Zapier__(create|update|delete|enable|disable|manage)_zapier)|(?:^mcp__SEOgets__(create|update|delete|add|remove|setup|prioritize)_)|(?:^mcp__Google_Drive__request_access$)|(?:^mcp__OpenSEO__(run_site_audit|run_rank_tracker|create_rank_tracker|run_ai_visibility_check|set_ai_visibility_schedule|save_ai_visibility_tracker|set_report_sharing|submit_indexnow_urls)$)|(?:__mcp-adapter-execute-ability$)",
         "hooks": [
-          { "type": "command", "command": "python3", "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/publish_gate.py"], "timeout": 10 }
+          {
+            "type": "command",
+            "command": "python3",
+            "args": [
+              "${CLAUDE_PLUGIN_ROOT}/hooks/publish_gate.py"
+            ],
+            "timeout": 10,
+            "onFailure": "block",
+            "statusMessage": "marketing-agent publish gate"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": [
+              "${CLAUDE_PLUGIN_ROOT}/hooks/session_check.py"
+            ],
+            "timeout": 10,
+            "statusMessage": "marketing-agent: checking that Python 3 can run the save check and publish gate"
+          }
         ]
       }
     ]
