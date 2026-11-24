@@ -1,8 +1,8 @@
 ---
 name: launch-video
 metadata:
-  version: 1.1.0
-  history: 'v1.1.0: the HyperFrames by HeyGen connector is the first route when it is connected, the npx CLI stays the fallback; generated live-action clips are pointed to Canva create-video or a Weave video model. v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.0.0: new skill. An original workflow for short product and brand videos (teaser, continuous-take feature demo, logo sting), written in this library''s terms with the brand kit as the source of voice, colour and type. Structure and several rules (project inspection rubric, reading-time floors, poster frame as frame 0, share copy) are adapted from latent-spaces/brag (MIT, see LICENSE-brag.txt). The continuous-take idea is inspired by feitangyuan/onetake, which is licensed PolyForm Noncommercial and is therefore neither bundled nor copied. No audio files are bundled.
+  version: 1.2.0
+  history: 'v1.2.0: companion skills used only when installed: stageshow (MIT) builds the product UI scenes of a feature demo, ffmpeg-skill (MIT) edits existing footage and handles delivery (cut-downs, captions, reframing, loudness, platform exports). Both fall back to the current route when missing. v1.1.0: the HyperFrames by HeyGen connector is the first route when it is connected, the npx CLI stays the fallback; generated live-action clips are pointed to Canva create-video or a Weave video model. v1.0.1: required skill calls stated up front; the follow-up skills are called through the Skill tool, never imitated inline. v1.0.0: new skill. An original workflow for short product and brand videos (teaser, continuous-take feature demo, logo sting), written in this library''s terms with the brand kit as the source of voice, colour and type. Structure and several rules (project inspection rubric, reading-time floors, poster frame as frame 0, share copy) are adapted from latent-spaces/brag (MIT, see LICENSE-brag.txt). The continuous-take idea is inspired by feitangyuan/onetake, which is licensed PolyForm Noncommercial and is therefore neither bundled nor copied. No audio files are bundled.
 
     '
 description: Plans and builds a 10 to 30 second product teaser, feature demo or logo sting from the product's screens or brand kit. Use for "launch video", "product teaser", "logo animation".
@@ -25,6 +25,18 @@ company. If a scene could be swapped into a competitor's video unchanged, rewrit
   Apache-2.0, needs Node 22 and FFmpeg). Check it works with `npx hyperframes doctor` before promising a
   file. If neither works, deliver the plan, the storyboard and the composition source, and say a render
   is still to be done.
+- **Companion skills, used only when installed** (check the skill list; never imitate them, and
+  name the fallback when one is missing):
+  - **`stageshow`** (MIT): the product UI scenes of a feature demo or teaser, as a simplified view
+    of the real product with a cursor doing one thing per beat. It follows the same rules as this
+    skill: real screens, real words, nothing the product does not do. Render its scenes as clips or
+    stills and use them in the composition. Never ship its bundled app icons. Fallback: rebuild the
+    real screens in the Hyperframes composition (Step 4).
+  - **`ffmpeg-skill`** (MIT, local, no API keys): edits footage that already exists (a webinar,
+    a screen recording, a customer video) into cut-downs, and handles delivery: captions, reframing
+    to 9:16 or 1:1, loudness, and exports per platform, checked with its own probe and verify
+    steps. It needs FFmpeg on the machine and downloads a Whisper model the first time it
+    transcribes. Fallback: the Hyperframes render and plain `ffmpeg` commands, said as such.
 - **Not this skill:** a generated live-action clip (a product in a scene, a presenter) goes through
   Canva's `create-video` route in `canva-workflow` or a Weave video model in `figma-weavy-workflow`.
 - **No music or sound effects ship with this skill.** Use a track the user supplies and is licensed to use,
@@ -137,6 +149,9 @@ Follow `references/delivery.md`: preview, render, pick a **settled** poster fram
 mid-transition), bake the poster in as frame 0 so every platform's idle thumbnail is the poster, write one
 caption in `share-copy.txt`, and report where the files are.
 
+Cut-downs and vertical or square versions of the render, and captions burned in or as an `.srt`,
+go through `ffmpeg-skill` when it is installed; report its verify result with the files.
+
 Run `ai-content-cleaner` in CLEAN mode on the on-screen text and the caption, then `brand-review` on
 anything that makes a claim. Both come before delivery.
 
@@ -169,3 +184,4 @@ Keep chat framing short. The files carry the work.
 - `figma-weavy-workflow`: generated or composited imagery, not time-based video.
 - `brand-review`, `ai-content-cleaner`: the gates before delivery.
 - `social-content-writer`: organic posts that carry the finished video.
+- `stageshow`, `ffmpeg-skill`: companion skills, used only when installed (see What to state up front).

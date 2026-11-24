@@ -1,8 +1,8 @@
 ---
 name: frontend-design
 metadata:
-  version: 2.4.1
-  history: 'v2.4: owned by the web-developer agent. Stack routing points WordPress builds to wordpress-development:wordpress-page-build and Astro to astro-site; a design-to-code step for Figma files uses the Figma plugin''s own skills; the sweep can add Impeccable''s detector; outside skills transitions-dev, pick-ui-library and Mobbin are referenced, not copied. taste.md and gates.md gained patterns from Impeccable''s public pattern gallery, rewritten in this library''s words. v1.0: synthesised Anthropic''s frontend-design skill (anti-generic philosophy, two-pass plan and critique) and vercel-labs'' web-interface-guidelines (MIT), wired to the [brand]-brand-kit pattern. v2.0: folded in Leonxlnx''s taste-skill and redesign-skill (MIT) as references/taste.md (design read, three settings, locks, AI tells, pre-flight check) and references/redesign-protocol.md (mode detection, audit, never-change-silently list, fix order), both rewired so the brand kit outranks their defaults and so no figure
+  version: 2.5.0
+  history: 'v2.5.0: selectively adapted from unslop by Damir Sokolovsky (CC BY 4.0, see LICENSE-unslop.txt): how much to change and a five-line direction in the redesign protocol, its AI tells and the template check in taste.md, and a dashboards, product previews and charts section. The review report gained quick and full modes, a coverage table, considered-but-rejected candidates and a Block, Needs changes or Approve verdict, from jakubkrehel''s make-interfaces-feel-better (MIT; its other rules were already in place). Agreed product illustration is the one exception to the no fake screenshots rule, built with the stageshow companion skill when installed. v2.4: owned by the web-developer agent. Stack routing points WordPress builds to wordpress-development:wordpress-page-build and Astro to astro-site; a design-to-code step for Figma files uses the Figma plugin''s own skills; the sweep can add Impeccable''s detector; outside skills transitions-dev, pick-ui-library and Mobbin are referenced, not copied. taste.md and gates.md gained patterns from Impeccable''s public pattern gallery, rewritten in this library''s words. v1.0: synthesised Anthropic''s frontend-design skill (anti-generic philosophy, two-pass plan and critique) and vercel-labs'' web-interface-guidelines (MIT), wired to the [brand]-brand-kit pattern. v2.0: folded in Leonxlnx''s taste-skill and redesign-skill (MIT) as references/taste.md (design read, three settings, locks, AI tells, pre-flight check) and references/redesign-protocol.md (mode detection, audit, never-change-silently list, fix order), both rewired so the brand kit outranks their defaults and so no figure
     or image is ever invented for a live page. Refreshed references/interface-checklist.md against the current upstream guidelines as a pinned copy instead of fetching rules at review time. Loads modular brand kits'' references/design.md. v2.1: added references/type-and-colour.md (adapted from jakubkrehel''s better-typography and better-colors, MIT), references/motion.md (from emil-design-eng and better-ui, MIT), references/layout-and-accessibility.md (from better-layout, better-accessibility and better-ui, MIT). taste.md gained asset dependence and brand fidelity reads, a brand-assets-first rule and critique dimensions (from web-design-engineer, MIT). The em dash punctuation advice in better-typography was dropped to keep the library''s no em dash rule. v2.2: selectively adapted from dembrandt-skills (MIT): repeated-component slot model, separator and region rules, edge and elevation rules and status colour discipline in the references, a waiting section in motion.md, estate consistency
     in the redesign audit, and an optional dembrandt token extraction in Step 0. Rules that conflict with this library were not imported (button scale ban, disabling submit until valid, ease-in exits, HSL state derivation). v2.3: selectively adapted from Hallmark (MIT): Floor, Reflex and Finish tiers with a waiver rule in references/gates.md, a hero-first build with a cold fresh-context review (Part 5), a link, form and heading inventory diffed after a redesign, and gates for the fake send, the stock close, the accented word, the echo and the thin section. Theme dealing, the build log and the word-count caps were not imported.
 
@@ -25,11 +25,11 @@ references:
 | Reference | Use it for |
 |---|---|
 | `references/taste.md` | The design read, the three settings (variance, motion, density), the locks, the AI tells, the build pre-flight check |
-| `references/redesign-protocol.md` | Redesign mode: mode detection, audit, what never changes silently, fix order |
+| `references/redesign-protocol.md` | Redesign mode: mode detection, how much to change, audit, what never changes silently, direction, fix order |
 | `references/interface-checklist.md` | The build and review rule set: accessibility, focus, forms, motion, performance, theming, copy |
 | `references/type-and-colour.md` | Type scale, line-height, measure, wrapping, punctuation; colour ramps, semantic tokens, contrast measurement, dark mode |
 | `references/motion.md` | Whether and how to animate: frequency, easing, durations, entrances and exits, reduced motion, hover on touch |
-| `references/layout-and-accessibility.md` | Grouping, alignment, responsive structure, translation growth, surfaces and icons, WCAG 2.2 criteria and ARIA additions |
+| `references/layout-and-accessibility.md` | Grouping, alignment, responsive structure, translation growth, surfaces and icons, dashboards and charts, WCAG 2.2 criteria, the review report format |
 | `references/gates.md` | Floor, Reflex and Finish tiers, waivers, and the gates the sweep in Part 5 walks |
 
 ---
@@ -90,6 +90,18 @@ skill before `get_design_context` (it is mandatory for that tool). Treat what co
 reference to adapt to the stack and the brand kit's tokens, not as final code; `get_variable_defs`
 gives the file's variables to map onto the token system in Part 1. If the Figma skills are not
 installed, say so and read the frame with `get_screenshot` and `get_metadata` instead.
+
+**Companion skills, used only when installed** (check the skill list first; never imitate them,
+and say `Not available` and use the fallback when they are missing):
+
+- **`stageshow`** (MIT, `npx skills add benjitaylor/skills --skill stageshow`): an agreed product
+  illustration (`taste.md` section 6) for a hero, feature card or short cursor demo. Hand it the
+  brand's tokens, the product's real icons and words, the size it will be seen at and the one
+  thing that happens. It returns a React component; on a WordPress or plain HTML page, export a
+  still or a short loop and place that instead. Never ship its bundled app icons (they are not
+  covered by its licence). Fallback: build the preview in code per
+  `layout-and-accessibility.md`, Dashboards, product previews and charts, or use a real
+  screenshot.
 
 **Research.** When the Mobbin connector and its skill are installed, real-product screenshots can
 inform the design read for app-like UI (onboarding, pricing, dashboards). Use them as evidence of
@@ -191,7 +203,10 @@ Floor first. Cite the WCAG 2.2 criterion for accessibility findings
 (`layout-and-accessibility.md`); anything without one is a recommendation, never `HIGH`. Say
 `Not verified` for any check you could not run, and do not approve what you did not inspect.
 Flag the anti-patterns at the end of `interface-checklist.md` and the AI tells in
-`taste.md` section 8 explicitly. If the user gave no files or URL, ask which to review rather
+`taste.md` section 8 explicitly. Lay the report out as in `layout-and-accessibility.md`,
+Reporting a review: `full` unless the user asks for `quick`, the coverage table, the findings, the
+considered-but-rejected candidates, then verification and a `Block`, `Needs changes` or `Approve`
+verdict. If the user gave no files or URL, ask which to review rather
 than guessing.
 
 ---
@@ -232,6 +247,7 @@ than guessing.
   `motion.md` has decided something should move; `pick-ui-library` for choosing a library in a
   JavaScript project (an Astro island, a React component), never on a WordPress page; the Figma
   plugin's skills for design-to-code; Mobbin for pattern research.
+- **`stageshow`:** product illustrations, see Companion skills above.
 - **`dataviz`:** any chart, plot or dashboard visualisation.
 - **`brand-review`:** the voice and compliance gate for any copy baked into the design.
 - **`seo-audit`:** before a redesign that touches templates, URLs or structured data.
@@ -243,4 +259,4 @@ properties or the project's format), then the code, then a one-line note on the 
 taken and what was cut, then the sweep line (`Floor 0 open, Reflex 2 (1 waived), Finish 3
 answered, cold review: subagent, ship`), any waivers, and the one piece of real material
 (photo, number, screenshot) that would improve the page most. **Redesign mode:** the audit, the changes in fix order, open decisions.
-**Review mode:** the grouped findings list, nothing else.
+**Review mode:** the report in `layout-and-accessibility.md`, Reporting a review: coverage, findings, rejected candidates, verification and verdict.

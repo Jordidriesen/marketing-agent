@@ -173,6 +173,14 @@ Unless the brief or the brand asks for them:
   customer or project.
 - No fake product screenshots built from styled divs. Use a real screenshot, a real component,
   or editorial photography.
+- **Product illustration is the one exception**, and only when the plan names it and the user
+  agrees: a simplified, plainly illustrative view of the brand's own product (a hero beside copy,
+  a feature card, a short cursor demo), built from its real tokens, icons, chrome and words, with
+  placeholder bars where words don't carry the story. It shows only what the product really does
+  and what the page already claims. Never a screen or feature that does not exist, never a
+  competitor's product, never invented customers or figures. When the stageshow skill is
+  installed, build it with stageshow (see `SKILL.md`, Companion skills); otherwise follow
+  `layout-and-accessibility.md`, Dashboards, product previews and charts.
 - Logo walls: real logos only, with permission to show them, nothing printed underneath.
 
 ---
@@ -224,6 +232,28 @@ library's own words; check the gallery for the current list:
 - Decorative grid-line or striped backgrounds outside maps, canvases or measurement tasks.
 - Crude hand-drawn or placeholder-style illustrations, and torn or jagged image masks.
 - Text or images half hidden under a near-opaque overlay.
+
+Also from Damir Sokolovsky's [unslop](https://github.com/heydamir/unslop) signs list (CC BY 4.0, see
+`../LICENSE-unslop.txt`), rewritten here; a brand kit that sets one of these on purpose wins:
+
+- Emoji as nav icons, label decoration, status or inside counts (`18 👤`); a sparkle for anything
+  AI; `PRO`, `New ✨` or `Beta 🚀` badges everywhere.
+- A pill badge above the hero headline (`✨ Introducing X 2.0`) that is not real news.
+- Uppercase labels with wide tracking (`PAID THIS MONTH`) where the kit does not ask for them;
+  headings at 800 or 900; negative letter spacing on small text.
+- Many near-identical tints of one hue for text, instead of three text roles from one ramp.
+- Glowing pills for counts, plans, shortcuts or status; glass cards with a white inner highlight
+  and a coloured shadow.
+- Unsourced social proof (`Trusted by 10,000+ teams`, avatar dots, five stars): ask whether it is
+  real, then make it quiet and specific or remove it.
+- A logo as a gradient tile with a sparkle, or a glossy orb as the mark.
+- Glossy 3D blobs, nebulas, robots, glowing brains or circuit lines as the visual for anything AI;
+  text or fake buttons baked into an image.
+- `animate-pulse`, breathing glows or floating loops on things that are not live; `hover:scale`
+  on cards.
+- **The template check.** After the clean-up, swap the product name for a competitor's. If the
+  screen still fits, the direction is not doing its job: push it harder in the copy, the visual
+  and one signature detail (`redesign-protocol.md`, Direction).
 
 ---
 

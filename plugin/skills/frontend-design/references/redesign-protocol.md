@@ -3,9 +3,11 @@
 **Contents**
 
 - 1. Detect the mode first
+- 1b. Decide how much to change
 - 2. Audit before touching anything
 - 3. Never change silently
 - 4. Design audit checklist
+- 4b. Direction (overhaul and greenfield)
 - 5. Fix in this order
 - 6. Rules while changing things
 - 7. Verify nothing went missing
@@ -29,6 +31,19 @@ rules this library already follows.
 
 If it isn't clear, ask once: "Should this redesign keep the existing brand look, or start
 visually from scratch?" Misreading the mode is the biggest source of bad redesigns.
+
+---
+
+## 1b. Decide how much to change
+
+After the audit in section 2, read it honestly before planning. Adapted from Damir Sokolovsky's
+[unslop](https://github.com/heydamir/unslop) (CC BY 4.0, see `../LICENSE-unslop.txt`).
+
+| Audit shows | Do |
+|---|---|
+| **Heavy:** many tells across colour, type, icons and copy (`taste.md` section 8) | The full fix order in section 5, with a direction (section 4b) when the mode is overhaul |
+| **Light:** mostly designed, a few tells left | Polish only: fix what the audit found, keep the palette, type, layout and visuals. Bigger ideas go in the handover as suggestions, not changes |
+| **None** | Say so plainly. Suggest two or three refinements at most, with exact values, and apply them only on a yes. Never change a good screen just to make it different |
 
 ---
 
@@ -152,6 +167,26 @@ Work through these and list every finding before fixing.
 
 ---
 
+## 4b. Direction (overhaul and greenfield)
+
+Before changing anything in an overhaul, write five lines, derived from what the product does and
+who it is for, never from what is trending (adapted from unslop, CC BY 4.0). Show them with the
+audit and wait for a yes; a direction changed later means redoing every pass.
+
+- **Product:** what it does and for whom, in one plain sentence.
+- **Character:** two or three concrete words (`calm, exact, a little warm`). Not clean, modern,
+  sleek, minimal or premium; they describe every template.
+- **World:** the place or material the product belongs to (a scheduling tool near rosters, shift
+  boards and early mornings). It sets the tint of the neutrals, the accent and the visual.
+- **Moments:** the one or two places that get rich colour and detail (the main chart, a rendered
+  object, real product imagery). Everything else stays quiet.
+- **Signature:** one small detail only this product would have, used consistently.
+
+The brand kit outranks all five: a real logo, colour or typeface is kept and the direction is built
+around it. In preserve mode the direction is the existing brand, read in section 2.
+
+---
+
 ## 5. Fix in this order
 
 Stop when the brief is satisfied. Each step is lower risk than the next.
@@ -164,6 +199,10 @@ Stop when the brief is satisfied. Each step is lower risk than the next.
 5. **Motion layer:** only what the settings and the brief justify.
 6. **Hero and key sections:** recompose the top of the page using `taste.md`.
 7. **Component replacement:** only where an existing block can't be saved.
+
+Work in passes: finish one step across the whole page before starting the next, so the rhythm
+is set before colour and colour before motion. On a hero, settle the headline copy (through
+`web-content-pipeline`) before its type size and placement, since its length decides both.
 
 The decision in between: if IA, content and SEO are sound, stay with steps 1 to 4 (most of the
 value for a fraction of the risk). If the problems are structural (broken IA, no system, broken

@@ -4,6 +4,16 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [5.5.0] (24/11/2026)
+
+Design and video skills reviewed against six outside skills.
+
+- **`frontend-design` 2.5.0:** from `unslop` (CC BY 4.0, credited in `LICENSE-unslop.txt`): a how-much-to-change step (heavy, light or no clean-up) and a five-line direction (product, character, world, moments, signature) in the redesign protocol, working in passes, its AI tells and a template check in `taste.md`, and a new section on dashboards, product previews and charts. From `make-interfaces-feel-better` (MIT): the review report now has `quick` and `full` modes, a coverage table, considered-but-rejected candidates and a `Block`, `Needs changes` or `Approve` verdict; its other rules were already in place.
+- **Product illustration:** the one exception to the no fake screenshots rule. A simplified view of the brand's own product, agreed in the plan, built from its real tokens, icons and words, never showing a screen, feature, customer or figure that does not exist. Built with `stageshow` when it is installed.
+- **Companion skills:** `ffmpeg-skill` (editing existing footage and video delivery) and `stageshow` (product illustrations and UI scenes) are routed to from `launch-video` 1.2.0, `frontend-design`, the `graphic-designer` and `web-developer` profiles and the director's new Design and video discipline notes, used only when installed. The README lists how to install them.
+- **Not adopted:** `ghost-editor` (macOS-only rendering, sends frames to Google Gemini) and `bang-motion` (overlaps the Hyperframes route, loads its libraries from a CDN).
+- **`director-playbook` 3.5.1.**
+
 ## [5.4.0] (23/11/2026)
 
 Upload-ready files and a learning loop, from the research into how marketing teams run AI.

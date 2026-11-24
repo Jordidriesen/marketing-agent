@@ -43,8 +43,9 @@ move it into that client's brand kit `design.md`.
   measure do not.
 - Text painted under another element (a sticky bar, a card or an image covers a line of it).
 - A button label or primary nav link wrapping at any width.
-- No card inside a card, no emoji as an icon, no hand-drawn browser bar or OS window, no
-  purple-to-blue gradient (`taste.md` section 3).
+- No card inside a card, no emoji as an icon, no hand-drawn browser bar or OS window (except
+  inside an agreed product illustration, `taste.md` section 6), no purple-to-blue gradient
+  (`taste.md` section 3).
 - On new builds, no colour or `font-family` literal outside the token block.
 - A dropdown, tooltip or popover clipped by its container's `overflow`.
 
