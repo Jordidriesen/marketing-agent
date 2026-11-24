@@ -2,8 +2,8 @@
 name: astro-site
 description: 'Builds and changes marketing sites in Astro: project structure, layouts and components, content collections, images, islands with as little JavaScript as possible, i18n routes, SEO and schema, build and deploy. Use for "Astro site", "build this in Astro", "add a page to the Astro project". Design read and tokens: frontend-design.'
 metadata:
-  version: 1.0.0
-  history: 'v1.0.0: new skill for the web-developer agent. Version-agnostic on purpose: it reads the project''s Astro version and the matching docs before using an API, because Astro renames and moves APIs between major versions.
+  version: 1.1.0
+  history: 'v1.1.0: Modern Web Guidance as a companion skill for platform features (view transitions, popovers, dialogs, container queries) and the project''s own design system or AGENTS.md rules respected for components. v1.0.0: new skill for the web-developer agent. Version-agnostic on purpose: it reads the project''s Astro version and the matching docs before using an API, because Astro renames and moves APIs between major versions.
 
     '
 argument-hint: <the project or repo, the page or feature, the brand>
@@ -52,6 +52,11 @@ New project: scaffold with `npm create astro@latest` only on the user's yes, in 
 - **Images.** Astro's image components for local images (sizes, formats, lazy loading, width and height
   set); real alt text; the hero image eager and given priority. No invented images that could pass as the
   client's real work.
+- **Platform features.** When `modern-web-guidance` is installed, search it before building a
+  dialog, popover, tooltip, view transition, container query layout or form validation, and use its
+  guide; it decides the implementation, `frontend-design` the look. A project that already uses a
+  component library or has UI rules in `AGENTS.md` or `CLAUDE.md` follows them; never add one the
+  project does not have unless the user asks.
 - **Motion.** Per `frontend-design`'s `motion.md`; `transitions-dev` snippets when installed. Page
   transitions only when the brief asks, with a reduced-motion fallback.
 - **i18n.** Astro's i18n routing for multi-language sites (for example `/nl-be/`, `/fr-be/`), `hreflang`

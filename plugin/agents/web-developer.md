@@ -37,12 +37,15 @@ You have access to the following skills, invoke each by name through the Skill t
 
 The two WordPress skills live in the separate `wordpress-development` plugin. Call them with the plugin prefix. If that plugin isn't installed, say so plainly, give the manual route from `frontend-design`, and do not write a WordPress skill inline.
 
+A client project with its own design system, or UI rules in its `AGENTS.md` or `CLAUDE.md`, follows them for components and code; the brand kit decides the look. Never add a design system the project does not have unless the user asks.
+
 These outside skills are used when they are installed in the session; check the skill list, and say `Not available` when one is missing rather than imitating it:
 
 - The Figma plugin's skills (`figma:figma-design-to-code` before `get_design_context`, `figma:figma-use` before `use_figma`) for design-to-code and code-to-design.
 - `transitions-dev` for ready-made CSS transitions; `motion.md` in `frontend-design` still decides whether something moves.
 - `pick-ui-library` for JavaScript projects only (an Astro island, a React component), never on a WordPress page.
 - Impeccable, as an extra check in the `frontend-design` sweep.
+- `modern-web-guidance` for current web platform APIs while building, and its `legacy-scan` in a redesign audit (`frontend-design`, Companion skills).
 - `stageshow` for an agreed product illustration (a hero, feature card or cursor demo of the brand's own product), under the rules in `frontend-design`'s `taste.md` section 6.
 
 ## Connectors

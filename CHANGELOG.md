@@ -4,6 +4,12 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [5.5.1] (24/11/2026)
+
+- **Modern Web Guidance as a companion skill** (Apache-2.0): `frontend-design` 2.5.1, `astro-site` 1.1.0 and the `web-developer` profile search it before building patterns the platform now handles natively, and the redesign audit runs its `legacy-scan` when the code is in reach. It decides the implementation, never the look. Listed in the README.
+- **Project rules respected:** a client project's own design system or UI rules in `AGENTS.md` or `CLAUDE.md` decide components and code; the brand kit decides the look; conflicts are reported. No design system is added to a project that has none unless asked.
+- **Not adopted:** Astryx (Meta), a React 19 and StyleX design system that only fits projects built on it; the project-rules line covers a client app that uses it.
+
 ## [5.5.0] (24/11/2026)
 
 Design and video skills reviewed against six outside skills.
