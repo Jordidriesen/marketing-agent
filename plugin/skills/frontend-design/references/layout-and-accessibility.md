@@ -4,6 +4,7 @@
 
 - Layout
 - Surfaces and icons
+- Dashboards, product previews and charts
 - Accessibility: cite the criterion
 - Reporting a review
 
@@ -172,6 +173,59 @@ gives instances that look identical.
 
 ---
 
+## Dashboards, product previews and charts
+
+For app screens, dashboards and the product preview inside a hero or feature section. Adapted and
+rewritten from Damir Sokolovsky's [unslop](https://github.com/heydamir/unslop) (CC BY 4.0, see
+`../LICENSE-unslop.txt`). The brand kit's tokens win wherever they set a value.
+
+- **Quiet chrome, rich moments.** Surfaces, borders, navigation and text stay in the neutral ramp
+  and the one accent. Colour, material and detail go into one or two moments of content: the main
+  chart, a rendered object the product deals with (a payment card, a receipt, a schedule), real
+  product imagery. A dashboard whose background reads as a hue has gone too far; landing pages may
+  tint their surfaces further.
+- **Real app proportions.** The shell fills the viewport: a sidebar of 240 to 280 px and fluid
+  content capped around 1440 to 1600 px. Never shrink an app into a narrow centred column. A
+  preview drawn as a window keeps visible desktop proportions inside its frame.
+- **Navigation is the densest part.** Rows 32 to 36 px tall with 2 to 4 px between them, icons in
+  one column, labels on one line. A section label sits closer to its own items than to the
+  section above (about 24 above and 8 below). Measure the sidebar after every spacing change; it
+  is where spacing breaks most often.
+- **One main chart.** It is clearly the largest data element, drawn with care. Anything else that
+  shows data is smaller and different in kind (a ranked list with thin bars, a short table), never
+  a second chart of the same size.
+- **One accent per chart.** The current period, the tracked line or the plan that grew gets the
+  accent; everything else sits in neutral steps of the ramp. Several hues only when series must be
+  told apart, and even then one leads. Muted grid, muted labels (mono where the kit has one),
+  sentence-case axis labels.
+- **Chart type follows the data.** A trend is a line, a comparison is bars, a share is one stacked
+  bar or a list with bars, a single goal is a progress bar.
+- **Stat cards are numbers.** A label, a figure and a change with what it compares to (`+12% vs
+  last month`). No sparklines, tallies, mini bars or icons added to fill them. A card may hold a
+  real-looking object only when it is the very thing its number counts.
+- **Vary the sizes.** A row of equal cards with the same content reads as a template. Give the
+  grid a rhythm: three or four compact stats above one wide chart, or a wide chart beside a
+  narrow list.
+- **Mock data looks real.** Plausible names and figures in one format across the screen
+  (`€48,210` next to `€124,860`, not `€124,860.40`), with tabular figures. Never `[X]`,
+  `123,456` or lorem ipsum in a preview. Showing what the page already claims is not inventing a
+  feature; inventing a feature, a customer or a figure is (`taste.md` section 7).
+- **The active state** is a small surface step with a hairline highlight, not a gradient or a
+  glow. Counts and meta are quiet text, not glowing pills; shortcuts are small keycaps.
+- **Mobile simplifies, never zooms.** A dense preview drops rows and columns at phone width; no
+  text in it goes below 11 px.
+
+| Pattern | Fix |
+|---|---|
+| Rainbow, glowing or pill-shaped bars in one series | One accent on the bar that matters, neutral steps for the rest |
+| Every chart in shades of the accent | Neutral steps, accent on one thing |
+| Sparkline or mini bar in every stat card | The number, its label and its change |
+| Two charts of the same size side by side | One main chart and a smaller list or table |
+| `+12%!!` or a change with no reference | `+12% vs last month` |
+| Greeting headline (`Welcome back, Sam! 👋`) | The page or period as the title (`October 2026`) |
+
+---
+
 ## Accessibility: cite the criterion
 
 A finding cites a WCAG 2.2 Level A or AA criterion by number, or a concrete task an
@@ -237,14 +291,46 @@ the one-`<h1>` outline, the 44 px and 40 px target sizes) is a recommendation an
 
 ## Reporting a review
 
-Group findings under the principle they break, most severe first, one row per root cause listing
-every place it appears. Always `HIGH`: a missing accessible name, a missing focus indicator, a
-pointer path with no keyboard path, motion that ignores reduced motion, clipping or overlap at
-320 px or 200 percent zoom, content past a scroll edge with no cue, and meaning carried by colour
-alone.
+Structure adapted from jakubkrehel's
+[make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) (MIT).
+
+**Mode.** `full` unless the user asks for `quick`.
+
+| Mode | Coverage | Findings |
+|---|---|---|
+| `quick` | The primary user path and its most-used states; `HIGH` and `MEDIUM` only | Up to 5 |
+| `full` | The whole requested scope | Up to 15 |
+
+**1. Scope and coverage.** State the mode, the exact scope, the stack and styling system, and any
+boundary. Then one row per area, so nothing uninspected looks reviewed:
+
+| Area | Evidence inspected | Result |
+|---|---|---|
+| Type and colour | Files, components, states or checks | Findings count, `Clear`, or `Not reviewed` and why |
+
+Cover type and colour, layout and surfaces, icons, motion, accessibility and performance.
+
+**2. Findings.** Group under the principle they break, most severe first, one row per root cause
+listing every place it appears. Never pad to reach the cap. Always `HIGH`: a missing accessible
+name, a missing focus indicator, a pointer path with no keyboard path, motion that ignores reduced
+motion, clipping or overlap at 320 px or 200 percent zoom, content past a scroll edge with no cue,
+and meaning carried by colour alone. `MEDIUM` is a noticeable usability or consistency problem;
+`LOW` is isolated polish and appears in `full` mode only.
 
 | Severity | Location | Before | After | Why (principle or criterion) |
 |---|---|---|---|---|
 
-Mark any check you could not run as `Not verified` (no browser, no accessibility tree), and never
-approve coverage you did not inspect.
+Location is `path/to/file:line`, or the exact screen and component when there is no source.
+
+**3. Considered but rejected.** One to three candidates in `quick`, two to five in `full`, each with
+the reason it was left alone (for example: the shadow matches the shared surface token, so
+changing one card would break consistency). Real candidates only; if there are fewer, say so.
+
+**4. Verification and verdict.** List the commands or interactions run and what they showed. Walk
+hover, focus, active, loading and empty; when motion is involved, replay it at 10 percent speed in
+the browser's animation panel. Mark any check you could not run as `Not verified` (no browser, no
+accessibility tree), and never approve coverage you did not inspect. Then the verdict: `Block` if
+any `HIGH` remains, `Needs changes` if only `MEDIUM` or `LOW` remain, `Approve` only when nothing
+actionable remains, with every unverified check listed beside it. With no findings, say "No
+actionable interface findings", give the verification and the rejected candidates, and end with
+`Approve`.

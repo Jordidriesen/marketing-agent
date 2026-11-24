@@ -1,0 +1,19 @@
+Parts of this skill are adapted from unslop by Damir Sokolovsky (@heydamir).
+
+Source:   https://github.com/heydamir/unslop
+Author:   Damir Sokolovsky, https://x.com/heydamir
+Licence:  Creative Commons Attribution 4.0 International (CC BY 4.0)
+          https://creativecommons.org/licenses/by/4.0/
+
+Adapted material, rewritten and shortened in this library's own words, with the brand kit taking
+precedence over every value:
+
+- references/redesign-protocol.md: section 1b (how much to change) and section 4b (direction),
+  and the note on working in passes.
+- references/taste.md: the unslop entries in section 8 (AI tells) and the template check.
+- references/layout-and-accessibility.md: Dashboards, product previews and charts.
+
+Changes: rewritten in British English, merged with existing rules, values that conflict with brand
+kits made subordinate to them, the story video, image generation, RTL rules and copy rules (covered
+by ai-content-cleaner and web-content-pipeline) not adopted. No unslop scripts or images are
+bundled. unslop is provided as is, without warranties; see the licence for the full terms.

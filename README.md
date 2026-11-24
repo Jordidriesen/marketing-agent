@@ -37,6 +37,15 @@ To use a single skill without the plugin, copy its folder from `plugin/skills/` 
 
 Connect the tools you use in Claude's connector settings; see [`plugin/CONNECTORS.md`](plugin/CONNECTORS.md). Skills say plainly when a connector they need isn't there rather than estimating data.
 
+### Companion skills (optional)
+
+Two outside skills that the design and video work uses when they are installed. They are not bundled: install them yourself, after reading their repositories. Without them the skills say `Not available` and use their own fallback.
+
+| Skill | Used by | What it adds | Install |
+|---|---|---|---|
+| [`ffmpeg-skill`](https://github.com/kajisho5/ffmpeg-skill) (MIT) | `launch-video`, `graphic-designer` | Editing footage you already have: cut-downs, captions, reframing to 9:16, loudness, exports per platform. Local, no API keys; needs FFmpeg, Node 16+ and Python 3.10+, and downloads a Whisper model the first time it transcribes | `claude plugin marketplace add kajisho5/ffmpeg-skill`, then `/plugin install ffmpeg-skill@ffmpeg-skill` |
+| [`stageshow`](https://benji.org/stageshow) (MIT) | `frontend-design`, `launch-video`, `web-developer` | Simplified product illustrations and cursor demos of the brand's own product, as React components. Needs Node; its bundled app icons are not covered by its licence and never ship | `npx skills add benjitaylor/skills --skill stageshow` |
+
 ## Team and thread profiles
 
 See [`plugin/README.md`](plugin/README.md) for when to use `/team`, the six thread profiles, and the order a full job runs in: intelligence and research, then strategy, then execution, then localisation, then reporting.
@@ -159,7 +168,7 @@ WordPress page building and plugin work come from the separate `wordpress-develo
 
 ## Attribution
 
-`brand-review`, `content-creation`, `newsletter-writer`, `press-release-writer` and `social-content-writer` started from Anthropic's marketing plugin and were substantially reworked. `lead-magnets` is adapted from a generic lead-magnet skill (see its `metadata.history`). `european-market-intelligence` is a Europeanised merge of two ID8Labs skills. `content-translate` is adapted from a third-party translate module. `logo-design` is adapted from kaankiziltug's `logo-design-skill` (MIT; its trademarked reference logo library is not included). `launch-video` adapts parts of latent-spaces' `brag` (MIT) and is inspired by feitangyuan's `onetake`, which is not bundled because it is licensed PolyForm Noncommercial. `ad-creative-matrix` writes up the 50-5-3 ad method in its own words. `frontend-design` synthesises Anthropic's `frontend-design`, vercel-labs' `web-interface-guidelines` (MIT) and Leonxlnx's `taste-skill` and `redesign-skill` (MIT). See each skill's `metadata.history` where present.
+`brand-review`, `content-creation`, `newsletter-writer`, `press-release-writer` and `social-content-writer` started from Anthropic's marketing plugin and were substantially reworked. `lead-magnets` is adapted from a generic lead-magnet skill (see its `metadata.history`). `european-market-intelligence` is a Europeanised merge of two ID8Labs skills. `content-translate` is adapted from a third-party translate module. `logo-design` is adapted from kaankiziltug's `logo-design-skill` (MIT; its trademarked reference logo library is not included). `launch-video` adapts parts of latent-spaces' `brag` (MIT) and is inspired by feitangyuan's `onetake`, which is not bundled because it is licensed PolyForm Noncommercial. `ad-creative-matrix` writes up the 50-5-3 ad method in its own words. `frontend-design` synthesises Anthropic's `frontend-design`, vercel-labs' `web-interface-guidelines` (MIT) and Leonxlnx's `taste-skill` and `redesign-skill` (MIT), with rules from jakubkrehel's skills (MIT) and parts of Damir Sokolovsky's `unslop` (CC BY 4.0, credited in its `LICENSE-unslop.txt`). See each skill's `metadata.history` where present.
 
 ## Licence
 

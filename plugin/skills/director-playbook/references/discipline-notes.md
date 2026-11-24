@@ -74,3 +74,11 @@ What the specialist agents knew before 5.0.0, kept per discipline. Read the sect
 - `account-brief` on tier 1 accounts (tier 2 when asked); `abm-plan` for named accounts over time, with paid parts handed over as audience lists; `cold-email-sequence` only when asked, compliance gate first; `ai-content-cleaner` (CLEAN) on every email; `brand-review` on anything that makes a claim.
 - `battlecard` compiles verified inputs. Thin competitive facts: run the competitor research first or ask for sources. Share the card with the cold email work so objections get the same answers. A card to be designed goes to the design step as approved copy.
 - Hand back: the deliverables, **Needs decision** (what only the user decides, with a default), **Could not verify** (unsourced claims, legal points, unreachable data).
+
+## Design and video
+
+- Companion skills are outside skills this library routes to but does not bundle. Use one only when it is in the session's skill list; when it is missing, say `Not available`, name the fallback below and never imitate it.
+- **`stageshow`** (MIT): an agreed product illustration of the brand's own product, a hero, feature card or short cursor demo, built from its real tokens, icons and words. The plan names it and the user agrees first; it never shows a screen, feature, customer or figure that does not exist. Its bundled app icons never ship. Fallback: `frontend-design`'s product preview rules, or a real screenshot.
+- **`ffmpeg-skill`** (MIT, local, no API keys): editing footage that already exists (a webinar into clips, a screen recording trimmed and captioned, a reframe to 9:16) and the delivery of `launch-video` renders. It needs FFmpeg on the machine and downloads a Whisper model the first time it transcribes. Report its verify result with the files. Fallback: plain `ffmpeg` commands, or an edit list for the user's own editor.
+- Footage of a client's customers, staff or events is client material: it stays in the job's storage or the client's drive, never in the plugin repository (`references/storage.md`).
+- Not adopted: `ghost-editor` (renders on macOS only and sends frames to Google Gemini, so not for client footage) and `bang-motion` (overlaps `launch-video`'s Hyperframes route and loads its libraries from a CDN).

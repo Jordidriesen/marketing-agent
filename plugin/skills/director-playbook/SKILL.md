@@ -3,8 +3,9 @@ name: director-playbook
 description: "The marketing director's full instructions: do the work in the main thread, start threads only under four rules, the model table, the job folder, discipline notes, acceptance criteria in every brief, review tiers with a cold reviewer, and the ask-before-proceed and ask-before-publish gates. Loaded by /team. Not for direct requests."
 user-invocable: false
 metadata:
-  version: 3.5.0
+  version: 3.5.1
   history: >
+    v3.5.1 (marketing-agent 5.5.0): the visuals and video route names the companion skills stageshow and ffmpeg-skill, used only when installed; discipline notes gained a Design and video section.
     v3.5.0 (marketing-agent 5.4.0): the learning loop (brand/learnings.md read into every brief, results logged after a yes), voice examples (brand/voice-examples.md, used by drafting and by the cold reviewer, logged from approvals and rejections), upload-ready files for Google Ads Editor and LinkedIn, connectors named per job, a quarterly review calibration, and single pieces sent to their command.
     v3.4.0 (marketing-agent 5.3.1): the director loads the skill a request maps to before asking for missing inputs, and running in the main thread no longer reads as starting no threads (the job eval skipped its cold review on that reading), so its questions are the skill's own (route evals showed it answered from general knowledge when data was missing). Each thread's token count and duration, from the Agent result, go on its line in decisions.md, and the job's total goes in the closing line, so every job shows what it cost.
     v3.3.0 (marketing-agent 5.3.0): plugin hooks enforce two rules in code. Every file saved in deliverables/ is checked for hard findings (em dash, RSA lengths, totals and shares, locked terms, ad group column), in the main thread and in threads; any tool that publishes, sends, spends or changes an account asks for confirmation whatever the permission mode. The one-level thread rule is now stated as a choice: Claude Code allows nesting, this plugin does not.
@@ -69,7 +70,7 @@ Run these yourself unless a spawn rule applies. All are `marketing-agent:` skill
 | Social post, paid social set | `social-content-writer`, `ad-creative-matrix`, `brand-review` | `drafter` (rule 1) when email runs too | Social |
 | Newsletter, email sequence | `newsletter-writer`, `email-sequence-hubspot-brevo`, `brand-review` | `drafter` (rule 1) when social runs too | Email |
 | Email template design | `email-design` | `graphic-designer` (rule 4) | Email |
-| Visuals, logos, video | `creative-brief`, then `canva-workflow`, `affinity-workflow`, `figma-weavy-workflow`, `logo-design`, `launch-video` | `graphic-designer` (rule 4) | In the `graphic-designer` profile |
+| Visuals, logos, video | `creative-brief`, then `canva-workflow`, `affinity-workflow`, `figma-weavy-workflow`, `logo-design`, `launch-video`; companion skills `stageshow` and `ffmpeg-skill` when installed (Design and video) | `graphic-designer` (rule 4) | In the `graphic-designer` profile |
 | Web page build or redesign | `frontend-design`, `wordpress-development:wordpress-page-build` or `astro-site` | `web-developer` (rule 4) for a full build; a single section fix stays here | Web and long-form content |
 | Google Ads setup and planning | `google-ads-build` (structure, keywords, bidding, budget) | None | Paid media |
 | Google Ads diagnosis | `google-ads-analyse` (account audit, search terms, Quality Score, PMax, geo, device, schedule, auction insights, tracking, disapprovals, ad-to-page match) | `data-puller` in the background (rule 2) for anything reading a full account | Paid media |

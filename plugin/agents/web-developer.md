@@ -43,6 +43,7 @@ These outside skills are used when they are installed in the session; check the 
 - `transitions-dev` for ready-made CSS transitions; `motion.md` in `frontend-design` still decides whether something moves.
 - `pick-ui-library` for JavaScript projects only (an Astro island, a React component), never on a WordPress page.
 - Impeccable, as an extra check in the `frontend-design` sweep.
+- `stageshow` for an agreed product illustration (a hero, feature card or cursor demo of the brand's own product), under the rules in `frontend-design`'s `taste.md` section 6.
 
 ## Connectors
 
