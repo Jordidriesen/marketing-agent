@@ -1,8 +1,8 @@
 ---
 name: frontend-design
 metadata:
-  version: 2.5.0
-  history: 'v2.5.0: selectively adapted from unslop by Damir Sokolovsky (CC BY 4.0, see LICENSE-unslop.txt): how much to change and a five-line direction in the redesign protocol, its AI tells and the template check in taste.md, and a dashboards, product previews and charts section. The review report gained quick and full modes, a coverage table, considered-but-rejected candidates and a Block, Needs changes or Approve verdict, from jakubkrehel''s make-interfaces-feel-better (MIT; its other rules were already in place). Agreed product illustration is the one exception to the no fake screenshots rule, built with the stageshow companion skill when installed. v2.4: owned by the web-developer agent. Stack routing points WordPress builds to wordpress-development:wordpress-page-build and Astro to astro-site; a design-to-code step for Figma files uses the Figma plugin''s own skills; the sweep can add Impeccable''s detector; outside skills transitions-dev, pick-ui-library and Mobbin are referenced, not copied. taste.md and gates.md gained patterns from Impeccable''s public pattern gallery, rewritten in this library''s words. v1.0: synthesised Anthropic''s frontend-design skill (anti-generic philosophy, two-pass plan and critique) and vercel-labs'' web-interface-guidelines (MIT), wired to the [brand]-brand-kit pattern. v2.0: folded in Leonxlnx''s taste-skill and redesign-skill (MIT) as references/taste.md (design read, three settings, locks, AI tells, pre-flight check) and references/redesign-protocol.md (mode detection, audit, never-change-silently list, fix order), both rewired so the brand kit outranks their defaults and so no figure
+  version: 2.5.1
+  history: 'v2.5.1: Modern Web Guidance (Apache-2.0, from the Chrome, Edge, Firefox and MDN teams) as a companion skill for current web platform APIs and a legacy-pattern scan in the redesign audit; a client project''s own design system or AGENTS.md and CLAUDE.md UI rules decide components and code, the brand kit decides the look. v2.5.0: selectively adapted from unslop by Damir Sokolovsky (CC BY 4.0, see LICENSE-unslop.txt): how much to change and a five-line direction in the redesign protocol, its AI tells and the template check in taste.md, and a dashboards, product previews and charts section. The review report gained quick and full modes, a coverage table, considered-but-rejected candidates and a Block, Needs changes or Approve verdict, from jakubkrehel''s make-interfaces-feel-better (MIT; its other rules were already in place). Agreed product illustration is the one exception to the no fake screenshots rule, built with the stageshow companion skill when installed. v2.4: owned by the web-developer agent. Stack routing points WordPress builds to wordpress-development:wordpress-page-build and Astro to astro-site; a design-to-code step for Figma files uses the Figma plugin''s own skills; the sweep can add Impeccable''s detector; outside skills transitions-dev, pick-ui-library and Mobbin are referenced, not copied. taste.md and gates.md gained patterns from Impeccable''s public pattern gallery, rewritten in this library''s words. v1.0: synthesised Anthropic''s frontend-design skill (anti-generic philosophy, two-pass plan and critique) and vercel-labs'' web-interface-guidelines (MIT), wired to the [brand]-brand-kit pattern. v2.0: folded in Leonxlnx''s taste-skill and redesign-skill (MIT) as references/taste.md (design read, three settings, locks, AI tells, pre-flight check) and references/redesign-protocol.md (mode detection, audit, never-change-silently list, fix order), both rewired so the brand kit outranks their defaults and so no figure
     or image is ever invented for a live page. Refreshed references/interface-checklist.md against the current upstream guidelines as a pinned copy instead of fetching rules at review time. Loads modular brand kits'' references/design.md. v2.1: added references/type-and-colour.md (adapted from jakubkrehel''s better-typography and better-colors, MIT), references/motion.md (from emil-design-eng and better-ui, MIT), references/layout-and-accessibility.md (from better-layout, better-accessibility and better-ui, MIT). taste.md gained asset dependence and brand fidelity reads, a brand-assets-first rule and critique dimensions (from web-design-engineer, MIT). The em dash punctuation advice in better-typography was dropped to keep the library''s no em dash rule. v2.2: selectively adapted from dembrandt-skills (MIT): repeated-component slot model, separator and region rules, edge and elevation rules and status colour discipline in the references, a waiting section in motion.md, estate consistency
     in the redesign audit, and an optional dembrandt token extraction in Step 0. Rules that conflict with this library were not imported (button scale ban, disabling submit until valid, ease-in exits, HSL state derivation). v2.3: selectively adapted from Hallmark (MIT): Floor, Reflex and Finish tiers with a waiver rule in references/gates.md, a hero-first build with a cold fresh-context review (Part 5), a link, form and heading inventory diffed after a redesign, and gates for the fake send, the stock close, the accented word, the echo and the thin section. Theme dealing, the build log and the word-count caps were not imported.
 
@@ -81,7 +81,11 @@ patterns or the site's own MCP (for example NovaMira or the page builder's own s
 rebuild; the build itself follows `wordpress-development:wordpress-page-build` when that plugin is
 installed. An Astro project follows `astro-site`. If the site is managed in WP Umbrella,
 read its installed plugins, theme and performance there first (`list_plugins`, `list_themes`,
-`get_performance`); that is read-only and needs no approval. A Claude artifact gets one
+`get_performance`); that is read-only and needs no approval. **A project with its own design
+system** (a component library in its dependencies, or UI rules in its `AGENTS.md` or `CLAUDE.md`)
+follows those for components, props and code; the brand kit still decides the look, and where the
+two conflict, report it rather than picking one. Never add a design system or component library to
+a project that does not have one unless the user asks. A Claude artifact gets one
 self-contained HTML file. A framework project keeps its framework and styling system.
 
 **Starting from a Figma design.** When the user hands over a Figma file or frame, call the Figma
@@ -94,6 +98,16 @@ installed, say so and read the frame with `get_screenshot` and `get_metadata` in
 **Companion skills, used only when installed** (check the skill list first; never imitate them,
 and say `Not available` and use the fallback when they are missing):
 
+- **`modern-web-guidance`** (Apache-2.0, `npx modern-web-guidance@latest install`, from the
+  Chrome, Edge, Firefox and MDN teams): before writing HTML, CSS or client-side JavaScript for a
+  pattern the platform now handles natively (dialogs and popovers, anchored tooltips, view
+  transitions, entry and exit animations, container queries, form validation, scroll effects,
+  image loading priority, INP), search it and retrieve the guide, then apply it inside this skill's
+  rules: it decides how a feature is built, never how the page looks, and its fallbacks respect the
+  brand's browser support. In a redesign audit, run its `legacy-scan` on the codebase and list what
+  it finds under performance traps. It suits code projects (Astro, plain HTML, a theme's own files);
+  on a page-builder page, use it only for custom code blocks. Fallback: `interface-checklist.md`
+  and the platform documentation.
 - **`stageshow`** (MIT, `npx skills add benjitaylor/skills --skill stageshow`): an agreed product
   illustration (`taste.md` section 6) for a hero, feature card or short cursor demo. Hand it the
   brand's tokens, the product's real icons and words, the size it will be seen at and the one
@@ -247,7 +261,8 @@ than guessing.
   `motion.md` has decided something should move; `pick-ui-library` for choosing a library in a
   JavaScript project (an Astro island, a React component), never on a WordPress page; the Figma
   plugin's skills for design-to-code; Mobbin for pattern research.
-- **`stageshow`:** product illustrations, see Companion skills above.
+- **`stageshow`:** product illustrations; **`modern-web-guidance`:** current platform APIs and the
+  legacy scan. See Companion skills above.
 - **`dataviz`:** any chart, plot or dashboard visualisation.
 - **`brand-review`:** the voice and compliance gate for any copy baked into the design.
 - **`seo-audit`:** before a redesign that touches templates, URLs or structured data.

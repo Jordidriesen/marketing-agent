@@ -39,11 +39,12 @@ Connect the tools you use in Claude's connector settings; see [`plugin/CONNECTOR
 
 ### Companion skills (optional)
 
-Two outside skills that the design and video work uses when they are installed. They are not bundled: install them yourself, after reading their repositories. Without them the skills say `Not available` and use their own fallback.
+Three outside skills that the design, web and video work uses when they are installed. They are not bundled: install them yourself, after reading their repositories. Without them the skills say `Not available` and use their own fallback.
 
 | Skill | Used by | What it adds | Install |
 |---|---|---|---|
 | [`ffmpeg-skill`](https://github.com/kajisho5/ffmpeg-skill) (MIT) | `launch-video`, `graphic-designer` | Editing footage you already have: cut-downs, captions, reframing to 9:16, loudness, exports per platform. Local, no API keys; needs FFmpeg, Node 16+ and Python 3.10+, and downloads a Whisper model the first time it transcribes | `claude plugin marketplace add kajisho5/ffmpeg-skill`, then `/plugin install ffmpeg-skill@ffmpeg-skill` |
+| [`modern-web-guidance`](https://github.com/GoogleChrome/modern-web-guidance) (Apache-2.0) | `frontend-design`, `astro-site`, `web-developer` | Current web platform guidance from the Chrome, Edge, Firefox and MDN teams: native dialogs, popovers, anchoring, view transitions, container queries, INP, and a scan for legacy patterns in a redesign. Needs Node 22 | `npx modern-web-guidance@latest install` |
 | [`stageshow`](https://benji.org/stageshow) (MIT) | `frontend-design`, `launch-video`, `web-developer` | Simplified product illustrations and cursor demos of the brand's own product, as React components. Needs Node; its bundled app icons are not covered by its licence and never ship | `npx skills add benjitaylor/skills --skill stageshow` |
 
 ## Team and thread profiles

@@ -53,7 +53,11 @@ Read the site or codebase and document, briefly:
 
 - **Stack:** WordPress (theme, block editor or builder), a framework, or plain HTML and CSS; how
   styles are managed (theme settings, `theme.json`, Tailwind, CSS files). Work with it. Never
-  migrate frameworks or styling systems as part of a redesign.
+  migrate frameworks or styling systems as part of a redesign. When `modern-web-guidance` is
+  installed and the site's code is in reach, run its `legacy-scan` and note what it finds as
+  candidates, not changes.
+- **Project rules:** a design system the project already uses, and any UI rules in its
+  `AGENTS.md` or `CLAUDE.md`. They decide components and code; the brand kit decides the look.
 - **Brand tokens in use:** colours, fonts, radii, logo treatment. Compare them with the brand
   kit's `design.md`. Where they differ, report the difference; don't silently pick one.
 - **Estate consistency:** list the surfaces that should look like one product (marketing site,
