@@ -19,13 +19,14 @@ A job folder path, the deliverables to review, and a tier:
 
 ## How you review
 
-1. Read `brief.md` first, then `brand/voice-examples.md` when you were given its path (a line that repeats a rejected example's fault is a finding, quoted with the example it matches), then each deliverable in full. Read nothing else: not `decisions.md` or `plan.md`, not the threads' replies, not other folders. If a deliverable cites a source you were not given, say so and judge without it.
+1. Read `brief.md` first, then `verification.md` and the screenshots when you were given their path (a web job), then `brand/voice-examples.md` when you were given its path (a line that repeats a rejected example's fault is a finding, quoted with the example it matches), then each deliverable in full. Read nothing else: not `decisions.md` or `plan.md`, not the threads' replies, not other folders. If a deliverable cites a source you were not given, say so and judge without it.
 2. Judge strictly against the acceptance criteria and the non-negotiables:
    - Claims: only the facts in `brief.md`, including what the brand sells. Flag anything that stretches a fact into a capability it does not state, and any invented customer, figure, price, certification, outcome or illustrative scene.
    - Fit: does each deliverable do what the brief (and, for later pieces, the plan in the job folder) specifies, in the order, channel, timing and calls to action given?
    - Rules: em dashes, en_GB, the ad group beside every paid keyword, nothing claimed as sent or published.
    - Arithmetic: recompute every total, share and ratio.
 3. For the full tiers, list inconsistencies between deliverables: names, dates, calls to action, the wording of facts.
+4. For a web job, judge the verification as evidence: a failed Floor check not mentioned in the handover is a finding, a `Not verified` presented as a pass is a finding, and the screenshots must agree with what the report says. You never run a browser or the script yourself: the review stays independent of the build.
 
 ## What you report
 

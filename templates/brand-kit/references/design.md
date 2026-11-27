@@ -41,6 +41,27 @@ not brand colours.]
 
 ---
 
+## Verification
+
+The values `frontend-design` measures a page against (`references/verification.md`). Fill from
+the source above, never from memory. A blank row is reported as `Not verified`, not guessed.
+
+| Item | Value |
+|---|---|
+| Viewports to test (name, width, height, phone-class or not) | [ ] |
+| Performance budgets (LCP, layout shift, page weight) | [ ] |
+| What must be visible without scrolling (selectors) | [ ] |
+| Smallest touch target | [ ] |
+| Analytics and ad hosts to record but not send | [ ] |
+| Tag hosts that must fire, and that must not | [ ] |
+
+Design rules to measure, one per line, each with the selectors and colours it needs (for example
+"primary buttons are always filled", "call to action sits at the bottom of its card"):
+
+[ ]
+
+---
+
 ## Logo and distinctive assets
 
 [Logo versions, clear space, minimum size, what never to do with it; taglines, handles, any

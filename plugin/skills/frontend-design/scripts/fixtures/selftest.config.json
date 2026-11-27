@@ -1,0 +1,21 @@
+{
+  "_note": "Synthetic values for the self-test fixtures only. A real config is filled from the design system or the brand kit design.md.",
+  "viewports": [
+    { "name": "narrow", "width": 360, "height": 640, "mobile": true },
+    { "name": "wide", "width": 1200, "height": 800 }
+  ],
+  "budgets": { "lcpMs": 4000, "cls": 0.25, "transferKb": 500 },
+  "tokens": { "colours": ["#111111", "#ffffff", "#0a5cff"], "fontFamilies": ["testsans"] },
+  "colourTolerance": 6,
+  "aboveFold": { "headline": "h1", "action": ".btn-primary" },
+  "minTargetPx": 24,
+  "blockRequests": ["analytics\\.invalid"],
+  "tags": { "expected": ["analytics.invalid"], "forbidden": ["tracker.invalid"] },
+  "rules": [
+    { "name": "button-fill", "type": "filled", "selector": ".btn-primary", "tier": "Reflex" },
+    { "name": "cta-align", "type": "alignBottom", "container": ".row", "selector": ".cta", "tolerance": 2, "tier": "Reflex" },
+    { "name": "no-pair", "type": "forbidPair", "text": ["#000000"], "background": ["#ff8800"], "tolerance": 20, "tier": "Floor" },
+    { "name": "tokens", "type": "onlyTokens", "tier": "Reflex" },
+    { "name": "section-bg", "type": "background", "selector": "section", "allowed": ["#ffffff"], "tolerance": 6, "tier": "Reflex" }
+  ]
+}

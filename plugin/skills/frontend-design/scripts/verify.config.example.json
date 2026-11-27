@@ -1,0 +1,17 @@
+{
+  "_note": "Shape only. Every value comes from the design system or the brand kit design.md (Verification section). The script rejects placeholders it cannot read as numbers.",
+  "viewports": [
+    { "name": "<from the design system>", "width": "<number>", "height": "<number>", "mobile": "<true when a phone-class viewport>" }
+  ],
+  "budgets": { "lcpMs": "<number, optional>", "cls": "<number, optional>", "transferKb": "<number, optional>" },
+  "aboveFold": { "<what must be visible>": "<css selector>" },
+  "minTargetPx": "<number, optional>",
+  "tokens": { "colours": ["<token hex values>"], "fontFamilies": ["<font names>"] },
+  "colourTolerance": "<number, optional>",
+  "blockRequests": ["<regex of analytics or ad hosts, optional>"],
+  "tags": { "expected": ["<host fragment>"], "forbidden": ["<host fragment>"] },
+  "ignoreConsoleErrors": ["<regex, optional>"],
+  "rules": [
+    { "name": "<name>", "type": "filled | alignBottom | forbidPair | background | onlyTokens", "tier": "Floor | Reflex | Info" }
+  ]
+}

@@ -152,6 +152,25 @@ class PublishGate(unittest.TestCase):
         self.assertFalse(self.asks(tool, {"ability_name": "rank-math/get-post-seo-meta"}))
         self.assertFalse(self.asks(tool, {"ability_name": "elementor/create-preview-link"}))
 
+    def test_playwright_write_capable_calls_ask(self):
+        for name in ("mcp__playwright__browser_run_code_unsafe", "mcp__plugin_playwright_playwright__browser_fill_form",
+                     "mcp__remote-devices__plugin_22bf_playwright__browser_type",
+                     "mcp__playwright__browser_file_upload", "mcp__playwright__browser_evaluate"):
+            self.assertTrue(self.asks(name), name)
+
+    def test_playwright_click_asks_only_on_risky_elements(self):
+        tool = "mcp__plugin_playwright_playwright__browser_click"
+        self.assertTrue(self.asks(tool, {"element": "Publish button", "ref": "e12"}))
+        self.assertTrue(self.asks(tool, {"element": "Submit order", "ref": "e3"}))
+        self.assertFalse(self.asks(tool, {"element": "Open menu", "ref": "e7"}))
+        self.assertFalse(self.asks(tool, {"element": "Reject cookies", "ref": "e9"}))
+
+    def test_playwright_reading_passes(self):
+        for name in ("mcp__playwright__browser_navigate", "mcp__playwright__browser_snapshot",
+                     "mcp__playwright__browser_take_screenshot", "mcp__playwright__browser_console_messages",
+                     "mcp__playwright__browser_network_requests", "mcp__playwright__browser_hover"):
+            self.assertFalse(self.asks(name), name)
+
     def test_reads_pass(self):
         self.assertFalse(self.asks("mcp__github__get_file_contents"))
         self.assertFalse(self.asks("Write"))

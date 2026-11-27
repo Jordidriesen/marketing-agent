@@ -4,6 +4,17 @@ All notable changes to this skill library are documented here. Individual skills
 
 ## [Unreleased]
 
+## [5.6.0] (27/11/2026)
+
+Measured web checks and a component method, with design values kept out of the skill.
+
+- **`frontend-design` 2.6.0:** `scripts/verify.mjs` runs read-only Playwright checks (overflow, console and request errors, links, images, axe, focus, reduced motion, budgets, above the fold, inventory diff for redesigns, JSON-LD, tag hosts) and design rules as assertions (`filled`, `alignBottom`, `forbidPair`, `background`, `onlyTokens`). It holds no design value: viewports, budgets, tokens, selectors and rules come from a config the design system or the brand kit fills. Without a value it reports `Not verified`. `--self-test` proves the checks by catching 13 planted violations on a fixture page. New `references/verification.md` and `references/component-system.md` (components by family, tokens by role, gaps logged, checks over reminders). The sweep, hero-first step and Floor gates now use the design system's viewports and sizes instead of fixed ones, and a Values rule says the skill states no house look.
+- **Brand kit template:** `design.md` gained a Verification section (viewports, budgets, above-the-fold selectors, touch target, analytics hosts, tags, rules).
+- **Publish gate:** Playwright MCP calls that change state (code, evaluate, typing, form filling, uploads, key presses, dialogs) always ask, and a click asks when the element reads like publish, send, pay, delete or save. Reading, navigating and screenshots stay ungated. Rules in `publish-tools.txt`, 3 new tests.
+- **`security-policy` 1.1.0:** browser automation is read-only on a live site.
+- **`web-developer` and `cold-reviewer` profiles:** the developer verifies on the design system's values and states none of its own; the reviewer judges the verification report and screenshots as evidence and never runs a browser. **`director-playbook` 3.6.0:** a web build's acceptance criteria include a verification run.
+- **Credit:** ideas adapted in outline from `arla6ka/design.how` (`build-design-system`) and `SandroHub013/awwwards-skill` (performance budgets as a design-system value). Neither repository states a licence, so no text was copied. Not adopted: the Awwwards skill's scroll, WebGL and award workflow, which conflicts with the Delta and no-bloat direction.
+
 ## [5.5.1] (24/11/2026)
 
 - **Modern Web Guidance as a companion skill** (Apache-2.0): `frontend-design` 2.5.1, `astro-site` 1.1.0 and the `web-developer` profile search it before building patterns the platform now handles natively, and the redesign audit runs its `legacy-scan` when the code is in reach. It decides the implementation, never the look. Listed in the README.

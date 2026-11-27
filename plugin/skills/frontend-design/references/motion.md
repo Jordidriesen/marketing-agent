@@ -1,5 +1,9 @@
 # Motion
 
+> **Values.** Any number in this file is a craft default for a project whose design system and brand kit
+> state nothing. Where either states a value, that value wins, and nothing here is quoted as the
+> brand's intent. Standards (WCAG criteria, platform behaviour) are not design values and stay.
+
 **Contents**
 
 - 1. Decide whether it animates

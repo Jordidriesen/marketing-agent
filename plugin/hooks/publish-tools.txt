@@ -28,3 +28,13 @@ tool  ^mcp__OpenSEO__(run_site_audit|run_rank_tracker|create_rank_tracker|run_ai
 # WordPress MCP adapters (Novamira and others): abilities that change the live site.
 # Drafts, previews, reads and page building on a draft stay ungated.
 input  __mcp-adapter-execute-ability$  ability_name  (publish|delete|trash|import|/fix-|/set-|activate|replay|execute-php|write-file|edit-file|disable-file|enable-file|update-settings|update-page-settings|admin-access|enable-batch-finalization|manage-site-parts|manage-global|manage-classes|manage-default-styles|manage-experiments|manage-woocommerce|clear-cache)
+
+# Playwright MCP (any install name): calls that change state on a page. Navigating, snapshots,
+# screenshots, hovering, tabs and reading the console or network stay ungated, so reading and
+# measuring a page is not interrupted. Typing, form filling, code, uploads and dialogs always ask.
+tool  ^mcp__.*[Pp]laywright.*__browser_(run_code_unsafe|evaluate|file_upload|fill_form|type|press_key|select_option|drop|handle_dialog)$
+
+# Playwright MCP click: asks when the element's description reads like a publishing, sending,
+# paying or deleting control. The description is what the model wrote for the element, so this is
+# a net, not a guarantee: the rule in security-policy (read-only on a live site) is the control.
+input  ^mcp__.*[Pp]laywright.*__browser_click$  element  [Pp]ublish|[Ss]end|[Ss]ubmit|[Dd]elete|[Tt]rash|[Rr]emove|[Cc]onfirm|[Pp]ay|[Bb]uy|[Oo]rder|[Aa]pprove|[Uu]pdate|[Ss]ave|[Aa]ctivate|[Ss]chedule|[Uu]nsubscribe|[Pp]lace

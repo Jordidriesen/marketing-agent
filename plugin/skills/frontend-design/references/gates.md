@@ -33,14 +33,14 @@ move it into that client's brand kit `design.md`.
 - The fake send: a form or control that prints success ("Sent", "Thanks", "You're on the list")
   with no request behind it. Until the endpoint exists the form validates, posts nowhere, and
   says so plainly.
-- No horizontal scroll at any width from 320 to 1920. `overflow-x: clip` on `html` and `body`;
-  no `100vw` widths.
+- No horizontal scroll at any of the design system's viewports, or between them. `overflow-x: clip`
+  on `html` and `body`; no `100vw` widths. Measured by `scripts/verify.mjs`.
 - Image-bearing grid tracks use `minmax(0, 1fr)`; display heads carry
   `overflow-wrap: break-word; min-width: 0`.
-- The hero's headline, one sentence and primary action are visible at 1280 x 800 without
-  scrolling.
-- At 1920 x 1080 the container is capped and centred (1360 to 1520px): gutters grow, grids and
-  measure do not.
+- The hero's headline, one sentence and primary action are visible without scrolling at the
+  design system's reference desktop viewport (`aboveFold` in the verification config).
+- At the widest viewport the container is capped at the design system's maximum width and centred:
+  gutters grow, grids and measure do not.
 - Text painted under another element (a sticky bar, a card or an image covers a line of it).
 - A button label or primary nav link wrapping at any width.
 - No card inside a card, no emoji as an icon, no hand-drawn browser bar or OS window (except
@@ -65,12 +65,13 @@ move it into that client's brand kit `design.md`.
   End on the job: the booking, the enquiry, the quote request, the next date.
 - The echo: one fact (price, date, figure) printed in four or more sections.
 - The thin section: below the hero, a section with no mass (no visual, no set of three, no list
-  or table, no statement at section size); section heads that render under about 40px at 1440
-  beside a large hero; more than 160px of dead space inside the hero.
+  or table, no statement at section size); section heads that render smaller than the design system's
+  smallest heading size beside a large hero; dead space inside the hero beyond the design system's
+  spacing scale.
 - The crowded head: a heading nearer the content above it than the content it heads.
 - The same hover lift or scale on every card; an image scaling on hover.
 - The photo wall: photographs cover more than about a third of the page below the hero.
-- Control height outside 44 to 52px on a marketing page (app UI may sit at 32 to 40px).
+- Control height outside the design system's control sizes for the context (marketing page or app UI).
 - Decorative glass, glow or blur; a coloured side stripe on a card; a hairline border plus a wide
   shadow on the same card (`taste.md` section 8). Nested cards are already a Floor gate.
 - The icon tile above every feature heading; the hero metric opening (`taste.md` section 8).

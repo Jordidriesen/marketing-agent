@@ -77,8 +77,8 @@ Starting points:
 
 Rules that go with them:
 
-- Above variance 4, asymmetric layouts collapse to a single column under 768px. Declare that
-  fallback per section.
+- Above variance 4, asymmetric layouts collapse to a single column at the design system's
+  narrow breakpoint. Declare that fallback per section.
 - **Motion claimed, motion shown.** Above motion 4, the page has to move (entrances, reveals,
   hover feedback). If working motion doesn't fit the scope, drop to 3 and ship a clean static page.
 - **Motion must be motivated:** hierarchy, sequence, feedback or a state change. "It looked cool"
@@ -145,7 +145,7 @@ Unless the brief or the brand asks for them:
 - **Hero holds at most four text elements:** an optional eyebrow, the headline, the subtext,
   one primary and at most one secondary CTA. Trust logos, pricing teasers and feature bullets go
   in the section below.
-- **Navigation on one line at desktop**, about 64 to 80px tall.
+- **Navigation on one line at desktop**, at the design system's navigation height.
 - **Eyebrows are rationed:** at most one small uppercase label per three sections. The headline
   usually does the job alone.
 - **No layout family twice.** A page with eight sections uses at least four different layouts.

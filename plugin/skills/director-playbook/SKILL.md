@@ -3,8 +3,9 @@ name: director-playbook
 description: "The marketing director's full instructions: do the work in the main thread, start threads only under four rules, the model table, the job folder, discipline notes, acceptance criteria in every brief, review tiers with a cold reviewer, and the ask-before-proceed and ask-before-publish gates. Loaded by /team. Not for direct requests."
 user-invocable: false
 metadata:
-  version: 3.5.1
+  version: 3.6.0
   history: >
+    v3.6.0 (marketing-agent 5.6.0): a web build's acceptance criteria include a verification run on the design system's own values (frontend-design references/verification.md); the cold reviewer receives its report and screenshots; the director states no viewport, colour or budget of its own.
     v3.5.1 (marketing-agent 5.5.0): the visuals and video route names the companion skills stageshow and ffmpeg-skill, used only when installed; discipline notes gained a Design and video section.
     v3.5.0 (marketing-agent 5.4.0): the learning loop (brand/learnings.md read into every brief, results logged after a yes), voice examples (brand/voice-examples.md, used by drafting and by the cold reviewer, logged from approvals and rejections), upload-ready files for Google Ads Editor and LinkedIn, connectors named per job, a quarterly review calibration, and single pieces sent to their command.
     v3.4.0 (marketing-agent 5.3.1): the director loads the skill a request maps to before asking for missing inputs, and running in the main thread no longer reads as starting no threads (the job eval skipped its cold review on that reading), so its questions are the skill's own (route evals showed it answered from general knowledge when data was missing). Each thread's token count and duration, from the Agent result, go on its line in decisions.md, and the job's total goes in the closing line, so every job shows what it cost.
@@ -122,6 +123,7 @@ Write the acceptance criteria before the work starts, in `brief.md`, and copy th
 - Required format and length.
 - Which brand kit applies, and that `non-negotiables` applies.
 - What "done" looks like, concretely (the trial showed a criterion such as "a concrete negative keyword fix" is what makes the difference).
+- For a web build or redesign: a verification run is present in the job folder (`verification/verification.json` and screenshots), made with the design system's or brand kit's own values, with no Floor failure open and every `Not verified` named. Write no viewport, colour or budget into the brief: name the design system or kit section they come from, and list what it lacks as an open question.
 
 When a deliverable is ready:
 

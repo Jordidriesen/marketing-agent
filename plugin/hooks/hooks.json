@@ -18,7 +18,7 @@
     ],
     "PreToolUse": [
       {
-        "matcher": "(?:^mcp__.+__(.*[_-])?(send|publish|schedule|delete|trash)([_-]|$))|(?:^mcp__Zapier__execute_zapier_write_action$)|(?:^mcp__Zapier__(create|update|delete|enable|disable|manage)_zapier)|(?:^mcp__SEOgets__(create|update|delete|add|remove|setup|prioritize)_)|(?:^mcp__Google_Drive__request_access$)|(?:^mcp__OpenSEO__(run_site_audit|run_rank_tracker|create_rank_tracker|run_ai_visibility_check|set_ai_visibility_schedule|save_ai_visibility_tracker|set_report_sharing|submit_indexnow_urls)$)|(?:__mcp-adapter-execute-ability$)",
+        "matcher": "(?:^mcp__.+__(.*[_-])?(send|publish|schedule|delete|trash)([_-]|$))|(?:^mcp__Zapier__execute_zapier_write_action$)|(?:^mcp__Zapier__(create|update|delete|enable|disable|manage)_zapier)|(?:^mcp__SEOgets__(create|update|delete|add|remove|setup|prioritize)_)|(?:^mcp__Google_Drive__request_access$)|(?:^mcp__OpenSEO__(run_site_audit|run_rank_tracker|create_rank_tracker|run_ai_visibility_check|set_ai_visibility_schedule|save_ai_visibility_tracker|set_report_sharing|submit_indexnow_urls)$)|(?:__mcp-adapter-execute-ability$)|(?:^mcp__.*[Pp]laywright.*__browser_(run_code_unsafe|evaluate|file_upload|fill_form|type|press_key|select_option|drop|handle_dialog)$)|(?:^mcp__.*[Pp]laywright.*__browser_click$)",
         "hooks": [
           {
             "type": "command",

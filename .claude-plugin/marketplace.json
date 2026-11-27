@@ -13,7 +13,7 @@
       "displayName": "Marketing Agent",
       "source": "./plugin",
       "description": "A marketing team for Claude: /team turns the main thread into a director that writes the brief, does the work with the plugin's skills, starts threads on six profiles only where they pay off, reviews by tier and asks before publishing. 52 skills, five of them family skills. Client brand kits stay private and load via the [brand]-brand-kit naming pattern. Web development calls WordPress skills from the separate wordpress-development plugin.",
-      "version": "5.5.1",
+      "version": "5.6.0",
       "author": {
         "name": "Jordi Driesen"
       },
