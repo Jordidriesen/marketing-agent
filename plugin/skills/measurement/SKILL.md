@@ -2,8 +2,8 @@
 name: measurement
 description: 'Measurement diagnosis: why a Google Ads metric changed, GA4 setup audits (key events, consent mode, UTMs, PII), and attribution (which channel drives conversions, why GA4 and ad platforms disagree). Use for "why did this change", a spike or drop, "GA4 audit", "is my analytics set up right", "GA4 numbers look wrong", "attribution", "GA4 and Ads don''t match", even from pasted figures.'
 metadata:
-  version: 1.2.0
-  history: 'v1.2.0: the GA4 audit measures which tag hosts fire before consent with frontend-design verify.mjs --inventory-only. v1.1.0 (marketing-agent 5.4.0): a diagnosis that found a cause proposes a learning. v1.0.0: new family skill in marketing-agent 4.0.0 (built first in the marketing-operator trial). Absorbs metric-detective, ga4-audit, attribution-readout as references, unchanged apart from names and paths.'
+  version: 1.3.0
+  history: 'v1.3.0: GA4 consent check can be confirmed with the Chrome DevTools MCP network list. v1.2.0: the GA4 audit measures which tag hosts fire before consent with frontend-design verify.mjs --inventory-only. v1.1.0 (marketing-agent 5.4.0): a diagnosis that found a cause proposes a learning. v1.0.0: new family skill in marketing-agent 4.0.0 (built first in the marketing-operator trial). Absorbs metric-detective, ga4-audit, attribution-readout as references, unchanged apart from names and paths.'
 ---
 
 # Measurement

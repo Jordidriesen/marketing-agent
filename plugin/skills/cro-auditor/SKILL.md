@@ -1,8 +1,8 @@
 ---
 name: cro-auditor
 metadata:
-  version: 1.1.0
-  history: 'v1.1.0: rendered evidence from frontend-design verify.mjs (form fields, above the fold, console errors) when a shell is available. v1.0.0: new skill. Heuristic conversion audit of one page: clarity, friction, credibility, message match, form and CTA, mobile; findings ranked by expected impact with a fix each, and the top finding turned into a test hypothesis for ab-test-planner. No lift numbers, no benchmarks.
+  version: 1.2.0
+  history: 'v1.2.0: optional Chrome DevTools MCP emulation for speed and layout shift evidence. v1.1.0: rendered evidence from frontend-design verify.mjs (form fields, above the fold, console errors) when a shell is available. v1.0.0: new skill. Heuristic conversion audit of one page: clarity, friction, credibility, message match, form and CTA, mobile; findings ranked by expected impact with a fix each, and the top finding turned into a test hypothesis for ab-test-planner. No lift numbers, no benchmarks.
 
     '
 description: 'Always use for any conversion audit or "why doesn''t this page convert" question, even from pasted copy: friction, clarity, proof placement, form and CTA problems, each ranked by expected impact with a fix and a what-to-test-first verdict. Use for "CRO audit", "review this landing page". Ad-to-page match: google-ads-analyse. Rewrites: web-content-pipeline.'
@@ -45,7 +45,10 @@ headings and console errors with no design values. With the client's design syst
 `design.md` Verification section, the full run also screenshots the design system's viewports and
 reports what is visible above the fold. Never choose viewports yourself: without them, say which
 views were not checked. The script only loads and measures, so the audit's evidence about behaviour
-(a form error state, a menu) stays heuristic unless the user supplies analytics or recordings.
+(a form error state, a menu) stays heuristic unless the user supplies analytics or recordings. Where the Chrome DevTools MCP is
+connected, it can show the page under slow-network and slow-CPU emulation at the design system's
+mobile viewport: state the settings used beside what you saw, and treat it as evidence of speed and
+layout shift, not of behaviour.
 
 ## Step 2: Audit against the checklist
 
