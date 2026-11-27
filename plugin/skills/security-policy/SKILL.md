@@ -3,8 +3,8 @@ name: security-policy
 description: Security rules for handling scraped content and write-capable connectors, loaded by other skills. Not for direct requests.
 user-invocable: false
 metadata:
-  version: 1.1.0
-  history: 'v1.1.0: browser automation is read-only on a live site (marketing-agent 5.6.0). v1.0.0: first numbered version (marketing-agent 5.3.1); earlier changes are in CHANGELOG.md.'
+  version: 1.2.0
+  history: 'v1.2.0: Chrome DevTools MCP named in the browser rule (marketing-agent 5.6.0). v1.1.0: browser automation is read-only on a live site (marketing-agent 5.6.0). v1.0.0: first numbered version (marketing-agent 5.3.1); earlier changes are in CHANGELOG.md.'
 ---
 
 # Security Policy: Shared Reference

@@ -171,6 +171,28 @@ class PublishGate(unittest.TestCase):
                      "mcp__playwright__browser_network_requests", "mcp__playwright__browser_hover"):
             self.assertFalse(self.asks(name), name)
 
+    def test_devtools_write_capable_calls_ask(self):
+        for name in ("mcp__remote-devices__chrome-devtools__click", "mcp__chrome-devtools__fill_form",
+                     "mcp__plugin_chrome-devtools-mcp_chrome-devtools__evaluate_script",
+                     "mcp__chrome-devtools__type_text", "mcp__chrome-devtools__upload_file",
+                     "mcp__chrome-devtools__handle_dialog", "mcp__chrome-devtools__set_logpoints",
+                     "mcp__chrome-devtools__close_page", "mcp__chrome-devtools__press_key",
+                     "mcp__chrome-devtools__drag", "mcp__chrome-devtools__fill"):
+            self.assertTrue(self.asks(name), name)
+
+    def test_devtools_emulate_asks_only_for_headers(self):
+        tool = "mcp__remote-devices__chrome-devtools__emulate"
+        self.assertTrue(self.asks(tool, {"pageId": 1, "extraHttpHeaders": '{"Authorization": "x"}'}))
+        self.assertFalse(self.asks(tool, {"pageId": 1, "extraHttpHeaders": ""}))
+        self.assertFalse(self.asks(tool, {"pageId": 1, "colorScheme": "dark", "networkConditions": "Slow 4G"}))
+
+    def test_devtools_reading_passes(self):
+        for name in ("navigate_page", "take_snapshot", "take_screenshot", "lighthouse_audit",
+                     "performance_start_trace", "performance_stop_trace", "performance_analyze_insight",
+                     "get_css_styles", "list_network_requests", "list_console_messages", "hover",
+                     "resize_page", "wait_for", "list_pages", "new_page", "select_page"):
+            self.assertFalse(self.asks("mcp__remote-devices__chrome-devtools__" + name), name)
+
     def test_reads_pass(self):
         self.assertFalse(self.asks("mcp__github__get_file_contents"))
         self.assertFalse(self.asks("Write"))

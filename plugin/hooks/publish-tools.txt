@@ -38,3 +38,14 @@ tool  ^mcp__.*[Pp]laywright.*__browser_(run_code_unsafe|evaluate|file_upload|fil
 # paying or deleting control. The description is what the model wrote for the element, so this is
 # a net, not a guarantee: the rule in security-policy (read-only on a live site) is the control.
 input  ^mcp__.*[Pp]laywright.*__browser_click$  element  [Pp]ublish|[Ss]end|[Ss]ubmit|[Dd]elete|[Tt]rash|[Rr]emove|[Cc]onfirm|[Pp]ay|[Bb]uy|[Oo]rder|[Aa]pprove|[Uu]pdate|[Ss]ave|[Aa]ctivate|[Ss]chedule|[Uu]nsubscribe|[Pp]lace
+
+# Chrome DevTools MCP (any install name): calls that change state on a page. Navigating,
+# snapshots, screenshots, traces, Lighthouse, network and console reads, CSS reads, throttling
+# and display emulation stay ungated. Clicking, typing, form filling, uploads, dialogs, script
+# evaluation, logpoints, dragging and closing a page always ask. Click takes only an element id,
+# with no description to match against, so every click asks.
+tool  ^mcp__.*chrome-devtools.*__(click|drag|fill|fill_form|handle_dialog|press_key|type_text|upload_file|evaluate_script|set_logpoints|close_page)$
+
+# Chrome DevTools MCP emulate: extra HTTP headers persist across navigations and can carry
+# credentials, so any non-empty value asks. Clearing them (empty string) does not.
+input  ^mcp__.*chrome-devtools.*__emulate$  extraHttpHeaders  .+

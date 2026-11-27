@@ -2,8 +2,8 @@
 name: seo-audit
 description: 'Audits a site''s SEO: technical, on-page, indexing, Core Web Vitals, ranking drops. Use for "SEO audit", "why am I not ranking", "traffic dropped".'
 metadata:
-  version: 1.6.0
-  history: 'v1.6.0: schema and rendered-page checks use frontend-design verify.mjs --inventory-only when a shell is available. v1.5.0: internal linking findings point to the internal-linking skill for the link map and link table. v1.4.0: content-references files renamed and merged; references to them updated.'
+  version: 1.7.0
+  history: 'v1.7.0: Core Web Vitals step uses trace insights when the Chrome DevTools MCP is connected, with throttling stated. v1.6.0: schema and rendered-page checks use frontend-design verify.mjs --inventory-only when a shell is available. v1.5.0: internal linking findings point to the internal-linking skill for the link map and link table. v1.4.0: content-references files renamed and merged; references to them updated.'
 ---
 
 # SEO Audit
@@ -128,7 +128,7 @@ Reporting "no schema found" based solely on `web_fetch` or `curl` leads to false
 **Tools**
 - PageSpeed Insights
 - WebPageTest
-- Chrome DevTools
+- Chrome DevTools (trace and insights when the Chrome DevTools MCP is connected: name the cause of a slow LCP, and state the network and CPU throttling used beside every figure, or say the run was unthrottled; lab figures are never presented as field data)
 - Search Console Core Web Vitals report
 
 ### Mobile-Friendliness

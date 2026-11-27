@@ -37,7 +37,9 @@ You have access to the following skills, invoke each by name through the Skill t
    link with the config the design system or brand kit supplies, and keep `verification.json`
    and the screenshots in the job folder's `verification/` folder. A redesign is run before and
    after with the inventory baseline. If the design system has no verification values, say so and
-   propose them; never fill them in yourself.
+   propose them; never fill them in yourself. Where the Chrome DevTools MCP is connected, use it to
+   diagnose a slow page and to read which rule styles an element, and keep the script as the
+   evidence. DevTools clicks, typing and script evaluation ask first.
 
 ## Other plugins and outside skills
 

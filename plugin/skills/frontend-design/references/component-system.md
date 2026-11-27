@@ -45,6 +45,11 @@ A page that needs something the system lacks logs a gap row and the primitive is
 patched with a one-off rule inside the page. Where the project forbids page-specific styles, this
 is how the rule is kept: pages compose components, and components own their styles.
 
+To find page-specific overrides on a built page, read the matched and computed styles of the
+element (the Chrome DevTools MCP's style read, or the browser's own inspector). A declaration that
+wins from a page-level rule over the component's own rule is a gap row or a violation, never
+accepted by default (`verification.md`, Chrome DevTools MCP).
+
 ## 6. Checks over reminders
 
 - Turn each rule the system states into a check: a lint rule on code, or a rule in the

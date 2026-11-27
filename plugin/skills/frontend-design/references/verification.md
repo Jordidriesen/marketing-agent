@@ -116,6 +116,30 @@ uploads a file, and it only requests `http` and `https` URLs.
   publish gate asks before any write-capable call. Its page snapshots are large: prefer the script
   for measuring and the MCP for the single state you need to see.
 
+### Chrome DevTools MCP
+
+If the Chrome DevTools MCP is connected, use it for the questions the script cannot answer, and
+keep the script for repeatable evidence. It runs in the user's own Chrome through the desktop app,
+so it is not available to scheduled or unattended runs.
+
+- **Why a page is slow:** a performance trace and its insights name the cause of a slow LCP,
+  render-blocking requests, third parties and cache gaps. The script only measures the number.
+- **Which rule styles an element:** read the computed and matched styles to see the cascade, the
+  overridden declarations and the resolved tokens. Use it to find page-specific overrides of a
+  component (`component-system.md`).
+- **States the script does not render:** dark scheme, forced colours and contrast preferences by
+  emulation. Which states apply comes from the design system.
+- **Throttling:** state the network and CPU settings used next to every number, or call the run
+  unthrottled. A throttled and an unthrottled number are never compared.
+- **Lighthouse:** its accessibility audit uses the same engine as the script, so it adds nothing
+  there. Check that the report's device label matches the emulation requested before quoting
+  mobile results; if it does not, report the result as `Not verified` for mobile.
+- **Reports are saved on the user's computer**, not in the job folder. Quote the figures and name
+  where the report is.
+- **Read-only:** loading, tracing, reading styles and emulating display states are allowed.
+  Clicks, typing, script evaluation, uploads and dialogs ask first (`security-policy`), as does
+  setting extra HTTP headers.
+
 ## 6. Reading and reporting
 
 - Map tiers to `gates.md`: Floor never ships, Reflex is fixed or waived, Finish is answered.
