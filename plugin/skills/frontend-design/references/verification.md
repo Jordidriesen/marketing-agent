@@ -79,10 +79,19 @@ Setup, once, in a folder you control: `npm install playwright` and, for the acce
 ```
 node verify.mjs --config verify.config.json --out <job folder>/verification <url> [<url> ...]
 node verify.mjs --config verify.config.json --out ... --baseline before/inventory.json <url>
+node verify.mjs --inventory-only [--config verify.config.json] --out <dir> <url>
 node verify.mjs --discover-breakpoints <url>
 node verify.mjs --self-test
 ```
 
+- **`--inventory-only`:** needs no design values, so other skills use it (`seo-audit` for rendered
+  JSON-LD, `cro-auditor` for form fields, the GA4 audit for tags before consent). It checks status,
+  console and request errors, links, images, headings, forms, JSON-LD, tag hosts and the accessibility
+  scan. It takes no screenshots and judges nothing visual: no viewports, rules or budgets. The config is
+  optional and only supplies `tags`, `blockRequests` and `ignoreConsoleErrors`.
+- **Tags before consent:** the script never touches a consent banner, so any host in `tags.forbidden`
+  that it sees requested fired before consent. It cannot show what happens after a visitor accepts or
+  declines.
 - **Redesign:** run once before touching anything and keep `inventory.json`; run again with
   `--baseline`. Any heading, link or form field that disappeared is a Floor failure unless the
   brief says to remove it.

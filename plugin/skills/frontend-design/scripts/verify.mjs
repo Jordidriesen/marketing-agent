@@ -10,9 +10,13 @@
  *
  * Usage:
  *   node verify.mjs --config verify.config.json --out <dir> <url> [<url> ...]
+ *   node verify.mjs --inventory-only [--config c.json] --out <dir> <url> [<url> ...]
  *   node verify.mjs --discover-breakpoints <url>
  *   node verify.mjs --self-test
  * Options:
+ *   --inventory-only              no design values needed: status, console, requests, links, images,
+ *                                 headings, forms, JSON-LD, tag hosts, axe. No screenshots, viewport
+ *                                 checks, rules or budgets. The config is optional (tags, blockRequests).
  *   --baseline <inventory.json>   compare headings, links and form fields with an earlier run
  *   --browser-path <path>         use this Chrome or Chromium (or set VERIFY_BROWSER_PATH)
  *   --max-links <n>               internal links to status-check per page (default 40)
@@ -43,6 +47,7 @@ function parseArgs(argv) {
     else if (k === '--browser-path') a.browserPath = argv[++i];
     else if (k === '--max-links') a.maxLinks = Number(argv[++i]);
     else if (k === '--discover-breakpoints') a.discover = true;
+    else if (k === '--inventory-only') a.inventoryOnly = true;
     else if (k === '--self-test') a.selfTest = true;
     else if (k.startsWith('--')) throw new Error(`Unknown option ${k}`);
     else a.urls.push(k);
@@ -68,7 +73,12 @@ async function launch(pw, browserPath) {
 }
 
 // ---------- config ----------
-function loadConfig(file) {
+function loadConfig(file, inventoryOnly) {
+  if (inventoryOnly) {
+    const cfg = file ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};
+    // No design value is needed: the browser's own default viewport is used and nothing visual is judged.
+    return { ...cfg, viewports: [{ name: 'default' }], rules: [], aboveFold: undefined, minTargetPx: undefined, inventoryOnly: true };
+  }
   if (!file) throw new Error('--config is required: viewports come from the design system, not from this script.');
   const cfg = JSON.parse(fs.readFileSync(file, 'utf8'));
   const vps = cfg.viewports;
@@ -195,9 +205,16 @@ async function runRules(page, rules, tokens, tol) {
       } else if (rule.type === 'alignBottom') {
         const per = rule.tolerance ?? 0;
         for (const parent of document.querySelectorAll(rule.container)) {
-          const bottoms = [...parent.querySelectorAll(rule.selector)].filter(visible).map((e) => ({ e, b: e.getBoundingClientRect().bottom }));
-          seen += bottoms.length;
-          if (bottoms.length > 1) { const max = Math.max(...bottoms.map((x) => x.b)); for (const x of bottoms) if (max - x.b > per) bad.push(label(x.e)); }
+          // Only items that sit side by side form a row: group by the top edge of the container's child
+          // that holds the element, so cards stacked on a narrow viewport are not compared.
+          const items = [...parent.querySelectorAll(rule.selector)].filter(visible).map((e) => {
+            let c = e; while (c.parentElement && c.parentElement !== parent) c = c.parentElement;
+            return { e, b: e.getBoundingClientRect().bottom, top: Math.round(c.getBoundingClientRect().top) };
+          });
+          seen += items.length;
+          const rows = new Map();
+          for (const it of items) { const k = Math.round(it.top / (per + 1)); rows.set(k, [...(rows.get(k) || []), it]); }
+          for (const row of rows.values()) { if (row.length > 1) { const max = Math.max(...row.map((x) => x.b)); for (const x of row) if (max - x.b > per) bad.push(label(x.e)); } }
         }
       } else if (rule.type === 'forbidPair') {
         const t = (rule.tolerance ?? 0); const fg = rule.text.map(hex); const bg = rule.background.map(hex);
@@ -245,7 +262,7 @@ async function verifyPage(browser, url, cfg, outDir, opts, axeBuilder) {
   const hostsSeen = new Map();
 
   for (const vp of cfg.viewports) {
-    const ctx = await browser.newContext({ viewport: { width: vp.width, height: vp.height }, isMobile: !!vp.mobile, hasTouch: !!vp.mobile });
+    const ctx = await browser.newContext(cfg.inventoryOnly ? {} : { viewport: { width: vp.width, height: vp.height }, isMobile: !!vp.mobile, hasTouch: !!vp.mobile });
     const page = await ctx.newPage();
     const consoleErrors = []; const failed = [];
     // Requests the config blocks on purpose (analytics, ad pixels) are recorded as fired, not as failures.
@@ -268,23 +285,27 @@ async function verifyPage(browser, url, cfg, outDir, opts, axeBuilder) {
     if (resp && resp.status() >= 400) add(`status@${vp.name}`, 'Floor', 'fail', `HTTP ${resp.status()}`);
 
     const perf = await page.evaluate(COLLECT.perf);
-    await page.screenshot({ path: path.join(dir, `${vp.name}-fold.png`) });
-    await page.screenshot({ path: path.join(dir, `${vp.name}-full.png`), fullPage: true });
-
-    const ov = await page.evaluate(COLLECT.overflow);
-    const overflowing = ov.scrollW > ov.clientW + 1;
-    add(`overflow@${vp.name}`, 'Floor', overflowing ? 'fail' : 'pass', overflowing ? `page is ${ov.scrollW}px wide in a ${ov.clientW}px viewport; wide elements: ${ov.wide.join(', ') || 'none found'}` : 'no horizontal scroll');
+    if (!cfg.inventoryOnly) {
+      await page.screenshot({ path: path.join(dir, `${vp.name}-fold.png`) });
+      await page.screenshot({ path: path.join(dir, `${vp.name}-full.png`), fullPage: true });
+      const ov = await page.evaluate(COLLECT.overflow);
+      const overflowing = ov.scrollW > ov.clientW + 1;
+      add(`overflow@${vp.name}`, 'Floor', overflowing ? 'fail' : 'pass', overflowing ? `page is ${ov.scrollW}px wide in a ${ov.clientW}px viewport; wide elements: ${ov.wide.join(', ') || 'none found'}` : 'no horizontal scroll');
+    }
     add(`console@${vp.name}`, 'Floor', consoleErrors.length ? 'fail' : 'pass', consoleErrors.length ? `${consoleErrors.length} error(s): ${consoleErrors.slice(0, 3).join(' | ')}` : 'no console errors');
     add(`requests@${vp.name}`, 'Floor', failed.length ? 'fail' : 'pass', failed.length ? `${failed.length} failed: ${[...new Set(failed)].slice(0, 3).join(' | ')}` : 'no failed requests');
 
-    const b = cfg.budgets || {};
+    const b = cfg.inventoryOnly ? null : (cfg.budgets || {});
+    if (b) {
     const lcpMax = b.lcpMs ?? WEB_VITALS_GOOD.lcpMs; const clsMax = b.cls ?? WEB_VITALS_GOOD.cls;
     const src = b.lcpMs === undefined ? 'web-vitals fallback' : 'design system budget';
     add(`lcp@${vp.name}`, 'Reflex', perf.lcp > lcpMax ? 'fail' : 'pass', `${Math.round(perf.lcp)}ms vs ${lcpMax}ms (${src}); one lab run, not field data`);
     add(`cls@${vp.name}`, 'Reflex', perf.cls > clsMax ? 'fail' : 'pass', `${perf.cls.toFixed(3)} vs ${clsMax} (${b.cls === undefined ? 'web-vitals fallback' : 'design system budget'})`);
     if (b.transferKb !== undefined) add(`weight@${vp.name}`, 'Reflex', perf.bytes / 1024 > b.transferKb ? 'fail' : 'pass', `${Math.round(perf.bytes / 1024)}KB vs ${b.transferKb}KB (design system budget)`);
+    }
 
-    if (cfg.aboveFold) {
+    if (cfg.inventoryOnly) { /* nothing visual is judged without design values */ }
+    else if (cfg.aboveFold) {
       const miss = [];
       for (const [what, sel] of Object.entries(cfg.aboveFold)) {
         const ok = await page.evaluate(({ sel, h }) => { const e = document.querySelector(sel); if (!e) return false; const r = e.getBoundingClientRect(); return r.width > 0 && r.top >= 0 && r.bottom <= h; }, { sel, h: vp.height });
@@ -293,7 +314,8 @@ async function verifyPage(browser, url, cfg, outDir, opts, axeBuilder) {
       add(`aboveFold@${vp.name}`, 'Floor', miss.length ? 'fail' : 'pass', miss.length ? `not fully visible without scrolling: ${miss.join(', ')}` : 'all configured elements visible');
     } else if (vp === cfg.viewports[0]) add('aboveFold', 'Floor', 'not-verified', 'config.aboveFold not set by the design system');
 
-    if (typeof cfg.minTargetPx === 'number') {
+    if (cfg.inventoryOnly) { /* skipped */ }
+    else if (typeof cfg.minTargetPx === 'number') {
       const bad = await page.evaluate(COLLECT.targets, cfg.minTargetPx);
       add(`targets@${vp.name}`, 'Reflex', bad.length ? 'fail' : 'pass', bad.length ? `below ${cfg.minTargetPx}px: ${bad.join('; ')}` : 'ok');
     } else if (vp === cfg.viewports[0]) add('targets', 'Reflex', 'not-verified', 'config.minTargetPx not set by the design system');
@@ -309,7 +331,7 @@ async function verifyPage(browser, url, cfg, outDir, opts, axeBuilder) {
       add('json-ld', 'Info', ld.some((x) => x.error) ? 'fail' : 'pass', ld.length ? ld.map((x) => x.error || [].concat(x.types).join('/')).join(', ') : 'none found');
       const h1 = inventory.headings.filter((h) => h[0] === 'h1').length;
       add('h1', 'Floor', h1 === 1 ? 'pass' : 'fail', `${h1} h1 element(s)`);
-      if (vp.mobile) {
+      if (vp.mobile && !cfg.inventoryOnly) {
         const meta = await page.evaluate(() => !!document.querySelector('meta[name="viewport"]'));
         add('viewport-meta', 'Floor', meta ? 'pass' : 'fail', meta ? 'present' : 'missing: mobile browsers will lay the page out on a wide virtual viewport');
       }
@@ -322,8 +344,10 @@ async function verifyPage(browser, url, cfg, outDir, opts, axeBuilder) {
         } catch (e) { add('axe', 'Floor', 'not-verified', 'axe failed: ' + e.message.split('\n')[0]); }
       } else add('axe', 'Floor', 'not-verified', '@axe-core/playwright not installed');
 
-      const f = await page.evaluate(COLLECT.focus, 40);
-      add('focus-visible', 'Floor', f.bad.length ? 'fail' : 'pass', f.bad.length ? `no visible indicator on: ${f.bad.join('; ')} (heuristic: outline or shadow)` : `${f.checked} focusable element(s) show an indicator (heuristic)`);
+      if (!cfg.inventoryOnly) {
+        const f = await page.evaluate(COLLECT.focus, 40);
+        add('focus-visible', 'Floor', f.bad.length ? 'fail' : 'pass', f.bad.length ? `no visible indicator on: ${f.bad.join('; ')} (heuristic: outline or shadow)` : `${f.checked} focusable element(s) show an indicator (heuristic)`);
+      }
 
       // Same-origin links, status only, skipping anything that looks like an action.
       const hrefs = [...new Set(inventory.links.map((l) => l[1]).filter((h) => h && !h.startsWith('#') && !/^(mailto|tel|javascript):/i.test(h)))]
@@ -334,7 +358,7 @@ async function verifyPage(browser, url, cfg, outDir, opts, axeBuilder) {
       add('internal-links', 'Floor', dead.length ? 'fail' : 'pass', dead.length ? dead.slice(0, 4).join(' | ') : `${hrefs.length} internal link(s) answered (HEAD only; action-like links skipped)`);
     }
 
-    if (vp === cfg.viewports[0]) {
+    if (vp === cfg.viewports[0] && !cfg.inventoryOnly) {
       await page.emulateMedia({ reducedMotion: 'reduce' });
       await page.reload({ waitUntil: 'load' });
       const running = await page.evaluate(COLLECT.animations);
@@ -385,7 +409,7 @@ function summarise(pages, outDir) {
 }
 
 async function run(args) {
-  const cfg = loadConfig(args.config);
+  const cfg = loadConfig(args.config, args.inventoryOnly);
   cfg.maxLinks = args.maxLinks;
   if (!args.urls.length) throw new Error('Give at least one URL.');
   for (const u of args.urls) if (!/^https?:\/\//i.test(u)) throw new Error(`Only http and https URLs: ${u}`);
@@ -399,7 +423,7 @@ async function run(args) {
   try {
     for (const u of args.urls) {
       const p = await verifyPage(browser, u, cfg, outDir, args, axeBuilder);
-      if (args.baseline) { const before = JSON.parse(fs.readFileSync(args.baseline, 'utf8')); const b = before[u] || before; if (b.headings && p.inventory) p.results.push(...diffInventory(b, p.inventory)); }
+      if (args.baseline) { const before = JSON.parse(fs.readFileSync(args.baseline, 'utf8')); const b = before[u] || (Object.keys(before).length === 1 ? Object.values(before)[0] : before); if (b.headings && p.inventory) p.results.push(...diffInventory(b, p.inventory)); }
       pages.push(p);
     }
   } finally { await browser.close(); }
@@ -419,6 +443,7 @@ async function discover(args) {
     const page = await browser.newPage();
     await page.goto(args.urls[0], { waitUntil: 'load' });
     const bp = await page.evaluate(COLLECT.breakpoints);
+    discover.last = bp;
     console.log(bp.length ? `Media query widths in the page's own CSS (px): ${bp.join(', ')}\nPropose viewports to the design system from these; do not adopt them silently.` : 'No readable media queries found (cross-origin sheets are skipped).');
   } finally { await browser.close(); }
 }
@@ -439,14 +464,32 @@ async function selfTest(args) {
   try {
     const good = await run({ ...args, config: cfgFile, out: path.join(tmp, 'good'), urls: [`${base}/good.html`], maxLinks: 10 });
     const bad = await run({ ...args, config: cfgFile, out: path.join(tmp, 'bad'), urls: [`${base}/bad.html`], maxLinks: 10 });
-    const failed = new Set(bad.pages[0].results.filter((r) => r.status === 'fail').map((r) => r.id.replace(/@.*/, '')));
-    const expected = ['overflow', 'console', 'alt-text', 'broken-images', 'h1', 'rule:button-fill', 'rule:cta-align', 'rule:no-pair', 'rule:tokens', 'rule:section-bg', 'reduced-motion', 'internal-links', 'aboveFold'];
+    // Redesign path: the clean page's inventory is the baseline, the bad page is the "after".
+    const baseFile = path.join(tmp, 'good', 'inventory.json');
+    const diffed = await run({ ...args, config: cfgFile, out: path.join(tmp, 'diff'), urls: [`${base}/bad.html`], maxLinks: 10, baseline: baseFile });
+    // Inventory-only path: no design values, no visual checks.
+    const inv = await run({ ...args, config: cfgFile, out: path.join(tmp, 'inv'), urls: [`${base}/bad.html`], maxLinks: 10, inventoryOnly: true });
+    const ids = (r) => new Set(r.pages[0].results.filter((x) => x.status === 'fail').map((x) => x.id.replace(/@.*/, '')));
+    const failed = ids(bad);
+    const expected = ['overflow', 'console', 'alt-text', 'broken-images', 'h1', 'rule:button-fill', 'rule:cta-align', 'rule:no-pair', 'rule:tokens', 'rule:section-bg', 'reduced-motion', 'internal-links', 'aboveFold', 'targets', 'tag-forbidden:tracker.invalid'];
     const missing = expected.filter((e) => !failed.has(e));
+    const diffMissing = ['inventory:headings-removed', 'inventory:links-removed'].filter((e) => !ids(diffed).has(e));
+    const invAll = inv.pages[0].results.map((x) => x.id.replace(/@.*/, ''));
+    const invBad = invAll.filter((i) => i.startsWith('rule:') || ['overflow', 'aboveFold', 'targets', 'focus-visible', 'reduced-motion', 'viewport-meta'].includes(i));
+    const invMissing = ['console', 'alt-text', 'h1', 'internal-links', 'tag-forbidden:tracker.invalid'].filter((e) => !ids(inv).has(e));
     const goodFloor = good.pages[0].results.filter((r) => r.status === 'fail' && r.tier === 'Floor');
+    const goodNoTag = good.pages[0].results.find((r) => r.id === 'tag:analytics.invalid');
+    const bpHtml = path.join(dir, 'good.html');
+    await discover({ ...args, urls: [`${base}/good.html`] });
+    const bp = discover.last || [];
     console.log('\nself-test');
     console.log(missing.length ? `FAIL: planted violations not caught: ${missing.join(', ')}` : `ok: all ${expected.length} planted violations caught`);
+    console.log(diffMissing.length ? `FAIL: baseline diff missed: ${diffMissing.join(', ')}` : 'ok: baseline diff reports removed headings and links');
+    console.log(invMissing.length || invBad.length ? `FAIL: inventory-only mode (missed: ${invMissing.join(', ') || 'none'}; ran visual checks: ${invBad.join(', ') || 'none'})` : 'ok: inventory-only mode runs the objective checks and none of the visual ones');
     console.log(goodFloor.length ? `FAIL: clean page failed: ${goodFloor.map((r) => r.id).join(', ')}` : 'ok: clean page has no Floor failure');
-    ok = !missing.length && !goodFloor.length;
+    console.log(goodNoTag && goodNoTag.status === 'pass' ? 'ok: a blocked analytics request is recorded as fired and not sent' : 'FAIL: blocked request was not recorded');
+    console.log(bp.includes(640) && bp.includes(900) ? 'ok: breakpoints discovered from the page CSS' : `FAIL: breakpoints discovered: ${bp.join(', ') || 'none'}`);
+    ok = !missing.length && !diffMissing.length && !invMissing.length && !invBad.length && !goodFloor.length && goodNoTag?.status === 'pass' && bp.includes(640) && bp.includes(900);
   } finally { server.close(); fs.rmSync(tmp, { recursive: true, force: true }); }
   return ok;
 }

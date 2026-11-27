@@ -9,7 +9,7 @@
   "colourTolerance": 6,
   "aboveFold": { "headline": "h1", "action": ".btn-primary" },
   "minTargetPx": 24,
-  "blockRequests": ["analytics\\.invalid"],
+  "blockRequests": ["analytics\\.invalid", "tracker\\.invalid"],
   "tags": { "expected": ["analytics.invalid"], "forbidden": ["tracker.invalid"] },
   "rules": [
     { "name": "button-fill", "type": "filled", "selector": ".btn-primary", "tier": "Reflex" },
