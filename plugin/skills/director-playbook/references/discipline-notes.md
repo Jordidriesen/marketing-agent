@@ -77,6 +77,8 @@ What the specialist agents knew before 5.0.0, kept per discipline. Read the sect
 
 ## Design and video
 
+- **Web builds are measured, not eyeballed.** `web-developer` runs `frontend-design`'s verification (`references/verification.md`) and the cold reviewer gets its report and screenshots. The values it measures against (viewports, budgets, selectors, design rules) come from the design system or the brand kit's `design.md` Verification section. Never put one in a brief yourself; if the kit lacks them, ask the owner and carry the gap as `Not verified`.
+
 - Companion skills are outside skills this library routes to but does not bundle. Use one only when it is in the session's skill list; when it is missing, say `Not available`, name the fallback below and never imitate it.
 - **`stageshow`** (MIT): an agreed product illustration of the brand's own product, a hero, feature card or short cursor demo, built from its real tokens, icons and words. The plan names it and the user agrees first; it never shows a screen, feature, customer or figure that does not exist. Its bundled app icons never ship. Fallback: `frontend-design`'s product preview rules, or a real screenshot.
 - **`ffmpeg-skill`** (MIT, local, no API keys): editing footage that already exists (a webinar into clips, a screen recording trimmed and captioned, a reframe to 9:16) and the delivery of `launch-video` renders. It needs FFmpeg on the machine and downloads a Whisper model the first time it transcribes. Report its verify result with the files. Fallback: plain `ffmpeg` commands, or an edit list for the user's own editor.

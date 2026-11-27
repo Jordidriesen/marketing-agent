@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Clean fixture</title>
+<style>
+  body{margin:0;font-family:testsans,sans-serif;color:#111111;background:#ffffff}
+  section{background:#ffffff;padding:16px}
+  a{color:#0a5cff}
+  .btn-primary{display:inline-block;background:#0a5cff;color:#ffffff;border:0;padding:12px 20px;font:inherit}
+  .row{display:flex;gap:16px;align-items:stretch}
+  .card{flex:1;display:flex;flex-direction:column;border:0}
+  .cta{margin-top:auto;display:inline-block;padding:12px 20px;background:#0a5cff;color:#ffffff;border:0;text-decoration:none}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important}}
+  @media (max-width: 640px){.row{flex-direction:column}}
+  @media (min-width: 900px){section{padding:24px}}
+</style></head>
+<body>
+<section><h1>Clean fixture</h1><p>One sentence of copy.</p><button class="btn-primary">Primary action</button></section>
+<section>
+  <div class="row">
+    <div class="card"><p>Short card.</p><a class="cta" href="/good.html">Go</a></div>
+    <div class="card"><p>A longer card with more text so the heights differ between the two cards in this row.</p><a class="cta" href="/bad.html">Go</a></div>
+  </div>
+  <img alt="" width="8" height="8" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+</section>
+<script>fetch('https://analytics.invalid/collect').catch(()=>{});</script>
+</body></html>

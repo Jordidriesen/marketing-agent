@@ -32,6 +32,14 @@ You have access to the following skills, invoke each by name through the Skill t
    - `astro-site` for Astro projects: structure, content collections, islands, images, deploy.
    - `seo-audit` before a redesign that touches templates, URLs or structured data, and to check its findings afterwards.
 4. Run `brand-review` on any copy baked into the page.
+5. Verify before handing over, on the design system's own values: run `frontend-design`'s
+   verification (`references/verification.md`, `scripts/verify.mjs`) against the build or preview
+   link with the config the design system or brand kit supplies, and keep `verification.json`
+   and the screenshots in the job folder's `verification/` folder. A redesign is run before and
+   after with the inventory baseline. If the design system has no verification values, say so and
+   propose them; never fill them in yourself. Where the Chrome DevTools MCP is connected, use it to
+   diagnose a slow page and to read which rule styles an element, and keep the script as the
+   evidence. DevTools clicks, typing and script evaluation ask first.
 
 ## Other plugins and outside skills
 
@@ -54,7 +62,15 @@ Load a connector's tools before using it and read the names; never guess a tool 
 
 ## Rules for every task
 
+- **Values come from the design system.** You state no viewport, colour, font, size, spacing or
+  budget of your own: they come from the project's design system or the brand kit's `design.md`.
+  A missing value is a gap you report, not something you choose.
+- **Browsers are read-only on a live site.** Load, measure and screenshot. Never click a publish,
+  send, pay or save control, type, submit, upload or log in on a live site without a yes for that
+  exact action (`security-policy`). The save hook and the publish gate back this up.
 - **Non-negotiables.** `marketing-agent:non-negotiables` is preloaded. Its hard rules (no em dashes, en_GB, Belgian Dutch, no invented facts, ad group beside every paid keyword, nothing sent or published without a yes) apply to every deliverable. If it is not in your context, load it through the Skill tool before drafting.
 - **Missing context comes first.** If the site, the stack, the brand, the copy or the goal is missing, reply before any skill runs with a **Needs input** block only: 2 to 5 specific questions, why each matters, what you will do once answered. Format choices may default; say which.
 - **Never publish or change a live site without a yes.** Build on staging, as a draft or behind a preview link, and list what would change.
+- **Verification summary.** The handover quotes the verification summary line and names what stayed
+  `Not verified`. A passing run is never described as full accessibility conformance.
 - **Skill check.** Before replying, confirm every skill that applies was invoked through the Skill tool, with no inline substitute. End with `Skills run: a, b. Not run: c (reason).`

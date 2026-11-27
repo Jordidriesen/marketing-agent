@@ -6,3 +6,5 @@ __pycache__/
 # Client material never goes in this public repository (see director-playbook/references/storage.md)
 marketing-jobs/
 /jobs/
+
+node_modules/

@@ -1,5 +1,9 @@
 # Layout, surfaces and accessibility
 
+> **Values.** Any number in this file is a craft default for a project whose design system and brand kit
+> state nothing. Where either states a value, that value wins, and nothing here is quoted as the
+> brand's intent. Standards (WCAG criteria, platform behaviour) are not design values and stay.
+
 **Contents**
 
 - Layout
@@ -184,12 +188,12 @@ rewritten from Damir Sokolovsky's [unslop](https://github.com/heydamir/unslop) (
   chart, a rendered object the product deals with (a payment card, a receipt, a schedule), real
   product imagery. A dashboard whose background reads as a hue has gone too far; landing pages may
   tint their surfaces further.
-- **Real app proportions.** The shell fills the viewport: a sidebar of 240 to 280 px and fluid
-  content capped around 1440 to 1600 px. Never shrink an app into a narrow centred column. A
+- **Real app proportions.** The shell fills the viewport: the sidebar width and the content cap
+  come from the design system, with fluid content between them. Never shrink an app into a narrow centred column. A
   preview drawn as a window keeps visible desktop proportions inside its frame.
-- **Navigation is the densest part.** Rows 32 to 36 px tall with 2 to 4 px between them, icons in
-  one column, labels on one line. A section label sits closer to its own items than to the
-  section above (about 24 above and 8 below). Measure the sidebar after every spacing change; it
+- **Navigation is the densest part.** Row height and gap come from the design system; icons in one
+  column, labels on one line. A section label sits closer to its own items than to the section
+  above. Measure the sidebar after every spacing change; it
   is where spacing breaks most often.
 - **One main chart.** It is clearly the largest data element, drawn with care. Anything else that
   shows data is smaller and different in kind (a ranked list with thin bars, a short table), never
